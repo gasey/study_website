@@ -51,17 +51,71 @@ function loadCheckout():Promise<void>{return new Promise((resolve,reject)=>{if(w
 export function Plans(){
   const [config,setConfig]=useState<BillingConfig|null>(null);const [account,setAccount]=useState<AccountSession|null>(null);const [busy,setBusy]=useState('');const [msg,setMsg]=useState('');const [error,setError]=useState('');const nav=useNavigate()
   useEffect(()=>{getBillingConfig().then(setConfig);getAccountSession().then(setAccount)},[])
-  async function checkout(period:string){if(!account?.authenticated){nav(`/join?next=${encodeURIComponent('/plans')}`);return}setBusy(period);setError('');setMsg('');try{const checkout=await createCheckout(period);await loadCheckout();const razor=new window.Razorpay!({key:checkout.key_id,subscription_id:checkout.subscription_id,name:checkout.name,description:checkout.description,prefill:{email:checkout.email},theme:{color:'#183d3e'},modal:{ondismiss:()=>setBusy('')},handler:async(result:any)=>{await verifyCheckout(result);setMsg('Payment verified. Your Pro plan is being activated.');setBusy('');window.dispatchEvent(new Event('ism-auth-change'))}});razor.open()}catch(e){setError(e instanceof Error?e.message:'Checkout could not start.');setBusy('')}}
-  return <main className={shell}><div className="mx-auto max-w-[1000px]"><div className="font-mono text-xs uppercase tracking-[.12em] text-muted">Plans · Razorpay secure checkout</div><h1 className="mt-2 font-display text-3xl font-medium">Make room to focus</h1><p className="mt-2 max-w-2xl text-base leading-relaxed text-secondary">The question bank, exams and community stay free. Pro adds unlimited practice, mocks and mistakes review.</p>
-    <div className="mt-6 rounded-[12px] border border-map bg-map-soft p-4 text-sm text-map-dark"><b>7 days of Pro included</b> with every new account. No card required; the trial does not automatically charge you.</div>
-    {error&&<p role="alert" className="mt-4 rounded-[9px] bg-wrong-soft p-3 text-sm text-wrong-dark">{error}</p>}{msg&&<p role="status" className="mt-4 rounded-[9px] bg-correct-soft p-3 text-sm text-correct-dark">{msg}</p>}
-    <div className="mt-5 grid gap-3 md:max-w-md">{planCards.map(p=><section key={p.period} className={`${panel} flex flex-col`}><div className="font-mono text-xs uppercase tracking-[.1em] text-muted">Pro · {p.label}</div><div className="mt-3 font-display text-3xl">{config?.plans.find(plan=>plan.period===p.period)?.amount_paise!=null?new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',maximumFractionDigits:0}).format(config.plans.find(plan=>plan.period===p.period)!.amount_paise/100):p.price}</div><div className="text-sm text-secondary">{p.note}</div><button disabled={!config?.enabled||busy!==''} onClick={()=>void checkout(p.period)} className={`${button} mt-5`}>{!config?.enabled?'Payments setting up':busy===p.period?'Opening checkout…':'Choose Pro'}</button></section>)}</div>
-    {!config?.enabled&&<p className="mt-4 text-xs text-muted">Paid plans are not available yet. You can continue using the free features.</p>}
-    <p className="mt-6 text-xs leading-relaxed text-muted">Recurring subscription renewals are processed by Razorpay. You can cancel at any time; access remains through the current paid period. Receipts and subscription status will appear in your profile.</p>
-    <section className={`${panel} mt-5`}><h2 className="font-display text-lg">Class plan</h2><p className="mt-1 text-sm text-secondary">Designed for teacher-led groups. Class setup and management are still being built, so this plan is not available for purchase yet.</p></section>
-  </div></main>
+  async function checkout(period:string){if(!account?.authenticated){nav(`/join?next=${encodeURIComponent('/plans')}`);return}setBusy(period);setError('');setMsg('');try{const checkout=await createCheckout(period);await loadCheckout();const razor=new window.Razorpay!({key:checkout.key_id,subscription_id:checkout.subscription_id,name:checkout.name,description:checkout.description,prefill:{email:checkout.email},theme:{color:'#0A7D8C'},modal:{ondismiss:()=>setBusy('')},handler:async(result:any)=>{await verifyCheckout(result);setMsg('Payment verified. Your Pro plan is being activated.');setBusy('');window.dispatchEvent(new Event('ism-auth-change'))}});razor.open()}catch(e){setError(e instanceof Error?e.message:'Checkout could not start.');setBusy('')}}
+  return <main className="finna-page at-plan-page">
+    <header className="av-hero">
+      <div className="av-hero-copy">
+        <span className="cr-eyebrow">Plans · Razorpay Secure Checkout</span>
+        <h1>Make room to focus</h1>
+        <p>The question bank, exams, and community stay free. Pro adds unlimited practice, timed mocks, and smart mistakes review.</p>
+      </div>
+      <div className="av-hero-actions">
+        <Link to="/profile" className="cr-glass-btn">← Profile</Link>
+        <Link to="/profile/rewards" className="cr-glass-btn">Earn free Pro days →</Link>
+      </div>
+    </header>
+    <div className="at-trial-banner"><strong>7 days of Pro included</strong> with every new account — no card required, no automatic charge.</div>
+    {error&&<p role="alert" className="at-inline-err">{error}</p>}
+    {msg&&<p role="status" className="finna-st-notice">{msg}</p>}
+    <div className="at-plans-grid">
+      <section className="at-card">
+        <div className="at-card-head"><div><h3>Free forever</h3><p>Everything you need to start studying</p></div><span className="finna-st-pill finna-st-pill--gray">₹0</span></div>
+        <ul className="at-plan-list"><li>✓ Full MPSC question bank &amp; source papers</li><li>✓ Exam guides, Chronicle &amp; Atlas</li><li>✓ Community discussions &amp; private study desk</li></ul>
+      </section>
+      {planCards.map(p=><section key={p.period} className="at-card at-card--pro">
+        <div className="at-card-head"><div><h3>Pro · {p.label}</h3><p>{p.note}</p></div><span className="finna-st-pill finna-st-pill--teal">Popular</span></div>
+        <div className="at-plan-price">{config?.plans.find(plan=>plan.period===p.period)?.amount_paise!=null?new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',maximumFractionDigits:0}).format(config.plans.find(plan=>plan.period===p.period)!.amount_paise/100):p.price}<span>/mo</span></div>
+        <ul className="at-plan-list"><li>✓ Unlimited timed mock papers &amp; analytics</li><li>✓ Smart Review spaced-repetition queue</li><li>✓ Cancel anytime — zero lock-in</li></ul>
+        <button disabled={!config?.enabled||busy!==''} onClick={()=>void checkout(p.period)} className="cr-primary-btn mt-4 w-full">{!config?.enabled?'Payments setting up':busy===p.period?'Opening checkout…':'Choose Pro'}</button>
+      </section>)}
+    </div>
+    {!config?.enabled&&<p className="text-xs text-secondary">Paid plans are not available yet. You can continue using all free features.</p>}
+    <section className="at-card"><div className="at-card-head"><div><h3>Class plan</h3><p>Designed for teacher-led cohorts — currently in development and not open for purchase yet.</p></div><span className="finna-st-pill finna-st-pill--gray">Coming later</span></div></section>
+  </main>
 }
 
-export function Billing(){const [data,setData]=useState<any>(null);const [err,setErr]=useState('');useEffect(()=>{getBilling().then(setData).catch(e=>setErr(e.message))},[]);async function cancel(){try{await cancelBilling();setData(await getBilling())}catch(e){setErr(e instanceof Error?e.message:'Cancellation failed')}}return <main className={shell}><div className="mx-auto max-w-[760px]"><Link to="/profile" className="text-sm text-link underline">← Profile</Link><h1 className="mt-3 font-display text-3xl">Plan & billing</h1>{err&&<p className="mt-4 text-wrong-dark">{err}</p>}{data?<section className={`${panel} mt-5`}><div className="font-mono text-xs uppercase tracking-[.1em] text-muted">Current plan</div><h2 className="mt-2 font-display text-xl capitalize">{data.plan_code} · {data.plan_status}</h2>{data.email&&<p className="mt-1 text-sm text-secondary">{data.email}</p>}{data.trial_ends_at&&data.plan_status==='trial'&&<p className="mt-3 text-sm">Trial ends {new Date(data.trial_ends_at).toLocaleDateString('en-IN')}</p>}{data.plan_code==='pro'&&data.plan_status==='active'&&!data.plan_ends_at&&!data.razorpay_subscription_id&&<p className="mt-3 text-sm">Unlimited Pro access · no expiry date</p>}{data.reward_access?.map((r:any,i:number)=><p key={i} className="mt-3 text-sm">Earned Pro access: {new Date(r.starts_at).toLocaleDateString('en-IN')} – {new Date(r.ends_at).toLocaleDateString('en-IN')}</p>)}{data.granted_access?.map((g:any,i:number)=><p key={'grant-'+i} className="mt-3 text-sm">{g.source==='referral'?'Invitation Pro access':'Extra Pro access'}: {new Date(g.starts_at).toLocaleDateString('en-IN')} – {new Date(g.ends_at).toLocaleDateString('en-IN')}</p>)}{data.subscription&&<p className="mt-3 text-sm text-secondary">{data.subscription.billing_period.replace('_',' ')} · {data.subscription.status}{data.subscription.current_end?` · current period ends ${new Date(data.subscription.current_end).toLocaleDateString('en-IN')}`:''}</p>}<div className="mt-5 flex flex-wrap gap-3"><Link to="/plans" className={button}>View plans</Link><Link to="/profile/rewards" className={button}>Earned Pro rewards</Link>{data.razorpay_subscription_id&&<button onClick={()=>void cancel()} className="rounded-pill border border-ink px-5 py-3 text-sm font-semibold">Cancel renewal</button>}</div></section>:<p className="mt-5 text-secondary">Loading billing details…</p>}<GroupRateClaim/></div></main>}
+export function Billing(){const [data,setData]=useState<any>(null);const [err,setErr]=useState('');useEffect(()=>{getBilling().then(setData).catch(e=>setErr(e.message))},[]);async function cancel(){try{await cancelBilling();setData(await getBilling())}catch(e){setErr(e instanceof Error?e.message:'Cancellation failed')}}return <main className="finna-page at-plan-page">
+  <header className="av-hero">
+    <div className="av-hero-copy">
+      <span className="cr-eyebrow">Membership &amp; Receipts</span>
+      <h1>Plan &amp; billing</h1>
+      <p>View your active plan, earned Pro reward windows, and renewal status.</p>
+    </div>
+    <div className="av-hero-actions">
+      <Link to="/profile" className="cr-glass-btn">← Profile</Link>
+      <Link to="/plans" className="cr-glass-btn cr-glass-btn--accent">View plans</Link>
+    </div>
+  </header>
+  {err&&<p role="alert" className="at-inline-err">{err}</p>}
+  {data?<section className="at-card">
+    <div className="at-card-head">
+      <div><h2 className="capitalize">{data.plan_code} · {data.plan_status}</h2>{data.email&&<p>{data.email}</p>}</div>
+      <span className={data.plan_code==='pro'?'finna-st-pill finna-st-pill--green':'finna-st-pill finna-st-pill--gray'}>{data.plan_status}</span>
+    </div>
+    <div className="flex flex-col gap-2 text-sm text-secondary">
+      {data.trial_ends_at&&data.plan_status==='trial'&&<p>Trial ends {new Date(data.trial_ends_at).toLocaleDateString('en-IN')}</p>}
+      {data.plan_code==='pro'&&data.plan_status==='active'&&!data.plan_ends_at&&!data.razorpay_subscription_id&&<p>Unlimited Pro access · no expiry date</p>}
+      {data.reward_access?.map((r:any,i:number)=><p key={i}>Earned Pro access: {new Date(r.starts_at).toLocaleDateString('en-IN')} – {new Date(r.ends_at).toLocaleDateString('en-IN')}</p>)}
+      {data.granted_access?.map((g:any,i:number)=><p key={'grant-'+i}>{g.source==='referral'?'Invitation Pro access':'Extra Pro access'}: {new Date(g.starts_at).toLocaleDateString('en-IN')} – {new Date(g.ends_at).toLocaleDateString('en-IN')}</p>)}
+      {data.subscription&&<p>{data.subscription.billing_period.replace('_',' ')} · {data.subscription.status}{data.subscription.current_end?` · current period ends ${new Date(data.subscription.current_end).toLocaleDateString('en-IN')}`:''}</p>}
+    </div>
+    <div className="mt-4 flex flex-wrap gap-2">
+      <Link to="/plans" className="cr-primary-btn">View plans</Link>
+      <Link to="/profile/rewards" className="finna-st-btn">Earned Pro rewards</Link>
+      {data.razorpay_subscription_id&&<button onClick={()=>void cancel()} className="at-danger-btn">Cancel renewal</button>}
+    </div>
+  </section>:<div className="finna-card text-sm text-secondary">Loading billing details…</div>}
+  <GroupRateClaim/>
+</main>}
 
 export function LogoutButton(){const nav=useNavigate();return <button onClick={async()=>{await logoutAccount();window.dispatchEvent(new Event('ism-auth-change'));nav('/')}} className="rounded-pill border border-ink px-4 py-2 text-sm font-semibold">Sign out</button>}

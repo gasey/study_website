@@ -2,7 +2,7 @@ import { useSyncExternalStore } from "react";
 export type ExamScope = "mizoram-recruitment" | "all";
 const KEY = "ism-exam-scope";
 function readExamScope(): ExamScope {
-  const explicit = new URLSearchParams(window.location.search).get(
+  const explicit = new URLSearchParams(window.location?.search || "").get(
     "exam_scope",
   );
   if (explicit === "all" || explicit === "mizoram-recruitment") return explicit;

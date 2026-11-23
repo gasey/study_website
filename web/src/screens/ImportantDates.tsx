@@ -6,6 +6,7 @@ import LearningCatalog from './LearningCatalog'
 import {EventCalendar} from '../components/ImportantDateViews'
 import DateEventStream from '../components/DateEventStream'
 import {ChronicleAtlasLinks} from '../components/AtlasProvenance'
+import ChronicleNav from '../components/ChronicleNav'
 
 const control='min-h-11 w-full rounded-lg border border-hairline bg-card px-3 py-2 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-learn'
 const categories=[['','All events'],['observance','Observances'],['history','History'],['event','Other events']]
@@ -47,7 +48,7 @@ function BankDateBrowser(){
  return <div className="mx-auto max-w-6xl px-4 pb-24 pt-7 sm:px-6">
   <nav aria-label="Study navigation" className="flex flex-wrap items-center gap-x-5 gap-y-1 text-sm text-link"><Link className="inline-flex min-h-11 items-center" to="/library">← Library</Link><Link className="inline-flex min-h-11 items-center" to="/bank">Question bank</Link></nav>
   <header className="mb-7 mt-5"><p className="font-mono text-xs uppercase tracking-widest text-learn">From the question bank</p><h1 className="mt-3 font-display text-3xl leading-tight sm:text-3xl">Chronicle</h1><p className="mt-3 max-w-2xl text-base leading-relaxed text-secondary">Read dates and events from the bank in one place. Browse the list, follow historical chronology or explore a month.</p></header>
-  <nav aria-label="Chronicle views" className="mb-5 flex flex-wrap gap-2"><Link to="/chronicle" className="inline-flex min-h-11 items-center rounded-pill border border-hairline px-5 text-sm font-semibold">Timeline</Link>{[['list','List'],['chronology','Chronology'],['calendar','Calendar']].map(([value,label])=><button key={value} type="button" aria-pressed={mode===value} onClick={()=>setMode(value)} className={'min-h-11 rounded-pill border px-5 text-sm font-semibold '+(mode===value?'border-ink bg-ink text-paper':'border-hairline bg-card text-secondary hover:border-ink')}>{label}</button>)}</nav>
+  <ChronicleNav active={mode as 'list'|'chronology'|'calendar'} onSelectMode={setMode}/>
   <section aria-label="Filter dates and events" className="mb-5 border-y border-hairline py-5">
    <div className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_200px]"><label className="grid gap-2 text-xs font-semibold">Search events<input aria-label="Search events" type="search" className={control} placeholder="Try Environment Day or Plassey" value={search} maxLength={120} onChange={e=>change('q',e.target.value)}/></label><label className="grid gap-2 text-xs font-semibold">Month<select aria-label="Month" className={control} value={activeMonth} onChange={e=>change('month',e.target.value)}>{mode!=='calendar'&&<option value="">All months</option>}{dateMonths.map((m,i)=><option key={m} value={i+1}>{m}</option>)}</select></label></div>
    <div className="mt-4 flex flex-wrap gap-2" role="group" aria-label="Event category">{categories.map(([value,label])=><button key={value} type="button" aria-pressed={category===value} className={'min-h-11 rounded-pill border px-4 text-sm transition-colors '+(category===value?'border-learn bg-learn-soft font-semibold text-learn-dark':'border-hairline bg-card text-secondary hover:border-ink')} onClick={()=>change('category',value)}>{label}</button>)}</div>

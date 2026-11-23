@@ -2,6 +2,7 @@ import WeeklyStandings from '../components/WeeklyStandings'
 import BillingAccessAdmin from '../components/BillingAccessAdmin'
 import RewardDiagnostics from '../components/RewardDiagnostics'
 import RewardFeatureGates,{type RewardLaunchGates} from '../components/RewardFeatureGates'
+import FlashBanner from '../components/FlashBanner'
 import {useEffect,useRef,useState} from 'react'
 import {Link} from 'react-router-dom'
 import {reviewRequest} from '../lib/review'
@@ -35,9 +36,22 @@ export default function Rewards(){
  async function buyShield(){setBusy(true);setError('');try{const res=await reviewRequest<{streak_shields:number;points:number}>('/rewards/streak-shield',{});setNotice(`1-Day Streak Shield equipped (${res.streak_shields}/2 active). Your XP and rank are unchanged.`);await load()}catch(e){setError((e as Error).message)}finally{setBusy(false)}}
  async function updateCohort(cohort:string|null){setBusy(true);setError('');try{await reviewRequest('/rewards/stream-cohort',{stream_cohort:cohort});setNotice(cohort?`Comfort stream set to ${COHORT_NAMES[cohort]||cohort}.`:'Stream cohort cleared.');await load()}catch(e){setError((e as Error).message)}finally{setBusy(false)}}
  async function more(){try{const h=await reviewRequest<{items:Entry[];next_cursor:number|null}>('/rewards/history?before='+cursor);setHistory(v=>[...v,...h.items]);setCursor(h.next_cursor)}catch(e){setError((e as Error).message)}}
- return <main className="mx-auto max-w-shell px-6 pb-24 pt-8"><div className="font-mono text-xs uppercase tracking-widest text-rewards-dark">Learning rewards</div><h1 className="mt-2 font-display text-3xl">Small steps. Lasting progress.</h1><p className="mt-3 max-w-[720px] text-base leading-relaxed text-secondary">XP tracks your learning activity. Reward points can unlock enabled benefits and streak shields. Spending points keeps your XP, level and leaderboard score intact.</p><div className="mt-4 flex flex-wrap gap-3"><Link to="/games" className={BUTTON}>Play learning games →</Link><Link to="/exams" className={BUTTON}>Choose an exam →</Link><Link to="/profile/rewards" className={BUTTON}>Learning leaderboard</Link><Link to="/community/contributors" className={BUTTON}>Contribution leaderboard</Link></div>
- {error&&<p role="alert" className="mt-4 rounded-[8px] bg-mypick-soft p-4 text-sm">{error} <Link to="/login" className="text-link underline">Sign in</Link> <button onClick={()=>{setError('');void load().catch(e=>setError(e.message))}} className="underline">Retry</button></p>}{notice&&<p role="status" className="mt-4 rounded-[8px] bg-practice-soft p-4">{notice}</p>}
- {wallet&&<><div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">{[['This month',wallet.monthly_xp+' XP','border-l-4 border-l-practice'],['Lifetime',wallet.lifetime_xp+' XP','border-l-4 border-l-learn'],['Reward wallet',wallet.points+' points','border-l-4 border-l-exams'],['Your level','Level '+wallet.level+(wallet.title?' · '+wallet.title:''),'border-l-4 border-l-rewards']].map(([label,value,accent])=><div key={label} className={`ism-card-surface rounded-[12px] border border-hairline bg-card p-5 ${accent}`}><div className="font-mono text-xs uppercase text-muted">{label}</div><div className="mt-2 font-display text-xl leading-tight">{value}</div></div>)}</div><p className="mt-3 text-xs text-secondary">Today’s study/game XP: {wallet.daily_xp} / {wallet.daily_cap} · resets at midnight in India. Next level at {wallet.next_level_xp} lifetime XP.</p>
+ return <main className="mx-auto max-w-shell px-5 pb-24 pt-7">
+  <header className="av-hero">
+   <div className="av-hero-copy">
+    <span className="cr-eyebrow">Learning rewards</span>
+    <h1>Small steps. Lasting progress.</h1>
+    <p>XP tracks your learning activity. Reward points unlock enabled benefits and streak shields while keeping your XP, level, and leaderboard score intact.</p>
+   </div>
+   <div className="av-hero-actions">
+    <Link to="/games" className="cr-glass-btn cr-glass-btn--accent">Play games →</Link>
+    <Link to="/exams" className="cr-glass-btn">Choose exam</Link>
+    <Link to="/community/contributors" className="cr-glass-btn">Contributors</Link>
+   </div>
+  </header>
+  {error&&<div className="mt-4"><FlashBanner kind="error" title="Could not load rewards" message={error} onDismiss={()=>setError('')} actionLabel="Retry" onAction={()=>{setError('');void load().catch(e=>setError(e.message))}} extra={<Link to="/login" className="finna-st-btn">Sign in</Link>}/></div>}
+  {notice&&<div className="mt-4"><FlashBanner kind="success" title="Reward update" message={notice} onDismiss={()=>setNotice('')}/></div>}
+  {wallet&&<><div className="at-kpi-grid">{[['This month',wallet.monthly_xp.toLocaleString('en-IN')+' XP','is-teal'],['Lifetime',wallet.lifetime_xp.toLocaleString('en-IN')+' XP','is-indigo'],['Reward wallet',wallet.points.toLocaleString('en-IN')+' pts','is-amber'],['Your level','Lvl '+wallet.level+(wallet.title?' · '+wallet.title:''),'is-emerald']].map(([label,value,tone])=><div key={label} className={`at-kpi-tile ${tone}`}><span>{label}</span><strong>{value}</strong></div>)}</div><p className="mt-3 text-xs text-secondary">Today’s study/game XP: <b>{wallet.daily_xp} / {wallet.daily_cap}</b> · resets at midnight IST · Next level at <b>{wallet.next_level_xp.toLocaleString('en-IN')}</b> lifetime XP.</p>
  <div className="mt-6 grid gap-4 lg:grid-cols-2">
   <section aria-label="Consistency streak and league" className="ism-card-surface rounded-[14px] border border-hairline bg-card p-5">
    <div className="flex flex-wrap items-start justify-between gap-3">
@@ -120,11 +134,18 @@ export default function Rewards(){
  <section className="mt-7"><h2 className="font-display text-xl">Point history</h2>{history.length?history.map(h=><article key={h.id} className="mt-2 flex flex-wrap justify-between gap-3 rounded-[10px] border border-hairline bg-card p-4 text-sm"><div><strong>{h.note}</strong><p className="mt-1 text-xs text-muted">{new Date(h.created_at).toLocaleString('en-IN')}</p></div><span>{h.xp>0?'+':''}{h.xp} XP · {h.points>0?'+':''}{h.points} points</span></article>):<p className="mt-3 text-sm text-secondary">No rewards earned yet. Start with verified-key practice in an exam.</p>}{cursor&&<button onClick={()=>void more()} className={BUTTON+' mt-3'}>Older activity</button>}</section></>}
  </main>
 }
-export function LearningBoard(){return <main className="mx-auto max-w-[1000px] px-5 pb-24 pt-8">
- <div className="font-mono text-xs uppercase tracking-widest text-rewards-dark">Learning together</div>
- <h1 className="mt-2 font-display text-3xl">Weekly learning board</h1>
- <p className="mt-3 max-w-[680px] text-base text-secondary">Weekly XP within your league. See the top ten and the learners near your rank. Spending reward points keeps your XP intact.</p>
- <nav aria-label="Related learning pages" className="mt-5 flex flex-wrap gap-2"><Link to="/games" className={BUTTON}>Game boards →</Link><Link to="/profile/rewards" className={BUTTON}>My points & visibility →</Link></nav>
- <section className="ism-card-surface mt-5 rounded-[18px] border border-hairline bg-card p-5"><WeeklyStandings endpoint="/rewards/leaderboard?contract=2"/></section>
+export function LearningBoard(){return <main className="at-sub-page">
+ <header className="av-hero">
+  <div className="av-hero-copy">
+   <span className="cr-eyebrow">Learning together</span>
+   <h1>Weekly learning board</h1>
+   <p>Weekly XP within your league. See the top ten and learners near your rank. Spending reward points keeps your XP intact.</p>
+  </div>
+  <div className="av-hero-actions">
+   <Link to="/games" className="cr-glass-btn cr-glass-btn--accent">Game boards →</Link>
+   <Link to="/profile/rewards" className="cr-glass-btn">My points & visibility</Link>
+  </div>
+ </header>
+ <section className="at-card"><WeeklyStandings endpoint="/rewards/leaderboard?contract=2"/></section>
  </main>}
 export function RewardAdmin(){const [offers,setOffers]=useState<Offer[]>([]);const [error,setError]=useState('');const [busy,setBusy]=useState(false);const [gates,setGates]=useState<RewardLaunchGates|null>(null);useEffect(()=>{Promise.all([reviewRequest<Offer[]>('/admin/bank/rewards'),reviewRequest<RewardLaunchGates>('/admin/bank/reward-feature-gates')]).then(([o,g])=>{setOffers(o);setGates(g)}).catch(e=>setError(e.message))},[]);async function save(o:Offer){const reason=window.prompt('Explain this reward-policy change (10 characters minimum)');if(!reason)return;setBusy(true);try{await reviewRequest('/admin/bank/rewards/'+o.id,{version:o.version,points:o.points,enabled:o.enabled,reason});setOffers(await reviewRequest<Offer[]>('/admin/bank/rewards'));setError('')}catch(e){setError((e as Error).message)}finally{setBusy(false)}}return <section className="mt-5"><p className="text-sm text-secondary">Review earning caps and subscription costs before opening redemption. Changes are versioned and audited. Disabling an offer preserves existing redeemed access.</p>{error&&<p role="alert" className="mt-3 text-mypick">{error}</p>}<RewardFeatureGates gates={gates}/>{offers.map(o=><div key={o.id} className="mt-4 rounded-[8px] border border-hairline bg-card p-5"><h2 className="font-display text-xl">{o.title}</h2><label className="mt-3 block text-sm">Reward-point cost<input type="number" min={1} max={1000000} value={o.points} onChange={e=>setOffers(v=>v.map(x=>x.id===o.id?{...x,points:Number(e.target.value)}:x))} className="ml-3 min-h-11 rounded-[6px] border border-hairline p-2"/></label><label className="mt-3 flex min-h-11 items-center gap-2 text-sm"><input type="checkbox" disabled={!o.enabled&&!gates?.catalog_ready} checked={o.enabled} onChange={e=>setOffers(v=>v.map(x=>x.id===o.id?{...x,enabled:e.target.checked}:x))}/>Enable redemption</label><button disabled={busy} onClick={()=>void save(o)} className={BUTTON+' mt-3'}>Save reviewed policy</button></div>)}<BillingAccessAdmin/><RewardDiagnostics/></section>}

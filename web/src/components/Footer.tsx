@@ -10,7 +10,7 @@ export default function Footer() {
         </span>
         <span className="flex flex-wrap items-center gap-4">
           <Link to={destinationPath('index')} className="font-semibold text-link hover:underline">
-            Index
+            All pages
           </Link>
           <Link to={destinationPath('guides')} className="font-semibold text-link hover:underline">
             Guides

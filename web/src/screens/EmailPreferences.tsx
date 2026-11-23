@@ -13,8 +13,18 @@ export default function EmailPreferences(){
    history.replaceState(null,'','/account/email-preferences');setDone(true)
   }catch(e){setError((e as Error).message)}finally{setBusy(false)}
  }
- return <main className="mx-auto max-w-[620px] px-4 pb-24 pt-10"><h1 className="font-display text-2xl">Email preferences</h1>
-  {token?<section className="mt-5 rounded-panel border border-hairline bg-card p-5"><h2 className="font-display text-lg">Stop review reminders</h2><p className="mt-2 text-sm text-secondary">Account security emails are unaffected. You do not need to sign in.</p>{done?<p role="status" className="mt-4 text-sm">Review reminders are off.</p>:<button onClick={()=>void unsubscribe()} disabled={busy} className="mt-4 min-h-11 rounded-pill bg-ink px-5 text-sm font-semibold text-paper disabled:opacity-50">{busy?'Saving…':'Unsubscribe'}</button>}{error&&<p role="alert" className="mt-3 text-sm text-wrong-dark">{error}</p>}</section>:<ReviewDigestPreference/>}
-  <Link to="/profile" className="mt-5 inline-flex min-h-11 items-center text-sm text-link underline">Back to your profile</Link>
+ return <main className="at-sub-page at-sub-page--narrow">
+  <header className="av-hero">
+   <div className="av-hero-copy">
+    <span className="cr-eyebrow">Notifications</span>
+    <h1>Email preferences</h1>
+    <p>Control evening review reminder digests. Security and recovery emails remain active.</p>
+   </div>
+   <div className="av-hero-actions">
+    <Link to="/profile" className="cr-glass-btn">← Profile</Link>
+   </div>
+  </header>
+  {token?<section className="at-card"><div className="at-card-head"><div><h2>Stop review reminders</h2><p>Account security emails are unaffected. You do not need to sign in.</p></div></div>{done?<p role="status" className="finna-st-notice">Review reminders are off.</p>:<button onClick={()=>void unsubscribe()} disabled={busy} className="cr-primary-btn">{busy?'Saving…':'Unsubscribe'}</button>}{error&&<p role="alert" className="at-inline-err">{error}</p>}</section>:<ReviewDigestPreference/>}
+  <div className="at-btn-row"><Link to="/profile" className="at-link">← Back to your profile</Link></div>
  </main>
 }

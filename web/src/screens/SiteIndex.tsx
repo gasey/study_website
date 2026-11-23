@@ -1,16 +1,42 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getAccountSession } from '../lib/api'
 import { reviewRequest, reviewSession, type ReviewSession } from '../lib/review'
 import { reviewDestinations } from '../lib/reviewNavigation'
-import { SECTION_ORDER, SITE_MAP } from '../lib/siteMap'
+import { SITE_MAP, type Destination } from '../lib/siteMap'
 import { STUDY_THEMES, useStudyTheme } from '../lib/theme'
 
-/** `/index` — the honest contents page (§VII.3.2).
- *  Generated directly from `siteMap.ts`. Replaces `/more`, mega-menus and
- *  duplicated footer link grids. No icons, no cards, no invented counts. */
+const GROUPS: { id: string; title: string; match: (d: Destination) => boolean }[] = [
+  {
+    id: 'study',
+    title: 'Exams & Practice',
+    match: (d) =>
+      d.section === 'practice' ||
+      ['home', 'exams', 'papers', 'bank', 'calendar'].includes(d.id),
+  },
+  {
+    id: 'guides',
+    title: 'Guides & Reference',
+    match: (d) =>
+      d.section === 'guides' ||
+      d.menu === 'guides' ||
+      d.id === 'desk',
+  },
+  {
+    id: 'community',
+    title: 'Community & Account',
+    match: (d) =>
+      d.section === 'community' ||
+      (d.section === 'you' && d.id !== 'desk'),
+  },
+]
+
+/** Compact single-screen directory (`/index`): groups all destinations into
+ *  3 tight cards with instant filtering and inline appearance controls so
+ *  everything is visible at a glance without scrolling a long wall of rows. */
 export default function SiteIndex() {
   const [theme, setTheme] = useStudyTheme()
+  const [query, setQuery] = useState('')
   const [authenticated, setAuthenticated] = useState<boolean | null>(null)
   const [session, setSession] = useState<ReviewSession | null>(null)
   const [assigned, setAssigned] = useState(false)
@@ -50,110 +76,131 @@ export default function SiteIndex() {
 
   const staffLinks = reviewDestinations({ grants: session?.grants || [], assigned })
 
+  const allItems = useMemo(
+    () => SITE_MAP.filter((d) => d.surfaces.includes('index') && d.id !== 'index'),
+    [],
+  )
+
+  const needle = query.trim().toLowerCase()
+  const matches = (d: Destination) =>
+    !needle ||
+    d.label.toLowerCase().includes(needle) ||
+    d.blurb.toLowerCase().includes(needle) ||
+    (d.keywords || '').toLowerCase().includes(needle)
+
+  const visibleGroups = useMemo(
+    () =>
+      GROUPS.map((g) => ({
+        ...g,
+        items: allItems.filter((d) => g.match(d) && matches(d)),
+      })).filter((g) => g.items.length > 0),
+    [allItems, needle],
+  )
+
   return (
-    <div className="mx-auto max-w-[850px] px-4 pb-20 pt-8 sm:px-6" data-screen="index">
-      <header className="border-b border-hairline pb-5">
-        <p className="font-mono text-xs uppercase tracking-[0.08em] text-muted">Directory</p>
-        <h1 className="mt-1 text-3xl font-bold text-ink">Finna Index</h1>
-        <p className="mt-2 text-base text-secondary">
-          Every study surface, tool and account page on Finna, in one plain list.
-        </p>
+    <div className="finna-page" data-screen="index">
+      <header className="mb-5 flex flex-wrap items-center justify-between gap-4 border-b border-hairline pb-4">
+        <div>
+          <div className="finna-eyebrow">All pages</div>
+          <h1 className="mt-1 text-2xl font-bold text-ink">Everything on Finna</h1>
+        </div>
+        <div className="flex flex-wrap items-center gap-3">
+          <input
+            type="search"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Filter pages…"
+            aria-label="Filter pages"
+            className="min-h-10 w-52 rounded-xl border border-hairline bg-card px-3 text-sm"
+          />
+          <div className="finna-segments" role="group" aria-label="Reading theme">
+            {STUDY_THEMES.map((item) => (
+              <button
+                key={item.id}
+                type="button"
+                aria-pressed={theme === item.id}
+                onClick={() => setTheme(item.id)}
+              >
+                {item.shortLabel}
+              </button>
+            ))}
+          </div>
+        </div>
       </header>
 
-      <div className="mt-8 space-y-10">
-        {SECTION_ORDER.map((section) => {
-          const items = SITE_MAP.filter(
-            (d) => d.section === section.id && d.surfaces.includes('index') && d.id !== 'index',
-          )
-          if (!items.length) return null
-          return (
-            <section key={section.id} aria-labelledby={`index-${section.id}`}>
-              <h2
-                id={`index-${section.id}`}
-                className="border-b border-hairline pb-2 font-mono text-xs font-semibold uppercase tracking-[0.08em] text-muted"
-              >
-                {section.title}
-              </h2>
-              <ul className="divide-y divide-hairline">
-                {items.map((item) => (
-                  <li key={item.id}>
-                    <Link
-                      to={item.path}
-                      className="flex flex-col gap-1 py-3.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6 hover:underline"
-                    >
-                      <span className="shrink-0 text-base font-semibold text-link">{item.label}</span>
-                      <span className="text-sm text-secondary sm:text-right">{item.blurb}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )
-        })}
-
-        {staffLinks.length > 0 && (
-          <section aria-labelledby="index-staff">
-            <h2
-              id="index-staff"
-              className="border-b border-hairline pb-2 font-mono text-xs font-semibold uppercase tracking-[0.08em] text-muted"
+      {visibleGroups.length === 0 ? (
+        <div className="finna-card text-center">
+          <p className="text-sm text-secondary">No pages match “{query.trim()}”.</p>
+          <button
+            type="button"
+            onClick={() => setQuery('')}
+            className="finna-btn finna-btn-quiet mt-3"
+          >
+            Clear filter
+          </button>
+        </div>
+      ) : (
+        <div className="grid gap-4 md:grid-cols-3">
+          {visibleGroups.map((group) => (
+            <section
+              key={group.id}
+              aria-labelledby={`index-${group.id}`}
+              className="finna-card flex flex-col gap-1"
             >
-              Staff &amp; Review
-            </h2>
-            <ul className="divide-y divide-hairline">
-              {staffLinks.map((item) => (
-                <li key={item.to}>
-                  <Link
-                    to={item.to}
-                    className="flex flex-col gap-1 py-3.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6 hover:underline"
-                  >
-                    <span className="shrink-0 text-base font-semibold text-link">{item.label}</span>
-                    <span className="text-sm text-secondary sm:text-right">{item.description}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
-
-        <section aria-labelledby="index-appearance" className="border-t border-hairline pt-6">
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <div>
-              <h2 id="index-appearance" className="text-base font-bold text-ink">
-                Reading appearance
+              <h2
+                id={`index-${group.id}`}
+                className="mb-2 border-b border-hairline pb-2 font-mono text-xs font-semibold uppercase tracking-[0.08em] text-muted"
+              >
+                {group.title}
               </h2>
-              <p className="text-sm text-secondary">Daytime paper or low-light night mode.</p>
-            </div>
-            <div className="flex flex-wrap gap-2" role="group" aria-label="Select study theme">
-              {STUDY_THEMES.map((item) => (
-                <button
-                  key={item.id}
-                  type="button"
-                  aria-pressed={theme === item.id}
-                  onClick={() => setTheme(item.id)}
-                  className={
-                    'min-h-11 rounded-lg border px-4 py-2 text-sm font-semibold ' +
-                    (theme === item.id
-                      ? 'border-ink bg-ink text-paper'
-                      : 'border-hairline bg-card text-ink hover:border-hairline2')
-                  }
+              <div className="flex flex-col gap-0.5">
+                {group.items.map((item) => (
+                  <Link
+                    key={item.id}
+                    to={item.path}
+                    className="flex items-center justify-between gap-2 rounded-lg px-2.5 py-2 text-sm font-semibold text-ink transition-colors hover:bg-canvas hover:text-link"
+                    title={item.blurb}
+                  >
+                    <span>{item.label}</span>
+                    <span className="text-xs text-muted" aria-hidden="true">→</span>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+      )}
+
+      {(staffLinks.length > 0 || authenticated === false) && (
+        <section className="finna-card mt-4 flex flex-wrap items-center justify-between gap-3">
+          {staffLinks.length > 0 && (
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="font-mono text-xs font-semibold uppercase tracking-[0.08em] text-muted">
+                Staff
+              </span>
+              {staffLinks.map((item) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  className="rounded-lg border border-hairline bg-paper px-3 py-1.5 text-xs font-bold text-link hover:bg-canvas"
                 >
-                  {item.label}
-                </button>
+                  {item.label} →
+                </Link>
               ))}
             </div>
-          </div>
+          )}
           {authenticated === false && (
-            <div className="mt-5 flex flex-wrap gap-4 border-t border-hairline pt-4 text-sm">
-              <Link to="/login?next=%2Findex" className="font-semibold text-link hover:underline">
+            <div className="ml-auto flex flex-wrap gap-2">
+              <Link to="/login?next=%2Fhome" className="finna-btn finna-btn-quiet">
                 Sign in
               </Link>
-              <Link to="/join?next=%2Findex" className="font-semibold text-link hover:underline">
-                Create an account
+              <Link to="/join?next=%2Fhome" className="finna-btn">
+                Join free
               </Link>
             </div>
           )}
         </section>
-      </div>
+      )}
     </div>
   )
 }

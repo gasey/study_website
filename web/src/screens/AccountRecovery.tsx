@@ -2,8 +2,6 @@ import {useEffect,useState,type FormEvent} from 'react'
 import {Link,useNavigate} from 'react-router-dom'
 import {accountContext} from '../lib/accountContext'
 
-const INPUT='mt-2 min-h-12 w-full rounded-[8px] border border-hairline bg-paper px-3 text-base'
-
 export default function AccountRecovery(){
  const navigate=useNavigate()
  const [available,setAvailable]=useState<boolean|null>(null)
@@ -43,18 +41,21 @@ export default function AccountRecovery(){
   :verify?'Confirm this link to verify your email address.'
   :'Request a link using the email address on your account. If the address belongs to a closed account still within its 30-day window, the link will reopen it.'
 
- return <main className="mx-auto max-w-[520px] px-4 py-10"><section className="rounded-[16px] border border-hairline bg-card p-6">
-  <h1 className="font-display text-2xl">{title}</h1>
-  <p className="mt-3 text-sm text-secondary">{description}</p>
-  {error&&<p role="alert" className="mt-4 text-sm text-mypick">{error}</p>}
-  {notice?<div role="status" className="mt-4 text-sm">{notice}<Link to="/login" className="mt-4 block min-h-11 text-link underline">Sign in →</Link></div>:<>
-   {!hasToken&&available===false?<p className="mt-5 text-sm text-secondary">Email recovery is awaiting mail-service setup. Contact site support for access help.</p>:<form onSubmit={e=>void submit(e)} className="mt-5 space-y-4">
-    {!hasToken&&<label className="block text-sm">Account email<input required type="email" autoComplete="email" maxLength={254} value={email} onChange={e=>setEmail(e.target.value)} className={INPUT}/></label>}
-    {(reset||reopen)&&<><label className="block text-sm">New password<input required type="password" minLength={12} maxLength={200} autoComplete="new-password" value={password} onChange={e=>setPassword(e.target.value)} className={INPUT}/><span className="mt-1 block text-xs text-secondary">At least 12 characters, including a letter and a number.</span></label>{reset&&<label className="block text-sm">Authenticator or recovery code, if enabled<input autoComplete="one-time-code" maxLength={64} value={code} onChange={e=>setCode(e.target.value)} className={INPUT}/></label>}</>}
-    {hasToken&&<p className="rounded-lg bg-paper p-3 text-sm">This link expires after 30 minutes and can be used once.</p>}
-    <button disabled={busy||(!hasToken&&available!==true)} className="min-h-12 rounded-pill bg-ink px-5 text-sm text-paper disabled:opacity-50">{busy?'Please wait…':verify?'Verify email':reset||reopen?'Save password':'Send recovery link'}</button>
-   </form>}
-  </>}
-  <Link to="/login" className="mt-5 inline-flex min-h-11 items-center text-sm text-link underline">Back to sign in</Link>
- </section></main>
+ return <main className="at-sub-page at-sub-page--narrow">
+  <section className="at-card">
+   <span className="cr-eyebrow">Account recovery</span>
+   <h1 className="font-display text-2xl font-bold">{title}</h1>
+   <p className="text-sm leading-relaxed text-secondary">{description}</p>
+   {error&&<p role="alert" className="at-inline-err">{error}</p>}
+   {notice?<div role="status" className="finna-st-notice">{notice} <Link to="/login" className="ml-2 underline">Sign in →</Link></div>:<>
+    {!hasToken&&available===false?<p className="text-sm text-secondary">Email recovery is awaiting mail-service setup. Contact site support for access help.</p>:<form onSubmit={e=>void submit(e)} className="space-y-4">
+     {!hasToken&&<label className="at-field"><span>Account email</span><input required type="email" autoComplete="email" maxLength={254} value={email} onChange={e=>setEmail(e.target.value)}/></label>}
+     {(reset||reopen)&&<><label className="at-field"><span>New password</span><input required type="password" minLength={12} maxLength={200} autoComplete="new-password" value={password} onChange={e=>setPassword(e.target.value)}/><small className="text-xs text-secondary">At least 12 characters, including a letter and a number.</small></label>{reset&&<label className="at-field"><span>Authenticator or recovery code, if enabled</span><input autoComplete="one-time-code" maxLength={64} value={code} onChange={e=>setCode(e.target.value)}/></label>}</>}
+     {hasToken&&<p className="finna-st-notice">This link expires after 30 minutes and can be used once.</p>}
+     <button disabled={busy||(!hasToken&&available!==true)} className="cr-primary-btn">{busy?'Please wait…':verify?'Verify email':reset||reopen?'Save password':'Send recovery link'}</button>
+    </form>}
+   </>}
+   <div className="at-card-foot"><Link to="/login" className="at-link">← Back to sign in</Link></div>
+  </section>
+ </main>
 }

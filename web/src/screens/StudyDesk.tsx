@@ -12,6 +12,7 @@ import {
 } from "react-router-dom";
 import DeskScene, { type SceneMember } from "../components/DeskScene";
 import DeskFocus from "../components/DeskFocus";
+import FlashBanner from "../components/FlashBanner";
 import { DeskEmpty as Empty, DeskModal as Modal } from "../components/DeskParts";
 import { DeskQuestion } from "../components/DeskPractice";
 import {
@@ -150,6 +151,7 @@ export default function StudyDesk() {
     run: () => Promise<void>;
   } | null>(null);
   const [notice, setNotice] = useState("");
+  const [showDiagram, setShowDiagram] = useState(true);
   const createKey = useRef(uid());
   const shareKey = useRef({ payload: "", key: uid() });
   const chatKey = useRef({ payload: "", key: uid() });
@@ -585,221 +587,265 @@ export default function StudyDesk() {
     );
   return (
     <main className="desk-v3" data-desk-room={!!room}>
-      {!room&&<p className="mb-4 text-sm text-secondary"><Link to="/home" className="inline-flex min-h-11 items-center font-semibold text-link">Today’s plan on Home →</Link> · <Link to="/practice" className="inline-flex min-h-11 items-center font-semibold text-link">Practice &amp; timed runs →</Link> · <Link to="/profile#mastery" className="inline-flex min-h-11 items-center font-semibold text-link">Mastery</Link></p>}
-      <header className="flex flex-wrap items-end justify-between gap-4">
-        <div className="min-w-0">
-          <div className="desk-v3-label !text-[#86226F]">Study desk</div>
-          <h1 className="desk-v3-heading mt-2">
-            {room?.name || "Your study desk"}
-          </h1>
-          <p className="mt-2.5 text-base text-secondary">
-            {room
-              ? `You and ${Math.max(0, room.members.length - 1)} ${room.members.length === 2 ? "partner" : "partners"} · up to 5 · invite only`
-              : "Your private notes, saved questions and focus timer"}
-          </p>
-          <div className="mt-3 flex flex-wrap items-center gap-1.5 text-xs text-secondary">
-            <span className="mr-1">Who can see this desk</span>
-            {["Public", "Partners only", "Private"].map((x) => (
+      <section className="desk-hero">
+        <div className="desk-hero-top">
+          <div className="desk-hero-id">
+            <span className="desk-hero-emblem" aria-hidden="true">
+              <svg viewBox="0 0 22 22" fill="none">
+                <rect x="2.5" y="10" width="17" height="3.2" rx="1.2" fill="currentColor" />
+                <path d="M5 13.2V18.5M17 13.2V18.5M6.5 10V6.5a1.5 1.5 0 0 1 1.5-1.5h6a1.5 1.5 0 0 1 1.5 1.5V10" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+              </svg>
+            </span>
+            <div className="desk-hero-copy">
+              <div className="desk-hero-kicker-row">
+                <span className="desk-hero-eyebrow">
+                  {room ? "Shared desk · Partners only · up to 6" : "Study desk · Private"}
+                </span>
+                <span
+                  role="status"
+                  className={
+                    "desk-sync-pill" +
+                    (sync.status === "saved" ? " is-saved" : "")
+                  }
+                >
+                  {sync.status === "saved"
+                    ? "✓ Saved"
+                    : sync.status === "saving"
+                      ? "Saving…"
+                      : registered
+                        ? "Account desk"
+                        : sync.userId
+                          ? "Browser only"
+                          : "Offline"}
+                </span>
+              </div>
+              <h1 className="desk-hero-title">
+                {room?.name || "Your study desk"}
+              </h1>
+              <p className="desk-hero-sub">
+                {room
+                  ? `You and ${Math.max(0, room.members.length - 1)} ${room.members.length === 2 ? "partner" : "partners"} · invite-only circle`
+                  : "Private notes, saved questions, interactive desk & focus timer"}
+              </p>
+            </div>
+          </div>
+
+          <div className="desk-hero-actions">
+            <select
+              aria-label="Choose your study workspace"
+              value={roomId || ""}
+              onChange={(e) =>
+                nav(e.target.value ? "/desk/" + e.target.value : "/desk")
+              }
+              className="desk-workspace-select"
+            >
+              <option value="">My private study</option>
+              {list?.items.map((r) => (
+                <option key={r.id} value={r.id}>
+                  {r.name}
+                </option>
+              ))}
+            </select>
+            <button
+              type="button"
+              onClick={() => open("share")}
+              className="cr-primary-btn"
+            >
+              {room ? "Share from bank" : "+ Save question"}
+            </button>
+            <button
+              type="button"
+              onClick={() => setTab("session")}
+              className="cr-glass-btn"
+            >
+              Focus timer
+            </button>
+            <details className="desk-tools-drop">
+              <summary className="cr-glass-btn">Tools ⌄</summary>
+              <div className="desk-tools-menu">
+                <button type="button" onClick={() => void refresh()}>
+                  Refresh desk
+                </button>
+                {registered && (
+                  <button type="button" onClick={() => open("create")}>
+                    + New shared desk
+                  </button>
+                )}
+                {room && (
+                  <button type="button" onClick={() => open("settings")}>
+                    Desk settings &amp; members
+                  </button>
+                )}
+                {registered ? (
+                  <>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        confirm(
+                          "Import this browser’s plan?",
+                          "This copies browser goals, checklist, saved questions and notes into your signed-in account. Check that they belong to you.",
+                          async () => {
+                            importGuestDesk();
+                            await flushDesk();
+                          },
+                        )
+                      }
+                    >
+                      Import browser desk
+                    </button>
+                    <button type="button" onClick={exportPersonal}>
+                      Export data (JSON)
+                    </button>
+                    <a
+                      target="_blank"
+                      rel="noreferrer"
+                      href={
+                        "/api/me/desk-notes-print?" +
+                        new URLSearchParams({
+                          user_id: sync.userId,
+                          ...(roomId ? { desk_id: roomId } : {}),
+                        })
+                      }
+                    >
+                      {roomId ? "Print room notes (PDF)" : "Print notes (PDF)"}
+                    </a>
+                  </>
+                ) : (
+                  <Link to="/login">Sign in to sync &amp; share →</Link>
+                )}
+                {!room && (
+                  <>
+                    <Link to="/home">Today’s plan on Home →</Link>
+                    <Link to="/practice">Practice &amp; timed runs →</Link>
+                    <Link to="/profile#mastery">Mastery map →</Link>
+                  </>
+                )}
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div className="desk-hero-bar">
+          <div className="desk-members-strip">
+            {members.map((m, i) => (
               <button
-                key={x}
-                disabled={
-                  x === "Public" ||
-                  (x === "Partners only" && !room) ||
-                  (x === "Private" && !!room)
-                }
-                aria-pressed={room ? x === "Partners only" : x === "Private"}
+                key={m.user_id}
+                type="button"
+                onClick={() => setActiveMember(m.user_id)}
                 className={
-                  B +
-                  " !min-h-9 !px-3 !py-1 border-[#B23A9A] " +
-                  ((room ? x === "Partners only" : x === "Private")
-                    ? "bg-[#1F7F86] text-white"
-                    : "text-[#14595E]")
-                }
-                title={
-                  x === "Public"
-                    ? "Public discovery is off for this release"
-                    : x === "Private" && room
-                      ? "Existing members retain access; use My private study for your own work"
-                      : undefined
+                  "desk-member-chip" +
+                  (focused?.user_id === m.user_id ? " is-active" : "")
                 }
               >
-                {x}
+                <UserAvatar
+                  look={m.avatar}
+                  initials={m.is_you ? "You" : m.handle}
+                  size={24}
+                />
+                <span>
+                  {m.is_you ? "You" : m.handle}
+                  {m.blocked ? " · blocked" : ""}
+                </span>
+                <i
+                  aria-hidden="true"
+                  style={{ background: COLORS[i % COLORS.length] }}
+                />
               </button>
             ))}
+            <button
+              type="button"
+              onClick={() => open(room ? "invite" : "create")}
+              className="desk-member-chip is-invite"
+            >
+              <span>+</span>
+              <span>
+                {room
+                  ? `Invite · ${Math.max(0, 6 - members.length)} open`
+                  : "Start shared desk"}
+              </span>
+            </button>
           </div>
-        </div>
-        <div className="flex flex-wrap gap-2">
+
           <button
-            onClick={() => open("share")}
-            className={B + " border-ink bg-ink text-paper"}
+            type="button"
+            aria-pressed={showDiagram}
+            onClick={() => setShowDiagram((v) => !v)}
+            className="desk-diagram-toggle"
           >
-            {room ? "Share from the bank" : "Save from the bank"}
-          </button>
-          <button
-            onClick={() => setTab("session")}
-            className={B + " border-ink"}
-          >
-            Focus session
+            {showDiagram ? "Hide diagram" : "Show desk diagram"}
           </button>
         </div>
-      </header>
-      <div className="mt-4 flex flex-wrap items-center gap-2">
-        <span
-          className={B + " !min-h-9 border-[#B23A9A] bg-[#1F7F86] text-white"}
-        >
-          Study desk · up to 6
-        </span>
-        <span className="text-xs text-muted">
-          Class desks and public discovery are off.
-        </span>
-        <select
-          aria-label="Choose your study workspace"
-          value={roomId || ""}
-          onChange={(e) =>
-            nav(e.target.value ? "/desk/" + e.target.value : "/desk")
-          }
-          className={I + " !w-auto lg:ml-auto"}
-        >
-          <option value="">My private study</option>
-          {list?.items.map((r) => (
-            <option key={r.id} value={r.id}>
-              {r.name}
-            </option>
-          ))}
-        </select>
-        {registered && (
-          <button onClick={() => open("create")} className={B}>
-            + New shared desk
-          </button>
-        )}
-      </div>
-      <div
-        role="status"
-        className="mt-3 flex flex-wrap items-center gap-3 text-xs text-muted"
-      >
-        <button
-          className="min-h-9 text-link underline"
-          onClick={() => void refresh()}
-        >
-          Refresh desk
-        </button>
-        <span>
-          {sync.status === "saved"
-            ? "✓ Saved to your account"
-            : sync.status === "saving"
-              ? "Saving your private plan…"
-              : registered
-                ? "Account desk"
-                : sync.userId
-                  ? "Saved in this browser"
-                  : "Desk unavailable"}
-        </span>
-        {registered ? (
-          <>
-            <button
-              className="min-h-9 text-link underline"
-              onClick={() =>
-                confirm(
-                  "Import this browser’s plan?",
-                  "This copies browser goals, checklist, saved questions and notes into your signed-in account. Check that they belong to you.",
-                  async () => {
-                    importGuestDesk();
-                    await flushDesk();
-                  },
-                )
-              }
-            >
-              Import browser desk
-            </button>
-            <button
-              className="min-h-9 text-link underline"
-              onClick={exportPersonal}
-            >
-              Export my data (JSON)
-            </button>
-            <a className="min-h-11 py-2 text-link underline" target="_blank" rel="noreferrer"
-              href={'/api/me/desk-notes-print?'+new URLSearchParams({user_id:sync.userId,...(roomId ? {desk_id:roomId} : {})})}>{roomId ? 'Print / save my room notes as PDF' : 'Print / save notes as PDF'}</a>
-            <span className="text-xs text-secondary">Exports use saved account notes. Assessment-linked notes may be omitted.</span>
-          </>
-        ) : (
-          <Link to="/login" className="min-h-9 py-2 text-link underline">
-            Sign in for account saving, shared desks and focus history →
-          </Link>
-        )}
-        {room && (
-          <button
-            className="min-h-9 text-link underline"
-            onClick={() => open("settings")}
-          >
-            Desk settings & members
-          </button>
-        )}
-      </div>
+      </section>
+
       {sync.error && (
-        <div
-          role="alert"
-          className="mt-3 rounded-[8px] border border-mypick bg-mypick-soft p-4 text-sm"
-        >
-          <p>{sync.error} Your local edits are retained in this browser.</p>
-          <div className="mt-2 flex flex-wrap gap-2">
-            <button
-              className={B}
-              onClick={() => void execute(() => reloadAccountDesk(false))}
-            >
-              Load account version
-            </button>
-            <button
-              className={B}
-              onClick={() =>
-                confirm(
-                  "Keep this browser’s version?",
-                  "This replaces the latest account desk with the local edits shown here. Your notes and saved questions on another device may differ.",
-                  () => reloadAccountDesk(true),
-                )
-              }
-            >
-              Keep these local edits
-            </button>
-            <button className={B} onClick={() => void flushDesk()}>
-              Retry save
-            </button>
-          </div>
-        </div>
+        <FlashBanner
+          kind="error"
+          title="Sync conflict"
+          message={`${sync.error} Your local edits are retained in this browser.`}
+          actionLabel="Retry save"
+          onAction={() => void flushDesk()}
+          extra={
+            <div className="mt-2 flex flex-wrap gap-2">
+              <button
+                type="button"
+                className="finna-flash-subbtn"
+                onClick={() => void execute(() => reloadAccountDesk(false))}
+              >
+                Load account version
+              </button>
+              <button
+                type="button"
+                className="finna-flash-subbtn"
+                onClick={() =>
+                  confirm(
+                    "Keep this browser’s version?",
+                    "This replaces the latest account desk with the local edits shown here. Your notes and saved questions on another device may differ.",
+                    () => reloadAccountDesk(true),
+                  )
+                }
+              >
+                Keep local edits
+              </button>
+            </div>
+          }
+        />
       )}
       {error && (
-        <p
-          role="alert"
-          className="mt-3 rounded-[8px] border border-mypick bg-mypick-soft p-3 text-sm text-mypick"
-        >
-          {error}
-          <button className={B + " ml-2"} onClick={() => void refresh()}>
-            Refresh
-          </button>
-        </p>
+        <FlashBanner
+          kind="error"
+          title="Desk error"
+          message={error}
+          actionLabel="Refresh"
+          onAction={() => void refresh()}
+          onDismiss={() => setError("")}
+        />
       )}
       {notice && (
-        <p role="status" className="mt-3 text-sm text-correct-dark">
-          {notice}
-        </p>
+        <FlashBanner
+          kind="success"
+          title="Saved"
+          message={notice}
+          onDismiss={() => setNotice("")}
+        />
       )}
+
       {list?.invitations.length ? (
-        <section className="mt-5 rounded-[8px] border border-[#B23A9A] bg-[#EEDDEC] p-4">
+        <section className="desk-invite-banner">
           <h2 className="font-display text-lg">Your desk invitations</h2>
           {list.invitations.map((i) => (
-            <div key={i.id} className="mt-3 border-t border-[#D7BFD5] pt-3">
+            <div key={i.id} className="mt-3 border-t border-hairline pt-3">
               <p className="text-sm">
                 <b>@{i.sender}</b> invited you to <b>{i.name}</b>
               </p>
-              <p className="mt-1 text-xs">
-                Current shared resources become visible on joining. Chat starts
-                from the time you join. Personal scores and mistakes stay
-                private until you choose otherwise. Expires{" "}
-                {new Date(i.expires_at).toLocaleDateString("en-IN")}.
+              <p className="mt-1 text-xs text-secondary">
+                Current shared resources become visible on joining. Personal
+                scores and mistakes stay private until you choose otherwise.
+                Expires {new Date(i.expires_at).toLocaleDateString("en-IN")}.
               </p>
               <div className="mt-2 flex flex-wrap gap-2">
                 <button
                   disabled={busy}
-                  className={B + " bg-ink text-paper"}
+                  className="cr-primary-btn"
                   onClick={() =>
                     void execute(async () => {
                       await deskWrite("/invites/" + i.id, {
@@ -814,7 +860,7 @@ export default function StudyDesk() {
                 </button>
                 <button
                   disabled={busy}
-                  className={B}
+                  className="finna-st-btn"
                   onClick={() =>
                     void execute(async () => {
                       await deskWrite("/invites/" + i.id, {
@@ -827,18 +873,18 @@ export default function StudyDesk() {
                   Decline
                 </button>
                 <button
-                  className={B}
+                  className="finna-st-btn"
                   onClick={() => {
                     setReportTarget({ kind: "invite", id: i.id });
                     setReportReason("");
                     setPanel("report");
                   }}
                 >
-                  Report invitation
+                  Report
                 </button>
                 {i.sender_id && (
                   <button
-                    className={B}
+                    className="finna-st-btn"
                     onClick={() =>
                       confirm(
                         "Block this inviter?",
@@ -861,73 +907,54 @@ export default function StudyDesk() {
           ))}
         </section>
       ) : null}
-      <div className="mt-5 flex flex-wrap gap-2">
-        {members.map((m, i) => (
-          <button
-            key={m.user_id}
-            onClick={() => setActiveMember(m.user_id)}
-            className={
-              B +
-              " !py-1 !pl-1 " +
-              (focused?.user_id === m.user_id
-                ? "border-[#1F7F86] bg-[#D8E9E5]"
-                : "border-hairline")
-            }
-          >
-            <UserAvatar look={m.avatar} initials={m.is_you?'You':m.handle} size={28}/>
-            {m.is_you ? "You" : m.handle}
-            {m.blocked ? " · blocked" : ""}
-            <span
-              className="h-2 w-2 rounded-full"
-              style={{ background: COLORS[i % COLORS.length] }}
+
+      {showDiagram && (
+        <div className="desk-v3-scene">
+          <div className="desk-v3-scene-canvas">
+            <DeskScene
+              active={tab}
+              personal={!room}
+              pick={(key) => {
+                if (!room && key === "practice") nav("/practice");
+                else if (!room && key === "mistakes") nav("/revise?tab=queue");
+                else if (!room && key === "progress") nav("/profile#mastery");
+                else if (!room && key === "bookmarks") setTab("shared");
+                else setTab(key);
+              }}
+              members={sceneMembers}
+              focus={focused?.user_id || ""}
+              pickMember={setActiveMember}
+              invite={() => open(room ? "invite" : "create")}
             />
-          </button>
-        ))}
-        <button
-          onClick={() => open(room ? "invite" : "create")}
-          className={B + " !py-1 !pl-1 border-dashed border-ink"}
-        >
-          <span className="grid h-7 w-7 place-items-center rounded-full border border-dashed border-ink">
-            +
-          </span>
-          Invite · {Math.max(0, 6 - members.length)} seats open
-        </button>
-      </div>
-      {room && <>
-      <div className="desk-v3-scene">
-        <div className="desk-v3-scene-canvas">
-          <DeskScene
-            active={tab}
-            pick={setTab}
-            members={sceneMembers}
-            focus={focused?.user_id || ""}
-            pickMember={setActiveMember}
-            invite={() => open(room ? "invite" : "create")}
-          />
-        </div>
-        <div className="flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-ink bg-card px-[18px] py-3 text-sm">
-          {members.map((m, i) => (
-            <span key={m.user_id} className="flex items-center gap-2">
-              <span
-                className="h-[9px] w-[9px] rounded-full"
-                style={{ background: COLORS[i % COLORS.length] }}
-              />
-              <b>{m.is_you ? "You" : m.handle}</b>
-              <span className="text-secondary">
-                {m.blocked
-                  ? "blocked"
-                  : m.focusing
-                    ? "focus session shared"
-                    : "member"}
-              </span>
+          </div>
+          <div className="desk-scene-foot">
+            <div className="desk-scene-legend">
+              {members.map((m, i) => (
+                <span key={m.user_id} className="desk-scene-person">
+                  <i
+                    aria-hidden="true"
+                    style={{ background: COLORS[i % COLORS.length] }}
+                  />
+                  <b>{m.is_you ? "You" : m.handle}</b>
+                  <small>
+                    {m.blocked
+                      ? "blocked"
+                      : m.focusing
+                        ? "focus active"
+                        : room
+                          ? "member"
+                          : "solo mode"}
+                  </small>
+                </span>
+              ))}
+            </div>
+            <span className="desk-scene-tip">
+              Click any item on the desk to jump straight to that tool
             </span>
-          ))}
-          <span className="ml-auto font-mono text-xs text-muted">
-            Tap a person or anything on the desk
-          </span>
+          </div>
         </div>
-      </div>
-      </>}
+      )}
+
       {loading && (
         <p role="status" className="mt-4 text-sm text-muted">
           Loading your study activity…
@@ -936,26 +963,21 @@ export default function StudyDesk() {
       <div className="desk-v3-columns">
         <section className="desk-v3-main">
           <div
-            className="desk-v3-tabs"
+            className="desk-v3-tabs desk-tabs-v4"
             role="group"
             aria-label="Desk content sections"
           >
-            {tabs.map(([id, label, color, tint]) => (
+            {tabs.map(([id, label, color]) => (
               <button
                 key={id}
                 type="button"
                 aria-pressed={tab === id}
                 onClick={() => setTab(id)}
-                className={B}
-                style={{
-                  borderColor: color,
-                  background: tab === id ? color : tint,
-                  color: tab === id ? "#FBF8F1" : "#1D1B18",
-                }}
+                className={"desk-tab-pill" + (tab === id ? " is-active" : "")}
               >
                 <span
-                  className="h-2 w-2 rounded-full"
-                  style={{ background: tab === id ? "#FBF8F1" : color }}
+                  className="desk-tab-dot"
+                  style={{ background: tab === id ? "#FFFFFF" : color }}
                 />
                 {label}
               </button>

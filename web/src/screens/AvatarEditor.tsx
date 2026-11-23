@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import CosmeticShop from "../components/CosmeticShop";
 import AvatarArt, { UserAvatar } from "../components/AvatarArt";
+import FlashBanner from "../components/FlashBanner";
 import {
   AVATAR_COLORS,
   loadAvatar,
@@ -10,6 +11,7 @@ import {
   type AvatarLook,
   type AvatarItem,
 } from "../lib/avatar";
+
 const CATEGORIES: [keyof AvatarLook, string][] = [
   ["skin", "Skin"],
   ["hair", "Hair"],
@@ -19,12 +21,11 @@ const CATEGORIES: [keyof AvatarLook, string][] = [
   ["bg", "Background"],
   ["frame", "Frame"],
 ];
-const B =
-  "inline-flex min-h-11 items-center justify-center rounded-pill border border-ink px-4 py-2 text-sm font-semibold disabled:opacity-50";
+
 export default function AvatarEditor() {
   const [account, setAccount] = useState<AvatarAccount | null>(null),
     [look, setLook] = useState<AvatarLook | null>(null),
-    [tab, setTab] = useState("Customize"),
+    [tab, setTab] = useState<"Customize" | "Inventory" | "Shop">("Customize"),
     [category, setCategory] = useState<keyof AvatarLook>("hair"),
     [error, setError] = useState(""),
     [notice, setNotice] = useState(""),
@@ -32,6 +33,7 @@ export default function AvatarEditor() {
     [loading, setLoading] = useState(true);
   const generation = useRef(0);
   const [initialsPreview, setInitialsPreview] = useState(false);
+
   async function load() {
     const run = ++generation.current;
     setLoading(true);
@@ -48,6 +50,7 @@ export default function AvatarEditor() {
       if (run === generation.current) setLoading(false);
     }
   }
+
   useEffect(() => {
     void load();
     const auth = () => {
@@ -63,18 +66,21 @@ export default function AvatarEditor() {
       window.removeEventListener("ism-auth-change", auth);
     };
   }, []);
+
   const dirty =
     !!account &&
     !!look &&
     (initialsPreview
       ? account.avatar !== null
       : JSON.stringify(account.avatar) !== JSON.stringify(look));
+
   function equip(item: AvatarItem) {
     if (!item.available || !look) return;
     setInitialsPreview(false);
     setLook({ ...look, [item.category]: item.value });
     setNotice("");
   }
+
   function shuffle() {
     if (!account || !look) return;
     const next = { ...look };
@@ -83,12 +89,15 @@ export default function AvatarEditor() {
       const options = account.catalog.filter(
         (i) => i.category === cat && i.available,
       );
-      next[cat] = options[Math.floor(Math.random() * options.length)].value;
+      if (options.length) {
+        next[cat] = options[Math.floor(Math.random() * options.length)].value;
+      }
     }
     setInitialsPreview(false);
     setLook(next);
     setNotice("");
   }
+
   async function save(reset = false) {
     if (!account || !account.registered) return;
     const owner = account.user_id;
@@ -123,278 +132,327 @@ export default function AvatarEditor() {
       if (run === generation.current) setBusy(false);
     }
   }
+
+  const ownedCount = account
+    ? account.catalog.filter((i) => i.available).length
+    : 0;
+
   return (
-    <main className="mx-auto max-w-[1240px] px-6 pb-24 pt-8">
-      <Link
-        to="/profile"
-        className="inline-flex min-h-11 items-center text-sm text-link"
-      >
-        ← Your profile
-      </Link>
-      <div className="font-mono text-xs uppercase tracking-[.1em] text-[#9A6410]">
-        Profile
-      </div>
-      <h1 className="mt-2 font-display text-[clamp(34px,5vw,50px)] font-medium -tracking-[.02em]">
-        Avatar & inventory
-      </h1>
+    <main className="finna-page av-page">
+      <header className="av-hero">
+        <div className="av-hero-copy">
+          <span className="cr-eyebrow">Profile · Avatar Studio</span>
+          <h1>Avatar &amp; inventory</h1>
+          <p>
+            Customize your study avatar, browse earned level rewards, or unlock
+            cosmetics with reward points.
+          </p>
+        </div>
+        <div className="av-hero-actions">
+          <Link to="/profile" className="cr-glass-btn">
+            ← Profile
+          </Link>
+          <Link to="/profile/rewards" className="cr-glass-btn">
+            Rewards wallet
+          </Link>
+        </div>
+      </header>
+
       {loading && (
-        <p role="status" className="mt-6">
+        <div role="status" className="finna-card text-sm text-secondary">
           Loading your saved look…
-        </p>
-      )}
-      {error && (
-        <div
-          role="alert"
-          className="mt-5 rounded-[10px] border border-wrong bg-wrong-soft p-4 text-sm"
-        >
-          {error}{" "}
-          <button
-            className="min-h-11 px-3 underline"
-            onClick={() => void load()}
-          >
-            Reload saved look
-          </button>
         </div>
       )}
+      {error && (
+        <FlashBanner
+          kind="error"
+          title="Could not load avatar"
+          message={error}
+          actionLabel="Reload"
+          onAction={() => void load()}
+          onDismiss={() => setError("")}
+        />
+      )}
+      {notice && (
+        <FlashBanner
+          kind="success"
+          title="Avatar updated"
+          message={notice}
+          onDismiss={() => setNotice("")}
+        />
+      )}
+
       {account && look && !loading && (
-        <div className="mt-[22px] flex flex-wrap items-start gap-7">
-          <aside
-            className="flex min-w-0 flex-[1_1_280px] flex-col gap-3.5 sm:sticky sm:top-20"
-            style={{ maxWidth: 360 }}
-          >
-            <div className="overflow-hidden rounded-[14px] border border-ink bg-[#FBF8F1]">
-              <div className="h-[70px] bg-[linear-gradient(90deg,#C0462C,#D8A33A,#1F7F86,#33609E)]" />
-              <div className="-mt-14 flex flex-col items-center px-5 pb-5">
-                {initialsPreview ? (
-                  <UserAvatar initials={account.handle} size={168} />
-                ) : (
-                  <AvatarArt
-                    look={look}
-                    size={168}
-                    label="Your avatar preview"
-                  />
-                )}
-                <div className="mt-2 max-w-full break-words text-center font-display text-xl">
-                  {account.name || account.handle}
+        <div className="av-layout">
+          <aside className="av-stage-col">
+            <div className="av-stage-card">
+              <div className="av-stage-banner" />
+              <div className="av-stage-body">
+                <div className="av-stage-ring">
+                  {initialsPreview ? (
+                    <UserAvatar initials={account.handle} size={156} />
+                  ) : (
+                    <AvatarArt
+                      look={look}
+                      size={156}
+                      label="Your avatar preview"
+                    />
+                  )}
                 </div>
-                <p className="text-sm text-secondary">
+                <h2 className="av-stage-name">
+                  {account.name || account.handle}
+                </h2>
+                <p className="av-stage-meta">
                   Level {account.level} · @{account.handle}
                 </p>
-                <span className="mt-3 rounded-pill bg-rewards-soft px-3 py-1 text-xs">
-                  {dirty ? "Preview · save your look" : "Your saved look"}
-                </span>
-              </div>
-            </div>
-            <div className="flex gap-2">
-              <button
-                className={B + " flex-1"}
-                disabled={busy}
-                onClick={shuffle}
-              >
-                Shuffle
-              </button>
-              {account.registered ? (
-                <button
-                  className={B + " flex-1 bg-ink text-paper"}
-                  disabled={busy || !dirty}
-                  onClick={() => void save()}
-                >
-                  {busy ? "Saving…" : "Save look"}
-                </button>
-              ) : (
-                <Link className={B + " flex-1 bg-ink text-paper"} to="/login">
-                  Sign in to save
-                </Link>
-              )}
-            </div>
-            <p className="text-xs leading-normal text-secondary">
-              Your saved avatar appears beside your profile, posts, creator pages
-              and study desk membership. Your existing visibility settings
-              still apply.
-            </p>
-            {notice && (
-              <p role="status" className="text-sm text-correct-dark">
-                {notice}
-              </p>
-            )}
-            <button
-              className={B}
-              disabled={busy}
-              onClick={() => {
-                setLook(account.avatar || account.default);
-                setInitialsPreview(!account.avatar);
-                setNotice("Preview changes discarded.");
-              }}
-            >
-              Revert preview
-            </button>
-            {account.avatar && account.registered && (
-              <button
-                className={B}
-                disabled={busy}
-                onClick={() => void save(true)}
-              >
-                Use initials instead
-              </button>
-            )}
-          </aside>
-          <section className="min-w-0 flex-[999_1_560px]">
-            <div
-              role="group"
-              aria-label="Avatar workspace"
-              className="flex gap-[22px] border-b border-ink"
-            >
-              {["Customize", "Inventory", "Shop"].map((t) => (
-                <button
-                  key={t}
-                  aria-pressed={tab === t}
-                  onClick={() => setTab(t)}
+                <span
                   className={
-                    "min-h-11 border-b-2 py-[11px] text-sm font-semibold " +
-                    (tab === t ? "border-ink" : "border-transparent text-muted")
+                    "av-stage-pill" + (dirty ? " is-dirty" : " is-saved")
                   }
                 >
-                  {t}
+                  {dirty ? "Unsaved preview" : "Saved look ✓"}
+                </span>
+
+                <div className="av-stage-btns">
+                  <button
+                    type="button"
+                    className="finna-st-btn"
+                    disabled={busy}
+                    onClick={shuffle}
+                  >
+                    Shuffle
+                  </button>
+                  {account.registered ? (
+                    <button
+                      type="button"
+                      className="cr-primary-btn"
+                      disabled={busy || !dirty}
+                      onClick={() => void save()}
+                    >
+                      {busy ? "Saving…" : "Save look"}
+                    </button>
+                  ) : (
+                    <Link className="cr-primary-btn" to="/login">
+                      Sign in to save
+                    </Link>
+                  )}
+                </div>
+
+                <div className="av-stage-subactions">
+                  <button
+                    type="button"
+                    className="av-text-btn"
+                    disabled={busy || !dirty}
+                    onClick={() => {
+                      setLook(account.avatar || account.default);
+                      setInitialsPreview(!account.avatar);
+                      setNotice("Preview changes discarded.");
+                    }}
+                  >
+                    Revert preview
+                  </button>
+                  {account.avatar && account.registered && (
+                    <button
+                      type="button"
+                      className="av-text-btn"
+                      disabled={busy}
+                      onClick={() => void save(true)}
+                    >
+                      Use initials instead
+                    </button>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            <p className="av-stage-note">
+              Your saved avatar appears beside your profile, study desk seats,
+              and public creator page. Privacy settings still apply.
+            </p>
+          </aside>
+
+          <section className="av-workspace">
+            <div className="av-tabs" role="group" aria-label="Avatar workspace">
+              {(
+                [
+                  ["Customize", "Customize", null],
+                  ["Inventory", "Inventory", ownedCount],
+                  ["Shop", "Shop", null],
+                ] as const
+              ).map(([id, label, count]) => (
+                <button
+                  key={id}
+                  type="button"
+                  aria-pressed={tab === id}
+                  onClick={() => setTab(id)}
+                  className={"av-tab" + (tab === id ? " is-active" : "")}
+                >
+                  <span>{label}</span>
+                  {count != null && <em className="av-tab-count">{count}</em>}
                 </button>
               ))}
             </div>
+
             {tab === "Customize" ? (
-              <>
+              <div className="av-panel">
                 <div
                   role="group"
                   aria-label="Avatar category"
-                  className="mt-4 flex flex-wrap gap-1.5"
+                  className="av-cat-strip"
                 >
                   {CATEGORIES.map(([cat, label]) => (
                     <button
                       key={cat}
+                      type="button"
                       aria-pressed={category === cat}
                       onClick={() => setCategory(cat)}
                       className={
-                        B +
-                        " !min-h-11 !px-[13px] !py-1.5 " +
-                        (category === cat ? "bg-ink text-paper" : "")
+                        "av-cat-pill" + (category === cat ? " is-active" : "")
                       }
                     >
                       {label}
                     </button>
                   ))}
                 </div>
-                <div className="mt-4 grid grid-cols-[repeat(auto-fill,minmax(132px,1fr))] gap-3">
+
+                <div className="av-tile-grid">
                   {account.catalog
                     .filter((i) => i.category === category)
-                    .map((item) => (
-                      <button
-                        key={item.id}
-                        disabled={!item.available || busy}
-                        aria-pressed={look[item.category] === item.value}
-                        onClick={() => equip(item)}
-                        className={
-                          "flex min-h-[132px] min-w-0 flex-col gap-1.5 rounded-[10px] border-2 bg-[#FBF8F1] p-3 text-left disabled:opacity-55 " +
-                          (look[item.category] === item.value
-                            ? "border-ink"
-                            : "border-[#E4DBC9]")
-                        }
-                      >
-                        <span
-                          className="flex h-16 w-full items-center justify-center overflow-hidden rounded-lg"
-                          style={{
-                            background: ["skin", "hairC", "bg"].includes(
-                              item.category,
-                            )
-                              ? item.value
-                              : AVATAR_COLORS[item.value] || "#EFE6D3",
-                          }}
+                    .map((item) => {
+                      const selected =
+                        !initialsPreview && look[item.category] === item.value;
+                      return (
+                        <button
+                          key={item.id}
+                          type="button"
+                          disabled={!item.available || busy}
+                          aria-pressed={selected}
+                          onClick={() => equip(item)}
+                          className={
+                            "av-tile" +
+                            (selected ? " is-selected" : "") +
+                            (!item.available ? " is-locked" : "")
+                          }
                         >
-                          {["hair", "acc", "frame"].includes(item.category) && (
-                            <AvatarArt
-                              look={{ ...look, [item.category]: item.value }}
-                              size={64}
-                              label={item.label + " preview"}
-                            />
-                          )}
-                        </span>
-                        <span className="text-sm font-semibold">
-                          {item.label}
-                        </span>
-                        <span className="font-mono text-xs text-secondary">
-                          {!item.available
-                            ? item.price_points?item.price_points+" points · available in Shop":"Unlocks at level " + item.level
-                            : look[item.category] === item.value
-                              ? "Selected"
-                              : item.level === 1
-                                ? "Starter · tap to wear"
-                                : item.claimed
-                                  ? item.price_points?"Owned · tap to wear":"Earned · tap to wear"
-                                  : "Level reward · save to claim"}
-                        </span>
-                      </button>
-                    ))}
+                          <span
+                            className="av-tile-preview"
+                            style={{
+                              background: ["skin", "hairC", "bg"].includes(
+                                item.category,
+                              )
+                                ? item.value
+                                : AVATAR_COLORS[item.value] || "#E2E8F0",
+                            }}
+                          >
+                            {["hair", "acc", "frame"].includes(
+                              item.category,
+                            ) && (
+                              <AvatarArt
+                                look={{ ...look, [item.category]: item.value }}
+                                size={64}
+                                label={item.label + " preview"}
+                              />
+                            )}
+                            {selected && (
+                              <span className="av-tile-check" aria-hidden="true">
+                                ✓
+                              </span>
+                            )}
+                          </span>
+                          <span className="av-tile-title">{item.label}</span>
+                          <span className="av-tile-sub">
+                            {!item.available
+                              ? item.price_points
+                                ? `${item.price_points} pts · Shop`
+                                : `Unlocks Lv. ${item.level}`
+                              : selected
+                                ? "Equipped"
+                                : item.level === 1
+                                  ? "Starter"
+                                  : item.claimed
+                                    ? item.price_points
+                                      ? "Owned"
+                                      : "Earned"
+                                    : "Level reward"}
+                          </span>
+                        </button>
+                      );
+                    })}
                 </div>
-              </>
-            ) : tab==='Shop' ? <CosmeticShop key={account.user_id} account={account} look={look} onPurchased={setAccount}/> : (
-              <>
-                <p className="mt-4 text-sm text-secondary">
-                  Starter items are free. Saving a look claims your eligible
-                  level rewards permanently. Purchases use points; cosmetics never change XP or ranks.
+              </div>
+            ) : tab === "Shop" ? (
+              <div className="av-panel">
+                <CosmeticShop
+                  key={account.user_id}
+                  account={account}
+                  look={look}
+                  onPurchased={setAccount}
+                />
+              </div>
+            ) : (
+              <div className="av-panel">
+                <p className="text-sm text-secondary">
+                  Starter items are free. Saving a look claims eligible level
+                  rewards permanently. Cosmetics never affect XP or ranks.
                 </p>
                 {CATEGORIES.map(([cat, label]) => {
                   const items = account.catalog.filter(
                     (i) => i.category === cat && i.available,
                   );
                   return (
-                    <section key={cat} className="mt-[18px]">
-                      <h2 className="border-b border-ink pb-2 font-mono text-xs uppercase tracking-[.1em] text-muted">
+                    <section key={cat} className="av-inv-group">
+                      <div className="finna-st-grouplabel">
                         {label} · {items.length}
-                      </h2>
-                      <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-x-5">
-                        {items.map((item) => (
-                          <div
-                            key={item.id}
-                            className="flex items-center gap-2.5 border-b border-hairline py-2.5"
-                          >
-                            <AvatarArt
-                              look={{ ...look, [item.category]: item.value }}
-                              size={36}
-                              label={item.label + " preview"}
-                            />
-                            <span className="min-w-0 flex-1">
-                              <b className="block text-sm">
-                                {item.label}
-                              </b>
-                              <span className="text-xs text-muted">
-                                {item.price_points?'Points purchase · owned':item.level === 1
-                                  ? "Starter"
-                                  : "Level " +
-                                    item.level +
-                                    (item.claimed
-                                      ? " · earned"
-                                      : " · eligible")}
-                              </span>
-                            </span>
-                            <button
-                              disabled={busy}
-                              className={B + " !px-3 !text-xs"}
-                              onClick={() => equip(item)}
-                            >
-                              {look[item.category] === item.value
-                                ? "Selected"
-                                : "Wear"}
-                            </button>
-                          </div>
-                        ))}
+                      </div>
+                      <div className="av-inv-grid">
+                        {items.map((item) => {
+                          const selected =
+                            !initialsPreview &&
+                            look[item.category] === item.value;
+                          return (
+                            <div key={item.id} className="av-inv-row">
+                              <AvatarArt
+                                look={{ ...look, [item.category]: item.value }}
+                                size={38}
+                                label={item.label + " preview"}
+                              />
+                              <div className="av-inv-meta">
+                                <strong>{item.label}</strong>
+                                <small>
+                                  {item.price_points
+                                    ? "Points purchase · owned"
+                                    : item.level === 1
+                                      ? "Starter"
+                                      : `Level ${item.level}${item.claimed ? " · earned" : " · eligible"}`}
+                                </small>
+                              </div>
+                              <button
+                                type="button"
+                                disabled={busy}
+                                className={
+                                  "finna-st-btn" +
+                                  (selected ? " finna-st-btn--primary" : "")
+                                }
+                                onClick={() => equip(item)}
+                              >
+                                {selected ? "Equipped" : "Wear"}
+                              </button>
+                            </div>
+                          );
+                        })}
                       </div>
                     </section>
                   );
                 })}
-              </>
+              </div>
             )}
-            <p className="mt-5 text-xs text-secondary">
+
+            <p className="av-foot-note">
               Shuffle keeps your chosen skin tone. Save look applies every
               selected category.{" "}
               {account.registered
                 ? "Level rewards use your earned account XP."
-                : "This is a guest preview; sign in for account saving and earned items."}
+                : "Guest preview · sign in to save and claim earned items."}
             </p>
           </section>
         </div>

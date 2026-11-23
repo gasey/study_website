@@ -99,11 +99,11 @@ export const SITE_MAP: readonly Destination[] = [
   {
     id: 'index',
     path: '/index',
-    label: 'Index',
+    label: 'All pages',
     section: 'study',
-    blurb: 'Complete directory of every study surface, tool and account page on Finna.',
-    surfaces: ['nav', 'index', 'quickfind'],
-    keywords: 'sitemap directory all pages tools more',
+    blurb: 'Compact directory of every study surface, tool and account page on Finna.',
+    surfaces: ['index', 'quickfind'],
+    keywords: 'sitemap directory all pages tools more index',
   },
 
   // Study surfaces

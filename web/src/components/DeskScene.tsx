@@ -1,6 +1,7 @@
 import { AvatarFace } from "./AvatarArt";
 import type { AvatarLook } from "../lib/avatar";
 import * as React from "react";
+
 export interface SceneMember {
   avatar?: AvatarLook | null;
   ini: string;
@@ -11,13 +12,17 @@ export interface SceneMember {
   hair: string;
   arm: string;
 }
-const H = {
-  plum: ["#8A4A86"],
-  blue: ["#2D5BD0"],
-  teal: ["#1F7F86"],
-  verm: ["#C0462C"],
-  green: ["#3F8350"],
+
+const ACCENT = {
+  plum: "#7C3AED",
+  blue: "#2563EB",
+  teal: "#0A7D8C",
+  coral: "#EA580C",
+  emerald: "#059669",
+  amber: "#D97706",
+  rose: "#C2410C",
 };
+
 export default function DeskScene({
   active,
   pick,
@@ -25,6 +30,7 @@ export default function DeskScene({
   focus,
   pickMember,
   invite,
+  personal = false,
 }: {
   active: string;
   pick: (key: string) => void;
@@ -32,12 +38,14 @@ export default function DeskScene({
   focus: string;
   pickMember: (id: string) => void;
   invite: () => void;
+  personal?: boolean;
 }) {
   const h = (
     tag: string,
     props: Record<string, unknown> | null,
     ...children: React.ReactNode[]
   ) => React.createElement(tag, props, ...children);
+
   const an = (
     name: string,
     dur: string,
@@ -57,6 +65,7 @@ export default function DeskScene({
     transformBox: "fill-box",
     transformOrigin: origin || "center",
   });
+
   const tag = (
     key: string,
     label: string,
@@ -66,57 +75,70 @@ export default function DeskScene({
     on: boolean,
     pulse: boolean,
   ) => {
-    const w = label.length * 7 + 30;
+    const w = Math.max(72, label.length * 6.8 + 30);
     return h(
       "g",
-      { key: "t" + key },
-      pulse && !on
-        ? h("circle", {
-            cx: x - w / 2 + 12,
-            cy: y + 11,
-            r: 4,
-            fill: color,
-            "data-anim": 1,
-            style: an("ism-pulse", "1.8s"),
-          })
-        : null,
+      { key: "t" + key, className: "desk-svg-tag" + (on ? " is-on" : "") },
+      h("rect", {
+        x: x - w / 2,
+        y: y + 2,
+        width: w,
+        height: 24,
+        rx: 12,
+        fill: "rgba(15,23,42,0.14)",
+        opacity: on ? 0.28 : 0.12,
+      }),
       h("rect", {
         x: x - w / 2,
         y,
         width: w,
-        height: 22,
-        rx: 11,
-        fill: on ? color : "#FBF8F1",
-        stroke: on ? color : "#1D1B18",
+        height: 24,
+        rx: 12,
+        fill: on ? color : "var(--desk-tag-bg, #FFFFFF)",
+        stroke: on ? color : "var(--desk-tag-border, rgba(15,23,42,0.16))",
+        strokeWidth: on ? 1.5 : 1,
       }),
+      pulse && !on
+        ? h("circle", {
+            cx: x - w / 2 + 12,
+            cy: y + 12,
+            r: 5,
+            fill: color,
+            opacity: 0.35,
+            "data-anim": 1,
+            style: an("ism-pulse", "2.1s"),
+          })
+        : null,
       h("circle", {
         cx: x - w / 2 + 12,
-        cy: y + 11,
-        r: 4,
-        fill: on ? "#FBF8F1" : color,
+        cy: y + 12,
+        r: 3.8,
+        fill: on ? "#FFFFFF" : color,
       }),
       h(
         "text",
         {
-          x: x + 7,
-          y: y + 15,
+          x: x + 6,
+          y: y + 15.5,
           textAnchor: "middle",
-          fontFamily: "IBM Plex Mono, monospace",
           fontSize: 11,
-          fill: on ? "#FBF8F1" : "#1D1B18",
+          fontWeight: 700,
+          fill: on ? "#FFFFFF" : "var(--desk-tag-ink, #0F172A)",
         },
         label,
       ),
     );
   };
-  const hot = (key: string, kids: React.ReactNode[]) =>
+
+  const hot = (key: string, label: string, kids: React.ReactNode[]) =>
     h(
       "g",
       {
         key,
         role: "button",
         tabIndex: 0,
-        "aria-label": key === "session" ? "Focus sessions" : key,
+        className: "desk-svg-hot",
+        "aria-label": label,
         onKeyDown: (e: React.KeyboardEvent) => {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
@@ -128,42 +150,45 @@ export default function DeskScene({
       },
       ...kids,
     );
+
   const SEATS = [150, 280, 410, 550, 680, 810];
+
   const chairs = SEATS.map((cx, i) =>
     h("rect", {
       key: "ch" + i,
-      x: cx - 42,
-      y: 140,
-      width: 84,
-      height: 116,
-      rx: 12,
-      fill: members[i] ? "#6E4630" : "none",
-      stroke: members[i] ? "none" : "#8A5A3B",
-      strokeWidth: 2,
+      x: cx - 38,
+      y: 146,
+      width: 76,
+      height: 108,
+      rx: 16,
+      fill: members[i] ? "var(--desk-chair, #334155)" : "var(--desk-chair-empty, rgba(148,163,184,0.12))",
+      stroke: members[i] ? "var(--desk-chair-stroke, #1E293B)" : "var(--desk-chair-dash, rgba(100,116,139,0.45))",
+      strokeWidth: 1.5,
       strokeDasharray: members[i] ? null : "6 5",
     }),
   );
+
   const bodies = SEATS.map((cx, i) => {
     const m = members[i];
     if (!m) return null;
-    const d = i * 0.7 + "s";
+    const d = i * 0.65 + "s";
     return h(
       "g",
       {
         key: "p" + i,
-        opacity: m.here ? 1 : 0.28,
+        opacity: m.here ? 1 : 0.34,
         onClick: () => pickMember(m.ini),
-        style: { cursor: "pointer", transition: "opacity 400ms" },
+        style: { cursor: "pointer", transition: "opacity 350ms ease" },
       },
       h(
         "g",
-        { "data-anim": 1, style: an("ism-breathe", "4s", "center", d) },
+        { "data-anim": 1, style: an("ism-breathe", "4.2s", "center", d) },
         h("rect", {
-          x: cx - 34,
-          y: 190,
-          width: 68,
-          height: 76,
-          rx: 30,
+          x: cx - 33,
+          y: 192,
+          width: 66,
+          height: 74,
+          rx: 28,
           fill: m.body,
         }),
         m.avatar
@@ -175,24 +200,25 @@ export default function DeskScene({
           : h(
               "g",
               null,
-              h("circle", { cx, cy: 164, r: 24, fill: m.skin }),
-              h("ellipse", { cx, cy: 150, rx: 25, ry: 13, fill: m.hair }),
+              h("circle", { cx, cy: 164, r: 23, fill: m.skin }),
+              h("ellipse", { cx, cy: 150, rx: 24, ry: 12.5, fill: m.hair }),
               i % 2
-                ? h("circle", { cx: cx + 19, cy: 144, r: 8, fill: m.hair })
+                ? h("circle", { cx: cx + 18, cy: 144, r: 7.5, fill: m.hair })
                 : h("rect", {
-                    x: cx - 25,
+                    x: cx - 24,
                     y: 146,
-                    width: 8,
-                    height: 24,
+                    width: 7.5,
+                    height: 23,
                     rx: 4,
                     fill: m.hair,
                   }),
-              h("circle", { cx: cx - 8, cy: 167, r: 2, fill: "#1D1B18" }),
-              h("circle", { cx: cx + 8, cy: 167, r: 2, fill: "#1D1B18" }),
+              h("circle", { cx: cx - 7.5, cy: 167, r: 2, fill: "#1E293B" }),
+              h("circle", { cx: cx + 7.5, cy: 167, r: 2, fill: "#1E293B" }),
             ),
       ),
     );
   });
+
   const arms = SEATS.map((cx, i) => {
     const m = members[i];
     if (!m) return null;
@@ -200,40 +226,51 @@ export default function DeskScene({
       "g",
       {
         key: "a" + i,
-        opacity: m.here ? 1 : 0.28,
+        opacity: m.here ? 1 : 0.34,
         onClick: () => pickMember(m.ini),
         style: { cursor: "pointer" },
       },
       h("rect", {
-        x: cx - 42,
-        y: 236,
-        width: 32,
-        height: 14,
-        rx: 7,
+        x: cx - 40,
+        y: 237,
+        width: 30,
+        height: 13,
+        rx: 6.5,
         fill: m.arm,
       }),
       h("rect", {
         x: cx + 10,
-        y: 236,
-        width: 32,
-        height: 14,
-        rx: 7,
+        y: 237,
+        width: 30,
+        height: 13,
+        rx: 6.5,
         fill: m.arm,
         "data-anim": m.here ? 1 : null,
         style: m.here
-          ? an("ism-write", "2.4s", "left center", i * 0.5 + "s")
+          ? an("ism-write", "2.6s", "left center", i * 0.45 + "s")
           : null,
       }),
     );
   });
+
   const names = SEATS.map((cx, i) => {
     const m = members[i];
-    if (!m)
+    if (!m) {
+      if (personal && i > 1) return null;
       return h(
         "g",
         { key: "n" + i, onClick: invite, style: { cursor: "pointer" } },
-        tag("inv", "+ Invite", cx, 188, "#1D1B18", false, true),
+        tag(
+          "inv" + i,
+          personal ? "+ Study partner" : "+ Invite",
+          cx,
+          184,
+          ACCENT.teal,
+          false,
+          i === 1,
+        ),
       );
+    }
     return h(
       "g",
       {
@@ -245,134 +282,155 @@ export default function DeskScene({
         "m" + i,
         m.here ? m.name : m.name + " · away",
         cx,
-        110,
+        106,
         m.body,
         focus === m.ini,
         false,
       ),
     );
   });
+
   return h(
     "svg",
     {
-      viewBox: "0 0 960 400",
+      viewBox: "0 0 960 364",
       width: "100%",
       role: "group",
       "aria-label":
-        "Interactive study desk. Use the labelled content tabs below for the same actions.",
+        "Interactive study desk diagram. Use the labelled content tabs below for the same actions.",
       style: { display: "block" },
     },
-    h("rect", { x: 0, y: 0, width: 960, height: 332, fill: "#EFE6D3" }),
-    h("rect", { x: 0, y: 332, width: 960, height: 68, fill: "#E1D2B6" }),
-    h("line", { x1: 0, y1: 332, x2: 960, y2: 332, stroke: "#1D1B18" }),
-    h("ellipse", {
-      cx: 480,
-      cy: 240,
-      rx: 430,
-      ry: 120,
-      fill: "#F6E7C6",
+    h(
+      "defs",
+      null,
+      h(
+        "linearGradient",
+        { id: "deskWallGrad", x1: "0", y1: "0", x2: "0", y2: "1" },
+        h("stop", { offset: "0%", stopColor: "var(--desk-wall-top, #F1F5F9)" }),
+        h("stop", { offset: "100%", stopColor: "var(--desk-wall-bot, #E2E8F0)" }),
+      ),
+      h(
+        "linearGradient",
+        { id: "deskFloorGrad", x1: "0", y1: "0", x2: "0", y2: "1" },
+        h("stop", { offset: "0%", stopColor: "var(--desk-floor-top, #CBD5E1)" }),
+        h("stop", { offset: "100%", stopColor: "var(--desk-floor-bot, #E2E8F0)" }),
+      ),
+      h(
+        "radialGradient",
+        { id: "deskLampCone", cx: "50%", cy: "0%", r: "85%" },
+        h("stop", { offset: "0%", stopColor: "var(--desk-lamp-a, rgba(251,191,36,0.34))" }),
+        h("stop", { offset: "60%", stopColor: "var(--desk-lamp-b, rgba(251,191,36,0.10))" }),
+        h("stop", { offset: "100%", stopColor: "rgba(251,191,36,0)" }),
+      ),
+      h(
+        "linearGradient",
+        { id: "deskWoodTop", x1: "0", y1: "0", x2: "1", y2: "0" },
+        h("stop", { offset: "0%", stopColor: "var(--desk-wood-1, #B07D56)" }),
+        h("stop", { offset: "50%", stopColor: "var(--desk-wood-2, #C5936B)" }),
+        h("stop", { offset: "100%", stopColor: "var(--desk-wood-1, #A6734D)" }),
+      ),
+      h(
+        "linearGradient",
+        { id: "deskWindowSky", x1: "0", y1: "0", x2: "0", y2: "1" },
+        h("stop", { offset: "0%", stopColor: "var(--desk-sky-top, #BAE6FD)" }),
+        h("stop", { offset: "100%", stopColor: "var(--desk-sky-bot, #E0F2FE)" }),
+      ),
+    ),
+
+    // Studio wall & floor
+    h("rect", { x: 0, y: 0, width: 960, height: 304, fill: "url(#deskWallGrad)" }),
+    h("rect", { x: 0, y: 304, width: 960, height: 60, fill: "url(#deskFloorGrad)" }),
+    h("line", {
+      x1: 0,
+      y1: 304,
+      x2: 960,
+      y2: 304,
+      stroke: "var(--desk-horizon, rgba(15,23,42,0.14))",
+      strokeWidth: 1.5,
+    }),
+
+    // Subtle studio window behind center-right
+    h("rect", {
+      x: 562,
+      y: 22,
+      width: 174,
+      height: 102,
+      rx: 12,
+      fill: "url(#deskWindowSky)",
+      stroke: "var(--desk-frame, rgba(15,23,42,0.16))",
+      strokeWidth: 2,
+    }),
+    h("line", { x1: 649, y1: 22, x2: 649, y2: 124, stroke: "var(--desk-frame, rgba(15,23,42,0.16))", strokeWidth: 2 }),
+    h("line", { x1: 562, y1: 73, x2: 736, y2: 73, stroke: "var(--desk-frame, rgba(15,23,42,0.16))", strokeWidth: 2 }),
+    // Soft clouds / night stars inside window
+    h("circle", { cx: 602, cy: 48, r: 9, fill: "rgba(255,255,255,0.55)" }),
+    h("circle", { cx: 615, cy: 46, r: 12, fill: "rgba(255,255,255,0.55)" }),
+    h("circle", { cx: 696, cy: 44, r: 5, fill: "rgba(255,255,255,0.45)" }),
+
+    // Warm pendant lamp cone
+    h("path", {
+      d: "M438 62 L522 62 L760 286 L200 286 Z",
+      fill: "url(#deskLampCone)",
       "data-anim": 1,
-      style: an("ism-glow", "5s"),
+      style: an("ism-glow", "5.2s"),
     }),
     h("line", {
       x1: 480,
       y1: 0,
       x2: 480,
-      y2: 40,
-      stroke: "#1D1B18",
-      strokeWidth: 2,
+      y2: 34,
+      stroke: "var(--desk-lamp-wire, #334155)",
+      strokeWidth: 2.5,
     }),
     h("path", {
-      d: "M452 40 L508 40 L528 68 L432 68 Z",
-      fill: "#D8A33A",
-      stroke: "#1D1B18",
+      d: "M450 34 L510 34 L528 62 L432 62 Z",
+      fill: "#0A7D8C",
+      stroke: "var(--desk-lamp-wire, #1E293B)",
       strokeWidth: 1.5,
     }),
-    hot("mistakes", [
+    h("ellipse", { cx: 480, cy: 62, rx: 32, ry: 5, fill: "#FDE68A", opacity: 0.9 }),
+
+    // Wall corkboard — Mistakes wall
+    hot("mistakes", "Mistakes wall", [
       h("rect", {
         key: "b",
-        x: 36,
-        y: 18,
-        width: 150,
-        height: 78,
-        rx: 4,
-        fill: "#C9A27A",
-        stroke: "#8A5A3B",
-        strokeWidth: 3,
+        x: 34,
+        y: 20,
+        width: 158,
+        height: 82,
+        rx: 10,
+        fill: "var(--desk-board, #D6B28D)",
+        stroke: "var(--desk-board-frame, #8C5E3C)",
+        strokeWidth: 2.5,
       }),
-      h("rect", {
-        key: "s1",
-        x: 50,
-        y: 28,
-        width: 34,
-        height: 30,
-        fill: "#F6E7C6",
-        transform: "rotate(-5 67 43)",
-      }),
-      h("rect", {
-        key: "s2",
-        x: 92,
-        y: 26,
-        width: 34,
-        height: 30,
-        fill: "#F6DDD3",
-        transform: "rotate(4 109 41)",
-      }),
-      h("rect", {
-        key: "s3",
-        x: 136,
-        y: 30,
-        width: 34,
-        height: 30,
-        fill: "#DAE3F1",
-        transform: "rotate(-3 153 45)",
-      }),
-      h("rect", {
-        key: "s4",
-        x: 70,
-        y: 62,
-        width: 32,
-        height: 26,
-        fill: "#DCEBD9",
-        transform: "rotate(3 86 75)",
-      }),
-      h("rect", {
-        key: "s5",
-        x: 114,
-        y: 62,
-        width: 32,
-        height: 26,
-        fill: "#EEDDEC",
-        transform: "rotate(-4 130 75)",
-      }),
-      tag(
-        "mistakes",
-        "Mistakes wall",
-        264,
-        46,
-        "#9A5B34",
-        active === "mistakes",
-        true,
-      ),
+      h("rect", { key: "s1", x: 48, y: 30, width: 34, height: 28, rx: 3, fill: "#FEF3C7", transform: "rotate(-4 65 44)" }),
+      h("rect", { key: "s2", x: 92, y: 28, width: 34, height: 28, rx: 3, fill: "#FFEDD5", transform: "rotate(3 109 42)" }),
+      h("rect", { key: "s3", x: 138, y: 32, width: 34, height: 28, rx: 3, fill: "#DBEAFE", transform: "rotate(-3 155 46)" }),
+      h("rect", { key: "s4", x: 68, y: 64, width: 34, height: 26, rx: 3, fill: "#D1FAE5", transform: "rotate(2 85 77)" }),
+      h("rect", { key: "s5", x: 114, y: 64, width: 34, height: 26, rx: 3, fill: "#EDE9FE", transform: "rotate(-3 131 77)" }),
+      tag("mistakes", "Mistakes", 252, 48, ACCENT.rose, active === "mistakes", true),
     ]),
-    hot("session", [
+
+    // Studio wall clock — Focus session
+    hot("session", "Focus sessions", [
       h("circle", {
         key: "c",
-        cx: 890,
-        cy: 56,
-        r: 26,
-        fill: "#FBF8F1",
-        stroke: "#1D1B18",
+        cx: 892,
+        cy: 58,
+        r: 27,
+        fill: "var(--desk-tag-bg, #FFFFFF)",
+        stroke: "var(--desk-frame, #334155)",
         strokeWidth: 2,
       }),
+      h("circle", { key: "r", cx: 892, cy: 58, r: 21, fill: "none", stroke: "var(--desk-horizon, rgba(15,23,42,0.12))", strokeDasharray: "2 5" }),
       h("line", {
         key: "hh",
-        x1: 890,
-        y1: 56,
-        x2: 902,
-        y2: 63,
-        stroke: "#1D1B18",
-        strokeWidth: 3,
+        x1: 892,
+        y1: 58,
+        x2: 904,
+        y2: 64,
+        stroke: "var(--desk-tag-ink, #0F172A)",
+        strokeWidth: 2.8,
         strokeLinecap: "round",
       }),
       h(
@@ -382,228 +440,74 @@ export default function DeskScene({
           "data-anim": 1,
           style: {
             animation: "ism-spin 12s linear infinite",
-            transformOrigin: "890px 56px",
+            transformOrigin: "892px 58px",
             transformBox: "view-box",
           },
         },
         h("line", {
-          x1: 890,
-          y1: 56,
-          x2: 890,
-          y2: 37,
-          stroke: "#8A4A86",
-          strokeWidth: 2.5,
+          x1: 892,
+          y1: 58,
+          x2: 892,
+          y2: 39,
+          stroke: ACCENT.plum,
+          strokeWidth: 2.4,
           strokeLinecap: "round",
         }),
       ),
-      h("circle", { key: "d", cx: 890, cy: 56, r: 3, fill: "#1D1B18" }),
-      tag(
-        "session",
-        "Focus session",
-        790,
-        45,
-        H.plum[0],
-        active === "session",
-        true,
-      ),
+      h("circle", { key: "d", cx: 892, cy: 58, r: 3, fill: ACCENT.plum }),
+      tag("session", "Focus timer", 796, 46, ACCENT.plum, active === "session", true),
     ]),
+
+    // Potted desk plant (left corner ambiance)
+    h("rect", { x: 26, y: 268, width: 28, height: 36, rx: 6, fill: "#C2410C" }),
+    h("ellipse", { cx: 40, cy: 256, rx: 14, ry: 20, fill: "#059669", transform: "rotate(-18 40 256)" }),
+    h("ellipse", { cx: 46, cy: 252, rx: 12, ry: 18, fill: "#10B981", transform: "rotate(18 46 252)" }),
+
     ...chairs,
     ...bodies,
-    h("rect", {
-      x: 70,
-      y: 244,
-      width: 820,
-      height: 14,
-      rx: 4,
-      fill: "#9A6A48",
-    }),
-    h("rect", { x: 70, y: 258, width: 820, height: 16, fill: "#7A5236" }),
-    h("rect", { x: 96, y: 274, width: 14, height: 58, fill: "#6E4630" }),
-    h("rect", { x: 850, y: 274, width: 14, height: 58, fill: "#6E4630" }),
+
+    // Long studio desk surface + legs + soft floor shadow
+    h("ellipse", { cx: 480, cy: 334, rx: 390, ry: 11, fill: "rgba(15,23,42,0.14)" }),
+    h("rect", { x: 96, y: 274, width: 14, height: 58, rx: 4, fill: "var(--desk-leg, #5C3D28)" }),
+    h("rect", { x: 850, y: 274, width: 14, height: 58, rx: 4, fill: "var(--desk-leg, #5C3D28)" }),
+    h("rect", { x: 70, y: 244, width: 820, height: 15, rx: 6, fill: "url(#deskWoodTop)" }),
+    h("rect", { x: 70, y: 257, width: 820, height: 16, rx: 3, fill: "var(--desk-wood-edge, #7A5236)" }),
+
     ...arms,
-    hot("notes", [
-      h("rect", {
-        key: "n1",
-        x: 191,
-        y: 234,
-        width: 50,
-        height: 10,
-        rx: 2,
-        fill: "#D8A33A",
-      }),
-      h("rect", {
-        key: "n2",
-        x: 195,
-        y: 224,
-        width: 44,
-        height: 10,
-        rx: 2,
-        fill: "#8A4A86",
-      }),
-      h("rect", {
-        key: "n3",
-        x: 189,
-        y: 214,
-        width: 48,
-        height: 10,
-        rx: 2,
-        fill: "#33609E",
-      }),
-      tag("notes", "Notes", 215, 290, "#B7791A", active === "notes", true),
+
+    // Stacked notebooks — Notes
+    hot("notes", "Notes", [
+      h("rect", { key: "n1", x: 188, y: 234, width: 52, height: 10, rx: 3, fill: "#F59E0B" }),
+      h("rect", { key: "n2", x: 192, y: 224, width: 46, height: 10, rx: 3, fill: "#7C3AED" }),
+      h("rect", { key: "n3", x: 186, y: 214, width: 50, height: 10, rx: 3, fill: "#0A7D8C" }),
+      tag("notes", "Notes", 214, 286, ACCENT.amber, active === "notes", true),
     ]),
-    hot("bookmarks", [
-      h("rect", {
-        key: "bk",
-        x: 320,
-        y: 226,
-        width: 50,
-        height: 18,
-        rx: 2,
-        fill: "#1F7F86",
-      }),
-      h("rect", {
-        key: "pg",
-        x: 323,
-        y: 228,
-        width: 44,
-        height: 3,
-        fill: "#FBF8F1",
-      }),
-      h("rect", {
-        key: "r1",
-        x: 330,
-        y: 256,
-        width: 5,
-        height: 20,
-        fill: "#C0462C",
-        "data-anim": 1,
-        style: an("ism-sway", "3s", "top center"),
-      }),
-      h("rect", {
-        key: "r2",
-        x: 342,
-        y: 256,
-        width: 5,
-        height: 15,
-        fill: "#D8A33A",
-        "data-anim": 1,
-        style: an("ism-sway", "3s", "top center", ".5s"),
-      }),
-      h("rect", {
-        key: "r3",
-        x: 354,
-        y: 256,
-        width: 5,
-        height: 24,
-        fill: "#8A4A86",
-        "data-anim": 1,
-        style: an("ism-sway", "3s", "top center", "1s"),
-      }),
-      tag(
-        "bookmarks",
-        "Bookmarks",
-        345,
-        290,
-        H.teal[0],
-        active === "bookmarks",
-        true,
-      ),
+
+    // Ribbons book — Bookmarks
+    hot("bookmarks", "Bookmarks", [
+      h("rect", { key: "bk", x: 318, y: 226, width: 52, height: 18, rx: 4, fill: "#0A7D8C" }),
+      h("rect", { key: "pg", x: 322, y: 229, width: 44, height: 3, rx: 1.5, fill: "#F8FAFC" }),
+      h("rect", { key: "r1", x: 329, y: 255, width: 5, height: 20, rx: 2, fill: "#EA580C", "data-anim": 1, style: an("ism-sway", "3s", "top center") }),
+      h("rect", { key: "r2", x: 341, y: 255, width: 5, height: 15, rx: 2, fill: "#F59E0B", "data-anim": 1, style: an("ism-sway", "3s", "top center", ".5s") }),
+      h("rect", { key: "r3", x: 353, y: 255, width: 5, height: 23, rx: 2, fill: "#7C3AED", "data-anim": 1, style: an("ism-sway", "3s", "top center", "1s") }),
+      tag("bookmarks", "Bookmarks", 344, 286, ACCENT.teal, active === "bookmarks", true),
     ]),
-    hot("practice", [
-      h("rect", {
-        key: "sc",
-        x: 450,
-        y: 198,
-        width: 60,
-        height: 42,
-        rx: 3,
-        fill: "#1D1B18",
-      }),
-      h("rect", {
-        key: "b1",
-        x: 457,
-        y: 206,
-        width: 34,
-        height: 5,
-        rx: 2,
-        fill: "#D8A33A",
-        "data-anim": 1,
-        style: an("ism-blink", "2.4s"),
-      }),
-      h("rect", {
-        key: "b2",
-        x: 457,
-        y: 216,
-        width: 46,
-        height: 5,
-        rx: 2,
-        fill: "#5E9BD6",
-        "data-anim": 1,
-        style: an("ism-blink", "2.4s", "center", ".6s"),
-      }),
-      h("rect", {
-        key: "b3",
-        x: 457,
-        y: 226,
-        width: 24,
-        height: 5,
-        rx: 2,
-        fill: "#6DBB7E",
-        "data-anim": 1,
-        style: an("ism-blink", "2.4s", "center", "1.2s"),
-      }),
-      h("rect", {
-        key: "bs",
-        x: 442,
-        y: 240,
-        width: 76,
-        height: 6,
-        rx: 2,
-        fill: "#49443B",
-      }),
-      tag(
-        "practice",
-        "Desk set",
-        480,
-        290,
-        H.blue[0],
-        active === "practice",
-        true,
-      ),
+
+    // Studio laptop — Practice / Desk set
+    hot("practice", "Desk set", [
+      h("rect", { key: "sc", x: 448, y: 196, width: 64, height: 44, rx: 6, fill: "#0F172A", stroke: "#334155", strokeWidth: 1.5 }),
+      h("rect", { key: "b1", x: 456, y: 205, width: 36, height: 5, rx: 2.5, fill: "#38BDF8", "data-anim": 1, style: an("ism-blink", "2.4s") }),
+      h("rect", { key: "b2", x: 456, y: 215, width: 48, height: 5, rx: 2.5, fill: "#34D399", "data-anim": 1, style: an("ism-blink", "2.4s", "center", ".6s") }),
+      h("rect", { key: "b3", x: 456, y: 225, width: 26, height: 5, rx: 2.5, fill: "#FBBF24", "data-anim": 1, style: an("ism-blink", "2.4s", "center", "1.2s") }),
+      h("rect", { key: "bs", x: 440, y: 240, width: 80, height: 6, rx: 3, fill: "#475569" }),
+      tag("practice", personal ? "Practice" : "Desk set", 480, 286, ACCENT.blue, active === "practice", true),
     ]),
-    hot("shared", [
-      h("rect", {
-        key: "q1",
-        x: 592,
-        y: 214,
-        width: 44,
-        height: 28,
-        rx: 2,
-        fill: "#FBF8F1",
-        stroke: "#1D1B18",
-        transform: "rotate(-8 614 228)",
-      }),
-      h("rect", {
-        key: "q2",
-        x: 594,
-        y: 212,
-        width: 44,
-        height: 28,
-        rx: 2,
-        fill: "#F6DDD3",
-        stroke: "#1D1B18",
-        transform: "rotate(5 616 226)",
-      }),
-      h("rect", {
-        key: "q3",
-        x: 593,
-        y: 213,
-        width: 44,
-        height: 28,
-        rx: 2,
-        fill: "#FBF8F1",
-        stroke: "#1D1B18",
-      }),
+
+    // Flashcards — Saved / Shared Qs
+    hot("shared", personal ? "Saved questions" : "Shared questions", [
+      h("rect", { key: "q1", x: 592, y: 214, width: 44, height: 28, rx: 4, fill: "#FFFFFF", stroke: "#CBD5E1", transform: "rotate(-8 614 228)" }),
+      h("rect", { key: "q2", x: 594, y: 212, width: 44, height: 28, rx: 4, fill: "#FFEDD5", stroke: "#FDBA74", transform: "rotate(5 616 226)" }),
+      h("rect", { key: "q3", x: 593, y: 213, width: 44, height: 28, rx: 4, fill: "#FFFFFF", stroke: "#94A3B8" }),
       h(
         "text",
         {
@@ -611,88 +515,31 @@ export default function DeskScene({
           x: 615,
           y: 232,
           textAnchor: "middle",
-          fontFamily: "Newsreader, serif",
-          fontSize: 16,
-          fill: "#C0462C",
+          fontSize: 15,
+          fontWeight: 800,
+          fill: ACCENT.coral,
         },
         "Q?",
       ),
-      tag(
-        "shared",
-        "Shared Qs",
-        615,
-        290,
-        H.verm[0],
-        active === "shared",
-        true,
-      ),
+      tag("shared", personal ? "Saved Qs" : "Shared Qs", 615, 286, ACCENT.coral, active === "shared", true),
     ]),
-    hot("progress", [
-      h("rect", {
-        key: "cb",
-        x: 724,
-        y: 196,
-        width: 42,
-        height: 48,
-        rx: 3,
-        fill: "#FBF8F1",
-        stroke: "#1D1B18",
-      }),
-      h("rect", {
-        key: "cl",
-        x: 737,
-        y: 191,
-        width: 16,
-        height: 7,
-        rx: 2,
-        fill: "#1D1B18",
-      }),
-      h("rect", {
-        key: "g1",
-        x: 731,
-        y: 222,
-        width: 7,
-        height: 16,
-        fill: "#3F8350",
-      }),
-      h("rect", {
-        key: "g2",
-        x: 742,
-        y: 212,
-        width: 7,
-        height: 26,
-        fill: "#33609E",
-      }),
-      h("rect", {
-        key: "g3",
-        x: 753,
-        y: 218,
-        width: 7,
-        height: 20,
-        fill: "#C0462C",
-      }),
-      tag(
-        "progress",
-        "Progress",
-        745,
-        290,
-        H.green[0],
-        active === "progress",
-        true,
-      ),
+
+    // Progress clipboard — Progress
+    hot("progress", "Progress", [
+      h("rect", { key: "cb", x: 724, y: 196, width: 42, height: 48, rx: 6, fill: "#FFFFFF", stroke: "#94A3B8" }),
+      h("rect", { key: "cl", x: 737, y: 191, width: 16, height: 7, rx: 2.5, fill: "#334155" }),
+      h("rect", { key: "g1", x: 731, y: 222, width: 7, height: 16, rx: 2, fill: "#10B981" }),
+      h("rect", { key: "g2", x: 742, y: 211, width: 7, height: 27, rx: 2, fill: "#2563EB" }),
+      h("rect", { key: "g3", x: 753, y: 217, width: 7, height: 21, rx: 2, fill: "#F97316" }),
+      tag("progress", "Progress", 745, 286, ACCENT.emerald, active === "progress", true),
     ]),
-    h("rect", {
-      x: 858,
-      y: 228,
-      width: 18,
-      height: 16,
-      rx: 3,
-      fill: "#FBF8F1",
-      stroke: "#1D1B18",
-    }),
+
+    // Ceramic coffee mug + animated steam
+    h("rect", { x: 856, y: 227, width: 18, height: 17, rx: 4, fill: "#F8FAFC", stroke: "#94A3B8" }),
+    h("path", { d: "M874 231 q6 0 6 5 q0 5 -6 5", fill: "none", stroke: "#94A3B8", strokeWidth: 2 }),
     h("path", {
-      d: "M863 222 q-4 -6 0 -12 q4 -6 0 -12",
-      stroke: "#8C826F",
+      d: "M861 221 q-4 -6 0 -12 q4 -6 0 -12",
+      stroke: "var(--desk-steam, #94A3B8)",
       fill: "none",
       strokeWidth: 2,
       strokeLinecap: "round",
@@ -700,14 +547,15 @@ export default function DeskScene({
       style: an("ism-steam", "2.8s"),
     }),
     h("path", {
-      d: "M871 222 q-4 -6 0 -12 q4 -6 0 -12",
-      stroke: "#8C826F",
+      d: "M869 221 q-4 -6 0 -12 q4 -6 0 -12",
+      stroke: "var(--desk-steam, #94A3B8)",
       fill: "none",
       strokeWidth: 2,
       strokeLinecap: "round",
       "data-anim": 1,
       style: an("ism-steam", "2.8s", "center", "1.4s"),
     }),
+
     ...names,
   );
 }

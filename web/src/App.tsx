@@ -1,4 +1,5 @@
 import { mobileScreen } from './lib/navigation'
+import { adminTabHref } from './lib/adminNavigation'
 import { lazy, Suspense, useEffect, useState } from 'react'
 import { Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom'
 import SessionNotice from './components/SessionNotice'
@@ -13,6 +14,7 @@ import { hydrateDesk } from './lib/desk'
 import BottomBar from './components/BottomBar'
 import Footer from './components/Footer'
 import Header from './components/Header'
+import HelpDrawer from './components/HelpDrawer'
 import { Card } from './components/ui'
 
 const ResumedPractice = lazy(() => import('./components/ResumedPractice'))
@@ -63,6 +65,7 @@ const Plans = lazy(routeModules.Plans)
 const Rewards = lazy(() => import('./screens/Rewards'))
 const CreatorProfile = lazy(() => import('./screens/Creators'))
 const CreatorDirectory = lazy(() => import('./screens/Creators').then((m) => ({ default: m.CreatorDirectory })))
+const CreatorSettings = lazy(() => import('./screens/Creators').then((m) => ({ default: m.CreatorSettings })))
 const Materials = lazy(() => import('./screens/Materials'))
 const MaterialReader = lazy(() => import('./screens/Materials').then((m) => ({ default: m.MaterialReader })))
 const ContentEditor = lazy(() => import('./screens/ContentStudio'))
@@ -119,7 +122,9 @@ function GamesRoute() {
 
 function CreatorsRoute() {
   const { id } = useParams()
-  return id ? <CreatorProfile /> : <CreatorDirectory />
+  if (!id) return <CreatorDirectory />
+  if (id === 'settings') return <CreatorSettings />
+  return <CreatorProfile />
 }
 
 function StudioRoute() {
@@ -164,7 +169,11 @@ function BillingRoute() {
 
 function AdminRoute() {
   const { section } = useParams()
-  if (section === 'bank' || section === 'ops' || section === 'users') return <BankAdmin />
+  // One addressing scheme for the console (§VIII.6). `/admin/ops` and `/admin/users`
+  // stay as redirects so existing bookmarks keep working, rather than remaining a
+  // second way to address a section that every caller had to special-case.
+  if (section === 'ops' || section === 'users') return <Navigate to={adminTabHref(section)} replace />
+  if (section === 'bank') return <BankAdmin />
   return <NotFound />
 }
 
@@ -300,6 +309,7 @@ export default function App() {
       </main>
       {!adminWorkspace && <SelectionTray />}
       {!adminWorkspace && <MaterialReadingPanel />}
+      {!adminWorkspace && <HelpDrawer />}
       {!adminWorkspace && <Footer />}
       {!adminWorkspace && <BottomBar />}
     </div>

@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getHome, submitAnswer, type AnswerResult, type HomeData } from '../lib/api'
 import { STUDY_THEMES, useStudyTheme } from '../lib/theme'
+import ExploreDeckRail from '../components/ExploreDeckRail'
 
 const AREAS = [
   ['Practice', '#2D5BD0'], ['Learn', '#7B45B8'], ['Map', '#0E8287'],
@@ -89,7 +90,17 @@ export default function Home() {
               {exam ? <Link to={exam.route ?? `/exams/${exam.id}`} className="ism-tactile-btn inline-flex min-h-12 items-center rounded-pill bg-[#2557D6] px-5 py-3 text-sm font-semibold text-white shadow-[0_4px_14px_rgba(37,87,214,.4)] hover:brightness-110">Start with {exam.title} →</Link> : <Link to="/exams" className="ism-tactile-btn inline-flex min-h-12 items-center rounded-pill bg-[#2557D6] px-5 py-3 text-sm font-semibold text-white shadow-[0_4px_14px_rgba(37,87,214,.4)]">Explore exams →</Link>}
               <Link to="/library" className="ism-tactile-btn inline-flex min-h-12 items-center rounded-pill border border-white/30 bg-white/5 px-5 py-3 text-sm font-semibold text-white hover:bg-white/15">Explore the study library</Link>
             </div>
-            {data && <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 font-mono text-xs text-[#CFC7B8]"><span className="inline-flex items-center gap-1.5"><span className="h-1.5 w-1.5 rounded-full bg-[#34D399]" aria-hidden="true" />{data.total_questions.toLocaleString('en-IN')} questions</span><span className="inline-flex items-center gap-1.5"><span className="h-1.5 w-1.5 rounded-full bg-[#FBBF24]" aria-hidden="true" />{data.scorable_questions.toLocaleString('en-IN')} ready for timed tests</span></div>}
+            <p className="mt-4 text-xs leading-relaxed text-[#CFC7B8]">Free without an account: browse all past papers &amp; guides + 50 practice answers/day + 1 timed run/month.</p>
+            <div className="mt-4 flex min-h-[24px] flex-wrap gap-x-5 gap-y-2 font-mono text-xs text-[#CFC7B8]" aria-busy={!data && !loadError}>
+              {data ? (
+                <>
+                  <span className="inline-flex items-center gap-1.5"><span className="h-1.5 w-1.5 rounded-full bg-[#34D399]" aria-hidden="true" />{data.total_questions.toLocaleString('en-IN')} questions</span>
+                  <span className="inline-flex items-center gap-1.5"><span className="h-1.5 w-1.5 rounded-full bg-[#FBBF24]" aria-hidden="true" />{data.scorable_questions.toLocaleString('en-IN')} with keyed answers</span>
+                </>
+              ) : !loadError ? (
+                <span className="inline-block h-4 w-48 rounded bg-white/10" aria-hidden="true" />
+              ) : null}
+            </div>
           </div>
 
           <section aria-labelledby="try-question-title" className="overflow-hidden rounded-[16px] border border-white/10 bg-card text-ink shadow-[0_24px_60px_rgba(0,0,0,.4)]">
@@ -119,30 +130,36 @@ export default function Home() {
         <div className="mx-auto flex max-w-shell flex-wrap gap-2 px-6 pb-6 lg:pb-7" aria-label="Study areas">{AREAS.map(([name, color]) => <span key={name} className="inline-flex items-center gap-2 rounded-pill border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-[#E6DFD2]"><span className="h-2 w-2 rounded-full" style={{ backgroundColor: color }} />{name}</span>)}</div>
       </header>
 
-      <div id="landing-content" tabIndex={-1} className="mx-auto max-w-shell px-6 pb-16 focus:outline-none">
-        <section aria-label="How it works" className="grid gap-4 pt-10 sm:grid-cols-3 sm:pt-12">
-          {[
-            { n: '1', area: 'Exams', color: '#B26B00', softClass: 'bg-exams-soft', inkClass: 'text-exams-dark', title: 'Pick your exam', body: 'Choose a live exam collection and work through its papers and subject sections.' },
-            { n: '2', area: 'Library', color: '#2D5BD0', softClass: 'bg-practice-soft', inkClass: 'text-practice-dark', title: 'Learn by subject', body: 'Open Arithmetic, English, General Knowledge and other modules. Questions and progress stay in the subject flow.' },
-            { n: '3', area: 'Community', color: '#B23A9A', softClass: 'bg-community-soft', inkClass: 'text-community-dark', title: 'Bring a doubt to the community', body: 'Discuss a question, read a shared note or contribute an explanation with its sources.' },
-          ].map((step) => <article key={step.n} className={`ism-card-surface rounded-[16px] border border-hairline p-6 ${step.softClass}`}><div className="flex items-center gap-3"><span className="grid h-10 w-10 place-items-center rounded-full font-display text-lg text-white shadow-sm" style={{ backgroundColor: step.color }}>{step.n}</span><span className={`font-mono text-xs uppercase tracking-[0.08em] font-semibold ${step.inkClass}`}>{step.area}</span></div><h2 className="mt-4 font-display text-xl font-medium text-ink">{step.title}</h2><p className="mt-2 text-sm leading-relaxed text-secondary">{step.body}</p></article>)}
-        </section>
+      <div id="landing-content" tabIndex={-1} className="ed-gutter-shell focus:outline-none">
+        <div className="mx-auto w-full max-w-shell px-6 pb-16 pt-10">
+            <section aria-label="How it works" className="grid gap-4 sm:grid-cols-3">
+              {[
+                { n: '1', area: 'Exams', color: '#B26B00', softClass: 'bg-exams-soft', inkClass: 'text-exams-dark', title: 'Pick your exam', body: 'Choose a live exam collection and work through its papers and subject sections.' },
+                { n: '2', area: 'Library', color: '#2D5BD0', softClass: 'bg-practice-soft', inkClass: 'text-practice-dark', title: 'Learn by subject', body: 'Open Arithmetic, English, General Knowledge and other modules. Questions and progress stay in the subject flow.' },
+                { n: '3', area: 'Community', color: '#B23A9A', softClass: 'bg-community-soft', inkClass: 'text-community-dark', title: 'Bring a doubt to the community', body: 'Discuss a question, read a shared note or contribute an explanation with its sources.' },
+              ].map((step) => <article key={step.n} className={`ism-card-surface rounded-[16px] border border-hairline p-6 ${step.softClass}`}><div className="flex items-center gap-3"><span className="grid h-10 w-10 place-items-center rounded-full font-display text-lg text-white shadow-sm" style={{ backgroundColor: step.color }}>{step.n}</span><span className={`font-mono text-xs uppercase tracking-[0.08em] font-semibold ${step.inkClass}`}>{step.area}</span></div><h2 className="mt-4 font-display text-xl font-medium text-ink">{step.title}</h2><p className="mt-2 text-sm leading-relaxed text-secondary">{step.body}</p></article>)}
+            </section>
 
-        <section className="pt-14 sm:pt-16" aria-labelledby="library-title"><div className="flex flex-wrap items-baseline justify-between gap-2 pb-4"><h2 id="library-title" className="font-display text-3xl font-medium">Study library</h2><Link to="/library" className="text-sm font-semibold text-link underline">All subjects and tools →</Link></div><div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">{[['Arithmetic & reasoning','/arithmetic','Concepts, worked methods and inline practice','bg-practice'],['English & vocabulary','/english','Grammar, papers, writing and spaced recall','bg-learn'],['General Knowledge','/library/subjects/gk-gs','Browse topics and practise past-paper questions','bg-exams'],['Interactive Atlas','/atlas','Explore geography, places and historical maps','bg-map']].map(([title,href,description,accent]) => <Link key={href} to={href} className="ism-card-surface group flex flex-col rounded-[14px] border border-hairline bg-card p-5 hover:border-practice"><span className={`mb-3 h-1.5 w-8 rounded-pill ${accent}`} aria-hidden="true" /><h3 className="font-display text-lg font-medium group-hover:text-link">{title}</h3><p className="mt-2 flex-1 text-sm text-secondary">{description}</p><span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-link">Open module <span aria-hidden="true" className="transition-transform duration-150 group-hover:translate-x-1">→</span></span></Link>)}</div></section>
+            <section className="pt-8 sm:pt-10" aria-labelledby="library-title"><div className="flex flex-wrap items-baseline justify-between gap-2 pb-4"><h2 id="library-title" className="font-display text-3xl font-medium">Study library</h2><Link to="/library" className="text-sm font-semibold text-link underline">All subjects and tools →</Link></div><div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">{[['Arithmetic & reasoning','/arithmetic','Concepts, worked methods and inline practice','bg-practice'],['English & vocabulary','/english','Grammar, papers, writing and spaced recall','bg-learn'],['General Knowledge','/library/subjects/gk-gs','Browse topics and practise past-paper questions','bg-exams'],['Interactive Atlas','/atlas','Explore geography, places and historical maps','bg-map']].map(([title,href,description,accent]) => <Link key={href} to={href} className="ism-card-surface group flex flex-col rounded-[14px] border border-hairline bg-card p-5 hover:border-practice"><span className={`mb-3 h-1.5 w-8 rounded-pill ${accent}`} aria-hidden="true" /><h3 className="font-display text-lg font-medium group-hover:text-link">{title}</h3><p className="mt-2 flex-1 text-sm text-secondary">{description}</p><span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-link">Open module <span aria-hidden="true" className="transition-transform duration-150 group-hover:translate-x-1">→</span></span></Link>)}</div></section>
 
-        <section id="exams" className="scroll-mt-6 pt-14 sm:pt-16" aria-labelledby="exams-title">
-          <div className="flex flex-wrap items-baseline justify-between gap-2 pb-4"><h2 id="exams-title" className="font-display text-3xl font-medium">Exams</h2><Link to="/exams" className="inline-flex min-h-11 items-center text-sm font-semibold text-link">Browse all exams →</Link></div>
-          {!data && !loadError && <p className="text-sm text-secondary">Loading live exam collections…</p>}
-          {data?.collections.filter((collection) => collection.kind === 'exam').length === 0 && <p className="rounded-[12px] border border-hairline bg-card p-5 text-sm text-secondary">No public exams are available right now. Explore the study library for subject practice.</p>}
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{data?.collections.filter((collection) => collection.kind === 'exam').slice(0,6).map((collection, index) => {
-            return <Link key={collection.id} to={collection.route ?? `/exams/${collection.id}`} className={`ism-card-surface group flex min-h-52 flex-col gap-3 rounded-[14px] border bg-card p-5 ${index === 0 ? 'border-exams' : 'border-hairline'}`}><span className="self-start rounded-pill bg-exams-soft px-2.5 py-1 font-mono text-xs uppercase tracking-[0.08em] text-exams-dark">Exam collection</span><span className="font-display text-lg font-medium leading-tight group-hover:text-exams-dark">{collection.title}</span><span className="flex-1 text-sm leading-relaxed text-secondary">{collection.sections} sections · built from reviewed bank questions</span><span className="inline-flex items-center gap-1 text-sm font-semibold text-exams-dark">Open <span aria-hidden="true" className="transition-transform duration-150 group-hover:translate-x-1">→</span></span></Link>
-          })}</div>
-        </section>
+            <section id="exams" className="scroll-mt-6 pt-8 sm:pt-10" aria-labelledby="exams-title">
+              <div className="flex flex-wrap items-baseline justify-between gap-2 pb-4"><h2 id="exams-title" className="font-display text-3xl font-medium">Exams</h2><Link to="/exams" className="inline-flex min-h-11 items-center text-sm font-semibold text-link">Browse all exams →</Link></div>
+              {!data && !loadError && <p className="text-sm text-secondary">Loading live exam collections…</p>}
+              {data?.collections.filter((collection) => collection.kind === 'exam').length === 0 && <p className="rounded-[12px] border border-hairline bg-card p-5 text-sm text-secondary">No public exams are available right now. Explore the study library for subject practice.</p>}
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{data?.collections.filter((collection) => collection.kind === 'exam').slice(0,6).map((collection, index) => {
+                return <Link key={collection.id} to={collection.route ?? `/exams/${collection.id}`} className={`ism-card-surface group flex min-h-52 flex-col gap-3 rounded-[14px] border bg-card p-5 ${index === 0 ? 'border-exams' : 'border-hairline'}`}><span className="self-start rounded-pill bg-exams-soft px-2.5 py-1 font-mono text-xs uppercase tracking-[0.08em] text-exams-dark">Exam collection</span><span className="font-display text-lg font-medium leading-tight group-hover:text-exams-dark">{collection.title}</span><span className="flex-1 text-sm leading-relaxed text-secondary">{collection.sections} sections · built from reviewed bank questions</span><span className="inline-flex items-center gap-1 text-sm font-semibold text-exams-dark">Open <span aria-hidden="true" className="transition-transform duration-150 group-hover:translate-x-1">→</span></span></Link>
+              })}</div>
+            </section>
 
-        <section className="flex flex-wrap items-start gap-8 pt-16" aria-labelledby="community-title">
-          <div className="flex-1 basis-[270px]"><div className="font-mono text-xs uppercase tracking-[0.08em] text-community-dark">Community</div><h2 id="community-title" className="mt-2 font-display text-3xl font-medium leading-tight">Better, together.</h2><p className="mt-3 max-w-[420px] text-sm leading-relaxed text-secondary">Share what helps you learn. Questions, useful notes and reviewed collections each have a place.</p></div>
-          <div className="grid flex-[2] basis-[520px] gap-3 sm:grid-cols-2">{COMMUNITY.map((item) => <Link to={item.to} key={item.title} className={`ism-card-surface group rounded-[14px] border border-hairline p-5 ${item.softClass}`}><span className="block h-1.5 w-8 rounded-pill" style={{ backgroundColor: item.color }} /><div className="mt-2.5 flex flex-wrap items-center gap-2"><h3 className={`font-display text-lg font-medium ${item.inkClass}`}>{item.title}</h3></div><p className="mt-2 text-sm leading-relaxed text-secondary">{item.body}</p><span className="mt-3 inline-flex min-h-11 items-center gap-1 text-sm font-semibold text-link">Explore <span aria-hidden="true" className="transition-transform duration-150 group-hover:translate-x-1">→</span></span></Link>)}</div>
-        </section>
+            <section className="flex flex-wrap items-start gap-8 pt-10" aria-labelledby="community-title">
+              <div className="flex-1 basis-[270px]"><div className="font-mono text-xs uppercase tracking-[0.08em] text-community-dark">Community</div><h2 id="community-title" className="mt-2 font-display text-3xl font-medium leading-tight">Better, together.</h2><p className="mt-3 max-w-[420px] text-sm leading-relaxed text-secondary">Share what helps you learn. Questions, useful notes and reviewed collections each have a place.</p></div>
+              <div className="grid flex-[2] basis-[520px] gap-3 sm:grid-cols-2">{COMMUNITY.map((item) => <Link to={item.to} key={item.title} className={`ism-card-surface group rounded-[14px] border border-hairline p-5 ${item.softClass}`}><span className="block h-1.5 w-8 rounded-pill" style={{ backgroundColor: item.color }} /><div className="mt-2.5 flex flex-wrap items-center gap-2"><h3 className={`font-display text-lg font-medium ${item.inkClass}`}>{item.title}</h3></div><p className="mt-2 text-sm leading-relaxed text-secondary">{item.body}</p><span className="mt-3 inline-flex min-h-11 items-center gap-1 text-sm font-semibold text-link">Explore <span aria-hidden="true" className="transition-transform duration-150 group-hover:translate-x-1">→</span></span></Link>)}</div>
+            </section>
+        </div>
+
+        <div className="ed-gutter-dock">
+          <ExploreDeckRail heading="Also on Finna" compact />
+        </div>
       </div>
 
       <footer className="bg-[#12131A] text-[#CFC7B8]"><div className="mx-auto flex max-w-shell flex-wrap justify-between gap-3 px-6 py-[22px] font-mono text-xs leading-relaxed sm:text-xs"><span>India Study Map · Aizawl</span><span>Past MPSC questions · Clearly labelled answer sources</span></div></footer>

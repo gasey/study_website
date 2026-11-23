@@ -3,7 +3,7 @@ import BioModeration from '../components/BioModeration'
 import {UserAvatar} from '../components/AvatarArt'
 import type {AvatarLook} from '../lib/avatar'
 import {useEffect,useState,type FormEvent} from 'react'
-import {Link,useNavigate,useParams,useSearchParams} from 'react-router-dom'
+import {Link,useLocation,useNavigate,useParams,useSearchParams} from 'react-router-dom'
 import {contentRequest,type MaterialItem} from '../lib/materials'
 import {MaterialCard} from '../components/MaterialDiscovery'
 const BUTTON='inline-flex min-h-11 items-center justify-center rounded-pill border border-hairline bg-card px-4 py-2 text-sm font-semibold disabled:opacity-40'
@@ -30,10 +30,246 @@ export default function CreatorProfile(){const {generation,version}=useCommunity
  return <main className={SHELL}><Link to="/creators" className="text-sm text-link">← Find creators</Link><ErrorNotice error={error}/>{!data&&!error&&<p role="status" className="mt-5 text-muted">Loading creator…</p>}{notice&&<p role="status" className="mt-4 text-sm text-practice-dark">{notice}</p>}{data&&<><header className="mt-5 flex flex-wrap items-center gap-5 rounded-[14px] border border-hairline bg-card p-6"><UserAvatar look={data.avatar} initials={data.handle} size={90}/><div className="min-w-0 flex-1"><div className="font-mono text-xs uppercase text-[#5E2F98]">{data.public?'Public creator':'Your private creator preview'}</div><h1 className="mt-2 break-words font-display text-3xl leading-tight">{data.handle}</h1><p className="mt-3 whitespace-pre-wrap break-words text-base leading-relaxed text-secondary">{data.bio||'Learning and sharing study materials.'}</p></div><div className="flex flex-wrap gap-2">{data.is_self?<Link to="/creators/settings" className={BUTTON}>Edit visibility</Link>:<><button disabled={busy} aria-pressed={data.following} onClick={()=>void act('follow',{enabled:!data.following})} className={BUTTON+(data.following?' !bg-[#EEE6F7]':' !bg-ink !text-paper')}>{data.following?'✓ Following':'Follow creator'}</button><button disabled={busy} onClick={()=>setBlockConfirm(v=>!v)} className={BUTTON}>Block</button><button disabled={busy} onClick={()=>setReportOpen(v=>!v)} className={BUTTON}>Report</button></>}</div></header>{data.community&&<ReputationSummary value={data.community}/>}{blockConfirm&&<section aria-label="Confirm creator block" className="mt-4 rounded-[12px] border border-hairline bg-card p-5"><h2 className="font-display text-xl">Block this creator?</h2><p className="mt-2 text-sm text-secondary">Follows in both directions will be removed. Their materials, profile, discussions and desk messages will be hidden while signed in, and pending desk invitations will be cancelled. Blocking does not remove either of you from a shared desk; you can leave it in desk settings. You can unblock them in visibility settings.</p><div className="mt-3 flex gap-3"><button disabled={busy} className={BUTTON+' text-mypick'} onClick={()=>void act('block',{enabled:true})}>Confirm block</button><button disabled={busy} className={BUTTON} onClick={()=>setBlockConfirm(false)}>Cancel</button></div></section>}<div className="mt-3 grid gap-3 sm:grid-cols-2"><div className="rounded-[14px] border border-hairline bg-card p-4"><strong className="font-display text-2xl">{data.materials}</strong><p className="text-sm text-secondary">published materials</p></div><div className="rounded-[14px] border border-hairline bg-card p-4"><strong className="font-display text-2xl">{data.followers}</strong><p className="text-sm text-secondary">followers</p></div></div>{reportOpen&&<form onSubmit={(e:FormEvent)=>{e.preventDefault();void act('report',report)}} className="mt-4 rounded-[14px] border border-hairline bg-card p-5"><label className="block text-sm">Reason<select className={INPUT+' mt-2'} value={report.reason} onChange={e=>setReport({...report,reason:e.target.value})}>{['spam','harassment','impersonation','other'].map(r=><option key={r}>{r}</option>)}</select></label><label className="mt-3 block text-sm">What should be reviewed?<textarea required minLength={10} maxLength={2000} value={report.note} onChange={e=>setReport({...report,note:e.target.value})} className={INPUT+' mt-2'}/></label><button disabled={busy} className={BUTTON+' mt-3'}>Send report</button></form>}<div className="mt-5 flex gap-2" role="group" aria-label="Creator content"><button aria-pressed={tab==='materials'} onClick={()=>setTab('materials')} className={BUTTON}>Materials</button><button aria-pressed={tab==='contributions'} onClick={()=>setTab('contributions')} className={BUTTON}>Reviewed contributions</button></div>{tab==='materials'?<CreatorMaterials uid={id}/>:<section className="mt-5 space-y-3">{data.contributions.map(c=><Link key={c.id} to={c.canonical_id?'/bank/'+encodeURIComponent(c.canonical_id):'/community/questions'} className="block rounded-[12px] border border-hairline bg-card p-5"><div className="font-mono text-xs uppercase text-muted">Published · {c.kind.replace(/_/g,' ')}</div><h2 className="mt-2 break-words font-display text-xl">{c.title}</h2><p className="mt-2 text-xs text-muted">{new Date(c.updated_at).toLocaleDateString('en-IN')}</p></Link>)}{!data.contributions.length&&<p className="rounded-[12px] border border-hairline bg-card p-5 text-secondary">No publicly attributed published bank contributions yet.</p>}<PageButtons offset={offset} more={data.has_more_contributions} onPage={setOffset}/><p className="text-xs text-muted">Contribution attribution follows the creator’s separate contribution-visibility setting.</p></section>}</>}</main>
 }
 interface CreatorSettingsData{bio_version:number;bio_needs_approval:boolean;bio_hidden:boolean;id:string;handle:string;public:boolean;bio:string;following:{id:string;handle:string;public:boolean}[];blocked:{id:string;handle:string}[]}
-export function CreatorSettings(){const [data,setData]=useState<CreatorSettingsData|null>(null),[publicProfile,setPublic]=useState(false),[bio,setBio]=useState(''),[error,setError]=useState(''),[notice,setNotice]=useState(''),[busy,setBusy]=useState(false),[refresh,setRefresh]=useState(0)
+type CreatorTab='visibility'|'following'|'blocked'
+export function CreatorSettings(){
+ const location=useLocation()
+ const [data,setData]=useState<CreatorSettingsData|null>(null),[publicProfile,setPublic]=useState(false),[bio,setBio]=useState(''),[error,setError]=useState(''),[notice,setNotice]=useState(''),[busy,setBusy]=useState(false),[refresh,setRefresh]=useState(0),[copied,setCopied]=useState(false),[filter,setFilter]=useState('')
+ const [tab,setTab]=useState<CreatorTab>(()=>location.hash==='#blocked-users'?'blocked':'visibility')
+ useEffect(()=>{if(location.hash==='#blocked-users')setTab('blocked')},[location.hash])
  useEffect(()=>{let live=true;setError('');contentRequest<CreatorSettingsData>('/creators/settings').then(r=>{if(live){setData(r);setPublic(r.public);setBio(r.bio)}}).catch(e=>{if(live)setError(e.message)});return()=>{live=false}},[refresh])
  async function mutate(path:string,body:unknown){setBusy(true);setError('');setNotice('');try{await contentRequest(path,body);setNotice('Changes saved.');setRefresh(n=>n+1);window.dispatchEvent(new Event('ism-community-standing-change'))}catch(e){setError((e as Error).message)}finally{setBusy(false)}}
- return <main className={SHELL}><Link to="/profile" className="text-sm text-link">← My account profile</Link><h1 className="mt-3 font-display text-3xl">Creator visibility & follows</h1><p className="mt-3 max-w-[760px] text-sm leading-relaxed text-secondary">Your account, email, study activity and billing stay private. Turning on a creator profile shares your handle, bio and published work. Existing published materials remain public when you hide your profile. Follows, followers and upvotes earn no points.</p><ErrorNotice error={error}/>{notice&&<p role="status" className="mt-3 text-sm text-practice-dark">{notice}</p>}{!data&&!error&&<p className="mt-4 text-muted">Loading settings…</p>}{data&&<><form onSubmit={e=>{e.preventDefault();void mutate('/creators/settings',{public:publicProfile,bio,expected_bio_version:data.bio_version})}} className="mt-5 rounded-[14px] border border-hairline bg-card p-5"><label className="flex min-h-11 items-center gap-3 text-sm font-semibold"><input type="checkbox" checked={publicProfile} onChange={e=>setPublic(e.target.checked)}/>Show my creator profile publicly</label><label className="mt-3 block text-sm">Short bio · optional · 140 characters<textarea maxLength={140} rows={4} value={bio} onChange={e=>setBio(e.target.value)} className={INPUT+' mt-2'}/></label><p role="status" className="mt-2 text-xs text-secondary">{data.bio_hidden?'Your bio is hidden by moderation. A revised bio waits for review.':data.bio_needs_approval?'Your bio is waiting for review; only you can see it.':'Bio visibility follows your public-profile setting.'}</p><p className="mt-2 text-xs text-muted">Public handle: {data.handle}. Hide your profile to leave discovery and followers’ material feeds. Re-enabling restores visibility to existing followers.</p><div className="mt-4 flex flex-wrap gap-3"><button disabled={busy} className={BUTTON}>Save visibility</button><Link to={'/creators/'+encodeURIComponent(data.id)} className={BUTTON}>View my creator profile</Link></div></form><section className="mt-6"><h2 className="font-display text-xl">Following · {data.following.length}</h2><Link to="/creators" className="mt-2 inline-flex min-h-11 items-center text-sm font-semibold text-link">Find creators →</Link>{data.following.map(c=><div key={c.id} className="mt-2 flex min-w-0 items-center justify-between gap-3 rounded-[10px] border border-hairline bg-card p-4">{c.public?<Link to={'/creators/'+encodeURIComponent(c.id)} className="min-w-0 break-words text-link">{c.handle}</Link>:<span className="break-words text-secondary">{c.handle} · profile hidden</span>}<button disabled={busy} onClick={()=>void mutate('/creators/'+encodeURIComponent(c.id)+'/follow',{enabled:false})} className={BUTTON}>Unfollow</button></div>)}{!data.following.length&&<p className="mt-2 text-sm text-muted">You haven’t followed any creators yet.</p>}</section><section className="mt-6"><h2 id="blocked-users" className="font-display text-xl">Blocked creators</h2><p className="mt-2 text-sm text-secondary">Blocking removes follows in both directions and hides creator profiles, materials, question discussions and private desk content while signed in, and cancels pending desk invitations. Shared desk membership remains until you leave or the owner removes a member. Unblocking does not restore follows. Public pages can still be viewed when signed out.</p>{data.blocked.map(c=><div key={c.id} className="mt-2 flex items-center justify-between gap-3 rounded-[10px] border border-hairline bg-card p-4"><span className="break-words">{c.handle}</span><button disabled={busy} onClick={()=>void mutate('/creators/'+encodeURIComponent(c.id)+'/block',{enabled:false})} className={BUTTON}>Unblock</button></div>)}{!data.blocked.length&&<p className="mt-3 text-sm text-muted">No blocked creators.</p>}</section></>}</main>
+ function copyProfileUrl(){
+  if(!data||typeof navigator==='undefined'||!navigator.clipboard)return
+  const url=window.location.origin+'/creators/'+encodeURIComponent(data.id)
+  void navigator.clipboard.writeText(url).then(()=>{setCopied(true);window.setTimeout(()=>setCopied(false),1800)}).catch(()=>{})
+ }
+ const bioStatus=data?.bio_hidden?{label:'Hidden by moderation',cls:'finna-st-pill finna-st-pill--warn'}:data?.bio_needs_approval?{label:'Waiting for review',cls:'finna-st-pill finna-st-pill--amber'}:{label:publicProfile?'Live when public':'Only visible to you',cls:'finna-st-pill finna-st-pill--teal'}
+ const dirty=!!data&&(publicProfile!==data.public||bio!==data.bio)
+ const bioPct=Math.min(100,Math.round((bio.length/140)*100))
+ const filteredFollowing=(data?.following||[]).filter(c=>!filter.trim()||c.handle.toLowerCase().includes(filter.trim().toLowerCase()))
+ const filteredBlocked=(data?.blocked||[]).filter(c=>!filter.trim()||c.handle.toLowerCase().includes(filter.trim().toLowerCase()))
+ const initials=data?data.handle.replace(/^@/,'').slice(0,2).toUpperCase():'CR'
+
+ return <main className="finna-page cr-page">
+  <div className="cr-shell">
+   <header className="cr-hero">
+    <div className="cr-hero-top">
+     <div className="cr-hero-id">
+      <div className={'cr-hero-av'+(publicProfile?' is-live':'')} aria-hidden="true">{initials}</div>
+      <div className="cr-hero-copy">
+       <span className="cr-eyebrow">Community · Creator Studio</span>
+       <div className="cr-hero-title-row">
+        <h1>Creator visibility &amp; community</h1>
+        {data&&<span className={'cr-status-pill'+(data.public?' is-public':'')}><i aria-hidden="true"/>{data.public?'Public profile':'Private profile'}</span>}
+       </div>
+       <p className="cr-hero-sub">{data?`@${data.handle} · Shape how learners discover your published notes and manage who you follow`:'Shape how learners discover your published notes and manage who you follow'}</p>
+      </div>
+     </div>
+     <div className="cr-hero-actions">
+      <Link to="/profile" className="cr-glass-btn">← Profile</Link>
+      <Link to="/creators" className="cr-glass-btn">Find creators</Link>
+      {data&&<Link to={'/creators/'+encodeURIComponent(data.id)} className="cr-glass-btn cr-glass-btn--accent">Open page ↗</Link>}
+     </div>
+    </div>
+
+    <div className="cr-hero-metrics">
+     <div className="cr-metric">
+      <span>Directory status</span>
+      <strong>{data?(data.public?'Discoverable':'Hidden'):'—'}</strong>
+     </div>
+     <div className="cr-metric">
+      <span>Following</span>
+      <strong>{data?data.following.length:'—'}</strong>
+     </div>
+     <div className="cr-metric">
+      <span>Blocked</span>
+      <strong>{data?data.blocked.length:'—'}</strong>
+     </div>
+    </div>
+   </header>
+
+   <div className="cr-body">
+    <nav aria-label="Creator settings sections" className="cr-side">
+     <div className="cr-side-group-wrap">
+      <div className="cr-side-group">Workspace</div>
+      <button type="button" onClick={()=>{setTab('visibility');setFilter('')}} aria-current={tab==='visibility'?'page':undefined} className={'cr-navitem'+(tab==='visibility'?' is-on':'')}>
+       <span className="cr-nav-ico" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3" stroke="currentColor" strokeWidth="1.6"/><path d="M4.5 16.5c.8-2.8 3-4 5.5-4s4.7 1.2 5.5 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg></span>
+       <span className="cr-nav-lbl">Public profile</span>
+      </button>
+      <button type="button" onClick={()=>{setTab('following');setFilter('')}} aria-current={tab==='following'?'page':undefined} className={'cr-navitem'+(tab==='following'?' is-on':'')}>
+       <span className="cr-nav-ico" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><path d="M10 4.5v11M4.5 10h11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg></span>
+       <span className="cr-nav-lbl">Following</span>
+       {data&&<span className="cr-nav-count">{data.following.length}</span>}
+      </button>
+      <button type="button" onClick={()=>{setTab('blocked');setFilter('')}} aria-current={tab==='blocked'?'page':undefined} className={'cr-navitem'+(tab==='blocked'?' is-on':'')}>
+       <span className="cr-nav-ico" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="6.5" stroke="currentColor" strokeWidth="1.6"/><path d="m5.6 5.6 8.8 8.8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg></span>
+       <span className="cr-nav-lbl">Blocked</span>
+       {data&&<span className="cr-nav-count">{data.blocked.length}</span>}
+      </button>
+     </div>
+     <div className="cr-side-group-wrap">
+      <div className="cr-side-group">Shortcuts</div>
+      <Link to="/studio" className="cr-navitem">
+       <span className="cr-nav-ico" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><path d="M4 15.5h12M6 12l6.5-6.5a1.5 1.5 0 0 1 2.1 2.1L8.1 14H6v-2Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/></svg></span>
+       <span className="cr-nav-lbl">Content studio</span>
+      </Link>
+      <Link to="/community?tab=following" className="cr-navitem">
+       <span className="cr-nav-ico" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><path d="M4 6h12M4 10h9M4 14h6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg></span>
+       <span className="cr-nav-lbl">Following feed</span>
+      </Link>
+      <Link to="/account/security" className="cr-navitem">
+       <span className="cr-nav-ico" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><path d="M10 2.5 4 5v4.6c0 3.7 2.5 6.8 6 7.9 3.5-1.1 6-4.2 6-7.9V5l-6-2.5Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/></svg></span>
+       <span className="cr-nav-lbl">Account &amp; security</span>
+      </Link>
+     </div>
+    </nav>
+
+    <div className="cr-pane">
+     <ErrorNotice error={error}/>
+     {notice&&<div role="status" className="cr-toast"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="7" stroke="currentColor" strokeWidth="1.6"/><path d="m6 9.2 2 2 4-4.2" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg><span>{notice}</span></div>}
+     {!data&&!error&&<div role="status" className="cr-skeleton"><span/><span/><span/></div>}
+
+     {data&&tab==='visibility'&&<div className="cr-vis-layout">
+      <form className="cr-vis-form" onSubmit={e=>{e.preventDefault();void mutate('/creators/settings',{public:publicProfile,bio,expected_bio_version:data.bio_version})}}>
+       <div className="cr-sec-head">
+        <h2>Public visibility</h2>
+        <p>Toggle discovery anytime. Hiding your profile pauses discovery without unpublishing existing materials.</p>
+       </div>
+
+       <div className={'cr-vis-switch-card'+(publicProfile?' is-on':'')}>
+        <div className="cr-vis-switch-ico" aria-hidden="true">
+         {publicProfile?<svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" strokeWidth="1.6"/><path d="M3.5 10h13M10 3a11 11 0 0 1 0 14M10 3a11 11 0 0 0 0 14" stroke="currentColor" strokeWidth="1.4"/></svg>:<svg viewBox="0 0 20 20" fill="none"><rect x="4" y="9" width="12" height="8" rx="2" stroke="currentColor" strokeWidth="1.6"/><path d="M7 9V6.5a3 3 0 0 1 6 0V9" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg>}
+        </div>
+        <div className="cr-vis-switch-copy">
+         <strong>Show my creator profile publicly</strong>
+         <span>{publicProfile?'Learners can find your handle and follow new published materials.':'Only you can preview your creator page right now.'}</span>
+        </div>
+        <button type="button" role="switch" aria-checked={publicProfile} aria-label="Show my creator profile publicly" onClick={()=>setPublic(v=>!v)} className={'finna-st-toggle'+(publicProfile?' is-on':'')}>
+         <span className="finna-st-toggle-dot"/>
+        </button>
+       </div>
+
+       <div className="cr-privacy-grid">
+        <div className="cr-privacy-tile is-shared">
+         <span className="cr-privacy-ico" aria-hidden="true">✓</span>
+         <div>
+          <strong>Shared when public</strong>
+          <p>Your @{data.handle} handle, short bio, and approved materials.</p>
+         </div>
+        </div>
+        <div className="cr-privacy-tile is-locked">
+         <span className="cr-privacy-ico" aria-hidden="true">🔒</span>
+         <div>
+          <strong>Always stays private</strong>
+          <p>Email, practice scores, mocks, streaks, and billing.</p>
+         </div>
+        </div>
+       </div>
+
+       <div className="cr-bio-block">
+        <div className="finna-st-field-top">
+         <label htmlFor="creator-bio-input" className="cr-field-label">Short bio</label>
+         <span className={bioStatus.cls}>{bioStatus.label}</span>
+        </div>
+        <div className="cr-bio-box">
+         <textarea id="creator-bio-input" maxLength={140} rows={3} value={bio} onChange={e=>setBio(e.target.value)} placeholder="e.g. Sharing MPSC Polity summaries, Mizoram GK notes & past-paper breakdowns." className="cr-bio-input"/>
+         <div className="cr-bio-meter" aria-hidden="true"><span style={{width:`${bioPct}%`}}/></div>
+        </div>
+        <div className="finna-st-hint-row">
+         <span>{bio.length} / 140 characters</span>
+         <span>Follows &amp; upvotes never affect XP or points</span>
+        </div>
+       </div>
+
+       <div className={'cr-save-bar'+(dirty?' is-dirty':'')}>
+        <span className="cr-save-status">{dirty?'You have unsaved changes':'All changes saved'}</span>
+        <div className="cr-save-btns">
+         {dirty&&<button type="button" disabled={busy} onClick={()=>{setPublic(data.public);setBio(data.bio)}} className="finna-st-btn finna-st-btn--quiet">Reset</button>}
+         <button type="submit" disabled={busy||!dirty} className="cr-primary-btn">{busy?'Saving…':'Save visibility'}</button>
+        </div>
+       </div>
+      </form>
+
+      <aside className="cr-preview-col" aria-label="Live creator card preview">
+       <div className="cr-preview-shell">
+        <div className="cr-preview-bar">
+         <span className="cr-preview-label">Live preview</span>
+         <span className={'cr-preview-tag'+(publicProfile?' is-on':'')}>{publicProfile?'Discoverable':'Hidden'}</span>
+        </div>
+        <div className={'cr-preview-card'+(publicProfile?'':' is-dim')}>
+         <div className="cr-preview-banner"/>
+         <div className="cr-preview-body">
+          <div className="cr-preview-av" aria-hidden="true">{initials}</div>
+          <div className="cr-preview-handle">@{data.handle}</div>
+          <p className={'cr-preview-bio'+(bio.trim()?'':' is-placeholder')}>
+           {bio.trim()||'Add a short bio to tell learners which exams or subjects you share notes for.'}
+          </p>
+          <div className="cr-preview-foot">
+           <span>Private scores stay hidden</span>
+          </div>
+         </div>
+         {!publicProfile&&<div className="cr-preview-mask"><span>Private · Only you can see this</span></div>}
+        </div>
+        <div className="cr-preview-actions">
+         <button type="button" onClick={copyProfileUrl} className="finna-st-btn cr-preview-copy">{copied?'Copied link ✓':'Copy profile link'}</button>
+         <Link to={'/creators/'+encodeURIComponent(data.id)} className="finna-st-btn">View full page →</Link>
+        </div>
+       </div>
+      </aside>
+     </div>}
+
+     {data&&tab==='following'&&<div className="cr-list-pane">
+      <div className="cr-list-top">
+       <div className="cr-sec-head">
+        <h2>Following <span className="cr-count-pill">{data.following.length}</span></h2>
+        <p>Approved study materials from creators you follow appear automatically in your Following feed.</p>
+       </div>
+       {data.following.length>3&&<input type="search" value={filter} onChange={e=>setFilter(e.target.value)} placeholder="Filter by handle…" aria-label="Filter followed creators" className="cr-filter-input"/>}
+      </div>
+      {data.following.length?filteredFollowing.length?<div className="cr-cards-grid">
+       {filteredFollowing.map(c=><div key={c.id} className="cr-person-card">
+        <span className="cr-person-av" aria-hidden="true">{c.handle.slice(0,2).toUpperCase()}</span>
+        <div className="cr-person-meta">
+         {c.public?<Link to={'/creators/'+encodeURIComponent(c.id)} className="cr-person-name">@{c.handle}</Link>:<span className="cr-person-name">@{c.handle}</span>}
+         <span className="cr-person-sub">{c.public?'Public creator · active in feed':'Profile currently hidden'}</span>
+        </div>
+        <button type="button" disabled={busy} onClick={()=>void mutate('/creators/'+encodeURIComponent(c.id)+'/follow',{enabled:false})} className="finna-st-btn">Unfollow</button>
+       </div>)}
+      </div>:<div className="cr-empty-card"><p>No followed creators match “{filter}”.</p></div>:<div className="cr-empty-card">
+       <div className="cr-empty-halo" aria-hidden="true">✦</div>
+       <strong>Not following any creators yet</strong>
+       <p>Follow public contributors to see their newly approved notes and study sheets in one calm feed.</p>
+       <Link to="/creators" className="cr-primary-btn mt-4">Explore creators →</Link>
+      </div>}
+     </div>}
+
+     {data&&tab==='blocked'&&<div id="blocked-users" className="cr-list-pane">
+      <div className="cr-list-top">
+       <div className="cr-sec-head">
+        <h2>Blocked creators <span className="cr-count-pill">{data.blocked.length}</span></h2>
+        <p>Blocking removes mutual follows and hides their profile, materials, and discussions while you’re signed in. Unblocking does not re-follow.</p>
+       </div>
+       {data.blocked.length>3&&<input type="search" value={filter} onChange={e=>setFilter(e.target.value)} placeholder="Filter blocked handles…" aria-label="Filter blocked creators" className="cr-filter-input"/>}
+      </div>
+      {data.blocked.length?filteredBlocked.length?<div className="cr-cards-grid">
+       {filteredBlocked.map(c=><div key={c.id} className="cr-person-card">
+        <span className="cr-person-av is-muted" aria-hidden="true">{c.handle.slice(0,2).toUpperCase()}</span>
+        <div className="cr-person-meta">
+         <span className="cr-person-name">@{c.handle}</span>
+         <span className="cr-person-sub">Hidden across profiles, materials &amp; discussions</span>
+        </div>
+        <button type="button" disabled={busy} onClick={()=>void mutate('/creators/'+encodeURIComponent(c.id)+'/block',{enabled:false})} className="finna-st-btn">Unblock</button>
+       </div>)}
+      </div>:<div className="cr-empty-card"><p>No blocked creators match “{filter}”.</p></div>:<div className="cr-empty-card">
+       <div className="cr-empty-halo" aria-hidden="true">✓</div>
+       <strong>Your block list is clear</strong>
+       <p>Anyone you block from a creator page or discussion will show up here so you can manage or unblock them anytime.</p>
+      </div>}
+     </div>}
+    </div>
+   </div>
+  </div>
+ </main>
 }
 export function CreatorReportAdmin(){const [params,setParams]=useSearchParams();const reportId=params.get('creator_report')||'';const [data,setData]=useState<{items:{id:number;creator_id:string;handle:string;reason:string;note:string}[];has_more:boolean}|null>(null),[offset,setOffset]=useState(0),[refresh,setRefresh]=useState(0),[error,setError]=useState(''),[busy,setBusy]=useState(false),[reasons,setReasons]=useState<Record<number,string>>({})
  useEffect(()=>{let live=true;setData(null);setError('');contentRequest<typeof data>('/admin/bank/creator-reports?'+new URLSearchParams({offset:String(offset),...(reportId?{report_id:reportId}:{})})).then(r=>{if(live)setData(r)}).catch(e=>{if(live)setError(e.message)});return()=>{live=false}},[offset,refresh,reportId])

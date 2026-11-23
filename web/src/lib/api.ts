@@ -1,4 +1,5 @@
 import {accountContext,accountGeneration,checkSessionRejected} from './accountContext'
+import {extractApiError} from './extractError'
 import {ReadRequestCache,catalogTtl,questionQueryString} from './requestCache'
 import {scopedApiPath} from './examScope'
 import type {AvatarLook} from './avatar'
@@ -107,6 +108,8 @@ export interface AnswerResult {
   answer_source: AnswerSource
   verified: boolean
   explanation: string | null
+  /** Aggregate, post-reveal only; null below the server's population gate. */
+  stats?: import('../components/QuestionStats').QuestionStatsData | null
 }
 
 export interface ComparedAnswer {
@@ -166,9 +169,9 @@ async function req<T>(path: string, init?: RequestInit): Promise<T> {
     })
     if(!res.ok){
       if(res.status===401&&identity)await checkSessionRejected(identity)
-      let detail=res.statusText
-      try{detail=(await res.json()).detail??detail}catch{/* keep status text */}
-      throw new ApiError(res.status,detail)
+      let payload:unknown=null
+      try{payload=await res.json()}catch{/* non-JSON gateway or 5xx HTML body */}
+      throw new ApiError(res.status,extractApiError(payload,res.statusText,'Something went wrong. Please try again.'))
     }
     const data=await res.json() as T
     if(epoch!==accountGeneration())throw new ApiError(409,'Your account changed. Please reload.')

@@ -21,6 +21,8 @@ const SOURCES = ['official','key','derived','inferred','none'] as const
  *  "Asked 2+ times" filter in FilterRail rather than making a promise the data
  *  cannot keep. Re-enable when `max(times_asked) > 1`. */
 const ORDERS = [['paper','Paper order'],['mixed','Mixed'],['repeated','Most asked']] as const
+const STUDY_STATUSES = [['all','All'],['unseen','Unseen'],['ever_wrong','Ever wrong'],['answered','Answered']] as const
+type StudyStatus = (typeof STUDY_STATUSES)[number][0]
 const REPEATS_READY = false
 /** Coverage rail: the bank has no year facet, so each bar is a real count query. */
 const COVERAGE_YEARS = 6
@@ -33,6 +35,9 @@ export default function Bank() {
   const pool=(writtenMode?'all':['all','scorable','practice'].includes(params.get('pool')||'')?params.get('pool'):'all') as 'all'|'scorable'|'practice'
   const requested=params.get('order')||''
   const order=((['repeated','mixed','paper'].includes(requested)&&(requested!=='repeated'||REPEATS_READY))?requested:'paper') as 'repeated'|'mixed'|'paper'
+  const rawStatus=params.get('study_status')||'all'
+  const studyStatus=(STUDY_STATUSES.some(([k])=>k===rawStatus)?rawStatus:'all') as StudyStatus
+  const setStudyStatus=(value:StudyStatus)=>setParams(previous=>{const n=new URLSearchParams(previous);if(value==='all')n.delete('study_status');else n.set('study_status',value);n.delete('page');return n},{replace:true})
   const filters:Filters={sources:params.getAll('source').filter((s):s is Filters['sources'][number]=>SOURCES.some(v=>v===s)),yearFrom:params.get('year_from')||'',yearTo:params.get('year_to')||'',subjectId:params.get('subject_id')||'',topicId:params.get('topic_id')||''}
   const page=pageNumber(params.get('page')),offset=(page-1)*PAGE
   const [taxonomy,setTaxonomy]=useState<TaxonomyFacet[]>([])
@@ -42,7 +47,7 @@ export default function Bank() {
   const goPage=(value:number)=>{setParams(previous=>{const n=new URLSearchParams(previous);if(value>1)n.set('page',String(value));else n.delete('page');return n});requestAnimationFrame(()=>scrollToResults('bank-results'))}
   useEffect(()=>{let live=true;listTaxonomy(pool,true).then(v=>{if(live)setTaxonomy(v)}).catch(()=>{if(live)setTaxonomy([])});return()=>{live=false}},[pool])
   const sourceKey=filters.sources.join(',')
-  const base=useMemo(()=>({pool,q:search.length>=2?search:undefined,source:filters.sources.length?filters.sources:undefined,year_from:/^\d{4}$/.test(filters.yearFrom)?Number(filters.yearFrom):undefined,year_to:/^\d{4}$/.test(filters.yearTo)?Number(filters.yearTo):undefined,subject_id:filters.subjectId||undefined,topic_id:filters.topicId||undefined,collection_id:collectionId||undefined,paper_id:paperId||undefined,order}),[pool,search,sourceKey,filters.yearFrom,filters.yearTo,filters.subjectId,filters.topicId,collectionId,paperId,order])
+  const base=useMemo(()=>({pool,q:search.length>=2?search:undefined,source:filters.sources.length?filters.sources:undefined,year_from:/^\d{4}$/.test(filters.yearFrom)?Number(filters.yearFrom):undefined,year_to:/^\d{4}$/.test(filters.yearTo)?Number(filters.yearTo):undefined,subject_id:filters.subjectId||undefined,topic_id:filters.topicId||undefined,collection_id:collectionId||undefined,paper_id:paperId||undefined,order,study_status:studyStatus!=='all'?studyStatus:undefined}),[pool,search,sourceKey,filters.yearFrom,filters.yearTo,filters.subjectId,filters.topicId,collectionId,paperId,order,studyStatus])
   const key=JSON.stringify(base),settledKey=useDebouncedValue(key)
   useEffect(()=>{
     let live=true,timer:number|undefined;setLoading(true);setError(null)
@@ -83,8 +88,9 @@ export default function Bank() {
   },[key,settledKey,retryKey])
   const coverageMax=Math.max(1,...coverage.map(c=>c.n))
   const rangeLabel=total===0?'No questions':`Showing ${(offset+1).toLocaleString('en-IN')}–${Math.min(offset+PAGE,total).toLocaleString('en-IN')} of ${total.toLocaleString('en-IN')}`
-  const hasFilters=search.length>0||collectionId!==''||paperId!==''||filters.sources.length>0||filters.yearFrom!==''||filters.yearTo!==''||filters.subjectId!==''||filters.topicId!==''
-  const clearFilters=()=>setParams(previous=>{const n=new URLSearchParams(previous);for(const k of ['q','collection_id','paper_id','paper_label','subject_id','topic_id','source','year_from','year_to','page'])n.delete(k);return n},{replace:true})
+  const hasFilters=search.length>0||collectionId!==''||paperId!==''||filters.sources.length>0||filters.yearFrom!==''||filters.yearTo!==''||filters.subjectId!==''||filters.topicId!==''||studyStatus!=='all'
+  const clearFilters=()=>setParams(previous=>{const n=new URLSearchParams(previous);for(const k of ['q','collection_id','paper_id','paper_label','subject_id','topic_id','source','year_from','year_to','study_status','page'])n.delete(k);return n},{replace:true})
+  const practiceFilteredHref=useMemo(()=>{const p=new URLSearchParams();if(collectionId)p.set('exam',collectionId);if(filters.subjectId)p.set('subject',filters.subjectId);if(search.length>=2)p.set('q',search);return '/practice'+(p.size?'?'+p:'')},[collectionId,filters.subjectId,search])
 
   return (
     <div className="finna-bank" data-screen="bank" data-sec="practice">
@@ -138,22 +144,36 @@ export default function Bank() {
         />
 
         <section id="bank-results" tabIndex={-1} className="finna-bank-results scroll-mt-28 focus:outline-none">
-          <div className="finna-segments" role="group" aria-label="Question pool">
-            <button type="button" onClick={() => setParams(prev=>{const n=new URLSearchParams(prev);n.delete('mode');n.set('pool','all');n.delete('page');return n},{replace:true})} aria-pressed={!writtenMode && pool === 'all'}>
-              All questions
-            </button>
-            <button type="button" onClick={() => setParams(prev=>{const n=new URLSearchParams(prev);n.delete('mode');n.set('pool','practice');n.delete('page');return n},{replace:true})} aria-pressed={!writtenMode && pool === 'practice'}>
-              With answers
-            </button>
-            <button type="button" onClick={() => setParams(prev=>{const n=new URLSearchParams(prev);n.set('mode','written');n.set('pool','all');n.delete('page');return n},{replace:true})} aria-pressed={writtenMode}>
-              Written answers
-            </button>
+          <div className="flex flex-wrap items-center gap-2">
+            <div className="finna-segments" role="group" aria-label="Question pool">
+              <button type="button" onClick={() => setParams(prev=>{const n=new URLSearchParams(prev);n.delete('mode');n.set('pool','all');n.delete('page');return n},{replace:true})} aria-pressed={!writtenMode && pool === 'all'}>
+                All questions
+              </button>
+              <button type="button" onClick={() => setParams(prev=>{const n=new URLSearchParams(prev);n.delete('mode');n.set('pool','practice');n.delete('page');return n},{replace:true})} aria-pressed={!writtenMode && pool === 'practice'}>
+                With answers
+              </button>
+              <button type="button" onClick={() => setParams(prev=>{const n=new URLSearchParams(prev);n.set('mode','written');n.set('pool','all');n.delete('page');return n},{replace:true})} aria-pressed={writtenMode}>
+                Written answers
+              </button>
+            </div>
+            <div className="finna-segments" role="group" aria-label="Your status">
+              {STUDY_STATUSES.map(([k, label]) => (
+                <button key={k} type="button" onClick={() => setStudyStatus(k)} aria-pressed={studyStatus === k}>
+                  {label}
+                </button>
+              ))}
+            </div>
           </div>
 
           <div className="finna-bank-toolbar">
             <span className="finna-bank-count" aria-live="polite">
               {loading ? 'Loading…' : `${total.toLocaleString('en-IN')} questions`}
             </span>
+            {!loading && total > 0 && !writtenMode && (
+              <Link to={practiceFilteredHref} className="min-h-10 inline-flex items-center rounded-pill bg-practice-soft px-3 text-xs font-bold text-practice-dark hover:underline">
+                Practice these →
+              </Link>
+            )}
             {hasFilters && (
               <button type="button" onClick={clearFilters} className="min-h-11 rounded-pill px-2 text-sm font-semibold text-link hover:underline">
                 Clear filters
@@ -184,10 +204,6 @@ export default function Bank() {
               </div>
             </div>
           )}
-
-          <div className="sr-only" role="status" aria-live="polite">
-            {loading ? 'Loading questions' : error ? 'Could not load questions' : `${total.toLocaleString('en-IN')} questions found`}
-          </div>
 
           <div className="sr-only" role="status" aria-live="polite">
             {loading ? 'Loading questions' : error ? 'Could not load questions' : `${total.toLocaleString('en-IN')} questions found`}

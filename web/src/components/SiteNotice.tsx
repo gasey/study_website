@@ -1,9 +1,12 @@
 import {useEffect,useState} from 'react'
 type Notice={message:string;expires_at:string|null;version:number}
 
+const DISMISS_KEY = 'finna.site_notice.dismissed_version'
+
 /** Public plain-text announcement, shared by every web route. */
 export default function SiteNotice(){
  const [notice,setNotice]=useState<Notice|null>(null)
+ const [dismissedVersion,setDismissedVersion]=useState<number|null>(()=>{try{const v=localStorage.getItem(DISMISS_KEY);return v?Number(v):null}catch{return null}})
  useEffect(()=>{let live=true,sequence=0,controller:AbortController|null=null
   async function load(){const request=++sequence;controller?.abort();const current=new AbortController();controller=current;const timer=window.setTimeout(()=>current.abort(),8000)
    try{const response=await fetch('/api/site-notice',{cache:'no-store',signal:controller.signal});if(!response.ok)throw Error('Notice unavailable');const data=await response.json() as Notice
@@ -17,6 +20,7 @@ export default function SiteNotice(){
  useEffect(()=>{if(!notice?.expires_at)return;let timer:number;const expiry=Date.parse(notice.expires_at)
   const expire=()=>{const remaining=expiry-Date.now();if(remaining<=0)setNotice(null);else timer=window.setTimeout(expire,Math.min(remaining,2147483647))};expire();return()=>window.clearTimeout(timer)
  },[notice?.expires_at])
- if(!notice)return null
- return <aside aria-label="Site announcement" className="border-b border-hairline bg-attention-soft text-attention"><div role="status" className="mx-auto flex max-w-[1320px] flex-wrap gap-x-3 gap-y-1 px-4 py-3 text-sm sm:px-7"><strong>Site notice</strong><span className="min-w-0 flex-1 whitespace-pre-wrap break-words">{notice.message}</span></div></aside>
+ if(!notice||dismissedVersion===notice.version)return null
+ const dismiss=()=>{try{localStorage.setItem(DISMISS_KEY,String(notice.version))}catch{}setDismissedVersion(notice.version)}
+ return <aside aria-label="Site announcement" className="border-b border-hairline bg-attention-soft text-attention"><div role="status" className="mx-auto flex max-w-[1320px] items-center gap-x-3 gap-y-1 px-4 py-2.5 text-sm sm:px-7"><strong>Site notice</strong><span className="min-w-0 flex-1 whitespace-pre-wrap break-words">{notice.message}</span><button type="button" onClick={dismiss} aria-label="Dismiss site notice" className="min-h-9 rounded-lg px-2.5 text-xs font-bold hover:underline">Dismiss</button></div></aside>
 }
