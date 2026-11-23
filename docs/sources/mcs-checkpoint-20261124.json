@@ -1,0 +1,143 @@
+{
+  "observed_at": "2026-11-23T20:42:00.160717+00:00",
+  "kind": "read-only coordination checkpoint; no new content publication by this continuation",
+  "active_worker": {
+    "thread_id": "01a208d6-ed73-75f2-b15c-40d484f3dcf8",
+    "title": "Review remaining Finna questions",
+    "packet": "packet_cb035911e16ed909",
+    "action": "Existing live worker confirmed through task read and queue transitions. Claims/tokens/drafts not rotated, resumed, released or changed; no message sent."
+  },
+  "queue_snapshot": {
+    "at": "2026-11-23T20:42:00.160717+00:00",
+    "counts": {
+      "checked": 7,
+      "not-needed": 225,
+      "pending": 475,
+      "published": 316,
+      "unresolved": 43
+    },
+    "active": [
+      {
+        "canonical_id": "cq_3626f6e933b50a74",
+        "status": "not-needed"
+      },
+      {
+        "canonical_id": "cq_363b7c6fd26d78a6",
+        "status": "checked"
+      },
+      {
+        "canonical_id": "cq_3666e52bc12ab93b",
+        "status": "checked"
+      },
+      {
+        "canonical_id": "cq_366b7a066899da47",
+        "status": "checked"
+      },
+      {
+        "canonical_id": "cq_36a38d429600d8c9",
+        "status": "not-needed"
+      },
+      {
+        "canonical_id": "cq_36b62efb84f7ecf2",
+        "status": "checked"
+      },
+      {
+        "canonical_id": "cq_36e0aeae8afd8817",
+        "status": "checked"
+      },
+      {
+        "canonical_id": "cq_37203c42497300e6",
+        "status": "not-needed"
+      },
+      {
+        "canonical_id": "cq_3870b8adb5d21bde",
+        "status": "checked"
+      },
+      {
+        "canonical_id": "cq_387d2b8d52c76b99",
+        "status": "checked"
+      }
+    ]
+  },
+  "bank": {
+    "sha256": "d09f33bdd3fd089c06076fffa24df69d4a59e4f86b348ef88cceaa81db664fbc",
+    "pending_exports_observed": 0,
+    "protected_sync": "IN SYNC at initial check;78papers/6931sourcequestions;82383bankandapprovedtaxonomyrows",
+    "staff_maintenance_capped": false,
+    "learner_daily_limit": 30,
+    "publisher_timer": "active",
+    "wakeup_service": "inactive",
+    "service_changes": false,
+    "note": "Observations are dated; the independent active publisher can advance after this checkpoint."
+  },
+  "health": {
+    "api": {
+      "status": "ok",
+      "questions": 82383,
+      "scorable": 13417
+    },
+    "study": 200
+  },
+  "owner_unlimited": true,
+  "access_or_history_changes": false,
+  "mcs_structural_inventory": [
+    {
+      "status": "held",
+      "source_defect": "duplicate-options",
+      "key_disputed": false,
+      "unique_questions": 1
+    },
+    {
+      "status": "held",
+      "source_defect": "unresolved-source",
+      "key_disputed": false,
+      "unique_questions": 4
+    },
+    {
+      "status": "held",
+      "source_defect": null,
+      "key_disputed": false,
+      "unique_questions": 54
+    },
+    {
+      "status": "live",
+      "source_defect": null,
+      "key_disputed": false,
+      "unique_questions": 2942
+    }
+  ],
+  "inventory_limit": "59 recorded held questions and2942live; structural counts are not full source/key/answer certification.",
+  "appointment_tag_followup": {
+    "canonical_id": "cq_357a2ba193431db8",
+    "appearance_id": "1db3eca689d87d649e13",
+    "fingerprint": "1fd21eba0b59fde75351665512a5e4239386130dbec2b57034b2d82a30f6e7b8",
+    "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+    "qnum": "11",
+    "classification": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "action": "read-only follow-up; no reserved taxonomy correction or publication"
+  },
+  "tests": {
+    "focused_passed": 45,
+    "warning": "existing Starlette/httpx deprecation",
+    "production_test_writes": false
+  },
+  "usage": {
+    "ordinary_usage_allowed": true,
+    "primary_used_percent": 11,
+    "weekly_used_percent": 7,
+    "reset_used": false,
+    "external_provider_calls": 0
+  },
+  "remaining": {
+    "queue": "475unclaimedpending plus current10itempacket observed7checked/3not-needed;316published/225not-needed/43unresolved in datedsnapshot. Not claim current checked items applied.",
+    "taxonomy": "Known2023I A Q11 appointment still incorrectly publicworksaccounts; requires central reservedre-review/freshregistry and separate publication.",
+    "source": "Prior historical source/option/numbering and exact-key mapping backlog needs evidence; no old repairs replayed.",
+    "deferred": "2012/2013 booklet recovery",
+    "simulation": "Original-paper simulation remains gated until all content/scoring prerequisites satisfied.",
+    "resume": "Read fresh DEVLOG and queue checkpoint. While Review remaining Finna questions is active, do not claim/rotate its packet or compete for this serial queue. Reconcile exact receipts before later work."
+  }
+}

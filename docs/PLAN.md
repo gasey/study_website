@@ -1602,3 +1602,13 @@ Receipt:`docs/sources/mcs-publication-20261119.json`.
 - [ ] Reserved appointment-tag review and historical source/option/key mapping work remain; 2012/2013 deferred, simulation gated.
 
 Receipt:`docs/sources/mcs-publication-20261121.json`.
+
+
+## 24 November — MCS coordination checkpoint
+
+- [x] Reconcile intervening work: dated snapshot316published,225not-needed,475unclaimedpending,43unresolved; activepacket7checked/3not-needed.
+- [x] Verify read-only protected sync, publication allowance, timer/API/Study health and unlimited access;45focusedtests pass.
+- [ ] Leave current serial packet with “Review remaining Finna questions”; do not rotate claims or duplicate its publication.
+- [ ] Separately reserve known appointment-tag correction; historical source/option/key mapping work remains. Keep2012/2013deferred and simulationgated.
+
+Receipt:`docs/sources/mcs-checkpoint-20261124.json`.

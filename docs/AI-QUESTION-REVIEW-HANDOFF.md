@@ -561,3 +561,28 @@ Private proof: `reports/mcs-continue-20261121/`.
 
 Check fresh Oracle fingerprints, exports and usage before claiming. C51 explanation
 remains next work; weaving needs specific craft/language evidence. Preserve source repairs.
+
+
+## 24 November — active shared worker
+
+Independent heartbeat reconciled substantial intervening work in the shared
+explanation queue. “Review remaining Finna questions” is actively processing
+packet `packet_cb035911e16ed909`; do not rotate its claims or duplicate that work.
+At 2026-11-23T20:42:00.160717+00:00, the snapshot showed 316 published, 225 not-needed, 475
+unclaimed pending, 43 unresolved, plus an active ten-item packet: seven checked
+and three not-needed. Checked items are not claimed published here. These dated
+counts supersede the older 21 November queue totals, but can advance immediately.
+
+Read-only Oracle audit found no pending exports at observation, protected bank/
+taxonomy sync matched, timer active, wakeup inactive, API healthy and Study HTTP200.
+Recorded MCS inventory:59held (1duplicate-options,4unresolved-source,54other) and
+2942live; this does not certify source/key/answer completeness. Owner unlimited
+access remains active. The known I A Q11 university-appointment tag still reads
+Financial Rules/Public Works Accounts and needs a separately reserved correction.
+
+All45focusedtests pass. No queue refresh/claim, draft, content publication, learner
+or account/history change, service change, reset consumption or provider call by
+this continuation. Usage was available (11%primary/7%weeklyused); ordinary staff
+publication remains uncapped, learner30/day unchanged. Historical source/option/
+key-mapping tasks remain. Keep2012/2013deferred and simulationgated.
+Receipt:`docs/sources/mcs-checkpoint-20261124.json`; private audit:`reports/mcs-checkpoint-20261124/`.
