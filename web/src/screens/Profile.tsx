@@ -5,6 +5,7 @@ import ReferralPanel from '../components/ReferralPanel'
 import IdentityEditor from '../components/IdentityEditor'
 import MasteryMap from '../components/MasteryMap'
 import StudyAnalyticsDeck from '../components/StudyAnalyticsDeck'
+import VaultShowcaseCard from '../components/VaultShowcaseCard'
 import { UserAvatar } from '../components/AvatarArt'
 import { useEffect, useMemo, useState, type FormEvent } from 'react'
 import { Link, useLocation } from 'react-router-dom'
@@ -427,10 +428,13 @@ export default function Profile() {
                     </Link>
                   </section>
 
+                  <VaultShowcaseCard compact />
+
                   <section className="finna-card">
                     <h2 className="text-base">Quick shortcuts</h2>
                     <div className="finna-prof-links">
                       {[
+                        ['My Question Vault', '/vault'],
                         ['Revise & mistakes', '/revise?tab=queue'],
                         ['XP & reward wallet', '/profile/rewards'],
                         ['Inbox & updates', '/inbox'],

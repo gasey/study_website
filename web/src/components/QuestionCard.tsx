@@ -11,6 +11,7 @@ import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { submitAnswer, type AnswerResult, type Question } from '../lib/api'
 import { SourceQuestionContext, SourceQuestionText } from './SourceQuestionText'
+import SaveToVaultButton from './SaveToVaultButton'
 
 const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F']
 
@@ -83,12 +84,15 @@ export default function QuestionCard({ q, onAnswered, onNext }: { q: Question; o
           </span>
         )}
 
-        <Link
-          to={scopeLink(`/bank/${q.id}`)}
-          className="ml-auto inline-flex min-h-11 items-center rounded-pill px-2 font-mono text-xs text-secondary hover:text-link hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-link"
-        >
-          Open question →
-        </Link>
+        <span className="ml-auto inline-flex items-center gap-2">
+          <SaveToVaultButton question={q} compact />
+          <Link
+            to={scopeLink(`/bank/${q.id}`)}
+            className="inline-flex min-h-11 items-center rounded-pill px-2 font-mono text-xs text-secondary hover:text-link hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-link"
+          >
+            Open question →
+          </Link>
+        </span>
       </div>
 
       <div className="max-w-[75ch] my-[10px] mb-[14px] font-display text-lg leading-[1.35] [text-wrap:pretty]">

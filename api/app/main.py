@@ -64,7 +64,7 @@ app.include_router(referrals.router)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.cors_origins,
-    allow_methods=["GET", "POST", "PUT", "PATCH"],
+    allow_methods=["GET", "POST", "PUT", "PATCH", "DELETE"],
     allow_headers=["*"],
 )
 
@@ -118,6 +118,8 @@ from .routers import guides
 app.include_router(guides.router)
 from .routers import authoring_console
 app.include_router(authoring_console.router)
+from .routers import vault
+app.include_router(vault.router)
 
 
 @app.get("/api/health")

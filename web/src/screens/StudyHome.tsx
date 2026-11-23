@@ -26,6 +26,7 @@ import TodayCard from '../components/TodayCard'
 import OfflineBanner from '../components/OfflineBanner'
 import WelcomeBackBar from '../components/WelcomeBackBar'
 import ExploreDeckRail from '../components/ExploreDeckRail'
+import VaultShowcaseCard from '../components/VaultShowcaseCard'
 import { mockResumePath } from '../lib/sharedTests'
 
 const MONTHS = [
@@ -476,6 +477,9 @@ export default function StudyHome() {
               </p>
             )}
           </section>
+
+          {/* Personal Question Vault showcase card with animated opening safe */}
+          <VaultShowcaseCard />
 
           {/* Compact Community & Creation Gateway (replaces embedded social feed clutter) */}
           <section className="finna-card" aria-labelledby="community-gateway-title">

@@ -20,6 +20,7 @@ import { Card } from './components/ui'
 const ResumedPractice = lazy(() => import('./components/ResumedPractice'))
 const SiteIndex = lazy(() => import('./screens/SiteIndex'))
 const Guides = lazy(() => import('./screens/Guides'))
+const PersonalVault = lazy(() => import('./screens/PersonalVault'))
 const Practice = lazy(() => import('./screens/Practice'))
 const SharedTests = lazy(() => import('./screens/SharedTests'))
 const TestMaker = lazy(() => import('./screens/TestMaker'))
@@ -282,6 +283,8 @@ export default function App() {
                 <Route path="/stats/*" element={<Stats />} />
                 <Route path="/calendar" element={<CalendarRoute />} />
                 <Route path="/desk/:deskId?" element={<StudyDesk />} />
+                <Route path="/vault" element={<PersonalVault />} />
+                <Route path="/vault/share/:token" element={<PersonalVault />} />
                 <Route path="/games/:id?" element={<GamesRoute />} />
                 <Route path="/search" element={<GlobalSearch />} />
                 <Route path="/community/:sub?" element={<CommunityRoute />} />

@@ -244,6 +244,17 @@ export const SITE_MAP: readonly Destination[] = [
 
   // Personal / You surfaces
   {
+    id: 'vault',
+    path: '/vault',
+    label: 'My Vault',
+    section: 'you',
+    blurb: 'Your animated personal question safe: save bank items, Pro favorites, custom image questions, drills and shareable packs.',
+    surfaces: ['index', 'quickfind', 'quick'],
+    menu: 'practice',
+    icon: 'library',
+    keywords: 'vault safe personal question bank save favorite craft custom flashcard share',
+  },
+  {
     id: 'desk',
     path: '/desk',
     label: 'Desk',

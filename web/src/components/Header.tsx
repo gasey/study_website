@@ -25,6 +25,8 @@ import { Avatar } from './ui'
 import QuickFind from './QuickFind'
 import NavIcon from './NavIcon'
 import BrowseAllowance from './BrowseAllowance'
+import VaultSafeIllustration from './VaultSafeIllustration'
+import { readLocalVault } from '../lib/vault'
 
 const NAV_ITEMS = destinationsForSurface('nav')
 const QUICK_ITEMS = destinationsForSurface('quick')
@@ -55,7 +57,15 @@ export default function Header() {
   const [streak, setStreak] = useState<number | null>(null)
   const [exams, setExams] = useState<Collection[]>([])
   const [menu, setMenu] = useState<string | null>(null)
+  const [vaultCount, setVaultCount] = useState<number>(() => readLocalVault().length)
+  const [vaultHover, setVaultHover] = useState(false)
   const selected = usePreferredExam(exams)
+
+  useEffect(() => {
+    const syncVault = () => setVaultCount(readLocalVault().length)
+    window.addEventListener('finna-vault-change', syncVault)
+    return () => window.removeEventListener('finna-vault-change', syncVault)
+  }, [])
   const shell = useRef<HTMLElement>(null)
   const menuPanel = useRef<HTMLDivElement>(null)
   const triggers = useRef<Record<string, HTMLElement | null>>({})
@@ -381,6 +391,20 @@ export default function Header() {
               </>
             )}
           </div>
+          {!focused && (
+            <Link
+              to="/vault"
+              className="vs-header-pill"
+              onClick={closeMenu}
+              onMouseEnter={() => setVaultHover(true)}
+              onMouseLeave={() => setVaultHover(false)}
+              aria-label="My Personal Question Vault"
+            >
+              <VaultSafeIllustration size="mini" isOpen={vaultHover || pathname.startsWith('/vault')} interactive={false} />
+              <span>Vault</span>
+              {vaultCount > 0 && <span className="vs-header-count">{vaultCount}</span>}
+            </Link>
+          )}
           {!focused && (
             <Link to={CREATE_PATH} className="finna-create" onClick={closeMenu}>
               Create
