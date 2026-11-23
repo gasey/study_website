@@ -1,5 +1,23 @@
 # Devlog
 
+23 November IST — **Frontend deployed to study.hawayu.in (`deploy.sh web`, bundle `index-C_9fQ80-.js`). The API was NOT deployed and remains on `a287e5dcf`. V.22 is live and working; V.20 and the answer stats are live but inert until the API ships.**
+
+- **Verified after deploy:** study.hawayu.in 200, `/bank` `/exams` `/practice` `/admin/bank` all 200, API health `{"status":"ok","questions":82383,"scorable":13417}`, family.hawayu.in 307. Only `/srv/study/public` was touched.
+- **What is actually working now.** V.22 in full: the admin console's 37 sections generated from one manifest and grouped by job, the eleven previously-unreachable sections (including `edit`) now in the sidebar, the `papers` twin and the addressing aliases gone with `/admin/ops` and `/admin/users` redirecting, four dead admin links fixed, and `AtlasBindings` routed. All of it is navigation and needs no API change.
+- **What is live but inert, and why.** Probing the production API found it is missing three whole phases of routes:
+
+  | route | live |
+  | --- | --- |
+  | `/api/admin/bank/authoring-queue` (V.16) | **404** |
+  | `/api/guides` (V.15) | **404** |
+  | `/api/admin/bank/conflicts` (V.17) | **404** |
+  | `/api/questions` | 200 |
+  | `/api/admin/bank/summary` | 401 (exists) |
+
+  So the V.20 authoring console cannot load its queue, and the answer-stats bars never receive `stats`. Both degrade quietly rather than erroring — `QuestionStats` renders nothing without data, the batch SSE falls back to its poll, and the inline editor refetches when `/inspect` carries no `baseline_token` — but neither does anything useful yet. One consequence worth naming: the sidebar now surfaces `edit`, a screen that will show a load error against this API, where previously it was merely hidden.
+- **`/guides` has been broken in production since 22 November.** The guides frontend shipped that day and the API never did. This is pre-existing and was not caused by the rollback in the entry below: any API build containing the guides router also contains the `validate_policy` call, which cannot boot against the unmigrated database. The 22 November entry's "4 guides seeded live" refers to database seeding, not a deployed route.
+- **The real blocker is now explicit.** Production's API is roughly three phases behind its own frontend. Shipping more frontend does not close that; applying Bundle A and deploying the API unblocks V.15, V.16, V.17, V.20 and the answer stats together. That remains a gated rollout decision (`rollout_authorized` is `false`) requiring `scripts/migrate.sh` rehearsal per `docs/FINNA-SCOPED-RELEASE-RUNBOOK.md`.
+
 23 November IST — **INCIDENT: the API deploy took study.hawayu.in down for roughly four minutes. Restored. Root cause is that `main`'s API has been undeployable since 22 November, which this deploy exposed rather than caused.**
 
 - **What happened.** `./scripts/deploy.sh` (api, then web) shipped `api/` to `/srv/api` and restarted `ism-api`. The service failed to start and crash-looped: `psycopg.errors.UndefinedFunction: function audience_database_gate_enabled() does not exist`, raised from `app/db.py:36` → `audience_database.validate_policy` during the FastAPI lifespan. `https://study.hawayu.in/api/health` returned 502 for the duration. `family.hawayu.in` was unaffected throughout (307 before, during and after).
