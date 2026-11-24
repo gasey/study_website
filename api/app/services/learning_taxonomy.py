@@ -3,7 +3,6 @@ from pathlib import Path
 TOPIC_ALIASES=json.loads((Path(__file__).resolve().parents[1]/'data/learning-topic-aliases.json').read_text())
 """Virtual learning categories preserve original, bank-owned taxonomy IDs."""
 GK_SUBJECTS = ('general-knowledge', 'general-studies')
-CLERICAL_EXAMS = ('udc', 'ldc', 'assistant')
 
 
 def topic_expression(alias='p', include_science=False):

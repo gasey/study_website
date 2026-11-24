@@ -2,9 +2,8 @@ import {useBrowsePosition} from '../hooks/useBrowsePosition'
 import {collectionBooklets} from '../lib/examOverview'
 import {sortArchivePapers} from '../lib/paperArchive'
 import {representativeBooklet} from '../lib/sourceBooklets'
-import {bookletLabel} from '../lib/mcsBooklets'
 import {paperIdentity} from '../lib/paperIdentity'
-import {readStudyStatus,readQuestionOrder,newQuestionSeed,nextBrowseOffset,studyStatusOptions} from '../lib/questionBrowse'
+import {readStudyStatus,readQuestionOrder,newQuestionSeed,nextBrowseOffset} from '../lib/questionBrowse'
 import {learningSubjectTitle} from '../lib/groupBStudy'
 import StudyQuestionCard from '../components/StudyQuestionCard'
 import {questionQueryString} from '../lib/requestCache'
@@ -15,7 +14,7 @@ import {AnswerLayoutControl} from '../components/AnswerLayout'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useSearchParams,Link } from 'react-router-dom'
 import {reviewRequest} from '../lib/review'
-import { getAccountSession,getExamStudyTopics,getMistakes, getProgress, listQuestions, prefetchQuestionPage, submitAnswer, type GroupBStudyArea, type AnswerResult, type CollectionPaper, type CollectionSection, type ExamStudyTopics, type Mistake, type Progress, type Question } from '../lib/api'
+import { getAccountSession,getMistakes, getProgress, getQuestionFacets, listQuestions, prefetchQuestionPage, submitAnswer, type GroupBStudyArea, type AnswerResult, type CollectionPaper, type CollectionSection, type Mistake, type Progress, type Question, type QuestionFacets } from '../lib/api'
 
 
 export function ModuleQuestionBrowser({ collectionId, papers, sections, initialSectionPath = '', initialPool = 'all', studyArea, sourceCollections, metadataLoading=false, collectionTitle }: { metadataLoading?:boolean;collectionTitle?:string;studyArea?: GroupBStudyArea; sourceCollections?:Record<string,string>; collectionId: string; papers: CollectionPaper[]; sections: CollectionSection[]; initialSectionPath?: string; initialPool?: 'all'|'scorable'|'practice' }) {
@@ -25,26 +24,28 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
   const [reload,setReload]=useState(0),[loading,setLoading]=useState(true)
   const search=urlParams.get('q')||'',paperId=urlParams.get('paper')||'',sectionPath=urlParams.get('section')||initialSectionPath
   const subjectId=urlParams.get('subject_id')||'',topicId=urlParams.get('topic_id')||'',subtopicId=urlParams.get('subtopic_id')||''
+  const yearParam=urlParams.get('year')||''
+  const selectedYear=/^\d{4}$/.test(yearParam)?Number(yearParam):undefined
   const pool:'all'|'scorable'|'practice'=['all','scorable','practice'].includes(urlParams.get('pool')||'')?urlParams.get('pool') as 'all'|'scorable'|'practice':initialPool
   const studyStatus=readStudyStatus(urlParams.get('status')),order=paperId&&!practice?'paper':readQuestionOrder(urlParams.get('order')),seed=urlParams.get('seed')||''
   function shuffle(){setURLParams(previous=>{const next=new URLSearchParams(previous);next.set('order','mixed');next.set('seed',newQuestionSeed());next.delete('offset');return next},{replace:true});setResults({});setPicks({})}
   const answerStatus=(['official','verified','needs-review','unsolved','written'].includes(urlParams.get('answer_status')||'')?urlParams.get('answer_status'):undefined) as 'official'|'verified'|'needs-review'|'unsolved'|'written'|undefined
   const offset=Math.floor(Math.max(0,Math.min(100000,Number(urlParams.get('offset'))||0)))
   function filter(key:string,value:string){setURLParams(previous=>{const next=new URLSearchParams(previous);if(value)next.set(key,value);else next.delete(key);if(key!=='offset')next.delete('offset');return next},{replace:key!=='offset'})}
-  const setSearch=(v:string)=>filter('q',v),setPool=(v:typeof pool)=>filter('pool',v),setOffset=(v:number)=>filter('offset',String(v))
-  const [taxonomy,setTaxonomy]=useState<ExamStudyTopics|null>(null)
-  useEffect(()=>{let live=true;getExamStudyTopics(collectionId,studyArea).then(value=>{if(live)setTaxonomy(value)}).catch(()=>{});return()=>{live=false}},[collectionId,studyArea])
-  const selectedSubject=taxonomy?.subjects.find(subject=>subject.id===subjectId)
+  const setSearch=(v:string)=>filter('q',v),setOffset=(v:number)=>filter('offset',String(v))
+  const [facets,setFacets]=useState<QuestionFacets|null>(null)
+  useEffect(()=>{let live=true;getQuestionFacets({collection_id:collectionId,section_path:sectionPath||undefined,paper_id:paperId||undefined,subject_id:subjectId||undefined,study_area:studyArea,pool}).then(value=>{if(live)setFacets(value)}).catch(()=>{});return()=>{live=false}},[collectionId,sectionPath,paperId,subjectId,studyArea,pool])
+  const selectedSubject=facets?.subjects.find(subject=>subject.id===subjectId)
   const selectedTopic=selectedSubject?.topics.find(topic=>topic.id===topicId)
   function taxonomyFilter(key:'subject_id'|'topic_id'|'subtopic_id',value:string){
     setURLParams(previous=>{const next=new URLSearchParams(previous);if(value)next.set(key,value);else next.delete(key);if(key==='subject_id'){next.delete('topic_id');next.delete('subtopic_id')}if(key==='topic_id')next.delete('subtopic_id');next.delete('offset');return next},{replace:true})
     setResults({});setPicks({})
   }
-  const requestKey=questionQueryString({study_area:studyArea,collection_id:collectionId,section_path:sectionPath||undefined,paper_id:paperId||undefined,subject_id:subjectId||undefined,topic_id:topicId||undefined,subtopic_id:subtopicId||undefined,q:search.trim()||undefined,answer_status:answerStatus,pool,order,seed,study_status:studyStatus,limit:PAGE_SIZE,offset})
+  const requestKey=questionQueryString({study_area:studyArea,collection_id:collectionId,section_path:sectionPath||undefined,paper_id:paperId||undefined,subject_id:subjectId||undefined,topic_id:topicId||undefined,subtopic_id:subtopicId||undefined,year_from:selectedYear,year_to:selectedYear,q:search.trim()||undefined,answer_status:answerStatus,pool,order,seed,study_status:studyStatus,limit:PAGE_SIZE,offset})
   const [resolvedKey,setResolvedKey]=useState('')
   const pending=loading||resolvedKey!==requestKey||(order==='mixed'&&!seed)
   function resetFilters(){
-    setURLParams(previous=>{const next=new URLSearchParams(previous);for(const key of ['subject_id','topic_id','subtopic_id','section','paper','pool','status','answer_status','q','offset','order','seed'])next.delete(key);return next},{replace:true})
+    setURLParams(previous=>{const next=new URLSearchParams(previous);for(const key of ['subject_id','topic_id','subtopic_id','section','paper','year','pool','status','answer_status','q','offset','order','seed'])next.delete(key);return next},{replace:true})
     setResults({});setPicks({})
   }
   const [page, setPage] = useState<{items: Question[];total: number}|null>(null)
@@ -70,18 +71,18 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
     const timer = window.setTimeout(() => {
       if(search.trim().length===1){setPage({items:[],total:0});setResolvedKey(requestKey);setError('Enter at least two characters to search.');setLoading(false);return}
       setError(null)
-      listQuestions({study_area:studyArea,collection_id: collectionId,section_path: sectionPath || undefined,paper_id: paperId || undefined,subject_id:subjectId||undefined,topic_id:topicId||undefined,subtopic_id:subtopicId||undefined,q: search.trim() || undefined,answer_status:answerStatus,pool,order,seed,study_status: studyStatus,limit: PAGE_SIZE,offset})
+      listQuestions({study_area:studyArea,collection_id: collectionId,section_path: sectionPath || undefined,paper_id: paperId || undefined,subject_id:subjectId||undefined,topic_id:topicId||undefined,subtopic_id:subtopicId||undefined,year_from:selectedYear,year_to:selectedYear,q: search.trim() || undefined,answer_status:answerStatus,pool,order,seed,study_status: studyStatus,limit: PAGE_SIZE,offset})
         .then((value) => { if (!cancelled) {
           const last=Math.max(0,value.total-1)
           if(offset>last){setURLParams(previous=>{const next=new URLSearchParams(previous);if(last)next.set('offset',String(Math.floor(last/PAGE_SIZE)*PAGE_SIZE));else next.delete('offset');return next},{replace:true});return}
           setPage(value);setResolvedKey(requestKey);setError(null)
-          if(offset+PAGE_SIZE<value.total)prefetchTimer=window.setTimeout(()=>prefetchQuestionPage({study_area:studyArea,collection_id:collectionId,section_path:sectionPath||undefined,paper_id:paperId||undefined,subject_id:subjectId||undefined,topic_id:topicId||undefined,subtopic_id:subtopicId||undefined,q:search.trim()||undefined,answer_status:answerStatus,pool,order,seed,study_status:studyStatus,limit:PAGE_SIZE,offset:offset+PAGE_SIZE}),250)
+          if(offset+PAGE_SIZE<value.total)prefetchTimer=window.setTimeout(()=>prefetchQuestionPage({study_area:studyArea,collection_id:collectionId,section_path:sectionPath||undefined,paper_id:paperId||undefined,subject_id:subjectId||undefined,topic_id:topicId||undefined,subtopic_id:subtopicId||undefined,year_from:selectedYear,year_to:selectedYear,q:search.trim()||undefined,answer_status:answerStatus,pool,order,seed,study_status:studyStatus,limit:PAGE_SIZE,offset:offset+PAGE_SIZE}),250)
         } })
         .catch((e) => { if (!cancelled) setError(e.message) })
         .finally(()=>{if(!cancelled)setLoading(false)})
     }, search.trim() ? 250 : 0)
     return () => { cancelled = true; window.clearTimeout(timer);if(prefetchTimer!==undefined)window.clearTimeout(prefetchTimer) }
-  }, [studyArea,collectionId,sectionPath,paperId,subjectId,topicId,subtopicId,search,pool,order,seed,studyStatus,answerStatus,offset,PAGE_SIZE,reload,reading.initializing])
+  }, [studyArea,collectionId,sectionPath,paperId,subjectId,topicId,subtopicId,selectedYear,search,pool,order,seed,studyStatus,answerStatus,offset,PAGE_SIZE,reload,reading.initializing])
 
   const currentPage=Math.floor(offset/PAGE_SIZE)+1,pages=Math.max(currentPage,currentPage+Math.ceil(Math.max(0,(page?.total||0)-offset-PAGE_SIZE)/PAGE_SIZE))
   function goPage(value:number){
@@ -116,16 +117,47 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
   function chooseStatus(value:string){setURLParams(previous=>{const next=new URLSearchParams(previous);next.delete('status');next.delete('answer_status');next.delete('offset');if(value.startsWith('study:'))next.set('status',value.slice(6));if(value.startsWith('answer:')){next.set('answer_status',value.slice(7));next.set('pool','all')}return next},{replace:true});setResults({});setPicks({})}
   function choosePaper(value:string){setURLParams(previous=>{const next=new URLSearchParams(previous);if(value)next.set('paper',value);else next.delete('paper');if(combined&&value){const source=papers.find(p=>p.id===value);if(source?.section_path)next.set('section',source.section_path);else next.delete('section')}next.delete('offset');next.delete('seed');next.delete('fresh');return next},{replace:false});setResults({});setPicks({})}
 
-  return <section id="exam-question-browser" tabIndex={-1} aria-busy={pending} className="mt-6 scroll-mt-28 focus:outline-none">
-    <div className="mb-3 flex flex-wrap items-center justify-between gap-2"><div><h2 className="font-display text-lg">{practice?'Study practice':'Browse questions'}</h2><p className="text-xs text-secondary">{collectionTitle||'This exam'}{selectedSubject?' · '+learningSubjectTitle(selectedSubject.id,selectedSubject.title,collectionId):''}{selectedTopic?' · '+selectedTopic.title:''}</p></div><button type="button" onClick={resetFilters} className="min-h-11 rounded-pill border border-hairline px-4 text-xs font-semibold">Reset filters</button></div>
+  const testViewHref = useMemo(() => {
+    const p = new URLSearchParams()
+    if (collectionId) p.set('exam', collectionId)
+    if (subjectId) p.set('subject', subjectId)
+    if (selectedYear) p.set('year', String(selectedYear))
+    if (studyStatus !== 'all') p.set('status', studyStatus)
+    if (search.trim().length >= 2) p.set('q', search.trim())
+    p.set('autostart', '1')
+    return '/practice?' + p.toString()
+  }, [collectionId, subjectId, selectedYear, studyStatus, search])
 
+  const hasMultipleSections = !studyArea && sections.length > 1
+  const hasPapers = paperGroups.length > 0
+  const hasMultipleSubjects = (facets?.subjects.length ?? 0) > 1
+  const singleSubject = facets?.subjects.length === 1 ? facets.subjects[0] : null
+  const activeTopicSource = selectedSubject || singleSubject
+
+  return <section id="exam-question-browser" tabIndex={-1} aria-busy={pending} className="mt-6 scroll-mt-28 focus:outline-none">
+    <div className="mb-3 flex flex-wrap items-center justify-between gap-2"><div><h2 className="font-display text-lg">{practice?'Study practice':'Browse questions'}</h2><p className="text-xs text-secondary">{collectionTitle||'This exam'}{selectedSubject?' · '+learningSubjectTitle(selectedSubject.id,selectedSubject.title,collectionId):''}{selectedTopic?' · '+selectedTopic.title:''}{selectedYear?' · '+selectedYear:''}</p></div><div className="flex flex-wrap items-center gap-2"><button type="button" onClick={()=>chooseStatus(studyStatus==='ever_wrong'?'':'study:ever_wrong')} aria-pressed={studyStatus==='ever_wrong'} className={`min-h-11 rounded-pill border px-4 text-xs font-semibold ${studyStatus==='ever_wrong'?'border-ink bg-ink text-paper':'border-hairline bg-card'}`}>Revise mistakes</button>{!pending&&page&&page.total>0&&<Link to={testViewHref} className="inline-flex min-h-11 items-center rounded-pill bg-practice-soft px-4 text-xs font-bold text-practice-dark hover:underline">Test this view →</Link>}<button type="button" onClick={resetFilters} className="min-h-11 rounded-pill border border-hairline px-4 text-xs font-semibold">Reset filters</button></div></div>
+
+    {/* FINNAPLAN v2 P5: 4 clean faceted learner filters — Subject/Topic, Year, Section/Paper, Your status (+ Search) */}
     <div className="browse-filter-row" aria-label="Question filters" data-area={!!studyArea}>
-      {!studyArea&&<label>{combined?'Paper type':'Section'}<select aria-label={combined?'Paper type':'Section'} disabled={metadataLoading} value={sectionPath} onChange={e=>chooseSection(e.target.value)}><option value="">{combined?'Both papers':'All sections'}</option>{sections.map(s=><option key={s.path} value={s.path}>{combined?(s.path==='gs'?'Paper I only':s.path==='aptitude'?'Paper II only':s.title):s.title}</option>)}</select></label>}
-      <label>Specific paper<select aria-label="Specific paper" disabled={metadataLoading} value={paperId} onChange={e=>choosePaper(e.target.value)}><option value="">All matching papers</option>{paperGroups.filter(group=>!sectionPath||group.papers.some(p=>p.section_path===sectionPath)).map(group=>{const p=group.papers.find(p=>p.id===paperId)||representativeBooklet(group);return <option key={p.id} value={p.id}>{p.year?`${p.year} · `:''}{group.papers.length>1?group.title:paperIdentity(p).title}</option>})}{paperId&&paperPosition<0&&<option value={paperId}>Selected paper</option>}</select></label>
-      <label>Subject<select value={subjectId} onChange={e=>taxonomyFilter('subject_id',e.target.value)}><option value="">All subjects</option>{subjectId&&!selectedSubject&&<option value={subjectId}>Selected subject</option>}{taxonomy?.subjects.map(subject=><option key={subject.id} value={subject.id}>{learningSubjectTitle(subject.id,subject.title,collectionId)} · {subject.questions}</option>)}</select></label>
-      <label>Topic<select value={topicId} onChange={e=>taxonomyFilter('topic_id',e.target.value)} disabled={!subjectId}><option value="">All topics</option>{selectedTopic?.id&&!selectedSubject?.topics.some(t=>t.id===topicId)&&<option value={topicId}>Selected topic</option>}{selectedSubject?.topics.map(topic=><option key={topic.id} value={topic.id}>{topic.title} · {topic.questions}</option>)}</select></label>
-      <label>Status<select aria-label="Question status" value={answerStatus?'answer:'+answerStatus:studyStatus!=='all'?'study:'+studyStatus:''} onChange={e=>chooseStatus(e.target.value)}><option value="">All questions</option><optgroup label="Your study">{studyStatusOptions.filter(([v])=>v!=='all').map(([v,label])=><option key={v} value={'study:'+v}>{label}</option>)}</optgroup><optgroup label="Answer source">{[['official','Official keys'],['verified','Verified answers'],['needs-review','Needs review'],['unsolved','No answer yet'],['written','Written questions']].map(([v,label])=><option key={v} value={'answer:'+v}>{label}</option>)}</optgroup></select></label>
-      <label>Search<input maxLength={120} value={search} onChange={e=>update(setSearch,e.target.value)} placeholder="Question or option text"/></label>
+      {hasMultipleSubjects ? (
+        <label>Subject<select value={subjectId} onChange={e=>taxonomyFilter('subject_id',e.target.value)}><option value="">All subjects</option>{subjectId&&!selectedSubject&&<option value={subjectId}>Selected subject</option>}{facets?.subjects.map(subject=><option key={subject.id} value={subject.id}>{learningSubjectTitle(subject.id,subject.title,collectionId)} · {subject.questions}</option>)}</select></label>
+      ) : activeTopicSource && activeTopicSource.topics.length > 0 ? (
+        <label>Topic<select value={topicId} onChange={e=>taxonomyFilter('topic_id',e.target.value)}><option value="">All topics</option>{activeTopicSource.topics.map(topic=><option key={topic.id} value={topic.id}>{topic.title} · {topic.questions}</option>)}</select></label>
+      ) : null}
+      {hasMultipleSubjects && selectedSubject && selectedSubject.topics.length > 0 && (
+        <label>Topic<select value={topicId} onChange={e=>taxonomyFilter('topic_id',e.target.value)}><option value="">All topics</option>{selectedSubject.topics.map(topic=><option key={topic.id} value={topic.id}>{topic.title} · {topic.questions}</option>)}</select></label>
+      )}
+      {(facets?.years.length ?? 0) > 0 && (
+        <label>Year<select aria-label="Exam year" value={yearParam} onChange={e=>filter('year',e.target.value)}><option value="">All years</option>{facets?.years.map(y=><option key={y.year} value={String(y.year)}>{y.year} · {y.questions}</option>)}</select></label>
+      )}
+      {hasMultipleSections && (
+        <label>{combined?'Paper type':'Section'}<select aria-label={combined?'Paper type':'Section'} disabled={metadataLoading} value={sectionPath} onChange={e=>chooseSection(e.target.value)}><option value="">{combined?'Both papers':'All sections'}</option>{sections.map(s=><option key={s.path} value={s.path}>{combined?(s.path==='gs'?'Paper I only':s.path==='aptitude'?'Paper II only':s.title):s.title}</option>)}</select></label>
+      )}
+      {hasPapers && (
+        <label>Paper<select aria-label="Specific paper" disabled={metadataLoading} value={paperId} onChange={e=>choosePaper(e.target.value)}><option value="">All papers</option>{paperGroups.filter(group=>!sectionPath||group.papers.some(p=>p.section_path===sectionPath)).map(group=>{const p=group.papers.find(p=>p.id===paperId)||representativeBooklet(group);return <option key={p.id} value={p.id}>{p.year?`${p.year} · `:''}{group.papers.length>1?group.title:paperIdentity(p).title}</option>})}{paperId&&paperPosition<0&&<option value={paperId}>Selected paper</option>}</select></label>
+      )}
+      <label>Your status<select aria-label="Your study status" value={studyStatus!=='all'?'study:'+studyStatus:''} onChange={e=>chooseStatus(e.target.value)}><option value="">All questions</option><option value="study:ever_wrong">Previously wrong</option><option value="study:unseen">Never attempted</option><option value="study:answered">Attempted</option></select></label>
+      <label>Search<input maxLength={120} value={search} onChange={e=>update(setSearch,e.target.value)} placeholder="Search question text"/></label>
     </div>
     {paperId&&<nav aria-label="Paper navigation" className="browse-paper-navigation">
       <button type="button" disabled={paperPosition<=0} onClick={()=>choosePaper(representativeBooklet(paperGroups[paperPosition-1]).id)} className="min-h-11 text-link disabled:opacity-40">← Previous paper</button>
@@ -134,22 +166,12 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
       <Link to={sourceCollections?'/exams/group-b-gazetted?'+new URLSearchParams({collection:collectionId,view:'papers'}):`/exams/${collectionId}?view=papers`} className="inline-flex min-h-11 items-center text-link">All papers</Link>
       {selectedPaper?.source_pdf_url&&<a href={selectedPaper.source_pdf_url} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center text-link underline">PDF ↗</a>}
     </nav>}
-    {!practice&&<div className="my-2 flex flex-wrap items-center justify-between gap-x-4 gap-y-1 px-1 text-xs text-secondary"><p role="status">{reading.initializing?'Restoring reading position…':reading.message||'Your place is saved automatically on this device.'}</p><button type="button" onClick={reading.startAgain} title="Reset this reading position; your answers and scores are kept." className="min-h-11 font-semibold text-link underline">Start again</button></div>}
+    {!practice&&<div className="my-2 flex flex-wrap items-center justify-between gap-x-4 gap-y-1 px-1 text-xs text-secondary"><p role="status">{reading.initializing?'Restoring reading position…':reading.message||'Your place is saved automatically on this device.'}</p><div className="flex items-center gap-3">{order==='mixed'&&<button type="button" onClick={shuffle} className="min-h-11 font-semibold text-link underline">Shuffle order</button>}<button type="button" onClick={reading.startAgain} title="Reset this reading position; your answers and scores are kept." className="min-h-11 font-semibold text-link underline">Start again</button></div></div>}
     {subjectId==='gk-gs'&&topicId==='gk-gs:science'&&selectedTopic&&<nav aria-label="Science branches" className="mb-3 flex flex-wrap items-center gap-2">
       <span className="mr-1 text-xs font-semibold text-secondary">Science:</span>
       {[{id:'',title:'All Science'},...selectedTopic.subtopics].map(branch=><button key={branch.id} type="button" aria-pressed={subtopicId===branch.id} onClick={()=>taxonomyFilter('subtopic_id',branch.id)} className={`min-h-11 rounded-pill border px-4 text-xs font-semibold ${subtopicId===branch.id?'border-ink bg-ink text-paper':'border-hairline bg-card'}`}>{branch.title}</button>)}
     </nav>}
-    <details className="rounded-[12px] border border-hairline bg-card px-3 py-1">
-      <summary className="min-h-11 cursor-pointer py-3 text-sm font-semibold">More filters &amp; answer layout{[paperId&&'paper',sectionPath&&'section',subtopicId&&'subtopic',answerStatus&&answerStatus,pool!==initialPool&&pool].filter(Boolean).length?` · ${[paperId&&'paper selected',sectionPath&&'section selected',subtopicId&&'subtopic selected',answerStatus,pool!==initialPool&&pool].filter(Boolean).join(' · ')}`:''}</summary>
-    {order==='paper'?<p className="py-3 text-sm text-secondary">Questions follow the order printed in this paper.</p>:<div className="flex flex-wrap items-end gap-3 py-3"><label className="text-xs font-semibold">Question order<select aria-label="Question order" value={order} onChange={e=>filter('order',e.target.value)} className="ml-2 min-h-11 rounded-lg border border-hairline bg-card px-3 text-sm"><option value="mixed">Mixed order</option><option value="repeated">Most repeated first</option></select></label>{order==='mixed'&&<button type="button" onClick={shuffle} className="min-h-11 text-sm text-link">Shuffle again</button>}</div>}
     <AnswerLayoutControl/>
-    {paperPosition>=0&&paperGroups[paperPosition].papers.length>1&&<details className="mt-2 text-xs text-secondary"><summary className="min-h-11 cursor-pointer py-3">Booklet originals · {selectedPaper?bookletLabel(selectedPaper):'selected source'}</summary><div className="flex flex-wrap gap-3">{paperGroups[paperPosition].papers.map(p=><button type="button" key={p.id} onClick={()=>choosePaper(p.id)} aria-pressed={paperId===p.id} className="min-h-11 rounded-lg border border-hairline px-3 text-link">{bookletLabel(p)}</button>)}</div></details>}
-    <div className="grid gap-3 py-3 sm:grid-cols-2 lg:grid-cols-3">
-      <label className="text-xs font-semibold">Subtopic<select value={subtopicId} onChange={e=>taxonomyFilter('subtopic_id',e.target.value)} disabled={!topicId} className="mt-1 block min-h-11 w-full rounded-[8px] border border-hairline bg-canvas p-2 text-sm disabled:opacity-60"><option value="">All subtopics</option>{selectedTopic?.subtopics.map(subtopic=><option key={subtopic.id} value={subtopic.id}>{subtopic.title} · {subtopic.questions}</option>)}</select></label>
-      <label className="text-xs font-semibold">Answer pool<select value={pool} onChange={(e)=>update(setPool,e.target.value as typeof pool)} className="mt-1 block min-h-11 w-full rounded-[8px] border border-hairline bg-canvas p-2 text-sm"><option value="all">All questions</option><option value="scorable">Verified keys only</option><option value="practice">Questions with an answer</option></select></label>
-
-    </div>
-    </details>
     <div className="mt-4 flex justify-between text-sm text-secondary"><span>{!pending&&page ? `${page.total.toLocaleString('en-IN')} ${page.total===1?'question':'questions'}` : page?'Updating questions…':'Loading questions…'}</span>{!pending&&page && <span>{page.total ? offset+1 : 0}–{Math.min(offset+page.items.length,page.total)} of {page.total}</span>}</div>
     {error && <p role="alert" className="mt-3 rounded-[10px] border border-mypick bg-mypick-soft p-3 text-sm text-mypick">{error} <button type="button" onClick={()=>setReload(n=>n+1)} className="underline">Retry</button></p>}
     {(combined||collectionId==='udc')&&!paperId&&<p className="mt-2 text-xs text-secondary">Identical text copies from booklet series are grouped. Figures and source differences stay separate.</p>}

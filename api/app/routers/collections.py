@@ -1,6 +1,11 @@
 from ..services.source_identity import identities_for, display_identity
 from ..services.question_readiness import answer_status_sql
-from ..services.learning_taxonomy import CLERICAL_EXAMS, path_projection
+from ..services.learning_taxonomy import path_projection
+from ..services.selector import (
+    collection_behavior,
+    collection_membership_subquery,
+    matched_sections_cte,
+)
 from ..services.group_b_study import StudyArea, GROUP_B_COLLECTIONS, PAPER_ROLES, study_membership
 from ..services.public_catalog_cache import public_catalog
 from ..exam_scope import ExamScope, DEFAULT_SCOPE, pool_view, scope_condition, question_scope
@@ -15,66 +20,7 @@ from ..source_files import figure_image_url, source_pdf_url
 
 router = APIRouter(prefix="/api/collections", tags=["collections"])
 
-# Resolve every live section in one grouped query. The previous list endpoint
-# ran one count scan for every question pool in every section (41 sections
-# meant 82 repeated scans). These branches let paper-backed tracks use the
-# paper index and taxonomy-backed tracks use the approved-subject index.
-_MATCHED_QUERY = """
-WITH live_sections AS (
-    SELECT s.collection_id,s.version,s.path,s.query,s.pins,s.excludes
-      FROM collection_sections s
-      JOIN collections c ON c.id=s.collection_id AND c.live_version=s.version
-     WHERE c.visibility='public' AND {collection_scope} {collection_filter}
-), matched AS (
-    SELECT s.collection_id,s.version,s.path,a.paper_id,v.id,
-           (v.answer_text IS NOT NULL
-            AND v.answer_source IN ('official','key')
-            AND NOT v.key_disputed
-            AND v.source_defect IS DISTINCT FROM 'duplicate-options') AS scorable
-      FROM live_sections s
-      JOIN appearances a ON s.query ? 'paper_ids'
-       AND a.paper_id = ANY(ARRAY(SELECT jsonb_array_elements_text(s.query->'paper_ids')))
-      JOIN {all_view} v ON v.id=a.canonical_id
-     WHERE v.id <> ALL(s.excludes)
-       AND (v.id=ANY(s.pins) OR (
-         (s.query->>'subject_id' IS NULL AND s.query->>'topic_id' IS NULL)
-         OR EXISTS (SELECT 1 FROM v_question_paths p WHERE p.question_id=v.id
-           AND (s.query->>'subject_id' IS NULL OR p.subject_id=s.query->>'subject_id')
-           AND (s.query->>'topic_id' IS NULL OR p.topic_id=s.query->>'topic_id'))
-       ))
-    UNION ALL
-    SELECT s.collection_id,s.version,s.path,a.paper_id,v.id,
-           (v.answer_text IS NOT NULL
-            AND v.answer_source IN ('official','key')
-            AND NOT v.key_disputed
-            AND v.source_defect IS DISTINCT FROM 'duplicate-options') AS scorable
-      FROM live_sections s
-      JOIN LATERAL (
-        SELECT p.question_id FROM v_question_paths p WHERE p.subject_id=s.query->>'subject_id'
-          AND (s.query->>'topic_id' IS NULL OR p.topic_id=s.query->>'topic_id')
-        UNION ALL
-        SELECT p.question_id FROM v_question_paths p WHERE s.query->>'subject_id' IS NULL AND p.topic_id=s.query->>'topic_id'
-      ) qc ON TRUE
-      JOIN {all_view} v ON v.id=qc.question_id
-      LEFT JOIN appearances a ON a.canonical_id=v.id
-     WHERE NOT (s.query ? 'paper_ids')
-       AND (s.query ? 'subject_id' OR s.query ? 'topic_id')
-       AND v.id <> ALL(s.excludes)
-       AND NOT (v.id=ANY(s.pins))
-    UNION ALL
-    SELECT s.collection_id,s.version,s.path,a.paper_id,v.id,
-           (v.answer_text IS NOT NULL
-            AND v.answer_source IN ('official','key')
-            AND NOT v.key_disputed
-            AND v.source_defect IS DISTINCT FROM 'duplicate-options') AS scorable
-      FROM live_sections s
-      JOIN {all_view} v ON v.id=ANY(s.pins)
-      LEFT JOIN appearances a ON a.canonical_id=v.id
-     WHERE v.id <> ALL(s.excludes)
-       AND cardinality(s.pins)>0
-)"""
-
-_STATS_QUERY = _MATCHED_QUERY + """, section_stats AS (
+_STATS_SUFFIX = """, section_stats AS (
     SELECT collection_id,version,path,
            COUNT(DISTINCT id)::int AS questions,
            COUNT(DISTINCT id) FILTER (WHERE scorable)::int AS scorable,
@@ -83,15 +29,14 @@ _STATS_QUERY = _MATCHED_QUERY + """, section_stats AS (
      GROUP BY collection_id,version,path
 )
 SELECT * FROM section_stats
-
 """
 
 
 async def _section_stats(collection_id: str | None = None, exam_scope: ExamScope = DEFAULT_SCOPE) -> dict[tuple[str, int, str], dict]:
     collection_filter = "AND c.id=%(collection_id)s" if collection_id else ""
+    sql = matched_sections_cte(exam_scope, collection_filter=collection_filter) + _STATS_SUFFIX
     async with cursor() as cur:
-        await cur.execute(_STATS_QUERY.format(collection_filter=collection_filter, collection_scope=scope_condition('c',exam_scope), all_view=pool_view('all',exam_scope)),
-                          {"collection_id": collection_id} if collection_id else {})
+        await cur.execute(sql, {"collection_id": collection_id} if collection_id else {})
         rows = await cur.fetchall()
     return {(r["collection_id"], r["version"], r["path"]): r for r in rows}
 
@@ -198,9 +143,24 @@ async def _collection_study_topics(collection_id: str, exam_scope: ExamScope, st
             raise HTTPException(404, "collection not found")
         if collection_id == 'group-b':
             collection = {'id': 'group-b', 'title': 'Group B — English & GK/GS'}
+        behavior = await collection_behavior(cur, collection_ids, exam_scope)
+        use_science_projection = behavior["science_projection"] and not study_area
+        gk_gs_label = behavior["gk_gs_label"] if not study_area else None
         await cur.execute("SET LOCAL jit=off")
-        await cur.execute(
-            f"""WITH exam_questions AS MATERIALIZED (
+        if behavior["has_wide_taxonomy"] and not study_area:
+            membership_sql = collection_membership_subquery(
+                exam_scope,
+                collection_param="single_collection",
+                section_path_param="section_path" if section_path else None,
+            )
+            exam_q_cte = f"""WITH resolved_ids AS ({membership_sql}),
+            exam_questions AS MATERIALIZED (
+                SELECT DISTINCT v.id
+                  FROM resolved_ids r
+                  JOIN {pool_view('all', exam_scope)} v ON v.id=r.id
+            )"""
+        else:
+            exam_q_cte = f"""WITH exam_questions AS MATERIALIZED (
                 SELECT DISTINCT a.canonical_id AS id
                   FROM collection_papers cp
                   JOIN collections c ON c.id=cp.collection_id AND c.live_version=cp.version
@@ -211,7 +171,9 @@ async def _collection_study_topics(collection_id: str, exam_scope: ExamScope, st
                    AND (%(section_path)s::text IS NULL OR cp.section_path=%(section_path)s)
                    AND c.visibility='public' AND {scope_condition('c', exam_scope)}
                    AND {scope_condition('paper', exam_scope)} {area_clause}
-            )
+            )"""
+        await cur.execute(
+            f"""{exam_q_cte}
             SELECT GROUPING(path.subject_id) AS subject_group,
                    GROUPING(path.topic_id) AS topic_group,
                    GROUPING(path.subtopic_id) AS subtopic_group,
@@ -220,14 +182,14 @@ async def _collection_study_topics(collection_id: str, exam_scope: ExamScope, st
                    path.subtopic_id,MIN(path.subtopic_label) AS subtopic_label,
                    COUNT(DISTINCT exam_questions.id)::int AS questions
               FROM exam_questions
-              LEFT JOIN ({path_projection(include_science=study_area in ("common", "gk-gs"), clerical_science=collection_id in (*CLERICAL_EXAMS,'combined-prelims') and not study_area)}) path ON path.question_id=exam_questions.id
+              LEFT JOIN ({path_projection(include_science=study_area in ("common", "gk-gs"), clerical_science=use_science_projection)}) path ON path.question_id=exam_questions.id
                 AND path.review_status='approved'
                 AND (NOT %(primary_only)s OR path.is_primary)
              GROUP BY GROUPING SETS (
                (), (path.subject_id), (path.subject_id,path.topic_id),
                (path.subject_id,path.topic_id,path.subtopic_id)
              )""",
-            {"study_collections": collection_ids, "primary_only": bool(study_area), "section_path": section_path, **area_params},
+            {"study_collections": collection_ids, "single_collection": collection_id, "primary_only": bool(study_area), "section_path": section_path, **area_params},
         )
         rows = await cur.fetchall()
     total = 0
@@ -241,7 +203,8 @@ async def _collection_study_topics(collection_id: str, exam_scope: ExamScope, st
                 unclassified = row['questions']
             else:
                 subjects[row['subject_id']] = {
-                    'id': row['subject_id'], 'title': ('General Knowledge' if collection_id in ('udc', 'ldc', 'assistant') and not study_area and row['subject_id']=='gk-gs' else 'General Studies' if collection_id=='combined-prelims' and row['subject_id']=='gk-gs' else row['subject_label'] or row['subject_id']),
+                    'id': row['subject_id'],
+                    'title': (gk_gs_label if gk_gs_label and row['subject_id'] == 'gk-gs' else row['subject_label'] or row['subject_id']),
                     'questions': row['questions'], 'topics': [],
                 }
     for row in rows:
@@ -345,14 +308,15 @@ async def _get_collection(collection_id: str, exam_scope: ExamScope) -> Collecti
     # or treat the presence of an unreviewed answer as reviewed mock eligibility.
     async with cursor() as cur:
         await cur.execute("SET LOCAL jit=off")
-        # This measured wide taxonomy collection benefits from declared joins.
-        # Small exam counts keep the default plan. The setting ends on commit.
-        if collection_id == "subject-wise-practice":
+        behavior = await collection_behavior(cur, [collection_id], exam_scope)
+        # Wide taxonomy collections (any section without paper_ids) benefit from
+        # declared joins. Small exam counts keep the default plan. Ends on commit.
+        if behavior["has_wide_taxonomy"]:
             await cur.execute("SET LOCAL join_collapse_limit=1")
-        matched_query = _MATCHED_QUERY.format(
+        matched_query = matched_sections_cte(
+            exam_scope,
             collection_filter="AND c.id=%(collection_id)s",
-            collection_scope=scope_condition('c',exam_scope),
-            all_view=pool_view('all',exam_scope))
+        )
         await cur.execute(matched_query + f""", question_ids AS MATERIALIZED (
             SELECT DISTINCT id FROM matched
         ), readiness AS MATERIALIZED (
@@ -374,7 +338,7 @@ async def _get_collection(collection_id: str, exam_scope: ExamScope) -> Collecti
             GROUP BY GROUPING SETS ((mx.path),())""",
             {"collection_id":collection_id}, prepare=False)
         detail_stats = await cur.fetchall()
-    totals = next(row for row in detail_stats if row['is_total'])
+    totals = next((row for row in detail_stats if row['is_total']), {'practice_count': 0, 'answerable_count': 0, 'needs_review': 0, 'unsolved': 0})
     readiness = {key:totals[key] for key in ('practice_count','answerable_count','needs_review','unsolved')}
     stats = {(collection_id,head['live_version'],row['path']):row for row in detail_stats if not row['is_total']}
     sections = []

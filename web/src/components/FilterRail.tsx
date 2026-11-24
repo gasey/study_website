@@ -90,19 +90,6 @@ export default function FilterRail({
         </div>
       </div>
 
-      {/* Wired and correct, but matches nothing: every canonical question has
-          exactly one appearance because the dedupe job has not run, and
-          merging duplicate printings is what creates a repeat. Measured
-          max(times_asked) = 1. Shown disabled rather than silently empty. */}
-      <div>
-        <GroupTitle>Repeats</GroupTitle>
-        <Checkbox on={false} label="Asked 2+ times" disabled />
-        <NotYet>
-          No repeats yet — duplicate printings are merged by the dedupe job,
-          which hasn’t run.
-        </NotYet>
-      </div>
-
       <div>
         <GroupTitle>Topic</GroupTitle>
         {taxonomy.length ? (

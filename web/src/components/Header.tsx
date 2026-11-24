@@ -244,7 +244,7 @@ export default function Header() {
         : id === 'practice'
           ? /^\/(practice|bank|tests|revise|games)/.test(pathname)
           : id === 'guides'
-            ? /^\/(guides|library|english|arithmetic|mizo|atlas|chronicle|stats)/.test(pathname)
+            ? /^\/(guides|library|subjects|english|arithmetic|mizo|atlas|chronicle|stats)/.test(pathname)
             : id === 'community'
               ? /^\/(community|creators|materials|create)/.test(pathname)
               : pathname === INDEX_PATH

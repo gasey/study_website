@@ -18,42 +18,39 @@ const VIEWS = [
   ["saved", "Saved"],
 ] as const;
 
-/** Pre-filtered subject entry points. V.14 removed the Library's "Modules" and
- *  "Practice sets" tabs, which were the only place these lived, and deleted the
- *  /english, /arithmetic, /mizo and /essay routes they pointed at without
- *  building the "library subject scopes" §VII.14 promised in their place. These
- *  are rebuilt as real filters over /bank, with subject_ids verified against the
- *  live taxonomy rather than guessed. */
+/** Published cross-exam Subject modules (FINNAPLAN v2 P3 / V.28a).
+ *  Each subject module is a live cross-exam taxonomy query over the bank with
+ *  deduplicated series printings and free module filters. */
 const SUBJECT_FILTERS = [
   {
     title: "English",
-    href: "/bank?subject_id=english",
-    label: "Grammar, comprehension and writing",
-    tag: "Language",
+    href: "/subjects/english",
+    label: "Grammar, comprehension and writing across all exams",
+    tag: "Subject module",
   },
   {
-    title: "Mathematics",
-    href: "/bank?subject_id=mathematics",
-    label: "Concepts, worked methods and practice",
-    tag: "Quantitative",
+    title: "Mathematics & Arithmetic",
+    href: "/subjects/mathematics",
+    label: "Concepts, worked methods and quantitative aptitude",
+    tag: "Subject module",
   },
   {
-    title: "Reasoning & aptitude",
-    href: "/bank?subject_id=reasoning-and-aptitude",
-    label: "Patterns, logic and aptitude",
-    tag: "Logic",
+    title: "Reasoning & Aptitude",
+    href: "/subjects/reasoning",
+    label: "Patterns, logic and analytical aptitude across exams",
+    tag: "Subject module",
+  },
+  {
+    title: "General Knowledge & Studies",
+    href: "/subjects/gk-gs",
+    label: "Polity, history, economy, geography and Mizoram GK/GS",
+    tag: "Subject module",
   },
   {
     title: "Mizo",
-    href: "/bank?subject_id=mizo",
-    label: "Language, literature and culture",
-    tag: "Regional",
-  },
-  {
-    title: "Written answers",
-    href: "/bank?mode=written",
-    label: "Essay, letter, précis and comprehension prompts",
-    tag: "Descriptive",
+    href: "/subjects/mizo",
+    label: "Language, literature and culture across all exams",
+    tag: "Subject module",
   },
   {
     title: "Atlas",
@@ -76,7 +73,7 @@ const SUBJECT_FILTERS = [
 ] as const;
 
 const SUBJECT_TOOLS = SITE_MAP.filter((d) =>
-  ["guides", "practice", "revise", "bank"].includes(d.id),
+  ["guides", "practice", "revise", "exams"].includes(d.id),
 );
 
 export default function Library() {

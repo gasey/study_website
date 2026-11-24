@@ -6,12 +6,19 @@ their identities. Figures, source differences and different solutions stay apart
 from .question_readiness import reviewed_answer_sql
 
 
-def study_series_pool(view, clause, *, members=False):
+def study_series_pool(view, clause, *, members=False, wide_taxonomy=False):
     # The candidate filters run before grouping; learner status runs afterwards.
     # Prefer the most recently attempted member so legacy progress is still usable
     # and an answered series does not return as an unseen parallel booklet.
     selection='SELECT candidate.*'+(',ranked.series_ever_wrong' if not members else '')+' FROM series_candidates candidate'
     if not members:selection+=' JOIN series_ranked ranked ON ranked.id=candidate.id AND ranked.series_rank=1'
+    if wide_taxonomy:
+        paper_join = ""
+        paper_cond = ""
+    else:
+        paper_join = """JOIN collection_papers cp ON cp.paper_id=p.id
+          JOIN collections c ON c.id=cp.collection_id AND c.live_version=cp.version"""
+        paper_cond = "AND cp.collection_id=%(series_collection)s AND c.visibility='public'"
     return rf"""(
       WITH series_candidates AS MATERIALIZED (
         SELECT v.*, latest.attempt_id AS study_attempt_id, COALESCE(latest.ever_wrong,false) AS study_ever_wrong,
@@ -35,10 +42,9 @@ def study_series_pool(view, clause, *, members=False):
             a.question,a.options,a.direction,a.passage,a.question_markup,a.options_markup,
             a.has_diagram,a.figure_image
           FROM appearances a JOIN papers p ON p.id=a.paper_id
-          JOIN collection_papers cp ON cp.paper_id=p.id
-          JOIN collections c ON c.id=cp.collection_id AND c.live_version=cp.version
+          {paper_join}
           WHERE a.canonical_id=v.id AND a.is_primary
-            AND cp.collection_id=%(series_collection)s AND c.visibility='public'
+            {paper_cond}
             AND p.year IS NOT NULL
             AND p.id ~* '[ -]+Series[ -]+[A-D](\.*\.pdf)$'
           ORDER BY a.id LIMIT 1

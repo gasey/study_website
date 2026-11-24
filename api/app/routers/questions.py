@@ -2,7 +2,13 @@ import hashlib,json
 from time import perf_counter
 from contextlib import asynccontextmanager
 from ..services.question_readiness import answer_status_sql, reviewed_answer_sql
-from ..services.learning_taxonomy import CLERICAL_EXAMS, path_projection, topic_expression
+from ..services.learning_taxonomy import path_projection, topic_expression
+from ..services.selector import (
+    collection_behavior,
+    collection_membership_subquery,
+    collection_source_area_sql,
+    section_question_predicate,
+)
 from ..services.source_identity import identities_for, display_identity
 from ..services.group_b_study import StudyArea, general_science_source, study_membership
 from ..services.public_catalog_cache import public_catalog
@@ -97,6 +103,9 @@ async def list_questions(
         raise HTTPException(422, "Mixed order needs a seed")
     if order=="paper" and not paper_id:
         raise HTTPException(422, "Paper order needs a specific paper")
+    from ..services.browse_allowance import allowance, power_filter, query_key, FILTERS
+    arguments = locals().copy()
+    filters = {key: arguments.get(key) for key in FILTERS}
     view = pool_view(pool, exam_scope)
     where: list[str] = []
     params: dict[str, object] = {}
@@ -135,206 +144,171 @@ async def list_questions(
             raise HTTPException(422, "no recognised answer_source values")
         where.append("answer_source = ANY(%(source)s)")
         params["source"] = chosen
+        filters['source'] = chosen
     if answer_status:
         where.append(f"({answer_status_sql()})=%(answer_status)s")
         params["answer_status"] = answer_status
     if repeats_only:
         where.append("times_asked >= 2")
 
-    path_table = "question_classifications" if study_area else "v_question_paths"
-    primary_path = " AND x.review_status='approved' AND x.is_primary" if study_area else ""
-    # Only approved taxonomy claims feed learner filters. Pending proposals
-    # remain stored with provenance but are never presented as established.
-    clerical_science = collection_id in (*CLERICAL_EXAMS,'combined-prelims') and not study_area
-    if clerical_science and (subject_id or topic_id or subtopic_id):
-        # Match one projected path so the map and results share exact semantics.
-        path_filters = ["x.question_id=v.id", "x.review_status='approved'"]
-        for name, value in [('subject_id', subject_id), ('topic_id', topic_id), ('subtopic_id', subtopic_id)]:
-            if value:
-                path_filters.append(f"x.{name}=%({name})s")
-                params[name] = value
-        where.append(f"EXISTS (SELECT 1 FROM ({path_projection(clerical_science=True)}) x WHERE {' AND '.join(path_filters)})")
-    elif subject_id == 'gk-gs':
-        if study_area:
-            general_membership, general_params = study_membership('gk-gs', collection_id, exam_scope)
-            where.append(f"v.id IN ({general_membership})")
-            params.update(general_params)
-        else:
-            where.append("EXISTS (SELECT 1 FROM v_question_paths x WHERE x.question_id=v.id AND x.subject_id IN ('general-knowledge','general-studies'))")
-    elif subject_id:
-        where.append(f"EXISTS (SELECT 1 FROM {path_table} x WHERE x.question_id=v.id AND x.subject_id=%(subject_id)s{primary_path})")
-        params["subject_id"] = subject_id
-    if topic_id and not clerical_science:
-        topic_column = topic_expression("x", include_science=bool(study_area)) if topic_id.startswith("gk-gs:") else "x.topic_id"
-        where.append(f"EXISTS (SELECT 1 FROM {path_table} x WHERE x.question_id=v.id AND {topic_column}=%(topic_id)s{primary_path})")
-        params["topic_id"] = topic_id
-    if subtopic_id and not clerical_science:
-        where.append(f"EXISTS (SELECT 1 FROM {path_table} x WHERE x.question_id=v.id AND x.subtopic_id=%(subtopic_id)s{primary_path})")
-        params['subtopic_id']=subtopic_id
-    if shelf_id:
-        where.append("v.id IN (SELECT x.question_id FROM library_shelves sh JOIN v_question_paths x ON (x.subject_id=ANY(sh.match_ids) OR x.topic_id=ANY(sh.match_ids) OR x.subtopic_id=ANY(sh.match_ids)) WHERE sh.active AND sh.id=%(shelf_id)s)")
-        params['shelf_id']=shelf_id
-    if study_area:
-        membership, area_params = study_membership(study_area, collection_id, exam_scope)
-        where.append(f"v.id IN ({membership})")
-        params.update(area_params)
-    elif collection_id == 'group-b':
-        raise HTTPException(422, 'Choose a Group B learning area')
-    if collection_id and collection_id != 'group-b' and not study_area:
-        # Resolve the small collection membership once. A correlated EXISTS
-        # here made PostgreSQL probe sections and papers for every one of the
-        # 80k bank questions, even when this collection contains only 520.
-        where.append(f"""v.id IN (
-            WITH live_sections AS MATERIALIZED (
-                SELECT cs.* FROM collection_sections cs JOIN collections cc
-                  ON cc.id=cs.collection_id AND cc.live_version=cs.version
-                WHERE cs.collection_id=%(collection_id)s AND cc.visibility='public'
-                  AND {scope_condition('cc', exam_scope)}
-            ), section_papers AS MATERIALIZED (
-                SELECT cs.*,jsonb_array_elements_text(cs.query->'paper_ids') AS paper_id
-                FROM live_sections cs WHERE cs.query ? 'paper_ids'
-            ), section_candidates AS (
-                SELECT ca.canonical_id,cs.query FROM section_papers cs
-                JOIN appearances ca ON ca.paper_id=cs.paper_id
-                UNION ALL
-                SELECT ca.canonical_id,cs.query FROM live_sections cs
-                CROSS JOIN appearances ca WHERE NOT (cs.query ? 'paper_ids')
-            )
-            SELECT ca.canonical_id FROM section_candidates ca
-            WHERE (ca.query->>'subject_id' IS NULL OR EXISTS (
-                SELECT 1 FROM v_question_paths cqc WHERE cqc.question_id=ca.canonical_id
-                  AND cqc.review_status='approved' AND cqc.subject_id=ca.query->>'subject_id'))
-              AND (ca.query->>'topic_id' IS NULL OR EXISTS (
-                SELECT 1 FROM v_question_paths cqt WHERE cqt.question_id=ca.canonical_id
-                  AND cqt.review_status='approved' AND cqt.topic_id=ca.query->>'topic_id'))
-            UNION SELECT ea.canonical_id FROM appearances ea JOIN collection_papers ep
-              ON ep.paper_id=ea.paper_id JOIN collections ec
-              ON ec.id=ep.collection_id AND ec.live_version=ep.version
-            WHERE ec.visibility='public' AND {scope_condition('ec', exam_scope)}
-              AND ep.collection_id=%(collection_id)s)""")
-        params["collection_id"] = collection_id
-    if collection_id=='combined-prelims' and section_path=='papers':
-        section_path=None  # Historical all-paper bookmarks predate the GS/Aptitude split.
-    if section_path:
-        where.append("""EXISTS (
-            SELECT 1 FROM collection_sections ss
-            JOIN collections sc ON sc.id=ss.collection_id AND sc.live_version=ss.version
-            WHERE ss.collection_id=%(section_collection)s AND ss.path=%(section_path)s
-              AND v.id <> ALL(ss.excludes)
-              AND (v.id=ANY(ss.pins) OR (
-                (NOT (ss.query ? 'paper_ids') OR EXISTS (
-                  SELECT 1 FROM appearances sa WHERE sa.canonical_id=v.id
-                    AND sa.paper_id IN (SELECT jsonb_array_elements_text(ss.query->'paper_ids'))))
-                AND (ss.query->>'subject_id' IS NULL OR EXISTS (
-                  SELECT 1 FROM v_question_paths scq WHERE scq.question_id=v.id
-                    AND scq.review_status='approved' AND scq.subject_id=ss.query->>'subject_id'))
-                AND (ss.query->>'topic_id' IS NULL OR EXISTS (
-                  SELECT 1 FROM v_question_paths stq WHERE stq.question_id=v.id
-                    AND stq.review_status='approved' AND stq.topic_id=ss.query->>'topic_id'))
-              ))
-        )""")
-        params["section_collection"] = collection_id
-        params["section_path"] = section_path
-    if paper_id:
-        where.append(f"""EXISTS(SELECT 1 FROM papers sp WHERE sp.id=%(paper_id)s AND {scope_condition('sp', exam_scope)})""")
-        if collection_id and collection_id != 'group-b':
-            where.append(f"""EXISTS (SELECT 1 FROM appearances pa
-                JOIN collection_papers cp ON cp.paper_id=pa.paper_id
-                JOIN collections pc ON pc.id=cp.collection_id AND pc.live_version=cp.version
-                WHERE pa.canonical_id=v.id AND pa.paper_id=%(paper_id)s
-                  AND cp.collection_id=%(collection_id)s AND pc.visibility='public' AND {scope_condition('pc', exam_scope)})""")
-        else:
-            where.append("EXISTS (SELECT 1 FROM appearances pa WHERE pa.canonical_id=v.id AND pa.paper_id=%(paper_id)s)")
-        params["paper_id"] = paper_id
-    if essay_kind:
-        where.append("EXISTS (SELECT 1 FROM appearances ea WHERE ea.canonical_id=v.id AND ea.essay_kind=%(essay_kind)s)")
-        params["essay_kind"] = essay_kind
-
-    status_where = []
-    if study_status != "all":
-        attempt_exists = """EXISTS (SELECT 1 FROM attempts sa WHERE sa.user_id=%(user_id)s
-                         AND sa.canonical_id=v.id AND sa.collection_id IS NOT DISTINCT FROM %(study_collection)s)"""
-        if study_area:
-            attempt_exists="EXISTS (SELECT 1 FROM attempts sa WHERE sa.user_id=%(user_id)s AND sa.canonical_id=v.id AND sa.collection_id=ANY(%(gb_collections)s))"
-        elif shelf_id and not collection_id:
-            attempt_exists="EXISTS (SELECT 1 FROM attempts sa WHERE sa.user_id=%(user_id)s AND sa.canonical_id=v.id)"
-        params["user_id"] = user_id
-        params["study_collection"] = collection_id
-        if study_status == "unseen":
-            status_where.append(f"NOT {attempt_exists}")
-        elif study_status == "answered":
-            status_where.append(attempt_exists)
-        elif study_status == "ever_wrong":
-            status_where.append(attempt_exists.replace("sa.canonical_id=v.id", "sa.canonical_id=v.id AND NOT sa.correct"))
-        else:
-            scope="" if shelf_id and not collection_id else " AND sa.collection_id IS NOT DISTINCT FROM %(study_collection)s"
-            inner_scope="" if shelf_id and not collection_id else " AND sa2.collection_id IS NOT DISTINCT FROM sa.collection_id"
-            if study_area:
-                scope=" AND sa.collection_id=ANY(%(gb_collections)s)"
-                inner_scope=" AND sa2.collection_id=ANY(%(gb_collections)s)"
-            status_where.append("EXISTS (SELECT 1 FROM attempts sa WHERE sa.user_id=%(user_id)s AND sa.canonical_id=v.id"+scope+" AND sa.id=(SELECT MAX(sa2.id) FROM attempts sa2 WHERE sa2.user_id=sa.user_id AND sa2.canonical_id=sa.canonical_id"+inner_scope+") AND NOT sa.correct)")
-
-    if q:
-        # Uses the GIN index on the generated tsvector; ~0.1-0.5 ms at 77k rows.
-        where.append("search @@ plainto_tsquery('english', %(q)s)")
-        params["q"] = q
-    if shelf_id and (year_from is not None or year_to is not None):
-        where.append("EXISTS (SELECT 1 FROM appearances ya JOIN papers yp ON yp.id=ya.paper_id WHERE ya.canonical_id=v.id AND yp.year BETWEEN %(year_from)s AND %(year_to)s)")
-        params['year_from']=year_from or 1900
-        params['year_to']=year_to or 2100
-    else:
-        if year_from is not None:
-            where.append("last_year >= %(year_from)s")
-            params["year_from"] = year_from
-        if year_to is not None:
-            where.append("first_year <= %(year_to)s")
-            params["year_to"] = year_to
-
-    source_area = ""
-    if study_area:
-        source_area = """AND a.paper_id IN (SELECT gp.paper_id FROM collection_papers gp
-            JOIN collections gr ON gr.id=gp.collection_id AND gr.live_version=gp.version
-            WHERE gp.collection_id=ANY(%(gb_collections)s) AND gp.allow_browse AND gr.visibility='public')"""
-        if study_area == 'technical':
-            source_area += " AND a.paper_id=ANY(%(gb_technical_papers)s)"
-        elif study_area in ('common', 'gk-gs'):
-            source_area += f" AND (qc.subject_id<>'science' OR {general_science_source('a')})"
-        if paper_id:
-            source_area += " AND a.paper_id=%(paper_id)s"
-    elif collection_id:
-        # A shared canonical question must show a source from the active exam.
-        source_area = """AND (EXISTS (
-            SELECT 1 FROM collection_papers cp JOIN collections c
-              ON c.id=cp.collection_id AND c.live_version=cp.version
-            WHERE cp.collection_id=%(collection_id)s AND c.visibility='public'
-              AND cp.paper_id=a.paper_id
-        ) OR EXISTS (
-            SELECT 1 FROM collection_sections cs JOIN collections c
-              ON c.id=cs.collection_id AND c.live_version=cs.version
-            WHERE cs.collection_id=%(collection_id)s AND c.visibility='public'
-              AND (NOT (cs.query ? 'paper_ids') OR
-                a.paper_id IN (SELECT jsonb_array_elements_text(cs.query->'paper_ids')))
-        ))"""
-        if paper_id:
-            source_area += " AND a.paper_id=%(paper_id)s"
-    clause = f"WHERE {' AND '.join(where)}" if where else ""
-    grouped = collection_id in ('udc','combined-prelims') and not paper_id and not study_area
-    if grouped:
-        view = study_series_pool(view, clause)
-        params.update(series_user=user_id, series_collection=collection_id)
-        if study_status == "ever_wrong":
-            status_where = ["v.series_ever_wrong"]
-        clause = f"WHERE {' AND '.join(status_where)}" if status_where else ""
-    elif status_where:
-        clause = f"WHERE {' AND '.join(where + status_where)}"
-
-    from ..services.browse_allowance import allowance, power_filter, query_key, FILTERS
-    arguments = locals().copy()
-    filters = {key: arguments.get(key) for key in FILTERS}
-    if source:
-        filters['source'] = params['source']
     browse_allowance = None
     async with cursor() as cur:
+        behavior = (
+            await collection_behavior(cur, [collection_id], exam_scope)
+            if collection_id and collection_id != 'group-b'
+            else {
+                "exists": False,
+                "series_grouping": False,
+                "science_projection": False,
+                "gk_gs_label": None,
+                "has_wide_taxonomy": False,
+                "section_paths": set(),
+            }
+        )
+        path_table = "question_classifications" if study_area else "v_question_paths"
+        primary_path = " AND x.review_status='approved' AND x.is_primary" if study_area else ""
+        # Only approved taxonomy claims feed learner filters. Pending proposals
+        # remain stored with provenance but are never presented as established.
+        clerical_science = behavior["science_projection"] and not study_area
+        if clerical_science and (subject_id or topic_id or subtopic_id):
+            # Match one projected path so the map and results share exact semantics.
+            path_filters = ["x.question_id=v.id", "x.review_status='approved'"]
+            for name, value in [('subject_id', subject_id), ('topic_id', topic_id), ('subtopic_id', subtopic_id)]:
+                if value:
+                    path_filters.append(f"x.{name}=%({name})s")
+                    params[name] = value
+            where.append(f"EXISTS (SELECT 1 FROM ({path_projection(clerical_science=True)}) x WHERE {' AND '.join(path_filters)})")
+        elif subject_id == 'gk-gs':
+            if study_area:
+                general_membership, general_params = study_membership('gk-gs', collection_id, exam_scope)
+                where.append(f"v.id IN ({general_membership})")
+                params.update(general_params)
+            else:
+                where.append("EXISTS (SELECT 1 FROM v_question_paths x WHERE x.question_id=v.id AND x.subject_id IN ('general-knowledge','general-studies'))")
+        elif subject_id:
+            where.append(f"EXISTS (SELECT 1 FROM {path_table} x WHERE x.question_id=v.id AND x.subject_id=%(subject_id)s{primary_path})")
+            params["subject_id"] = subject_id
+        if topic_id and not clerical_science:
+            topic_column = topic_expression("x", include_science=bool(study_area)) if topic_id.startswith("gk-gs:") else "x.topic_id"
+            where.append(f"EXISTS (SELECT 1 FROM {path_table} x WHERE x.question_id=v.id AND {topic_column}=%(topic_id)s{primary_path})")
+            params["topic_id"] = topic_id
+        if subtopic_id and not clerical_science:
+            where.append(f"EXISTS (SELECT 1 FROM {path_table} x WHERE x.question_id=v.id AND x.subtopic_id=%(subtopic_id)s{primary_path})")
+            params['subtopic_id']=subtopic_id
+        if shelf_id:
+            where.append("v.id IN (SELECT x.question_id FROM library_shelves sh JOIN v_question_paths x ON (x.subject_id=ANY(sh.match_ids) OR x.topic_id=ANY(sh.match_ids) OR x.subtopic_id=ANY(sh.match_ids)) WHERE sh.active AND sh.id=%(shelf_id)s)")
+            params['shelf_id']=shelf_id
+        if study_area:
+            membership, area_params = study_membership(study_area, collection_id, exam_scope)
+            where.append(f"v.id IN ({membership})")
+            params.update(area_params)
+        elif collection_id == 'group-b':
+            raise HTTPException(422, 'Choose a Group B learning area')
+        if collection_id and collection_id != 'group-b' and not study_area:
+            # Resolve module membership once via the shared three-key selector.
+            where.append(f"v.id IN ({collection_membership_subquery(exam_scope)})")
+            params["collection_id"] = collection_id
+        # Historical all-paper bookmarks (`section_path=papers`) predate multi-section
+        # splits (e.g. GS/Aptitude). When a module has live sections none of which
+        # is 'papers', treat the legacy bookmark as unfiltered across the module.
+        if (
+            collection_id
+            and section_path == 'papers'
+            and behavior["section_paths"]
+            and 'papers' not in behavior["section_paths"]
+        ):
+            section_path = None
+        if section_path:
+            where.append(f"""EXISTS (
+                SELECT 1 FROM collection_sections ss
+                JOIN collections sc ON sc.id=ss.collection_id AND sc.live_version=ss.version
+                WHERE ss.collection_id=%(section_collection)s AND ss.path=%(section_path)s
+                  AND {section_question_predicate('ss')}
+            )""")
+            params["section_collection"] = collection_id
+            params["section_path"] = section_path
+        if paper_id:
+            where.append(f"""EXISTS(SELECT 1 FROM papers sp WHERE sp.id=%(paper_id)s AND {scope_condition('sp', exam_scope)})""")
+            if collection_id and collection_id != 'group-b':
+                where.append(f"""EXISTS (SELECT 1 FROM appearances pa
+                    JOIN collection_papers cp ON cp.paper_id=pa.paper_id
+                    JOIN collections pc ON pc.id=cp.collection_id AND pc.live_version=cp.version
+                    WHERE pa.canonical_id=v.id AND pa.paper_id=%(paper_id)s
+                      AND cp.collection_id=%(collection_id)s AND pc.visibility='public' AND {scope_condition('pc', exam_scope)})""")
+            else:
+                where.append("EXISTS (SELECT 1 FROM appearances pa WHERE pa.canonical_id=v.id AND pa.paper_id=%(paper_id)s)")
+            params["paper_id"] = paper_id
+        if essay_kind:
+            where.append("EXISTS (SELECT 1 FROM appearances ea WHERE ea.canonical_id=v.id AND ea.essay_kind=%(essay_kind)s)")
+            params["essay_kind"] = essay_kind
+
+        status_where = []
+        if study_status != "all":
+            attempt_exists = """EXISTS (SELECT 1 FROM attempts sa WHERE sa.user_id=%(user_id)s
+                             AND sa.canonical_id=v.id AND sa.collection_id IS NOT DISTINCT FROM %(study_collection)s)"""
+            if study_area:
+                attempt_exists="EXISTS (SELECT 1 FROM attempts sa WHERE sa.user_id=%(user_id)s AND sa.canonical_id=v.id AND sa.collection_id=ANY(%(gb_collections)s))"
+            elif shelf_id and not collection_id:
+                attempt_exists="EXISTS (SELECT 1 FROM attempts sa WHERE sa.user_id=%(user_id)s AND sa.canonical_id=v.id)"
+            params["user_id"] = user_id
+            params["study_collection"] = collection_id
+            if study_status == "unseen":
+                status_where.append(f"NOT {attempt_exists}")
+            elif study_status == "answered":
+                status_where.append(attempt_exists)
+            elif study_status == "ever_wrong":
+                status_where.append(attempt_exists.replace("sa.canonical_id=v.id", "sa.canonical_id=v.id AND NOT sa.correct"))
+            else:
+                scope="" if shelf_id and not collection_id else " AND sa.collection_id IS NOT DISTINCT FROM %(study_collection)s"
+                inner_scope="" if shelf_id and not collection_id else " AND sa2.collection_id IS NOT DISTINCT FROM sa.collection_id"
+                if study_area:
+                    scope=" AND sa.collection_id=ANY(%(gb_collections)s)"
+                    inner_scope=" AND sa2.collection_id=ANY(%(gb_collections)s)"
+                status_where.append("EXISTS (SELECT 1 FROM attempts sa WHERE sa.user_id=%(user_id)s AND sa.canonical_id=v.id"+scope+" AND sa.id=(SELECT MAX(sa2.id) FROM attempts sa2 WHERE sa2.user_id=sa.user_id AND sa2.canonical_id=sa.canonical_id"+inner_scope+") AND NOT sa.correct)")
+
+        if q:
+            # Uses the GIN index on the generated tsvector; ~0.1-0.5 ms at 77k rows.
+            where.append("search @@ plainto_tsquery('english', %(q)s)")
+            params["q"] = q
+        if shelf_id and (year_from is not None or year_to is not None):
+            where.append("EXISTS (SELECT 1 FROM appearances ya JOIN papers yp ON yp.id=ya.paper_id WHERE ya.canonical_id=v.id AND yp.year BETWEEN %(year_from)s AND %(year_to)s)")
+            params['year_from']=year_from or 1900
+            params['year_to']=year_to or 2100
+        else:
+            if year_from is not None:
+                where.append("last_year >= %(year_from)s")
+                params["year_from"] = year_from
+            if year_to is not None:
+                where.append("first_year <= %(year_to)s")
+                params["year_to"] = year_to
+
+        source_area = ""
+        if study_area:
+            source_area = """AND a.paper_id IN (SELECT gp.paper_id FROM collection_papers gp
+                JOIN collections gr ON gr.id=gp.collection_id AND gr.live_version=gp.version
+                WHERE gp.collection_id=ANY(%(gb_collections)s) AND gp.allow_browse AND gr.visibility='public')"""
+            if study_area == 'technical':
+                source_area += " AND a.paper_id=ANY(%(gb_technical_papers)s)"
+            elif study_area in ('common', 'gk-gs'):
+                source_area += f" AND (qc.subject_id<>'science' OR {general_science_source('a')})"
+            if paper_id:
+                source_area += " AND a.paper_id=%(paper_id)s"
+        elif collection_id:
+            # A shared canonical question must show a source from the active exam.
+            source_area = collection_source_area_sql("collection_id")
+            if paper_id:
+                source_area += " AND a.paper_id=%(paper_id)s"
+        clause = f"WHERE {' AND '.join(where)}" if where else ""
+        grouped = behavior["series_grouping"] and not paper_id and not study_area
+        if grouped:
+            view = study_series_pool(view, clause, wide_taxonomy=behavior["has_wide_taxonomy"])
+            params.update(series_user=user_id, series_collection=collection_id)
+            if study_status == "ever_wrong":
+                status_where = ["v.series_ever_wrong"]
+            clause = f"WHERE {' AND '.join(status_where)}" if status_where else ""
+        elif status_where:
+            clause = f"WHERE {' AND '.join(where + status_where)}"
+
         if atlas_chapter:
             await atlas.current_chapter(cur,atlas_chapter,atlas_layer)
         if power_filter(filters):
@@ -342,8 +316,10 @@ async def list_questions(
         if learning_entry:
             from .current_affairs import no_assessment
             await no_assessment(cur,user_id)
-        if study_area:
+        if study_area or behavior["has_wide_taxonomy"]:
             await cur.execute("SET LOCAL jit=off")
+        if behavior["has_wide_taxonomy"]:
+            await cur.execute("SET LOCAL join_collapse_limit=1")
 
         # A seeded hash mixes the filtered pool once; pagination/reload retain
         # the same order. Group identities stay stable after an attempt picks a
@@ -443,6 +419,226 @@ async def question_items(cur, selected_rows, atlas_user=None):
                "source_appearance": source}
         ))
     return items
+
+
+@router.get("/facets")
+async def question_facets(
+    collection_id: str | None = Query(None, min_length=2, max_length=80),
+    section_path: str | None = Query(None, min_length=2, max_length=160),
+    paper_id: str | None = Query(None, min_length=1, max_length=500),
+    subject_id: str | None = Query(None, min_length=2, max_length=100),
+    study_area: StudyArea | None = None,
+    pool: Literal["all", "scorable", "practice"] = "all",
+    exam_scope: ExamScope = DEFAULT_SCOPE,
+):
+    """Unified structural facet endpoint (FINNAPLAN v2 P4 / V.27).
+
+    Takes the same structural selector as `GET /api/questions` and returns
+    non-zero subject/topic/subtopic counts, an `unclassified` count, and a
+    year histogram in one cached request (replacing multi-request year loops).
+    """
+    return await public_catalog(
+        ("question-facets", collection_id, section_path, paper_id, subject_id, study_area, pool, exam_scope),
+        lambda: _question_facets(collection_id, section_path, paper_id, subject_id, study_area, pool, exam_scope),
+    )
+
+
+async def _question_facets(
+    collection_id: str | None,
+    section_path: str | None,
+    paper_id: str | None,
+    subject_id: str | None,
+    study_area: StudyArea | None,
+    pool: Literal["all", "scorable", "practice"],
+    exam_scope: ExamScope,
+):
+    view = pool_view(pool, exam_scope)
+    where: list[str] = []
+    params: dict[str, object] = {}
+    if exam_scope != "all" and (collection_id or paper_id):
+        view = pool_view(pool, "all")
+        where.append("""EXISTS (SELECT 1 FROM appearances qa JOIN papers qp ON qp.id=qa.paper_id
+            WHERE qa.canonical_id=v.id AND qp.exam_scope_id='mizoram-recruitment' OFFSET 0)""")
+
+    async with cursor() as cur:
+        await cur.execute("SET LOCAL jit=off")
+        behavior = (
+            await collection_behavior(cur, [collection_id], exam_scope)
+            if collection_id and collection_id != "group-b"
+            else {
+                "exists": False,
+                "series_grouping": False,
+                "science_projection": False,
+                "gk_gs_label": None,
+                "has_wide_taxonomy": False,
+                "section_paths": set(),
+            }
+        )
+        if behavior["has_wide_taxonomy"]:
+            await cur.execute("SET LOCAL join_collapse_limit=1")
+        if study_area:
+            membership, area_params = study_membership(study_area, collection_id, exam_scope)
+            where.append(f"v.id IN ({membership})")
+            params.update(area_params)
+        elif collection_id == "group-b":
+            raise HTTPException(422, "Choose a Group B learning area")
+        elif collection_id:
+            if (
+                section_path == "papers"
+                and behavior["section_paths"]
+                and "papers" not in behavior["section_paths"]
+            ):
+                section_path = None
+            where.append(f"v.id IN ({collection_membership_subquery(exam_scope, section_path_param='section_path' if section_path else None)})")
+            params["collection_id"] = collection_id
+            if section_path:
+                params["section_path"] = section_path
+        if paper_id:
+            where.append(f"EXISTS (SELECT 1 FROM papers sp WHERE sp.id=%(paper_id)s AND {scope_condition('sp', exam_scope)})")
+            where.append("EXISTS (SELECT 1 FROM appearances pa WHERE pa.canonical_id=v.id AND pa.paper_id=%(paper_id)s)")
+            params["paper_id"] = paper_id
+
+        base_clause = f"WHERE {' AND '.join(where)}" if where else ""
+        use_science = behavior["science_projection"] and not study_area
+        gk_gs_label = behavior["gk_gs_label"] if not study_area else None
+        projected = path_projection(
+            include_science=study_area in ("common", "gk-gs"),
+            clerical_science=use_science,
+        )
+        params["primary_only"] = bool(study_area)
+
+        await cur.execute(
+            f"""WITH eligible AS MATERIALIZED (
+                    SELECT v.id, v.first_year, v.last_year
+                      FROM {view} v
+                     {base_clause}
+                )
+                SELECT GROUPING(path.subject_id) AS subject_group,
+                       GROUPING(path.topic_id) AS topic_group,
+                       GROUPING(path.subtopic_id) AS subtopic_group,
+                       path.subject_id, MIN(path.subject_label) AS subject_label,
+                       path.topic_id, MIN(path.topic_label) AS topic_label,
+                       path.subtopic_id, MIN(path.subtopic_label) AS subtopic_label,
+                       COUNT(DISTINCT eligible.id)::int AS questions
+                  FROM eligible
+                  LEFT JOIN ({projected}) path ON path.question_id=eligible.id
+                    AND path.review_status='approved'
+                    AND (NOT %(primary_only)s OR path.is_primary)
+                 GROUP BY GROUPING SETS (
+                   (), (path.subject_id), (path.subject_id, path.topic_id),
+                   (path.subject_id, path.topic_id, path.subtopic_id)
+                 )""",
+            params,
+        )
+        tax_rows = await cur.fetchall()
+
+        year_where = list(where)
+        year_params = dict(params)
+        if subject_id:
+            if use_science:
+                year_where.append(
+                    f"EXISTS (SELECT 1 FROM ({path_projection(clerical_science=True)}) yx "
+                    "WHERE yx.question_id=v.id AND yx.review_status='approved' AND yx.subject_id=%(facet_subject)s)"
+                )
+                year_params["facet_subject"] = subject_id
+            elif subject_id == "gk-gs":
+                year_where.append(
+                    "EXISTS (SELECT 1 FROM v_question_paths yx WHERE yx.question_id=v.id "
+                    "AND yx.subject_id IN ('general-knowledge','general-studies'))"
+                )
+            else:
+                year_where.append(
+                    "EXISTS (SELECT 1 FROM v_question_paths yx WHERE yx.question_id=v.id "
+                    "AND yx.subject_id=%(facet_subject)s)"
+                )
+                year_params["facet_subject"] = subject_id
+        year_clause = f"WHERE {' AND '.join(year_where)}" if year_where else ""
+        if collection_id and not behavior["has_wide_taxonomy"] and not study_area:
+            await cur.execute(
+                f"""WITH eligible AS MATERIALIZED (
+                        SELECT v.id FROM {view} v {year_clause}
+                    )
+                    SELECT p.year, COUNT(DISTINCT e.id)::int AS questions
+                      FROM eligible e
+                      JOIN appearances a ON a.canonical_id=e.id
+                      JOIN collection_papers cp ON cp.paper_id=a.paper_id
+                      JOIN collections c ON c.id=cp.collection_id AND c.live_version=cp.version
+                      JOIN papers p ON p.id=cp.paper_id
+                     WHERE cp.collection_id=%(collection_id)s AND cp.allow_browse
+                       AND c.visibility='public' AND p.year IS NOT NULL
+                       AND {scope_condition('p', exam_scope)}
+                     GROUP BY p.year
+                     ORDER BY p.year DESC""",
+                year_params,
+            )
+        else:
+            await cur.execute(
+                f"""SELECT v.last_year AS year, COUNT(*)::int AS questions
+                      FROM {view} v
+                     {year_clause + (' AND ' if year_clause else 'WHERE ')}v.last_year IS NOT NULL
+                     GROUP BY v.last_year
+                     ORDER BY v.last_year DESC""",
+                year_params,
+            )
+        year_rows = await cur.fetchall()
+
+    total = 0
+    unclassified = 0
+    subjects: dict[str, dict] = {}
+    for row in tax_rows:
+        if row["subject_group"]:
+            total = row["questions"]
+        elif row["topic_group"]:
+            if row["subject_id"] is None:
+                unclassified = row["questions"]
+            elif row["questions"] > 0:
+                subjects[row["subject_id"]] = {
+                    "id": row["subject_id"],
+                    "title": (
+                        gk_gs_label
+                        if gk_gs_label and row["subject_id"] == "gk-gs"
+                        else row["subject_label"] or row["subject_id"]
+                    ),
+                    "questions": row["questions"],
+                    "topics": [],
+                }
+    for row in tax_rows:
+        if not row["subject_group"] and not row["topic_group"] and row["subtopic_group"]:
+            subject = subjects.get(row["subject_id"])
+            if subject and row["topic_id"] and row["questions"] > 0:
+                subject["topics"].append({
+                    "id": row["topic_id"],
+                    "title": row["topic_label"] or row["topic_id"],
+                    "questions": row["questions"],
+                    "subtopics": [],
+                })
+    topics_map = {
+        (s["id"], t["id"]): t
+        for s in subjects.values()
+        for t in s["topics"]
+    }
+    for row in tax_rows:
+        if not row["subject_group"] and not row["topic_group"] and not row["subtopic_group"] and row["subtopic_id"] and row["questions"] > 0:
+            topic = topics_map.get((row["subject_id"], row["topic_id"]))
+            if topic:
+                topic["subtopics"].append({
+                    "id": row["subtopic_id"],
+                    "title": row["subtopic_label"] or row["subtopic_id"],
+                    "questions": row["questions"],
+                })
+    ordered_subjects = sorted(subjects.values(), key=lambda item: (-item["questions"], item["title"]))
+    for s in ordered_subjects:
+        s["topics"].sort(key=lambda item: (-item["questions"], item["title"]))
+        for t in s["topics"]:
+            t["subtopics"].sort(key=lambda item: (-item["questions"], item["title"]))
+    years = [{"year": r["year"], "questions": r["questions"]} for r in year_rows if r["questions"] > 0]
+    return {
+        "collection_id": collection_id,
+        "total": total,
+        "unclassified": unclassified,
+        "subjects": ordered_subjects,
+        "years": years,
+    }
 
 
 @router.get("/taxonomy", response_model=list[TaxonomyFacet])
@@ -804,10 +1000,14 @@ async def _answer_question(
         async with _answer_cursor(_cur) as cur:
             prior=await replay(cur)
             if prior:return prior
-    resolved_section = None if body.collection_id=='combined-prelims' and body.section_path=='papers' else body.section_path
+    resolved_section = body.section_path
     async with _answer_cursor(_cur) as cur:
         await protect_answer(cur,user_id,question_id)
         if body.collection_id:
+            if resolved_section == 'papers':
+                behavior = await collection_behavior(cur, [body.collection_id], exam_scope)
+                if behavior["section_paths"] and 'papers' not in behavior["section_paths"]:
+                    resolved_section = None
             if body.paper_id:
                 await cur.execute(
                     f"""SELECT cp.section_path FROM collection_papers cp
@@ -829,19 +1029,8 @@ async def _answer_question(
                          JOIN collections c ON c.id=cs.collection_id AND c.live_version=cs.version
                          JOIN canonical_questions v ON v.id=%s
                         WHERE cs.collection_id=%s AND cs.path=%s AND c.visibility='public' AND {scope_condition('c', exam_scope)}
-                          AND v.id <> ALL(cs.excludes)
-                          AND (v.id=ANY(cs.pins) OR (
-                            (NOT (cs.query ? 'paper_ids') OR EXISTS (
-                              SELECT 1 FROM appearances a WHERE a.canonical_id=%s
-                                AND a.paper_id IN (SELECT jsonb_array_elements_text(cs.query->'paper_ids'))))
-                            AND (cs.query->>'subject_id' IS NULL OR EXISTS (
-                              SELECT 1 FROM question_classifications qc WHERE qc.question_id=%s
-                                AND qc.review_status='approved' AND qc.subject_id=cs.query->>'subject_id'))
-                            AND (cs.query->>'topic_id' IS NULL OR EXISTS (
-                              SELECT 1 FROM question_classifications qt WHERE qt.question_id=%s
-                                AND qt.review_status='approved' AND qt.topic_id=cs.query->>'topic_id'))
-                          ))""",
-                    (question_id,body.collection_id,resolved_section,question_id,question_id,question_id),
+                          AND {section_question_predicate('cs')}""",
+                    (question_id, body.collection_id, resolved_section),
                 )
                 if await cur.fetchone() is None:
                     raise HTTPException(422, "question is not in this module section")

@@ -16,18 +16,25 @@ FILTERS = ('atlas_chapter','atlas_layer','pool', 'answer_status', 'q', 'year_fro
 
 
 def power_filter(query):
-    """Accept parsed HTTP query lists or normalized router arguments."""
+    """Accept parsed HTTP query lists or normalized router arguments.
+
+    FINNAPLAN v2 D1: A published module (collection_id present) and its own
+    filters are free for all learners. Raw /bank ad-hoc filter combinations
+    and cross-exam `exam_scope=all` searches meter against the daily limit.
+    """
     def values(key):
         value = query.get(key)
         return value if isinstance(value, list) else [value]
     def present(key):
         return any(v is not None and v != '' for v in values(key))
+    cross_exam = 'all' in values('exam_scope') and any(present(k) for k in
+        ('subject_id', 'topic_id', 'subtopic_id', 'shelf_id','atlas_chapter'))
+    if present('collection_id') and not cross_exam:
+        return False
     topic = present('topic_id') or present('subtopic_id') or present('atlas_chapter')
     year = present('year_from') or present('year_to')
     answer = (present('answer_status') or present('source')
               or any(v and v != 'all' for v in values('pool')))
-    cross_exam = 'all' in values('exam_scope') and any(present(k) for k in
-        ('subject_id', 'topic_id', 'subtopic_id', 'shelf_id','atlas_chapter'))
     return cross_exam or sum((topic, year, answer)) >= 2
 
 

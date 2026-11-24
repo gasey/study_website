@@ -110,11 +110,10 @@ export const SITE_MAP: readonly Destination[] = [
   {
     id: 'bank',
     path: '/bank',
-    label: 'Question bank',
+    label: 'Advanced bank chooser',
     section: 'study',
-    blurb: 'Browse and filter every question in the bank, including written prompts.',
-    surfaces: ['index', 'quickfind'],
-    menu: 'exams',
+    blurb: 'Power-user chooser across the full corpus — pick an exam, subject, paper or year first.',
+    surfaces: ['index'],
     keywords: 'browse search filter mcq written essay descriptive',
   },
   {

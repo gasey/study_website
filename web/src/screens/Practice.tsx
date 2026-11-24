@@ -5,6 +5,7 @@ import { AnswerLayoutControl } from '../components/AnswerLayout'
 import {
   currentMock,
   isLaterExamCollection,
+  isSubjectModule,
   listCollections,
   listQuestions,
   listTaxonomy,
@@ -66,7 +67,7 @@ export default function Practice() {
     Promise.all([
       listCollections().then((rows) => {
         if (!live) return
-        setExams(rows.filter((c) => c.kind === 'exam' && !isLaterExamCollection(c)))
+        setExams(rows.filter((c) => (c.kind === 'exam' || isSubjectModule(c)) && !isLaterExamCollection(c)))
       }),
       listTaxonomy('all', true).then((rows) => {
         if (live) setTaxonomy(rows)
@@ -102,12 +103,22 @@ export default function Practice() {
     setAnsweredCount(0)
     try {
       const limit = count === 'full' ? 100 : Number(count)
+      const rawYear = params.get('year') || ''
+      const yearNum = /^\d{4}$/.test(rawYear) ? Number(rawYear) : undefined
+      const rawStatus = params.get('status') || ''
+      const studyStatus = (['unseen', 'answered', 'wrong', 'ever_wrong'].includes(rawStatus)
+        ? rawStatus
+        : undefined) as 'unseen' | 'answered' | 'wrong' | 'ever_wrong' | undefined
       const res = await listQuestions({
         pool: targetMode === 'written' ? 'all' : 'practice',
         collection_id: targetExam || undefined,
         subject_id: targetSubject || undefined,
+        year_from: yearNum,
+        year_to: yearNum,
+        study_status: studyStatus,
         q: query.trim().length >= 2 ? query.trim() : undefined,
-        order: targetMode === 'written' ? 'paper' : 'mixed',
+        order: targetMode === 'written' ? 'repeated' : 'mixed',
+        seed: targetMode === 'written' ? undefined : 'practice-' + Date.now().toString(36),
         limit: targetMode === 'written' ? 100 : limit,
         offset: 0,
       })

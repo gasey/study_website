@@ -192,11 +192,11 @@ function LibraryScopeRoute() {
   return <NotFound />
 }
 
-function ExamSubRoute() {
+function ExamSubRoute({ subject = false }: { subject?: boolean }) {
   const { sub } = useParams()
   if (sub === 'paper') return <PaperViewer />
   if (sub === 'mock') return <MockRunner />
-  if (!sub) return <ExamPage />
+  if (!sub) return <ExamPage isSubjectRoute={subject} />
   return <NotFound />
 }
 
@@ -269,6 +269,7 @@ export default function App() {
                 <Route path="/past-papers" element={<Papers />} />
                 <Route path="/exams" element={<Exams />} />
                 <Route path="/exams/:id/:sub?" element={<ExamSubRoute />} />
+                <Route path="/subjects/:id/:sub?" element={<ExamSubRoute subject />} />
                 <Route path="/tests/:testId?/:action?" element={<TestsRoute />} />
                 <Route path="/results/:mockId" element={<Results />} />
                 <Route path="/library" element={<Library />} />

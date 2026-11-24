@@ -23,7 +23,7 @@ import {answerStatusAppearance} from '../lib/answerStatus'
 import MaterialDiscovery from '../components/MaterialDiscovery'
 import { lazy,Suspense,useEffect, useState } from 'react'
 import { Link, Navigate, useParams, useSearchParams, useLocation } from 'react-router-dom'
-import { getCollection, getCollectionHeader, getProgress, getExamBookmarks, isLaterExamCollection, prefetchQuestionPage, removeExamBookmark, saveExamBookmark, type CollectionDetail, type CollectionHeader, type ListParams } from '../lib/api'
+import { getCollection, getCollectionHeader, getProgress, getExamBookmarks, isLaterExamCollection, isSubjectModule, prefetchQuestionPage, removeExamBookmark, resolveModuleCollectionId, saveExamBookmark, type CollectionDetail, type CollectionHeader, type ListParams } from '../lib/api'
 const ExamJourney=lazy(()=>import('../components/ExamJourney'))
 const UdcStudySessions=lazy(()=>import('../components/UdcStudySessions'))
 import ExamStudyTopics from '../components/ExamStudyTopics'
@@ -32,8 +32,9 @@ import { ModuleProgressPanel, ModuleQuestionBrowser } from './ModuleStudy'
 /** One exam's landing page — the prototype's `module` screen, line 1700.
  *  See docs/DESIGN-FIDELITY.md: "module" is the old name, and the
  *  prototype's `exam` screen is the timed paper, not this. */
-export default function ExamPage() {
-  const { id = '' } = useParams()
+export default function ExamPage({ isSubjectRoute = false }: { isSubjectRoute?: boolean } = {}) {
+  const { id: rawId = '' } = useParams()
+  const id = resolveModuleCollectionId(rawId, isSubjectRoute)
   const [metadata, setC] = useState<CollectionDetail | null>(null)
   const [header,setHeader]=useState<CollectionHeader|null>(null)
   const [headerError,setHeaderError]=useState('')
@@ -49,7 +50,8 @@ export default function ExamPage() {
   const [bookmarkError,setBookmarkError]=useState('')
   const [searchParams, setSearchParams] = useSearchParams()
   const rawView = searchParams.get('view')
-  const view: 'overview' | 'topics' | 'papers' | 'browse' | 'practice' | 'progress' = rawView === 'topics' || rawView === 'papers' || rawView === 'browse' || rawView === 'practice' || rawView === 'progress' ? rawView : 'overview'
+  const defaultView = isSubjectRoute || (c ? isSubjectModule(c) : false) ? 'browse' : 'overview'
+  const view: 'overview' | 'topics' | 'papers' | 'browse' | 'practice' | 'progress' = rawView === 'overview' || rawView === 'topics' || rawView === 'papers' || rawView === 'browse' || rawView === 'practice' || rawView === 'progress' ? rawView : defaultView
 
 
 
@@ -133,10 +135,14 @@ export default function ExamPage() {
   const visiblePapers=bookletGroups.slice((paperPage-1)*pageSize,paperPage*pageSize).map(representativeBooklet)
   const visibleBookletGroups=bookletGroups.slice((paperPage-1)*pageSize,paperPage*pageSize)
   function paperFilter(key:string,value:string){setSearchParams(previous=>{const next=new URLSearchParams(previous);if(value)next.set(key,value);else next.delete(key);if(key!=='paper_page')next.delete('paper_page');return next},{replace:key!=='paper_page'});if(key==='paper_page')requestAnimationFrame(()=>scrollToResults('past-paper-results'))}
+  const isSubject = isSubjectRoute || isSubjectModule(c)
   const combined = c.id === 'combined-prelims'
+  const navTabs = isSubject
+    ? ([['browse','Browse'],['topics','Topics'],['practice','Practice'],['progress','Progress']] as const)
+    : ([['overview','Overview'],['browse','Browse'],['topics','Subjects'],['papers','Papers'],['practice','Practice'],['progress','Progress']] as const)
   const viewNavigation = <>
       <nav aria-label={`${c.title} module views`} className="module-view-nav">
-        {([['overview','Overview'],['browse','Browse'],['topics','Subjects'],['papers','Papers'],['practice','Practice'],['progress','Progress']] as const).map(([key,label]) =>
+        {navTabs.map(([key,label]) =>
           <Link key={key} to={{search:(()=>{const next=new URLSearchParams(searchParams);next.set('view',key);if(key!==view)next.delete('offset');next.delete('session');next.delete('practice_mode');return '?'+next.toString()})(),hash:''}} aria-current={view===key?'page':undefined}
             className={`${combined ? (view===key ? 'is-active' : '') : `udc-tab ${view===key ? 'is-active' : ''}`} inline-flex min-h-11 items-center whitespace-nowrap px-4 py-3 text-sm font-semibold`}>{label}</Link>)
         }

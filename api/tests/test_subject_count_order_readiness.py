@@ -7,13 +7,15 @@ import ast,hashlib
 import pytest
 from psycopg.types.json import Jsonb
 from app.db import cursor
+from app.services import learning_taxonomy
 from test_collection_count_queries import collection,workbench
 from test_collection_count_queries import test_exact_list_section_and_paper_count_payloads_match_baseline as parity
 
 REPORT=Path(__file__).resolve().parents[2]/'reports/finna-subject-count-order-staged-20261119'
 
 @pytest.fixture(params=['subject','wide-forced','wide-batch-forced'])
-def readers(client,request):
+def readers(client,monkeypatch,request):
+    monkeypatch.setattr(learning_taxonomy, 'CLERICAL_EXAMS', ('udc', 'ldc', 'assistant'), raising=False)
     @asynccontextmanager
     async def readonly():
         async with cursor() as cur:

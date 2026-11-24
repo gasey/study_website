@@ -257,6 +257,63 @@ export function listTaxonomy(pool: 'all' | 'scorable' | 'practice' = 'all', lear
   return req<TaxonomyFacet[]>(`/questions/taxonomy?pool=${pool}&learning=${learning}`)
 }
 
+export interface QuestionYearFacet {
+  year: number
+  questions: number
+}
+
+export interface QuestionFacets {
+  collection_id: string | null
+  total: number
+  unclassified: number
+  subjects: ExamStudyTopics['subjects']
+  years: QuestionYearFacet[]
+}
+
+export function getQuestionFacets(p: {
+  collection_id?: string
+  section_path?: string
+  paper_id?: string
+  subject_id?: string
+  study_area?: GroupBStudyArea
+  pool?: 'all' | 'scorable' | 'practice'
+} = {}): Promise<QuestionFacets> {
+  const qs = new URLSearchParams()
+  for (const [k, v] of Object.entries(p)) {
+    if (v !== undefined && v !== '') qs.set(k, String(v))
+  }
+  const suffix = qs.toString() ? `?${qs}` : ''
+  return req<QuestionFacets>(`/questions/facets${suffix}`)
+}
+
+const SUBJECT_ROUTE_TO_COLLECTION: Record<string, string> = {
+  english: 'subject-english',
+  mathematics: 'subject-mathematics',
+  arithmetic: 'subject-mathematics',
+  reasoning: 'subject-reasoning',
+  'reasoning-and-aptitude': 'subject-reasoning',
+  'gk-gs': 'subject-gk-gs',
+  gk: 'subject-gk-gs',
+  gs: 'subject-gk-gs',
+  mizo: 'subject-mizo',
+}
+
+export function resolveModuleCollectionId(rawId: string, isSubjectRoute = false): string {
+  if (!isSubjectRoute) return rawId
+  return SUBJECT_ROUTE_TO_COLLECTION[rawId] || (rawId.startsWith('subject-') ? rawId : `subject-${rawId}`)
+}
+
+export function isSubjectModule(c: Pick<Collection, 'id' | 'kind'>): boolean {
+  return c.kind === 'practice' && c.id !== 'subject-wise-practice'
+}
+
+export function moduleHref(c: Pick<Collection, 'id' | 'kind' | 'route'>): string {
+  if (c.route && (c.route.startsWith('/exams/') || c.route.startsWith('/subjects/'))) {
+    return c.route
+  }
+  return c.kind === 'practice' ? `/subjects/${c.id.replace(/^subject-/, '')}` : `/exams/${c.id}`
+}
+
 export const getQuestion = (id: string) => req<QuestionDetail>(`/questions/${id}`)
 
 export interface EssayDraft { question_id: string; body: string; updated_at: string | null }

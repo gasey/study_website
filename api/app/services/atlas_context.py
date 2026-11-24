@@ -8,6 +8,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 from . import atlas_bindings,bank_dates
 from .review_policy import safe_url,digest
+from .selector import atlas_binding_predicate
 from ..exam_scope import pool_view,DEFAULT_SCOPE
 
 DISTRICTS=('Aizawl','Champhai','Hnahthial','Khawzawl','Kolasib','Lawngtlai','Lunglei','Mamit','Saitual','Serchhip','Siaha')
@@ -52,8 +53,7 @@ async def exam_catalog(cur,user):
           JOIN collection_sections s ON s.collection_id=%(exam)s
           JOIN collections c ON c.id=s.collection_id AND c.live_version=s.version
           AND c.kind='exam' AND c.visibility='public'
-          WHERE '''+atlas_bindings.LIVE+''' AND s.query->>'subject_id'=b.live->>'subject_id'
-          AND (s.query->>'topic_id' IS NULL OR s.query->>'topic_id'=b.live->>'topic_id')''',{'exam':exam['id']})
+          WHERE '''+atlas_bindings.LIVE+' AND '+atlas_binding_predicate('s'),{'exam':exam['id']})
         relevant={r['id'] for r in await cur.fetchall()}
     return {'items':[x|{'exam_relevant':x['id'] in relevant} for x in items],
             'exam':{'id':exam['id'],'title':exam['title']} if exam else None,

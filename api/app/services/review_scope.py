@@ -2,6 +2,7 @@
 from fastapi import HTTPException
 from .review_policy import digest
 from .group_b_study import GROUP_B_COLLECTIONS, PAPER_ROLES, study_membership, general_science_source
+from .selector import bounded_papers_sql, has_paper_ids, section_appearance_predicate
 
 AREAS=('common','english','gk-gs','technical')
 
@@ -42,26 +43,17 @@ async def definition(cur, scope, actor_id):
         params['review_collections']=ids
         await cur.execute('''SELECT cs.query FROM collection_sections cs JOIN collections c
           ON c.id=cs.collection_id AND c.live_version=cs.version WHERE cs.collection_id=ANY(%s)''',(ids,))
-        bounded=all('paper_ids' in s['query'] for s in await cur.fetchall())
+        bounded=all(has_paper_ids(s['query']) for s in await cur.fetchall())
         if bounded or area:
-            await cur.execute('''WITH sections AS MATERIALIZED (SELECT cs.* FROM collection_sections cs
-              JOIN collections c ON c.id=cs.collection_id AND c.live_version=cs.version WHERE cs.collection_id=ANY(%s))
-              SELECT cp.paper_id FROM collection_papers cp JOIN collections c ON c.id=cp.collection_id AND c.live_version=cp.version
-                WHERE cp.collection_id=ANY(%s) AND cp.allow_browse
-              UNION SELECT jsonb_array_elements_text(query->'paper_ids') FROM sections
-              UNION SELECT a.paper_id FROM appearances a JOIN sections s ON a.canonical_id=ANY(s.pins)''',(ids,ids))
+            await cur.execute(bounded_papers_sql(),(ids,ids))
             params['candidate_papers']=[p['paper_id'] for p in await cur.fetchall()]
 
         title='Group B shared study' if collection=='group-b' else modules[0]['title']
         # Full source-library membership plus section selections (pins/excludes retained).
-        condition='''(EXISTS (SELECT 1 FROM collection_papers cp JOIN collections c ON c.id=cp.collection_id
+        condition=f'''(EXISTS (SELECT 1 FROM collection_papers cp JOIN collections c ON c.id=cp.collection_id
           AND c.live_version=cp.version WHERE cp.collection_id=ANY(%(review_collections)s) AND cp.allow_browse AND cp.paper_id=a.paper_id)
           OR EXISTS (SELECT 1 FROM collection_sections cs JOIN collections c ON c.id=cs.collection_id AND c.live_version=cs.version
-            WHERE cs.collection_id=ANY(%(review_collections)s) AND a.canonical_id<>ALL(cs.excludes)
-            AND (a.canonical_id=ANY(cs.pins) OR (
-              (NOT(cs.query ? 'paper_ids') OR a.paper_id IN (SELECT jsonb_array_elements_text(cs.query->'paper_ids')))
-              AND (cs.query->>'subject_id' IS NULL OR EXISTS (SELECT 1 FROM v_question_paths qp WHERE qp.question_id=a.canonical_id AND qp.review_status='approved' AND qp.subject_id=cs.query->>'subject_id'))
-              AND (cs.query->>'topic_id' IS NULL OR EXISTS (SELECT 1 FROM v_question_paths qp WHERE qp.question_id=a.canonical_id AND qp.review_status='approved' AND qp.topic_id=cs.query->>'topic_id'))))))'''
+            WHERE cs.collection_id=ANY(%(review_collections)s) AND {section_appearance_predicate('cs', 'a')}))'''
         if area:
             membership,area_params=study_membership(area,collection,'all');params.update(area_params)
             source_area='''EXISTS (SELECT 1 FROM collection_papers cp JOIN collections c ON c.id=cp.collection_id AND c.live_version=cp.version

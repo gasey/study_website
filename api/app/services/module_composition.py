@@ -6,6 +6,7 @@ from fastapi import HTTPException
 from pydantic import BaseModel, ConfigDict, Field
 from .review_policy import digest
 from . import review_scope
+from .selector import PAPER_IDS_KEY, section_appearance_predicate
 
 SourceId=Annotated[str,Field(min_length=1,max_length=600)]
 ModuleId=Annotated[str,Field(min_length=1,max_length=100)]
@@ -93,18 +94,18 @@ async def compile_selection(cur,h,selection):
     for section in sections:
         section.pop('collection_id',None);section.pop('version',None)
         query=section['query']
-        if 'paper_ids' in query:
-            query['paper_ids']=sorted(set(query['paper_ids'])-removed)
+        if PAPER_IDS_KEY in query:
+            query[PAPER_IDS_KEY]=sorted(set(query[PAPER_IDS_KEY])-removed)
         elif removed:
             if all_papers is None:
                 await cur.execute('SELECT id FROM papers ORDER BY id')
                 all_papers={r['id'] for r in await cur.fetchall()}
-            query['paper_ids']=sorted(all_papers-removed)
+            query[PAPER_IDS_KEY]=sorted(all_papers-removed)
         section['pins']=[q for q in section['pins'] if q not in removed_pins]
-    library=next((s for s in sections if s['path']=='papers' and set(s['query'])<= {'paper_ids'} and not s['pins'] and not s['excludes']),None)
-    if library:library['query']={'paper_ids':sorted(selected)}
+    library=next((s for s in sections if s['path']=='papers' and set(s['query'])<= {PAPER_IDS_KEY} and not s['pins'] and not s['excludes']),None)
+    if library:library['query']={PAPER_IDS_KEY:sorted(selected)}
     elif not sections:
-        sections=[{'path':'papers','title':'Source papers','position':0,'formats':[],'query':{'paper_ids':sorted(selected)},'pins':[],'excludes':[],'note':None}]
+        sections=[{'path':'papers','title':'Source papers','position':0,'formats':[],'query':{PAPER_IDS_KEY:sorted(selected)},'pins':[],'excludes':[],'note':None}]
     # Sections need not be added to existing specialised modules: library membership
     # already exists independently and must not erase their subject navigation.
     await cur.execute('''SELECT a.id,a.canonical_id,a.paper_id,q.status,q.key_disputed,q.source_defect
@@ -127,17 +128,11 @@ async def preview(cur,h,selection,actor):
     # Use the same scope predicate against proposed sections in a parameterised CTE.
     # This also preserves curated pins/excludes instead of approximating counts.
     from psycopg.types.json import Jsonb
-    await cur.execute('''WITH sections AS (SELECT * FROM jsonb_to_recordset(%(sections)s)
+    await cur.execute(f'''WITH sections AS (SELECT * FROM jsonb_to_recordset(%(sections)s)
       AS s(query jsonb,pins text[],excludes text[]))
       SELECT DISTINCT a.id,a.canonical_id,a.paper_id FROM appearances a
       WHERE (a.paper_id=ANY(%(browse)s) OR EXISTS (
-        SELECT 1 FROM sections s WHERE a.canonical_id<>ALL(s.excludes) AND
-        (a.canonical_id=ANY(s.pins) OR ((NOT(s.query ? 'paper_ids') OR a.paper_id IN
-          (SELECT jsonb_array_elements_text(s.query->'paper_ids')))
-          AND (s.query->>'subject_id' IS NULL OR EXISTS (SELECT 1 FROM v_question_paths qp
-            WHERE qp.question_id=a.canonical_id AND qp.review_status='approved' AND qp.subject_id=s.query->>'subject_id'))
-          AND (s.query->>'topic_id' IS NULL OR EXISTS (SELECT 1 FROM v_question_paths qp
-            WHERE qp.question_id=a.canonical_id AND qp.review_status='approved' AND qp.topic_id=s.query->>'topic_id')))))) ORDER BY a.id''',
+        SELECT 1 FROM sections s WHERE {section_appearance_predicate('s', 'a')})) ORDER BY a.id''',
       {'sections':Jsonb(compiled['sections']),'selected':[p['paper_id'] for p in compiled['papers']],'browse':sorted(browse)})
     after=await cur.fetchall();old_ids={r['id'] for r in before};new_ids={r['id'] for r in after}
     old_papers={p['paper_id'] for p in compiled['original']['papers']};new_papers={p['paper_id'] for p in compiled['papers']}
