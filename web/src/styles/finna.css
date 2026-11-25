@@ -215,7 +215,7 @@ html[data-design="finna"] .answer-options .answer-option > span:first-child { bo
 .finna-top-actions { display:flex; align-items:center; gap:16px; white-space:nowrap; font-weight:600; }
 .finna-unread-pill { margin-left:4px; border-radius:999px; background:#FFFFFF; padding:0 6px; font-size:11px; font-weight:800; color:#0E1330; }
 .finna-theme { border:1px solid #ffffff4d; border-radius:999px; padding:2px 12px; min-height:26px; font-size:12px; font-weight:700; }
-.finna-brand-row { position:relative; background:var(--bg-panel); border-bottom:1px solid var(--line); }
+.finna-brand-row { position:relative; z-index:65; background:var(--bg-panel); border-bottom:1px solid var(--line); }
 .finna-brand-row::before { content:''; position:absolute; inset:0; pointer-events:none; background-image:linear-gradient(rgba(31,75,224,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(31,75,224,.035) 1px, transparent 1px); background-size:44px 44px; }
 html[data-theme="night"] .finna-brand-row::before { background-image:linear-gradient(rgba(108,141,255,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(108,141,255,.04) 1px, transparent 1px); }
 .finna-brand-inner { position:relative; z-index:1; display:flex; gap:18px; align-items:center; padding-top:10px; padding-bottom:10px; }
@@ -239,9 +239,57 @@ html[data-theme="night"] .finna-brand-row::before { background-image:linear-grad
 .finna-create { height:40px; display:flex; align-items:center; border:1.5px solid var(--line); border-radius:12px; padding:0 14px; font-size:14px; font-weight:700; white-space:nowrap; transition:border-color .15s ease, background-color .15s ease; }
 .finna-create:hover { border-color:var(--finna-primary); background:var(--bg-app); }
 .finna-account { min-width:40px; height:40px; display:grid; place-items:center; border-radius:13px; background:var(--finna-primary); color:var(--finna-on-primary); font-size:14px; font-weight:700; padding:0 13px; white-space:nowrap; }
-.finna-account--avatar { padding:2px; width:42px; height:42px; border-radius:999px; background:var(--bg-app); border:1.5px solid var(--line); transition:border-color .15s ease, transform .12s ease; }
-.finna-account--avatar:hover { border-color:var(--finna-primary); transform:translateY(-1px); }
+.finna-account-wrap { position:relative; flex:none; }
+.finna-account--avatar { display:inline-flex; align-items:center; gap:4px; padding:2px 8px 2px 3px; width:auto; height:42px; border-radius:999px; background:var(--bg-app); color:var(--text-secondary); border:1.5px solid var(--line); cursor:pointer; transition:border-color .15s ease, background-color .15s ease, transform .12s ease; }
+.finna-account--avatar:hover, .finna-account--avatar.is-open { border-color:var(--finna-primary); background:var(--bg-panel); color:var(--text-primary); }
+.finna-account-caret { transition:transform .16s ease; opacity:.75; }
+.finna-account--avatar.is-open .finna-account-caret { transform:rotate(180deg); opacity:1; }
 .finna-account > span { border:0; border-radius:999px; }
+.finna-account-menu {
+  position:absolute; top:calc(100% + 8px); right:0; z-index:80;
+  width:min(296px, calc(100vw - 24px));
+  border-radius:16px; border:1px solid var(--line);
+  background:var(--bg-panel); color:var(--text-primary);
+  box-shadow:0 20px 44px -16px rgba(10,15,44,.32), 0 4px 12px -4px rgba(10,15,44,.12);
+  overflow:hidden;
+}
+.finna-account-head {
+  display:flex; align-items:center; gap:11px;
+  padding:13px 14px;
+  background:linear-gradient(135deg, rgba(31,75,224,.08), rgba(10,125,140,.08));
+  border-bottom:1px solid var(--line);
+}
+.finna-account-sprite-box {
+  width:48px; height:48px; flex:none;
+  display:grid; place-items:center;
+  border-radius:12px; background:#132238;
+  border:1px solid rgba(255,200,61,.35);
+}
+.finna-acc-chip {
+  display:inline-flex; align-items:center; gap:3px;
+  padding:2px 7px; border-radius:999px;
+  background:var(--bg-app); border:1px solid var(--line);
+  font-family:var(--font-mono); font-size:10.5px; font-weight:700; color:var(--text-secondary);
+}
+.finna-acc-chip.is-streak { background:rgb(var(--ism-exams-soft-rgb)); color:rgb(var(--ism-exams-dark-rgb)); border-color:transparent; }
+.finna-account-section { padding:6px; border-bottom:1px solid var(--line); display:flex; flex-direction:column; gap:2px; }
+.finna-account-footer { padding:6px; }
+.finna-acc-item {
+  width:100%; display:flex; align-items:center; gap:10px;
+  min-height:38px; padding:7px 10px; border-radius:10px;
+  border:0; background:transparent; text-align:left; cursor:pointer;
+  font-size:13.5px; font-weight:600; color:var(--text-primary); text-decoration:none;
+  transition:background-color .13s ease, color .13s ease;
+}
+.finna-acc-item:hover, .finna-acc-item:focus-visible { background:var(--bg-app); }
+.finna-acc-ico { width:20px; text-align:center; font-size:14px; flex:none; }
+.finna-acc-count {
+  margin-left:auto; padding:1px 7px; border-radius:999px;
+  background:rgb(var(--ism-practice-soft-rgb)); color:rgb(var(--ism-practice-dark-rgb));
+  font-family:var(--font-mono); font-size:11px; font-weight:800;
+}
+.finna-acc-logout { color:rgb(var(--ism-wrong-dark-rgb)); font-weight:700; }
+.finna-acc-logout:hover, .finna-acc-logout:focus-visible { background:rgb(var(--ism-wrong-soft-rgb)); color:rgb(var(--ism-wrong-dark-rgb)); }
 /* Signature Midnight Indigo Primary Nav Bar (ShikshaCom-inspired anchor contrast, 100% Finna palette) */
 .finna-nav { background:#0E1330; border-bottom:1px solid rgba(255,255,255,.10); position:relative; box-shadow:0 6px 20px -10px rgba(14,19,48,.42); }
 html[data-theme="night"] .finna-nav { background:#070B1E; border-bottom-color:rgba(108,141,255,.20); }

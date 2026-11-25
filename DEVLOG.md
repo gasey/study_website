@@ -1,5 +1,10 @@
 # Devlog
 
+25 November IST — **Added top-right Profile Avatar Dropdown Menu with live 16-bit Pixel Hero card, quick study/account shortcuts, theme switcher, and Sign out (`Header.tsx`, `finna.css`). Web deployed to `https://study.hawayu.in`.**
+
+- **Interactive Account Menu (`Header.tsx`, `finna.css`):** Clicking the top-right signed-in pixel avatar now opens a clean popover card (`Escape` + outside-click + route-change close) showing the animated 16-bit Pixel RPG Sprite, email, plan badge, live streak, active exam pill, quick shortcuts (**My Profile**, **Edit Pixel RPG Sprite**, **Quests & Rewards**, **Personal Vault** with live count, **Study Desk**, **Finna Quest RPG**, **Public Profile & Visibility**, **Account & Security**, **Plan & Billing**, optional Staff Admin, **Light/Dark Mode**), and a one-click **Sign out** button.
+- **Verified:** `./scripts/deploy.sh web` clean (`check-dead-links`, `check-admin-nav`, `check-guides-and-quest`, `tsc -b`, `vite build`), `study.hawayu.in` `200`, `family.hawayu.in` `307`.
+
 25 November IST — **Shipped scheduled Daily & Weekly Leaderboard Question-Picker Microservice (`finna-leaderboard-picker.timer`), fixed Weekly Cup specialist-subject leak, and added Owner Preview/Theme/Swap Admin Workbench (`/admin/bank?tab=leaderboard-picker`). Deployed API + Web cleanly to `https://study.hawayu.in`.**
 
 - **Leaderboard Question-Picker Engine (`api/app/services/leaderboard_picker.py`, `game_selection.py`, `games.py`):**

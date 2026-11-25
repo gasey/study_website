@@ -4,6 +4,7 @@ import {
   getAccountSession,
   getProgressSummary,
   listCollections,
+  logoutAccount,
   isLaterExamCollection,
   isSubjectModule,
   moduleHref,
@@ -26,6 +27,7 @@ import { usePreferredExam } from '../lib/preferredExam'
 import { resolveTrackedExams, shortExamLabel, useTrackedExamIds } from '../lib/trackedExams'
 import { FLAGSHIP_EXAM_IDS } from '../lib/examPresentation'
 import { Avatar } from './ui'
+import AvatarArt, { DEFAULT_HERO_LOOK } from './AvatarArt'
 import QuickFind from './QuickFind'
 import NavIcon from './NavIcon'
 import BrowseAllowance from './BrowseAllowance'
@@ -81,6 +83,8 @@ export default function Header() {
   const [exams, setExams] = useState<Collection[]>([])
   const [subjectModules, setSubjectModules] = useState<Collection[]>([])
   const [menu, setMenu] = useState<string | null>(null)
+  const [accountMenuOpen, setAccountMenuOpen] = useState(false)
+  const [signingOut, setSigningOut] = useState(false)
   const [vaultCount, setVaultCount] = useState<number>(() => readLocalVault().length)
   const [vaultHover, setVaultHover] = useState(false)
   const selected = usePreferredExam(exams)
@@ -119,6 +123,8 @@ export default function Header() {
 
   const shell = useRef<HTMLElement>(null)
   const menuPanel = useRef<HTMLDivElement>(null)
+  const accountWrap = useRef<HTMLDivElement>(null)
+  const accountBtn = useRef<HTMLButtonElement>(null)
   const triggers = useRef<Record<string, HTMLElement | null>>({})
   const openTimer = useRef<number | null>(null)
   const closeTimer = useRef<number | null>(null)
@@ -238,7 +244,30 @@ export default function Header() {
   useEffect(() => {
     cancelTimers()
     setMenu(null)
+    setAccountMenuOpen(false)
   }, [pathname, search])
+
+  useEffect(() => {
+    if (!accountMenuOpen) return
+    const onPointerDown = (e: PointerEvent) => {
+      if (!accountWrap.current?.contains(e.target as Node)) {
+        setAccountMenuOpen(false)
+      }
+    }
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        e.preventDefault()
+        setAccountMenuOpen(false)
+        accountBtn.current?.focus()
+      }
+    }
+    document.addEventListener('pointerdown', onPointerDown)
+    document.addEventListener('keydown', onKeyDown)
+    return () => {
+      document.removeEventListener('pointerdown', onPointerDown)
+      document.removeEventListener('keydown', onKeyDown)
+    }
+  }, [accountMenuOpen])
 
   useEffect(() => {
     if (!menu) return
@@ -305,6 +334,20 @@ export default function Header() {
   const closeMenu = () => {
     cancelTimers()
     setMenu(null)
+    setAccountMenuOpen(false)
+  }
+
+  async function handleLogout() {
+    if (signingOut) return
+    setSigningOut(true)
+    try {
+      await logoutAccount()
+      setAccountMenuOpen(false)
+      window.dispatchEvent(new Event('ism-auth-change'))
+      window.location.assign('/home')
+    } catch {
+      setSigningOut(false)
+    }
   }
 
   const focused = focusedSession(pathname, search)
@@ -533,17 +576,148 @@ export default function Header() {
           )}
 
           {account.authenticated ? (
-            <Link
-              to={PROFILE_PATH}
-              className="finna-account finna-account--avatar"
-              aria-label="Your profile"
-              onClick={closeMenu}
-            >
-              <Avatar
-                look={account.avatar}
-                initials={account.email?.slice(0, 2).toUpperCase() || 'Me'}
-              />
-            </Link>
+            <div ref={accountWrap} className="finna-account-wrap">
+              <button
+                ref={accountBtn}
+                type="button"
+                className={'finna-account finna-account--avatar' + (accountMenuOpen ? ' is-open' : '')}
+                aria-label="Account menu"
+                aria-haspopup="menu"
+                aria-expanded={accountMenuOpen}
+                onClick={() => {
+                  cancelTimers()
+                  setMenu(null)
+                  setAccountMenuOpen((open) => !open)
+                }}
+              >
+                <Avatar
+                  look={account.avatar}
+                  initials={account.email?.slice(0, 2).toUpperCase() || 'Me'}
+                />
+                <svg
+                  className="finna-account-caret"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M4 6l4 4 4-4" />
+                </svg>
+              </button>
+
+              {accountMenuOpen && (
+                <div className="finna-account-menu" role="menu" aria-label="Account shortcuts">
+                  <div className="finna-account-head">
+                    <div className="finna-account-sprite-box" aria-hidden="true">
+                      <AvatarArt
+                        look={account.avatar || DEFAULT_HERO_LOOK}
+                        size={44}
+                        variant="sprite"
+                        pose="idle"
+                        facing="down"
+                        animate
+                      />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <div className="truncate text-sm font-bold text-ink">
+                        {account.email || 'Signed in'}
+                      </div>
+                      <div className="mt-1 flex flex-wrap items-center gap-1.5">
+                        <span className="finna-acc-chip">
+                          {account.plan_status === 'active' || account.plan_code === 'pro'
+                            ? '★ Pro'
+                            : account.plan_status === 'trialing'
+                              ? 'Trial'
+                              : 'Free'}
+                        </span>
+                        {streak !== null && streak > 0 && (
+                          <span className="finna-acc-chip is-streak">🔥 {streak}d</span>
+                        )}
+                        {selected && (
+                          <span className="finna-acc-chip">{shortExamLabel(selected)}</span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="finna-account-section">
+                    <Link to={PROFILE_PATH} role="menuitem" className="finna-acc-item" onClick={closeMenu}>
+                      <span className="finna-acc-ico" aria-hidden="true">👤</span>
+                      <span>My Profile &amp; Progress</span>
+                    </Link>
+                    <Link to="/profile/avatar" role="menuitem" className="finna-acc-item" onClick={closeMenu}>
+                      <span className="finna-acc-ico" aria-hidden="true">👾</span>
+                      <span>Edit Pixel RPG Sprite</span>
+                    </Link>
+                    <Link to="/profile/rewards" role="menuitem" className="finna-acc-item" onClick={closeMenu}>
+                      <span className="finna-acc-ico" aria-hidden="true">🏆</span>
+                      <span>Quests, XP &amp; Rewards</span>
+                    </Link>
+                    <Link to="/vault" role="menuitem" className="finna-acc-item" onClick={closeMenu}>
+                      <span className="finna-acc-ico" aria-hidden="true">🔐</span>
+                      <span>Personal Vault</span>
+                      {vaultCount > 0 && <span className="finna-acc-count">{vaultCount}</span>}
+                    </Link>
+                    <Link to="/desk" role="menuitem" className="finna-acc-item" onClick={closeMenu}>
+                      <span className="finna-acc-ico" aria-hidden="true">📚</span>
+                      <span>Study Desk &amp; Rooms</span>
+                    </Link>
+                    <Link to="/games/quest" role="menuitem" className="finna-acc-item" onClick={closeMenu}>
+                      <span className="finna-acc-ico" aria-hidden="true">⚔️</span>
+                      <span>Finna Quest RPG</span>
+                    </Link>
+                  </div>
+
+                  <div className="finna-account-section">
+                    <Link to="/creators/settings" role="menuitem" className="finna-acc-item" onClick={closeMenu}>
+                      <span className="finna-acc-ico" aria-hidden="true">🌐</span>
+                      <span>Public Profile &amp; Visibility</span>
+                    </Link>
+                    <Link to="/account/security" role="menuitem" className="finna-acc-item" onClick={closeMenu}>
+                      <span className="finna-acc-ico" aria-hidden="true">⚙️</span>
+                      <span>Account &amp; Security</span>
+                    </Link>
+                    <Link to="/billing" role="menuitem" className="finna-acc-item" onClick={closeMenu}>
+                      <span className="finna-acc-ico" aria-hidden="true">💳</span>
+                      <span>Plan &amp; Billing</span>
+                    </Link>
+                    {staff.length > 0 && (
+                      <Link to={staff[0].to} role="menuitem" className="finna-acc-item" onClick={closeMenu}>
+                        <span className="finna-acc-ico" aria-hidden="true">🛠️</span>
+                        <span>{staff[0].label}</span>
+                      </Link>
+                    )}
+                    <button
+                      type="button"
+                      role="menuitem"
+                      className="finna-acc-item"
+                      onClick={() => setTheme(theme === 'night' ? 'paper' : 'night')}
+                    >
+                      <span className="finna-acc-ico" aria-hidden="true">{theme === 'night' ? '☀' : '☾'}</span>
+                      <span>{theme === 'night' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}</span>
+                    </button>
+                  </div>
+
+                  <div className="finna-account-footer">
+                    <button
+                      type="button"
+                      role="menuitem"
+                      disabled={signingOut}
+                      className="finna-acc-item finna-acc-logout"
+                      onClick={() => void handleLogout()}
+                    >
+                      <span className="finna-acc-ico" aria-hidden="true">↪</span>
+                      <span>{signingOut ? 'Signing out…' : 'Sign out'}</span>
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
           ) : (
             <Link
               to={'/login?next=' + encodeURIComponent(pathname + search)}
