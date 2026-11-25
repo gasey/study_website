@@ -1044,9 +1044,26 @@
 }
 
 @media (max-width:639px) {
+  .mb-shell { overflow-x:clip; }
   .mb-practice-bar { padding:10px 11px; }
   .mb-pr-seg button { padding:0 9px; font-size:12px; }
+  .mb-pr-pills {
+    flex-wrap:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch;
+    scrollbar-width:none; padding-bottom:2px;
+  }
+  .mb-pr-pills::-webkit-scrollbar { display:none; }
+  .mb-pr-pills > * { flex-shrink:0; }
   .mb-pr-stepper { justify-content:center; }
   .mb-pr-foot-actions { width:100%; }
   .mb-pr-foot-actions > button { flex:1 1 auto; }
+}
+
+@media (max-height:520px) and (orientation:landscape) {
+  .mb-practice-bar { padding:8px 10px; gap:7px; }
+  .mb-pr-pills {
+    flex-wrap:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .mb-pr-pills::-webkit-scrollbar { display:none; }
+  .mb-pr-pills > * { flex-shrink:0; }
 }

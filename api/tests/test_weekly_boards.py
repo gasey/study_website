@@ -143,3 +143,10 @@ def test_public_learner_profile_enrichment_and_board_link(client,learner,databas
     conn.execute('UPDATE reward_profiles SET board_public=false WHERE user_id=%s',(champ,))
     priv=client.get(f'/api/creators/{champ}').json()
     assert priv['board_public'] is False and priv['district'] is None and priv['scores'] is None
+    # Algorithmic discovery surfaces public learners cleanly and hides weekly_xp when private
+    disc=client.get('/api/creators/discover?seed=test-rot-1')
+    assert disc.status_code==200,disc.text
+    dbody=disc.json()
+    assert 'learners' in dbody and 'materials' in dbody
+    found=next((x for x in dbody['learners'] if x['id']==champ),None)
+    assert found is not None and found['weekly_xp'] is None and found['match_reason']

@@ -1,5 +1,18 @@
 # Devlog
 
+25 November IST — **Shipped Algorithmic Learner & Study-Note Discovery (`GET /api/creators/discover` + `For you` sort) across API, Web & Mobile, plus full Phone Portrait, Phone Side-View (Landscape), and iPad Portrait/Landscape responsive optimization.**
+
+- **Algorithmic Discovery API (`api/app/routers/creators.py`, `tests/test_weekly_boards.py`):**
+  - Added `GET /api/creators/discover` returning algorithmically ranked & hourly/seed-rotated public learners (boosting shared target exam, active week, published notes, pixel hero + deterministic shuffle jitter, with `match_reason` tags) and spotlight published study notes.
+  - Added `sort=discover|alpha` + `seed` rotation to `GET /api/creators` (`7/7` pytest passed).
+- **Web Discovery + Mobile/Side-View/iPad Polish (`HomeLeftExtras.tsx`, `Creators.tsx`, `finna.css`, `exam-overview.css`):**
+  - Added rotating **Discover** card (`↻ Shuffle`) on `/home` left rail and **`For you` / `A–Z` / `↻ Shuffle`** controls on `/creators`.
+  - Added tailored responsive rules for **Phone Portrait** (swipeable single-row Practice & Mastery pill strips, `overflow-x: clip`, safe-area padding), **Phone Side View / Landscape** (slim `46px` top & bottom bars, inline bottom tabs, notch-safe insets, 2-col grids), and **iPad Portrait/Landscape** (symmetric 2-col Home side & right grids, clean 2-col Profile split).
+- **Mobile App (`india-study-map-mobile`):**
+  - Added `useResponsiveLayout()` (`src/lib/responsive.ts`) and upgraded `Screen` (`ui.tsx`) + `BottomNavigation.tsx` for landscape notch safe-areas, compact phone side-view bars, and centered iPad layouts (`860px`/`1040px`).
+  - Added `MobileHomeHub.tsx` (Popular Games + Live Weekly XP Leaderboard + Algorithmic Discover with `↻ Shuffle`), upgraded `src/app/creators.tsx` (Pixel Avatars, `For you`/`A–Z`/`↻ Shuffle`, responsive 2/3-col grid), and upgraded `src/app/(tabs)/me.tsx` (live Pixel Hero avatar + direct `Find learners` & `Standings` shortcuts). `npx tsc --noEmit` clean.
+- **Verified live:** `./scripts/deploy.sh` shipped API (`82383` questions) + Web (`study.hawayu.in/api/creators/discover` `200`, `/home` `200`, `/creators` `200`, `family.hawayu.in` `307`).
+
 25 November IST — **Compacted `/profile` & `MasteryMap` to eliminate endless scrolling and surfaced the Learner Profile Finder (`/creators`) across Profile, Avatar Dropdown, Community Nav, and Home Leaderboard (`Profile.tsx`, `MasteryMap.tsx`, `Header.tsx`, `HomeLeftExtras.tsx`, `siteMap.ts`, `finna.css`). Web deployed to `https://study.hawayu.in`.**
 
 - **Compact Topic Mastery Matrix (`MasteryMap.tsx`, `finna.css`):** Replaced the full expanded wall of 50+ multi-line topic cards with summary pills (`N topics · X strong · Y rusty`), a collapsible `Focus subjects` drawer, 1-click subject filter tabs (defaulting to the top/focus subject), and a dense 3-column accuracy-bar grid capped at 9 topics with a `Show all` expander.

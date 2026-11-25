@@ -1,11 +1,34 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { reviewRequest } from '../lib/review'
+import { contentRequest } from '../lib/materials'
 import type { Progress } from '../lib/api'
 import type { AvatarLook } from '../lib/avatar'
 import AvatarArt, { DEFAULT_HERO_LOOK, UserAvatar } from './AvatarArt'
 
 type BoardTab = 'xp' | 'daily' | 'cup'
+
+interface DiscoverLearner {
+  id: string
+  handle: string
+  avatar?: AvatarLook | null
+  level: number
+  match_reason: string
+  weekly_xp?: number | null
+}
+
+interface DiscoverMaterial {
+  id: string
+  title: string
+  kind: string
+  author: string
+  helpful: number
+}
+
+interface DiscoverPayload {
+  learners: DiscoverLearner[]
+  materials: DiscoverMaterial[]
+}
 
 interface StandingsRow {
   handle: string
@@ -65,6 +88,26 @@ export default function HomeLeftExtras({ progress }: { progress: Progress | null
   const [board, setBoard] = useState<StandingsPayload | null>(null)
   const [boardLoading, setBoardLoading] = useState(true)
   const [boardError, setBoardError] = useState('')
+  const [discover, setDiscover] = useState<DiscoverPayload | null>(null)
+  const [discoverSeed, setDiscoverSeed] = useState('')
+  const [discoverBusy, setDiscoverBusy] = useState(false)
+
+  useEffect(() => {
+    let live = true
+    setDiscoverBusy(true)
+    const qs = discoverSeed ? `?seed=${encodeURIComponent(discoverSeed)}&limit=4` : '?limit=4'
+    contentRequest<DiscoverPayload>('/creators/discover' + qs)
+      .then((res) => {
+        if (live) setDiscover(res)
+      })
+      .catch(() => {})
+      .finally(() => {
+        if (live) setDiscoverBusy(false)
+      })
+    return () => {
+      live = false
+    }
+  }, [discoverSeed])
 
   useEffect(() => {
     let live = true
@@ -275,7 +318,72 @@ export default function HomeLeftExtras({ progress }: { progress: Progress | null
         </div>
       </section>
 
-      {/* 3. Compact 7-Day Study Pulse & Stats */}
+      {/* 3. Algorithmic Discover: Rotating Learners & Study Notes */}
+      {discover && (discover.learners.length > 0 || discover.materials.length > 0) && (
+        <section className="finna-card hl-card" aria-labelledby="home-discover-title">
+          <div className="finna-section-top">
+            <div className="min-w-0">
+              <div className="finna-eyebrow">For you · rotating</div>
+              <h2 id="home-discover-title">Discover</h2>
+            </div>
+            <button
+              type="button"
+              disabled={discoverBusy}
+              onClick={() => setDiscoverSeed(Date.now().toString(36))}
+              className="hl-shuffle-btn"
+              title="Shuffle fresh profiles & study notes"
+            >
+              ↻ {discoverBusy ? '…' : 'Shuffle'}
+            </button>
+          </div>
+
+          {discover.learners.length > 0 && (
+            <div className="hl-disc-list" aria-label="Suggested learners">
+              {discover.learners.slice(0, 3).map((l) => (
+                <Link
+                  key={l.id}
+                  to={`/creators/${encodeURIComponent(l.id)}`}
+                  className="hl-board-row is-link"
+                >
+                  <UserAvatar look={l.avatar} initials={l.handle} size={32} />
+                  <span className="hl-player">
+                    <strong>@{l.handle}</strong>
+                    <small>Lv {l.level} · {l.match_reason}</small>
+                  </span>
+                  <span aria-hidden="true" className="text-xs text-secondary">↗</span>
+                </Link>
+              ))}
+            </div>
+          )}
+
+          {discover.materials.length > 0 && (
+            <div className="hl-disc-notes" aria-label="Spotlight study notes">
+              {discover.materials.slice(0, 2).map((m) => (
+                <Link
+                  key={m.id}
+                  to={`/materials/${encodeURIComponent(m.id)}`}
+                  className="hl-disc-note"
+                >
+                  <span className="hl-disc-kind">{m.kind}</span>
+                  <strong>{m.title}</strong>
+                  <small>by {m.author}{m.helpful > 0 ? ` · ${m.helpful} helpful` : ''}</small>
+                </Link>
+              ))}
+            </div>
+          )}
+
+          <div className="hl-pulse-foot">
+            <Link to="/creators" className="text-xs font-bold text-link hover:underline">
+              Explore all learners →
+            </Link>
+            <Link to="/materials" className="text-xs font-semibold text-secondary hover:text-ink">
+              Study notes ↗
+            </Link>
+          </div>
+        </section>
+      )}
+
+      {/* 4. Compact 7-Day Study Pulse & Stats */}
       <section className="finna-card hl-card" aria-labelledby="home-pulse-title">
         <div className="finna-section-top">
           <div className="min-w-0">

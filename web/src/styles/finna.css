@@ -7411,3 +7411,142 @@ html[data-theme="night"] .mm-tile-pct.is-rusty  { color:#FBBF24; }
   margin-top:10px; padding-top:8px; border-top:1px dashed rgb(var(--ism-hairline-rgb));
   display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px;
 }
+
+/* Home Discover Card (Algorithmic Spotlight) */
+.hl-shuffle-btn {
+  min-height:30px; padding:0 10px; border-radius:999px;
+  border:1px solid rgb(var(--ism-hairline-rgb));
+  background:rgb(var(--ism-canvas-rgb)); color:rgb(var(--ism-ink-rgb));
+  font-size:11.5px; font-weight:700; cursor:pointer;
+  transition:border-color .14s ease, background-color .14s ease;
+}
+.hl-shuffle-btn:hover:not(:disabled) { border-color:rgb(var(--ism-ink-rgb)); }
+.hl-shuffle-btn:disabled { opacity:.5; cursor:default; }
+.hl-disc-list { display:flex; flex-direction:column; gap:3px; }
+.hl-disc-notes {
+  display:flex; flex-direction:column; gap:6px;
+  padding-top:8px; border-top:1px dashed rgb(var(--ism-hairline-rgb));
+}
+.hl-disc-note {
+  display:flex; flex-direction:column; gap:2px;
+  padding:8px 10px; border-radius:11px;
+  border:1px solid rgb(var(--ism-hairline-rgb));
+  background:rgb(var(--ism-canvas-rgb));
+  text-decoration:none; color:inherit;
+  transition:border-color .14s ease, background-color .14s ease;
+}
+.hl-disc-note:hover {
+  border-color:rgb(var(--ism-ink-rgb));
+  background:rgb(var(--ism-card-rgb));
+}
+.hl-disc-kind {
+  font-family:var(--font-mono, ui-monospace, monospace);
+  font-size:9.5px; font-weight:800; letter-spacing:.08em; text-transform:uppercase;
+  color:rgb(var(--ism-link-rgb));
+}
+.hl-disc-note strong {
+  font-size:12.5px; font-weight:700; color:rgb(var(--ism-ink-rgb)); line-height:1.3;
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+.hl-disc-note small {
+  font-size:11px; color:rgb(var(--ism-secondary-rgb));
+}
+
+/* ==========================================================================
+   Universal Responsive Polish: Phone Portrait, Phone Side-View (Landscape), iPad
+   ========================================================================== */
+.finna-page, .pr-shell {
+  overflow-x:clip;
+}
+
+/* iPad Portrait & Small Tablet (640px – 1023px) */
+@media (min-width:640px) and (max-width:1023px) {
+  .finna-page {
+    padding-left:max(20px, env(safe-area-inset-left));
+    padding-right:max(20px, env(safe-area-inset-right));
+  }
+  .finna-bottom-inner { max-width:680px; }
+  .finna-home-side {
+    display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px;
+    align-items:start;
+  }
+  .finna-home-side > .finna-exam-hero {
+    grid-column:1 / -1; grid-row:auto;
+  }
+  .finna-home-right {
+    display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px;
+  }
+  .finna-prof-two {
+    grid-template-columns:minmax(0, 1.35fr) minmax(240px, 1fr); gap:14px;
+  }
+  .mm-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); }
+  .lp-score-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); }
+}
+
+/* iPad Landscape (1024px – 1199px) */
+@media (min-width:1024px) and (max-width:1199px) {
+  .finna-home-grid {
+    grid-template-columns:minmax(250px, 280px) minmax(0, 1fr);
+    gap:18px;
+  }
+  .finna-home-right {
+    grid-column:1 / -1;
+    display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px;
+  }
+}
+
+/* Phone Portrait (<= 639px): Swipeable single-row pills + safe-area padding */
+@media (max-width:639px) {
+  .finna-page {
+    padding-left:max(14px, env(safe-area-inset-left));
+    padding-right:max(14px, env(safe-area-inset-right));
+  }
+  .mm-subj-tabs {
+    flex-wrap:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch;
+    scrollbar-width:none; padding-bottom:2px;
+  }
+  .mm-subj-tabs::-webkit-scrollbar { display:none; }
+  .mm-subj-tab { flex-shrink:0; }
+  .finna-prof-tabs {
+    flex-wrap:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .finna-prof-tabs::-webkit-scrollbar { display:none; }
+  .finna-prof-tab { flex-shrink:0; white-space:nowrap; }
+  .lp-sprite-stage { width:104px; height:104px; }
+}
+
+/* Phone Side View / Landscape (max-height: 520px and landscape):
+   Reclaim vertical space from top/bottom bars + use clean 2-col grids + respect notch insets */
+@media (max-height:520px) and (orientation:landscape) {
+  .finna-brand-inner {
+    min-height:46px; padding:4px max(14px, env(safe-area-inset-right)) 4px max(14px, env(safe-area-inset-left));
+    gap:8px;
+  }
+  .finna-brand { font-size:20px; }
+  .finna-mobile-tools > a, .finna-mobile-tools > button { min-height:36px; min-width:36px; border-radius:10px; }
+  .finna-account { height:34px; min-width:34px; }
+  .finna-bottom-inner {
+    min-height:46px; max-width:640px;
+    padding-left:env(safe-area-inset-left); padding-right:env(safe-area-inset-right);
+  }
+  .finna-bottom a { flex-direction:row; gap:5px; font-size:11.5px; }
+  .finna-bottom a > span:first-child { min-width:26px; min-height:26px; }
+  body:has(.finna-bottom) { padding-bottom:calc(52px + env(safe-area-inset-bottom)); }
+  .finna-page {
+    padding-top:12px;
+    padding-left:max(16px, env(safe-area-inset-left));
+    padding-right:max(16px, env(safe-area-inset-right));
+  }
+  .finna-home-side {
+    display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:12px;
+  }
+  .finna-home-side > .finna-exam-hero { grid-column:1 / -1; grid-row:auto; padding:14px 16px; }
+  .finna-kpi-strip { grid-template-columns:repeat(4, minmax(0, 1fr)) !important; gap:8px; }
+  .hl-games-list { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:8px; }
+  .mm-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); }
+  .lp-hero { padding:14px 16px; gap:14px; }
+  .lp-sprite-stage { width:92px; height:92px; }
+  .lp-score-grid { grid-template-columns:repeat(4, minmax(0, 1fr)); gap:8px; }
+  .finna-prof-two { grid-template-columns:minmax(0, 1.3fr) minmax(220px, 1fr); gap:12px; }
+}

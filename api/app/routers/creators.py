@@ -66,19 +66,137 @@ async def save_settings(body:Settings,request:Request,user:Account):
         await event(cur,user,'profile_settings',user,{'public':body.public})
     return {'saved':True}
 @router.get('/creators')
-async def directory(user:User,q:str=Query('',max_length=100),offset:int=Query(0,ge=0,le=100000),limit:int=Query(12,ge=1,le=50)):
+async def directory(user:User,q:str=Query('',max_length=100),sort:Literal['discover','alpha']='discover',seed:str=Query('',max_length=64),offset:int=Query(0,ge=0,le=100000),limit:int=Query(12,ge=1,le=50)):
     async with cursor() as cur:
         where='cp.public AND u.email IS NOT NULL AND NOT '+BLOCKED+' AND (%s=\'\' OR u.handle ILIKE %s) AND '+audience.subject_sql('u.id')
         args=(user,user,q,'%'+q+'%')
         await cur.execute('SELECT count(*)::int AS n FROM creator_profiles cp JOIN users u ON u.id=cp.user_id WHERE '+where,args);total=(await cur.fetchone())['n']
-        await cur.execute("""SELECT u.id,u.handle,u.avatar,"""+PUBLIC_BIO+""" AS bio,
-            (SELECT count(*)::int FROM materials m WHERE m.author_id=u.id AND m.status='published' AND m.published_revision IS NOT NULL) AS materials,
-            GREATEST(1, floor(sqrt(GREATEST(0, COALESCE((SELECT sum(rl.xp) FROM reward_ledger rl WHERE rl.user_id=u.id), 0)) / 40.0)))::int AS level,
-            COALESCE((SELECT jsonb_agg(jsonb_build_object('id',c.id,'title',c.title,'is_primary',b.is_primary) ORDER BY b.is_primary DESC,b.created_at DESC)
-              FROM (SELECT collection_id,is_primary,created_at FROM user_exam_bookmarks WHERE user_id=u.id ORDER BY is_primary DESC,created_at DESC LIMIT 3) b
-              JOIN collections c ON c.id=b.collection_id AND c.kind='exam' AND c.visibility='public'),'[]'::jsonb) AS target_exams
-            FROM creator_profiles cp JOIN users u ON u.id=cp.user_id WHERE """+where+' ORDER BY u.handle,u.id LIMIT %s OFFSET %s',(*args,limit,offset));rows=await cur.fetchall()
-    return {'items':rows,'total':total}
+        if sort=='discover' and not q.strip():
+            rotate=seed.strip() or ''
+            await cur.execute("""WITH viewer_exams AS (
+                SELECT collection_id FROM user_exam_bookmarks WHERE user_id=%s
+              ), pool AS (
+                SELECT u.id,u.handle,u.avatar,"""+PUBLIC_BIO+""" AS bio,
+                  (SELECT count(*)::int FROM materials m WHERE m.author_id=u.id AND m.status='published' AND m.published_revision IS NOT NULL) AS materials,
+                  GREATEST(1, floor(sqrt(GREATEST(0, COALESCE((SELECT sum(rl.xp) FROM reward_ledger rl WHERE rl.user_id=u.id), 0)) / 40.0)))::int AS level,
+                  COALESCE((SELECT jsonb_agg(jsonb_build_object('id',c.id,'title',c.title,'is_primary',b.is_primary) ORDER BY b.is_primary DESC,b.created_at DESC)
+                    FROM (SELECT collection_id,is_primary,created_at FROM user_exam_bookmarks WHERE user_id=u.id ORDER BY is_primary DESC,created_at DESC LIMIT 3) b
+                    JOIN collections c ON c.id=b.collection_id AND c.kind='exam' AND c.visibility='public'),'[]'::jsonb) AS target_exams,
+                  EXISTS(SELECT 1 FROM user_exam_bookmarks b JOIN viewer_exams ve ON ve.collection_id=b.collection_id WHERE b.user_id=u.id) AS same_exam,
+                  (COALESCE(rp.board_public,false) AND EXISTS(SELECT 1 FROM reward_ledger rl WHERE rl.user_id=u.id AND rl.created_at>=now()-interval '7 days' AND rl.xp>0)) AS active_week
+                FROM creator_profiles cp JOIN users u ON u.id=cp.user_id
+                LEFT JOIN reward_profiles rp ON rp.user_id=u.id
+                WHERE """+where+"""
+              )
+              SELECT id,handle,avatar,bio,materials,level,target_exams
+              FROM pool
+              ORDER BY (
+                (CASE WHEN same_exam THEN 30 ELSE 0 END)
+                + (CASE WHEN active_week THEN 22 ELSE 0 END)
+                + (CASE WHEN materials>0 THEN 18 ELSE 0 END)
+                + (CASE WHEN avatar IS NOT NULL THEN 8 ELSE 0 END)
+                + (abs(hashtext(id || COALESCE(NULLIF(%s,''), to_char(now() AT TIME ZONE 'Asia/Kolkata','YYYY-MM-DD-HH24')))) %% 35)
+              ) DESC, handle, id
+              LIMIT %s OFFSET %s""",(user,*args,rotate,limit,offset))
+            rows=await cur.fetchall()
+        else:
+            await cur.execute("""SELECT u.id,u.handle,u.avatar,"""+PUBLIC_BIO+""" AS bio,
+                (SELECT count(*)::int FROM materials m WHERE m.author_id=u.id AND m.status='published' AND m.published_revision IS NOT NULL) AS materials,
+                GREATEST(1, floor(sqrt(GREATEST(0, COALESCE((SELECT sum(rl.xp) FROM reward_ledger rl WHERE rl.user_id=u.id), 0)) / 40.0)))::int AS level,
+                COALESCE((SELECT jsonb_agg(jsonb_build_object('id',c.id,'title',c.title,'is_primary',b.is_primary) ORDER BY b.is_primary DESC,b.created_at DESC)
+                  FROM (SELECT collection_id,is_primary,created_at FROM user_exam_bookmarks WHERE user_id=u.id ORDER BY is_primary DESC,created_at DESC LIMIT 3) b
+                  JOIN collections c ON c.id=b.collection_id AND c.kind='exam' AND c.visibility='public'),'[]'::jsonb) AS target_exams
+                FROM creator_profiles cp JOIN users u ON u.id=cp.user_id WHERE """+where+' ORDER BY u.handle,u.id LIMIT %s OFFSET %s',(*args,limit,offset));rows=await cur.fetchall()
+    return {'items':rows,'total':total,'sort':sort}
+
+
+@router.get('/creators/discover')
+async def discover_spotlight(user:User,seed:str=Query('',max_length=64),exam_id:str|None=Query(None,max_length=80),limit:int=Query(6,ge=1,le=12)):
+    """Algorithmic + rotating spotlight of public learner profiles and published study notes."""
+    from ..services.learning_rewards import level_bounds
+    from ..services import weekly_boards
+    rotate=seed.strip()
+    async with cursor() as cur:
+        clock=await weekly_boards.window(cur)
+        await cur.execute("""WITH viewer_exams AS (
+            SELECT collection_id FROM user_exam_bookmarks WHERE user_id=%s
+            UNION SELECT %s::text WHERE %s::text IS NOT NULL
+          ), pool AS (
+            SELECT u.id,u.handle,u.avatar,"""+PUBLIC_BIO+""" AS bio,
+              (SELECT count(*)::int FROM materials m WHERE m.author_id=u.id AND m.status='published' AND m.published_revision IS NOT NULL) AS materials,
+              COALESCE((SELECT sum(rl.xp)::int FROM reward_ledger rl WHERE rl.user_id=u.id),0) AS lifetime_xp,
+              COALESCE((SELECT sum(rl.xp)::int FROM reward_ledger rl WHERE rl.user_id=u.id AND rl.created_at>=%s AND rl.created_at<%s AND rl.created_at<=%s),0) AS raw_weekly_xp,
+              COALESCE(rp.board_public,false) AS board_public,
+              COALESCE((SELECT jsonb_agg(jsonb_build_object('id',c.id,'title',c.title,'is_primary',b.is_primary) ORDER BY b.is_primary DESC,b.created_at DESC)
+                FROM (SELECT collection_id,is_primary,created_at FROM user_exam_bookmarks WHERE user_id=u.id ORDER BY is_primary DESC,created_at DESC LIMIT 3) b
+                JOIN collections c ON c.id=b.collection_id AND c.kind='exam' AND c.visibility='public'),'[]'::jsonb) AS target_exams,
+              (SELECT c.title FROM user_exam_bookmarks b JOIN viewer_exams ve ON ve.collection_id=b.collection_id JOIN collections c ON c.id=b.collection_id WHERE b.user_id=u.id ORDER BY b.is_primary DESC LIMIT 1) AS shared_exam_title
+            FROM creator_profiles cp JOIN users u ON u.id=cp.user_id
+            LEFT JOIN reward_profiles rp ON rp.user_id=u.id
+            WHERE cp.public AND u.email IS NOT NULL AND u.id IS DISTINCT FROM %s
+              AND NOT """+BLOCKED+""" AND """+audience.subject_sql('u.id')+"""
+          )
+          SELECT id,handle,avatar,bio,materials,lifetime_xp,
+            CASE WHEN board_public THEN raw_weekly_xp ELSE NULL END AS weekly_xp,
+            target_exams,shared_exam_title,
+            CASE
+              WHEN shared_exam_title IS NOT NULL THEN 'Same exam · ' || shared_exam_title
+              WHEN board_public AND raw_weekly_xp>0 THEN 'Active this week'
+              WHEN materials>0 THEN 'Note contributor'
+              ELSE 'Mizoram learner'
+            END AS match_reason
+          FROM pool
+          ORDER BY (
+            (CASE WHEN shared_exam_title IS NOT NULL THEN 35 ELSE 0 END)
+            + (CASE WHEN board_public AND raw_weekly_xp>0 THEN 25 ELSE 0 END)
+            + (CASE WHEN materials>0 THEN 20 ELSE 0 END)
+            + (CASE WHEN avatar IS NOT NULL THEN 10 ELSE 0 END)
+            + (abs(hashtext(id || COALESCE(NULLIF(%s,''), to_char(now() AT TIME ZONE 'Asia/Kolkata','YYYY-MM-DD-HH24')))) %% 40)
+          ) DESC, handle, id
+          LIMIT %s""",(user,exam_id,exam_id,clock['start_at'],clock['end_at'],clock['as_of'],user,user,user,rotate,limit))
+        learner_rows=await cur.fetchall()
+        learners=[]
+        for r in learner_rows:
+            lvl=level_bounds(r['lifetime_xp'])
+            learners.append({
+                'id':r['id'],
+                'handle':r['handle'],
+                'avatar':r['avatar'],
+                'bio':r['bio'],
+                'materials':r['materials'],
+                'level':lvl['level'],
+                'scholar_title':lvl['title'],
+                'weekly_xp':r['weekly_xp'],
+                'target_exams':r['target_exams'],
+                'match_reason':r['match_reason'],
+            })
+
+        await cur.execute("""WITH viewer_exams AS (
+            SELECT collection_id FROM user_exam_bookmarks WHERE user_id=%s
+            UNION SELECT %s::text WHERE %s::text IS NOT NULL
+          )
+          SELECT m.id,m.author_id,m.published_at,
+            COALESCE(r.payload->>'title',m.title) AS title,
+            COALESCE(r.payload->>'summary','') AS summary,
+            COALESCE(r.payload->>'kind','note') AS kind,
+            COALESCE(cp.public,false) AS creator_public,
+            CASE WHEN m.author_id='team' THEN 'Finna Editorial' ELSE COALESCE(u.handle,'Contributor') END AS author,
+            (SELECT count(*)::int FROM material_votes v WHERE v.material_id=m.id AND v.helpful) AS helpful,
+            (SELECT count(*)::int FROM material_votes v WHERE v.material_id=m.id AND v.studied) AS studied
+          FROM materials m JOIN material_revisions r ON r.material_id=m.id AND r.revision=m.published_revision
+          LEFT JOIN users u ON u.id=m.author_id LEFT JOIN creator_profiles cp ON cp.user_id=m.author_id
+          WHERE m.status='published'
+            AND NOT EXISTS(SELECT 1 FROM creator_blocks b WHERE (b.user_id=%s AND b.blocked_id=m.author_id) OR (b.user_id=m.author_id AND b.blocked_id=%s))
+            AND """+audience.subject_sql('m.author_id',team=True)+"""
+          ORDER BY (
+            (CASE WHEN (r.payload->>'collection_id') IN (SELECT collection_id FROM viewer_exams) THEN 25 ELSE 0 END)
+            + LEAST(25, (SELECT count(*)::int FROM material_votes v WHERE v.material_id=m.id AND v.helpful) * 5)
+            + (CASE WHEN m.published_at>=now()-interval '30 days' THEN 15 ELSE 0 END)
+            + (abs(hashtext(m.id || COALESCE(NULLIF(%s,''), to_char(now() AT TIME ZONE 'Asia/Kolkata','YYYY-MM-DD-HH24')))) %% 35)
+          ) DESC, m.published_at DESC
+          LIMIT 4""",(user,exam_id,exam_id,user,user,rotate))
+        materials=await cur.fetchall()
+    return {'learners':learners,'materials':materials,'seed':rotate or 'hourly'}
 @router.get('/creators/{uid}')
 async def profile(uid:str,user:User,offset:int=Query(0,ge=0,le=100000)):
     from ..services.learning_rewards import level_bounds,league_division
