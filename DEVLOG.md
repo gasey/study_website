@@ -1,5 +1,11 @@
 # Devlog
 
+25 November IST — **Fixed `/practice` `All exams` snap-back bug, cleaned up Exam dropdown, and made `All exams` + Subject/Topic Guided Practice free (`Practice.tsx`, `browse_allowance.py`, `test_browse_allowance.py`). Deployed API + Web cleanly to `https://study.hawayu.in`.**
+
+- **Fixed `All exams` selection (`Practice.tsx`):** Guarded the initial preferred-exam `useEffect` with `examInitializedRef` so clicking **`All exams`** (or choosing any exam) never snaps back to the user's default exam, and filtered the Mode 1 Exam dropdown to real exam collections only (`c.kind === 'exam'`) instead of mixing subject modules into it.
+- **Unmetered `All exams` + Subject/Topic Practice (`api/app/services/browse_allowance.py`, `tests/test_browse_allowance.py`):** Excluded standard `pool='practice'` from triggering the combined `power_filter` rate limit (while keeping `pool='scorable'`, `answer_status`, `source`, `year`, and cross-scope `exam_scope=all` metered). `20/20` pytest passed.
+- **Verified live:** Unauthenticated `GET /api/questions?pool=practice&subject_id=gk-gs&topic_id=gk-gs:indian-polity&study_status=unseen&limit=50` returns `200` with `50` of `958` MCQs; `family.hawayu.in` returns `307`.
+
 25 November IST — **Redesigned Module Practice & `/practice` into Guided Practice (50-by-50, 25-by-25, Step 1-by-1, Unattempted-first queue, and 1-click Subject/Topic pills) while keeping Full-Paper Mock intact (`ModuleStudy.tsx`, `ExamPage.tsx`, `Practice.tsx`, `QuestionCard.tsx`, `exam-overview.css`). Web deployed to `https://study.hawayu.in`.**
 
 - **Unified Module Practice (`ExamPage.tsx`, `ModuleStudy.tsx`, `exam-overview.css`):** Removed the redundant UDC `Continuous practice / Saved short sets` 20-Q toggle and replaced the bare 1-question module practice view with a **Guided Practice Command Bar**:

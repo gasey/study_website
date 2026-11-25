@@ -6,7 +6,6 @@ import {
   currentMock,
   getCollection,
   isLaterExamCollection,
-  isSubjectModule,
   listCollections,
   listQuestions,
   listTaxonomy,
@@ -135,12 +134,14 @@ export default function Practice() {
   } | null>(null)
   const runSectionRef = useRef<HTMLElement | null>(null)
 
+  const examInitializedRef = useRef(Boolean(params.get('exam')))
+
   useEffect(() => {
     let live = true
     Promise.all([
       listCollections().then((rows) => {
         if (!live) return
-        setExams(rows.filter((c) => (c.kind === 'exam' || isSubjectModule(c)) && !isLaterExamCollection(c)))
+        setExams(rows.filter((c) => c.kind === 'exam' && !isLaterExamCollection(c)))
       }),
       listTaxonomy('all', true).then((rows) => {
         if (live) setTaxonomy(rows)
@@ -159,8 +160,10 @@ export default function Practice() {
   }, [])
 
   useEffect(() => {
-    if (!examId && preferredExam) setExamId(preferredExam.id)
-  }, [examId, preferredExam])
+    if (examInitializedRef.current || !preferredExam) return
+    examInitializedRef.current = true
+    setExamId(preferredExam.id)
+  }, [preferredExam])
 
   // Load real papers for the selected exam whenever in Full-Paper Mock mode
   const mockExamId = examId || preferredExam?.id || examCollections[0]?.id || ''
@@ -553,7 +556,10 @@ export default function Practice() {
                 <button
                   type="button"
                   aria-pressed={examId === ''}
-                  onClick={() => setExamId('')}
+                  onClick={() => {
+                    examInitializedRef.current = true
+                    setExamId('')
+                  }}
                   className={`pp-exam-pill${examId === '' ? ' is-active' : ''}`}
                 >
                   All exams
@@ -563,7 +569,10 @@ export default function Practice() {
                     key={ex.id}
                     type="button"
                     aria-pressed={examId === ex.id}
-                    onClick={() => setExamId(ex.id)}
+                    onClick={() => {
+                      examInitializedRef.current = true
+                      setExamId(ex.id)
+                    }}
                     className={`pp-exam-pill${examId === ex.id ? ' is-active' : ''}`}
                   >
                     {shortExamLabel(ex)}
@@ -577,11 +586,14 @@ export default function Practice() {
                 <select
                   aria-label="Exam"
                   value={examId}
-                  onChange={(e) => setExamId(e.target.value)}
+                  onChange={(e) => {
+                    examInitializedRef.current = true
+                    setExamId(e.target.value)
+                  }}
                   className="min-h-11 rounded-lg border border-hairline2 bg-paper px-3 text-sm font-normal normal-case tracking-normal text-ink"
                 >
                   <option value="">All exams</option>
-                  {exams.map((ex) => (
+                  {examCollections.map((ex) => (
                     <option key={ex.id} value={ex.id}>
                       {ex.title}
                     </option>

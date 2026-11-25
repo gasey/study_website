@@ -34,7 +34,7 @@ def power_filter(query):
     topic = present('topic_id') or present('subtopic_id') or present('atlas_chapter')
     year = present('year_from') or present('year_to')
     answer = (present('answer_status') or present('source')
-              or any(v and v != 'all' for v in values('pool')))
+              or any(v and v not in ('all', 'practice') for v in values('pool')))
     return cross_exam or sum((topic, year, answer)) >= 2
 
 

@@ -11,7 +11,8 @@ from test_learning_workflows import learner
     ({'topic_id':'english/vocabulary'},False),
     ({'topic_id':['english/vocabulary'],'year_to':['2020']},True),
     ({'year_from':2020,'source':['official']},True),
-    ({'topic_id':'english/vocabulary','pool':'practice'},True),
+    ({'topic_id':'english/vocabulary','pool':'practice'},False),
+    ({'topic_id':'english/vocabulary','pool':'scorable'},True),
     ({'exam_scope':'all','subject_id':'english'},True),
     ({'exam_scope':'all','paper_id':'source'},False),
 ])
