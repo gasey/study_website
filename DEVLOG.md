@@ -1,5 +1,10 @@
 # Devlog
 
+25 November IST — **Upgraded Admin Cross-Check & Fast-Fix Question Workbench (`/admin/bank?tab=retag`) + inline staff `✎ Fix ↗` links on all public question cards. Web deployed to `https://study.hawayu.in`.**
+
+- **Fast bulk triage (`EditorialTagCleanup.tsx`):** Promoted 1-click Exam pills (`LDC`, `UDC`, `MCS Prelims`, `Assistant`, `Group B NG`), Issue pills (`No subject`, `No topic`, `Needs attention`, `Reported`, `Invalid`, `All`), Current Subject, and `Paper order (Q1 → Q100)` sort out of hidden accordions. Added client-side language/subject spotters (`🌿 Likely Mizo`, `💻 Likely Computer`, `📐 Likely Maths`), 1-click **`☑ Select page (20)`** + **`🌿 Select likely Mizo (N)`**, sticky **1-Click Target Tag Chips** (14 dynamically validated paths), solo-owner **1-Click Express Apply** (stays in place on your filtered list while queuing the batch via `/admin/bank/retag/preview` + `/apply`), and `J`/`Esc` keyboard triage in single-question `Inspect & Fix`.
+- **Inline staff fix hook (`hooks/useIsStaff.ts`, `StudyQuestionCard.tsx`, `QuestionCard.tsx`):** Added cached zero-overhead `useIsStaff()` hook surfacing a subtle **`✎ Fix ↗`** button on every public question card (only for signed-in owner/staff) that opens that exact question in Admin Cross-Check & Fix.
+
 25 November IST — **Zero-regression optimization & simplification pass across Web and Mobile. Web deployed to `https://study.hawayu.in`.**
 
 - **97.7% payload reduction on Exam & Subject Topics (`scripts/enrich-guides-seed.py`, `web/src/data/guides-catalog.json`, `ExamStudyTopics.tsx`):** Replaced eager 226 KB full-markdown `guides-seed.json` import in `ExamStudyTopics.tsx` with generated 5 KB `guides-catalog.json` metadata.

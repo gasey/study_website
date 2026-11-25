@@ -1,5 +1,6 @@
 import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
+import { useIsStaff } from '../hooks/useIsStaff'
 import AtlasQuestionLinks from './AtlasQuestionLinks'
 import PracticeAnswerPanel from './PracticeAnswerPanel'
 import { questionTopicLabel } from '../lib/questionLabels'
@@ -22,7 +23,13 @@ export default function StudyQuestionCard({q,collectionId,paperId='',positionNum
   onRetry:()=>void;onNext:()=>void|Promise<void>;nextLabel?:string;showPanelNext?:boolean;
 }) {
   const combined=collectionId==='combined-prelims'
+  const isStaff = useIsStaff()
   const isWritten = q.type !== 'mcq'
+  const adminFixHref = useMemo(() => {
+    const p = new URLSearchParams({ tab: 'retag', tag_q: q.id, tag_issue: 'all', tag_selected: q.id })
+    if (q.source_appearance?.paper_id) p.set('tag_paper', q.source_appearance.paper_id)
+    return '/admin/bank?' + p.toString()
+  }, [q.id, q.source_appearance?.paper_id])
   const blocked=q.held||q.key_disputed||['duplicate-options','unresolved-source'].includes(q.source_defect||'')
   const sourceInfo = useMemo(
     () => formatQuestionSource(q),
@@ -67,6 +74,17 @@ export default function StudyQuestionCard({q,collectionId,paperId='',positionNum
               {q.times_asked > 1 && (
                 <Link to={scopeLink(`/bank/${q.id}`)} className="sq-source-repeat">
                   {q.times_asked}× papers ↗
+                </Link>
+              )}
+              {isStaff && (
+                <Link
+                  to={adminFixHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  title="Open this exact question in Admin Cross-Check & Fix"
+                  className="sq-source-pdf"
+                >
+                  ✎ Fix ↗
                 </Link>
               )}
             </div>

@@ -10,6 +10,7 @@ import {QuestionActions} from './QuestionDiscussion'
 import {AnswerOptions} from './AnswerLayout'
 import { useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useIsStaff } from '../hooks/useIsStaff'
 import { submitAnswer, type AnswerResult, type Question } from '../lib/api'
 import { SourceQuestionContext, SourceQuestionText } from './SourceQuestionText'
 import SaveToVaultButton from './SaveToVaultButton'
@@ -68,6 +69,12 @@ export default function QuestionCard({ q, onAnswered, onNext }: { q: Question; o
   const actions = <QuestionActions questionType={q.type} qid={q.id} context={{paper_id:q.source_appearance?.paper_id}} answeredSignal={result}/>
 
   const isWritten = q.type !== 'mcq'
+  const isStaff = useIsStaff()
+  const adminFixHref = useMemo(() => {
+    const p = new URLSearchParams({ tab: 'retag', tag_q: q.id, tag_issue: 'all', tag_selected: q.id })
+    if (q.source_appearance?.paper_id) p.set('tag_paper', q.source_appearance.paper_id)
+    return '/admin/bank?' + p.toString()
+  }, [q.id, q.source_appearance?.paper_id])
   return (
     <article id={'question-'+q.id} data-question-type={isWritten ? 'written' : 'mcq'} className={`compact-question q-sheet-card mb-4 rounded-[18px] border border-hairline bg-card px-5 py-5 shadow-[var(--ism-card-shadow)] sm:px-6${isWritten ? ' border-l-4 border-l-amber-600' : ''}`}>
       <AtlasQuestionLinks qid={q.id} links={q.atlas_links||[]} context={q.type==='mcq'&&['official','verified'].includes(q.answer_status||'')}/>
@@ -184,6 +191,17 @@ export default function QuestionCard({ q, onAnswered, onNext }: { q: Question; o
           {q.times_asked > 1 && (
             <Link to={scopeLink(`/bank/${q.id}`)} className="sq-source-repeat">
               All {q.times_asked} appearances ↗
+            </Link>
+          )}
+          {isStaff && (
+            <Link
+              to={adminFixHref}
+              target="_blank"
+              rel="noreferrer"
+              title="Open this exact question in Admin Cross-Check & Fix"
+              className="sq-source-pdf"
+            >
+              ✎ Fix ↗
             </Link>
           )}
         </div>
