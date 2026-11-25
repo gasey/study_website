@@ -266,7 +266,7 @@ async def _get_collection(collection_id: str, exam_scope: ExamScope) -> Collecti
                     JOIN v_bank_answer_status bs ON bs.id=av.id
                     WHERE av.status IN ('live','held')
                 )
-                SELECT cp.paper_id AS id,COALESCE(cp.display_title,p.exam_name) AS title,
+                SELECT cp.paper_id AS id,COALESCE(NULLIF(btrim(cp.display_title),''),NULLIF(btrim(p.exam_name),''),NULLIF(btrim(p.paper_subject),''),cp.paper_id) AS title,
                       p.year,p.exam_name AS exam,p.paper_number,p.paper_subject AS subject,
                       p.source_file,p.pdf_url,cp.section_path,cp.allow_browse,cp.allow_practice,
                       cp.as_mock AS allow_timed_test,cp.duration_minutes,

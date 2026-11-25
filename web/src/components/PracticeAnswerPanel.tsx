@@ -20,7 +20,7 @@ export default function PracticeAnswerPanel({qid,paperId,options,question,year,t
  onViewed:(viewed:boolean)=>void;onBusy?:(busy:boolean)=>void;onRetry?:()=>void;onNext?:()=>void|Promise<void>;nextLabel?:string;showNext?:boolean;secondaryActions?:ReactNode
 }) {
  const nav=useNavigate(),[params]=useSearchParams()
- const [viewed,setViewed]=useState<ViewedAnswer|null>(null),[busy,setBusy]=useState(false),[restoring,setRestoring]=useState(true),[error,setError]=useState('')
+ const [viewed,setViewed]=useState<ViewedAnswer|null>(null),[viewedHidden,setViewedHidden]=useState(false),[busy,setBusy]=useState(false),[restoring,setRestoring]=useState(true),[error,setError]=useState('')
  const [deadline,setDeadline]=useState(0),[now,setNow]=useState(Date.now),[restricted,setRestricted]=useState(''),[revisionMessage,setRevisionMessage]=useState('')
  const [deskVersion,setDeskVersion]=useState(0),[actionBusy,setActionBusy]=useState(false)
  const callbacks=useRef({onViewed,onBusy,onRetry,onNext});callbacks.current={onViewed,onBusy,onRetry,onNext}
@@ -32,12 +32,12 @@ export default function PracticeAnswerPanel({qid,paperId,options,question,year,t
   let live=true
   async function restore(){
    const run=++generation.current
-   setRestoring(true);setViewed(null);setRestricted('');setError('');callbacks.current.onViewed(false);callbacks.current.onBusy?.(true)
+   setRestoring(true);setViewed(null);setViewedHidden(false);setRestricted('');setError('');callbacks.current.onViewed(false);callbacks.current.onBusy?.(true)
    try{
     const state=await getPracticeState(qid,paperId)
     if(!live||run!==generation.current)return
     if(state.restricted){setRestricted(state.message||'Finish your active test before reading this answer.');callbacks.current.onViewed(true)}
-    else if(state.viewed){setViewed(state.answer);setDeadline(Date.now()+state.retry_after_seconds*1000);setNow(Date.now());callbacks.current.onViewed(true)}
+    else if(state.viewed){setViewed(state.answer);setViewedHidden(true);setDeadline(Date.now()+state.retry_after_seconds*1000);setNow(Date.now());callbacks.current.onViewed(true)}
    }catch(e){if(live&&run===generation.current)setError((e as Error).message)}
    finally{if(live&&run===generation.current){setRestoring(false);callbacks.current.onBusy?.(false)}}
   }
@@ -54,7 +54,7 @@ export default function PracticeAnswerPanel({qid,paperId,options,question,year,t
   const run=++generation.current;inFlight.current=true;setBusy(true);setError('');onBusy?.(true)
   try{
    const answer=await revealAnswer(qid,paperId)
-   if(active.current&&run===generation.current){setViewed(answer);setDeadline(Date.now()+answer.retry_after_seconds*1000);setNow(Date.now());onViewed(true);window.dispatchEvent(new CustomEvent('ism-answer-viewed',{detail:{qid}}))}
+   if(active.current&&run===generation.current){setViewed(answer);setViewedHidden(false);setDeadline(Date.now()+answer.retry_after_seconds*1000);setNow(Date.now());onViewed(true);window.dispatchEvent(new CustomEvent('ism-answer-viewed',{detail:{qid}}))}
   }catch(e){if(active.current&&run===generation.current)setError((e as Error).message)}
   finally{inFlight.current=false;if(active.current){setBusy(false);onBusy?.(false)}}
  }
@@ -78,18 +78,19 @@ export default function PracticeAnswerPanel({qid,paperId,options,question,year,t
   if(forLater)await next()
  }
  async function action(task:()=>Promise<void>){if(actionBusy)return;setActionBusy(true);setError('');try{await task()}catch(e){if(active.current)setError((e as Error).message)}finally{if(active.current)setActionBusy(false)}}
- function retry(){setViewed(null);setError('');setDeadline(0);onViewed(false);onRetry?.()}
- const answer=result||viewed,remaining=Math.max(0,Math.ceil((deadline-now)/60000)),saved=getDesk().saved.includes(qid)
+ function retry(){setViewed(null);setViewedHidden(false);setError('');setDeadline(0);onViewed(false);onRetry?.()}
+ const answer=result||(!viewedHidden?viewed:null),remaining=Math.max(0,Math.ceil((deadline-now)/60000)),saved=getDesk().saved.includes(qid)
  const answerMatches=answer&&options?options.flatMap((text,index)=>text===answer.answer_text?[index]:[]):[]
  const answerLetter=answerMatches.length===1?String.fromCharCode(65+answerMatches[0]):null
  const control='min-h-11 rounded-pill border border-hairline bg-card px-3 py-2 text-sm font-semibold disabled:opacity-40'
  if(restoring&&!result)return <div><p role="status" className="mt-3 text-xs text-muted">Loading your previous answer…</p>{secondaryActions}</div>
  if(restricted)return <div><p role="status" className="mt-3 rounded-[10px] border border-hairline bg-paper p-3 text-sm text-secondary">{restricted}</p>{secondaryActions}</div>
  return <div className="mt-3">
-  {!answer&&<div className="flex flex-wrap items-center gap-x-4">{!available?<AnswerComparison options={options} qid={qid} paperId={paperId}/>:<><button type="button" disabled={busy||disabled} onClick={()=>void show()} className={control+' text-link'}>{busy?'Opening…':'Show answer'}</button><p className="mt-1 text-xs text-muted">No attempt recorded · retry after 30 minutes.</p></>}{secondaryActions}</div>}
+  {!answer&&!viewed&&<div className="flex flex-wrap items-center gap-x-4">{!available?<AnswerComparison options={options} qid={qid} paperId={paperId}/>:<><button type="button" disabled={busy||disabled} onClick={()=>void show()} className={control+' text-link'}>{busy?'Opening…':'Show answer'}</button><p className="mt-1 text-xs text-muted">No attempt recorded · retry after 30 minutes.</p></>}{secondaryActions}</div>}
+  {!result&&viewed&&viewedHidden&&<div className="flex flex-wrap items-center gap-2">{remaining===0&&onRetry?<button type="button" onClick={retry} className={control+' text-link'}>↺ Try again</button>:<button type="button" onClick={()=>setViewedHidden(false)} className={control+' text-link'}>Show answer again</button>}<p className="text-xs text-muted">Answer hidden{remaining>0?` · retry in ${remaining} ${remaining===1?'minute':'minutes'}`:' · ready to retry'}.</p>{secondaryActions}</div>}
   {error&&<p role="alert" className="mt-2 text-sm text-mypick">{error}</p>}
   {answer&&<section aria-label="Answer and explanation" className="border-t border-hairline pt-2 text-sm">
-   <div className="practice-answer-outcome flex flex-wrap items-baseline gap-x-2"><strong>{result?answerFeedbackLabel(result,context):'Answer'}</strong><span>{answerLetter?` · ${answerLetter}. `:' · '}<SourceQuestionText text={answer.answer_text}/></span></div>
+   <div className="practice-answer-outcome flex flex-wrap items-baseline gap-x-2"><strong>{result?answerFeedbackLabel(result,context):'Answer'}</strong><span>{answerLetter?` · ${answerLetter}. `:' · '}<SourceQuestionText text={answer.answer_text}/></span>{result&&onRetry&&<button type="button" onClick={retry} className="ml-auto inline-flex min-h-9 items-center rounded-pill border border-hairline bg-canvas px-3 text-xs font-semibold text-secondary hover:border-ink hover:text-ink">↺ Hide &amp; try again</button>}{!result&&viewed&&<button type="button" onClick={()=>setViewedHidden(true)} className="ml-auto inline-flex min-h-9 items-center rounded-pill border border-hairline bg-canvas px-3 text-xs font-semibold text-secondary hover:border-ink hover:text-ink">Hide answer</button>}</div>
    <QuestionStats stats={answer.stats} answerText={answer.answer_text} chosenText={chosenText}/>
    {!result&&<div className="flex flex-wrap items-center gap-x-2 text-xs text-muted"><p>No attempt recorded{remaining>0?` · retry in ${remaining} ${remaining===1?'minute':'minutes'}`:''}.</p>{remaining===0&&onRetry&&<button type="button" onClick={retry} className="min-h-11 px-1 font-semibold text-link">Retry now</button>}</div>}
    <QuestionCurrentness variant="summary" revealed question={question} year={year} topic={topic}/>

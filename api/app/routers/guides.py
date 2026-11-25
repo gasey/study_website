@@ -74,6 +74,66 @@ async def list_guides(
     return {'items': items}
 
 
+@router.get('/admin')
+async def list_guides_admin(actor: Annotated[Actor, Depends(identity)]) -> dict:
+    """Owner catalog listing draft, published, and archived guides for Guides Studio."""
+    async with cursor() as cur:
+        await require_role(cur, actor.id, roles=('owner',))
+        await cur.execute(
+            """SELECT g.id, g.slug, g.title, g.subject_id, g.topic_id, g.exam_scope,
+                      g.summary, g.reading_minutes, g.status, g.version, g.updated_at,
+                      (SELECT count(*)::int FROM guide_chapters gc WHERE gc.guide_id = g.id) AS chapter_count,
+                      (SELECT count(*)::int FROM guide_questions gq WHERE gq.guide_id = g.id) AS question_count
+                 FROM guides g
+                ORDER BY g.updated_at DESC, g.title"""
+        )
+        items = await cur.fetchall()
+    return {'items': items}
+
+
+@router.get('/admin/{slug}')
+async def get_guide_admin(slug: str, actor: Annotated[Actor, Depends(identity)]) -> dict:
+    """Owner single-guide read returning drafts and archived guides as well as published."""
+    async with cursor() as cur:
+        await require_role(cur, actor.id, roles=('owner',))
+        await cur.execute(
+            """SELECT id, slug, title, subject_id, topic_id, exam_scope,
+                      summary, reading_minutes, status, version, review_due, updated_at
+                 FROM guides
+                WHERE slug = %s""",
+            (slug,),
+        )
+        guide = await cur.fetchone()
+        if not guide:
+            raise HTTPException(404, 'Guide not found')
+        await cur.execute(
+            """SELECT ord, anchor, heading, body_markdown
+                 FROM guide_chapters
+                WHERE guide_id = %s
+                ORDER BY ord""",
+            (guide['id'],),
+        )
+        chapters = await cur.fetchall()
+        await cur.execute(
+            """SELECT gq.chapter_anchor, gq.question_id, gq.ord
+                 FROM guide_questions gq
+                WHERE gq.guide_id = %s
+                ORDER BY gq.chapter_anchor, gq.ord""",
+            (guide['id'],),
+        )
+        q_rows = await cur.fetchall()
+    by_anchor: dict[str, list[str]] = {}
+    for row in q_rows:
+        by_anchor.setdefault(row['chapter_anchor'], []).append(row['question_id'])
+    return {
+        **guide,
+        'chapters': [
+            {**ch, 'question_ids': by_anchor.get(ch['anchor'], [])}
+            for ch in chapters
+        ],
+    }
+
+
 @router.get('/{slug}')
 async def get_guide(slug: str) -> dict:
     async with cursor() as cur:

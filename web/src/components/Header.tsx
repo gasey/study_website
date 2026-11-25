@@ -1,10 +1,12 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import {
   getAccountSession,
   getProgressSummary,
   listCollections,
   isLaterExamCollection,
+  isSubjectModule,
+  moduleHref,
   type AccountSession,
   type Collection,
 } from '../lib/api'
@@ -21,6 +23,8 @@ import {
 } from '../lib/siteMap'
 import { useStudyTheme } from '../lib/theme'
 import { usePreferredExam } from '../lib/preferredExam'
+import { resolveTrackedExams, shortExamLabel, useTrackedExamIds } from '../lib/trackedExams'
+import { FLAGSHIP_EXAM_IDS } from '../lib/examPresentation'
 import { Avatar } from './ui'
 import QuickFind from './QuickFind'
 import NavIcon from './NavIcon'
@@ -29,7 +33,6 @@ import VaultSafeIllustration from './VaultSafeIllustration'
 import { readLocalVault } from '../lib/vault'
 
 const NAV_ITEMS = destinationsForSurface('nav')
-const QUICK_ITEMS = destinationsForSurface('quick')
 const HOME_PATH = destinationPath('home')
 const INBOX_PATH = destinationPath('inbox')
 const PROFILE_PATH = destinationPath('profile')
@@ -41,12 +44,30 @@ const MENUS: Record<string, Destination[]> = Object.fromEntries(
   NAV_ITEMS.filter((i) => i.menu).map((i) => [i.id, menuFor(i.menu as NavMenu)]),
 )
 
-/** Unified desktop nav (§VII.3.3, pure dropdown trigger pattern):
- *  Sections with sub-pages (`Exams`, `Practice`, `Guides`, `Community`) are
- *  pure `<button>` dropdown toggles — hovering OR clicking opens/closes the
- *  menu without navigating away. Every destination (including the featured
- *  `All Guides →` / `All Exams →` overview card) is chosen cleanly inside the
- *  dropdown. Plain leaf items (`Papers`) remain direct `<Link>` elements. */
+type MenuTone = 'cobalt' | 'teal' | 'amber' | 'emerald' | 'violet' | 'rose'
+const MENU_CARD_META: Record<string, { tone: MenuTone; tag: string; icon: string }> = {
+  papers: { tone: 'cobalt', tag: 'Archive', icon: 'M7 3h8l4 4v14H7V3Zm7 1v4h4M10 12h6M10 16h6' },
+  calendar: { tone: 'amber', tag: 'Schedule', icon: 'M4 7h16v13H4V7Zm3-4v4m10-4v4M4 11h16' },
+  'subject-books': { tone: 'teal', tag: 'All-Exam', icon: 'M4 5h5v14H4V5Zm6 0h5v14h-5V5Zm6 1 4 13' },
+  'subject-gk-gs': { tone: 'cobalt', tag: 'Volume I', icon: 'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm-9 9h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18' },
+  'subject-english': { tone: 'teal', tag: 'Volume II', icon: 'M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z' },
+  'subject-mathematics': { tone: 'amber', tag: 'Volume III', icon: 'M4 6h16M4 12h16M4 18h10M16 15l4 4m0-4-4 4' },
+  'subject-reasoning': { tone: 'violet', tag: 'Volume IV', icon: 'M9 3H5v4h4V3Zm10 0h-4v4h4V3ZM9 17H5v4h4v-4Zm6-7h4v4h-4v-4ZM9 5h6M7 7v10m8-7-6 7' },
+  'subject-mizo': { tone: 'emerald', tag: 'Volume V', icon: 'M4 19h16M6 15l6-11 6 11M8.5 11h7' },
+  revise: { tone: 'teal', tag: 'Memory', icon: 'M4 12a8 8 0 0 1 13.7-5.6L20 8.5M20 4v4.5h-4.5M20 12a8 8 0 0 1-13.7 5.6L4 15.5M4 20v-4.5h4.5' },
+  'practice-build': { tone: 'cobalt', tag: 'Custom', icon: 'M12 5v14M5 12h14' },
+  tests: { tone: 'amber', tag: 'Timed', icon: 'M12 7v5l3 2M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z' },
+  games: { tone: 'violet', tag: 'Daily 5', icon: 'M6 12h4M8 10v4m7-2h.01M18 10h.01M5 7h14a3 3 0 0 1 3 3v4a4 4 0 0 1-4 4h-2l-2-2h-4l-2 2H6a4 4 0 0 1-4-4v-4a3 3 0 0 1 3-3Z' },
+  bank: { tone: 'emerald', tag: 'Full Bank', icon: 'M4 6h16M4 12h16M4 18h16' },
+  atlas: { tone: 'emerald', tag: 'Maps', icon: 'M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2V6Zm6-2v14m6-12v14' },
+  chronicle: { tone: 'rose', tag: 'Timeline', icon: 'M12 4v16M8 8h8M6 14h12M9 19h6' },
+  stats: { tone: 'cobalt', tag: 'Rankings', icon: 'M5 19V11m7 8V5m7 14v-7' },
+  desk: { tone: 'amber', tag: 'Workspace', icon: 'M3 10h18M5 10V7h14v3M6 10v11M18 10v11M9 17h6' },
+}
+
+/** Streamlined 2-row student-loop desktop header + phone bar.
+ *  Row 1: Brand · Search (Ctrl K) · Streak · Vault · Create · Utilities · Account
+ *  Row 2: Home · Exams ▾ · Subjects ▾ · Practice ▾ · Tools & Guides ▾ · Community ▾  |  Revise · Desk · My exams */
 export default function Header() {
   const { pathname, search } = useLocation()
   const scope = useExamScope()
@@ -56,16 +77,44 @@ export default function Header() {
   const [unread, setUnread] = useState<number | null>(null)
   const [streak, setStreak] = useState<number | null>(null)
   const [exams, setExams] = useState<Collection[]>([])
+  const [subjectModules, setSubjectModules] = useState<Collection[]>([])
   const [menu, setMenu] = useState<string | null>(null)
   const [vaultCount, setVaultCount] = useState<number>(() => readLocalVault().length)
   const [vaultHover, setVaultHover] = useState(false)
   const selected = usePreferredExam(exams)
+  const trackedIds = useTrackedExamIds()
+  const trackedExams = useMemo(
+    () => resolveTrackedExams(exams, trackedIds, selected),
+    [exams, trackedIds, selected],
+  )
+
+  const quickJumpExams = useMemo(() => {
+    const out: Collection[] = []
+    const seen = new Set<string>()
+    for (const e of trackedExams) {
+      if (!seen.has(e.id)) {
+        out.push(e)
+        seen.add(e.id)
+      }
+    }
+    for (const id of FLAGSHIP_EXAM_IDS) {
+      if (out.length >= 7) break
+      if (seen.has(id)) continue
+      const match = exams.find((e) => e.id === id)
+      if (match) {
+        out.push(match)
+        seen.add(match.id)
+      }
+    }
+    return out
+  }, [trackedExams, exams])
 
   useEffect(() => {
     const syncVault = () => setVaultCount(readLocalVault().length)
     window.addEventListener('finna-vault-change', syncVault)
     return () => window.removeEventListener('finna-vault-change', syncVault)
   }, [])
+
   const shell = useRef<HTMLElement>(null)
   const menuPanel = useRef<HTMLDivElement>(null)
   const triggers = useRef<Record<string, HTMLElement | null>>({})
@@ -151,9 +200,12 @@ export default function Header() {
   useEffect(() => {
     let live = true
     setExams([])
+    setSubjectModules([])
     listCollections()
       .then((rows) => {
-        if (live) setExams(rows.filter((c) => c.kind === 'exam' && !isLaterExamCollection(c)))
+        if (!live) return
+        setExams(rows.filter((c) => c.kind === 'exam' && !isLaterExamCollection(c)))
+        setSubjectModules(rows.filter(isSubjectModule))
       })
       .catch(() => {})
     return () => {
@@ -236,18 +288,20 @@ export default function Header() {
   const focused = focusedSession(pathname, search)
   const openFind = () => window.dispatchEvent(new Event('finna-open-find'))
   const openHelp = () => window.dispatchEvent(new Event('finna-open-help'))
+
   const active = (id: string) =>
-    id === 'exams'
-      ? /^\/(exams|group-b)/.test(pathname)
-      : id === 'papers'
-        ? pathname === '/past-papers'
-        : id === 'practice'
-          ? /^\/(practice|bank|tests|revise|games)/.test(pathname)
-          : id === 'guides'
-            ? /^\/(guides|library|subjects|english|arithmetic|mizo|atlas|chronicle|stats)/.test(pathname)
-            : id === 'community'
-              ? /^\/(community|creators|materials|create)/.test(pathname)
-              : pathname === INDEX_PATH
+    id === 'home'
+      ? pathname === '/home' || pathname === '/'
+      : id === 'exams'
+        ? /^\/(exams|group-b|past-papers|calendar)(\/|$)/.test(pathname)
+        : id === 'library'
+          ? /^\/(library|subjects|english|arithmetic|mizo)(\/|$)/.test(pathname)
+          : id === 'practice'
+            ? /^\/(practice|bank|tests|revise|games|vault|results)(\/|$)/.test(pathname)
+            : id === 'guides'
+              ? /^\/(guides|atlas|chronicle|stats|desk|index)(\/|$)/.test(pathname)
+              : /^\/(community|creators|materials|create)(\/|$)/.test(pathname)
+
   const staff = reviewDestinations(access)
   const activeNavParent = menu ? NAV_ITEMS.find((i) => i.id === menu) || null : null
   const activeMenuItems = menu ? MENUS[menu] || [] : []
@@ -261,54 +315,7 @@ export default function Header() {
         Skip to content
       </a>
 
-      {!focused && (
-        <div className="finna-top">
-          <div className="finna-wrap finna-top-inner">
-            <span className="finna-top-tag">Study</span>
-            <span className="finna-top-note">Past papers. Clear sources. Your next step.</span>
-            <div className="finna-top-actions">
-              {streak !== null && streak > 0 && (
-                <Link to={PROFILE_PATH} className="text-[#FFC83D]">
-                  {streak} day streak
-                </Link>
-              )}
-              {account.authenticated && (
-                <Link to={INBOX_PATH}>
-                  Inbox{' '}
-                  {unread !== null && <span className="finna-unread-pill">{unread}</span>}
-                </Link>
-              )}
-              <button
-                type="button"
-                className="finna-theme"
-                onClick={openHelp}
-                aria-label="Help and keyboard shortcuts"
-                title="Help & shortcuts (?)"
-              >
-                ?
-              </button>
-              <button
-                type="button"
-                className="finna-theme"
-                onClick={() => setTheme(theme === 'night' ? 'paper' : 'night')}
-                aria-label={`Switch to ${theme === 'night' ? 'light' : 'dark'} theme`}
-              >
-                {theme === 'night' ? 'Light' : 'Dark'}
-              </button>
-              {staff.length > 0 && (
-                <nav aria-label="Workspaces" className="flex items-center gap-4">
-                  {staff.slice(0, 2).map((link) => (
-                    <Link key={link.to} to={link.to}>
-                      {link.label}
-                    </Link>
-                  ))}
-                </nav>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
-
+      {/* Compact Phone Header */}
       {!focused && (
         <div className="finna-phone-header">
           <div className="finna-phone-heading">
@@ -317,7 +324,7 @@ export default function Header() {
                 to={
                   /^\/(bank|exams)\//.test(pathname)
                     ? EXAMS_PATH
-                    : pathname.startsWith('/library/')
+                    : pathname.startsWith('/library/') || pathname.startsWith('/subjects/')
                       ? LIBRARY_PATH
                       : HOME_PATH
                 }
@@ -330,9 +337,9 @@ export default function Header() {
             <h1>{mobileTitle(pathname)}</h1>
           </div>
           <nav aria-label="Phone quick actions">
-            {pathname === HOME_PATH && streak !== null && (
+            {pathname === HOME_PATH && streak !== null && streak > 0 && (
               <Link to={PROFILE_PATH} className="finna-phone-streak">
-                {streak} day streak
+                ★ {streak}d
               </Link>
             )}
             <button type="button" onClick={openFind} aria-label="Quick find" aria-haspopup="dialog">
@@ -347,18 +354,23 @@ export default function Header() {
                 <span className="finna-phone-unread">{unread > 99 ? '99+' : unread}</span>
               )}
             </Link>
-            <Link to={INDEX_PATH} aria-label="Index and appearance">
+            <Link to={INDEX_PATH} aria-label="All pages and appearance">
               <NavIcon name="more" />
             </Link>
           </nav>
         </div>
       )}
 
+      {/* Row 1: Brand + Search + Unified Utilities & Account (slimmer 2-row desktop header) */}
       <div className="finna-brand-row">
         <div className="finna-wrap finna-brand-inner">
           <Link to={HOME_PATH} className="finna-brand" aria-label="Finna home" onClick={closeMenu}>
-            Finna<span>.</span>
+            <span className="finna-brand-word">
+              Finna<i>.</i>
+            </span>
+            <small className="finna-brand-tag">MPSC Study</small>
           </Link>
+
           {!focused && (
             <button
               type="button"
@@ -371,10 +383,11 @@ export default function Header() {
               aria-haspopup="dialog"
             >
               <NavIcon name="search" />
-              <span>Find an exam, question or guide</span>
+              <span>Find an exam, subject, question or guide</span>
               <kbd>Ctrl K</kbd>
             </button>
           )}
+
           <div className="finna-mobile-tools">
             {!focused && (
               <>
@@ -391,33 +404,105 @@ export default function Header() {
               </>
             )}
           </div>
+
           {!focused && (
-            <Link
-              to="/vault"
-              className="vs-header-pill"
-              onClick={closeMenu}
-              onMouseEnter={() => setVaultHover(true)}
-              onMouseLeave={() => setVaultHover(false)}
-              aria-label="My Personal Question Vault"
-            >
-              <VaultSafeIllustration size="mini" isOpen={vaultHover || pathname.startsWith('/vault')} interactive={false} />
-              <span>Vault</span>
-              {vaultCount > 0 && <span className="vs-header-count">{vaultCount}</span>}
-            </Link>
+            <div className="finna-brand-utils">
+              {streak !== null && streak > 0 && (
+                <Link
+                  to={PROFILE_PATH}
+                  className="finna-streak-badge"
+                  onClick={closeMenu}
+                  title={`${streak}-day study streak`}
+                >
+                  ★ {streak}d
+                </Link>
+              )}
+
+              <Link
+                to="/vault"
+                className="vs-header-pill"
+                onClick={closeMenu}
+                onMouseEnter={() => setVaultHover(true)}
+                onMouseLeave={() => setVaultHover(false)}
+                aria-label="My Personal Question Vault"
+              >
+                <VaultSafeIllustration
+                  size="mini"
+                  isOpen={vaultHover || pathname.startsWith('/vault')}
+                  interactive={false}
+                />
+                <span>Vault</span>
+                {vaultCount > 0 && <span className="vs-header-count">{vaultCount}</span>}
+              </Link>
+
+              <Link to={CREATE_PATH} className="finna-create" onClick={closeMenu}>
+                Create
+              </Link>
+
+              <div className="finna-util-group" aria-label="Utilities">
+                {account.authenticated && (
+                  <Link
+                    to={INBOX_PATH}
+                    className="finna-util-btn"
+                    onClick={closeMenu}
+                    aria-label={unread ? `Inbox, ${unread} unread` : 'Inbox'}
+                    title="Inbox"
+                  >
+                    <span aria-hidden="true">✉</span>
+                    {unread !== null && unread > 0 && (
+                      <span className="finna-util-badge">{unread > 99 ? '99+' : unread}</span>
+                    )}
+                  </Link>
+                )}
+                <button
+                  type="button"
+                  className="finna-util-btn"
+                  onClick={() => setTheme(theme === 'night' ? 'paper' : 'night')}
+                  aria-label={`Switch to ${theme === 'night' ? 'light' : 'dark'} theme`}
+                  title={theme === 'night' ? 'Switch to light theme' : 'Switch to dark theme'}
+                >
+                  {theme === 'night' ? '☀' : '☾'}
+                </button>
+                <button
+                  type="button"
+                  className="finna-util-btn"
+                  onClick={openHelp}
+                  aria-label="Help and keyboard shortcuts"
+                  title="Help & shortcuts (?)"
+                >
+                  ?
+                </button>
+              </div>
+
+              {staff.length > 0 && (
+                <nav aria-label="Staff workspaces" className="finna-staff-links">
+                  {staff.slice(0, 2).map((link) => (
+                    <Link key={link.to} to={link.to} className="finna-staff-pill" onClick={closeMenu}>
+                      {link.label}
+                    </Link>
+                  ))}
+                </nav>
+              )}
+            </div>
           )}
-          {!focused && (
-            <Link to={CREATE_PATH} className="finna-create" onClick={closeMenu}>
-              Create
-            </Link>
-          )}
+
           {focused && (
             <Link to={HOME_PATH} className="ml-auto text-sm font-semibold text-link">
               Home →
             </Link>
           )}
+
           {account.authenticated ? (
-            <Link to={PROFILE_PATH} className="finna-account" aria-label="Your profile" onClick={closeMenu}>
-              <Avatar look={account.avatar} initials={account.email?.slice(0, 2).toUpperCase() || 'Me'} />
+            <Link
+              to={PROFILE_PATH}
+              className="finna-account"
+              aria-label="Your profile"
+              onClick={closeMenu}
+            >
+              <Avatar
+                look={account.avatar}
+                initials={account.email?.slice(0, 2).toUpperCase() || 'Me'}
+              />
             </Link>
           ) : (
             <Link
@@ -431,6 +516,7 @@ export default function Header() {
         </div>
       </div>
 
+      {/* Row 2: Student Study-Loop Primary Navigation + Revise + My Exams */}
       {!focused && (
         <div
           className="finna-nav"
@@ -439,7 +525,7 @@ export default function Header() {
           }}
         >
           <div className="finna-wrap finna-nav-inner">
-            <nav aria-label="Primary navigation" className="flex items-center gap-1">
+            <nav aria-label="Primary navigation" className="finna-nav-list">
               {NAV_ITEMS.map((item) => {
                 const items = MENUS[item.id] || []
                 const hasMenu = items.length > 0
@@ -508,26 +594,44 @@ export default function Header() {
             </nav>
 
             <div className="finna-quick">
-              {QUICK_ITEMS.map((item) => (
-                <Link
-                  key={item.id}
-                  to={item.path}
-                  className={item.id === 'desk' ? 'finna-secondary-tool' : undefined}
-                  onPointerEnter={(e) => {
-                    if (e.pointerType === 'mouse' && menu) scheduleClose()
-                  }}
-                  onClick={closeMenu}
-                >
-                  {item.label}
-                </Link>
-              ))}
               <Link
-                to={selected ? '/exams/' + selected.id : EXAMS_PATH}
+                to="/revise"
+                className={'finna-revise-pill' + (pathname === '/revise' ? ' is-current' : '')}
+                onPointerEnter={(e) => {
+                  if (e.pointerType === 'mouse' && menu) scheduleClose()
+                }}
+                onClick={closeMenu}
+              >
+                <span aria-hidden="true">↻</span>
+                <span>Revise</span>
+              </Link>
+
+              <Link
+                to="/desk"
+                className="finna-secondary-tool"
+                onPointerEnter={(e) => {
+                  if (e.pointerType === 'mouse' && menu) scheduleClose()
+                }}
+                onClick={closeMenu}
+              >
+                Desk
+              </Link>
+
+              <Link
+                to={
+                  trackedExams.length > 1
+                    ? '/home?view=exams'
+                    : selected
+                      ? '/exams/' + selected.id
+                      : EXAMS_PATH
+                }
                 className="finna-exam-chip"
                 onClick={closeMenu}
               >
                 {selected
-                  ? 'My exam: ' + selected.title.replace(/\s*[·(].*$/, '').slice(0, 24)
+                  ? trackedExams.length > 1
+                    ? `My exams: ${shortExamLabel(selected)} +${trackedExams.length - 1}`
+                    : 'My exam: ' + shortExamLabel(selected)
                   : 'Choose your exam'}
               </Link>
             </div>
@@ -553,21 +657,103 @@ export default function Header() {
                     aria-current={pathname === activeNavParent.path ? 'page' : undefined}
                     onClick={closeMenu}
                   >
-                    <span>All {activeNavParent.label} →</span>
+                    <span className="finna-menu-feat-kicker">Start here</span>
+                    <strong className="finna-menu-feat-title">
+                      {activeNavParent.id === 'library'
+                        ? 'Subject Library'
+                        : activeNavParent.id === 'guides'
+                          ? 'All Concept Guides'
+                          : `All ${activeNavParent.label}`}
+                    </strong>
                     <small>{activeNavParent.blurb}</small>
+                    <span className="finna-menu-feat-go">Open overview →</span>
                   </Link>
-                  {activeMenuItems.map((d) => (
+                  {activeMenuItems.map((d) => {
+                    const meta = MENU_CARD_META[d.id] || {
+                      tone: 'cobalt' as MenuTone,
+                      tag: 'Explore',
+                      icon: 'M5 12h14m-6-6 6 6-6 6',
+                    }
+                    return (
+                      <Link
+                        key={d.id}
+                        to={d.path}
+                        className={`finna-menu-card finna-mtone-${meta.tone}`}
+                        aria-current={pathname === d.path ? 'page' : undefined}
+                        onClick={closeMenu}
+                      >
+                        <span className="finna-menu-icon" aria-hidden="true">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+                            <path d={meta.icon} />
+                          </svg>
+                        </span>
+                        <div className="finna-menu-card-copy">
+                          <div className="finna-menu-card-head">
+                            <strong className="finna-menu-card-title">{d.label}</strong>
+                            <span className="finna-menu-arrow" aria-hidden="true">→</span>
+                          </div>
+                          <small>{d.blurb}</small>
+                        </div>
+                      </Link>
+                    )
+                  })}
+                </div>
+
+                {/* Live Quick-Jump strip inside the Subjects mega-menu (auto-includes future subject books) */}
+                {activeNavParent.id === 'library' && subjectModules.length > 0 && (
+                  <div className="finna-menu-exams-bar">
+                    <span className="finna-menu-exams-label">Topic-wise books</span>
+                    <div className="finna-menu-exams-pills">
+                      {subjectModules.map((s) => (
+                        <Link
+                          key={s.id}
+                          to={`${moduleHref(s)}?view=topics`}
+                          className={'finna-menu-exam-pill' + (pathname === moduleHref(s) ? ' is-tracked' : '')}
+                          onClick={closeMenu}
+                        >
+                          <span>{s.title}</span>
+                        </Link>
+                      ))}
+                    </div>
                     <Link
-                      key={d.id}
-                      to={d.path}
-                      aria-current={pathname === d.path ? 'page' : undefined}
+                      to="/guides"
+                      className="finna-menu-exam-pill finna-menu-exam-pill--manage"
                       onClick={closeMenu}
                     >
-                      <span>{d.label}</span>
-                      <small>{d.blurb}</small>
+                      Concept Guides →
                     </Link>
-                  ))}
-                </div>
+                  </div>
+                )}
+
+                {/* Live Quick-Jump strip inside the Exams mega-menu */}
+                {activeNavParent.id === 'exams' && quickJumpExams.length > 0 && (
+                  <div className="finna-menu-exams-bar">
+                    <span className="finna-menu-exams-label">Quick jump</span>
+                    <div className="finna-menu-exams-pills">
+                      {quickJumpExams.map((e) => {
+                        const isTracked = trackedExams.some((t) => t.id === e.id)
+                        return (
+                          <Link
+                            key={e.id}
+                            to={'/exams/' + e.id}
+                            className={'finna-menu-exam-pill' + (isTracked ? ' is-tracked' : '')}
+                            onClick={closeMenu}
+                          >
+                            {isTracked && <span className="finna-menu-star" aria-hidden="true">★</span>}
+                            <span>{shortExamLabel(e)}</span>
+                          </Link>
+                        )
+                      })}
+                    </div>
+                    <Link
+                      to="/home?view=exams"
+                      className="finna-menu-exam-pill finna-menu-exam-pill--manage"
+                      onClick={closeMenu}
+                    >
+                      Manage my exams →
+                    </Link>
+                  </div>
+                )}
               </div>
             </div>
           )}
@@ -576,7 +762,7 @@ export default function Header() {
 
       {!focused && <QuickFind access={access} trigger={false} />}
       {!focused &&
-        (/^\/(?:bank|exams|library|practice|english|arithmetic|group-b|past-papers)(?:\/|$)/.test(
+        (/^\/(?:bank|exams|library|subjects|practice|english|arithmetic|group-b|past-papers)(?:\/|$)/.test(
           pathname,
         ) ||
           (scope === 'all' && /^\/desk(?:\/|$)/.test(pathname))) && <BrowseAllowance />}

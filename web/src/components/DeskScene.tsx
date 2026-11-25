@@ -349,7 +349,7 @@ export default function DeskScene({
       strokeWidth: 1.5,
     }),
 
-    // Subtle studio window behind center-right
+    // Forest & hills window behind center-right (wood frame + pines + moon/clouds)
     h("rect", {
       x: 562,
       y: 22,
@@ -357,15 +357,19 @@ export default function DeskScene({
       height: 102,
       rx: 12,
       fill: "url(#deskWindowSky)",
-      stroke: "var(--desk-frame, rgba(15,23,42,0.16))",
-      strokeWidth: 2,
+      stroke: "var(--desk-wood-edge, #6B442A)",
+      strokeWidth: 4,
     }),
-    h("line", { x1: 649, y1: 22, x2: 649, y2: 124, stroke: "var(--desk-frame, rgba(15,23,42,0.16))", strokeWidth: 2 }),
-    h("line", { x1: 562, y1: 73, x2: 736, y2: 73, stroke: "var(--desk-frame, rgba(15,23,42,0.16))", strokeWidth: 2 }),
-    // Soft clouds / night stars inside window
-    h("circle", { cx: 602, cy: 48, r: 9, fill: "rgba(255,255,255,0.55)" }),
-    h("circle", { cx: 615, cy: 46, r: 12, fill: "rgba(255,255,255,0.55)" }),
-    h("circle", { cx: 696, cy: 44, r: 5, fill: "rgba(255,255,255,0.45)" }),
+    // Distant hills & forest pines visible through window
+    h("path", { d: "M565 110 Q608 82 652 104 T733 98 L733 122 L565 122 Z", fill: "#1B4332", opacity: 0.72 }),
+    h("polygon", { points: "588,78 577,114 599,114", fill: "#0F2E22", opacity: 0.85 }),
+    h("polygon", { points: "612,86 603,116 621,116", fill: "#143B2B", opacity: 0.85 }),
+    h("polygon", { points: "706,74 694,114 718,114", fill: "#0F2E22", opacity: 0.85 }),
+    h("circle", { cx: 688, cy: 46, r: 10, fill: "#FEF3C7", opacity: 0.82 }),
+    h("circle", { cx: 602, cy: 48, r: 8, fill: "rgba(255,255,255,0.45)" }),
+    h("circle", { cx: 614, cy: 46, r: 10, fill: "rgba(255,255,255,0.45)" }),
+    h("line", { x1: 649, y1: 22, x2: 649, y2: 124, stroke: "var(--desk-wood-edge, #6B442A)", strokeWidth: 3 }),
+    h("line", { x1: 562, y1: 73, x2: 736, y2: 73, stroke: "var(--desk-wood-edge, #6B442A)", strokeWidth: 3 }),
 
     // Warm pendant lamp cone
     h("path", {
@@ -411,26 +415,47 @@ export default function DeskScene({
       tag("mistakes", "Mistakes", 252, 48, ACCENT.rose, active === "mistakes", true),
     ]),
 
-    // Studio wall clock — Focus session
+    // Antique wood & brass pendulum wall clock — Focus session
     hot("session", "Focus sessions", [
+      h(
+        "g",
+        {
+          key: "pend",
+          "data-anim": 1,
+          style: an("ism-sway", "2.4s", "892px 84px"),
+        },
+        h("line", { x1: 892, y1: 84, x2: 892, y2: 120, stroke: "#D4A446", strokeWidth: 2.6 }),
+        h("circle", { cx: 892, cy: 124, r: 8, fill: "#E6B95C", stroke: "#8A621C", strokeWidth: 1.5 }),
+      ),
+      h("rect", {
+        key: "case",
+        x: 862,
+        y: 26,
+        width: 60,
+        height: 66,
+        rx: 14,
+        fill: "#653E28",
+        stroke: "#D4A446",
+        strokeWidth: 2,
+      }),
       h("circle", {
         key: "c",
         cx: 892,
         cy: 58,
-        r: 27,
-        fill: "var(--desk-tag-bg, #FFFFFF)",
-        stroke: "var(--desk-frame, #334155)",
+        r: 25,
+        fill: "#151922",
+        stroke: "#E6B95C",
         strokeWidth: 2,
       }),
-      h("circle", { key: "r", cx: 892, cy: 58, r: 21, fill: "none", stroke: "var(--desk-horizon, rgba(15,23,42,0.12))", strokeDasharray: "2 5" }),
+      h("circle", { key: "r", cx: 892, cy: 58, r: 19, fill: "none", stroke: "rgba(230,185,92,0.38)", strokeDasharray: "2 5" }),
       h("line", {
         key: "hh",
         x1: 892,
         y1: 58,
-        x2: 904,
+        x2: 903,
         y2: 64,
-        stroke: "var(--desk-tag-ink, #0F172A)",
-        strokeWidth: 2.8,
+        stroke: "#F8D77E",
+        strokeWidth: 2.6,
         strokeLinecap: "round",
       }),
       h(
@@ -448,14 +473,14 @@ export default function DeskScene({
           x1: 892,
           y1: 58,
           x2: 892,
-          y2: 39,
-          stroke: ACCENT.plum,
-          strokeWidth: 2.4,
+          y2: 40,
+          stroke: "#FFC83D",
+          strokeWidth: 2.2,
           strokeLinecap: "round",
         }),
       ),
-      h("circle", { key: "d", cx: 892, cy: 58, r: 3, fill: ACCENT.plum }),
-      tag("session", "Focus timer", 796, 46, ACCENT.plum, active === "session", true),
+      h("circle", { key: "d", cx: 892, cy: 58, r: 3, fill: "#FFC83D" }),
+      tag("session", "Focus timer", 792, 46, ACCENT.amber, active === "session", true),
     ]),
 
     // Potted desk plant (left corner ambiance)

@@ -8,6 +8,7 @@ export const FLAGSHIP_EXAM_IDS = [
   'group-b-gazetted',
   'group-b-non-gazetted',
   'assistant',
+  'mes',
   'iti-instructor-2026',
 ] as const
 
@@ -56,7 +57,7 @@ export function examCategory(id: string, title = ''): Exclude<ExamCategoryId, 'a
   if (/\b(teacher|lecturer|school|education|professor|librarian|headmaster|b\.?ed|diets|college)\b/.test(text)) {
     return 'education'
   }
-  if (/\b(police|excise|sub-inspector|inspector|jailor|fire|station officer|transport|enforcement|home department)\b/.test(text)) {
+  if (/\b(police|excise|sub-inspector|inspector|jailor|fire|station officer|transport|enforcement|home department|motor vehicle|mvi)\b/.test(text)) {
     return 'police-excise'
   }
   if (/\b(account|finance|audit|tax|taxes|legal|law|judicial|court|jag|treasury|cooperative|co-operative)\b/.test(text)) {
@@ -75,10 +76,15 @@ function smartStamp(id: string, title: string): string {
   if (lower.includes('udc')) return 'UDC'
   if (lower.includes('ldc')) return 'LDC'
   if (lower.includes('sub-inspector')) return 'SI'
+  if (lower.includes('motor vehicle') || /\bmvi\b/.test(lower)) return 'MVI'
   if (lower.includes('inspector')) return 'INS'
   if (lower.includes('lecturer')) return 'LEC'
   if (lower.includes('teacher')) return 'TCH'
   if (lower.includes('nurse') || lower.includes('nursing')) return 'NRS'
+  if (lower.includes('lab')) return 'LAB'
+  if (lower.includes('computer operator')) return 'CMP'
+  if (lower.includes('horticulture')) return 'HRT'
+  if (lower.includes('research investigator')) return 'RES'
   if (lower.includes('stenographer')) return 'STN'
   if (lower.includes('legal') || lower.includes('jag')) return 'LAW'
   if (lower.includes('account') || lower.includes('finance')) return 'FIN'
@@ -102,15 +108,20 @@ export function examPresentation(id: string, title = '') {
     ldc: { tone: 'blue', short: 'LDC', category: 'Clerical preparation' },
     assistant: { tone: 'violet', short: 'AST', category: 'Clerical preparation' },
     'combined-prelims': { tone: 'indigo', short: 'MCS', category: 'Civil services' },
+    'mcs-main': { tone: 'indigo', short: 'MCS', category: 'Civil services' },
     'group-b-gazetted': { tone: 'violet', short: 'GB', category: 'Gazetted preparation' },
     'group-b-non-gazetted': { tone: 'teal', short: 'GB', category: 'Non-Gazetted preparation' },
     'iti-instructor-2026': { tone: 'amber', short: 'ITI', category: 'Technical preparation' },
     mes: { tone: 'amber', short: 'MES', category: 'Engineering Service preparation' },
-    'subject-english': { tone: 'teal', short: 'ENG', category: 'Cross-exam subject' },
-    'subject-mathematics': { tone: 'blue', short: 'MTH', category: 'Cross-exam subject' },
-    'subject-reasoning': { tone: 'violet', short: 'RSN', category: 'Cross-exam subject' },
-    'subject-gk-gs': { tone: 'indigo', short: 'GK', category: 'Cross-exam subject' },
-    'subject-mizo': { tone: 'amber', short: 'MIZ', category: 'Cross-exam subject' },
+    'junior-engineer': { tone: 'amber', short: 'JE', category: 'Engineering & Tech' },
+    acf: { tone: 'indigo', short: 'ACF', category: 'Civil Services & Forest' },
+    'staff-nurse': { tone: 'teal', short: 'NRS', category: 'Medical & Health' },
+    'motor-vehicle-inspector': { tone: 'indigo', short: 'MVI', category: 'Police, Excise & Transport' },
+    'subject-english': { tone: 'teal', short: 'ENG', category: 'All-exam subject book' },
+    'subject-mathematics': { tone: 'blue', short: 'MTH', category: 'All-exam subject book' },
+    'subject-reasoning': { tone: 'violet', short: 'RSN', category: 'All-exam subject book' },
+    'subject-gk-gs': { tone: 'indigo', short: 'GK', category: 'All-exam subject book' },
+    'subject-mizo': { tone: 'amber', short: 'MIZ', category: 'All-exam subject book' },
   }
   if (identities[id]) return identities[id]
 

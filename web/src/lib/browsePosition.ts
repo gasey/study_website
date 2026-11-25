@@ -2,10 +2,19 @@
 export interface BrowsePosition {
   query: string
   questionId: string | null
+  questionIndex?: number
+  top: number
+  savedAt: number
+}
+export interface BrowseCheckpoint {
+  query: string
+  questionId: string | null
+  questionIndex: number
   top: number
   savedAt: number
 }
 const PREFIX = 'ism.browse-position.v1:'
+const CHECKPOINT_PREFIX = 'ism.browse-checkpoint.v1:'
 const FILTERS = [
   'paper',
   'section',
@@ -108,6 +117,10 @@ export function readBrowsePosition(
       /^[\w-]{1,180}$/.test(value.questionId)
         ? value.questionId
         : null,
+    questionIndex:
+      typeof value.questionIndex === 'number' && Number.isFinite(value.questionIndex) && value.questionIndex >= 1
+        ? Math.floor(value.questionIndex)
+        : undefined,
     top: Number.isFinite(value.top)
       ? Math.min(2000, Math.max(-2000, value.top))
       : 140,
@@ -152,6 +165,85 @@ export function restoreBrowseQuery(
   next.set('view', 'browse')
   next.delete('fresh')
   return next
+}
+export function checkpointStoreKey(
+  user: string,
+  collection: string,
+  scope: string,
+) {
+  return (
+    CHECKPOINT_PREFIX +
+    encodeURIComponent(user) +
+    ':' +
+    encodeURIComponent(collection) +
+    ':' +
+    scope
+  )
+}
+function readCheckpointMap(key: string): Record<string, BrowseCheckpoint> {
+  try {
+    const text = localStorage.getItem(key) || 'null'
+    if (text.length > 300000) return {}
+    const raw = JSON.parse(text)
+    if (raw && typeof raw === 'object' && !Array.isArray(raw)) {
+      return raw as Record<string, BrowseCheckpoint>
+    }
+  } catch {
+    /* Storage is optional. */
+  }
+  return {}
+}
+export function readBrowseCheckpoint(
+  key: string,
+  params: URLSearchParams,
+): BrowseCheckpoint | null {
+  const map = readCheckpointMap(key)
+  const ctx = browseContext(params)
+  const value = map[ctx]
+  if (
+    !value ||
+    typeof value.query !== 'string' ||
+    !Number.isFinite(value.questionIndex) ||
+    !Number.isFinite(value.savedAt)
+  ) {
+    return null
+  }
+  return {
+    query: browseQuery(new URLSearchParams(value.query)),
+    questionId:
+      typeof value.questionId === 'string' && /^[\w-]{1,180}$/.test(value.questionId)
+        ? value.questionId
+        : null,
+    questionIndex: Math.max(1, Math.floor(value.questionIndex)),
+    top: Number.isFinite(value.top) ? Math.min(2000, Math.max(-2000, value.top)) : 140,
+    savedAt: value.savedAt,
+  }
+}
+export function writeBrowseCheckpoint(
+  key: string,
+  checkpoint: BrowseCheckpoint,
+) {
+  const map = readCheckpointMap(key)
+  const ctx = browseContext(new URLSearchParams(checkpoint.query))
+  const entries = Object.entries({ ...map, [ctx]: checkpoint })
+    .sort((a, b) => b[1].savedAt - a[1].savedAt)
+    .slice(0, 40)
+  try {
+    localStorage.setItem(key, JSON.stringify(Object.fromEntries(entries)))
+    return true
+  } catch {
+    return false
+  }
+}
+export function clearBrowseCheckpoint(key: string, params: URLSearchParams) {
+  const map = readCheckpointMap(key)
+  const ctx = browseContext(params)
+  delete map[ctx]
+  try {
+    localStorage.setItem(key, JSON.stringify(map))
+  } catch {
+    /* Storage is optional. */
+  }
 }
 export function paperBrowseLink(collection: string, paper: string) {
   const params = new URLSearchParams({ view: 'browse', pool: 'all', paper, order: 'paper' })

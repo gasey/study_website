@@ -33,10 +33,13 @@ export default function MockRunner() {
   const [searchParams] = useSearchParams()
   const sectionPath = searchParams.get('section') || undefined
   const paperId = searchParams.get('paper') || undefined
-  const paperMode=searchParams.get('simulation')==='full'?'full':'practice'
+  const requestedSimulation = searchParams.get('simulation') === 'full'
   const answerMode = searchParams.get('mode') === 'derived' ? 'derived-practice' : 'official'
+  const paperMode = requestedSimulation && !!paperId && answerMode === 'official' ? 'full' : 'practice'
+  const requestedCount = Number(searchParams.get('count') || 0)
+  const requestedMinutes = Number(searchParams.get('minutes') || 0)
   const [mock, setMock] = useState<MockSession | null>(null)
-  const [paperTitle, setPaperTitle] = useState('Preparing your paper')
+  const [paperTitle, setPaperTitle] = useState('Preparing your full paper')
   const [result, setResult] = useState<MockResult | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [at, setAt] = useState(0)
@@ -61,19 +64,41 @@ export default function MockRunner() {
         const shared=testId&&!existing?await getSharedTest(testId):null
         const collection=!testId?await getCollection(collectionId):null
         if(collection&&isLaterExamCollection(collection)){navigate('/exams/'+encodeURIComponent(collectionId)+'?view=papers',{replace:true});return}
+        const targetPaper = paperId ? collection?.paper_list.find(p => p.id === paperId) : undefined
+        const availablePool = answerMode === 'derived-practice'
+          ? (collection?.practice_count || collection?.answerable_count || 100)
+          : (collection?.scorable || 100)
+        // Always default to a genuine full-length exam paper (100 Qs / 120 min, or the full real paper's size)
+        const targetCount = paperId
+          ? Math.max(1, Math.min(200, targetPaper?.questions || 100))
+          : Math.max(
+              10,
+              Math.min(
+                200,
+                Number.isFinite(requestedCount) && requestedCount >= 10
+                  ? Math.round(requestedCount)
+                  : Math.min(100, Math.max(20, availablePool)),
+              ),
+            )
+        const targetMinutes =
+          Number.isFinite(requestedMinutes) && requestedMinutes >= 5 && requestedMinutes <= 240
+            ? Math.round(requestedMinutes)
+            : targetPaper?.duration_minutes
+              ? targetPaper.duration_minutes
+              : Math.max(30, Math.min(180, Math.round(targetCount * 1.2)))
         const m=existing??await startMock(shared?{
           collection_id:'shared-tests',learning_test_id:shared.id,learning_test_version:shared.revision,
-        }:{collection_id:collectionId,section_path:sectionPath,paper_id:paperId,answer_mode:answerMode,paper_mode:paperMode,count:20,duration_minutes:20}).catch(async error=>{const resumed=await currentMock();if(resumed)return resumed;throw error})
+        }:{collection_id:collectionId,section_path:sectionPath,paper_id:paperId,answer_mode:answerMode,paper_mode:paperMode,count:targetCount,duration_minutes:targetMinutes}).catch(async error=>{const resumed=await currentMock();if(resumed)return resumed;throw error})
         if(!matches(m)){navigate(mockResumePath(m),{replace:true});return}
         const section=collection?.section_list.find(s=>s.path===m.section_path),paper=collection?.paper_list.find(p=>p.id===m.paper_id)
         if(!dead){
           setLoadingSlow(false);setError(null);setMock(m);setLeft(m.seconds_remaining);setPicks(m.saved_answers||{});setMarked(Object.fromEntries((m.marked_questions||[]).map(id=>[id,true])));setAt(m.current_position||0)
-          setPaperTitle(m.learning_test_title?m.learning_test_title+' · edition '+m.learning_test_version:`${collection?.title}${paper?' · '+paper.title:section?' · '+section.title:''} · ${answerMode==='derived-practice'?'Practice estimate':paper?(paper.rule_source==='platform-default'?'Timed practice':'Paper test'):'Mock'}`)
+          setPaperTitle(m.learning_test_title?m.learning_test_title+' · edition '+m.learning_test_version:`${collection?.title}${paper?' · '+(paper.paper_label||paper.title):section?' · '+section.title:''} · Full-Paper Mock (${answerMode==='derived-practice'?'Reviewed key':'Official key'})`)
         }
       }catch(e){if(!dead)setError((e as Error).message)}finally{window.clearTimeout(slowTimer)}
     })()
     return()=>{dead=true;window.clearTimeout(slowTimer)}
-  },[collectionId,testId,sectionPath,paperId,answerMode,paperMode,navigate])
+  },[collectionId,testId,sectionPath,paperId,answerMode,paperMode,requestedCount,requestedMinutes,navigate])
 
   const persistAnswer = (question_id: string, chosen_index: number | null, isMarked: boolean, position: number) => {
     if (!mock) return

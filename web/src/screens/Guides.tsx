@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState, type ReactNode } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import guidesSeed from "../data/guides-seed.json";
 import { bookMonogram, bookToneFor } from "../components/ConceptBook";
 
@@ -9,6 +9,9 @@ interface GuideChapter {
   heading: string;
   body_markdown: string;
   practice_query?: string;
+  practice_label?: string;
+  companion_href?: string;
+  companion_label?: string;
   question_ids?: string[];
 }
 
@@ -17,6 +20,7 @@ interface GuideDoc {
   title: string;
   subject_id?: string | null;
   subject_label?: string;
+  topic_id?: string | null;
   summary: string;
   reading_minutes: number;
   status?: string;
@@ -45,22 +49,291 @@ function renderInline(text: string): ReactNode[] {
   });
 }
 
-/** Safe markdown renderer — never emits raw HTML (`dangerouslySetInnerHTML` is banned). */
-function GuideMarkdown({ text }: { text: string }) {
+function parseGrammarExample(raw: string): { label: string; text: string; tone: "pos" | "neg" | "ask" } | null {
+  const trimmed = raw.trim();
+  if (!trimmed.startsWith("{") || !trimmed.endsWith("}")) return null;
+  try {
+    const obj = JSON.parse(trimmed) as { l?: string; t?: string };
+    if (typeof obj?.l !== "string" || typeof obj?.t !== "string") return null;
+    const tone = obj.l === "+" ? "pos" : obj.l === "?" ? "ask" : "neg";
+    return { label: obj.l, text: obj.t, tone };
+  } catch {
+    return null;
+  }
+}
+
+function parseVoiceRow(raw: string): { tense: string; active: string; passive: string } | null {
+  const m = raw.match(/^\*\*([^*]+)\*\*:\s*Active:\s*`([^`]+)`\s*→\s*Passive:\s*`([^`]+)`$/);
+  if (!m) return null;
+  return { tense: m[1].trim(), active: m[2].trim(), passive: m[3].trim() };
+}
+
+function renderFactItem(raw: string): ReactNode {
+  // Auto-highlight short lead-in terms like "Regulating Act 1773: ..." or "Harappa — ..."
+  if (!raw.startsWith("**")) {
+    const colon = raw.match(/^([^:]{2,52}):\s+(.+)$/);
+    if (colon) {
+      return (
+        <>
+          <strong className="gd-fact-term">{colon[1]}:</strong>{" "}
+          {renderInline(colon[2])}
+        </>
+      );
+    }
+    const dash = raw.match(/^([^—]{2,48})\s+—\s+(.+)$/);
+    if (dash) {
+      return (
+        <>
+          <strong className="gd-fact-term">{dash[1]}</strong> —{" "}
+          {renderInline(dash[2])}
+        </>
+      );
+    }
+  }
+  return renderInline(raw);
+}
+
+type CalloutSpec = {
+  kind: "lead" | "concept" | "example" | "trap" | "hook";
+  eyebrow: string;
+  body: string;
+};
+
+function parseCallout(text: string): CalloutSpec | null {
+  const specs: [RegExp, CalloutSpec["kind"], string][] = [
+    [/^\*\*Overview:\*\*\s*(.+)$/s, "lead", "Overview"],
+    [/^\*\*Core Mental Model:\*\*\s*(.+)$/s, "concept", "Mental Model"],
+    [/^\*\*Intuition:\*\*\s*(.+)$/s, "concept", "Intuition"],
+    [/^\*\*Worked Example:\*\*\s*(.+)$/s, "example", "Worked Example"],
+    [/^\*\*Exam Trap:\*\*\s*(.+)$/s, "trap", "Exam Trap"],
+    [/^\*\*Memory Hook:\*\*\s*(.+)$/s, "hook", "Memory Hook"],
+  ];
+  for (const [re, kind, eyebrow] of specs) {
+    const m = text.match(re);
+    if (m) return { kind, eyebrow, body: m[1].trim() };
+  }
+  return null;
+}
+
+/** Safe editorial textbook renderer — never emits raw HTML (`dangerouslySetInnerHTML` is banned). */
+function GuideMarkdown({ text, quickMode = false }: { text: string; quickMode?: boolean }) {
   const blocks = text.split(/\n{2,}/);
+  const grouped: { kind: "examples" | "voice" | "block"; items: string[] }[] = [];
+
+  for (const block of blocks) {
+    const lines = block.split("\n").filter(Boolean);
+    if (lines.length === 1 && lines[0].startsWith("- ")) {
+      const content = lines[0].slice(2).trim();
+      if (parseGrammarExample(content)) {
+        const last = grouped[grouped.length - 1];
+        if (last?.kind === "examples") {
+          last.items.push(content);
+          continue;
+        }
+        grouped.push({ kind: "examples", items: [content] });
+        continue;
+      }
+      if (parseVoiceRow(content)) {
+        const last = grouped[grouped.length - 1];
+        if (last?.kind === "voice") {
+          last.items.push(content);
+          continue;
+        }
+        grouped.push({ kind: "voice", items: [content] });
+        continue;
+      }
+    }
+    grouped.push({ kind: "block", items: lines });
+  }
+
+  // If Quick Revision mode is active and this chapter has structured scan blocks
+  // (callouts, formulas, tables, examples, voice), hide dense plain prose & long fact dumps.
+  const hasHighYieldBlocks = grouped.some((g) => {
+    if (g.kind === "examples" || g.kind === "voice") return true;
+    const joined = g.items.join(" ").trim();
+    if (parseCallout(joined)) return true;
+    if (g.items.length >= 2 && g.items.every((l) => l.trim().startsWith("|") && l.trim().endsWith("|"))) return true;
+    if (g.items.every((l) => /^-\s+`[^`]+`$/.test(l.trim()))) return true;
+    return false;
+  });
+
   return (
-    <div className="font-reading mt-3 space-y-4 text-ink">
-      {blocks.map((block, bIdx) => {
-        const lines = block.split("\n").filter(Boolean);
-        if (lines.every((l) => l.startsWith("- "))) {
+    <div className="gd-prose font-reading mt-4 space-y-4 text-ink">
+      {grouped.map((g, bIdx) => {
+        if (g.kind === "examples") {
+          const parsed = g.items
+            .map(parseGrammarExample)
+            .filter((x): x is NonNullable<typeof x> => Boolean(x));
           return (
-            <ul key={bIdx} className="list-disc space-y-2 pl-6">
+            <div key={bIdx} className="gd-ex-list" role="list" aria-label="Grammar examples">
+              {parsed.map((ex, i) => (
+                <div key={i} className={`gd-ex-row is-${ex.tone}`} role="listitem">
+                  <span
+                    className="gd-ex-badge"
+                    title={
+                      ex.tone === "pos"
+                        ? "Affirmative"
+                        : ex.tone === "ask"
+                          ? "Question"
+                          : "Negative"
+                    }
+                  >
+                    {ex.label}
+                  </span>
+                  <span className="gd-ex-text">{ex.text}</span>
+                </div>
+              ))}
+            </div>
+          );
+        }
+
+        if (g.kind === "voice") {
+          const rows = g.items
+            .map(parseVoiceRow)
+            .filter((x): x is NonNullable<typeof x> => Boolean(x));
+          return (
+            <div key={bIdx} className="gd-table-wrap">
+              <table className="gd-ref-table">
+                <thead>
+                  <tr>
+                    <th>Form / Tense</th>
+                    <th>Active Voice</th>
+                    <th>Passive Voice</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {rows.map((r, i) => (
+                    <tr key={i}>
+                      <th>{r.tense}</th>
+                      <td>{r.active}</td>
+                      <td>{r.passive}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          );
+        }
+
+        const lines = g.items;
+        const joined = lines.join(" ").trim();
+
+        // Formula section kicker label (handled cleanly by the formula grid right below it)
+        if (joined === "**Key Formulas & Shortcuts**") {
+          return (
+            <p key={bIdx} className="gd-formula-kicker">
+              Key Formulas &amp; Shortcuts
+            </p>
+          );
+        }
+
+        // Semantic Callout Cards (Overview, Mental Model / Intuition, Worked Example, Exam Trap, Memory Hook)
+        const callout = parseCallout(joined);
+        if (callout) {
+          if (callout.kind === "lead") {
+            return (
+              <p key={bIdx} className="gd-lead">
+                {renderInline(callout.body)}
+              </p>
+            );
+          }
+          return (
+            <aside key={bIdx} className={`gd-callout is-${callout.kind}`}>
+              <span className="gd-callout-label">{callout.eyebrow}</span>
+              <p>{renderInline(callout.body)}</p>
+            </aside>
+          );
+        }
+
+        // Subheadings
+        if (lines.length === 1 && lines[0].startsWith("### ")) {
+          const subTitle = lines[0].slice(4).trim();
+          if (
+            quickMode &&
+            hasHighYieldBlocks &&
+            (subTitle === "High-Yield Exam Facts" || subTitle === "Key Constitutional Notes")
+          ) {
+            return null;
+          }
+          return (
+            <h3 key={bIdx} className="gd-subhead">
+              {renderInline(subTitle)}
+            </h3>
+          );
+        }
+
+        // Editorial Reference / Comparison / Timeline Tables
+        if (
+          lines.length >= 2 &&
+          lines.every((l) => l.trim().startsWith("|") && l.trim().endsWith("|"))
+        ) {
+          const rows = lines
+            .filter((l) => !/^\|[\s:|-]+\|$/.test(l.trim()))
+            .map((l) =>
+              l
+                .trim()
+                .slice(1, -1)
+                .split("|")
+                .map((c) => c.trim()),
+            );
+          const [head, ...body] = rows;
+          if (head?.length) {
+            return (
+              <div key={bIdx} className="gd-table-wrap">
+                <table className="gd-ref-table">
+                  <thead>
+                    <tr>
+                      {head.map((c, ci) => (
+                        <th key={ci}>{renderInline(c)}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {body.map((r, ri) => (
+                      <tr key={ri}>
+                        {r.map((c, ci) => (
+                          <td key={ci}>{renderInline(c)}</td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            );
+          }
+        }
+
+        // Formula Cheat-Sheet Grid (all bullet lines are backticked formulas)
+        if (lines.every((l) => /^-\s+`[^`]+`$/.test(l.trim()))) {
+          return (
+            <div key={bIdx} className="gd-formula-grid" role="list" aria-label="Formulas and shortcuts">
+              {lines.map((l, i) => {
+                const formula = l.trim().replace(/^-\s+`/, "").replace(/`$/, "");
+                return (
+                  <div key={i} className="gd-formula-card" role="listitem">
+                    <code>{formula}</code>
+                  </div>
+                );
+              })}
+            </div>
+          );
+        }
+
+        // Structured Editorial Fact Cards
+        if (lines.every((l) => l.startsWith("- "))) {
+          if (quickMode && hasHighYieldBlocks) return null;
+          return (
+            <ul key={bIdx} className="gd-fact-list">
               {lines.map((l, i) => (
-                <li key={i}>{renderInline(l.slice(2))}</li>
+                <li key={i} className="gd-fact-item">
+                  <span className="gd-fact-dot" aria-hidden="true" />
+                  <span className="gd-fact-body">{renderFactItem(l.slice(2).trim())}</span>
+                </li>
               ))}
             </ul>
           );
         }
+
         if (lines[0]?.startsWith("> ")) {
           return (
             <blockquote
@@ -73,23 +346,80 @@ function GuideMarkdown({ text }: { text: string }) {
             </blockquote>
           );
         }
-        return <p key={bIdx}>{renderInline(lines.join(" "))}</p>;
+
+        if (quickMode && hasHighYieldBlocks) return null;
+        return <p key={bIdx} className="gd-para">{renderInline(joined)}</p>;
       })}
     </div>
   );
 }
 
 /** `/guides` and `/guides/:slug` reading library (§VII.5, §VII.12.2, Phase V.15).
- *  Reads published Postgres guides from `/api/guides` when available and falls
- *  back cleanly to the structured markdown seed (Using Finna, Polity Codex,
- *  Quick Revision, Tenses & Voice) with zero embedded HTML. */
+ *  Merges published Postgres guides from `/api/guides` with the bundled first-party
+ *  seed library so live Admin edits always take precedence while newly crafted
+ *  concept guides appear immediately. */
 export default function Guides() {
   const { slug } = useParams();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const fromQuestion = Boolean((location.state as { fromQuestion?: boolean } | null)?.fromQuestion);
   const [query, setQuery] = useState("");
   const [subjectFilter, setSubjectFilter] = useState("all");
   const [activeAnchor, setActiveAnchor] = useState("");
+  const [targetedAnchor, setTargetedAnchor] = useState("");
+  const [quickMode, setQuickMode] = useState(false);
   const [apiGuides, setApiGuides] = useState<GuideDoc[] | null>(null);
   const [apiDoc, setApiDoc] = useState<GuideDoc | null>(null);
+
+  useEffect(() => {
+    setQuickMode(false);
+    setActiveAnchor("");
+    setTargetedAnchor("");
+  }, [slug]);
+
+  // Guaranteed smooth auto-scroll & highlight when deep-linked from a question (/guides/:slug#anchor)
+  useEffect(() => {
+    if (!slug) return;
+    const rawHash = (location.hash || "").replace(/^#/, "").trim();
+    if (!rawHash) return;
+    const decoded = decodeURIComponent(rawHash);
+    setActiveAnchor(decoded);
+    setTargetedAnchor(decoded);
+    let cancelled = false;
+    const scrollNow = () => {
+      if (cancelled) return;
+      const el = document.getElementById(decoded);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    };
+    const raf = window.requestAnimationFrame(scrollNow);
+    const retry = window.setTimeout(scrollNow, 220);
+    return () => {
+      cancelled = true;
+      window.cancelAnimationFrame(raf);
+      window.clearTimeout(retry);
+    };
+  }, [slug, location.hash, apiDoc]);
+
+  useEffect(() => {
+    if (!slug || typeof IntersectionObserver === "undefined") return;
+    const sections = Array.from(document.querySelectorAll<HTMLElement>(".gd-chapter[id]"));
+    if (!sections.length) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (visible[0]?.target.id) {
+          setActiveAnchor(visible[0].target.id);
+        }
+      },
+      { rootMargin: "-90px 0px -65% 0px", threshold: 0 },
+    );
+    sections.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
+  }, [slug, apiDoc]);
 
   useEffect(() => {
     let live = true;
@@ -115,7 +445,20 @@ export default function Guides() {
     };
   }, [slug]);
 
-  const catalog = apiGuides && apiGuides.length ? apiGuides : SEED_GUIDES;
+  const catalog = useMemo(() => {
+    if (!apiGuides || !apiGuides.length) return SEED_GUIDES;
+    const bySlug = new Map<string, GuideDoc>();
+    for (const g of SEED_GUIDES) bySlug.set(g.slug, g);
+    for (const g of apiGuides) {
+      const seed = bySlug.get(g.slug);
+      bySlug.set(g.slug, {
+        ...seed,
+        ...g,
+        subject_label: g.subject_label || seed?.subject_label,
+      });
+    }
+    return [...bySlug.values()];
+  }, [apiGuides]);
 
   const subjectTags = useMemo(() => {
     const labels = new Set<string>();
@@ -153,14 +496,57 @@ export default function Guides() {
       );
     }
 
-    const tone = bookToneFor(doc.subject_id || doc.slug);
+    const tone = bookToneFor(doc.slug + " " + (doc.subject_label || doc.subject_id || ""));
     const mono = bookMonogram(doc.title);
+    const seedDoc = SEED_GUIDES.find((g) => g.slug === doc.slug);
+    const subjectTopicsLink = (() => {
+      const raw = (doc.subject_id || "").trim().toLowerCase();
+      if (doc.slug === "tenses-and-voice" || raw === "english") {
+        return { to: "/subjects/english?view=topics", label: "English Topics →" };
+      }
+      if (
+        doc.slug === "polity-codex" ||
+        doc.slug === "quick-revision" ||
+        ["gk-gs", "gk", "gs", "polity", "general-studies", "general-knowledge", "science", "history", "geography", "economy"].includes(raw)
+      ) {
+        return { to: "/subjects/gk-gs?view=topics", label: "GK & GS Topics →" };
+      }
+      if (["mathematics", "math", "maths", "arithmetic", "quantitative"].includes(raw)) {
+        return { to: "/subjects/mathematics?view=topics", label: "Mathematics Topics →" };
+      }
+      if (raw === "reasoning" || raw === "reasoning-and-aptitude") {
+        return { to: "/subjects/reasoning?view=topics", label: "Reasoning Topics →" };
+      }
+      if (raw === "computer-science" || doc.slug === "computer-fundamentals") {
+        return { to: "/subjects/computer-science?view=topics", label: "Computer & IT Topics →" };
+      }
+      if (raw === "science" || doc.slug === "general-science") {
+        return { to: "/subjects/science?view=topics", label: "General Science Topics →" };
+      }
+      if (raw === "mizo") {
+        return { to: "/subjects/mizo?view=topics", label: "Mizo Topics →" };
+      }
+      if (raw && /^[a-z0-9-]+$/.test(raw)) {
+        const label = doc.subject_label || raw.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+        return { to: `/subjects/${encodeURIComponent(raw)}?view=topics`, label: `${label} Topics →` };
+      }
+      return null;
+    })();
 
     return (
       <div className="gd-reader-shell" data-screen="guides">
         <div className="gd-reader-grid">
           {/* Left Sticky Bookmark & Volume Rail */}
           <aside className="gd-bookmark-rail">
+            {fromQuestion && (
+              <button
+                type="button"
+                className="gd-back-question-btn"
+                onClick={() => navigate(-1)}
+              >
+                ← Back to question
+              </button>
+            )}
             <Link to="/guides" className="gd-back-link">
               ← Back to reading shelf
             </Link>
@@ -177,39 +563,59 @@ export default function Guides() {
               </div>
             </div>
 
+            {subjectTopicsLink && (
+              <Link to={subjectTopicsLink.to} className="gd-subject-jump">
+                {subjectTopicsLink.label}
+              </Link>
+            )}
+
             <nav aria-label="Guide chapters" className="gd-toc hidden lg:block">
               <p className="gd-toc-label">
                 Chapters · {doc.chapters.length}
               </p>
               <ul className="gd-toc-list">
-                {doc.chapters.map((ch, idx) => (
-                  <li key={ch.anchor}>
-                    <a
-                      href={"#" + ch.anchor}
-                      onClick={() => setActiveAnchor(ch.anchor)}
-                      className={`gd-toc-link${activeAnchor === ch.anchor ? " is-active" : ""}`}
-                    >
-                      <span className="gd-toc-num">
-                        {String(idx + 1).padStart(2, "0")}
-                      </span>
-                      <span>{ch.heading}</span>
-                    </a>
-                  </li>
-                ))}
+                {doc.chapters.map((ch, idx) => {
+                  const seedCh = seedDoc?.chapters.find((s) => s.anchor === ch.anchor);
+                  const displayHeading =
+                    seedCh && /^\d+\.\s*[a-z]{2,8}$/.test(ch.heading.trim())
+                      ? seedCh.heading
+                      : ch.heading;
+                  return (
+                    <li key={ch.anchor}>
+                      <a
+                        href={"#" + ch.anchor}
+                        onClick={() => setActiveAnchor(ch.anchor)}
+                        className={`gd-toc-link${activeAnchor === ch.anchor ? " is-active" : ""}`}
+                      >
+                        <span className="gd-toc-num">
+                          {String(idx + 1).padStart(2, "0")}
+                        </span>
+                        <span>{displayHeading}</span>
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </nav>
 
             <details className="gd-toc-mobile lg:hidden">
               <summary>Contents ({doc.chapters.length} chapters)</summary>
               <ul>
-                {doc.chapters.map((ch, idx) => (
-                  <li key={ch.anchor}>
-                    <a href={"#" + ch.anchor}>
-                      <span>{String(idx + 1).padStart(2, "0")}</span>{" "}
-                      {ch.heading}
-                    </a>
-                  </li>
-                ))}
+                {doc.chapters.map((ch, idx) => {
+                  const seedCh = seedDoc?.chapters.find((s) => s.anchor === ch.anchor);
+                  const displayHeading =
+                    seedCh && /^\d+\.\s*[a-z]{2,8}$/.test(ch.heading.trim())
+                      ? seedCh.heading
+                      : ch.heading;
+                  return (
+                    <li key={ch.anchor}>
+                      <a href={"#" + ch.anchor}>
+                        <span>{String(idx + 1).padStart(2, "0")}</span>{" "}
+                        {displayHeading}
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </details>
           </aside>
@@ -217,14 +623,47 @@ export default function Guides() {
           {/* Right Open-Book Paper Spread */}
           <article className={`gd-paper-spread bk-tone-${tone}`}>
             <span className="gd-spine-fold" aria-hidden="true" />
+            {doc.chapters.length > 1 && (() => {
+              const idx = Math.max(
+                0,
+                doc.chapters.findIndex((c) => c.anchor === activeAnchor),
+              );
+              const pct = Math.round(((idx + 1) / doc.chapters.length) * 100);
+              return (
+                <div className="gd-progress-track" aria-hidden="true">
+                  <span style={{ width: `${pct}%` }} />
+                </div>
+              );
+            })()}
             <header className="gd-paper-head">
-              <div className="gd-paper-meta">
-                <span className="finna-st-pill finna-st-pill--teal">
-                  {doc.subject_label || doc.subject_id || "Guide"}
-                </span>
-                <span>{doc.reading_minutes} min read</span>
-                <span>·</span>
-                <span>{doc.chapters.length} chapters</span>
+              <div className="gd-paper-head-row">
+                <div className="gd-paper-meta">
+                  <span className="finna-st-pill finna-st-pill--teal">
+                    {doc.subject_label || doc.subject_id || "Guide"}
+                  </span>
+                  <span>{doc.reading_minutes} min read</span>
+                  <span>·</span>
+                  <span>{doc.chapters.length} chapters</span>
+                </div>
+                <div className="gd-mode-seg" role="group" aria-label="Reading depth">
+                  <button
+                    type="button"
+                    aria-pressed={!quickMode}
+                    className={!quickMode ? "is-on" : ""}
+                    onClick={() => setQuickMode(false)}
+                  >
+                    Full guide
+                  </button>
+                  <button
+                    type="button"
+                    aria-pressed={quickMode}
+                    className={quickMode ? "is-on" : ""}
+                    onClick={() => setQuickMode(true)}
+                    title="Spotlight mental models, formulas, comparison tables, worked examples & exam traps"
+                  >
+                    ⚡ Quick revision
+                  </button>
+                </div>
               </div>
               <h1>{doc.title}</h1>
               <p>{doc.summary}</p>
@@ -232,37 +671,82 @@ export default function Guides() {
 
             <div className="gd-chapters">
               {doc.chapters.map((ch, idx) => {
+                const seedChapter = seedDoc?.chapters.find((s) => s.anchor === ch.anchor);
+                const displayHeading =
+                  seedChapter && /^\d+\.\s*[a-z]{2,8}$/.test(ch.heading.trim())
+                    ? seedChapter.heading
+                    : ch.heading;
+                // If live Postgres still holds the un-enriched Polity Codex bullet dump,
+                // seamlessly present the upgraded seed (which preserves every original bullet
+                // plus comparison tables, mental models, and exam traps).
+                const displayBody =
+                  doc.slug === "polity-codex" &&
+                  seedChapter &&
+                  seedChapter.body_markdown.includes("### Key Constitutional Notes") &&
+                  !ch.body_markdown.includes("### Key Constitutional Notes")
+                    ? seedChapter.body_markdown
+                    : ch.body_markdown;
+                const englishTopicHref =
+                  doc.slug === "tenses-and-voice"
+                    ? ch.anchor.includes("voice")
+                      ? "/subjects/english?view=browse&subject_id=english&topic_id=english%2Fgrammar&subtopic_id=english%2Fgrammar%2Fvoice#exam-question-browser"
+                      : "/subjects/english?view=browse&subject_id=english&topic_id=english%2Fgrammar&subtopic_id=english%2Fgrammar%2Ftenses#exam-question-browser"
+                    : null;
                 const practiceHref =
                   ch.question_ids && ch.question_ids.length
                     ? "/practice/build?" +
                       new URLSearchParams(
                         ch.question_ids.map((id) => ["ids", id]),
                       ).toString()
-                    : ch.practice_query || "/practice";
+                    : englishTopicHref || ch.practice_query || seedChapter?.practice_query || "/practice";
+                const practiceLabel =
+                  ch.practice_label ||
+                  seedChapter?.practice_label ||
+                  (doc.slug === "tenses-and-voice"
+                    ? ch.anchor.includes("voice")
+                      ? "Practise Voice MCQs →"
+                      : "Practise Tenses MCQs →"
+                    : "Practice this chapter →");
+                const companionHref = ch.companion_href || seedChapter?.companion_href;
+                const companionLabel = ch.companion_label || seedChapter?.companion_label;
                 const nextCh = doc.chapters[idx + 1];
+                const nextSeed = nextCh ? seedDoc?.chapters.find((s) => s.anchor === nextCh.anchor) : null;
+                const nextHeading =
+                  nextCh && nextSeed && /^\d+\.\s*[a-z]{2,8}$/.test(nextCh.heading.trim())
+                    ? nextSeed.heading
+                    : nextCh?.heading;
+                const isTargeted = targetedAnchor === ch.anchor;
                 return (
                   <section
                     key={ch.anchor}
                     id={ch.anchor}
-                    className="gd-chapter scroll-mt-24"
+                    className={`gd-chapter scroll-mt-24${isTargeted ? " gd-chapter--targeted" : ""}`}
                   >
                     <div className="gd-chapter-kicker">
                       Chapter {String(idx + 1).padStart(2, "0")} of{" "}
                       {String(doc.chapters.length).padStart(2, "0")}
+                      {isTargeted && (
+                        <span className="gd-targeted-badge">Matched chapter</span>
+                      )}
                     </div>
-                    <h2>{ch.heading}</h2>
-                    <GuideMarkdown text={ch.body_markdown} />
+                    <h2>{displayHeading}</h2>
+                    <GuideMarkdown text={displayBody} quickMode={quickMode} />
                     <div className="gd-chapter-actions">
                       <Link to={practiceHref} className="cr-primary-btn">
-                        Practice this chapter →
+                        {practiceLabel}
                       </Link>
+                      {companionHref && companionLabel && (
+                        <Link to={companionHref} className="finna-st-btn">
+                          {companionLabel}
+                        </Link>
+                      )}
                       {nextCh && (
                         <a
                           href={"#" + nextCh.anchor}
                           onClick={() => setActiveAnchor(nextCh.anchor)}
                           className="finna-st-btn"
                         >
-                          Next: {nextCh.heading} ↓
+                          Next: {nextHeading} ↓
                         </a>
                       )}
                     </div>
@@ -328,9 +812,10 @@ export default function Guides() {
       <section aria-label="Published study guides" className="gd-shelf-wrap">
         <div className="gd-book-grid">
           {filteredCatalog.map((g, idx) => {
-            const tone = bookToneFor(g.subject_id || g.slug, idx);
+            const tone = bookToneFor(g.slug + " " + (g.subject_label || g.subject_id || ""), idx);
             const mono = bookMonogram(g.title);
             const previewChapters = (g.chapters || []).slice(0, 3);
+            const chCount = (g.chapters || []).length;
             return (
               <Link
                 key={g.slug}
@@ -370,7 +855,7 @@ export default function Guides() {
                       {g.subject_label || g.subject_id || "Guide"}
                     </span>
                     <span className="gd-card-mins">
-                      {g.reading_minutes} min · {(g.chapters || []).length}{" "}
+                      {g.reading_minutes} min · {chCount}{" "}
                       chapters
                     </span>
                   </span>

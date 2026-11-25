@@ -1,5 +1,6 @@
 import "../styles/exam-experience.css";
 import { choosePreferredExam } from "../lib/preferredExam";
+import { addLocalTrackedExam, removeLocalTrackedExam } from "../lib/trackedExams";
 import { MES_GUIDE } from "../lib/examGuideCatalog";
 import {
   EXAM_CATEGORIES,
@@ -12,6 +13,8 @@ import {
 import { useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import Pagination from "../components/Pagination";
+import SubjectBookshelf from "../components/SubjectBookshelf";
+import FlagshipExamPanels from "../components/FlagshipExamPanels";
 import { pageNumber, scrollToResults } from "../lib/pagination";
 import {
   getExamBookmarks,
@@ -71,6 +74,10 @@ const examShort = (id: string, fallback: string) =>
     ldc: "LDC",
     assistant: "Assistant",
     "combined-prelims": "Combined Prelims",
+    "mcs-main": "MCS Mains",
+    mes: "MES",
+    "junior-engineer": "Junior Engineer (JE)",
+    acf: "ACF",
     "group-b-gazetted": "Group B Gazetted",
     "group-b-non-gazetted": "Group B Non-Gazetted",
     "iti-instructor-2026": "ITI Instructor",
@@ -298,8 +305,13 @@ export default function Exams() {
       wasSaved ? old.filter((id) => id !== c.id) : [c.id, ...old],
     );
     try {
-      if (wasSaved) await removeExamBookmark(c.id);
-      else await saveExamBookmark(c.id);
+      if (wasSaved) {
+        await removeExamBookmark(c.id);
+        if (c.kind === "exam") removeLocalTrackedExam(c.id);
+      } else {
+        await saveExamBookmark(c.id);
+        if (c.kind === "exam") addLocalTrackedExam(c.id);
+      }
     } catch (e) {
       setBookmarks((old) =>
         wasSaved ? [...old, c.id] : old.filter((id) => id !== c.id),
@@ -348,7 +360,9 @@ export default function Exams() {
   const savedCount = bookmarks.filter((id) =>
     allCollections.some((c) => c.id === id),
   ).length;
-  const featuredCount = examCollections.filter((c) => FLAGSHIP_SET.has(c.id)).length + 1;
+  const extraGuideCount = examCollections.some((c) => c.id === "mes") ? 0 : 1;
+  const featuredCount =
+    examCollections.filter((c) => FLAGSHIP_SET.has(c.id)).length + extraGuideCount;
 
   return (
     <div className="ex-shell" data-screen="exams">
@@ -372,40 +386,49 @@ export default function Exams() {
         </div>
       </header>
 
-      {/* Quick cross-exam Subject Modules strip */}
-      {!loading && subjectCollections.length > 0 && filter !== "subjects" && !hasQuery && (
-        <section aria-label="Cross-exam subjects" className="mt-4">
-          <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
-            <span className="font-mono text-xs font-semibold uppercase tracking-[0.08em] text-muted">
-              Study a subject across every exam
-            </span>
-            <button
-              type="button"
-              onClick={() => setFilter("subjects")}
-              className="text-xs font-semibold text-link hover:underline"
-            >
-              View all {subjectCollections.length} subjects →
-            </button>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {subjectCollections.map((s) => {
-              const id = examPresentation(s.id, s.title);
-              return (
-                <Link
-                  key={s.id}
-                  to={moduleHref(s)}
-                  className="inline-flex min-h-11 items-center gap-2 rounded-pill border border-hairline bg-card px-4 py-2 text-sm font-semibold text-ink transition hover:border-ink"
+      {/* Expanding Flagship MPSC Exam Spotlight Panels */}
+      {!loading && examCollections.length > 0 && (filter === "all" || filter === "featured") && !hasQuery && (
+        <div className="mt-5">
+          <FlagshipExamPanels
+            exams={examCollections}
+            progress={progress}
+            bookmarks={bookmarks}
+            onToggleBookmark={(c) => void toggleBookmark(c)}
+            busyBookmark={busyBookmark}
+          />
+        </div>
+      )}
+
+      {/* Signature 3D Subject-Wise Exam Bookshelf */}
+      {!loading && subjectCollections.length > 0 && !hasQuery && (
+        <div className="mt-5">
+          <SubjectBookshelf
+            subjects={subjectCollections}
+            progress={progress}
+            eyebrow="All-exam subject books"
+            heading="Subject-wise exam bookshelf"
+            subtitle="One combined book for each core subject — questions pulled from UDC, LDC, MCS, Group B and every MPSC exam so you study each subject once."
+            action={
+              filter !== "subjects" ? (
+                <button
+                  type="button"
+                  onClick={() => setFilter("subjects")}
+                  className="finna-inline-pill-btn"
                 >
-                  <span className="font-mono text-xs font-bold text-link">{id.short}</span>
-                  <span>{examShort(s.id, s.title)}</span>
-                  <span className="font-mono text-xs text-muted">
-                    {s.questions.toLocaleString("en-IN")}
-                  </span>
-                </Link>
-              );
-            })}
-          </div>
-        </section>
+                  Open subject cards →
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => setFilter("all")}
+                  className="finna-inline-pill-btn"
+                >
+                  Show all exams →
+                </button>
+              )
+            }
+          />
+        </div>
       )}
 
       <section aria-labelledby="exam-library-heading" className="ex-section">
@@ -417,14 +440,14 @@ export default function Exams() {
               type="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search 100+ exams & subjects: UDC, LDC, MCS, MES, ACF, JE, Excise, Nurse, English…"
+              placeholder="Search exams & subjects: UDC, LDC, MCS, MES, ACF, JE, Staff Nurse, English…"
             />
           </label>
           <div className="ex-toolbar-pills">
             <div className="av-tabs" role="group" aria-label="Filter catalog">
               {(
                 [
-                  ["all", "All exams", examCollections.length + 1],
+                  ["all", "All exams", examCollections.length + extraGuideCount],
                   ["featured", "Featured", featuredCount],
                   ["subjects", "Subjects", subjectCollections.length],
                   ["saved", "Saved", savedCount],
@@ -615,7 +638,7 @@ export default function Exams() {
                       to={href}
                     >
                       <h3>{examShort(c.id, c.title)}</h3>
-                      <p>{c.title}</p>
+                      {examShort(c.id, c.title) !== c.title && <p>{c.title}</p>}
                     </Link>
 
                     <div className="ex-meter-block">

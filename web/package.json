@@ -10,7 +10,7 @@
     "typecheck": "tsc --noEmit",
     "check:links": "node scripts/check-dead-links.cjs",
     "predev": "node scripts/prepare-pdf-assets.mjs",
-    "prebuild": "node scripts/check-dead-links.cjs && node scripts/check-admin-nav.cjs && node scripts/prepare-pdf-assets.mjs",
+    "prebuild": "node scripts/check-dead-links.cjs && node scripts/check-admin-nav.cjs && node scripts/check-guides-and-quest.mjs && node scripts/prepare-pdf-assets.mjs",
     "check:admin": "node scripts/check-admin-nav.cjs"
   },
   "dependencies": {

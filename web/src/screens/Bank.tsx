@@ -592,7 +592,7 @@ export default function Bank() {
                   }
                   aria-pressed={!writtenMode && pool === 'all'}
                 >
-                  All questions
+                  All
                 </button>
                 <button
                   type="button"
@@ -610,7 +610,7 @@ export default function Bank() {
                   }
                   aria-pressed={!writtenMode && pool === 'practice'}
                 >
-                  With answers
+                  ◉ MCQs
                 </button>
                 <button
                   type="button"
@@ -628,7 +628,7 @@ export default function Bank() {
                   }
                   aria-pressed={writtenMode}
                 >
-                  Written answers
+                  ✎ Written
                 </button>
               </div>
               <div className="finna-segments" role="group" aria-label="Your status">

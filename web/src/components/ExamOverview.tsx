@@ -36,13 +36,28 @@ export default function ExamOverview({ title, collections, loading = false, erro
     [collections.reduce((n, c) => n + c.answerable_count, 0), 'answers for study'],
     [collections.reduce((n, c) => n + c.scorable, 0), 'official keys'],
   ] as const
-  return <div className="exam-experience exam-overview" data-exam-tone={examPresentation(presentationId || collections[0]?.id || '').tone}>
-    <header className="exam-overview-heading">
-      <p className="font-mono text-xs uppercase tracking-[.1em] text-exams-dark">Past papers · exam preparation</p>
-      <div className="flex flex-wrap items-center justify-between gap-3"><h1 className="mt-2 font-display text-[clamp(30px,4vw,38px)] leading-tight">{title}</h1>{headerAction}</div>
-      <p className="mt-3 text-sm leading-relaxed text-secondary">{description || 'Explore past papers, browse by subject, or keep practising through the question bank.'}</p>
-    </header>
-    <div id="exam-module-tabs">{navigation}</div>
+  const compactHeader = viewKey !== 'overview' && viewKey !== 'home'
+  return <div className="exam-experience exam-overview" data-compact-header={compactHeader ? 'true' : undefined} data-exam-tone={examPresentation(presentationId || collections[0]?.id || '').tone}>
+    {compactHeader ? (
+      <div className="exam-compact-masthead">
+        <div className="exam-compact-title-wrap">
+          <div className="exam-compact-title-row">
+            <h1 className="font-display">{title}</h1>
+            {headerAction}
+          </div>
+        </div>
+        <div id="exam-module-tabs" className="exam-compact-tabs">{navigation}</div>
+      </div>
+    ) : (
+      <>
+        <header className="exam-overview-heading">
+          <p className="font-mono text-xs uppercase tracking-[.1em] text-exams-dark">Past papers · exam preparation</p>
+          <div className="flex flex-wrap items-center justify-between gap-3"><h1 className="mt-2 font-display text-[clamp(30px,4vw,38px)] leading-tight">{title}</h1>{headerAction}</div>
+          <p className="mt-3 text-sm leading-relaxed text-secondary">{description || 'Explore past papers, browse by subject, or keep practising through the question bank.'}</p>
+        </header>
+        <div id="exam-module-tabs">{navigation}</div>
+      </>
+    )}
     <div key={viewKey} className="exam-module-panel">
     {children ?? <>
     {!loading && !error && <>

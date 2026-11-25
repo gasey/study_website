@@ -43,6 +43,8 @@ const TopicTrailAdmin=lazy(()=>import('./TopicTrailAdmin'))
 const McqSolverReview=lazy(()=>import('./McqSolverReview'))
 const CurrentAffairsAutomation=lazy(()=>import('./CurrentAffairsAutomation'))
 const AuthoringConsole=lazy(()=>import('../components/AuthoringConsole'))
+const GuidesStudio=lazy(()=>import('./GuidesStudio'))
+const AnswerConflictsAdmin=lazy(()=>import('./AnswerConflictsAdmin'))
 const NAV=ADMIN_SECTIONS
 const INPUT='min-h-11 rounded-[6px] border border-[#CFC5B2] bg-[#FBF8F1] px-3 py-2 text-sm focus:border-ink focus:outline-none'
 type Row=Record<string,unknown>
@@ -76,7 +78,7 @@ export default function BankAdmin(){
  useEffect(()=>{const timer=window.setTimeout(()=>{setSearch(query.trim());setOffset(0)},250);return()=>window.clearTimeout(timer)},[query])
  useEffect(()=>{if(!session)return;if(!canOpenAdminTab(tab,session.grants)){setLoading(false);setError('');return}let live=true;setLoading(true);setError('');setRows([])
   async function load(){try{
-   if(tab==='users'||tab==='ops'||tab==='edit'||tab==='organization'||tab==='intake'||tab==='quality'||tab==='retag'||tab==='current-affairs'||tab==='privacy'||tab==='moderation'||tab==='atlas'||tab==='atlas-bindings'||tab==='workbench'||tab==='editorial'||tab==='learning'||tab==='discovery'||tab==='topic-trail'||tab==='mcq-solver'||tab==='ca-automation'){/* Dedicated workflow owns loading. */}
+   if(tab==='users'||tab==='ops'||tab==='edit'||tab==='conflicts'||tab==='guides-studio'||tab==='organization'||tab==='intake'||tab==='quality'||tab==='retag'||tab==='current-affairs'||tab==='privacy'||tab==='moderation'||tab==='atlas'||tab==='atlas-bindings'||tab==='workbench'||tab==='editorial'||tab==='learning'||tab==='discovery'||tab==='topic-trail'||tab==='mcq-solver'||tab==='ca-automation'){/* Dedicated workflow owns loading. */}
    else if(tab==='overview'){const result=await reviewRequest<Health>('/admin/bank/summary');if(live)setHealth(result)}
    else if(tab==='exams'||tab==='pdf-library'){/* Inventory owns its requests. */}
    else if(tab==='questions'){/* The repair workspace owns its URL filters and pagination. */}
@@ -128,6 +130,8 @@ export default function BankAdmin(){
  {allowed&&tab==='review'&&<div className="mt-5 flex flex-wrap gap-2"><select value={subject} onChange={e=>{setSubject(e.target.value);setOffset(0)}} aria-label="Subject scope" disabled={!taxonomyReady} className={INPUT}><option value="">All permitted subjects</option>{subject&&!subjects.some(n=>n.id===subject)&&<option value={subject}>{subject}</option>}{subjects.map(n=><option key={n.id} value={n.id}>{n.label}</option>)}</select>{tab==='review'&&<select value={state} onChange={e=>setState(e.target.value)} aria-label="Review state" className={INPUT}><option value="">All review states</option>{['submitted','in_review','changes_requested','accepted','publishing','publication_failed','published','rejected'].map(s=><option value={s} key={s}>{stateLabel(s)}</option>)}</select>}</div>}
  {owner&&tab==='calendar'&&<Suspense fallback={<p>Loading calendar editor…</p>}><CalendarAdmin/></Suspense>}
  {allowed&&tab==='edit'&&<Suspense fallback={<p>Loading authoring console…</p>}><AuthoringConsole taxonomy={taxonomy}/></Suspense>}
+ {allowed&&tab==='conflicts'&&<Suspense fallback={<p>Loading answer conflicts…</p>}><AnswerConflictsAdmin isOwner={!!owner}/></Suspense>}
+ {owner&&tab==='guides-studio'&&<Suspense fallback={<p>Loading concept guides studio…</p>}><GuidesStudio/></Suspense>}
  {owner&&tab==='desks'&&<Suspense fallback={<p>Loading desk reports…</p>}><DeskAdmin/></Suspense>}
  {owner&&tab==='discussions'&&<Suspense fallback={<p>Loading discussion moderation…</p>}><DiscussionAdmin/></Suspense>}
  {owner&&tab==='privacy'&&<Suspense fallback={<p>Loading privacy requests…</p>}><AccountPrivacy admin/></Suspense>}

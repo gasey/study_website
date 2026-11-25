@@ -102,7 +102,17 @@ export default function PaperViewer() {
         {paper.instructions?<section aria-label="Paper instructions" className="mt-2 rounded-[10px] border border-hairline bg-card p-4"><h2 className="font-semibold text-sm">Paper instructions</h2><p className="mt-2 whitespace-pre-line text-sm leading-relaxed text-secondary">{paper.instructions}</p></section>:<p className="text-sm text-secondary">Read the original PDF for printed instructions; a complete instruction transcript is not available here.</p>}
         <p className="mt-3 break-words text-xs text-secondary">{paper.title} · {paper.id.split('/').pop()}</p>
         <p className="mt-3 text-sm text-secondary">{paper.scorable} eligible official-key MCQs · {paper.verified_solutions} verified answers · {paper.needs_review} need review · {paper.missing_explanations} without explanations.</p>
-        <div className="mt-3 flex flex-wrap gap-2">{paper.allow_timed_test&&paper.scorable>=20&&<Link to={`/exams/${id}/mock?paper=${encodeURIComponent(paper.id)}`} className={control+' border-ink bg-ink text-paper'}>Timed key practice · {paper.scorable}</Link>}{paper.allow_practice&&practiceCount>0&&<Link to={`/exams/${id}/mock?paper=${encodeURIComponent(paper.id)}&mode=derived`} className={control}>Reviewed estimate · {practiceCount}</Link>}</div>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {paper.allow_timed_test && paper.scorable >= 20 ? (
+            <Link to={`/exams/${id}/mock?paper=${encodeURIComponent(paper.id)}`} className={control+' border-ink bg-ink text-paper'}>
+              Start Full-Paper Mock · {paper.scorable} Qs (Official key) →
+            </Link>
+          ) : paper.allow_practice && practiceCount > 0 ? (
+            <Link to={`/exams/${id}/mock?paper=${encodeURIComponent(paper.id)}&mode=derived`} className={control+' border-ink bg-ink text-paper'}>
+              Start Full-Paper Mock · {practiceCount} Qs (Reviewed key) →
+            </Link>
+          ) : null}
+        </div>
         <p className="mt-3 text-xs text-secondary">Timed sets use eligible MCQs, not every printed question. Reviewed estimates can include verified answers; they are not official exam scores. Written questions remain available to read.</p>
         {paper.rule_source==='platform-default'&&<p className="mt-2 text-xs text-secondary">Original timing and marks are not confirmed; timed sets use practice rules.</p>}
       </details>

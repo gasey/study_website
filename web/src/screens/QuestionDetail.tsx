@@ -127,7 +127,7 @@ export default function QuestionDetail() {
         </div>
 
         <SourceQuestionContext direction={q.direction} passage={q.passage} />
-        <h1 className="font-display text-xl font-medium leading-snug"><SourceQuestionText formatEnumerations instruction={[q.direction,q.question].filter(Boolean).join(' ')} text={q.question_markup ?? q.question} /></h1>
+        <h1 className="q-stem font-reading text-[22px] font-medium leading-[1.42] text-ink sm:text-[25px]"><SourceQuestionText formatEnumerations instruction={[q.direction,q.question].filter(Boolean).join(' ')} text={q.question_markup ?? q.question} /></h1>
 
         {q.appearances.some((a) => a.figure_image_url) && <div className="mt-4 grid gap-3">{q.appearances.filter((a) => a.figure_image_url).map((a) => <figure key={`${a.paper_id}-${a.page}`} className="max-w-2xl overflow-hidden rounded-[9px] border border-hairline bg-paper"><a href={a.figure_image_url!} target="_blank" rel="noreferrer"><img src={a.figure_image_url!} loading="lazy" decoding="async" alt="Original scanned figure or chart from the source paper" className="max-h-[360px] w-full object-contain" /></a><figcaption className="border-t border-hairline px-3 py-2 font-mono text-xs uppercase tracking-wide text-muted">Original source figure · {a.exam ?? 'MPSC paper'} · p. {a.page ?? '—'}</figcaption></figure>)}</div>}
 
@@ -158,13 +158,13 @@ export default function QuestionDetail() {
                     onClick={() => o !== null && void reveal(i)}
                     aria-pressed={isPicked}
                     data-answer-state={isAnswer?'correct':wrongPick?'wrong':isPicked?'selected':'neutral'}
-                    className={`answer-option flex w-full items-start gap-3 rounded-panel border p-3 text-left text-base transition-colors ${cls}`}
+                    className={`answer-option q-opt-btn flex min-h-[52px] w-full items-center gap-3.5 rounded-[13px] border px-4 py-3 text-left text-[16px] leading-snug transition-colors ${cls}`}
                   >
-                    <span className="label mt-[2px] shrink-0">{LETTERS[i]}</span>
+                    <span className="q-opt-letter grid h-7 w-7 shrink-0 place-items-center rounded-lg font-mono text-xs font-bold">{LETTERS[i]}</span>
                     <span className="grow">{o === null ? 'Option text unavailable' : <SourceQuestionText text={q.options_markup?.[i] ?? o} />}</span>
                     {/* States always carry a word, never colour alone. */}
-                    {result && isAnswer && <span className="finna-qd-tag text-correct-dark">Answer</span>}
-                    {wrongPick && <span className="finna-qd-tag text-wrong-dark">Your pick</span>}
+                    {result && isAnswer && <span className="finna-qd-tag q-opt-mark text-correct-dark">Answer</span>}
+                    {wrongPick && <span className="finna-qd-tag q-opt-mark text-wrong-dark">Your pick</span>}
                   </button>
                 </li>
               )

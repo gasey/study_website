@@ -49,6 +49,27 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
     setResults({});setPicks({})
   }
   const [page, setPage] = useState<{items: Question[];total: number}|null>(null)
+  const [browseMode, setBrowseMode] = useState<'pages' | 'scroll'>(() => {
+    try {
+      return localStorage.getItem('finna:browse-mode:v1') === 'scroll' ? 'scroll' : 'pages'
+    } catch {
+      return 'pages'
+    }
+  })
+  const isScrollMode = !practice && browseMode === 'scroll'
+  const MAX_STREAM_ITEMS = 125
+  const [stream, setStream] = useState<{ key: string; start: number; items: Question[]; total: number }>({
+    key: '',
+    start: 0,
+    items: [],
+    total: 0,
+  })
+  const [loadingMore, setLoadingMore] = useState(false)
+  const [loadingPrev, setLoadingPrev] = useState(false)
+  const [returnAnchor, setReturnAnchor] = useState<{ offset: number; index: number } | null>(null)
+  const [jumpInput, setJumpInput] = useState('')
+  const streamSentinelRef = useRef<HTMLDivElement | null>(null)
+  const streamBusyRef = useRef(false)
   const [picks, setPicks] = useState<Record<string,number>>({})
   const [checkingAnswers,setCheckingAnswers]=useState<Record<string,boolean>>({})
   const [viewed,setViewed]=useState<Record<string,boolean>>({})
@@ -60,8 +81,23 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
   useEffect(()=>{let live=true;const refresh=()=>{getAccountSession().then(s=>{if(live)setAccount(s.authenticated)}).catch(()=>{});setPage(null);setResults({});setPicks({});setViewed({});setReload(n=>n+1)};refresh();window.addEventListener('ism-auth-change',refresh);return()=>{live=false;window.removeEventListener('ism-auth-change',refresh)}},[])
   useEffect(()=>{if(!account||!page||pending)return;const timer=window.setTimeout(()=>{saveQueue.current=saveQueue.current.then(async()=>{try{if(studyArea){if(page.items[0])await savePracticePosition(page.items[0].id)}else await reviewRequest('/me/exam-checkpoint/'+collectionId,{section:sectionPath,paper:paperId,q:search,pool,order:order==='paper'?'repeated':order,seed,status:studyStatus,subject_id:subjectId,topic_id:topicId,subtopic_id:subtopicId,offset});setCheckpointError('');window.dispatchEvent(new Event('ism-study-checkpoint'))}catch(e){setCheckpointError((e as Error).message)}})},700);return()=>window.clearTimeout(timer)},[account,page,pending,studyArea,collectionId,sectionPath,paperId,search,pool,order,seed,studyStatus,subjectId,topicId,subtopicId,offset])
 
-  const reading=useBrowsePosition(collectionId,!practice,pending,page?.items.map(q=>q.id)||[])
+  const renderedItems = useMemo(
+    () => (isScrollMode && stream.key === requestKey ? stream.items : page?.items || []),
+    [isScrollMode, stream.key, stream.items, requestKey, page?.items],
+  )
+  const renderedStart = isScrollMode && stream.key === requestKey ? stream.start : offset
+  const renderedIds = useMemo(() => renderedItems.map(q => q.id), [renderedItems])
+
+  const reading=useBrowsePosition(collectionId,!practice,pending,renderedIds,renderedStart)
   useEffect(()=>{if(!reading.initializing&&order==='mixed'&&!seed)setURLParams(previous=>{const next=new URLSearchParams(previous);next.set('seed',newQuestionSeed());return next},{replace:true})},[reading.initializing,order,seed,setURLParams])
+
+  function changeBrowseMode(next: 'pages' | 'scroll') {
+    setBrowseMode(next)
+    try { localStorage.setItem('finna:browse-mode:v1', next) } catch { /* ignore */ }
+    if (next === 'scroll' && page && resolvedKey === requestKey) {
+      setStream({ key: requestKey, start: offset, items: page.items, total: page.total })
+    }
+  }
 
   useEffect(() => {
     let cancelled = false
@@ -69,13 +105,13 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
     if(reading.initializing||order==='mixed'&&!seed)return
     let prefetchTimer:number|undefined
     const timer = window.setTimeout(() => {
-      if(search.trim().length===1){setPage({items:[],total:0});setResolvedKey(requestKey);setError('Enter at least two characters to search.');setLoading(false);return}
+      if(search.trim().length===1){setPage({items:[],total:0});setStream({key:requestKey,start:0,items:[],total:0});setResolvedKey(requestKey);setError('Enter at least two characters to search.');setLoading(false);return}
       setError(null)
       listQuestions({study_area:studyArea,collection_id: collectionId,section_path: sectionPath || undefined,paper_id: paperId || undefined,subject_id:subjectId||undefined,topic_id:topicId||undefined,subtopic_id:subtopicId||undefined,year_from:selectedYear,year_to:selectedYear,q: search.trim() || undefined,answer_status:answerStatus,pool,order,seed,study_status: studyStatus,limit: PAGE_SIZE,offset})
         .then((value) => { if (!cancelled) {
           const last=Math.max(0,value.total-1)
           if(offset>last){setURLParams(previous=>{const next=new URLSearchParams(previous);if(last)next.set('offset',String(Math.floor(last/PAGE_SIZE)*PAGE_SIZE));else next.delete('offset');return next},{replace:true});return}
-          setPage(value);setResolvedKey(requestKey);setError(null)
+          setPage(value);setStream({key:requestKey,start:offset,items:value.items,total:value.total});setResolvedKey(requestKey);setError(null)
           if(offset+PAGE_SIZE<value.total)prefetchTimer=window.setTimeout(()=>prefetchQuestionPage({study_area:studyArea,collection_id:collectionId,section_path:sectionPath||undefined,paper_id:paperId||undefined,subject_id:subjectId||undefined,topic_id:topicId||undefined,subtopic_id:subtopicId||undefined,year_from:selectedYear,year_to:selectedYear,q:search.trim()||undefined,answer_status:answerStatus,pool,order,seed,study_status:studyStatus,limit:PAGE_SIZE,offset:offset+PAGE_SIZE}),250)
         } })
         .catch((e) => { if (!cancelled) setError(e.message) })
@@ -83,6 +119,121 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
     }, search.trim() ? 250 : 0)
     return () => { cancelled = true; window.clearTimeout(timer);if(prefetchTimer!==undefined)window.clearTimeout(prefetchTimer) }
   }, [studyArea,collectionId,sectionPath,paperId,subjectId,topicId,subtopicId,selectedYear,search,pool,order,seed,studyStatus,answerStatus,offset,PAGE_SIZE,reload,reading.initializing])
+
+  const hasMoreStream = isScrollMode && stream.key === requestKey && stream.start + stream.items.length < stream.total
+  const hasPrevStream = isScrollMode && stream.key === requestKey && stream.start > 0
+
+  async function loadNextChunk() {
+    if (!isScrollMode || pending || streamBusyRef.current || !hasMoreStream) return
+    const nextOffset = stream.start + stream.items.length
+    const activeKey = requestKey
+    streamBusyRef.current = true
+    setLoadingMore(true)
+    try {
+      const value = await listQuestions({
+        study_area: studyArea,
+        collection_id: collectionId,
+        section_path: sectionPath || undefined,
+        paper_id: paperId || undefined,
+        subject_id: subjectId || undefined,
+        topic_id: topicId || undefined,
+        subtopic_id: subtopicId || undefined,
+        year_from: selectedYear,
+        year_to: selectedYear,
+        q: search.trim() || undefined,
+        answer_status: answerStatus,
+        pool,
+        order,
+        seed,
+        study_status: studyStatus,
+        limit: PAGE_SIZE,
+        offset: nextOffset,
+      })
+      setStream(old => {
+        if (old.key !== activeKey) return old
+        const seen = new Set(old.items.map(q => q.id))
+        const fresh = value.items.filter(q => !seen.has(q.id))
+        if (!fresh.length) return { ...old, total: value.total }
+        let combinedItems = [...old.items, ...fresh]
+        let nextStart = old.start
+        // Keep DOM memory flat even across thousands of questions using a sliding window.
+        if (combinedItems.length > MAX_STREAM_ITEMS) {
+          const drop = combinedItems.length - MAX_STREAM_ITEMS
+          combinedItems = combinedItems.slice(drop)
+          nextStart += drop
+        }
+        return { key: old.key, start: nextStart, items: combinedItems, total: value.total }
+      })
+    } catch (e) {
+      setError((e as Error).message)
+    } finally {
+      streamBusyRef.current = false
+      setLoadingMore(false)
+    }
+  }
+
+  async function loadPrevChunk() {
+    if (!isScrollMode || pending || streamBusyRef.current || !hasPrevStream) return
+    const prevOffset = Math.max(0, stream.start - PAGE_SIZE)
+    const count = stream.start - prevOffset
+    if (count <= 0) return
+    const activeKey = requestKey
+    const prevHeight = document.documentElement.scrollHeight
+    streamBusyRef.current = true
+    setLoadingPrev(true)
+    try {
+      const value = await listQuestions({
+        study_area: studyArea,
+        collection_id: collectionId,
+        section_path: sectionPath || undefined,
+        paper_id: paperId || undefined,
+        subject_id: subjectId || undefined,
+        topic_id: topicId || undefined,
+        subtopic_id: subtopicId || undefined,
+        year_from: selectedYear,
+        year_to: selectedYear,
+        q: search.trim() || undefined,
+        answer_status: answerStatus,
+        pool,
+        order,
+        seed,
+        study_status: studyStatus,
+        limit: count,
+        offset: prevOffset,
+      })
+      setStream(old => {
+        if (old.key !== activeKey) return old
+        const seen = new Set(old.items.map(q => q.id))
+        const fresh = value.items.filter(q => !seen.has(q.id))
+        if (!fresh.length) return old
+        const combinedItems = [...fresh, ...old.items].slice(0, MAX_STREAM_ITEMS)
+        return { key: old.key, start: prevOffset, items: combinedItems, total: value.total }
+      })
+      requestAnimationFrame(() => {
+        const delta = document.documentElement.scrollHeight - prevHeight
+        if (delta > 0) window.scrollBy({ top: delta, behavior: 'auto' })
+      })
+    } catch (e) {
+      setError((e as Error).message)
+    } finally {
+      streamBusyRef.current = false
+      setLoadingPrev(false)
+    }
+  }
+
+  useEffect(() => {
+    if (!isScrollMode || !hasMoreStream || pending) return
+    const el = streamSentinelRef.current
+    if (!el || typeof IntersectionObserver === 'undefined') return
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some(e => e.isIntersecting)) void loadNextChunk()
+      },
+      { rootMargin: '700px 0px' },
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  })
 
   const currentPage=Math.floor(offset/PAGE_SIZE)+1,pages=Math.max(currentPage,currentPage+Math.ceil(Math.max(0,(page?.total||0)-offset-PAGE_SIZE)/PAGE_SIZE))
   function goPage(value:number){
@@ -94,6 +245,65 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
     } else setOffset(Math.max(0,offset+(value-currentPage)*PAGE_SIZE))
     requestAnimationFrame(()=>scrollToResults('exam-question-browser'))
   }
+
+  function jumpToQuestionNumber(targetOneBased: number, rememberCurrent = true) {
+    const total = page?.total || 0
+    if (total <= 0) return
+    const clamped = Math.min(total, Math.max(1, Math.floor(targetOneBased)))
+    const targetOffset = Math.floor((clamped - 1) / PAGE_SIZE) * PAGE_SIZE
+    const currentIdx = reading.currentIndex || (renderedStart + 1)
+    if (rememberCurrent && Math.abs(currentIdx - clamped) >= 2) {
+      setReturnAnchor({
+        offset: Math.floor(Math.max(0, currentIdx - 1) / PAGE_SIZE) * PAGE_SIZE,
+        index: currentIdx,
+      })
+    }
+    // If already rendered on screen, scroll directly to that card!
+    const localIdx = clamped - 1 - renderedStart
+    if (localIdx >= 0 && localIdx < renderedItems.length) {
+      const targetId = renderedItems[localIdx]?.id
+      const el = targetId ? document.getElementById('question-' + targetId) : null
+      if (el) {
+        el.scrollIntoView({
+          block: 'start',
+          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+        })
+        return
+      }
+    }
+    setResults({})
+    setPicks({})
+    setOffset(targetOffset)
+    requestAnimationFrame(() => scrollToResults('exam-question-browser'))
+  }
+
+  function jumpToStart() {
+    const currentIdx = reading.currentIndex || (renderedStart + 1)
+    if (currentIdx > 1) {
+      setReturnAnchor({
+        offset: Math.floor(Math.max(0, currentIdx - 1) / PAGE_SIZE) * PAGE_SIZE,
+        index: currentIdx,
+      })
+    }
+    setResults({})
+    setPicks({})
+    setOffset(0)
+    requestAnimationFrame(() => scrollToResults('exam-question-browser'))
+  }
+
+  function jumpToLastReturn() {
+    if (!returnAnchor) return
+    const target = returnAnchor
+    setReturnAnchor(null)
+    jumpToQuestionNumber(target.index, false)
+  }
+
+  function hideAllChecked() {
+    setPicks({})
+    setResults({})
+  }
+
+  const checkedCount = Object.keys(results).length
   function update<T>(setter: (value:T)=>void, value:T) { setter(value); setResults({}); setPicks({}) }
   // One option tap submits through the guarded attempt path.
   async function answer(q: Question, index: number) {
@@ -116,6 +326,27 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
   function chooseSection(value:string){setURLParams(previous=>{const next=new URLSearchParams(previous);if(value)next.set('section',value);else next.delete('section');next.delete('paper');next.delete('offset');next.delete('fresh');return next},{replace:true})}
   function chooseStatus(value:string){setURLParams(previous=>{const next=new URLSearchParams(previous);next.delete('status');next.delete('answer_status');next.delete('offset');if(value.startsWith('study:'))next.set('status',value.slice(6));if(value.startsWith('answer:')){next.set('answer_status',value.slice(7));next.set('pool','all')}return next},{replace:true});setResults({});setPicks({})}
   function choosePaper(value:string){setURLParams(previous=>{const next=new URLSearchParams(previous);if(value)next.set('paper',value);else next.delete('paper');if(combined&&value){const source=papers.find(p=>p.id===value);if(source?.section_path)next.set('section',source.section_path);else next.delete('section')}next.delete('offset');next.delete('seed');next.delete('fresh');return next},{replace:false});setResults({});setPicks({})}
+  const questionFormat: 'all' | 'mcq' | 'written' =
+    answerStatus === 'written' ? 'written' : pool === 'practice' ? 'mcq' : 'all'
+  function chooseQuestionFormat(nextFormat: 'all' | 'mcq' | 'written') {
+    setURLParams(previous => {
+      const next = new URLSearchParams(previous)
+      next.delete('offset')
+      if (nextFormat === 'written') {
+        next.set('pool', 'all')
+        next.set('answer_status', 'written')
+      } else if (nextFormat === 'mcq') {
+        next.set('pool', 'practice')
+        if (next.get('answer_status') === 'written') next.delete('answer_status')
+      } else {
+        next.set('pool', 'all')
+        if (next.get('answer_status') === 'written') next.delete('answer_status')
+      }
+      return next
+    }, { replace: true })
+    setResults({})
+    setPicks({})
+  }
 
   const testViewHref = useMemo(() => {
     const p = new URLSearchParams()
@@ -133,66 +364,451 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
   const hasMultipleSubjects = (facets?.subjects.length ?? 0) > 1
   const singleSubject = facets?.subjects.length === 1 ? facets.subjects[0] : null
   const activeTopicSource = selectedSubject || singleSubject
+  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
 
-  return <section id="exam-question-browser" tabIndex={-1} aria-busy={pending} className="mt-6 scroll-mt-28 focus:outline-none">
-    <div className="mb-3 flex flex-wrap items-center justify-between gap-2"><div><h2 className="font-display text-lg">{practice?'Study practice':'Browse questions'}</h2><p className="text-xs text-secondary">{collectionTitle||'This exam'}{selectedSubject?' · '+learningSubjectTitle(selectedSubject.id,selectedSubject.title,collectionId):''}{selectedTopic?' · '+selectedTopic.title:''}{selectedYear?' · '+selectedYear:''}</p></div><div className="flex flex-wrap items-center gap-2"><button type="button" onClick={()=>chooseStatus(studyStatus==='ever_wrong'?'':'study:ever_wrong')} aria-pressed={studyStatus==='ever_wrong'} className={`min-h-11 rounded-pill border px-4 text-xs font-semibold ${studyStatus==='ever_wrong'?'border-ink bg-ink text-paper':'border-hairline bg-card'}`}>Revise mistakes</button>{!pending&&page&&page.total>0&&<Link to={testViewHref} className="inline-flex min-h-11 items-center rounded-pill bg-practice-soft px-4 text-xs font-bold text-practice-dark hover:underline">Test this view →</Link>}<button type="button" onClick={resetFilters} className="min-h-11 rounded-pill border border-hairline px-4 text-xs font-semibold">Reset filters</button></div></div>
+  const activeChips: { key: string; label: string; clear: () => void }[] = []
+  if (subjectId) {
+    activeChips.push({
+      key: 'subject',
+      label: selectedSubject ? learningSubjectTitle(selectedSubject.id, selectedSubject.title, collectionId) : subjectId,
+      clear: () => taxonomyFilter('subject_id', ''),
+    })
+  }
+  if (topicId) {
+    activeChips.push({
+      key: 'topic',
+      label: selectedTopic?.title || topicId,
+      clear: () => taxonomyFilter('topic_id', ''),
+    })
+  }
+  if (subtopicId) {
+    const subTitle = selectedTopic?.subtopics.find(b => b.id === subtopicId)?.title || subtopicId
+    activeChips.push({
+      key: 'subtopic',
+      label: subTitle,
+      clear: () => taxonomyFilter('subtopic_id', ''),
+    })
+  }
+  if (selectedYear) {
+    activeChips.push({
+      key: 'year',
+      label: String(selectedYear),
+      clear: () => filter('year', ''),
+    })
+  }
+  if (sectionPath) {
+    const secLabel = combined
+      ? sectionPath === 'gs' ? 'Paper I' : sectionPath === 'aptitude' ? 'Paper II' : sectionPath
+      : sections.find(s => s.path === sectionPath)?.title || sectionPath
+    activeChips.push({
+      key: 'section',
+      label: secLabel,
+      clear: () => chooseSection(''),
+    })
+  }
+  if (paperId) {
+    activeChips.push({
+      key: 'paper',
+      label: selectedPaper ? paperIdentity(selectedPaper).title : 'Selected paper',
+      clear: () => choosePaper(''),
+    })
+  }
+  if (studyStatus !== 'all') {
+    const statusMap: Record<string, string> = { ever_wrong: 'Previously wrong', unseen: 'Never attempted', answered: 'Attempted', wrong: 'Previously wrong' }
+    activeChips.push({
+      key: 'status',
+      label: statusMap[studyStatus] || studyStatus,
+      clear: () => chooseStatus(''),
+    })
+  }
+  if (search.trim()) {
+    activeChips.push({
+      key: 'q',
+      label: `“${search.trim()}”`,
+      clear: () => update(setSearch, ''),
+    })
+  }
+  if (!practice && questionFormat !== 'all') {
+    activeChips.push({
+      key: 'format',
+      label: questionFormat === 'written' ? '✎ Written only' : '◉ MCQs only',
+      clear: () => chooseQuestionFormat('all'),
+    })
+  }
+  const activeFilterCount = activeChips.length
 
-    {/* FINNAPLAN v2 P5: 4 clean faceted learner filters — Subject/Topic, Year, Section/Paper, Your status (+ Search) */}
-    <div className="browse-filter-row" aria-label="Question filters" data-area={!!studyArea}>
-      {hasMultipleSubjects ? (
-        <label>Subject<select value={subjectId} onChange={e=>taxonomyFilter('subject_id',e.target.value)}><option value="">All subjects</option>{subjectId&&!selectedSubject&&<option value={subjectId}>Selected subject</option>}{facets?.subjects.map(subject=><option key={subject.id} value={subject.id}>{learningSubjectTitle(subject.id,subject.title,collectionId)} · {subject.questions}</option>)}</select></label>
-      ) : activeTopicSource && activeTopicSource.topics.length > 0 ? (
-        <label>Topic<select value={topicId} onChange={e=>taxonomyFilter('topic_id',e.target.value)}><option value="">All topics</option>{activeTopicSource.topics.map(topic=><option key={topic.id} value={topic.id}>{topic.title} · {topic.questions}</option>)}</select></label>
-      ) : null}
-      {hasMultipleSubjects && selectedSubject && selectedSubject.topics.length > 0 && (
-        <label>Topic<select value={topicId} onChange={e=>taxonomyFilter('topic_id',e.target.value)}><option value="">All topics</option>{selectedSubject.topics.map(topic=><option key={topic.id} value={topic.id}>{topic.title} · {topic.questions}</option>)}</select></label>
-      )}
-      {(facets?.years.length ?? 0) > 0 && (
-        <label>Year<select aria-label="Exam year" value={yearParam} onChange={e=>filter('year',e.target.value)}><option value="">All years</option>{facets?.years.map(y=><option key={y.year} value={String(y.year)}>{y.year} · {y.questions}</option>)}</select></label>
-      )}
-      {hasMultipleSections && (
-        <label>{combined?'Paper type':'Section'}<select aria-label={combined?'Paper type':'Section'} disabled={metadataLoading} value={sectionPath} onChange={e=>chooseSection(e.target.value)}><option value="">{combined?'Both papers':'All sections'}</option>{sections.map(s=><option key={s.path} value={s.path}>{combined?(s.path==='gs'?'Paper I only':s.path==='aptitude'?'Paper II only':s.title):s.title}</option>)}</select></label>
-      )}
-      {hasPapers && (
-        <label>Paper<select aria-label="Specific paper" disabled={metadataLoading} value={paperId} onChange={e=>choosePaper(e.target.value)}><option value="">All papers</option>{paperGroups.filter(group=>!sectionPath||group.papers.some(p=>p.section_path===sectionPath)).map(group=>{const p=group.papers.find(p=>p.id===paperId)||representativeBooklet(group);return <option key={p.id} value={p.id}>{p.year?`${p.year} · `:''}{group.papers.length>1?group.title:paperIdentity(p).title}</option>})}{paperId&&paperPosition<0&&<option value={paperId}>Selected paper</option>}</select></label>
-      )}
-      <label>Your status<select aria-label="Your study status" value={studyStatus!=='all'?'study:'+studyStatus:''} onChange={e=>chooseStatus(e.target.value)}><option value="">All questions</option><option value="study:ever_wrong">Previously wrong</option><option value="study:unseen">Never attempted</option><option value="study:answered">Attempted</option></select></label>
-      <label>Search<input maxLength={120} value={search} onChange={e=>update(setSearch,e.target.value)} placeholder="Search question text"/></label>
+  const rangeText = !pending && page
+    ? page.total > 0
+      ? `${(renderedStart + 1).toLocaleString('en-IN')}–${Math.min(renderedStart + renderedItems.length, page.total).toLocaleString('en-IN')} of ${page.total.toLocaleString('en-IN')}`
+      : '0 questions'
+    : page ? 'Updating…' : 'Loading…'
+
+  return <section id="exam-question-browser" tabIndex={-1} aria-busy={pending} className="mb-shell scroll-mt-28 focus:outline-none">
+    <div className="mb-layout">
+      {/* Main reading column: slim top strip + Checkpoint Dock + Question #1 immediately above the fold */}
+      <div className="mb-main">
+        <div className="mb-reading-bar">
+          <div className="mb-reading-left">
+            <span className="mb-count-pill" role="status">{rangeText}</span>
+            {activeChips.length > 0 ? (
+              <div className="mb-chip-list" aria-label="Active filters">
+                {activeChips.map(chip => (
+                  <button key={chip.key} type="button" className="mb-active-chip" onClick={chip.clear} title={`Remove ${chip.label} filter`}>
+                    <span>{chip.label}</span>
+                    <span aria-hidden="true" className="mb-chip-x">×</span>
+                  </button>
+                ))}
+              </div>
+            ) : (
+              <span className="mb-scope-hint">{practice ? 'Study practice' : (collectionTitle || 'All questions')}</span>
+            )}
+          </div>
+          <div className="mb-reading-right">
+            {!practice && (
+              <div className="mb-format-seg" role="group" aria-label="Question format">
+                <button
+                  type="button"
+                  aria-pressed={questionFormat === 'all'}
+                  className={questionFormat === 'all' ? 'is-on' : ''}
+                  onClick={() => chooseQuestionFormat('all')}
+                >
+                  All
+                </button>
+                <button
+                  type="button"
+                  aria-pressed={questionFormat === 'mcq'}
+                  className={questionFormat === 'mcq' ? 'is-on is-mcq' : ''}
+                  onClick={() => chooseQuestionFormat('mcq')}
+                  title="Show multiple-choice questions only"
+                >
+                  ◉ MCQs
+                </button>
+                <button
+                  type="button"
+                  aria-pressed={questionFormat === 'written'}
+                  className={questionFormat === 'written' ? 'is-on is-written' : ''}
+                  onClick={() => chooseQuestionFormat('written')}
+                  title="Show written / descriptive prompts only"
+                >
+                  ✎ Written
+                </button>
+              </div>
+            )}
+            {!practice && page && page.total > PAGE_SIZE && (
+              <div className="mb-mode-seg" role="group" aria-label="Reading mode">
+                <button
+                  type="button"
+                  aria-pressed={!isScrollMode}
+                  className={!isScrollMode ? 'is-on' : ''}
+                  onClick={() => changeBrowseMode('pages')}
+                  title="25 questions per page"
+                >
+                  Pages
+                </button>
+                <button
+                  type="button"
+                  aria-pressed={isScrollMode}
+                  className={isScrollMode ? 'is-on' : ''}
+                  onClick={() => changeBrowseMode('scroll')}
+                  title="Optimized continuous scroll stream"
+                >
+                  Scroll
+                </button>
+              </div>
+            )}
+            <AnswerLayoutControl compact />
+            {!isScrollMode && page && pages > 1 && (
+              <div className="mb-mini-pager" role="navigation" aria-label="Quick page step">
+                <button type="button" disabled={pending || currentPage <= 1} onClick={() => goPage(currentPage - 1)} aria-label="Previous page">‹</button>
+                <span>{currentPage}/{pages}</span>
+                <button type="button" disabled={pending || currentPage >= pages} onClick={() => goPage(currentPage + 1)} aria-label="Next page">›</button>
+              </div>
+            )}
+            <button
+              type="button"
+              className={`mb-mobile-filter-btn${mobileFiltersOpen ? ' is-open' : ''}`}
+              aria-expanded={mobileFiltersOpen}
+              onClick={() => setMobileFiltersOpen(v => !v)}
+            >
+              Filters{activeFilterCount > 0 ? ` (${activeFilterCount})` : ''}
+            </button>
+          </div>
+        </div>
+
+        {/* Reading Checkpoints & Quick-Jump Bar: Auto-resume, Start, Last Spot, Pinned Checkpoint, Jump #, Hide Checked */}
+        {!practice && page && page.total > 0 && (
+          <nav aria-label="Reading checkpoints and quick jump" className="mb-checkpoint-bar">
+            <div className="mb-cp-group">
+              <span className="mb-cp-pos" title="Your place is saved automatically; answers reset hidden when you return">
+                {reading.resumedIndex && reading.currentIndex === reading.resumedIndex
+                  ? `Resumed #${reading.currentIndex.toLocaleString('en-IN')}`
+                  : `At #${(reading.currentIndex || renderedStart + 1).toLocaleString('en-IN')}`}
+              </span>
+              {(reading.currentIndex > 1 || renderedStart > 0) && (
+                <button type="button" className="mb-cp-btn" onClick={jumpToStart} title="Jump to question #1 (answers kept)">
+                  ⏮ Start
+                </button>
+              )}
+              {returnAnchor && (
+                <button type="button" className="mb-cp-btn is-accent" onClick={jumpToLastReturn} title="Return to where you were before jumping">
+                  ↩ Last (#{returnAnchor.index.toLocaleString('en-IN')})
+                </button>
+              )}
+              {reading.checkpoint ? (
+                <span className="mb-cp-pin-wrap">
+                  <button type="button" className="mb-cp-btn is-pin" onClick={reading.jumpToCheckpoint} title="Jump to your pinned checkpoint">
+                    ⚑ #{reading.checkpoint.questionIndex.toLocaleString('en-IN')}
+                  </button>
+                  <button type="button" className="mb-cp-icon-btn" onClick={reading.pinCheckpoint} title="Move checkpoint pin to current question" aria-label="Move checkpoint pin here">
+                    ↻
+                  </button>
+                  <button type="button" className="mb-cp-icon-btn" onClick={reading.clearPinnedCheckpoint} title="Remove checkpoint pin" aria-label="Remove checkpoint pin">
+                    ×
+                  </button>
+                </span>
+              ) : (
+                <button type="button" className="mb-cp-btn" onClick={reading.pinCheckpoint} title="Drop a reading checkpoint at this question">
+                  ⚑ Pin #{(reading.currentIndex || renderedStart + 1).toLocaleString('en-IN')}
+                </button>
+              )}
+              {page.total > PAGE_SIZE && (reading.currentIndex < page.total - PAGE_SIZE + 1) && (
+                <button
+                  type="button"
+                  className="mb-cp-btn"
+                  onClick={() => jumpToQuestionNumber(page.total)}
+                  title={`Jump to the last question (#${page.total.toLocaleString('en-IN')})`}
+                >
+                  ⏭ End
+                </button>
+              )}
+            </div>
+
+            <div className="mb-cp-group mb-cp-right">
+              {checkedCount > 0 && (
+                <button type="button" className="mb-cp-btn is-hide" onClick={hideAllChecked} title="Hide all revealed answers on screen so you can test yourself again">
+                  ↺ Hide checked ({checkedCount})
+                </button>
+              )}
+              {page.total > PAGE_SIZE && (
+                <form
+                  className="mb-cp-jump-form"
+                  onSubmit={(e) => {
+                    e.preventDefault()
+                    const n = Number(jumpInput)
+                    if (Number.isFinite(n) && n >= 1) {
+                      jumpToQuestionNumber(n)
+                      setJumpInput('')
+                    }
+                  }}
+                >
+                  <input
+                    type="number"
+                    min={1}
+                    max={page.total}
+                    inputMode="numeric"
+                    value={jumpInput}
+                    onChange={(e) => setJumpInput(e.target.value)}
+                    placeholder="# Go…"
+                    aria-label="Jump to question number"
+                  />
+                  <button type="submit" disabled={!jumpInput.trim()}>Go</button>
+                </form>
+              )}
+            </div>
+          </nav>
+        )}
+
+        {paperId && <nav aria-label="Paper navigation" className="browse-paper-navigation mb-3">
+          <button type="button" disabled={paperPosition <= 0} onClick={() => choosePaper(representativeBooklet(paperGroups[paperPosition - 1]).id)} className="min-h-10 text-link disabled:opacity-40">← Prev paper</button>
+          <span className="min-w-0 flex-1 truncate text-center font-semibold text-ink" title={selectedPaper ? paperIdentity(selectedPaper).title : 'Selected paper'}>{selectedPaper ? paperIdentity(selectedPaper).title : 'Selected paper'}</span>
+          <button type="button" disabled={paperPosition < 0 || paperPosition >= paperGroups.length - 1} onClick={() => choosePaper(representativeBooklet(paperGroups[paperPosition + 1]).id)} className="min-h-10 text-link disabled:opacity-40">Next paper →</button>
+          <Link to={sourceCollections ? '/exams/group-b-gazetted?' + new URLSearchParams({ collection: collectionId, view: 'papers' }) : `/exams/${collectionId}?view=papers`} className="inline-flex min-h-10 items-center text-link">All papers</Link>
+          {selectedPaper?.source_pdf_url && <a href={selectedPaper.source_pdf_url} target="_blank" rel="noreferrer" className="inline-flex min-h-10 items-center text-link underline">PDF ↗</a>}
+        </nav>}
+
+        {subjectId === 'gk-gs' && topicId === 'gk-gs:science' && selectedTopic && <nav aria-label="Science branches" className="mb-3 flex flex-wrap items-center gap-1.5">
+          <span className="mr-1 text-xs font-bold uppercase tracking-wider text-secondary">Science:</span>
+          {[{ id: '', title: 'All Science' }, ...selectedTopic.subtopics].map(branch => <button key={branch.id} type="button" aria-pressed={subtopicId === branch.id} onClick={() => taxonomyFilter('subtopic_id', branch.id)} className={`min-h-9 rounded-pill border px-3 text-xs font-semibold ${subtopicId === branch.id ? 'border-ink bg-ink text-paper' : 'border-hairline bg-card'}`}>{branch.title}</button>)}
+        </nav>}
+
+        {error && <p role="alert" className="mb-3 rounded-[12px] border border-mypick bg-mypick-soft p-3 text-sm text-mypick">{error} <button type="button" onClick={() => setReload(n => n + 1)} className="underline">Retry</button></p>}
+        {metadataLoading && <p role="status" className="mb-2 text-xs text-muted">Paper details are loading. You can start with the available questions.</p>}
+        {checkpointError && <p role="status" className="mb-2 text-xs text-mypick">Could not save your place: {checkpointError}</p>}
+        {practice && <p className="mb-2 text-xs text-secondary">Tap an option to submit your answer. Show answer opens reading mode.</p>}
+
+        {hasPrevStream && (
+          <div className="mb-stream-top">
+            <button
+              type="button"
+              className="mb-stream-load-btn"
+              disabled={loadingPrev}
+              onClick={() => void loadPrevChunk()}
+            >
+              {loadingPrev
+                ? 'Loading earlier questions…'
+                : `↑ Load earlier ${Math.min(PAGE_SIZE, renderedStart)} (#${Math.max(1, renderedStart - PAGE_SIZE + 1).toLocaleString('en-IN')}–#${renderedStart.toLocaleString('en-IN')})`}
+            </button>
+          </div>
+        )}
+
+        {pending && !page && !error && <p role="status" className="min-h-[320px] py-10 text-center text-secondary">Loading questions…</p>}
+        <div className={`exam-reading-area mb-question-list ${pending && page ? 'opacity-50' : ''}`} data-results-current={!pending}>
+          {renderedItems.map((q, index) => {
+            const result = results[q.id]
+            const posNum = renderedStart + index + 1
+            return <StudyQuestionCard showPanelNext={false} key={q.id} q={q} positionNumber={posNum} collectionId={collectionId} paperId={paperId} sourceCollections={sourceCollections}
+              result={result} pick={picks[q.id]} viewed={viewed[q.id]} busy={answerBusy[q.id]} checking={checkingAnswers[q.id]} disabled={pending}
+              onPick={i => void answer(q, i)}
+              onViewed={value => setViewed(old => ({ ...old, [q.id]: value }))} onBusy={v => setAnswerBusy(old => ({ ...old, [q.id]: v }))}
+              onRetry={() => { setPicks(old => { const next = { ...old }; delete next[q.id]; return next }); setResults(old => { const next = { ...old }; delete next[q.id]; return next }) }}
+              onNext={() => { const next = renderedItems[index + 1]; if (next) document.getElementById('question-' + next.id)?.scrollIntoView({ block: 'start', behavior: 'smooth' }); else if (!isScrollMode && currentPage < pages) goPage(currentPage + 1); else if (isScrollMode && hasMoreStream) void loadNextChunk(); else setError('You reached the end of these results. Change filters to continue.') }} />
+          })}
+          {!pending && page && !renderedItems.length && <div className="rounded-2xl border border-hairline bg-card py-10 text-center text-sm text-secondary">No questions match these filters. <button type="button" onClick={resetFilters} className="min-h-11 font-semibold underline">Reset filters</button></div>}
+        </div>
+        {isScrollMode ? (
+          <div ref={streamSentinelRef} className="mb-stream-foot">
+            {hasMoreStream ? (
+              <button
+                type="button"
+                className="mb-stream-load-btn"
+                disabled={loadingMore}
+                onClick={() => void loadNextChunk()}
+              >
+                {loadingMore
+                  ? 'Loading next 25 questions…'
+                  : `Load more (#${(renderedStart + renderedItems.length + 1).toLocaleString('en-IN')}–#${Math.min(page?.total || 0, renderedStart + renderedItems.length + PAGE_SIZE).toLocaleString('en-IN')})`}
+              </button>
+            ) : page && page.total > 0 ? (
+              <p className="mb-stream-end">
+                Reached the end ({page.total.toLocaleString('en-IN')} questions).{' '}
+                <button type="button" className="underline font-semibold" onClick={jumpToStart}>Back to #1</button>
+              </p>
+            ) : null}
+          </div>
+        ) : (
+          page && <Pagination page={currentPage} pages={pages} disabled={pending} onPageChange={goPage} label={practice ? 'Practice question navigator' : 'Exam question pages'} />
+        )}
+      </div>
+
+      {/* Sticky Study Controls Sidebar: uses right desktop gutter cleanly; drawer on <1040px */}
+      <aside className={`mb-rail${mobileFiltersOpen ? ' is-open' : ''}`} aria-label="Question filters and study controls">
+        <div className="mb-rail-card">
+          <div className="mb-rail-actions">
+            {!pending && page && page.total > 0 && (
+              <Link to={testViewHref} className="mb-cta-primary">Test this view →</Link>
+            )}
+            <button
+              type="button"
+              onClick={() => chooseStatus(studyStatus === 'ever_wrong' ? '' : 'study:ever_wrong')}
+              aria-pressed={studyStatus === 'ever_wrong'}
+              className={`mb-cta-mistake${studyStatus === 'ever_wrong' ? ' is-on' : ''}`}
+            >
+              Revise mistakes
+            </button>
+          </div>
+
+          <div className="mb-rail-head">
+            <span>Filters</span>
+            {activeFilterCount > 0 && (
+              <button type="button" onClick={resetFilters} className="mb-reset-link">Reset ({activeFilterCount})</button>
+            )}
+          </div>
+
+          <div className="mb-filter-stack" aria-label="Question filters">
+            <label className="mb-field">
+              <span>Search</span>
+              <input maxLength={120} value={search} onChange={e => update(setSearch, e.target.value)} placeholder="Keyword or phrase…" />
+            </label>
+
+            {hasMultipleSubjects ? (
+              <label className="mb-field">
+                <span>Subject</span>
+                <select value={subjectId} onChange={e => taxonomyFilter('subject_id', e.target.value)}>
+                  <option value="">All subjects</option>
+                  {subjectId && !selectedSubject && <option value={subjectId}>Selected subject</option>}
+                  {facets?.subjects.map(subject => <option key={subject.id} value={subject.id}>{learningSubjectTitle(subject.id, subject.title, collectionId)} ({subject.questions})</option>)}
+                </select>
+              </label>
+            ) : activeTopicSource && activeTopicSource.topics.length > 0 ? (
+              <label className="mb-field">
+                <span>Topic</span>
+                <select value={topicId} onChange={e => taxonomyFilter('topic_id', e.target.value)}>
+                  <option value="">All topics</option>
+                  {activeTopicSource.topics.map(topic => <option key={topic.id} value={topic.id}>{topic.title} ({topic.questions})</option>)}
+                </select>
+              </label>
+            ) : null}
+
+            {hasMultipleSubjects && selectedSubject && selectedSubject.topics.length > 0 && (
+              <label className="mb-field">
+                <span>Topic</span>
+                <select value={topicId} onChange={e => taxonomyFilter('topic_id', e.target.value)}>
+                  <option value="">All topics</option>
+                  {selectedSubject.topics.map(topic => <option key={topic.id} value={topic.id}>{topic.title} ({topic.questions})</option>)}
+                </select>
+              </label>
+            )}
+
+            <div className="mb-field-pair">
+              {(facets?.years.length ?? 0) > 0 && (
+                <label className="mb-field">
+                  <span>Year</span>
+                  <select aria-label="Exam year" value={yearParam} onChange={e => filter('year', e.target.value)}>
+                    <option value="">All years</option>
+                    {facets?.years.map(y => <option key={y.year} value={String(y.year)}>{y.year} ({y.questions})</option>)}
+                  </select>
+                </label>
+              )}
+              <label className="mb-field">
+                <span>Status</span>
+                <select aria-label="Your study status" value={studyStatus !== 'all' ? 'study:' + studyStatus : ''} onChange={e => chooseStatus(e.target.value)}>
+                  <option value="">All</option>
+                  <option value="study:unseen">Unseen</option>
+                  <option value="study:ever_wrong">Wrong</option>
+                  <option value="study:answered">Attempted</option>
+                </select>
+              </label>
+            </div>
+
+            {hasMultipleSections && (
+              <label className="mb-field">
+                <span>{combined ? 'Paper type' : 'Section'}</span>
+                <select aria-label={combined ? 'Paper type' : 'Section'} disabled={metadataLoading} value={sectionPath} onChange={e => chooseSection(e.target.value)}>
+                  <option value="">{combined ? 'Both papers' : 'All sections'}</option>
+                  {sections.map(s => <option key={s.path} value={s.path}>{combined ? (s.path === 'gs' ? 'Paper I only' : s.path === 'aptitude' ? 'Paper II only' : s.title) : s.title}</option>)}
+                </select>
+              </label>
+            )}
+
+            {hasPapers && (
+              <label className="mb-field">
+                <span>Paper</span>
+                <select aria-label="Specific paper" disabled={metadataLoading} value={paperId} onChange={e => choosePaper(e.target.value)}>
+                  <option value="">All papers</option>
+                  {paperGroups.filter(group => !sectionPath || group.papers.some(p => p.section_path === sectionPath)).map(group => { const p = group.papers.find(p => p.id === paperId) || representativeBooklet(group); return <option key={p.id} value={p.id}>{p.year ? `${p.year} · ` : ''}{group.papers.length > 1 ? group.title : paperIdentity(p).title}</option> })}
+                  {paperId && paperPosition < 0 && <option value={paperId}>Selected paper</option>}
+                </select>
+              </label>
+            )}
+          </div>
+
+          {!practice && (
+            <div className="mb-rail-foot">
+              <p role="status" className="mb-save-note">
+                {reading.initializing ? 'Restoring reading position…' : reading.message || 'Place saved automatically on this device.'}
+              </p>
+              <div className="mb-foot-btns">
+                {order === 'mixed' && <button type="button" onClick={shuffle} className="mb-foot-btn">↻ Shuffle</button>}
+                <button type="button" onClick={reading.startAgain} title="Reset this reading position; your answers and scores are kept." className="mb-foot-btn">Start again</button>
+              </div>
+              {(combined || collectionId === 'udc') && !paperId && (
+                <p className="mb-dedup-note">Identical booklet-series copies are grouped; figures &amp; source differences stay separate.</p>
+              )}
+            </div>
+          )}
+        </div>
+      </aside>
     </div>
-    {paperId&&<nav aria-label="Paper navigation" className="browse-paper-navigation">
-      <button type="button" disabled={paperPosition<=0} onClick={()=>choosePaper(representativeBooklet(paperGroups[paperPosition-1]).id)} className="min-h-11 text-link disabled:opacity-40">← Previous paper</button>
-      <span className="min-w-0 flex-1 truncate text-center" title={selectedPaper?paperIdentity(selectedPaper).title:'Selected paper'}>{selectedPaper?paperIdentity(selectedPaper).title:'Selected paper'}</span>
-      <button type="button" disabled={paperPosition<0||paperPosition>=paperGroups.length-1} onClick={()=>choosePaper(representativeBooklet(paperGroups[paperPosition+1]).id)} className="min-h-11 text-link disabled:opacity-40">Next paper →</button>
-      <Link to={sourceCollections?'/exams/group-b-gazetted?'+new URLSearchParams({collection:collectionId,view:'papers'}):`/exams/${collectionId}?view=papers`} className="inline-flex min-h-11 items-center text-link">All papers</Link>
-      {selectedPaper?.source_pdf_url&&<a href={selectedPaper.source_pdf_url} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center text-link underline">PDF ↗</a>}
-    </nav>}
-    {!practice&&<div className="my-2 flex flex-wrap items-center justify-between gap-x-4 gap-y-1 px-1 text-xs text-secondary"><p role="status">{reading.initializing?'Restoring reading position…':reading.message||'Your place is saved automatically on this device.'}</p><div className="flex items-center gap-3">{order==='mixed'&&<button type="button" onClick={shuffle} className="min-h-11 font-semibold text-link underline">Shuffle order</button>}<button type="button" onClick={reading.startAgain} title="Reset this reading position; your answers and scores are kept." className="min-h-11 font-semibold text-link underline">Start again</button></div></div>}
-    {subjectId==='gk-gs'&&topicId==='gk-gs:science'&&selectedTopic&&<nav aria-label="Science branches" className="mb-3 flex flex-wrap items-center gap-2">
-      <span className="mr-1 text-xs font-semibold text-secondary">Science:</span>
-      {[{id:'',title:'All Science'},...selectedTopic.subtopics].map(branch=><button key={branch.id} type="button" aria-pressed={subtopicId===branch.id} onClick={()=>taxonomyFilter('subtopic_id',branch.id)} className={`min-h-11 rounded-pill border px-4 text-xs font-semibold ${subtopicId===branch.id?'border-ink bg-ink text-paper':'border-hairline bg-card'}`}>{branch.title}</button>)}
-    </nav>}
-    <AnswerLayoutControl/>
-    <div className="mt-4 flex justify-between text-sm text-secondary"><span>{!pending&&page ? `${page.total.toLocaleString('en-IN')} ${page.total===1?'question':'questions'}` : page?'Updating questions…':'Loading questions…'}</span>{!pending&&page && <span>{page.total ? offset+1 : 0}–{Math.min(offset+page.items.length,page.total)} of {page.total}</span>}</div>
-    {error && <p role="alert" className="mt-3 rounded-[10px] border border-mypick bg-mypick-soft p-3 text-sm text-mypick">{error} <button type="button" onClick={()=>setReload(n=>n+1)} className="underline">Retry</button></p>}
-    {(combined||collectionId==='udc')&&!paperId&&<p className="mt-2 text-xs text-secondary">Identical text copies from booklet series are grouped. Figures and source differences stay separate.</p>}
-    {metadataLoading&&<p role="status" className="mt-2 text-xs text-muted">Paper details are loading. You can start with the available questions.</p>}
-    {checkpointError&&<p role="status" className="mt-2 text-xs text-mypick">Could not save your place: {checkpointError}</p>}
-    {practice&&<p className="mt-3 text-xs text-secondary">Tap an option to submit your answer. Show answer opens reading mode.</p>}
-    {page&&<Pagination page={currentPage} pages={pages} disabled={pending} onPageChange={goPage} label={practice?'Practice question navigator':'Exam question pages'}/>}
-    {pending&&!page&&!error&&<p role="status" className="min-h-[320px] py-10 text-center text-secondary">Loading questions…</p>}
-    <div className={`exam-reading-area mt-2 divide-y divide-hairline ${pending&&page?'opacity-50':''}`} data-results-current={!pending}>
-      {page?.items.map((q,index)=>{
-        const result=results[q.id]
-        return <StudyQuestionCard showPanelNext={false} key={q.id} q={q} collectionId={collectionId} paperId={paperId} sourceCollections={sourceCollections}
-          result={result} pick={picks[q.id]} viewed={viewed[q.id]} busy={answerBusy[q.id]} checking={checkingAnswers[q.id]} disabled={pending}
-          onPick={i=>void answer(q,i)}
-          onViewed={value=>setViewed(old=>({...old,[q.id]:value}))} onBusy={v=>setAnswerBusy(old=>({...old,[q.id]:v}))}
-          onRetry={()=>{setPicks(old=>{const next={...old};delete next[q.id];return next});setResults(old=>{const next={...old};delete next[q.id];return next})}}
-          onNext={()=>{const next=page.items[index+1];if(next)document.getElementById('question-'+next.id)?.scrollIntoView({block:'start',behavior:'smooth'});else if(currentPage<pages)goPage(currentPage+1);else setError('You reached the end of these results. Change filters to continue.')}}/>
-      })}
-      {!pending&&page && !page.items.length && <div className="py-10 text-center text-sm text-secondary">No questions match these filters. <button type="button" onClick={resetFilters} className="min-h-11 underline">Reset filters</button></div>}
-    </div>
-    {page&&<Pagination page={currentPage} pages={pages} disabled={pending} onPageChange={goPage} label={practice?'Practice question navigator':'Exam question pages'}/>}
   </section>
 }
 

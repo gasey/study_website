@@ -1,5 +1,28 @@
 # Devlog
 
+25 November IST — **Completed V1.0 Production Readiness & Hardening Audit (`finnaplanversion1.md`), fixed `publication_verification.py` invariant regression + Finna Quest 429/offline error recovery, and deployed Web + API cleanly.**
+
+- **API audit & fix (`api/app/services/publication_verification.py`, `guides.py`, `collections.py`):** Caught 2 failing invariant tests in `test_publication_verification.py` where uncommitted local code permitted `explanation` patches on unanswered MCQs; restored strict guard (`51/51` pytest passed). Verified `0142_consolidate_exam_modules.sql` is already deployed on prod. Deployed via `./scripts/deploy.sh` (`{"status":"ok","questions":82383,"scorable":13376}`, `ism-api.service` active, `/srv/api/ops-collector.py` intact, `/api/guides/admin*` returns `401` unauthenticated, `study.hawayu.in` `200`, `family.hawayu.in` `307`).
+- **Web + Mobile hardening:** Added explicit 429 daily-limit & network retry handling with auto-paused countdown in `QuestGame.tsx` (Web) and `quest.tsx` (Mobile). Added permanent prebuild gate `web/scripts/check-guides-and-quest.mjs` verifying 11 guides, 81 chapter routes, 0 stray LaTeX, and 0 `dangerouslySetInnerHTML`. Hardened `.gitignore` in both repos (`/state/answer-review/` in `finna`, `*.apk` / `*.aab` in `india-study-map-mobile`).
+
+25 November IST — **Shipped Finna Quest RPG across Web (`/games/quest`) and Mobile (`/quest`) with strict general-knowledge realm allowlist. Web deployed to `https://study.hawayu.in`.**
+
+- **Curated General-Knowledge Allowlist (`web/src/lib/questGame.ts` + mobile `src/lib/questGame.ts`):** Whitelists 8 default general realms (**English Arena, Geography & Mizoram, Computer & Tech Lab, History Chronicles, Polity Citadel, Science Foundry, Economy & World GK, Maths & Reasoning**) plus an opt-in **Mizo Heritage** toggle chip (~28,896 general MCQs, +7,552 opt-in Mizo), strictly excluding specialist medical/technical subjects (*Radiology, Nursing, Dental, Engineering, Pharmacy, Accounts*). Filters to clean 4-option scannable MCQs via public `subject_id` queries (works for both guests and signed-in accounts).
+- **Full RPG Loop (`QuestGame.tsx`, `quest-game.css`, mobile `src/app/quest.tsx`):** 3 modes (**⚔️ 12-Floor Quest Expedition** with 3 Acts, 3 Bosses, and Campfire Power-up Shop; **🏔️ Endless Tower** survival; **📅 Daily 10-Q Gauntlet** deterministic IST seed + WhatsApp share card), animated Guardian encounters, Crits (<6s), Combos, 5 relics (`🛡️ Aegis Shield`, `⏳ Time Freeze`, `⚡ Overdrive`, `🔄 Reroll`, `❤️ Heal`), Web Audio API arcade SFX + keyboard hotkeys (`1–4`, `S/F/O/R`) on Web, `expo-haptics` + hit-shake + native Share on Mobile, and a **Battle Debrief** linking missed questions straight to matching Concept Guide chapters.
+- **Featured in Games Hub (`Games.tsx`, mobile `games.tsx`) & verified:** `./scripts/deploy.sh web` clean (42 routes, `vite build` 6.31s); `HTTP/2 200` on `study.hawayu.in/games/quest` and `/games`, `HTTP/2 307` on `family.hawayu.in`.
+
+25 November IST — **Unified Practice & Full-Paper Mock across Web and Mobile (eliminated 20-question mini-mock confusion and fixed `simulation=full` HTTP 422). Web deployed to `https://study.hawayu.in`.**
+
+- **Bug fixes in `MockRunner.tsx` & `Practice.tsx`:** Removed hardcoded `count: 20, duration_minutes: 20` in `MockRunner.tsx` (now respects URL `count`/`minutes` and defaults to a real full-length paper: `100` Qs / `120` min for exam mocks, or the paper's full MCQ count & timing in printed Q1–Qn order). Fixed the HTTP 422 crash where `Practice.tsx` sent `simulation=full&mode=derived` without a `paper_id`.
+- **Merged 2-mode student flow (`Practice.tsx`, `ExamPaperCard.tsx`, `ExamPage.tsx`, `PaperViewer.tsx`, `siteMap.ts`):** Replaced overlapping jargon buttons (`Official-key practice`, `Reviewed estimate`, `Practice test`, `Mock test`) with one clear mental model everywhere: **Practice** (untimed, instant answers & Concept Guide links) vs **Full-Paper Mock** (real original past paper in printed order OR full 100-Q exam paper, server-timed countdown, scored at submit).
+- **Deploy & verify:** `./scripts/deploy.sh web` clean (`tsc -b`, `check-dead-links`, `check-admin-nav`, `vite build` 9.21s); live checks confirmed `HTTP/2 200` on `study.hawayu.in/practice` and `HTTP/2 307` on `family.hawayu.in`.
+
+25 November IST — **Expanded Concept Guides library to 11 volumes (107 chapters) + exact question-to-chapter deep-linking across Web & Mobile. Web deployed to `https://study.hawayu.in`.**
+
+- **4 new editorial Concept Guides added via `scripts/enrich-guides-seed.py` → `web/src/data/guides-seed.json`:** `computer-fundamentals` (5 chapters), `general-science` (4 chapters), `indian-economy` (5 chapters), and `reasoning-aptitude` (6 chapters), alongside the upgraded Polity Codex, Maths & Arithmetic Handbook, Geography, History, English Tenses & Voice, MPSC Quick Revision, and Using Finna (41 reference tables, 15 worked examples, 43 exam traps/hooks, zero stray LaTeX).
+- **Exact question-to-chapter deep-linking (`web/src/lib/questionGuideLink.ts`, `web/src/screens/Guides.tsx`, `StudyQuestionCard.tsx`, `QuestionCard.tsx`, `ExamStudyTopics.tsx`):** 81 verified routes (0 broken anchors) across Maths, Computer & IT, General Science, Reasoning, Economy, English, Polity/Law/Mizoram Admin, Geography/Environment, History, and GK/GS, with high-confidence stem overrides for loosely tagged questions, guaranteed `#anchor` smooth scroll + matched-chapter highlight, and a 1-tap `← Back to question` button.
+- **Verification & deploy:** `./scripts/deploy.sh web` (`tsc -b`, `check-dead-links`, `check-admin-nav`, `vite build` clean in 6.35s); live checks confirmed `HTTP/2 200` on all 4 new guide URLs on `study.hawayu.in` and `HTTP/2 307` on `family.hawayu.in`.
+
 23 November IST — **Post-cutover worker check: the deployed publication worker is correct and runs clean. Found and fixed a regression my own API deploy caused — `deploy.sh api` had deleted `/srv/api/ops-collector.py`.**
 
 - **Worker code verified deployed.** `/srv/study/workshop/india-study-map-app/scripts/bank-review-worker.py` carries the V.20 `('taxonomy','explanation')` group lookup and `admin_tag_batch.py` carries `BATCH_PATCH_KEYS`; both compile under the server interpreter. Running the real `ism-oracle-bank-review.service` gives `Result=success`, `ExecMainStatus=0`, "Publication queue empty".
@@ -15460,6 +15483,326 @@ source/option defects and exact-key checks remain. Keep 2012/2013 deferred and
 original simulation gated. Receipt: `docs/sources/mcs-publication-20261121.json`.
 Private proof: `reports/mcs-continue-20261121/`.
 
+23 November IST — **Finna explanation-only review continued: second packet applied.**
+
+- Finished the active 10-question packet in the Oracle explanation queue. All ten explanations were bound to their registered PDF hashes and checked against the full printed question/options; all ten publications reached `applied` with exact live source readback.
+- Covered Paper-I(A) Q59, Paper-I(B) Q84, Paper-II(A) Q25, Paper-II(B) Q64, Paper-I(D) Q78, Paper-I(C) Q80 and Q68, Paper-II(D) Q44, Paper-I(C) Q97, and Paper-II(B) Q1. Added a dated MPI note that distinguishes NITI Aayog’s 2022–23 extrapolation from survey measurements. Q97’s Thingthiah explanation is supported by a Mizoram University cultural-studies article.
+- This was explanation-only maintenance: no answer key, answer, or other question field was edited. The queue packet is closed. Local checkpoint after application: **90 published, 955 pending, 12 not-needed, 9 unresolved; no active packet**. The nine unresolved items include the seven already present at the start of this continuation plus the two source defects documented in the prior packet.
+
+23 November IST — **Finna explanation-only review continued: third packet applied.**
+
+- Eight checked explanations reached `applied` with exact live readback: Paper-I(C) Q89 (Lusei settlement pair), Paper-II(D) Q65 (family relations), Paper-II(C) Q59 (team reporting), Paper-I(C) Q62 (NFSM crops), Paper-I(C) Q20 (Patel and princely-state integration), Paper-I(C) Q6 (TSMC foundry model), Paper-II(A) Q62 (audience engagement), and Paper-II(D) Q46 (two-way communication). Two direct-recall items were recorded internally as explanation-not-needed: Paper-I(C) Q95 (Mizo demon classification; no dependable original support found) and Paper-I(B) Q15 (historical epithet).
+- No answer, key, or other question field changed. Queue packet is closed. Checkpoint: **106 published, 935 pending, 14 not-needed, 11 unresolved; no active packet**.
+- The worker supports grouped publication for specific admin explanation batches, but that route marks `explanation_human_edited=true`; do not use it for this AI-assisted queue because that would misstate attribution. The current portable path therefore retains serial guarded publication and exact readback until a suitable grouped owner-maintenance path exists.
+
+23 November IST — **Finna explanation-only review continued: fourth packet applied.**
+
+- Ten explanations reached `applied` with exact live readback: Paper-I(B) Q37 (Moho), Paper-II(D) Q78 (workplace mediation), CSP Q64 (historical MSME investment limit), Paper-II(C) Q69 (debate ranking), Paper-I(C) Q29 (biosphere-reserve matches), Paper-I(C) Q30 (“tantamount to”), Paper-I(A) Q32 (lake locations), Paper-I(A) Q7 (Akasa Air, with a dated Fly91 update), Paper-I(C) Q67 (reproductive isolation), and Paper-I(D) Q50 (Articles 371-A/B/F/H). No answer, key or other question field changed.
+- A first grouped outbox attempt let the timer apply one member before the remaining manifests, leaving four stale exports. The stale exports were explicitly withdrawn with unchanged source checks; none of those four altered bank content. Fresh owner-bound publications were then assembled against the current bank hash and applied together by `publish-owner-review-batch.py`. Its dry run and exact live verification passed. The normal timer is active again and the Oracle queue has zero pending exports.
+- This corrects the previous checkpoint’s statement that the portable path had to stay serial: the safe batch path is the owner-maintenance source batch plus the atomic bank-batch publisher, with the timer drained through apply and verification. Do not use the separate endpoint that mislabels AI explanation text as human-edited.
+- Queue: **116 published, 925 pending, 14 not-needed, 11 unresolved; no active packet**. These are explanation-queue counts, not answer/source certification. Local per-item receipts and the immutable batch receipt preserve the recovery trail.
+
+23 November IST — **Finna explanation-only review continued: fifth packet applied locally and in one sync.**
+
+- Prepared, checked and batch-synced ten explanation-only items: Paper-II(D) Q96 (pie-chart total), Paper-I(D) Q27 (Kanpur conspiracy), Paper-I(D) Q76 (reproductive isolation), Paper-I(B) Q50 (local-government bodies), Paper-II(A) Q75 (word analogy), Paper-I(A) Q76 (trickling filter), Paper-I(D) Q43 (Governor removal), Paper-I(D) Q9 (International Day of Zero Waste), Paper-I(C) Q94 (Bengkhuaia/Mary Winchester), and Paper-I(C) Q96 (Sahlam tree).
+- Exact source PDF hashes and physical pages were already prepared and visually checked locally; explanatory reasoning and factual sources were checked before queueing. The owner-maintenance source batch exported ten owner-bound decisions. `publish-owner-review-batch.py --dry-run` passed; atomic batch `review_batch_ffdcc9bad2b442cc30d1c404e3a19ff2` applied with output bank hash `786c1833e36464d733df487b216214d13843b09d490db5637f920f81d7d58f38`; all ten exact live snapshots and publication states read back as applied.
+- Governor explanation preserves Article 156's pleasure rule. The Mary Winchester explanation notes historical accounts that distinguish the initial raider from Bengkhuaia's custody. No answer, key, source, or other question field changed. The worker timer is active, service inactive, and the Oracle publication queue reported empty after restart.
+- Local queue checkpoint: **126 published, 915 pending, 14 not-needed, 11 unresolved; no active packet**. Local drafts/checks and immutable per-item/batch receipts are under `state/ai-review/`.
+
+23 November IST — **Finna explanation-only review continued: sixth packet applied.**
+
+- Seven checked explanations reached `applied` with exact live readback: Paper-II(C) Q81 (hill/mountain analogy), Paper-II(D) Q63 (subconsciousness passage), Paper-II(A) Q40 (school-education argument), Paper-II(C) Q21 (body language), Paper-II(B) Q45 (cultural context in non-verbal communication), Paper-II(A) Q57 (centralization), and Paper-I(B) Q3 (International Day of Zero Waste). One subjective “best and unique” semiconductor superlative (Paper-I(D) Q2) was marked explanation-not-needed to avoid unsupported ranking prose. Two passage/argument items remain unresolved: Paper-II(D) Q61 (both arguments may satisfy the printed strong-argument rule) and Paper-II(A) Q46 (passage does not assess direct miracles).
+- Batch `review_batch_eff24c0451560826eb7e3225c14807ef` passed dry run and exact live readback, output hash `9651355684db82ef17eec1816e3aee54884f0de0102898b8fd282079ffa09377`. No answer, key or non-explanation field changed. Publisher timer restored and queue reported empty.
+- Checkpoint: **133 published, 905 pending, 15 not-needed, 13 unresolved; no active packet**.
+
+23 November IST — **Finna explanation-only review continued: seventh packet applied.**
+
+- Six checked explanations reached `applied` with exact full live readback: Paper-I(A) Q86 (hydrocarbon refrigerants), Paper-I(A) Q60 (NEP-2020 language medium), Paper-I(A) Q34 (environmental lapse rate), Paper-I(D) Q44 (Autonomous District Councils), Paper-II(B) Q43 (body language), and Paper-I(C) Q86 (vitamin K). Learner-facing explanation fields contain only concise teaching text; audit evidence and check notes remain private.
+- Three direct-recall items needed no filler explanation: two repeated Mizo cultural-term items and the definition of interpersonal skill. Paper-II(C) Q45 remains unresolved because the printed family clues do not establish Suresh's relation to Radha/Sudha.
+- Atomic batch `review_batch_3073672c51990c9ecae7be5b32d35b13` passed dry run and exact live readback. Output bank hash: `c8221a15e6e8643c52adc57fedd673e984bc35576a6758d7287db47f928eb450`. Only explanation fields changed. Publisher timer is active, service inactive, and the Oracle publication queue is empty.
+- Checkpoint: **139 published, 895 pending, 18 not-needed, 14 unresolved; no active packet**.
+
+23 November IST — **Finna explanation-only review continued: eighth packet applied.**
+
+- Seven checked explanations reached `applied` with exact full live readback: Paper-I(D) Q71 (election neutrality), Paper-II(D) Q81 (audience engagement), Paper-II(C) Q62 (preventing unlawful demolition), Paper-II(B) Q41 (active listening), Paper-I(D) Q28 (lacustrine plains), Paper-I(D) Q45 (quasi-federal structure), and Paper-I(C) Q2 (dated Canadian population projection).
+- Two direct-recall items needed no filler explanation: radiocarbon isotope and William Bentinck. Paper-II(B) Q61 remains unresolved because the printed page gives no clues for identifying married pairs.
+- Atomic batch `review_batch_d6433ca2b7785d0f7fb2ecc49fd6611e` passed dry run and exact live readback. Output bank hash: `9542144c4f615a06d39990df38a100f12bf3ea8eb1ad0f7e723d70efd428c81e`. Only explanation fields changed. Publisher timer is active, service inactive, and the Oracle publication queue is empty.
+- Checkpoint: **146 published, 885 pending, 20 not-needed, 15 unresolved; no active packet**.
+
+23 November IST — **Finna explanation-only review continued: ninth packet applied.**
+
+- Six checked explanations reached `applied` with exact full live readback: Paper-II(B) Q87 (pie-chart expenditure), Paper-II(D) Q58 (school-education arguments), Paper-II(C) Q66 (centralization), Paper-II(C) Q25 (conflict resolution), Paper-I(D) Q41 (popular sovereignty), and Paper-I(B) Q73 (trickling filters). Reused concise, previously source-checked explanations for the repeated school-education and centralization items.
+- Four direct-recall items needed no filler explanation: William Bentinck, an unsupported “world’s best” semiconductor ranking, the 1986 Environment Protection Act date, and a niche Mizo cultural-object term.
+- Atomic batch `review_batch_89326d7bb28c19ff09cc0a479ef59cf0` passed dry run and exact live readback. Output bank hash: `092b7e39fef67923794f303a0c512d4440a8704593c515d1f0ba5bc7bbad5d4d`. Only explanation fields changed. Publisher timer is active, service inactive, and the Oracle publication queue is empty.
+- Checkpoint: **152 published, 875 pending, 24 not-needed, 15 unresolved; no active packet**.
+
+23 November IST — **Finna explanation-only review continued: tenth packet applied.**
+
+- Seven checked explanations reached `applied` with exact full live readback: Paper-I(A) Q65 (ocean carbon reservoir), Paper-I(C) Q41 (Article 275(1)), Paper-I(C) Q40 (Article 371 special provisions), Paper-I(A) Q42 (quasi-federal structure), Paper-II(B) Q37 (closed interview questions), Paper-II(C) Q22 (handshake and confidence), and Paper-I(A) Q64 (verify a serious allegation before strong action).
+- Mahajanapada recall needed no filler explanation. Paper-II(C) Q44 remains unresolved because the family passage does not establish Sonu’s surname; Paper-II(A) Q69 remains unresolved because the number grid has no unique defensible rule.
+- Atomic batch `review_batch_20de071c6e8d74523717fac4889f89b7` passed dry run and exact live readback. Output bank hash: `b88ecfd52ca6123df5b0474c3275229c6e3f5af4d6c18c01719ae4b370451f6c`. Only explanation fields changed. Publisher timer is active, service inactive, and the Oracle publication queue is empty.
+- Checkpoint: **159 published, 865 pending, 25 not-needed, 17 unresolved; no active packet**.
+
+23 November IST — **Finna explanation-only review continued: eleventh packet applied.**
+
+- Ten checked explanations reached `applied` with exact full live readback: Paper-I(B) Q13 (Chenab Bridge and USBRL), Paper-I(B) Q74 (ocean carbon reservoir), Paper-II(A) Q45 (subconsciousness passage inference), Paper-II(A) Q18 (emotional intelligence), Paper-I(C) Q58 (Article 112), Paper-I(A) Q28 (Moho boundary), Paper-I(D) Q11 (JUICE; explanation corrects the stem’s NASA attribution), Paper-II(C) Q47 (capital-punishment arguments), Paper-I(C) Q38 (lake-state matches), and Paper-I(C) Q7 (Messi and Education For All).
+- Atomic batch `review_batch_10c3008d6aa21199f7713cfe9836c595` passed the authoritative Oracle dry run and publication. Input bank hash: `b88ecfd52ca6123df5b0474c3275229c6e3f5af4d6c18c01719ae4b370451f6c`; output bank hash: `eeadb0f25ab6daaa6d3fb39fe48f4d534f72703d289f2e442620caf96a29ca51`. Every proposed and live change was explanation-only; all ten full records matched exact readback.
+- The Oracle publisher timer is active, service inactive, and publication queue empty. The stale developer recovery snapshot’s editorial-protection check rejected its local dry run, so the authoritative Oracle dry run and publisher were used; the local guard and unrelated bank changes were left untouched.
+- Checkpoint: **169 published, 855 pending, 25 not-needed, 17 unresolved; no active packet**.
+
+23 November IST — **Finna explanation-only review continued: twelfth packet applied.**
+
+- Six checked explanations reached `applied` with exact full live readback: Paper-I(D) Q74 (Lindeman’s 10% energy-transfer law), Paper-I(A) Q57 (MGNREGA job-card validity in the paper’s 2023 context), Paper-I(A) Q27 (Patel and princely-state integration), Paper-I(A) Q30 (Kandla Port), Paper-I(A) Q37 (lacustrine plains), and Paper-I(C) Q17 (Kanpur Conspiracy Case).
+- Four direct-recall items needed no filler explanation: the Samudragupta nickname, two source-dependent Mizo cultural questions, and the date of the annual observance against violence against women.
+- Atomic batch `review_batch_934dacfa79ff889620d0dc412ec256f5` passed the authoritative Oracle dry run and publication. Input bank hash: `eeadb0f25ab6daaa6d3fb39fe48f4d534f72703d289f2e442620caf96a29ca51`; output bank hash: `3611c73d738c5f605af1f8a04855e19cd27db7edb887250e8fbd13b4325d8142`. Every proposed and live change was explanation-only; all six full records matched exact readback.
+- The Oracle publisher timer is active, service inactive, and publication queue empty. The stale developer recovery snapshot’s editorial-protection check remains untouched.
+- Checkpoint: **175 published, 845 pending, 29 not-needed, 17 unresolved; no active packet**.
+
+23 November IST — **Finna explanation-only review continued: thirteenth packet applied.**
+
+- Six checked explanations reached `applied` with exact full live readback: Paper-I(C) Q71 (ocean carbon reservoir, reused), Paper-II(C) Q43 (family relationship), Paper-I(A) Q54 (maternal mortality ratio), Paper-II(C) Q18 (two-way communication), Paper-II(D) Q57 (argument strength, reused), and Paper-I(C) Q63 (MGNREGA job-card validity, reused).
+- Four direct-recall items needed no filler explanation: K. M. Munshi attribution, the 2023 Mizoram University appointment, and two Mizo-specific facts without a competent supporting reference.
+- Atomic batch `review_batch_1fcbba76c550d07ad89d1b22b64a1e78` passed the authoritative Oracle dry run and publication. Input bank hash: `3611c73d738c5f605af1f8a04855e19cd27db7edb887250e8fbd13b4325d8142`; output bank hash: `496978d536e8f900e819e5682e269825c603af1578fd46cb2a5e2201284477e8`. Every proposed and live change was explanation-only; all six full records matched exact readback.
+- The Oracle publisher timer is active, service inactive, and publication queue empty.
+- Checkpoint: **181 published, 835 pending, 33 not-needed, 17 unresolved; no active packet**.
+
+23 November IST — **Finna explanation-only review continued: fourteenth packet applied.**
+
+- Six checked explanations reached `applied` with exact full live readback: Paper-I(D) Q70 (CF₄ atmospheric lifetime), Paper-II(A) Q63 (decision-making sequence), Paper-I(D) Q22 (Vedanga), Paper-II(A) Q56 (exam-question confidentiality), Paper-II(C) Q50 (sex-education arguments), and Paper-II(B) Q38 (role conflict).
+- Three direct-recall items needed no filler explanation: the Sahmula location, the anthem’s original language, and the 2023 QS count. Paper-I(B) Q53 remains unresolved: its official key says oilseeds are excluded from NFSM, but Government NFSM guidelines include oilseed crops by 2018–19, so the keyed choice may be outdated for this 2023 paper.
+- Atomic batch `review_batch_bebc75aa78b2053586c026857a80bfc4` passed the authoritative Oracle dry run and publication. Input bank hash: `496978d536e8f900e819e5682e269825c603af1578fd46cb2a5e2201284477e8`; output bank hash: `c11f437b189fe913a2cba5511ebc1e82d2a10b0d101fa275fe98459e0d79fb83`. Every proposed and live change was explanation-only; all six full records matched exact readback.
+- The Oracle publisher timer is active, service inactive, and publication queue empty.
+- Checkpoint: **187 published, 825 pending, 36 not-needed, 18 unresolved; no active packet**.
+
+23 November IST — **Finna explanation-only review continued: fifteenth packet applied.**
+
+- Seven checked explanations reached `applied` with exact full live readback: Paper-II(C) Q79 (Venn diagram count), Paper-II(D) Q45 (biased listening), Paper-II(A) Q30 (body language), Paper-II(C) Q37 (prayer passage), Paper-II(C) Q24 (self-awareness), Paper-I(C) Q76 (biomagnification), and Paper-II(B) Q9 (verify a serious allegation before strong action).
+- Three direct-recall items needed no filler explanation: William Bentinck and sati, the annual observance date against violence against women, and the named November 2021 MPI report result.
+- Atomic batch `review_batch_231b9a2c032e6bf89489d59d4a92612b` passed the authoritative Oracle dry run and publication. Input bank hash: `c11f437b189fe913a2cba5511ebc1e82d2a10b0d101fa275fe98459e0d79fb83`; output bank hash: `34d35d2297ec014a31619d20d1dfe991f1fa8bd0a7dfc0f7c4622bb04e6c7efc`. Every proposed and live change was explanation-only; all seven full records matched exact readback.
+- The Oracle publisher timer is active, service inactive, and publication queue empty.
+- Checkpoint: **194 published, 815 pending, 39 not-needed, 18 unresolved; no active packet**.
+
+23 November IST — **Finna explanation-only review continued: sixteenth packet applied.**
+
+- Two checked explanations reached `applied` with exact full live readback: Paper-II(A) Q35 (paternal-cousin relationship) and Paper-II(D) Q83 (verify a serious allegation before strong action; reused checked wording from the matching scenario in packet 15).
+- Eight direct-recall items needed no filler explanation: the 2023 Canada population forecast, the Kanpur Conspiracy Case, the Mizo term for a powder horn, first Lusei settlements in Myanmar, Sahmula’s traditional domain, the Chenab Bridge rail link, NRSC’s location, and Lionel Messi’s BYJU’s role.
+- Atomic batch `review_batch_5b833b7a253c99267fce1ebce870d0e0` passed the authoritative Oracle dry run and publication. Input bank hash: `34d35d2297ec014a31619d20d1dfe991f1fa8bd0a7dfc0f7c4622bb04e6c7efc`; output bank hash: `ae35455f072bba553230597a3ef691ef5453887c7b94c156aea1b7c3d8761e82`. Both proposed and live changes were explanation-only; both full records matched exact readback.
+- The Oracle publisher timer is active, service inactive, and publication queue empty.
+- Checkpoint: **196 published, 805 pending, 47 not-needed, 18 unresolved; no active packet**.
+
+23 November IST — **Finna explanation-only review continued: seventeenth packet applied.**
+
+- Six checked explanations reached `applied` with exact full live readback: Paper-II(A) Q79 (arrow-figure sequence), Paper-II(C) Q49 (why neither trapping argument is strong), Paper-II(C) Q58 (meeting-stage sequence), Paper-II(C) Q56 (verify a serious allegation before strong action; reused checked wording), Paper-I(D) Q19 (Great Bath interpretation), and Paper-II(A) Q24 (uses of closed questions).
+- Four direct-recall items needed no filler explanation: number of Indian biosphere reserves, Kandla’s position by the Gulf of Kutch, the constitutional removal fact, and the Mizo folklore name.
+- Atomic batch `review_batch_a34016a509a36c9dc80eb196d8b49af0` passed the authoritative Oracle dry run and publication. Input bank hash: `ae35455f072bba553230597a3ef691ef5453887c7b94c156aea1b7c3d8761e82`; output bank hash: `0996263b094cc6cf7826a49eabfcb1299745ecc545240e1b6e03a9368b1e6496`. Every proposed and live change was explanation-only; all six full records matched exact readback.
+- The Oracle publisher timer is active, service inactive, and publication queue empty.
+- Checkpoint: **202 published, 795 pending, 51 not-needed, 18 unresolved; no active packet**.
+
+23 November IST — **Finna explanation-only review continued: eighteenth packet applied.**
+
+- Six checked explanations reached `applied` with exact full live readback: Paper-I(C) Q45 (Panchayat term begins at its first meeting), Paper-II(B) Q15 (impartial response to unlawful demolition, with force constrained to lawful and proportionate measures), Paper-II(A) Q48 (two married couples), Paper-II(A) Q20 (reward power), Paper-I(D) Q65 (WWF Global 200), and Paper-II(D) Q51 (grapes as the plural word).
+- Three direct-recall items needed no filler explanation: the Mizo powder-horn term, Samudragupta’s epithet, and a Mizo cultural term. Paper-I(D) Q59 remains unresolved: the official key marks oilseeds as excluded from NFSM, while Government NFSM guidelines include an NFSM-Oilseeds component by 2018–19. No explanation was published for that disputed answer.
+- Atomic batch `review_batch_f58bedbb0a72be03fe3449fd8d693aca` passed the authoritative Oracle dry run and publication. Input bank hash: `0996263b094cc6cf7826a49eabfcb1299745ecc545240e1b6e03a9368b1e6496`; output bank hash: `64e81dc09fc4a6ad0d0455b5082ecadd07ec76ef8bd3209d5a04711e424770cb`. Every proposed and live change was explanation-only; all six full records matched exact readback.
+- The Oracle publisher timer is active, service inactive, and pending exports are zero.
+- Checkpoint: **208 published, 785 pending, 54 not-needed, 19 unresolved; no active packet**.
+
+23 November IST — **Finna explanation-only review continued: nineteenth packet applied.**
+
+- Six checked explanations reached `applied` with exact full live readback: Paper-I(B) Q5 and Paper-I(A) Q8 (JUICE; corrected the stems' NASA attribution using ESA's official mission record), Paper-II(B) Q69 (Venn diagram count), Paper-I(D) Q37 (average environmental lapse rate), Paper-I(C) Q46 (Governor removal procedure), and Paper-II(C) Q38 (family relation). Three direct-recall items needed no filler explanation: Mizoram per-capita income, Kyoto Protocol/carbon-credit attribution, and K. M. Munshi's Preamble phrase. Paper-II(B) Q75 remains unresolved because the displayed arrow sequence indicates three left arrows while the official key selects four.
+- Atomic batch `review_batch_b65447aaa713a3238a849c846dbc65f2` passed dry run and exact full live readback. Input bank hash: `64e81dc09fc4a6ad0d0455b5082ecadd07ec76ef8bd3209d5a04711e424770cb`; output bank hash: `aedf2c3b20d3539066bafcb98dfd8f2be29640844ed32928a544518b57741567`. Only explanation fields changed.
+- The Oracle publisher timer is active, service inactive, and pending exports are zero. Local checkpoint: **214 published, 775 pending, 57 not-needed, 20 unresolved; no active packet**.
+
+23 November IST — **Finna explanation-only review continued: twentieth packet applied.**
+
+- Five checked explanations reached `applied` with exact full live readback: Paper-I(B) Q76 (CF₄'s long atmospheric lifetime), Paper-II(A) Q67 (consulting team members on village problems), Paper-II(D) Q43 (when closed questions help in an interview), Paper-I(B) Q5 (JUICE; correction of the stem's NASA attribution), and Paper-I(D) Q63 (NEP 2020 language-medium recommendation). Four other direct-recall items needed no filler explanation: the 2021 MPI state result, first Lusei settlement pair, Lionel Messi's named 2023 ambassador role, and Mizo vocabulary. The repeated Mizoram per-capita-income question also needed no additional explanation.
+- Atomic batch `review_batch_7186dec382d62d72c88a541ca01f3443` passed dry run and exact full live readback. Input bank hash: `aedf2c3b20d3539066bafcb98dfd8f2be29640844ed32928a544518b57741567`; output bank hash: `7757c8b6e0b7142b5dedc9c605d7116f62d5684fdbbd362551c200e252fb6a90`. Only explanation fields changed.
+- The Oracle publisher timer is active, service inactive, and pending exports are zero. Local checkpoint: **219 published, 765 pending, 62 not-needed, 20 unresolved; no active packet**.
+
+23 November IST — **Finna explanation-only review continued: twenty-first packet applied.**
+
+- Seven checked explanations reached `applied` with exact full live readback: Paper-I(B) Q97 (Bengkhuaia and Mary Winchester, retaining the distinction between initial raiders and later custody), Paper-II(B) Q12 (consulting the full team on village problems), Paper-I(A) Q19 (Vedanga classification), Paper-II(D) Q52 (Bhagalpur as the city outside Uttar Pradesh), Paper-II(C) Q57 (cross opposite dot in the cube), Paper-I(C) Q70 (trickling filter as biological treatment), and Paper-II(A) Q26 (biased listening). Three direct-recall items needed no filler explanation: the Mizo kuang-ur duration, a definition of interpersonal skill, and the Chenab Bridge railway link.
+- Atomic batch `review_batch_0e8b41e94876d8d860771be95bf704f0` passed dry run and exact full live readback. Input bank hash: `7757c8b6e0b7142b5dedc9c605d7116f62d5684fdbbd362551c200e252fb6a90`; output bank hash: `56f5cf62548a64ea71dfbe189bd8437de197e471bb7166452064cb946605b1b8`. Only explanation fields changed.
+- The Oracle publisher timer is active, service inactive, and pending exports are zero. Local checkpoint: **226 published, 755 pending, 65 not-needed, 20 unresolved; no active packet**.
+
+23 November IST — **Finna explanation-only review continued: twenty-second packet applied.**
+
+- Two checked explanations reached `applied` with exact full live readback: Paper-II(A) Q65 (cross opposite dot in the cube) and Paper-I(A) Q23 (World War I consequences: statements 1 and 4). Seven direct-recall items needed no filler explanation: bridle, Thingthiah, the HDI range, William Bentinck, ribosomes, Zawlthlia, and MUDRA scheme names. Paper-II(D) Q64 remains unresolved: its passage describes psychological benefits of prayer but neither supports nor denies direct miracles, while the official answer says the conclusion is definitely false.
+- Atomic batch `review_batch_2403e7457b43b215deddbc3b6fd85b4d` passed dry run and exact full live readback. Input bank hash: `56f5cf62548a64ea71dfbe189bd8437de197e471bb7166452064cb946605b1b8`; output bank hash: `0da855b87005874617c1f12b307c7c28c96956c3f3c3460264f09f4a7b5c7aa1`. Only explanation fields changed.
+- The Oracle publisher timer is active, service inactive, and pending exports are zero. Local checkpoint: **228 published, 745 pending, 72 not-needed, 21 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: twenty-third packet applied.**
+
+- Two checked learner-facing explanations reached `applied` with exact full live readback: Paper-II(B) Q39 (biased listening) and Paper-II(D) Q7 (Venn diagram: 41 outside all preferences plus 23 who like only singing, totaling 64 ladies who neither dance nor mimic).
+- Eight direct-recall questions needed no added explanation: K. M. Munshi's Preamble phrase, the exam's 2017-PPP poverty-line figure, the newest listed Indian aviation company, the Canada population forecast, the ten-percent energy-transfer rule, the UN observance on 30 March, the 2023 QS top-100 count, and Teflon. No confidence or review metadata was added to the learner-facing text.
+- Atomic batch `review_batch_76dcc78557378f2da295ef2cbcb344fc` passed dry run and exact full live readback. Input bank hash: `0da855b87005874617c1f12b307c7c28c96956c3f3c3460264f09f4a7b5c7aa1`; output bank hash: `25c07b269e699cd0b2d132058368ad1fd959c9bf69aaac3a481b6a817f088962`. Only explanation fields changed.
+- The Oracle publisher timer is active, service inactive, and pending exports are zero. Local checkpoint: **230 published, 735 pending, 80 not-needed, 21 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: twenty-fourth packet applied.**
+
+- Five checked explanations reached `applied` with exact full live readback: Paper-I(D) Q17 (Patel's role in princely-state integration), Paper-I(C) Q52 (Article 371G and the 53rd Amendment), Paper-I(A) Q38 (Deccan Trap basalt flows), Paper-II(D) Q36 (peaceful conflict resolution), and Paper-II(D) Q37 (emotional intelligence).
+- Five direct-recall items needed no filler explanation: the Thingthiah ceremony, Samudragupta's epithet, the exam's biosphere-reserve count, the repeated 2017-PPP poverty-line figure, and the Kyoto Protocol/carbon-credit association.
+- Atomic batch `review_batch_d3e7ebfe06a8f43c583f8eea1efcffa8` passed dry run and exact full live readback. Input bank hash: `25c07b269e699cd0b2d132058368ad1fd959c9bf69aaac3a481b6a817f088962`; output bank hash: `702398414386a25644f23b20e9d83af29c7a71445e6d00f6822f2ae3e4e7d653`. Only explanation fields changed.
+- The Oracle publisher timer is active, service inactive, and pending exports are zero. Local checkpoint: **235 published, 725 pending, 85 not-needed, 21 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: twenty-fifth packet applied.**
+
+- Four checked explanations reached `applied` with exact full live readback: Paper-II(B) Q49 (compression as a narrow problem-solving block), Paper-I(B) Q29 (correct lake-state pairs), Paper-II(C) Q41 (grapes as the only plural option), and Paper-II(A) Q49 (brain as the internal organ among facial structures).
+- Six direct-recall or repeated items needed no added explanation: WWF's Global 200 definition, the Moho boundary, a repeated team-consultation scenario, the repeated 2017-PPP poverty-line figure, the dated Mizoram income figure, and the named Mizo weaving sequence.
+- Atomic batch `review_batch_d56ed48e91fa19ce3db1bce0b8f14e1a` passed dry run and exact full live readback. Input bank hash: `702398414386a25644f23b20e9d83af29c7a71445e6d00f6822f2ae3e4e7d653`; output bank hash: `d8ae7a4bcf29b3bac87d904b0277c4693da3eb0ed3559030be43a68c81f46b79`. Only explanation fields changed.
+- The Oracle publisher timer is active, service inactive, and pending exports are zero. Local checkpoint: **239 published, 715 pending, 91 not-needed, 21 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: twenty-sixth packet applied.**
+
+- Three checked explanations reached `applied` with exact full live readback: Paper-I(C) Q44 (popular sovereignty), Paper-I(B) Q34 (formation of lacustrine plains), and Paper-I(C) Q60 (maternal mortality ratio per 100,000 live births).
+- Six direct-recall or repeated items needed no added explanation: the sixteen mahajanapadas, Lindeman's energy-transfer rule, the dated QS programme count, the Mizo folklore term Chawm, and repeated church/mosque-demolition and Great Bath questions. Paper-I(D) Q80 remains unresolved because both quarks and electrons are elementary particles in the Standard Model, so the printed choices do not uniquely identify “quark” as the smallest constituent.
+- Atomic batch `review_batch_1f7a49d3b211f8029a936bdd4efb8b72` passed dry run and exact full live readback. Input bank hash: `d8ae7a4bcf29b3bac87d904b0277c4693da3eb0ed3559030be43a68c81f46b79`; output bank hash: `e954ff7f3daabe163f4c2c1fe3784feb0aa95aa241dcc6534f099d8df300cd27`. Only explanation fields changed.
+- The Oracle publisher timer is active, service inactive, and pending exports are zero. Local checkpoint: **242 published, 705 pending, 97 not-needed, 22 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: twenty-seventh packet closed.**
+
+- No new explanation was needed: eight questions duplicated existing published explanations (Sahlam, cultural implications in non-verbal communication, MGNREGS job-card validity, handshake confidence, active listening, and CF₄ lifetime).
+- Two family-passage items remain unresolved. The printed passage does not establish that Suresh is Mr Mahajan or Radha’s father, so the official surname and maternal-grandfather answers require unstated relationships.
+- No Oracle publication batch was needed. The publisher timer is active, service inactive, and pending exports are zero. Local checkpoint: **242 published, 695 pending, 105 not-needed, 24 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: twenty-eighth packet closed.**
+
+- No new explanation was needed: nine questions already had matching published explanations or were direct facts not needing added prose (hill/mountain analogy, Deccan Traps, Lindeman, grapes, K. M. Munshi, Sahmula, Bengkhuaia and Mary Winchester, role conflict, and Akasa Air).
+- The repeated Sonu-surname family question remains unresolved for the same missing identity link: the printed passage does not establish that Suresh is Mr Mahajan or that Sonu carries that surname.
+- No Oracle publication batch was needed. The publisher timer is active, service inactive, and pending exports are zero. Local checkpoint: **242 published, 685 pending, 114 not-needed, 25 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: twenty-ninth packet applied.**
+
+- One checked explanation reached `applied` with exact full live readback: Paper-II(B) Q8 (decision-making sequence: identify the problem, set and weight criteria, develop and analyze alternatives, select, then implement).
+- Nine other questions needed no added explanation because they repeated published explanations or were direct facts: World War I consequences, Thingthiah, the Kyoto Protocol/carbon-credit association, the repeated cube diagram, NEP 2020 language-medium level, Patel and princely-state integration, the repeated maternal mortality measure, Bengkhuaia and Mary Winchester, and conflict resolution.
+- The single-item export was applied by the scheduled Oracle publisher and verified against the complete source record. The timer is active, service inactive, and pending exports are zero. Local checkpoint: **243 published, 675 pending, 123 not-needed, 25 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: thirtieth packet closed.**
+
+- No new explanations were needed: nine items repeated published explanations or were direct facts (sun fusion, speciation, NEP 2020, prayer-passage inference, the Great Bath, Zawlthlia, Sahmula, the Venn diagram, and the dated NITI Aayog MPI result).
+- The repeated NFSM question remains unresolved: the official key excludes oilseeds, while Government NFSM guidelines include an NFSM-Oilseeds component by 2018–19.
+- No Oracle publication batch was needed. The publisher timer is active, service inactive, and pending exports are zero. Local checkpoint: **243 published, 665 pending, 132 not-needed, 26 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: thirty-first packet closed.**
+
+- No new explanation was needed: eight questions repeated published explanations or were direct report facts (ocean carbon reservoir, Kandla port, lacustrine plain, micro-enterprise investment limit, reward power, audience engagement, India’s quasi-federal structure, and the 2023 G20 GDP share).
+- Both repeated “smallest constituent of matter” questions remain unresolved because the choices include both quarks and electrons, which are elementary particles in the Standard Model.
+- No Oracle publication batch was needed. The publisher timer is active, service inactive, and pending exports are zero. Local checkpoint: **243 published, 655 pending, 140 not-needed, 28 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: thirty-second packet closed.**
+
+- No new explanation was needed: nine items repeated published explanations or were direct facts (prolactin, the hill/mountain analogy, the HDI range, mahajanapada count, workplace mediation, Teflon, the repeated HDI range, Bhagalpur, and interpersonal skills).
+- The repeated trapping-ban argument question remains unresolved. The paper’s rubric does not clarify why argument II’s directly relevant claim that bans are ineffective should be treated as weak solely because it is unsupported.
+- No Oracle publication batch was needed. The publisher timer is active, service inactive, and pending exports are zero. Local checkpoint: **243 published, 645 pending, 149 not-needed, 29 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: thirty-third packet closed.**
+
+- No new explanation was needed: eight questions repeated published explanations or were direct facts (the odd-word “grapes” item, MicroPay, Atacama copper, Shompen location, World War I consequences, hydrocarbons as refrigerants, sex-education arguments, and Lionel Messi).
+- Two items remain unresolved: the poverty-estimate question conflates poverty estimation with NSO household-consumption statistics, and the holiday arguments rubric does not justify why public homage is weak while national-progress impact is strong.
+- No Oracle publication was needed. Local checkpoint: **243 published, 635 pending, 157 not-needed, 31 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: thirty-fourth packet applied.**
+
+- One checked explanation reached `applied` with exact full live readback: Paper-II(C) Q46 (the missing letter group VIJ, from three independent letter sequences).
+- Seven repeated or direct items needed no added explanation: autonomous district councils, self-awareness, the 2023 micro-enterprise threshold, India’s quasi-federal structure, MUDRA categories, compression, and the exam-period biosphere-reserve count.
+- Two repeated ambiguous items remain unresolved: the public-holiday argument question and the family-passage relationship between Suresh and Sudha.
+- The scheduled Oracle publisher applied the single explanation; pending exports were verified empty. Only the explanation field changed.
+- Final local checkpoint after closing the packet: **244 published, 625 pending, 164 not-needed, 33 unresolved; no active packet**. Oracle timer active, worker inactive, pending exports zero.
+
+24 November IST — **Finna explanation-only review continued: thirty-fifth packet applied.**
+
+- One checked explanation reached `applied` with exact full live readback: Paper-II(D) Q14 (the arrow figure has repeating counts 1, 1, 2, 2, 3 and alternating directions, so the next has three left-pointing arrows).
+- Nine questions needed no new explanation: the biosphere-reserve/state matching, Kuang ur duration, Mizo weaving sequence, biased listening, election neutrality, World War I consequences, Deccan basalt, active-listening method and Governor-removal question had published explanations or direct recall needing no added prose.
+- The publisher timer is active, service inactive, and pending exports are zero.
+
+24 November IST — **Finna explanation-only review continued: thirty-sixth packet closed.**
+
+- No new explanation was needed: the Taurus name, communication process, centralization, lake-state pairs, Teflon, prayer-passage inference, Sahlam, odd-city item, and biosphere-reserve matching already had published explanations or were direct recall.
+- The repeated “smallest constituent of matter” question remains unresolved because both quarks and electrons are elementary particles, so the choices do not uniquely support the key.
+- No Oracle publication was needed. Local checkpoint: **245 published, 605 pending, 182 not-needed, 34 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: thirty-seventh packet applied.**
+
+- Two checked explanations reached `applied` with exact full live readback: Paper-II(B) Q9 (congruent supportive communication) and Paper-I(B) Q78 (only statement ii is correct under the 2025 MUHCS rules).
+- Seven repeated or direct questions needed no new explanation: workplace mediation, compression, the dated biosphere-reserve count, sex-education arguments, Article 371 pairs, prayer-passage inference, and the HDI range.
+- The poverty-estimate question remains unresolved because its wording conflates official poverty estimation with NSO consumption statistics. The owner batch dry run confirmed only explanation fields change. Batch `review_batch_9b1450c899713235145fe601e86938f9` applied and verified; output bank hash `12b3f5ceabb39ccddfe797f661dbcbc891f599a94b8e6a00bdafc0e9d1ab1457`.
+- Oracle publisher timer is active, worker inactive, and pending exports are zero. Local checkpoint: **247 published, 595 pending, 189 not-needed, 35 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: thirty-eighth packet applied.**
+
+- Nine checked explanations reached `applied` in two bounded batches with exact full live readback: Paper-I(C) Q91 (substantive public policies), Paper-II(C) Q58 (solitude and creativity, supported by its passage), Paper-II(D) Q81 (tax reduction and petroleum prices), Paper-II(C) Q17 (merit-based hiring), Paper-I(C) Q20 (autotrophic succession), Paper-II(D) Q86 (informal gathering), Paper-I(A) Q79 (parthenocarpy), Paper-II(A) Q57 (threatened property owner), and Paper-I(D) Q51 (Vedic nature worship).
+- Paper-II(C) Q31 remains unresolved: the question does not define a unique relationship shared by botany, zoology and cardiology, while multiple choices can fit broad readings.
+- Only public `explanation` fields changed. Both batches passed dry run; all nine full-record readbacks matched with no other field changed. Batch IDs: `review_batch_233311f4f44cd523212367ec1b1d8a8f` and `review_batch_b1059428bd2816a7292dd1ae84fa1087`; final bank SHA-256 `5bc34102c6656602ccef352e6954a909bbee04104f705b254329d1f0087909d2`.
+- Oracle audit verified zero pending exports. Final local checkpoint: **256 published, 585 pending, 189 not-needed, 36 unresolved; no active packet**. Publisher timer restored.
+
+24 November IST — **Finna explanation-only review continued: thirty-ninth packet applied.**
+
+- Eight checked explanations reached `applied` with exact full live readback: Paper-II(A) Q13 (short-form content and attention spans), Paper-I(A) Q60 (Mission Shakti’s Sambal/Samarthya roles), Paper-I(C) Q100 (the 13-judge Kesavananda Bharati bench), Paper-II(B) Q30 (glacier melt versus ozone depletion), Paper-II(D) Q25 (ratio-to-total calculation), Paper-I(B) Q46 (ecosystem carrying capacity), Paper-II(A) Q62 (long-term sustainable project choice), and Paper-I(A) Q33 (jet streams, Coriolis deflection and blizzards).
+- Two items needed no extra explanation: the identical autotrophic-succession item already covered in packet 38, and the direct 2025–26 Mizoram own non-tax revenue figure, checked against the official budget document.
+- Both explanations that use current/source-specific facts were checked against official sources; the public text contains explanations only. The batch dry run passed, and all eight full-record readbacks confirmed only `explanation` changed. Batch `review_batch_ce4a042e90a4191ca60787c41eb250d3`; final bank SHA-256 `2968ab9a61e3ce4725b9787ab8b6ddc97d7e28ded07ca4683a2ae54b2ca67009`.
+- Oracle audit verified zero pending exports. Final local checkpoint: **264 published, 575 pending, 191 not-needed, 36 unresolved; no active packet**. Publisher timer active, worker inactive.
+
+24 November IST — **Finna explanation-only review continued: fortieth packet applied.**
+
+- Seven checked explanations reached `applied` with exact full live readback: Paper-II(B) Q6 (non-verbal communication), Paper-I(A) Q45 (Ripon’s 1882 local-government resolution), Paper-I(C) Q79 (hematite in the Durg–Bastar–Chandrapur belt), Paper-II(B) Q57 (judo as a combat sport), Paper-I(C) Q44 (three Mizo ritual statements), Paper-II(D) Q98 (equal traffic-law enforcement), and Paper-II(B) Q12 (regional expressions as a cultural communication barrier).
+- Two direct definition/word-choice items needed no extra explanation (excellent breed; charisma). Paper-II(B) Q52, the coding question, remains unresolved because its printed example maps six letters in “ASTARK” to only five in “LBFMG,” leaving no uniquely derivable code.
+- The batch dry run passed; all seven exact full-record readbacks confirmed only the `explanation` field changed. Batch `review_batch_9b5774ecaf33df81d93a3dcfc5a2989d`; final bank SHA-256 `a357b338e591e59b758734066a3306b30302c46b6abb2a1e33b46826db1bc07b`.
+- Oracle audit verified zero pending exports. Final local checkpoint: **271 published, 565 pending, 193 not-needed, 37 unresolved; no active packet**. Publisher timer active, worker inactive.
+
+24 November IST — **Finna explanation-only review continued: forty-first packet applied.**
+
+- Six checked explanations reached `applied` with exact full live readback: Paper-II(A) Q77 (Mizo-to-Khasi ratio), Paper-II(A) Q55 (reconsidering a disputed report), Paper-I(B) Q29 (CIBIL score statements), Paper-II(C) Q91 (the syllogism), Paper-I(D) Q10 (light and sound in vacuum), and Paper-I(C) Q82 (solar-system hypotheses).
+- Two exact repeats needed no added explanation: the Mizo ritual statements and the traffic-enforcement scenario, both covered in packet 40. Two items remain unresolved: the duplicated botany/zoology/cardiology analogy has no uniquely supported answer, and the workplace-restructuring meeting scenario permits multiple reasonable preparations without explaining why the key is unique.
+- The batch dry run passed; all six exact full-record readbacks confirmed only `explanation` changed. Batch `review_batch_f42f6628b6078b3e8155e5ab7574bff6`; final bank SHA-256 `59847873c0620d5ca471d276dab5424250e124614a75ef46b7c31a2a5ede1450`.
+- Oracle audit verified zero pending exports. Final local checkpoint: **277 published, 555 pending, 195 not-needed, 39 unresolved; no active packet**. Publisher timer active, worker inactive.
+
+24 November IST — **Finna explanation-only review continued: forty-second packet applied.**
+
+- Ten checked explanations reached `applied` with exact full live readback: Paper-I(C) Q3 (MPI dimensions), Paper-I(C) Q8 (expected repo-rate channels), Paper-I(C) Q45 (Khuangchera chronology), Paper-I(C) Q38 (Zakapa Fanai at Khawhri), Paper-II(C) Q85 (odd polygon), Paper-II(D) Q84 (flood-response priorities), Paper-II(A) Q16 (disproportionately), Paper-II(C) Q74 (abusive-boss characteristic), Paper-I(D) Q23 (Khuazingnu in Mizo creation mythology), and Paper-I(D) Q75 (50-member support for a Lok Sabha no-confidence motion).
+- Official and academic sources were used for the current policy, historical and cultural facts. The batch dry run passed; all ten exact full-record readbacks confirmed only `explanation` changed. Batch `review_batch_f298f5f7d9182a842c018d6980d7b83d`; final bank SHA-256 `63fa5fc86c99bcf7dada6d92a7305d89b6386720a5ba37faeb2a82b9b44bf397`.
+- Oracle audit verified zero pending exports. Final local checkpoint: **287 published, 545 pending, 195 not-needed, 39 unresolved; no active packet**. Publisher timer active, worker inactive.
+
+24 November IST — **Finna explanation-only review continued: forty-third packet applied.**
+
+- Five checked explanations reached `applied` with exact full-record readback: Paper-II(B) Q56 (subtract the four shared corner poles from 4 × 27), Paper-II(B) Q46 (health awareness with trusted local leaders), Paper-II(C) Q30 (sonnet as a specific poetic form), Paper-II(C) Q28 (arrival, introduction, presentation, discussion, recommendation), and Paper-II(B) Q87 (algorithmic bias can produce unfair outcomes).
+- Five items needed no added explanation: the carrying-capacity, Durg–Bastar–Chandrapur iron-ore, CIBIL, and report-reconsideration questions repeat published explanations; the budget item asks for a direct official figure already verified.
+- The batch dry run passed; only public `explanation` fields changed. All five publication IDs were separately matched to their questions and exact full live snapshots. Batch `review_batch_33ae3ad34feabb33119077f98fbbc72f`; final bank SHA-256 `08420f6d0c03013188c6c16de6065c80b6a9428103968a202890df972fadd9db`.
+- Oracle audit verified zero pending exports. Final local checkpoint: **292 published, 535 pending, 200 not-needed, 39 unresolved; no active packet**. Publisher timer active, worker inactive.
+
+24 November IST — **Finna explanation-only review continued: forty-fourth packet applied.**
+
+- Six checked explanations reached `applied` with exact full-record readback: Paper-II(A) Q56 (diagnose why the team is not cooperating), Paper-I(D) Q3 (lysosomes contain hydrolytic enzymes; ribosomes synthesize proteins), Paper-II(B) Q62 (export and import are opposites), Paper-I(D) Q97 (UNCED met in Rio in 1992, not Stockholm), Paper-I(B) Q97 (August Offer: Dominion status goal and expanded Viceroy’s Council), and Paper-I(C) Q19 (uniformity reduces ecological resilience).
+- Four items needed no added explanation: the direct monsoon-wind definition; the Vedic-worship and jet-stream questions already explained in other series; and the direct definition of the accommodating conflict style.
+- The historical explanations were checked against the United Nations and contemporaneous Hansard sources. The batch dry run passed; only public `explanation` fields changed. All six exact full-record readbacks matched. Batch `review_batch_80dbf5cfefe96f703059495396376ed3`; final bank SHA-256 `1ebaec3fef192b393d328efaae1978f35a92bd2f47cd00664548f8fb538110cb`.
+- Oracle audit verified zero pending exports. Final local checkpoint: **298 published, 525 pending, 204 not-needed, 39 unresolved; no active packet**. Publisher timer active, worker inactive.
+
+24 November IST — **Finna explanation-only review continued: forty-fifth packet applied.**
+
+- Four checked explanations reached `applied` with exact full-record readback: Paper-II(B) Q97 (technology and regulation shape social media’s future), Paper-II(C) Q14 (lawful, proportionate response balances public interest and humanitarian impact), Paper-I(B) Q79 (DeepSeek is a China-based company, not Japanese), and Paper-II(B) Q62 (the passage does not claim social media completely replaced traditional news media).
+- Four items needed no added explanation: the exact ecological-stability question, solitude passage answer, Mizo ritual statements and Durg–Bastar–Chandrapur iron-ore question already have published explanations.
+- Two items remain unresolved: Paper-II(D) Q82 reports grant withdrawal and increased medical-college seats but does not establish which caused the other; Paper-II(B) Q64 repeats the ambiguous botany/zoology/cardiology analogy.
+- The batch dry run passed; only public `explanation` fields changed. All four exact full-record readbacks matched. Official sources were checked for the historical/current claims. Batch `review_batch_2a16aee7368272f002a418f97272af87`; final bank SHA-256 `793edf7207fb10ce70f29485ea6514145b0a3d0d006a32b0358ad4745c50abb8`.
+- Oracle audit verified zero pending exports. Final local checkpoint: **302 published, 515 pending, 208 not-needed, 41 unresolved; no active packet**. Publisher timer active, worker inactive.
+
+24 November IST — **Finna explanation-only review continued: forty-sixth packet applied.**
+
+- Six explanations reached `applied` with exact full-record readback: Paper-II(B) Q28 (Moon and Sun gravity explain periodic tides), Paper-II(B) Q25 (fish are within the tadpole group, so they cannot be crocodiles), Paper-II(A) Q59 (reject the price and promptly seek authorized intervention), Paper-II(C) Q4 (address a friend’s dishonesty directly and calmly), Paper-II(B) Q54 (Kunal is in all three sports groups), and Paper-I(B) Q74 (Bawlpu was the traditional village medicine man).
+- Four items needed no added explanation: direct sublimation, an already-explained carrying-capacity duplicate, the repeated glacier/ozone assertion–reason item, and the direct Mizoram budget figure.
+- The Bawlpu role was checked against NCERT history material. The batch dry run passed; only public `explanation` fields changed. All six exact full-record readbacks matched. Batch `review_batch_1064c3acd2a1f86238013415af8cbce2`; final bank SHA-256 `399b5de0b5ea37b5c93de6d9908e6f79bb65703d428f6b0c5d89e3a26ba243bb`.
+- Oracle audit verified zero pending exports. Final local checkpoint: **308 published, 505 pending, 212 not-needed, 41 unresolved; no active packet**. Publisher timer active. Its next empty-queue run had not yet left `activating` at the checkpoint.
+
+24 November IST — **Finna explanation-only review continued: forty-seventh packet applied.**
+
+- Three checked explanations reached `applied`: Paper-I(D) Q47 (the Swadeshi Boycott Resolution and correct statements), Paper-II(B) Q93 (social media's dual nature), and Paper-II(A) Q6 (unchecked solitude can cause isolation and loneliness). Six items needed no added explanation because they duplicate an existing explanation or state the answer directly in a passage. Paper-II(B) Q75 remains unresolved because the ratio order is omitted and conflicts with the claim that Rama scored more.
+- One owner export was queued before the remaining items; the timer applied it and was allowed to finish. The other two owner-bound decisions were dry-run checked and applied together. Batch `review_batch_f3427a46e6acbf33bcfcdee4afd3d318`, output bank SHA-256 `710f66087fbd91eb4450bb98d1cdc1432252a7c995874cdae823ccf04a7cfbe2`. Every applied item was separately matched to its publication and exact full live snapshot. Only `explanation` fields changed. The timer is active, its worker is inactive, and the worker reported an empty publication queue.
+- Local checkpoint: **311 published, 495 pending, 218 not-needed, 42 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: forty-eighth packet applied.**
+
+- Five explanations reached `applied`: Paper-I(D) Q24 (18 February 1872 peace date in the First Lushai Expedition), Paper-II(B) Q85 (traditional programming is not itself an AI application), Paper-II(A) Q70 (snags are minor problems), Paper-I(C) Q85 (the 8°, 9° and 10° channels), and Paper-II(C) Q7 (report illegal construction and threats to police). Four items needed no added explanation because they duplicate an existing explanation or state the response directly in a passage. Paper-II(C) Q41 repeats the restructuring scenario whose keyed answer cannot be established from the wording and remains unresolved.
+- Four explanations passed dry run and applied together in `review_batch_9df8880b49abf6c799bfc63ab4290104`; output bank SHA-256 `b9940b3d5abbea5cd86c22ab6217059f4d5c2806e7104c0c04ebc8f6858b7d5a`. The fifth applied through the normal timer. Each exact question, publication and full live snapshot was verified. The timer is active, worker inactive; it reported an empty queue. Only explanation fields changed.
+- A local disposition was corrected before closing the packet: the threatened-property question had been mistaken for the separate lysosome duplicate. The corrected record now has its own checked explanation; the actual lysosome duplicate was marked no-added.
+- Local checkpoint: **316 published, 485 pending, 222 not-needed, 43 unresolved; no active packet**.
+
 
 ## 24 November 2026 — independent MCS coordination checkpoint
 
@@ -15484,6 +15827,443 @@ this continuation. Usage was available (11%primary/7%weeklyused); ordinary staff
 publication remains uncapped, learner30/day unchanged. Historical source/option/
 key-mapping tasks remain. Keep2012/2013deferred and simulationgated.
 Receipt:`docs/sources/mcs-checkpoint-20261124.json`; private audit:`reports/mcs-checkpoint-20261124/`.
+
+24 November IST — **Finna explanation-only review continued: forty-ninth packet applied.**
+
+- Seven explanations reached `applied`: Paper-II(C) Q92 (fish/tadpole syllogism), Paper-II(D) Q11 (prioritize projects by need and impact), Paper-I(C) Q40 (Arkeziak warrior headgear), Paper-I(D) Q33 (table is not seating), Paper-I(D) Q7 (isobars), Paper-I(C) Q43 (the 1942 Mizo chiefs declared war on Japan), and Paper-I(D) Q44 (R. M. Bird and the Mahalwari settlement). Three items needed no added text: a repeated petroleum-tax assertion/reason question, a repeated Mizo/Khasi language-count question, and an answer stated directly in the women's empowerment passage.
+- The seven-item batch dry run passed; batch `review_batch_3cabd33226f4f70c1286960b310ed29e` applied with output bank SHA-256 `1758d6f4faa47ef9616ae73475cc18531662d8fa1dcd24d4e0b2ec06875d7e1f`. Each publication matched its exact question and full live snapshot. Only explanations changed. Timer active, worker inactive, publication queue empty.
+- Local checkpoint: **323 published, 475 pending, 225 not-needed, 43 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: fiftieth packet applied.**
+
+- One explanation reached `applied`: Paper-II(B) Q35, selecting a healthcare initiative by its expected public-health impact. The explanation is learner-facing only. Nine items needed no added explanation: duplicate channel, social-media future, solitude, petroleum-tax, table and merit-based appointment questions, plus a direct sentence-completion item and a duplicate development-allocation question.
+- Publication `pub_f7df3cb0905d425f8c706fa60e7b226b` was verified against the exact full live snapshot. The Oracle timer is active, service inactive, and the publisher reported an empty queue.
+- Local checkpoint: **324 published, 465 pending, 234 not-needed, 43 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: fifty-first packet applied.**
+
+- Five explanations reached `applied`: Paper-II(C) Q18 (reverse each three-letter half), Paper-II(C) Q48 (pie-chart expenditure ratio), Paper-I(D) Q60 (correct earthquake/Himalaya statements), Paper-I(C) Q94 (the 86th Amendment inserted Article 21A), and Paper-I(D) Q2 (kidney functions and nephron). Four items needed no added explanation: duplicate channel, AI-ethics, lysosome, and solitude questions.
+- Paper-II(C) Q19 remains unresolved because the printed example gives six letters (`ASTARK`) but only five code letters (`LBFMG`), so its substitution cannot be checked as printed.
+- Five publications applied together in `review_batch_66b71cd05616dc698a3bd92ddd1683cb`; output bank SHA-256 `9666738c2eedd954e64514fcabc890d78e8124e028fc00e83b5ee0fb60fa6bc9`. Exact live snapshots were verified. The Oracle timer is active, service inactive, and the publisher reported an empty queue.
+- Local checkpoint: **329 published, 455 pending, 238 not-needed, 44 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: fifty-second packet applied.**
+
+- Four explanations reached `applied`: Paper-I(D) Q77 (underemployment), Paper-I(D) Q89 (ecological niche), Paper-I(B) Q26 (labour force), and Paper-I(D) Q92 (55 dB(A) Leq daytime residential noise limit). Four items needed no added explanation: repeated poetry, informal-gathering, Swadeshi, and solitude questions.
+- Two items remain unresolved for answer-key/source conflicts: Paper-I(A) Q99’s keyed Mizo-name pairings conflict with documented aliases, and Paper-I(D) Q87 marks all budget statements correct even though the official budget shows Economic Services is not the largest sector.
+- Four explanations applied together in `review_batch_ddd9fbb098e797fed9149e607ce3e946`; output bank SHA-256 `d9c02182a9c040607995cf38014e530040b2401d9cdf6fd4c156a187a95a737e`. Exact live snapshots were verified. Oracle timer active, service inactive, queue empty.
+- Local checkpoint: **333 published, 445 pending, 242 not-needed, 46 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: fifty-third packet applied.**
+
+- Seven explanations reached `applied`: Paper-II(A) Q46 (why Himalayan rivers are perennial), Paper-II(C) Q94 (books/toys syllogism), Paper-I(C) Q7 (demographic gap), Paper-I(C) Q70 (Aurangzeb’s policies), Paper-I(D) Q29 (Kohli’s incorrect birth claim), Paper-II(B) Q13 (empathy), and Paper-I(C) Q58 (NHIDCL).
+- Three items needed no added text: a repeated Ripon Resolution question and two repeated Arkeziak headgear questions.
+- Seven publications applied together in `review_batch_336814a9d05963993de21e75fba3b298`; output bank SHA-256 `3d47ff2dc38775f0722f608e833583c82642cef595ad2b325812c815944d07f8`. Exact live snapshots were verified. Oracle timer active, service inactive, queue empty.
+- Local checkpoint: **340 published, 435 pending, 245 not-needed, 46 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: fifty-fourth packet applied.**
+
+- Ten explanations reached `applied`: Paper-II(C) Q72 (defensiveness as a communication barrier), Paper-I(B) Q96 (Round Table Conference statements), Paper-II(B) Q21 (maternal-aunt’s son is a cousin), Paper-I(C) Q39 (Suakpuilala and Vanhnuaithangi), Paper-I(A) Q64 (bats, bees and birds as pollinators), Paper-II(A) Q15 (financial independence), Paper-I(B) Q62 (Zakapa Fanai at Khawhri in 1891), Paper-II(D) Q83 (Friday leave between two company holidays), Paper-II(A) Q1 (the passage’s definition of AI), and Paper-II(A) Q66 (document irregularities and initiate a confidential inquiry).
+- Ten publications applied together in `review_batch_622611afde4a07c9d093e0e066ae3f97`; output bank SHA-256 `fc0a0a25a15dbd6db48ab8fa2ff7082ccfc789b6d992f3030ab6de3e869cf1db`. Exact live snapshots were verified. Only learner-facing explanations changed. Oracle timer active, service inactive, queue empty.
+- Local checkpoint: **350 published, 425 pending, 245 not-needed, 46 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: fifty-fifth packet applied.**
+
+- Eight explanations reached `applied`: Paper-I(B) Q12 (Bhil–Rajasthan and Khas–Uttarakhand pairs), Paper-II(D) Q90 (report an illegal land occupation and threat to police), Paper-I(B) Q90 (Abbas Khan Sarwani wrote *Tarikh-i-Shershahi*), Paper-I(C) Q61 (the May 2025 Golden Dome announcement), Paper-I(A) Q24 (iron was not known to the Harappans), Paper-I(B) Q23 (50 Lok Sabha members must support leave for a no-confidence motion), Paper-I(D) Q27 (the U.S. bombed sites at Natanz and Isfahan in June 2025), and Paper-II(B) Q99 (“unreasonably” is closest in the supplied passage).
+- Two repeated concepts needed no added text: the bat/bee/bird pollination question and underemployment, both already covered by checked explanations.
+- Eight publications applied together in `review_batch_a61a6582efddad558faa9770ac5095a9`; output bank SHA-256 `fb1f5374a74a84af8114166676efa0e6097358cdb73a29c9d0459f86855688db`. Exact live snapshots were verified. Oracle timer active, service inactive, queue empty.
+- Local checkpoint: **358 published, 415 pending, 247 not-needed, 46 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: fifty-sixth packet applied.**
+
+- Nine explanations reached `applied`: Paper-II(A) Q92 (Rama and Thana’s marks total 84), Paper-I(B) Q6 (only the Jeans–Jeffreys tidal and Chamberlin–Moulton planetesimal pairs are correct), Paper-I(C) Q17 (Silver Revolution and poultry), Paper-I(D) Q43 (Muhammad bin Tughluq died near Thatta), Paper-II(B) Q48 (apply traffic law and document a political leader’s violations), Paper-II(D) Q57 (an abusive boss’s inability to take feedback), Paper-I(B) Q18 (the 86th Amendment inserted Article 21A), Paper-I(A) Q54 (the “churning poor” move into and out of poverty), and Paper-II(D) Q61 (gender itself is not a communication barrier; prejudice can be).
+- One healthcare-funding question needed no added text because the same public-health-impact decision was explained earlier.
+- Nine publications applied together in `review_batch_53317d4c6af94e636d0e7c8f5ace37d8`; output bank SHA-256 `adf00b5d1ba0c2bca10395eaaa9cce2f4f2d5605e4de112bebed3abac6723c8c`. Exact live snapshots were verified. Oracle timer active, service inactive, queue empty.
+- Local checkpoint: **367 published, 405 pending, 248 not-needed, 46 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: fifty-seventh packet applied.**
+
+- Seven explanations reached `applied`: Paper-I(C) Q49 (only Lorrain/Pu Buanga and Lewin/Thangliana match), Paper-I(A) Q2 (the Bairabi–Sairang statements except the 101 km length), Paper-I(B) Q58 (light in vacuum, constant vacuum speed, and light-year as distance), Paper-I(A) Q81 (isobars), Paper-II(A) Q86 (machine learning), Paper-I(D) Q95 (ecosystem uniformity does not support stability), and Paper-II(C) Q29 (export/import are opposites).
+- Three repeated concepts needed no added text: a duplicate railway question, a duplicate healthcare-allocation question, and a repeated merit-based appointment scenario.
+- Seven publications applied together in `review_batch_c2b66552d29a843f942e10bc2fdec91a`; output bank SHA-256 `353e0a726e2b9b0b6f5b11b2a4b27992b7656c53d1ddd9a5f9a5011bde1673e5`. Exact live snapshots were verified. Oracle timer active, service inactive, queue empty.
+- Local checkpoint: **374 published, 395 pending, 251 not-needed, 46 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: fifty-eighth packet applied.**
+
+- Eight explanations reached `applied`: Paper-II(A) Q73 (104 fence poles after correcting for the four shared corners), Paper-I(C) Q15 (carbon-credit prices are not fixed by UNEP), Paper-I(A) Q83 (sound travels fastest in solids), Paper-I(D) Q21 (Khuangchera statements and chronology), Paper-II(A) Q9 (balance solitude and social connection), Paper-I(D) Q5 (parthenocarpic banana), Paper-II(A) Q11 (social media levels the marketing playing field), and Paper-I(B) Q48 (Earth Hour statements).
+- Two repeated abusive-boss and property-threat questions needed no added text.
+- Seven publications applied in `review_batch_430b47dc880e66acc7b1268311558216` (bank SHA-256 `cbe1db37fe7f7807d5cb93c6aa1e7b75e7d7e7e7108ced8e8a3c498088e12676`); Earth Hour applied separately in `review_batch_b00f8debb051bf7d1d3d58de191eaa12` (SHA-256 `38db22be0ac520a5f1b9fab6094e85e8cade91010472e82d5fceb94d5f124d59`). Exact live snapshots were verified. Oracle timer restarted.
+- Local checkpoint: **382 published, 385 pending, 253 not-needed, 46 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: fifty-ninth packet applied.**
+
+- Six explanations reached `applied`: Paper-I(A) Q47 (village, block and district Panchayati Raj tiers), Paper-I(D) Q19 and Paper-I(B) Q67 (Mizo chiefs’ 1942 declaration of war on Japan), Paper-I(D) Q12 (seed bank as ex-situ conservation), Paper-II(C) Q6 (diagnose reasons for project-team non-cooperation), and Paper-II(B) Q47 (lawful, proportionate decision-making in a humanitarian dilemma).
+- Four repeats needed no added text: Golden Dome, Tarikh-i-Shershahi, Suakpuilala/Vanhnuaithangi, and Virat Kohli.
+- Six publications applied together in `review_batch_377fa5d1db84f03008ae9db7a836cf8d`; output bank SHA-256 `12eadcd26b8efc972d58886db10859c26213996feaff43abf5e1dec33109cc33`. Exact live snapshots were verified. Oracle timer restarted.
+- Local checkpoint: **388 published, 375 pending, 257 not-needed, 46 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: sixtieth packet applied.**
+
+- Six explanations reached `applied`: Paper-I(D) Q6 (Operation Black Forest targeted Maoist strongholds), Paper-II(C) Q99 (grant withdrawal as the cause and increased medical-college seats as its effect), Paper-II(C) Q10 (identify the problem first), Paper-II(C) Q86 (Sambal safety versus Samarthya empowerment), Paper-I(B) Q61 (Fathang and Sachhiah dues; Ramhuals advise on jhum plots), and Paper-I(B) Q27 (MPI dimensions of health, education and living standards).
+- Four repeated concepts needed no added text: social-media marketing, holiday-related Friday leave, Muhammad bin Tughluq’s death near Thatta, and defensiveness as a communication barrier.
+- Six publications applied together in `review_batch_19922993536fc4d7d0915bee9fa369e2`; output bank SHA-256 `6972754dd80a26f0d0dc128d0541c1341f99a1d9a8b1c5526b2c3103d2ec7ded`. Exact live snapshots were verified. Oracle timer restarted.
+- Local checkpoint: **394 published, 365 pending, 261 not-needed, 46 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: sixty-first packet applied.**
+
+- Eight explanations reached `applied`: Paper-II(C) Q16 (document diversion and initiate a confidential inquiry), Paper-II(C) Q93 (neither bat/ball/brown conclusion follows), Paper-II(C) Q81 (charisma), Paper-II(B) Q100 (men as allies in gender equality), Paper-I(C) Q47 (Khuazingnu in Mizo creation mythology), Paper-II(A) Q63 (work with local leaders on public health), Paper-II(B) Q37 (address a friend’s cheating constructively), and Paper-I(B) Q20 (Viksit Bharat 2047).
+- Two repeated concepts needed no added text: the jet-stream/blizzard statements and the grant-withdrawal/medical-seat cause-and-effect question.
+- Eight publications applied together in `review_batch_273a84924e8731ee58a823f2d7b3dc50`; output bank SHA-256 `2b8d4d499cc0e581163c74d9594764844e3fa510543f35186009ac1ed957c983`. Exact live snapshots were verified. Oracle timer restarted.
+- Local checkpoint: **402 published, 355 pending, 263 not-needed, 46 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: sixty-second packet applied.**
+
+- Four explanations reached `applied`: Paper-I(C) Q38 (Parag Jain’s RAW appointment and Operation Sindoor role), Paper-II(D) Q46 (short-form content and attention spans), Paper-I(B) Q15 (substantive policies cover government action, resource allocation and regulation), and Paper-II(C) Q9 (escalate above-rate flood-boat procurement for authorization).
+- Six repeated concepts needed no added text: Himalayan perennial rivers, Panchayati Raj tiers, MPI, Mission Shakti, pollinators, and Zakapa Fanai at Khawhri.
+- Four publications applied together in `review_batch_d9e3b4d3ac91369ca3e5cfff62d839b3`; output bank SHA-256 `64709ff9bb236611ed7ddca74d8cea8a1b5f8f49a30c0c922f1d333d61c6c50d`. Exact live snapshots were verified. Oracle timer restarted.
+- Local checkpoint: **406 published, 345 pending, 269 not-needed, 46 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: sixty-third packet applied.**
+
+- Six explanations reached `applied`: Paper-II(C) Q88 (aunt’s son is a cousin), Paper-I(D) Q8 (solid to gas is sublimation), Paper-I(A) Q92 (Manpui marriage payment), Paper-II(B) Q22 (54 is not divisible by 7), Paper-I(C) Q65 (Bentinck prohibited sati), and Paper-I(C) Q57 (Mizoram’s ₹1,138.07 crore projected own non-tax revenue in 2025–26).
+- Four repeats needed no added text: sound speed in media, medical-grant cause and effect, Round Table Conferences, and Panchayati Raj tiers.
+- Six publications applied together in `review_batch_61757edcd4388227619bf0effa1c626a`; output bank SHA-256 `426d2efa4b8ac483d34d0f3f61029c80983abd4d309703653f7de9449549c9a2`. Exact live snapshots were verified. Oracle timer restarted.
+- Local checkpoint: **412 published, 335 pending, 273 not-needed, 46 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: sixty-fourth packet applied.**
+
+- Seven explanations reached `applied`: Paper-II(C) Q76 (congruent supportive communication), Paper-I(D) Q69 (certiorari reviews a decision already made by an inferior court or tribunal), Paper-I(D) Q54 (Northern Circars), Paper-II(C) Q26 (alphabet-position calculation gives W), Paper-I(A) Q98 (First Lushai Expedition peace terms on 18 February 1872), Paper-II(B) Q45 (consider long-term social and environmental impact), and Paper-I(B) Q16 (NHRC statements and its recommendatory role).
+- Three repeats needed no added text: healthcare-program selection, Fathang/Sachhiah/Ramhual, and the bat/ball/brown syllogism.
+- Seven publications applied together in `review_batch_f9e833e6d1e11ffeb1b27a1567b0f642`; output bank SHA-256 `6e68ed83f741f00024cb643b12ae55a422a024f6088a61df298dc6dff9a38112`. Exact live snapshots were verified. Oracle timer restarted.
+- Local checkpoint: **419 published, 325 pending, 276 not-needed, 46 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: sixty-fifth packet applied.**
+
+- Seven explanations reached `applied`: Paper-II(A) Q45 and Paper-II(C) Q95 (gravitational pull of the Moon and Sun causes tides), Paper-I(D) Q88 (Budget 2025–26 spending shares), Paper-II(B) Q95 (traditional news media replacement was not cited as a political impact), Paper-I(B) Q65 (Lushai Hills District (Change of Name) Act 18 of 1954), Paper-I(B) Q10 (only Sutlej/Gangotri is mismatched), and Paper-II(A) Q2 (traditional software programming is not an AI application).
+- Three repeats needed no added text: Northern Circars, Khuazingnu, and the demographic-gap definition.
+- Seven publications applied together in `review_batch_aa8f31d03d17acbb82918cf915a5a48d`; output bank SHA-256 `4818788032bf210ae4075f64b3f481be311a8a6baf2963a7ac592d5d30cec29e`. Exact live snapshots were verified. Oracle timer restarted.
+- Local checkpoint: **426 published, 315 pending, 279 not-needed, 46 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: sixty-sixth packet applied.**
+
+- Three explanations reached `applied`: Paper-II(A) Q41 (neither syllogism conclusion follows), Paper-I(A) Q52 (the labour force includes employed people and unemployed people seeking work), and Paper-II(C) Q73 (blushing, crying, kinesics and laughter are non-verbal communication).
+- Seven repeated concepts needed no added text: merit-based temporary appointment, flood-relief resource diversion, gender communication barrier, Article 21A, Muhammad bin Tughluq’s death at Thatta, Sutlej/Gangotri source matching, and sublimation.
+- Three publications applied together in `review_batch_257aea72aa2ffbbc4c1ca7d5cc15ad09`; output bank SHA-256 `fd0259d9593c5ab3e14efdbd7422eebeee003eef71c9d05d6d699d5abf4ad27c`. All three publication records reached `applied`; batch sync preserved the existing 426 attempts and 11,566 users. Oracle timer restarted.
+- Local checkpoint: **429 published, 305 pending, 286 not-needed, 46 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: sixty-seventh packet applied.**
+
+- Five explanations reached `applied`: Paper-II(A) Q3 (machine learning learns patterns from data), Paper-II(C) Q32 (the coded word for pencil is sharpener), Paper-I(C) Q13 (ecological niche includes an organism’s functional role), Paper-I(A) Q19 (Al-Biruni/Kitab-ul-Hind and Ibn Battuta/Rihla are the correct pairs), and Paper-II(C) Q1 (food and safe water meet immediate flood-survival needs).
+- Five repeats needed no added text: Muhammad bin Tughluq’s death at Thatta, defensiveness as a communication obstacle, traditional software programming as a non-AI application, pollinators, and Operation Black Forest.
+- Five publications applied together in `review_batch_fa3dff931ea51e869ac6cc3bd878f855`; output bank SHA-256 `e5cddc3cfcb6a20a8b9f10fa345ab308b28f96f5348168a9b21a6e701e77e8f3`. All five publication records reached `applied`; batch sync preserved the existing 426 attempts and 11,568 users. Oracle timer restarted.
+- Local checkpoint: **434 published, 295 pending, 291 not-needed, 46 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: sixty-eighth packet applied.**
+
+- Five explanations reached `applied`: Paper-II(A) Q18 (breed is the correct word for a horse’s lineage), Paper-I(A) Q34 (Richter scale, Andes versus Himalayas, and Tethys geosyncline), Paper-II(C) Q24 (judo is the matching combat sport), Paper-I(D) Q84 (repo-rate effects on inflation, rupee demand and household deposits), and Paper-II(C) Q22 (overlapping ranks give 7 + 26 − 1 = 32 students).
+- Five repeats needed no added text: First Lushai Expedition peace date, defensiveness as a communication obstacle, Friday leave caused by adjacent holidays, Himalayan perennial rivers, and the duplicate horse-breed question.
+- Five publications applied together in `review_batch_421e91f8dbf4e1b9a5a31a91b34f3312`; output bank SHA-256 `54dcf95778639fd6f48338eec8a0479dcdbda95b64eca083551ba1fdb1911eff`. All five publication records reached `applied`; batch sync preserved the existing 426 attempts and 11,571 users. Oracle timer restarted. The class-rank explanation was corrected before publication and its earlier draft remains in the audit trail.
+- Local checkpoint: **439 published, 285 pending, 296 not-needed, 46 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: sixty-ninth packet applied.**
+
+- Four explanations reached `applied`: Paper-I(D) Q99 (ground-level ozone forms secondarily from precursor pollutants), Paper-II(C) Q69 (“affects” completes the sentence), Paper-I(D) Q91 (carbon-credit prices are traded or negotiated rather than fixed by UNEP), and Paper-II(D) Q47 (technology and regulation shape social media’s future).
+- Six repeats needed no added text: certiorari, Silver Revolution and poultry, Aurangzeb’s policies, the churning poor, social media’s dual nature, and the Mizo/Khasi language ratio.
+- Four publications applied together in `review_batch_4067ff5d541a3bdf9b4bc9e5a68d24de`; output bank SHA-256 `de079259db0832ab565450a1176db4370a07214322f7d55314cbfa0dc2733eb9`. All four publication records reached `applied`; batch sync preserved the existing 426 attempts and 11,571 users. Oracle timer restarted.
+- Local checkpoint: **443 published, 275 pending, 302 not-needed, 46 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: seventieth packet applied.**
+
+- Four explanations reached `applied`: Paper-I(D) Q35 (UNNATI, PM-DevINE and NESIDS specifically serve the North-East; PMEGP is nationwide), Paper-II(C) Q55 (AI can support early detection and personalized medicine), Paper-I(D) Q65 (Article 153 permits one Governor to serve multiple States), and Paper-II(B) Q15 (paraphrasing restates meaning in different, often simpler words).
+- Six repeats needed no added text: the flood-relief inquiry scenario, Aurangzeb’s policies, informal gathering, the Budget 2025–26 “Rupee Goes To” inferences, the passage’s definition of AI, and long-term social/environmental impact in project selection.
+- Four publications applied together in `review_batch_d2db72cc28d533a24adf0e8f6ac8d580`; output bank SHA-256 `f88b08e5130652efba004b227d692632c4fd37c65db97985b355450fe95db723`. All four publication records reached `applied`; batch sync preserved the existing 426 attempts and 11,573 users. Oracle timer restarted.
+- Local checkpoint: **447 published, 265 pending, 308 not-needed, 46 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: seventy-first packet applied.**
+
+- Three explanations reached `applied`: Paper-I(D) Q11 (World Environment Day was first held in 1973), Paper-I(C) Q54 (only AB PM-JAY beneficiaries are exempt from MUHCS contributions; Standard Plan cover is ₹5 lakh and provisional employees pay ₹200 monthly), and Paper-I(B) Q73 (the correct Mizo names are Pu Buanga for J.H. Lorrain and Thangliana for T.H. Lewin).
+- Seven repeats needed no added text: Tarikh-i-Shershahi, petroleum-tax cause and effect, project-team non-cooperation, solitude and creativity, social-media attention spans, Round Table Conferences, and the passage’s AI definition.
+- Three publications applied together in `review_batch_fe4c7ececb98c7dee2856828bcd6f53d`; output bank SHA-256 `498a9d7eef7b51a3f320bd6acd911cc143b9c8b3e6d5bec4c7927ef315feecad`. All three publication records reached `applied`; batch sync preserved the existing 426 attempts and 11,575 users. Oracle timer restarted.
+- Local checkpoint: **450 published, 255 pending, 315 not-needed, 46 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: seventy-second packet applied.**
+
+- One explanation reached `applied`: Paper-II(A) Q58 (preparing to present relevant strengths addresses the risk of losing a post during restructuring).
+- Nine repeats needed no added text: Tarikh-i-Shershahi, the demographic transition phase, Parag Jain’s appointment, the no-confidence motion threshold, the bat/ball/brown syllogism, Virat Kohli’s birth-year statement, Manpui, the churning poor, and project-team non-cooperation.
+- The publication applied in `review_batch_56737471d482011cb2a4a2741d2f67be`; output bank SHA-256 `9bf0432553bf301fe5b2332ddce31da49d95eaf4495df763c811dc840d15e624`. The publication record reached `applied`; batch sync preserved the existing 426 attempts and 11,577 users. Oracle timer restarted.
+- Local checkpoint: **451 published, 245 pending, 324 not-needed, 46 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: seventy-third packet reconciled.**
+
+- All ten questions needed no new text: Aurangzeb’s policies, substantive public policies, NHRC roles, Northern Circars, social-media attention spans, needs-based project allocation, men as allies in gender equality, the June 2025 strikes at Natanz and Isfahan, Earth Hour, and sound travelling fastest through solids.
+- Local checkpoint: **451 published, 235 pending, 334 not-needed, 46 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: seventy-fourth packet applied.**
+
+- Three explanations reached `applied`: Paper-II(B) Q61 (arrival, introduction, presentation, discussion, recommendation), Paper-II(B) Q8 (accommodating prioritizes the other party’s concern), and Paper-I(D) Q94 (there is no Sustainable Development Goal named “Life on Air”).
+- Seven repeats needed no added text: long-term social/environmental project impact, Northern Circars, machine learning, social media’s business-marketing impact, Viksit Bharat 2047, solitude and social connection, and AI-supported healthcare.
+- Three publications applied together in `review_batch_99cc6bdb9861ba9725adf7d7023b3cf0`; output bank SHA-256 `7fa514f378c718371b08aa11aa0f2ca2882b32cf48991e0e34097400751b3269`. All three publication records reached `applied`; batch sync preserved the existing 426 attempts and 11,580 users. Oracle timer restarted.
+- Local checkpoint: **454 published, 225 pending, 341 not-needed, 46 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: seventy-fifth packet applied.**
+
+- Three explanations reached `applied`: Paper-II(B) Q10 (effective communication is an interpersonal skill), Paper-I(D) Q40 (Mizoram’s 98.2% literacy rate met ULLAS’s 95% full-literacy threshold), and Paper-II(B) Q38 (ask a subordinate to reconsider disputed report results against the evidence).
+- Seven repeats needed no added text: Article 153 and multiple-state Governors, underemployment, NHRC roles, the books/toys syllogism, the demographic transition phase, Article 21A, and Operation Black Forest.
+- Three publications applied together in `review_batch_d9a5c1096dceec90c0421a0e1dba8deb`; output bank SHA-256 `4df272a9054eb8cd86185e4629d52eb57482e81215edb2d36d747959bb5abb04`. All three publication records reached `applied`; batch sync preserved the existing 426 attempts and 11,581 users. Oracle timer restarted.
+- Local checkpoint: **457 published, 215 pending, 348 not-needed, 46 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: seventy-sixth packet reconciled.**
+
+- All ten questions needed no new text: light’s vacuum properties and light-year, certiorari, Earth Hour, glacier melting and ozone depletion, the no-confidence threshold, isobars, Viksit Bharat 2047, Act 18 of 1954, Zakapa Fanai at Khawhri, and unchecked solitude.
+- Local checkpoint: **457 published, 205 pending, 358 not-needed, 46 unresolved; no active packet**.
+
+24 November IST — **Finna explanation-only review continued: seventy-seventh packet reconciled.**
+
+- All ten questions needed no new text: Fathang/Sachhiah/Ramhuals, carbon-credit pricing, the August Offer, Manpui, the books/toys syllogism, Budget 2025–26 spending inferences, earthquake/Himalaya statements, Silver Revolution, public-health awareness with local leaders, and the repeated carbon-credit question.
+- Local checkpoint: **457 published, 195 pending, 368 not-needed, 46 unresolved; no active packet**.
+
+24 November IST — **Exam catalog consolidation: same exams grouped under one card (`0142_consolidate_exam_modules.sql`).**
+
+- Consolidated the 106 exam collections created by `0141` into **55 distinct exam booklets** (plus the 5 cross-exam subject sets and `subject-wise-practice`), eliminating separate year/department cards for the same exam across both web (`/exams`) and mobile:
+  - Absorbed **22 redundant sitting cards** whose papers were already covered by existing flagship modules (`udc`: 7 cards, `ldc`: 3 cards, `assistant`: 4 cards, `combined-prelims`: 3 cards, `group-b-non-gazetted`: 3 cards, `group-b-gazetted`: 2 cards) without modifying `collection_papers` of any flagship module (preserving Sangzel's frozen 48-paper UDC and Solomon's frozen 30-paper MCS Prelims editorial baselines).
+  - Merged **46 multi-sitting cards** into **17 unified exam booklets**: `mes` (44 papers, 2,458 live q), `mcs-main` (182 papers, 2,023 live q, excluding 4 prelim papers already covered by `combined-prelims`), `junior-engineer` (20 papers, 1,318 q), `inspector-of-legal-metrology` (24 papers), `acf` (26 papers, 674 q), `motor-vehicle-inspector` (9 papers, 776 q), `mizoram-horticulture-service` (8 papers), `staff-nurse` (5 papers, 344 q — repointed 1 existing attempt and 1 study checkpoint to `staff-nurse`), `computer-operator` (6 papers), `research-investigator` (6 papers), `stenographer` (6 papers), `sub-inspector-fcs-ca` (10 papers, 385 q), `sub-inspector-police` (4 papers, 352 q), `lab-technician` (5 papers), `inspector-of-taxes` (4 papers), `middle-school-teacher` (4 papers), and `primary-school-teacher` (3 papers).
+- Fixed a `CollectionPaper` validation 500 in `api/app/routers/collections.py` when a paper has both `display_title` and `exam_name` null/blank (discovered on `mcs-main`), falling back cleanly to `paper_subject` / `paper_id`.
+- Updated `web/src/screens/Exams.tsx`, `web/src/lib/examPresentation.ts`, and `india-study-map-mobile/src/app/(tabs)/exams.tsx` so `mes` is treated as a single live flagship booklet (no duplicate static MES card or off-by-one tab count), cards do not repeat identical `<h3>`/`<p>` titles, and consolidated exams get accurate categories/stamps.
+- Rehearsed `0142` on a production dump clone (`mpsc_migtest`), applied via `./scripts/migrate.sh`, deployed web via `./scripts/deploy.sh web`, and verified HTTP 200 across all 55 `/api/collections/{id}` detail endpoints, `/api/health`, and `family.hawayu.in`.
+- Limitation: `bank_exam_catalog` sitting rows keep `collection_id = NULL` (due to the unique constraint on `bank_exam_catalog.collection_id`), preserving their `bank_exam_papers` and `bank_paper_expectations` records without re-creating separate exam cards; mobile native build still needs to be rebuilt/shipped to pick up the mobile `mesVisible` deduplication guard.
+
+24 November IST — **Finna Web Home (`/home`) redesign: multi-exam hub, multi-subject focus picker & live Community Pulse.**
+
+- Added `web/src/lib/trackedExams.ts` to manage multi-exam tracking (hydrated from `/api/me/exam-bookmarks` with localStorage mirroring for guests/offline) and guest-friendly focus-subject storage (`MAX_FOCUS_SUBJECTS = 5`).
+- Added `web/src/components/ExamPickerDialog.tsx` (both modal dialog and inline workspace mode) so learners preparing for multiple exams can search, filter by category, check/uncheck multiple exams, and designate one as `Primary` for Today's plan.
+- Added `web/src/components/HomeFeedPreview.tsx` so learners get a calm, study-first live Community Pulse right on Home (`For you`, `Doubts`, `Needs help` in compact mode; plus `Following` & pagination in Home's `Community feed` tab) with quick `Ask a doubt`, `Share a note`, and `Submit MCQ` shortcuts and honest empty states.
+- Updated `web/src/screens/StudyHome.tsx`, `web/src/components/TodayCard.tsx`, `web/src/components/Header.tsx`, `web/src/screens/Exams.tsx`, and `web/src/styles/finna.css`:
+  - Left hero now includes 1-tap switcher pills for all tracked exams + `Manage` / `+ Add` trigger, and `TodayCard` accepts `hideExamSelect` to remove the duplicate Primary Exam dropdown on Home.
+  - Center workspace now has a 3-view switcher (`Overview`, `My exams`, `Community feed`), a side-by-side Multi-Exam Board (or 1-click sibling exam quick-add prompt when only 1 exam is tracked), an inline 2–5 Focus Subjects selector synced to `/api/me/focus-subjects`, and the live Community Pulse.
+  - Header exam chip adapts to multi-exam mode (`My exams: UDC +N` → `/home?view=exams`), and saving/removing exam bookmarks on `/exams` stays synced with Home.
+- Verified with `npm run typecheck`, `npm run check:links`, `npm run check:admin`, and `npm run build`, then deployed via `./scripts/deploy.sh web` and confirmed `https://study.hawayu.in/home` (HTTP 200), `/api/health` (`ok`, 82,383 questions / 13,376 scorable), and `https://family.hawayu.in` healthy.
+- Limitation: Backend `TodayPlan` continues to anchor daily new-question targets on the single `Primary` exam while due reviews remain cross-subject.
+
+24 November IST — **Whole-website UI & typography upgrade — Part 1: Typography scale, 3D Subject-Wise Exam Bookshelf & full-width Community Feed.**
+
+- Upgraded base type tokens & card rhythm in `web/src/styles/finna.css` (`--t-base: 16.5px`, `--t-lg: 22px`, `--t-xl: 28px`, `--t-2xl: 34px`, `--t-3xl: 44px`, larger `finna-card` padding & `18px` section headers, and `Newsreader` editorial serif on book covers and community discussion titles).
+- Enhanced `web/src/components/ConceptBook.tsx` with `progressPct` gold-foil cover progress bar and compact sizing, and created reusable `web/src/components/SubjectBookshelf.tsx` displaying the 5 cross-exam Subject-Wise Exam volumes (`General Knowledge & Studies`, `English`, `Mathematics & Arithmetic`, `Reasoning & Aptitude`, `Mizo`) as interactive 3D opening hardcover books on a wooden shelf ledge.
+- Surfaced `SubjectBookshelf` prominently on `/exams` (`web/src/screens/Exams.tsx`, replacing the small plain pill row), `/home` (`web/src/screens/StudyHome.tsx`, compact 5-book shelf right in `Overview`), and `/library` (`web/src/screens/Library.tsx`, right at the top of the `Subjects` tab).
+- Rebuilt `/community` (`web/src/screens/Feed.tsx`) from a cramped narrow column into a full-width (`1320px`) 2-column editorial Community Reading Room with a dark-indigo hero header, direct compose buttons, wider roomier book-margin post cards (`Newsreader` `22px` headlines, `16px–16.5px` reading body), and a sticky desktop right sidebar (Share or ask, Community spaces, Subject books callout).
+- Deployed via `./scripts/deploy.sh web` and verified HTTP 200 on `/home`, `/community`, `/exams`, `/library`, and `family.hawayu.in`.
+- Next planned parts: Part 2 (Exams catalog booklets, Exam Detail & Past Papers), Part 3 (Practice, Question Bank, Question Detail & Mock Runner reading ergonomics), Part 4 (Vault, Desk, Guides, Atlas, Chronicle, Stats & Profile polish).
+
+24 November IST — **Discover Deck (`ExploreDeckRail`) upgraded: taller editorial stack + real photography.**
+
+- Replaced the 6 synthetic inline SVGs in `web/src/components/ExploreDeckRail.tsx` with locally hosted, optimized real Wikimedia Commons / CC0 photographs in `web/public/images/discover/` (`stats.jpg` Parliament House, `guides.jpg` classical reading room library, `chronicle.jpg` Qutub Minar, `atlas.jpg` brass compass on vintage map, `games.jpg` wooden chessboard, `calendar.jpg` fountain pen on ruled paper).
+- Widened the outer-margin Discover rail (`252px` → `308px` on wide desktop, `max-width: 520px` below `1440px`) and increased the card stack height (`264px` → `372px–388px`) with `160px–172px` framed photographic headers, frosted glass category badges, `Newsreader` `19.5px` titles, `13.5px` body copy, and larger `34px` nav controls / `32px` quick-jump pills.
+- Deployed via `./scripts/deploy.sh web` and verified HTTP 200 across all six `/images/discover/*.jpg` assets and `family.hawayu.in`.
+
+24 November IST — **Navigation bar & mobile bottom bar upgrade: slimmer 2-row student study-loop header.**
+
+- Reorganized `web/src/lib/siteMap.ts`, `web/src/lib/navigation.ts`, `web/src/components/Header.tsx`, and `web/src/styles/finna.css` per owner direction:
+  - Collapsed the 3-row desktop header into a slimmer 2-row header by folding Streak, Inbox, Theme, Help (`?`), and Staff links cleanly into Row 1 alongside Search, Vault (duplicate `My Vault` link removed), Create, and Account.
+  - Ordered the primary desktop nav (`15px` bold) around the student study loop: `Home` · `Exams ▾` · `Subjects ▾` · `Practice ▾` · `Tools & Guides ▾` · `Community ▾`, paired on the right with a high-visibility `↻ Revise` pill, `Desk`, and the multi-exam `My exams` yellow chip.
+  - Enriched the `Exams` mega-menu with a live **Quick jump** row for tracked & flagship MPSC exams (`UDC`, `LDC`, `Prelims`, `Group B`, `MES`, etc.) and populated the new `Subjects` mega-menu with all 5 cross-exam subject volumes (`GK & GS`, `English`, `Mathematics`, `Reasoning`, `Mizo`).
+  - Updated mobile bottom tabs to `Home · Exams · Subjects · Practice · Me` and fixed `primarySection()` so `/library` and `/subjects/*` highlight `Subjects` and `/practice`/`/revise`/`/bank` highlight `Practice`.
+- Verified with `npm run typecheck`, `check:links`, `check:admin`, `vite build`, and live HTTP 200 on `https://study.hawayu.in/home` + `family.hawayu.in`.
+
+24 November IST — **Whole-website UI & typography upgrade — Part 2: Expanding Flagship Exam Panels, Exam Detail & Past Papers Archive.**
+
+- Created `web/src/components/FlagshipExamPanels.tsx` (inspired by CodePen `OBPJKK` / `wvzrPoj` expanding flex cards and `XWbWKwL` editorial photo reveals) and surfaced it on `/exams` (`web/src/screens/Exams.tsx`) above the 3D Subject-Wise Exam Bookshelf: 5 flagship MPSC exams (`UDC`, `LDC`, `MCS Prelims`, `Group B Gazetted`, `MES` / `Group B Non-Gazetted`) expand smoothly on hover/tap over locally hosted editorial photography, revealing live question counts, official keys, coverage %, `+ Track` toggle, and direct `Open booklet →` / `Practice` buttons.
+- Upgraded exam booklet card typography (`Newsreader` `24px` headings, `19px` rubric figures, `42px` actions) in `web/src/styles/finna.css`.
+- Rebuilt `/past-papers` (`web/src/screens/Papers.tsx` + `web/src/components/ExamPaperList.tsx`) with an editorial dark-indigo hero banner, 1-click Tracked + Flagship Exam quick-switch pills, Year quick-filter chips, and a `Sheets` / `Table` layout toggle featuring paper-margin sheet cards (`Newsreader` `19px` titles, year stamp badges, booklet originals drawer, and `Browse questions →` / `Practice` / `PDF ↗` actions).
+- Refined Exam & Subject Detail (`web/src/styles/exam-overview.css` and `web/src/screens/ExamPage.tsx`): widened shell to `1240px`, upgraded `Newsreader` headings, pill tab rail, `32px` stat tiles, tactile paper-margin cards, and synced exam bookmarking on detail pages with Home's multi-exam tracker.
+- Deployed via `./scripts/deploy.sh web` and verified HTTP 200 on `/exams`, `/past-papers`, `/exams/udc`, `/subjects/english`, and `family.hawayu.in`.
+
+24 November IST — **Whole-website UI & typography upgrade — Part 3: Exam-Paper Question Ergonomics, Practice & Revise Hub.**
+
+- Upgraded `web/src/components/QuestionCard.tsx` and `web/src/screens/QuestionDetail.tsx` with printed exam-sheet typography (`Newsreader` `20–25px` question stems, `1.42–1.48` line height), roomier cards (`20–28px` padding), and tactile `min-h-[50px]` option buttons with bordered `A/B/C/D` letter badges that highlight cleanly on hover, correct, and wrong states while keeping explicit word labels and provenance rules intact.
+- Upgraded `/practice` (`web/src/screens/Practice.tsx`) from an `850px` plain form to an `1120px` editorial workspace with a dark-indigo hero banner, 1-click Tracked + Flagship Exam quick-pick pills inside Step 1, segmented MCQ/Written toggle, and clearer primary CTA.
+- Upgraded `/revise` (`web/src/screens/Revise.tsx`) into a `1060px` Smart Review & Revision Hub with an editorial hero, 3-tile due/scheduled summary strip, segmented view switcher, and `Newsreader` scheduled-question rows (preserving print sheet, idempotent session start, focus-subject filter, and Mistakes/Vocabulary tabs).
+- Deployed via `./scripts/deploy.sh web` and verified HTTP 200 on `/practice`, `/revise`, `/bank`, and `family.hawayu.in`.
+
+24 November IST — **Whole-website UI & typography upgrade — Part 4 (Complete): Hover-Reveal Study Tools Gallery, Open-Book Guides & Site-Wide Typography Unification.**
+
+- Upgraded `/library` (`web/src/screens/Library.tsx`) by replacing the redundant flat reference links with a 4-card tall hover-reveal photographic gallery (`xwb-grid` / `xwb-card`, inspired by CodePen `hexagoncircle/XWbWKwL`) showcasing `Study Guides`, `Interactive Atlas`, `History Chronicle`, and `India & Global Stats` with locally hosted editorial photography.
+- Refined Open-Book Guides (`gd-paper-spread`, `gd-book-card`) with `Newsreader` book/chapter headings and generous `18.5px` (`1.72` line height) reading prose, widened the Atlas chapter rail (`248px`), and unified `Newsreader` editorial headings + night-mode contrast across `Atlas`, `Chronicle`, `Stats`, `Profile`, `Desk`, and all Part 1–4 surfaces in `web/src/styles/finna.css`.
+- Deployed via `./scripts/deploy.sh web` and verified HTTP 200 across all 12 core routes (`/home`, `/exams`, `/library`, `/guides`, `/practice`, `/revise`, `/past-papers`, `/community`, `/atlas`, `/chronicle`, `/stats`, `/profile`), `/api/health` (`ok`, 82,383 questions / 13,376 scorable), and `family.hawayu.in`.
+
+24 November IST — **Navbar visual anchor upgrade (ShikshaCom-inspired, Finna identity), Study Desk hero/contrast overhaul & unified All-Exam Subject Bookshelf.**
+
+- Upgraded Finna's 2-row header (`web/src/components/Header.tsx`, `web/src/styles/finna.css`):
+  - Row 1 adds a subtle notebook-grid paper backdrop (`44px` grid) and a crisp `MPSC Study` micro-label under `Finna.` (inspired by ShikshaCom's architectural header craft, adapted strictly to Finna's palette).
+  - Row 2 is now a high-contrast **Midnight Indigo (`#0E1330`)** anchor bar with luminous white primary links, animated warm-gold (`#FFC83D`) sliding underlines on hover/active, frosted `↻ Revise` pill, and gold `My exams` pill.
+- Upgraded `/desk` (`web/src/styles/finna.css`) from a low-contrast light `.desk-hero` into a deep Midnight Indigo desk-lamp hero banner (`#121735` with warm teal/amber glow, `Newsreader` `34px` heading, crisp white-on-dark `.cr-glass-btn` / workspace selector / member chips, wider `1320px` layout, and larger `42px` tab pills).
+- Replaced technical `"Cross-exam subjects"` jargon across `StudyHome.tsx`, `SubjectBookshelf.tsx`, `Exams.tsx`, `Library.tsx`, and `examPresentation.ts` with clear student phrasing (`All-exam subject books`), unified Home's two stacked subject sections into one cohesive `SubjectBookshelf` + Focus Subjects & Accuracy card, and added gold `★ Focus` cover highlighting on books matching the learner's active focus subjects.
+- Deployed via `./scripts/deploy.sh web` and verified HTTP 200 on `/home`, `/desk`, `/exams`, `/library`, and `family.hawayu.in`.
+
+
+24 November IST — **Discover (`ExploreDeckRail`) multi-card height & visibility upgrade.**
+
+- Upgraded `web/src/components/ExploreDeckRail.tsx` and `web/src/styles/finna.css` so Discover (`Also on Finna`) now shows **3 photographic cards at once** with taller proportions across all viewports:
+  - Wide desktop sticky right gutter (`> 1440px`, widened to `324px`, `top: 108px` clear of the 2-row header): taller `406–420px` interactive spotlight card (`186–196px` photo) paired directly underneath with the next **2 visible horizontal photo cards** (`112px+` tall each with direct `Open →` and `Focus` buttons), bringing the Discover rail to ~`750px+` tall.
+  - Standard laptop / desktop (`900px – 1440px`, docked below main content): removed the cramped `520px` cap so Discover spans the full `1320px` width as a **3-column equal-height (`444px` tall, `208px` photo)** photographic card showcase that rotates through all 6 Finna tools.
+  - Tablet (`640px – 899px`): 2 tall `428px` cards on top + full-width horizontal 3rd card below (zero orphan whitespace); mobile (`< 640px`): swipeable `408px` front card + 2 horizontal preview cards underneath.
+- Verified with `npm run typecheck`, `check:links`, `check:admin`, `vite build`, `./scripts/deploy.sh web`, and live `HTTP 200` on `https://study.hawayu.in/home` + `family.hawayu.in` healthy.
+
+
+24 November IST — **Exam & Subject Question Browser (`/exams/:id?view=browse`, `/subjects/:id`) smart space & layout overhaul.**
+
+- Collapsed the ~780px vertical tower of stacked chrome above Question #1 into a crisp, purposeful 2-column study workspace across all exam and subject browse/practice views (`web/src/components/ExamOverview.tsx`, `web/src/screens/ModuleStudy.tsx`, `web/src/components/StudyQuestionCard.tsx`, `web/src/components/AnswerLayout.tsx`, `web/src/styles/exam-overview.css`):
+  - **Single-row compact study masthead:** When `viewKey` is outside `overview`/`home`, `ExamOverview` puts the `Newsreader` exam title, star toggle, and compact pill tabs (`Overview · Browse · Subjects · Papers · Practice · Progress`) on one clean top bar.
+  - **2-column desktop browse workspace (`>= 1040px`):** Uses the previously empty right margin beside `.exam-reading-area` for a clean `292px` sticky controls rail (`Test this view →`, `Revise mistakes`, Search, Subject, Topic, Year + Status pair, Section, Paper, reading position, and Shuffle/Start again) — eliminating the orphaned 7-in-6 Search input wrap and keeping filters reachable while scrolling.
+  - **Slim reading utility bar above Question #1:** Consolidates result range (`1–25 of N`), one-click removable active filter chips (`Subject ×`, `Topic ×`, `Year ×`, etc.), compact segmented `2×2 | List` toggle (`AnswerLayoutControl compact`), mini pager (`‹ 1/N ›`), and mobile/tablet `Filters (N)` drawer toggle into one tight bar so Question #1 appears immediately above the fold.
+  - **Upgraded `StudyQuestionCard` reading ergonomics:** Self-contained paper-sheet cards (`sq-card`), clean year/topic metadata chips, `Newsreader` `19.5px` question stems, and crisp `A/B/C/D` option tiles while preserving provenance, answer reveal gates, and night mode contrast.
+- Verified with `npm run typecheck`, `check:links` (41 routes), `check:admin` (37 sections), `vite build`, `./scripts/deploy.sh web`, and live `HTTP 200` on `/exams/udc?view=browse&subject_id=gk-gs`, `/subjects/gk-gs`, and `family.hawayu.in` healthy.
+
+
+24 November IST — **Navbar Mega-Menu Cards upgraded for strong visual hierarchy, editorial typography & scannability.**
+
+- Upgraded all 5 desktop dropdown mega-menus (`Exams ▾`, `Subjects ▾`, `Practice ▾`, `Tools & Guides ▾`, `Community ▾`) in `web/src/components/Header.tsx`, `web/src/lib/siteMap.ts`, and `web/src/styles/finna.css`:
+  - **Midnight Indigo Featured Anchor Card (`.finna-menu-featured`):** Turned `All Exams`, `Subject Library`, `All Practice`, `All Concept Guides`, and `All Community` into a high-contrast dark-indigo hero card with a gold `START HERE` eyebrow, `Newsreader` `22px` white display title, and gold `Open overview →` footer cue.
+  - **Structured Destination Cards (`.finna-menu-card`):** Added `34px` color-coded SVG icon badges (`cobalt`, `teal`, `amber`, `emerald`, `violet`, `rose`), category micro-tags (`Archive`, `Schedule`, `All-Exam`, `Volume I–V`, etc.), `Newsreader` `18px` display titles, hover-sliding `→` arrows, and bordered surface cards.
+  - **Quick Jump Exam Strip (`.finna-menu-exams-bar`):** Elevated into a clean rounded surface bar with high-contrast gold-starred tracked exam pills and a right-aligned `Manage my exams →` pill; cleaned remaining `cross-exam` wording in `siteMap.ts` to `all-exam`.
+- Deployed via `./scripts/deploy.sh web` and verified `HTTP 200` on `https://study.hawayu.in/home` + `family.hawayu.in` healthy.
+
+
+24 November IST — **Global Back + Breadcrumb Navigation Bar (`RouteBackBar`) added across all non-root routes.**
+
+- Created `web/src/components/RouteBackBar.tsx` and mounted it below `<Header />` in `web/src/App.tsx` (styled in `web/src/styles/finna.css`):
+  - Renders a slim `42px` navigation strip on every non-root learner route (automatically hidden on `/home`, auth/onboarding, admin console, and focused timed mocks/game rounds).
+  - Provides a real **`← Back`** button that steps cleanly through in-app history (`navigate(-1)` when `history.state.idx > 0`) and falls back gracefully to the logical parent section (`/exams`, `/library`, `/practice`, `/guides`, `/home`, etc.) when opened directly via bookmark or shared link.
+  - Shows a clickable breadcrumb trail (`Home › Exams › UDC › Browse`, `Home › Subjects › General Knowledge & Studies`, `Home › Tools & Guides › Interactive Atlas`, etc.) across both desktop and mobile viewports.
+- Verified with `npm run typecheck`, `check:links`, `check:admin`, `vite build`, `./scripts/deploy.sh web`, and live `HTTP 200` on `/exams/udc?view=browse&subject_id=gk-gs`, `/atlas`, and `family.hawayu.in` healthy.
+
+
+24 November IST — **Discover (`ExploreDeckRail`) refactored into one lean, unified 3-card component.**
+
+- Replaced the fragmented 4-part layout (tilted draggable card pile + mismatched secondary rows with duplicate `Focus`/`Open` buttons + separate bottom arrow/dot bar + bottom links) in `web/src/components/ExploreDeckRail.tsx` and `web/src/styles/finna.css` with a single cohesive component (~3.3 kB smaller `StudyHome` bundle):
+  - **One header bar:** `DISCOVER · Also on Finna` paired inline with a compact `‹ 1/6 ›` pill stepper and `−` minimize button.
+  - **One unified 3-card tile family (`.ed-tile`):** Every visible card is a direct clickable `<Link>` sharing the same photographic frame, tone wash, and `Newsreader` typography — rendering as 3 equal-height `412px` vertical photo cards side-by-side on standard laptops/desktops (`900–1440px`), 1 featured + 2 matching horizontal photo cards in the tall right rail (`>1440px`) and on mobile (`<640px`), and 2 tall cards + 1 full-width horizontal card on tablet (`640–899px`).
+  - **One index tab bar:** Compact bottom tabs (`Stats · Guides · Chronicle · Atlas · Games · Calendar`) highlight the active primary card and softly mark the other two visible cards; supports keyboard arrows, touch swipe, auto-rotate (paused on hover/focus), and `prefers-reduced-motion`.
+- Verified with `npm run typecheck`, `check:links`, `check:admin`, `vite build` (`6.17s`), `./scripts/deploy.sh web`, and live `HTTP 200` on `https://study.hawayu.in/home` + `family.hawayu.in` healthy.
+
+
+24 November IST — **Compacted Navbar Mega-Menu Cards for a slimmer, snappier dropdown footprint.**
+
+- Tightened mega-menu cards in `web/src/components/Header.tsx` and `web/src/styles/finna.css` (~40% shorter vertically): moved the `32×32` icon badge to the left beside the `Newsreader` `16px` title and 2-line clamped blurb, removed the extra micro-tag row, scaled down `.finna-menu-featured` (`12px 15px` padding, `18.5px` title), and slimmed the `Quick jump` pill strip (`29px` pills).
+- Verified with `npm run typecheck`, `check:links`, `check:admin`, `vite build` (`6.31s`), `./scripts/deploy.sh web`, and live `HTTP 200` on `https://study.hawayu.in/home` + `family.hawayu.in` healthy.
+
+
+24 November IST — **Full Study Desk (`/desk`) workspace, Focus Timer & right-rail overhaul.**
+
+- Upgraded `web/src/screens/StudyDesk.tsx`, `web/src/components/DeskFocus.tsx`, `web/src/components/DeskCalendar.tsx`, and `web/src/styles/finna.css`:
+  - **Tools immediately above the fold:** Defaulted the large SVG room illustration (`DeskScene`) to collapsed (remembered in `localStorage` via `finna:desk-diagram:v1`, 1-click `Show room view` toggle in the hero bar) and added a live quick-KPI strip (`saved`, `notes`, `this week`) in the hero bar.
+  - **Unified editorial workspace card (`.desk-main-surface`):** Framed Saved Questions, Notes, Focus Timer, Practice, Progress, and Mistakes inside a clean bordered `var(--bg-panel)` workspace card with `Newsreader` `24px` section headings and a solid cobalt `+ Add a note` / `+ Save a question` CTA pill.
+  - **Midnight Indigo Focus Lamp Timer (`DeskFocus.tsx`):** Replaced the hardcoded pink `#EEDDEC` / `#B23A9A` box (which broke night-mode contrast) with a calm Midnight Indigo & Warm Gold focus timer stage featuring 1-click duration presets (`15m`, `25m`, `45m`, `60m`, `90m`), live progress bar, and crisp gold primary actions.
+  - **Cohesive right utility rail (`.desk-rail-card`):** Unified `DeskCalendar`, Room Profile, Toolbox, What you share (teal toggle), and Desk Chat (indigo/paper bubbles with full night-mode contrast) into matching rounded `18px` cards.
+- Verified with `npm run typecheck`, `check:links`, `check:admin`, `vite build` (`10.06s`), `./scripts/deploy.sh web`, and live `HTTP 200` on `https://study.hawayu.in/desk` + `family.hawayu.in` healthy.
+
+
+24 November IST — **Study Desk (`/desk`) Wood, Antique Brass & Moonlit Forest Campfire upgrade (inspired by `GXLXjQ` & `KKzREqy`).**
+
+- Created `web/src/components/DeskCampfireClock.tsx` with two self-contained, zero-external-asset components:
+  - `DeskForestPorthole`: Circular wood-and-brass framed moonlit pine forest scene with twinkling stars, glowing cratered moon, perched night owl, crossed firewood logs, and an interactive crackling campfire (tapping toggles between crackling flames + rising sparks and gentle smoke curls, automatically syncing with running/paused focus sessions).
+  - `DeskBrassClock`: Live walnut-and-brass analog clock with real ticking hour/minute/second hands and subtle turning clockwork gears behind the dial.
+- Integrated both into `web/src/components/DeskFocus.tsx` (2-column Forest Cabin Focus Timer stage with carved walnut woodgrain texture `--desk-wood-grain`, brushed brass progress bar, 1-click presets, and warm gold controls) and `web/src/screens/StudyDesk.tsx` (deep forest-pine & walnut woodgrain `.desk-hero` featuring the live `DeskBrassClock`).
+- Updated `web/src/components/DeskScene.tsx` with wood-framed forest pine & moon hills through the study window and a swinging antique wood-and-brass pendulum clock on the wall; respects `prefers-reduced-motion: reduce` and night mode.
+- Verified with `npm run typecheck`, `check:links`, `check:admin`, `vite build` (`10.03s`), `./scripts/deploy.sh web`, and live `HTTP 200` on `https://study.hawayu.in/desk` + `family.hawayu.in` healthy.
+
+
+24 November IST — **Topic-Wise Subject Studio (`/subjects/:id?view=topics`) & English Guide (`/guides/tenses-and-voice`) bug fixes and upgrade.**
+
+- Upgraded `web/src/components/ExamStudyTopics.tsx`, `web/src/screens/ExamPage.tsx`, and `web/src/styles/exam-overview.css`:
+  - **Fixed wrong route links:** Passed `basePath="/subjects/:id"` and `isSubjectView` from `ExamPage` so all Browse / Practise / Subtopic links stay cleanly inside `/subjects/:id?...` instead of pointing to `/exams/subject-*`.
+  - **Replaced redundant 1-subject collapsed accordion with direct 2-column Topic Cards:** When viewing any single-subject book (`/subjects/english?view=topics`, `/subjects/gk-gs?view=topics`, `/subjects/mathematics?view=topics`, etc.), topics (`Grammar`, `Vocabulary`, `Comprehension`, `Writing`, `Sentence Correction`) render directly as numbered editorial cards with share-of-subject progress meters, clickable subtopic pills (`Tenses · 1,219`, `Parts of Speech · 1,074`, `Idioms and Phrases · 1,153`, etc.), topic search + `Most Qs / A–Z` sort, and inline companion links.
+  - **Companion Concept Guide strip:** Automatically surfaces linked first-party concept guides & tools right at the top of Subject Topics (`English Tenses & Voice` + `Revise` on English; `Indian Polity Codex` + `MPSC Quick Revision` on GK/GS).
+- Fixed and upgraded the English Guide (`web/src/screens/Guides.tsx`, `web/src/styles/finna.css`):
+  - **Fixed raw JSON example leak:** Live Postgres and `guides-seed.json` stored tense examples as `- {"l":"+","t":"The sun rises in the east."}`; `GuideMarkdown` now safely parses and renders them as styled **Affirmative (`+`) / Negative (`–`) / Question (`?`)** example cards with color-coded badges.
+  - **Rendered Chapter 13 Active → Passive Voice rows** as a clean structured 3-column conversion table (`.gd-voice-table`).
+  - **Connected chapters straight to tagged English MCQs:** Chapters 1–12 link directly to `english/grammar/tenses` (1,219 Qs) and Chapter 13 links to `english/grammar/voice` (79 Qs), plus a sidebar shortcut back to `English Topics (9,861 Qs) →`.
+- Verified with `npm run typecheck`, `check:links` (41 routes), `check:admin` (37 sections), `vite build` (`10.29s`), `./scripts/deploy.sh web`, and live `HTTP 200` on `/subjects/english?view=topics`, `/guides/tenses-and-voice`, `/subjects/gk-gs?view=topics`, and `family.hawayu.in` healthy.
+
+
+24 November IST — **Future-update-proof Subjects architecture: live guide discovery, auto-populated study notes & dynamic bookshelf counts.**
+
+- Replaced the hardcoded `SUBJECT_GUIDES` map in `web/src/components/ExamStudyTopics.tsx` with live `/api/guides` discovery (falling back cleanly to `guides-seed.json`) so any future concept guide published for any subject (`mathematics`, `reasoning`, `mizo`, `computer`, `economics`, etc.) or specific `topic_id` automatically appears on that subject's Topics view and matching topic card with zero frontend changes.
+- Added `<MaterialDiscovery subjectId={primarySubject.id} hideEmpty />` plus a clean extensible **Subject Tools & Updates Hub** (`.est-future-hub` in `exam-overview.css`) on every Subject Topics view linking directly to Concept Guides, Spaced Revision, Custom Practice Tests, Community Study Notes, and Content Studio (`+ Publish a note`).
+- Removed the hardcoded `"5 subject books"` string in `web/src/components/SubjectBookshelf.tsx` so newly added subject modules in Postgres `collections` render dynamically with accurate counts and book volumes.
+- Verified with `npm run typecheck`, `check:links`, `check:admin`, `vite build`, `./scripts/deploy.sh web`, and live `HTTP 200` on `/subjects/english?view=topics`, `/subjects/mathematics?view=topics`, `/subjects/mizo?view=topics`, and `family.hawayu.in` healthy.
+
+
+24 November IST — **Dual-section navigation for Subjects, Exams Topics, Concept Guides, and the `Subjects ▾` mega-menu.**
+
+- Added a live **`Topic-wise books`** Quick Jump strip inside the desktop `Subjects ▾` mega-menu (`web/src/components/Header.tsx`) hydrated from `/api/collections` via `isSubjectModule` + `moduleHref`, mirroring the `Exams ▾` quick-jump bar and automatically surfacing any future subject book alongside `Concept Guides →`.
+- Added a **Dual Navigation Dock (`.est-nav-dock`)** to single-subject topic views (`/subjects/:id?view=topics`) in `web/src/components/ExamStudyTopics.tsx` and `web/src/styles/exam-overview.css`:
+  - **Subject Book Switcher rail (`.est-subject-rail`):** Live pill bar across all subject books (`GK & GS`, `English`, `Mathematics`, `Reasoning`, `Mizo`, plus future subjects), staying directly in `?view=topics`.
+  - **In-Page Section Jump bar (`.est-section-nav`):** Direct anchors between **Section 1 (`1. Topics`)** (`#est-topics-section`) and **Section 2 (`2. Guides, Notes & Tools`)** (`#est-resources-section`), paired with `Browse all` / `Start practice` shortcuts and a `↑ Back to topics` link inside Section 2.
+- Added a **Subject Quick-Jump pill bar (`.est-exam-jump`)** to multi-subject Exam Topics views (`/exams/udc?view=topics`, etc.) in `ExamStudyTopics.tsx` that expands and smoothly scrolls to `#subject-card-<subjectId>` on click.
+- Made the Concept Guide sidebar link back to Subject Topics (`web/src/screens/Guides.tsx`) data-driven for any current or future guide's `subject_id` rather than hardcoded to English and Polity.
+- Verified with `npm run typecheck`, `check-dead-links` (41 routes), `check-admin-nav` (37 sections), `vite build` (`11.33s`), `./scripts/deploy.sh web`, and live checks on `/subjects/english?view=topics`, `/exams/udc?view=topics`, `/guides/tenses-and-voice`, `/api/health`, and `family.hawayu.in`.
+
+
+24 November IST — **Blind re-test (hide checked options), Reading Checkpoints (Start / Last / Pin / Jump #), and zero-lag `Pages | Scroll` browser on Web & Mobile.**
+
+- **Web (`finna/web`):**
+  - `web/src/components/PracticeAnswerPanel.tsx`: Added **`↺ Hide & try again`** after checking an answer (`result && onRetry`) so learners can immediately hide the revealed highlight/explanation and re-test fresh (keeping recorded attempts in Postgres), plus collapsible **`Hide answer`** / **`Show answer again`** for read-only `Show answer` reveals while preserving the server retry cooldown.
+  - `web/src/lib/browsePosition.ts` & `web/src/hooks/useBrowsePosition.ts`: Added per-scope **Pinned Checkpoints** (`readBrowseCheckpoint` / `writeBrowseCheckpoint` / `clearBrowseCheckpoint`), live global `#N` tracking (`currentIndex`), and real 25-aligned offset saving across both paginated and continuous-scroll views.
+  - `web/src/screens/ModuleStudy.tsx`, `web/src/components/StudyQuestionCard.tsx`, `web/src/styles/exam-overview.css`:
+    - Added sticky **Reading Checkpoint Bar** (`.mb-checkpoint-bar`): live `At #N` / `Resumed #N`, `⏮ Start`, `↩ Last (#N)` return anchor after jumping, `⚑ Pin #N` / jump / move / clear checkpoint, `# Go…` direct question jump, `⏭ End`, and `↺ Hide checked (N)`.
+    - Added **`Pages` | `Scroll`** reading mode toggle (`finna:browse-mode:v1`): `Scroll` uses an `IntersectionObserver` bottom sentinel, `↑ Load earlier 25` top loader when resumed mid-way, a **125-card sliding DOM window**, and CSS `content-visibility: auto; contain-intrinsic-size: auto 340px` for smooth lag-free scrolling across 10,000+ questions.
+- **Mobile (`india-study-map-mobile`):**
+  - `src/features/useAnswer.ts` & `src/components/QuestionCard.tsx`: Added `options.hideCompletedOnLoad` (enabled in bank browse mode so returning to browsed questions hides previously completed answers for blind re-testing while keeping pending unconfirmed receipts and server history intact) plus `reset()` and **`↺ Hide & try again`** button on checked cards.
+  - `src/state/preferences.tsx` & `src/app/questions.tsx`: Added sticky **Bottom Checkpoint & Mode Bar** + **Checkpoints & Jump Sheet** (`⏮ Start`, `↩ Last`, `⚑ Pin / Jump / Clear`, `⏭ End`, numeric `# Jump`, and `Continuous scroll` | `Pages (25/page)` toggle with Android `removeClippedSubviews` + `FlatList` virtualization + `↑ Previous 25` loader).
+- **Verified:** Web `npm run typecheck`, `check-dead-links` (41 routes), `check-admin-nav` (37 sections), `vite build` (`14.43s`), `./scripts/deploy.sh web`, live `HTTP 200` on `/subjects/english?view=browse`, `/exams/udc?view=browse`, `/bank`, `/api/health`, and `family.hawayu.in` healthy (`307`). Mobile `tsc --noEmit`, 41/41 component tests (including 2 new tests in `AnswerIsolation.test.tsx`), and 41/41 unit tests all pass.
+
+
+24 November IST — **Clear MCQ vs Written / Descriptive differentiation across Web & Mobile (cards + 1-tap format filter).**
+
+- **Web (`finna/web`):**
+  - `web/src/components/StudyQuestionCard.tsx`, `web/src/components/QuestionCard.tsx`, and `web/src/styles/exam-overview.css`:
+    - Added unmistakable color-coded format pills on every card: cobalt **`◉ MCQ`** vs warm amber **`✎ Written`** (with a `4px` warm amber left notebook stripe and subtle parchment gradient on Written cards, full night-mode contrast).
+    - Replaced misleading blank/unavailable-answer text on Written cards with a dedicated dashed **Written / Descriptive prompt box** (`.sq-written-box`) and direct **`Write answer →`** CTA to `/bank/:id`.
+  - `web/src/screens/ModuleStudy.tsx` & `web/src/screens/Bank.tsx`:
+    - Added a 1-tap **`All` | `◉ MCQs` | `✎ Written`** segmented filter right in the reading bar (mapping cleanly to live API `pool=practice` for MCQs and `pool=all&answer_status=written` for Written, with active filter chips), and aligned `/bank` pool segments to the exact same **`All` | `◉ MCQs` | `✎ Written`** labels.
+- **Mobile (`india-study-map-mobile`):**
+  - `src/components/QuestionCard.tsx`: Added **`◉ MCQ`** (blue tint) vs **`✎ WRITTEN`** (warm gold tint + `4px` gold left accent bar) badges across both bank and detail cards, and replaced `"Answer checking is unavailable"` on descriptive questions with a dedicated **`✎ Descriptive / written prompt`** panel + **`Write / open prompt →`** button.
+  - `src/lib/domain.ts` & `src/app/questions.tsx`: Added `format?: "all" | "mcq" | "written"` to `Filters` and a 1-tap **`All` | `◉ MCQs` | `✎ Written`** pill bar in the Questions header wired cleanly to `pool=practice` and `answer_status=written`.
+- **Verified:** Web `npm run typecheck`, `check-dead-links` (41 routes), `check-admin-nav` (37 sections), `vite build` (`14.71s`), `./scripts/deploy.sh web`, live `HTTP 200` on `/subjects/english?view=browse&pool=practice`, `/subjects/english?view=browse&pool=all&answer_status=written`, `/bank?mode=written`, `/api/health`, and `family.hawayu.in` healthy (`307`). Mobile `tsc --noEmit`, 42/42 component tests (including a new MCQ vs Written card test in `QuestionCard.test.tsx`), and 41/41 unit tests passing.
+
+
+24 November IST — **Admin Console upgrades (Concept Guides Studio + Answer Conflicts + sidebar filter) & 4 crafted/upgraded Concept Guides (Maths & Arithmetic, Polity Codex, Geography, History).**
+
+- **Admin Console (`finna/web` + `api/app/routers/guides.py`):**
+  - Created `web/src/screens/GuidesStudio.tsx` (`tab=guides-studio`, owner-gated) to create, edit, reorder chapters, preview safe markdown, validate linked `cq_` question IDs, publish live via `POST /api/guides/admin`, and 1-click sync all 7 bundled first-party guides into Postgres. Added owner-only `GET /api/guides/admin` and `GET /api/guides/admin/{slug}` in `api/app/routers/guides.py` (tested via `pytest tests/test_part7_v15_v17.py` — 3 passed; frontend falls back cleanly to `GET /api/guides` until next API deploy).
+  - Created `web/src/screens/AnswerConflictsAdmin.tsx` (`tab=conflicts`, staff-gated) wired directly to live `/api/admin/bank/conflicts`, `/api/admin/bank/conflicts/{qid}`, and owner `/api/admin/bank/conflicts/refresh` with KPI summary cards, cluster-flagged paper filters, shape tabs (`all` / `key-won` / `solution-won`), inline Official vs. Derived comparison, publication history, and direct links to the Question Workbench.
+  - Registered both tabs in `web/src/lib/adminNavigation.ts`, dispatched them in `web/src/screens/BankAdmin.tsx`, and added a live tool filter input + Daily Workflow shortcut section to `web/src/components/AdminNavigation.tsx` (strictly derived from `ADMIN_GROUPS` / `ADMIN_SECTIONS`).
+- **Crafted & Upgraded Concept Guides (from real `india-study-map` / `finna` authored content & live PYQ taxonomy):**
+  - Added reproducible builder `scripts/enrich-guides-seed.py` updating `web/src/data/guides-seed.json` to 7 complete guides:
+    1. **Upgraded `polity-codex` (21 chapters):** Replaced all 21 raw slug headings (`1. hist` → `1. Historical Background (1773–1947)` … `19. Sixth Schedule, Art. 371G & Mizoram ADCs` … `21. Comparative Constitutions`) using the authentic titles from `india-study-map/public/codex/index.html`, wired every chapter to `gk-gs:indian-polity` (1,297 Qs), and cross-linked the 5 Polity Atlas map chapters.
+    2. **New `maths-and-arithmetic` (12 chapters):** Synthesized all 26 authored topics from `web/src/data/arithmetic-content.json` (intuition, explanations, and formulas) wired directly to live `subject-mathematics` topics & subtopics (`ratio-and-proportion`, `percentages`, `profit-and-loss`, `averages`, `algebra`, `mensuration`, `geometry`, `arithmetic` — 2,807 Qs) + `/arithmetic` Formula Lab.
+    3. **New `geography-essentials` (11 chapters):** Distilled all 11 authored Geography Atlas chapters (including `Geography of Mizoram` and `Forests & Protected Areas` — 131 verified exam facts) wired directly to `gk-gs:geography` (1,050 Qs), `gk-gs:environment` (345 Qs), `gk-gs:mizoram` (515 Qs), and `/atlas/:slug`.
+    4. **New `history-essentials` (11 chapters):** Distilled all 10 authored History Atlas chapters (`Indus Valley` through `Freedom Struggle on the Map`) plus a dedicated Modern India, Mizoram History & World History Milestones chapter wired directly to `gk-gs:indian-history` (820 Qs), `gk-gs:world-history` (142 Qs), `/atlas/:slug`, and `/chronicle`.
+  - Updated `web/src/screens/Guides.tsx` and `web/src/components/ExamStudyTopics.tsx` to merge live `/api/guides` with bundled `guides-seed.json`, render `###` subheadings and safe Markdown tables, clean up legacy Polity Codex DB headings in the reader automatically, give every book a distinct hardcover tone, and link topic cards straight to their matching guide chapters.
+- **Verified:** `npm run typecheck`, `check-dead-links` (41 routes), `check-admin-nav` (39 sections across 4 job groups), `vite build` (`6.71s`), `./scripts/deploy.sh web`, live `HTTP 200` across `/guides`, all 4 guides, `/subjects/mathematics?view=topics`, `/subjects/gk-gs?view=topics`, `/admin/bank?tab=guides-studio`, `/admin/bank?tab=conflicts`, `/api/health`, and `family.hawayu.in` healthy (`307`).
+
+
+24 November IST — **Editorial Textbook Reader upgrade for Concept Guides (`Guides.tsx` + `finna.css`) & enriched high-yield tables, worked MPSC examples, and exam traps across Maths, Polity, Geography & History.**
+
+- Upgraded `web/src/screens/Guides.tsx` and `web/src/styles/finna.css` to match Finna's warm cream open-book spread (`#FCF9F2` / `#141B28` night mode + per-book `--bk-a`/`--bk-ink` tones):
+  - Added semantic editorial blocks inside `GuideMarkdown` (zero raw HTML): **Mental Model / Intuition** callout cards (`.gd-callout.is-concept`), **Worked Example** cards (`.gd-callout.is-example`), **Exam Trap** warning callouts (`.gd-callout.is-trap`), **Memory Hook** cards (`.gd-callout.is-hook`), **2-column Formula Cheat-Sheet Grids** (`.gd-formula-grid`), **Editorial Reference & Timeline Tables** (`.gd-ref-table`), and **Structured Fact Cards** (`.gd-fact-list`) with auto-highlighted lead terms.
+  - Added a live **Scroll-Spy Table of Contents** (`IntersectionObserver`), a sticky top **reading progress bar** (`.gd-progress-track`), and a **`Full guide` | `⚡ Quick revision`** mode toggle that spotlights only high-yield mental models, formulas, tables, worked examples, and exam traps for rapid pre-exam review.
+- Enriched `scripts/enrich-guides-seed.py` → `web/src/data/guides-seed.json` with **22 reference/comparison/chronology tables**, **11 worked MPSC Maths examples** (including live bank PYQs like CI−SI 2-year shortcut, LCM of 36/54/72, 600-boy Venn hostel problem, 2/3 right-angle complement), and **24 exam traps & memory hooks** across `maths-and-arithmetic`, `polity-codex`, `geography-essentials`, and `history-essentials`.
+- Verified with `npm run typecheck`, `check-dead-links` (41 routes), `check-admin-nav` (39 sections), `vite build` (`8.69s`), `./scripts/deploy.sh web`, live `HTTP 200` on `/guides`, all 4 subject guides, `/api/health`, and `family.hawayu.in` healthy (`307`).
+
+
+24 November IST — **Visible Source Provenance & Smart Concept Guide Link Strip on every MCQ/Written card (Web & Mobile).**
+
+- Created `web/src/lib/questionGuideLink.ts` with `resolveQuestionGuide(q)` (resolves any question's taxonomy subject/topic/subtopic + stem keywords directly to the exact matching Concept Guide & chapter anchor across Maths & Arithmetic, English Tenses & Voice, Indian Polity Codex, Geography & Mizoram, History, and MPSC Quick Revision) and `formatQuestionSource(q)` (clean exam · year · paper · section · series · Q# · p. N + direct `PDF ↗` link).
+- Upgraded `web/src/components/StudyQuestionCard.tsx`, `web/src/components/QuestionCard.tsx`, and `web/src/styles/finna.css` with a clean editorial footer strip (`.sq-ref-bar`):
+  - **Left:** `Source` pill + exact exam/paper/Q#/page provenance + direct `PDF ↗` & repeat-appearance links (no longer hidden inside secondary actions).
+  - **Right:** Subject-colored **`📖 <Guide · Chapter> →`** pill linking straight into the matching Concept Guide chapter (with full Night Mode contrast).
+- Mirrored on Mobile (`india-study-map-mobile/src/lib/domain.ts` + `src/components/QuestionCard.tsx`): displays `Q#` on the source paper button alongside a direct **`📖 <Guide> →`** pill routing to `/guide/[slug]`.
+- Verified: Web `npm run typecheck`, `check-dead-links` (41 routes), `check-admin-nav` (39 sections), `vite build` (`18.53s`), `./scripts/deploy.sh web`, live `HTTP 200` on `/subjects/mathematics?view=browse`, `/subjects/gk-gs?view=browse`, `/subjects/english?view=browse`, `/bank`, `/api/health`, and `family.hawayu.in` healthy (`307`). Mobile `tsc --noEmit`, 10/10 `QuestionCard.test.tsx`, and 41/41 unit tests passing.
 
 
 ## 25 November 2026 — MCS explanation pass reconciled

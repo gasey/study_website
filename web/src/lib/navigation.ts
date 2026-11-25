@@ -1,27 +1,22 @@
 import { destinationsForSurface } from './siteMap'
 
-/** Phone primary tabs generated directly from `siteMap.ts` (§VII.3.1, §VII.3.3).
- *  Five tabs: Home · Exams · Guides · Desk · Me. */
-/** Phone tab order is deliberate, not manifest order: Home · Exams · Subjects ·
- *  Guides · Me (owner, 22 Nov 2026). Desk left the bar — §0.12 calls it "purely
- *  a toolbox" rather than a daily destination — and keeps its desktop quick link
- *  plus entries on Home, Profile and /index. */
-const TAB_ORDER = ['home', 'exams', 'library', 'guides', 'profile']
+/** Phone primary tabs generated directly from `siteMap.ts`:
+ *  Five student-loop tabs: Home · Exams · Subjects · Practice · Me. */
+const TAB_ORDER = ['home', 'exams', 'library', 'practice', 'profile']
 export const PRIMARY_NAV = destinationsForSurface('tabs')
   .slice()
   .sort((a, b) => TAB_ORDER.indexOf(a.id) - TAB_ORDER.indexOf(b.id))
   .map((d) => ({
-  to: d.path,
-  label: d.label,
-  icon: d.icon || 'home',
-}))
+    to: d.path,
+    label: d.label,
+    icon: d.icon || 'home',
+  }))
 
 export function primarySection(path: string) {
-  if (/^\/desk(\/|$)/.test(path)) return '/desk'
   if (/^\/(home|feed|community)(\/|$)/.test(path) && path !== '/community/questions') return '/home'
-  if (path === '/onboarding') return '/exams'
-  if (/^\/(exams|group-b|past-papers)(\/|$)/.test(path)) return '/exams'
-  if (/^\/(guides|library|bank|practice|tests|materials|atlas|chronicle|stats|english|mizo|arithmetic|revise|search)(\/|$)/.test(path) || path === '/community/questions') return '/guides'
+  if (path === '/onboarding' || /^\/(exams|group-b|past-papers|calendar)(\/|$)/.test(path)) return '/exams'
+  if (/^\/(library|subjects|guides|materials|atlas|chronicle|stats|english|mizo|arithmetic)(\/|$)/.test(path)) return '/library'
+  if (/^\/(practice|bank|tests|revise|games|vault|results)(\/|$)/.test(path) || path === '/community/questions') return '/practice'
   return '/profile'
 }
 

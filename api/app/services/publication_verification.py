@@ -32,18 +32,15 @@ def publication_mismatches(expected, record, canonical, primary, patch):
                     and expected[source] is None and value=='none'
                     and expected.get('answerIndex') is None and not expected.get('options')):
                 value=None
-            # Tag-only and unanswered option/defect restoration publications
-            # preserve legacy unanswered MCQs whose absent provenance SQL stores
-            # as 'none'; this cannot certify an answer and keeps all other MCQ
-            # provenance comparisons strict.
+            # Source-only edits preserve unanswered MCQs whose absent provenance
+            # SQL stores as 'none'. This cannot certify an answer: both the
+            # recorded option and canonical answer remain empty, and the patch
+            # does not touch answer identity or provenance.
             if (source=='answerSource' and expected.get('type')=='mcq'
                     and expected[source] is None and value=='none'
                     and canonical.get('answer_text')==answer
-                    and patch and (
-                        not set(patch)-{'classification','relatedClassifications'}
-                        or (expected.get('answerIndex') is None and answer is None
-                            and not set(patch)-{'options','sourceDefect','disputeNote'})
-                    )):
+                    and expected.get('answerIndex') is None and answer is None
+                    and patch and not set(patch)&{'answerIndex','answerSource','answerKeyRef','explanation'}):
                 value=None
             if source=='explanation':
                 value=value or None

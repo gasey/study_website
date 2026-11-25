@@ -25,6 +25,7 @@ export const ADMIN_SECTIONS=[
 
  // 1. Waiting for a decision. Exposure ranking orders these queues (§VII.18.9).
  ['workflow','Review queue','inbox','owner','Review submitted corrections, materials and reports in one queue.'],
+ ['conflicts','Answer conflicts','inbox','staff','Triage key-versus-solution disagreements ranked by paper clusters and learner exposure.'],
  ['reports','Question reports','inbox','staff','Inspect reported questions and record the resolution.'],
  ['review','Community corrections','inbox','staff','Review proposed bank changes in your permitted subjects.'],
  ['editorial','Editorial review','inbox','staff','Work through assigned editorial review queues and tag cleanup.'],
@@ -48,6 +49,7 @@ export const ADMIN_SECTIONS=[
  ['modules','Module comparisons','bank','owner','Use module comparisons as evidence for bank corrections.'],
 
  // 3. Learner-facing content that is authored rather than corrected.
+ ['guides-studio','Concept guides studio','authored','owner','Create, edit, preview and publish first-party concept guides linked to subjects and topics.'],
  ['content','Notes & lessons','authored','owner','Review learner materials and manage their published revisions.'],
  ['current-affairs','Current affairs connections','authored','staff','Link historical questions to independently reviewed dated facts and later papers.'],
  ['ca-automation','Current affairs automation','authored','owner','Review staged YouTube and news current-affairs candidates.'],

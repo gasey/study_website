@@ -14,6 +14,7 @@ import { hydrateDesk } from './lib/desk'
 import BottomBar from './components/BottomBar'
 import Footer from './components/Footer'
 import Header from './components/Header'
+import RouteBackBar from './components/RouteBackBar'
 import HelpDrawer from './components/HelpDrawer'
 import { Card } from './components/ui'
 
@@ -54,6 +55,7 @@ const CommunityQuestions = lazy(() => import('./screens/CommunityQuestions'))
 const Profile = lazy(routeModules.Profile)
 const Games = lazy(() => import('./screens/Games'))
 const GamePlayer = lazy(() => import('./screens/Games').then((m) => ({ default: m.GamePlayer })))
+const QuestGame = lazy(() => import('./screens/QuestGame'))
 const TopicTrail = lazy(() => import('./screens/TopicTrail'))
 const Stats = lazy(() => import('./screens/Stats'))
 const GlobalSearch = lazy(() => import('./screens/GlobalSearch'))
@@ -247,6 +249,7 @@ export default function App() {
     >
       <SiteNotice />
       {!adminWorkspace && <Header />}
+      {!adminWorkspace && <RouteBackBar />}
       <SessionNotice />
       <AudienceNotice />
       <main id="main-content" tabIndex={-1} className="flex-1 scroll-mt-32">
@@ -286,6 +289,7 @@ export default function App() {
                 <Route path="/desk/:deskId?" element={<StudyDesk />} />
                 <Route path="/vault" element={<PersonalVault />} />
                 <Route path="/vault/share/:token" element={<PersonalVault />} />
+                <Route path="/games/quest" element={<QuestGame />} />
                 <Route path="/games/:id?" element={<GamesRoute />} />
                 <Route path="/search" element={<GlobalSearch />} />
                 <Route path="/community/:sub?" element={<CommunityRoute />} />

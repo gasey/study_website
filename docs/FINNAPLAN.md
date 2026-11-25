@@ -8639,3 +8639,567 @@ any exam body, and cannot yet hold a question from no exam at all.**
    the most valuable signal in a PYQ bank — remains dead.
 4. V.21, on the trigger above. V.24 (a second exam body) is unblocked by V.23's
    measurement whenever a body is chosen.
+
+---
+
+# Part XI — Modules, the full bank, and one selector for browse and test
+
+23 November IST, written on owner direction. Document only; no code, migration or
+production state touched. The owner asked for four things:
+
+1. Stop showing the whole question-bank filter — *"better to reduce confusing and
+   work"*.
+2. Make the module the unit instead, **for all exams**, with the ability to
+   **merge dynamically or merge fixed**.
+3. Over a merged set, one **combined filter**, and **browse and test** from it.
+4. Keep the raw bank as a chooser-first surface — *"safe we can choose and browse might be
+   better"*.
+
+The short answer, and it is unusual for this document: **the merge is already
+built.** Migration `0075_module_composition.sql` shipped a draft → preview →
+publish editor with immutable history, and `Selection.modules`
+(`services/module_composition.py:16`) takes up to 30 source modules with cycle
+detection (`:37-49`). The owner has already used it — `subject-wise-practice` is
+special-cased at `collections.py:350` and exists in **no migration**, so it was
+created through that editor in production.
+
+So Part XI is not a build proposal for merging. It is three narrower things: the
+two places the existing merge is wrong, the one parameter that makes a merge
+browsable, and the honest scope line between a module and the full bank.
+
+## XI.1 What is already built, measured
+
+| Capability | State | Evidence |
+| --- | --- | --- |
+| A module is a saved query, not a corpus | **True** | `collection_sections.query` resolved at `collections.py:22-75`; `kind IN ('exam','guide','tool','practice')` at `0002_schema_v3.sql:417` |
+| Fixed merge — one module composed of others | **Built** | `module_composition.py:16,37-49,59-67`; versioned, previewable, owner-gated, `reason` ≥15 chars (`0075`) |
+| A merged module needs a new screen | **False** | A merge is a `collections` row with a `route`; `/exams/:id` renders it today. The DDL's own example route is `'/exams/udc-ldc'` (`0002:418`) — the merge was the first thing the schema imagined |
+| Per-module facet counts | **Built, web does not use them** | `GET /collections/{id}/study-topics` (`collections.py:168`) returns subject/topic/subtopic counts; mobile calls it (`src/app/questions.tsx:106-116`), `Bank.tsx` does not |
+| Dynamic merge | **Absent** | `collection_id` is a single scalar (`questions.py:81`); only `source` is an array param |
+| Combined filter over a merged set | **Absent** | `/questions/taxonomy` (`questions.py:448-453`) keys on `pool + exam_scope + learning` only — it cannot narrow to a selection |
+
+### XI.1.1 The two places the existing merge is wrong
+
+- **It merges paper libraries, not queries.** `compile_selection` copies only
+  `allow_browse` papers out of each source (`module_composition.py:65-67`), then
+  refuses a selection that resolves to no papers — *"Keep at least one source
+  paper"* (`:69`). A module defined by taxonomy rather than papers therefore
+  contributes **nothing** to a merge, and merging two subject modules fails
+  outright. That is exactly the owner's headline case — *"people will be
+  interested in the whole english maths arithmetic"* (§VII.18.4).
+- **It is a snapshot, not a rule.** The import records a `snapshot_hash` and
+  copies the papers as they stand (`:63-67`). A merged module does not follow its
+  members: a paper added to LDC next month never reaches "All clerical" until
+  someone republishes. The versioning is correct and the preview is honest; the
+  staleness is silent. Nothing warns, and nothing lists which merges are behind
+  their sources.
+
+### XI.1.2 The resolver is written five times
+
+The same three-key contract — and it really is only three keys: `paper_ids`,
+`subject_id`, `topic_id` — is re-implemented in:
+
+```
+api/app/routers/collections.py:22-75          the section resolver
+api/app/routers/questions.py:183-215          the browse CTE  (same job, different SQL)
+api/app/routers/questions.py:218-237          the section_path filter (again)
+api/app/services/module_composition.py:135-140  the publish preview
+api/app/services/review_scope.py:51-64        the review scope
+api/app/services/atlas_context.py:55-56       the atlas binding
+```
+
+This is the *work* the owner wants to reduce, and it is not the filter UI. Adding
+one key to a module query means editing six SQL fragments in five files. The DDL
+comment at `0002:433` advertises `{"subject":"gk","topic":"polity","year_gte":2016,
+"times_asked_gte":2}` — of those four keys, **two are unimplemented and the other
+two are spelled differently** (`subject_id`, `topic_id`). §VII.18.4 quotes that
+comment as if it were a capability. It is not. Correct the plan, not the comment.
+
+### XI.1.3 Four exam ids hardcoded in the browse path
+
+Each of these is a per-module *behaviour* wearing an id check:
+
+| Branch | Where | What it actually decides |
+| --- | --- | --- |
+| `CLERICAL_EXAMS = ('udc','ldc','assistant')` | `services/learning_taxonomy.py:6` | whether science folds into the GK/GS path |
+| `GROUP_B_COLLECTIONS = ('group-b-gazetted','group-b-non-gazetted')` | `services/group_b_study.py:16` | **a hand-coded merge** — `collection_id='group-b'` fans out to two real modules |
+| `grouped = collection_id in ('udc','combined-prelims')` | `questions.py:321` | whether repeated series printings collapse to one row |
+| `collection_id=='combined-prelims' and section_path=='papers'` | `questions.py:216-217` | silently drops the section filter |
+
+`group-b` is the proof this part needs: **the product already ships a merge, as a
+special case, because the API cannot express one.** And the other three say that a
+newly published merge would behave differently from its own members — a merged
+clerical module would show duplicate series printings that `udc` collapses.
+
+## XI.2 The model: one selector, and a module is a saved selector
+
+One object, named once, used by browse, facets, tests and modules:
+
+```
+selector = {
+  modules:  [collection_id, …]     # union. one id = today's behaviour
+  papers:   [paper_id, …]
+  subject:  subject_id | null
+  topic:    topic_id | null
+  year:     [from, to] | null
+  status:   all | unseen | answered | ever_wrong
+  pins / excludes
+}
+```
+
+Everything in this part follows from two sentences:
+
+> **A merge is a union of selectors.** `collection_sections` has always been a
+> union — `_MATCHED_QUERY` resolves every live section of a collection and unions
+> the three branches (`collections.py:28-75`). A collection with four sections
+> *is* a four-way merge. Nothing new is required to express one.
+>
+> **A dynamic merge is a fixed merge that has not been saved.** Same selector,
+> same resolver, same id space; the only difference is whether a row exists.
+
+That second sentence is the whole design, and it decides the thing the owner's
+question leaves open: **what a merge hangs its progress on.** A URL-only merge has
+no identity, so attempts cannot be attributed (`attempts.collection_id`,
+`questions.py:253-275`), `module_learning_progress.module_id` (`0026`) has nothing
+to key on, and `exam_study_checkpoints` (PK `(user_id, collection_id)`, `0034:50`)
+cannot store a position. Give the merge a **deterministic id** —
+`m-` + a short hash of its sorted member ids — and all three tables work
+unchanged, "Save this view" becomes an `INSERT` of rows that already existed in
+the URL, and `module_learning_progress.module_id`'s free-text slug
+(`^[a-z0-9][a-z0-9-]{1,39}$`) already accepts it.
+
+**No new table. No new screen. One new array parameter.**
+
+### XI.2.1 Owner narrowing — two module shapes, no merge engine (23 November 2026)
+
+Put the model above to the owner, who answered with a narrower one: *"so no merge
+just the overall total subjects and separate module?"* **Adopted.** It is a better
+answer than §XI.2's, and it is also a return to §VII.18.4's original
+recommendation, which Part XI's merge half had wandered past.
+
+| Shape | Defined by | Resolution | Cross-exam? |
+| --- | --- | --- | --- |
+| **Exam module** — the seven that exist | a paper list, `query={"paper_ids":[…]}` | branch 1, `collections.py:29-44` | no, by definition |
+| **Subject module** — English, Arithmetic, Reasoning, Polity, Mizo… | a taxonomy path, `query={"subject_id":"english"}`, **no papers** | branch 2, `collections.py:46-63` | **yes, automatically** |
+
+The reason this beats merging, stated once: **the owner's actual case — "the whole
+english maths arithmetic" — is not a union of exams at all.** It is one taxonomy
+predicate over the whole bank. A subject module answers it as a *live query*, so it
+never snapshots, never falls behind its sources, costs one row plus one section,
+and needs none of §XI.1.1's two fixes. Merging three clerical paper libraries to
+reach the same English questions is the long way round, and the long way round is
+the one that goes stale.
+
+**What this removes from the plan:**
+
+- The array `collection_id[]` parameter, and with it phase V.25 entirely.
+- Deterministic merge ids, "save this view", and the `study_status` widening of
+  §XI.6.1 — all three existed only to give an unsaved union an identity.
+- Any learner-facing merge UI, which §XI.8 had already declined.
+
+**What survives, and why it survives harder:**
+
+- **§XI.6.2 — behaviour from data — becomes mandatory, not tidy.** A subject module
+  crosses exams on day one, so it inherits `udc`'s series printings with **no
+  dedup**: `grouped` is keyed to the literal id `'udc'` (`questions.py:321`), so
+  "all English" would show the same UDC question once per printing while
+  `/exams/udc` shows it once. That is a visible, day-one defect of the subject-module
+  plan, and it is the single thing that must land before the first subject module
+  is published.
+- **§XI.4's facet endpoint**, unchanged. A subject module spanning the bank is
+  useless without counts on its next choice.
+- **§XI.3's choose-first rule and §XI.7's filter cut**, unchanged. They were never about
+  merging.
+
+**What is kept, unbuilt:** the fixed-merge editor stays exactly where it is. It is
+already shipped, it is the right tool for a combined *exam* view, and one row
+published through it should replace `GROUP_B_COLLECTIONS`' hardcoded fan-out
+(§XI.1.3). Nothing new is built for it; `module_composition.py:65-69`'s
+paper-library limit is only worth fixing if a taxonomy-defined module is ever
+named as a merge source — which, under this narrowing, it is not.
+
+### XI.2.2 The cost that moves with it
+
+Dropping the merge does not drop the performance question; it relocates it, and
+makes it sharper.
+
+A taxonomy-only section has no paper list to index against, so browse resolves it
+by `CROSS JOIN appearances` and then an `EXISTS` against `v_question_paths`
+(`questions.py:199-201`) — over every appearance row in the bank. The comment
+eight lines above it (`questions.py:184-186`) complains about precisely this shape:
+*"a correlated EXISTS here made PostgreSQL probe sections and papers for every one
+of the 80k bank questions, even when this collection contains only 520."* The fix
+written for paper-backed collections does not reach the taxonomy branch.
+
+The same asymmetry hits the catalog: `_section_stats` resolves **every** live
+section of every public collection in one grouped query (`collections.py:18-21,
+77-87`), and each taxonomy-only section contributes a whole-bank scan. Ten subject
+modules add ten of them to a cold `/api/collections`.
+
+So the gate is not a design question, it is a measurement, and there is already a
+live subject there to measure: **`subject-wise-practice` exists in production**
+(`collections.py:350`). Before publishing a second taxonomy-defined module, EXPLAIN
+`/api/questions?collection_id=subject-wise-practice` and a cold `/api/collections`
+on the dump clone, and record both. If the taxonomy branch needs its own index or a
+materialised membership, that is V.27's work and it is cheaper to know first than
+to publish ten modules and then discover it. §VII.16.1's acceptance bar applies
+unchanged: measured before and after, or it does not ship.
+
+## XI.3 Modules and the full bank — the scope line
+
+**Naming, decided:** this section originally said *vault*. **"Vault" is taken** —
+`0139_personal_vault.sql` and `routers/vault.py` (commit `b1d9ef1c`) ship the
+**Personal Question Vault**, a learner-owned store of saved and custom questions.
+That is the opposite of a public corpus, so the word is not reused here. The full
+bank stays `/bank`, and what is named is the rule, not a new noun.
+
+The owner's instinct is right and should be stated as a rule about *order*, not
+about capability:
+
+> **A module shows questions and offers four ways to narrow them.
+> The full bank shows nothing until you have chosen a shelf.**
+
+| | **Module** (`/exams/:id`, `/subjects/:id`) | **The full bank** (`/bank`) |
+| --- | --- | --- |
+| Entry | a published set, merged or not | choose exam · subject · paper · year first |
+| Renders on arrival | questions | **a chooser, zero questions** |
+| Filters | four: subject, year, paper/section, your status | every filter the API supports |
+| Audience | everyone, the default path | power users and staff |
+| Nav | yes | no — reached from a module, a search or `/index` (§VII.18.4) |
+
+Two consequences worth making explicit:
+
+- **The full filter set is not deleted; it is relocated to exactly one place.**
+  This satisfies §0.12 ("one place per job") without losing a capability, and it
+  answers the owner's "reduce work": today the filter set is implemented three
+  times and the three disagree. The API accepts **24** parameters
+  (`questions.py:66-93`); `Bank.tsx:50` sends 11; mobile sends 10 — *a different
+  10*, including `section_path`, `subtopic_id` and `answer_status`, which the web
+  never sends (`src/lib/domain.ts:1-13`, `src/app/questions.tsx:86-97`). The
+  full bank is where the complete set lives and is maintained once.
+- **`/bank` is not a second browse surface.** Same route, same card, same
+  resolver as a module — the difference is that it starts empty and keeps every
+  facet. A second code path here would recreate the problem §VII.4 just finished
+  removing.
+
+## XI.4 The combined filter: facets are the hinge
+
+A merged set is only usable if the filter reports what is *in* it. There is one
+real addition in this part and this is it: **a facet endpoint that takes the same
+selector the list takes.**
+
+Today the two facet sources are both unable to do it. `/questions/taxonomy` keys
+on `pool + exam_scope + learning` (`questions.py:448-453`) and cannot be narrowed.
+`/collections/{id}/study-topics` is narrowed but only to one collection and only
+by `section_path` (`collections.py:168-181`). Neither takes a selector, so
+`Bank.tsx:74-88` fires **one list request per year** to draw its year rail, and
+`Bank.tsx:83` suppresses the rail entirely when the combination would consume
+browse allowance. The file says so in its own comments: *"no year facet"*,
+*"No facet endpoint exists"* (`Bank.tsx:27,74-75`).
+
+Generalize `study-topics` rather than adding a third thing:
+
+- it accepts a selector (`modules[]`, `papers[]`, `subject`, `year`, `status`);
+- it returns counts for the **next** choice only — subjects when no subject is
+  chosen, topics once one is, plus a year histogram and an `unclassified` count;
+- **never offer a value that returns zero** (§VII.18.4 item 1, unchanged);
+- cache keys stay bounded by restricting facets to the *structural* dimensions
+  (`modules`, `papers`, `subject`, `section_path`). Free text and `status` are
+  per-user and are not faceted. `public_catalog` already keys exactly this way.
+
+The year histogram is cheap and overdue: `canonical_questions.first_year` /
+`last_year` are maintained by `refresh_cq_counts()` (`0002:222+`), so a year facet
+is a `GROUP BY` over the resolved set, replacing six requests with none.
+
+**Do not add a facet for `times_asked`.** `order='repeated'` is hardcoded off
+(`Bank.tsx:26,189` `REPEATS_READY=false`), `repeats_only` renders as a
+permanently-disabled checkbox in `FilterRail`, and `times_asked` is still 1 on
+every row (Part X §X.4 item 3). A dead filter should be **removed from the UI
+until the dedupe job runs**, not faceted. Keep the API parameter.
+
+## XI.5 Test from whatever is on screen
+
+§VII.10.2's tray and §VII.18.5's "Test these 34" stand; the selector makes them
+work past their cap.
+
+- A test built from a filtered view is created **from the selector, not from 100
+  ids** — `TestMaker`'s max-100 selection remains the manual path, while
+  *"Test everything in this view"* passes the selector and freezes the resolved
+  snapshot at creation. The freeze is not new: mock snapshots are immutable
+  (`0031`) and `shared-tests` already exists as a `kind='tool'` collection
+  (`0079_shareable_tests.sql:26`).
+- One timer toggle, per §VII.4.2. A merged module changes *what* is in the pool;
+  it changes nothing about scoring. **Scoring eligibility is untouched**: a timed
+  run still scores only the verified pool, per-question, whatever module it was
+  reached through (§0.10 rule 4).
+
+## XI.6 The three things that break on merge, and must ship with it
+
+This section exists so the merge is not shipped half-working. None of it is
+optional.
+
+1. **"My wrong questions" goes empty inside a merge.** `study_status` resolves
+   against `attempts.collection_id IS NOT DISTINCT FROM collection_id`
+   (`questions.py:253-275`). With a merged selector the comparison must widen to
+   the member set — `= ANY(members)` — or `ever_wrong` returns nothing in the one
+   view most likely to be a merge. This is the loop's central query (§VII.18.4)
+   and it fails silently, which is the worst available failure.
+2. **Per-module behaviour must come from data, not from an id tuple.** Add two
+   declared properties to `collections` — `series_grouping` and
+   `science_projection` — and derive §XI.1.3's branches from them. A merge then
+   inherits behaviour instead of losing it, `GROUP_B_COLLECTIONS` becomes two real
+   member rows, and §0.10 rule 1 ("exam identity is data, never code branches")
+   becomes enforceable rather than aspirational.
+3. **The paywall is defined in terms of filter *count*, and will gate the new
+   default path.** `power_filter` charges a combined-filter search for cross-exam
+   subject browse, or for any **two** of {topic, year, answer}, against a limit of
+   **three per IST day** (`services/browse_allowance.py:10-31`). A merged module
+   that pre-sets a subject, or a learner who picks a topic and then a year inside
+   one, trips it — so the simplification would paywall its own happy path, three
+   times a day. The rule must be restated in terms of **what was chosen**:
+
+   > A published module — merged or not — and its facets are free, however many
+   > of its own four filters you set. The **full bank** and **unsaved merges** meter,
+   > as they do today.
+
+   This keeps §0.9.2's intent (the firehose is the paid surface) and removes the
+   accident. It is a policy change and needs the owner's explicit yes.
+
+## XI.7 The filter cut
+
+§VII.18.4 said ten to four. With the selector, state it exactly:
+
+| Learner, in a module | Full bank / staff only | Removed until data exists |
+| --- | --- | --- |
+| subject (faceted) | `source[]`, `answer_status`, `pool`, `origin`, `shelf_id`, `study_area`, `essay_kind`, `atlas_*`, `learning_entry`, `order`, `seed` | `repeats_only`, `order='repeated'` |
+| year (faceted) | | |
+| paper / section (faceted) | | |
+| your status — default **`ever_wrong`**, not `wrong` (§VII.18.4) | | |
+
+No parameter is deleted from the API. `Bank.tsx:119`'s `collections.slice(0,5)`
+chip row — unfiltered and truncated — is replaced by the chooser (§VIII.7 asked
+for alignment with `/practice`'s picker; the chooser is that, done once).
+
+## XI.8 What is deliberately not built
+
+Part IX named this project's actual pattern — `v_question_stats` unread for two
+years, five authoring queues empty on launch day, `posts` complete and unused
+since `0002`. Three candidates here are the same shape:
+
+- **A learner-facing ad-hoc merge builder.** With one exam body, seven modules and
+  25 accounts that have ever answered a question (§IX.2), the merges that matter
+  are nameable — clerical trio, all-English, everything — and the owner can
+  publish them in an afternoon with the editor that already exists. The dynamic
+  path lands as **an API parameter and a URL**, not as a builder UI. Trigger: a
+  second exam body, or a learner who asks.
+- **A live-following merge.** Making merges track their members is a background
+  job, a staleness model and a cache-invalidation problem. Instead: list, on the
+  module editor, which published merges are behind their sources. One query, no
+  machinery.
+- **`collection_sections.query` gaining more keys.** §VIII.3.2 already deferred
+  the exam key. With the resolver written five times, every new key costs six
+  edits. Fix the duplication first or add nothing.
+
+## XI.9 Implementation guide
+
+Appended to §V.13 after V.23. Every phase carries §V.0's gates: a numbered
+migration rehearsed on a disposable clone, isolated-PostgreSQL tests, a local web
+build, both hosts verified, a `DEVLOG.md` receipt with honest limitations.
+
+> **The executable version of this section is `docs/FINNAPLANV2.md`** — phase
+> order, exact DDL, file-level edits, the two owner decisions, the measurement
+> gate, rollback and a verification checklist. This section states *what* and
+> *why*; that file states *how*. Where they disagree, this part is the authority
+> and that file is wrong.
+
+### V.25 — The array parameter — **withdrawn by §XI.2.1**
+
+Superseded before it was built. Two module shapes replace the merge engine, so
+nothing needs to browse a union of collection ids, and items 1–3 and 5 below exist
+only to serve an unsaved union. **Item 4 survives and moves into V.28**: `group-b`'s
+hardcoded two-member fan-out is replaced by **one combined module published through
+the existing editor**, after which `GROUP_B_COLLECTIONS` is deleted. The rest is
+kept here as a specification, unbuilt, for the day a second exam body makes a
+cross-body union worth expressing.
+
+1. `GET /api/questions` accepts repeated `collection_id` (FastAPI reads
+   `?collection_id=a&collection_id=b`, as `source` already does). The CTE at
+   `questions.py:183-215` changes its predicate from `cs.collection_id = %s` to
+   `= ANY(%s)`; the union and `collection_papers` leg are untouched.
+2. Widen the `study_status` attempt scope to the member set (§XI.6.1) **in the
+   same commit** — these two must never ship apart.
+3. Mirror in `ListParams` (`web/src/lib/api.ts:195-223`) and mobile `Filters`
+   (`src/lib/domain.ts:1-13`) as `collection_ids?: string[]`, keeping the scalar
+   as an alias so no caller changes.
+4. Replace `collection_id='group-b'`'s fan-out (`group_b_study.py:16`,
+   `collections.py:189`) with a two-member selector. Delete the constant.
+5. Cache: `scopedApiPath` and `public_catalog` keys sort the member list, so
+   `a,b` and `b,a` share one entry.
+
+**Done when** `?collection_id=ldc&collection_id=udc` returns the deduplicated
+union with correct totals, `ever_wrong` is non-empty inside it, and `group-b`
+behaves exactly as before with its special case deleted.
+
+### V.26 — Behaviour from data (one migration)
+
+`collections` gains `series_grouping BOOLEAN NOT NULL DEFAULT false` and
+`science_projection BOOLEAN NOT NULL DEFAULT false`; backfill sets the four ids
+§XI.1.3 hardcodes. `questions.py:321` and `learning_taxonomy.py:6` read the
+columns. A merged selector takes the **union** of its members' flags — this is the
+honest default: if any member collapses series printings, the merge does too.
+
+**Done when** no exam id appears in a conditional in `api/app/routers/questions.py`
+or `api/app/services/learning_taxonomy.py`, and a test asserts it.
+
+### V.27 — One resolver, one facet endpoint (no migration)
+
+1. Extract §XI.1.2's six SQL fragments into **one** `services/selector.py`
+   emitting the resolved-id CTE, parameterised by the selector. Internal literals
+   only, no client text interpolation — `exam_scope.py`'s existing discipline
+   (§VIII.3.1), unchanged.
+2. `/collections/{id}/study-topics` becomes `/questions/facets`, taking the
+   selector and returning next-choice counts plus a year histogram (§XI.4). The
+   old route stays as an alias so mobile keeps working.
+3. `Bank.tsx:74-88`'s six-requests-per-year rail is deleted and reads the
+   histogram. `FilterRail`'s disabled "Asked 2+ times" checkbox is removed.
+
+**Done when** `grep -c "paper_ids" api/app` returns one file, and the year rail is
+one request. Facet latency is **measured on the clone before and after**, per
+§VII.16.1's acceptance bar — if a faceted merge is slower than the six requests it
+replaces, it does not ship.
+
+### V.28 — The surfaces (no migration)
+
+1. **Publish the subject modules** (§XI.2.1) — one `collections` row plus one
+   `collection_sections` row each, `kind='practice'`, `query={"subject_id": …}`,
+   **no papers**. Measure first (§XI.2.2); publish one, measure again, then the
+   rest. **Correction:** an earlier draft of this item said "through the existing
+   editor." It cannot be done there — `POST /module-composition/create` requires a
+   `source_module` (`module_composition.py:43-57`) and `Selection` has no taxonomy
+   field (`:13-17`); the editor composes paper libraries and previews a paper diff,
+   which says nothing about a whole-bank predicate. Use a seed migration on
+   `0011_exam_tracks.sql`'s precedent. See `FINNAPLANV2.md` §5.
+2. Publish **one combined Group B module** and delete `GROUP_B_COLLECTIONS`
+   (§XI.1.3, carried from the withdrawn V.25).
+3. `/bank` becomes chooser-first: zero questions on arrival, the full
+   filter set, no nav entry.
+4. Modules show four filters, faceted, with `ever_wrong` as the status default.
+5. "Test everything in this view" passes the selector to the builder (§XI.5).
+6. Home: remove the check-in gate and widen its suggestion to the exam
+   (§XI.12.2), and give the `Primary exam` select something to choose on.
+
+**Done when** a learner reaches "my twice-wrong English, across every exam it was
+ever asked in" in three taps from Home and turns it into a test in one more, and
+`/bank` renders no question until something is chosen.
+
+### Ordering note
+
+V.26 and V.28 item 6 are independent of everything else and of V.23's tagging
+campaign. **V.26 gates V.28 item 1**: publishing a subject module before series
+grouping comes from data ships visible duplicates (§XI.2.1). V.27 is the only piece
+with a real performance risk and is placed after the cheap ones, so that if it is
+abandoned the modules still work with today's per-collection facets.
+
+## XI.10 Acceptance for the part
+
+- One SQL resolver for module membership, cited by every caller.
+- Zero exam ids in browse conditionals, asserted by a test.
+- A **subject module** behaves identically to an exam module on series grouping,
+  science projection and scoring eligibility — the same UDC question appears once
+  in "all English", not once per printing.
+- A taxonomy-defined module's browse and catalog latency is measured and recorded
+  before a second one is published (§XI.2.2).
+- `/bank` renders nothing until a choice is made; every filter the API supports
+  is reachable there and nowhere else.
+- No learner on the default path consumes browse allowance by using a module's own
+  four filters.
+
+## XI.11 Never-list additions
+
+- **Never add a second browse code path.** The full bank, a module and a merge are one
+  resolver, one card and one list. §VII.4 merged practice and mock for this
+  reason; do not re-split by a different axis.
+- **Never let a merge change what a question *is*.** Merging unions membership.
+  It never merges canonical identity, never borrows another module's verification
+  state, and never promotes a derived answer (§0.10 rule 3, §0.10 rule 4).
+- **Never present a stale merge as current.** A snapshot that has fallen behind its
+  sources says so, in the editor, by name.
+- **Never hide a question because a module did not select it.** The lens is not a
+  wall (§0.11); the full bank is reachable, labelled and unadvertised — not removed.
+
+## XI.12 Home's exam choice, and what "more than one" should mean
+
+Owner question, 23 November 2026: *"what do you think about the homepage choose
+exam? if a person is interested in more than 1 subject... can you suggest a better
+alternative?"*
+
+### XI.12.1 Both choices are already built, with the right cardinalities
+
+| Choice | Cardinality | Where it lives | State |
+| --- | --- | --- | --- |
+| **Primary exam** | save many, **exactly one primary** | `user_exam_bookmarks` + unique partial index `user_one_primary_exam` (`0092_learning_loop.sql:159`); `PUT /me/exam-bookmarks/{id}/primary` (`me.py:130-139`), auto-promotes a survivor on delete (`:160-166`) | live |
+| **Focus subjects** | **up to five**, ordered | `user_focus_subjects`, `position BETWEEN 0 AND 4` (`0092:23-27`); `GET/PATCH /api/me/focus-subjects` (`learning_loop.py:60,76`) | live |
+
+Both already render on Home in one card: a `Primary exam` select and a
+*"Choose up to five"* focus-subject dialog (`TodayCard.tsx:12,33`). **So the answer
+to "what if a person is interested in more than one" is that they already can be** —
+many saved exams, five focus subjects, switching free and non-destructive (§0.11.3).
+
+**A correction to this document**: §VIII.3.2 and §V.7 list the `is_primary`
+saved-exam flag as *deferred to exam #2*. It is not deferred — it shipped in
+migration 0092 and is enforced by a unique index. The deferral row is stale.
+
+### XI.12.2 The structure is right; the sequence is backwards
+
+Keep **one** primary exam. Every surface needs one ordering, and Home cannot carry
+three coverage bars without becoming the stats dashboard §VII.18.8 forbids. Saving
+several and lensing one is the correct model and it is already the built one.
+
+Two real defects, both small:
+
+1. **It asks cold.** `TodayCard.tsx:33` renders a `<select>` whose placeholder is
+   *"Choose your exam"* and whose options are bare titles. A newcomer cannot tell
+   LDC from UDC from Assistant — they share most of a syllabus — so the question
+   has no basis at the moment it is asked. Show what distinguishes them: papers,
+   questions, and the saved target date if one exists. The catalog already returns
+   the first two (`/api/collections`), and §XI.4's facets return them per
+   selection.
+2. **The signal that would answer it is locked behind the answer.** The optional
+   10-question check-in is subject-mixed, not exam-specific, and
+   `OnboardingSuggestions.tsx:9-17` already derives *focus subjects* from its
+   result and offers to save them — the correct pattern, built. But the check-in
+   link is gated on `plan.exam?.is_primary` (`TodayCard.tsx:33`), so it is only
+   offered **after** a primary exists. Flip the order: offer the check-in first,
+   then suggest **both** the exam and the focus subjects from the result, in one
+   confirmable line. No new screen, one gate removed, one suggestion widened.
+
+### XI.12.3 The better alternative, stated once
+
+> **Derive the exam, then show it as a removable line. Ask only about subjects, and
+> only after the learner has answered something.**
+
+- No exam question at first contact. The default is the neutral all-exams view
+  (§0.11.1), and the lens is set by the first exam page actually opened, surfaced
+  as *"Showing LDC · change"* — visible and removable, per §0.11.4's rule that
+  pre-set scope is never silent.
+- Offer to switch when behaviour contradicts the setting — opened another exam
+  twice — **once**, never repeatedly.
+- Subjects stay the question worth asking, because under §XI.2.1 subject modules
+  are the study spine: the exam choice mostly determines paper lists and mocks, not
+  what to study.
+
+And that is the same answer as §XI.2.1's, which is the test that both are right:
+**a learner preparing for LDC *and* UDC *and* Assistant is served by subjects, not
+by a second primary exam**, because those three exams are largely one syllabus with
+three cutoffs. Multiplicity belongs on the axis where the content actually differs.
+
+### XI.12.4 Scope honesty
+
+Three accounts are older than three days and have an email (§IX.2). Onboarding
+choice architecture is not this product's constraint, so every item above is a
+deletion or a label change — one gate removed, one placeholder replaced, one
+suggestion widened. **Nothing here justifies a new screen, a wizard, or a second
+primary-exam concept**, and the unique index that forbids two primaries should
+stay exactly as it is.
+
+Nothing in Part XI is implemented.

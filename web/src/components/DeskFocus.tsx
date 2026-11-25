@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { deskWrite, type FocusSession } from "../lib/studyDesks";
+import { DeskBrassClock, DeskForestPorthole } from "./DeskCampfireClock";
 export default function DeskFocus({
   sessions,
   serverTime,
@@ -15,6 +16,7 @@ export default function DeskFocus({
   onChange: () => void;
 }) {
   const [minutes, setMinutes] = useState(25);
+  const [fireOverride, setFireOverride] = useState<boolean | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [tick, setTick] = useState(Date.now());
@@ -68,95 +70,123 @@ export default function DeskFocus({
       setBusy(false);
     }
   }
+  const totalSeconds = active ? active.duration_seconds : minutes * 60;
+  const pct = totalSeconds > 0 ? Math.min(100, Math.round((elapsed / totalSeconds) * 100)) : 0;
+  const fireLit = fireOverride !== null ? fireOverride : active ? active.state === "running" : true;
+
   return (
-    <section>
-      <div className="rounded-[8px] border border-[#B23A9A] bg-[#EEDDEC] p-7 text-center">
-        <div className="desk-v3-label !text-[#86226F]">
-          Focus session ·{" "}
-          {active?.desk_id ? "linked to a private desk" : "your own time"}
-        </div>
-        <div
-          role="timer"
-          aria-label="Focus time remaining"
-          className="my-4 font-display text-[clamp(64px,10vw,104px)] leading-none -tracking-[.02em]"
-        >
-          {Math.floor(remaining / 60)
-            .toString()
-            .padStart(2, "0")}
-          :{(remaining % 60).toString().padStart(2, "0")}
-        </div>
-        {!active && (
-          <label className="mx-auto mb-4 block max-w-[180px] text-sm">
-            Duration
-            <select
-              className="desk-v3-input mt-1"
-              value={minutes}
-              onChange={(e) => setMinutes(Number(e.target.value))}
-            >
-              {[5, 15, 25, 45, 50, 60, 90, 120].map((n) => (
-                <option key={n} value={n}>
-                  {n} minutes
-                </option>
-              ))}
-            </select>
-          </label>
-        )}
-        <div className="flex flex-wrap justify-center gap-2">
-          {registered ? (
-            <>
-              <button
-                disabled={busy}
-                onClick={() =>
-                  void action(
-                    !active
-                      ? "start"
-                      : remaining === 0
-                        ? "finish"
-                        : active.state === "running"
-                          ? "pause"
-                          : "resume",
-                  )
-                }
-                className="desk-v3-button border-[#B23A9A] bg-[#B23A9A] text-white"
-              >
-                {busy
-                  ? "Saving…"
-                  : !active
-                    ? "Start focus"
-                    : remaining === 0
-                      ? "Complete session"
-                      : active.state === "running"
-                        ? "Pause"
-                        : "Resume"}
-              </button>
-              {active && (
-                <button
-                  disabled={busy}
-                  onClick={() => void action("cancel")}
-                  className="desk-v3-button border-[#B23A9A] text-[#6A3767]"
+    <section className="desk-focus-wrap">
+      <div className="desk-focus-stage">
+        <div className="desk-focus-grid">
+          <div className="desk-focus-porthole-col">
+            <DeskForestPorthole
+              lit={fireLit}
+              onToggle={() => setFireOverride((prev) => !(prev !== null ? prev : fireLit))}
+              size={188}
+            />
+            <span className="desk-porthole-hint">Tap the fire to toggle ambiance</span>
+          </div>
+
+          <div className="desk-focus-ctrl-col">
+            <div className="desk-focus-toprow">
+              <div>
+                <div className="desk-focus-kicker">
+                  Forest cabin timer ·{" "}
+                  {active?.desk_id ? "linked to private desk" : "your own time"}
+                </div>
+                <div
+                  role="timer"
+                  aria-label="Focus time remaining"
+                  className="desk-focus-clock"
                 >
-                  End early
-                </button>
+                  {Math.floor(remaining / 60)
+                    .toString()
+                    .padStart(2, "0")}
+                  :{(remaining % 60).toString().padStart(2, "0")}
+                </div>
+              </div>
+              <DeskBrassClock size={74} />
+            </div>
+
+            {active && (
+              <div className="desk-focus-bar" role="progressbar" aria-valuenow={pct} aria-valuemin={0} aria-valuemax={100}>
+                <span style={{ width: `${pct}%` }} />
+              </div>
+            )}
+
+            {!active && (
+              <div className="desk-focus-presets" role="group" aria-label="Session duration">
+                {[15, 25, 45, 60, 90].map((n) => (
+                  <button
+                    key={n}
+                    type="button"
+                    aria-pressed={minutes === n}
+                    onClick={() => setMinutes(n)}
+                    className={"desk-preset-pill" + (minutes === n ? " is-on" : "")}
+                  >
+                    {n}m
+                  </button>
+                ))}
+              </div>
+            )}
+
+            <div className="desk-focus-actions">
+              {registered ? (
+                <>
+                  <button
+                    type="button"
+                    disabled={busy}
+                    onClick={() =>
+                      void action(
+                        !active
+                          ? "start"
+                          : remaining === 0
+                            ? "finish"
+                            : active.state === "running"
+                              ? "pause"
+                              : "resume",
+                      )
+                    }
+                    className="desk-focus-primary"
+                  >
+                    {busy
+                      ? "Saving…"
+                      : !active
+                        ? `Start ${minutes}m focus`
+                        : remaining === 0
+                          ? "Complete session"
+                          : active.state === "running"
+                            ? "Pause"
+                            : "Resume"}
+                  </button>
+                  {active && (
+                    <button
+                      type="button"
+                      disabled={busy}
+                      onClick={() => void action("cancel")}
+                      className="desk-focus-ghost"
+                    >
+                      End early
+                    </button>
+                  )}
+                </>
+              ) : (
+                <Link to="/login" className="desk-focus-primary">
+                  Sign in to save focus sessions
+                </Link>
               )}
-            </>
-          ) : (
-            <Link
-              to="/login"
-              className="desk-v3-button border-[#B23A9A] bg-[#B23A9A] text-white"
-            >
-              Sign in to save focus sessions
-            </Link>
-          )}
+            </div>
+            <p className="desk-focus-note">
+              Your timer resumes across devices. Early endings retain actual time.
+              Focus time earns no points.
+            </p>
+            {error && (
+              <p role="alert" className="mt-3 text-sm text-[#FCA5A5]">
+                {error}
+              </p>
+            )}
+          </div>
         </div>
-        <p className="mt-4 text-sm leading-relaxed text-[#4E3A4D]">
-          Your timer resumes across devices. Early endings retain actual time.
-          Focus time earns no points.
-        </p>
-        {error && (
-          <p role="alert" className="mt-3 text-sm text-mypick">
-            {error}
-          </p>
-        )}
       </div>
       <h3 className="mt-[26px] border-b border-hairline pb-2 font-display text-lg">
         Recent sessions

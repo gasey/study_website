@@ -24,6 +24,7 @@ import MaterialDiscovery from '../components/MaterialDiscovery'
 import { lazy,Suspense,useEffect, useState } from 'react'
 import { Link, Navigate, useParams, useSearchParams, useLocation } from 'react-router-dom'
 import { getCollection, getCollectionHeader, getProgress, getExamBookmarks, isLaterExamCollection, isSubjectModule, prefetchQuestionPage, removeExamBookmark, resolveModuleCollectionId, saveExamBookmark, type CollectionDetail, type CollectionHeader, type ListParams } from '../lib/api'
+import { addLocalTrackedExam, removeLocalTrackedExam } from '../lib/trackedExams'
 const ExamJourney=lazy(()=>import('../components/ExamJourney'))
 const UdcStudySessions=lazy(()=>import('../components/UdcStudySessions'))
 import ExamStudyTopics from '../components/ExamStudyTopics'
@@ -86,8 +87,13 @@ export default function ExamPage({ isSubjectRoute = false }: { isSubjectRoute?: 
     setBookmarkBusy(true)
     setBookmarkError('')
     try {
-      if (wasBookmarked) await removeExamBookmark(c.id)
-      else await saveExamBookmark(c.id)
+      if (wasBookmarked) {
+        await removeExamBookmark(c.id)
+        if (c.kind === 'exam') removeLocalTrackedExam(c.id)
+      } else {
+        await saveExamBookmark(c.id)
+        if (c.kind === 'exam') addLocalTrackedExam(c.id)
+      }
     } catch(e) {
       setBookmarkError((e as Error).message)
       setBookmarked(wasBookmarked)
@@ -180,7 +186,16 @@ export default function ExamPage({ isSubjectRoute = false }: { isSubjectRoute?: 
         <p className="mt-2 text-sm leading-relaxed text-secondary">{c.needs_review.toLocaleString('en-IN')} MCQs need answer review · {c.unsolved.toLocaleString('en-IN')} have no answer. Browse keeps the available questions visible, including written questions. {c.answerable_count.toLocaleString('en-IN')} questions have answers available for study practice, shown with their review labels; only eligible reviewed answers enter a practice-estimate mock.</p>
         {!c.practice_count&&<p className="mt-2 text-sm text-secondary">No reviewed mock set is ready for this exam yet. You can study the papers and help verify answers below each question.</p>}
         <p className="mt-2 text-xs text-secondary">Past-paper current affairs belong to their exam date. Date hints help you compare time-sensitive facts with official updates without changing historical answers.</p>
-        <div className="mt-3 flex flex-wrap gap-3">{c.scorable>=20&&<Link to={`/exams/${c.id}/mock${mcsSection?`?section=${encodeURIComponent(mcsSection)}`:''}`} className="inline-flex min-h-11 items-center rounded-pill border border-ink px-4 text-sm font-semibold">Official-key mock</Link>}{c.practice_count>=20&&<Link to={`/exams/${c.id}/mock?mode=derived${mcsSection?`&section=${encodeURIComponent(mcsSection)}`:''}`} className="inline-flex min-h-11 items-center rounded-pill border border-hairline px-4 text-sm font-semibold">Reviewed practice estimate</Link>}</div>
+        <div className="mt-3 flex flex-wrap gap-3">
+          {(c.scorable >= 20 || c.practice_count >= 20) && (
+            <Link
+              to={`/practice?mode=mock&exam=${encodeURIComponent(c.id)}`}
+              className="inline-flex min-h-11 items-center rounded-pill border border-ink bg-ink px-4 text-sm font-semibold text-paper"
+            >
+              Start Full-Paper Mock →
+            </Link>
+          )}
+        </div>
       </details>}
 
 
@@ -189,7 +204,16 @@ export default function ExamPage({ isSubjectRoute = false }: { isSubjectRoute?: 
       {view==='overview'&&!focusedUdc&&<Suspense fallback={<p className="mt-4 text-sm text-muted">Loading saved journey…</p>}><ExamJourney key={c.id} id={c.id}/></Suspense>}
 
       {error&&<p role="alert" className="mt-3 rounded-[10px] border border-hairline bg-card p-3 text-sm">Paper details could not load. Available questions can still be studied. <button type="button" onClick={()=>setRetry(n=>n+1)} className="min-h-11 underline">Retry details</button></p>}
-      {view==='topics'&&<Suspense fallback={<p className="mt-5 text-sm text-muted">Loading subjects and topics…</p>}><ExamStudyTopics examId={c.id}/></Suspense>}
+      {view==='topics'&&<Suspense fallback={<p className="mt-5 text-sm text-muted">Loading subjects and topics…</p>}><ExamStudyTopics examId={c.id} basePath={isSubject ? `/subjects/${encodeURIComponent(rawId)}` : undefined} isSubjectView={isSubject}/></Suspense>}
+      {view==='practice'&&!isSubject&&(c.scorable>=20||c.practice_count>=20)&&<div className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-[14px] border border-hairline bg-card px-4 py-3">
+        <div>
+          <strong className="text-sm text-ink">Untimed Practice · instant answers &amp; guide links</strong>
+          <p className="text-xs text-secondary">Want exam-day pressure? Switch to a timed Full-Paper Mock (real past paper or 100-Q full exam).</p>
+        </div>
+        <Link to={`/practice?mode=mock&exam=${encodeURIComponent(c.id)}`} className="inline-flex min-h-11 items-center rounded-pill border border-ink bg-ink px-4 text-xs font-semibold text-paper">
+          Switch to Full-Paper Mock →
+        </Link>
+      </div>}
       {focusedUdc&&view==='practice'&&<div className="mt-5">
         <nav aria-label="UDC practice mode" className="flex flex-wrap gap-4 text-sm">
           <Link to={udcPracticeLink(searchParams,'continuous')} aria-current={!savedPractice?'page':undefined} className="inline-flex min-h-11 items-center font-semibold text-link underline">Continuous practice</Link>
@@ -305,7 +329,7 @@ function Group({
             </div>
             <div className="mt-2 flex gap-2">
               <Link to={`/exams/${examId}?view=browse&section=${encodeURIComponent(s.path)}`} className="inline-flex min-h-11 items-center rounded-pill border border-ink px-3 py-2 text-xs font-semibold">Browse section</Link>
-              {s.scorable >= 20 && <Link to={`/exams/${examId}/mock?section=${encodeURIComponent(s.path)}`} className="rounded-pill bg-ink px-3 py-2 text-xs font-semibold text-paper">Practice test</Link>}
+              {s.scorable >= 20 && <Link to={`/exams/${examId}/mock?section=${encodeURIComponent(s.path)}&count=${Math.min(100, s.scorable)}`} className="rounded-pill bg-ink px-3 py-2 text-xs font-semibold text-paper">Full section mock</Link>}
             </div>
           </article>
         ))}

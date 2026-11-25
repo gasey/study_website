@@ -40,12 +40,13 @@ export default function ExamPaperCard({ paper: p, examId, hideSeriesInTitle=fals
       </div>
       {p.questions===0&&<p className="mt-3 text-xs text-secondary">{p.source_pdf_url?'Original PDF available · questions not yet extracted.':'Questions not yet extracted; no original PDF is linked.'}</p>}
       <div className="exam-paper-actions mt-auto flex shrink-0 flex-wrap items-center gap-2">
-        {p.questions > 0 && <Link to={paperBrowseLink(examId,p.id)} className={`${button} border-ink bg-ink text-paper`}>Browse questions →</Link>}
-        {p.allow_practice && p.answerable_count > 0 && <Link to={`${base}?view=practice&paper=${paper}#exam-question-browser`} className={`${button} border-hairline`}>Practise · {count(p.answerable_count)}</Link>}
+        {p.questions > 0 && <Link to={paperBrowseLink(examId,p.id)} className={`${button} border-ink bg-ink text-paper`}>Practice / Browse →</Link>}
+        {keyTest && <Link to={`${base}/mock?paper=${paper}`} className={`${button} border-hairline bg-paper text-ink`}>Full-Paper Mock · {count(p.scorable)}</Link>}
+        {reviewedTest && <Link to={`${base}/mock?paper=${paper}&mode=derived`} className={`${button} border-hairline bg-paper text-ink`}>Full-Paper Mock · {count(p.practice_count)}</Link>}
       </div>
     </div>
     <details className="group mt-3 border-t border-hairline pt-1">
-      <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-2 text-xs font-semibold text-secondary"><span>Paper details{keyTest || reviewedTest ? ' & tests' : ''}</span><span aria-hidden="true" className="exam-paper-expand transition-transform group-open:rotate-45">＋</span></summary>
+      <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-2 text-xs font-semibold text-secondary"><span>Paper details</span><span aria-hidden="true" className="exam-paper-expand transition-transform group-open:rotate-45">＋</span></summary>
       <div className="space-y-3 pb-1 pt-1 text-sm leading-relaxed text-secondary">
         {hideSeriesInTitle && <p className="break-words">Selected source: {sourceTitle}</p>}
         <p className="break-words">{p.paper_label || p.title}</p>
@@ -54,12 +55,11 @@ export default function ExamPaperCard({ paper: p, examId, hideSeriesInTitle=fals
         {!!p.missing_explanations && <p>{count(p.missing_explanations)} {p.missing_explanations === 1 ? 'question has' : 'questions have'} no explanation yet.</p>}
         {!!p.blocked_count && <p>Questions with source/key issues are excluded from scoring.</p>}
         {(keyTest || reviewedTest) && <div className="rounded-[8px] border border-hairline bg-canvas p-3">
-          <p className="font-semibold text-ink">Timed practice</p>
-          <p className="mt-1">{p.rule_source === 'platform-default' ? 'Uses practice timing and marks. Original paper rules are not confirmed.' : `Configured paper rules${p.duration_minutes !== null ? ` · ${p.duration_minutes} minutes` : ''}${p.marks_correct !== null ? ` · +${p.marks_correct} correct` : ''}${p.marks_wrong !== null ? ` · ${p.marks_wrong > 0 ? '-' : ''}${p.marks_wrong} incorrect` : ''}.`} Only eligible questions are included.</p>
-          {reviewedTest && <p className="mt-1">The reviewed estimate uses verified answers alongside available official keys.</p>}
+          <p className="font-semibold text-ink">Full-Paper Mock ({keyTest ? 'Official key' : 'Reviewed key'})</p>
+          <p className="mt-1">{p.rule_source === 'platform-default' ? 'Runs the full paper in printed order with standard full-paper timing.' : `Configured paper rules${p.duration_minutes !== null ? ` · ${p.duration_minutes} minutes` : ''}${p.marks_correct !== null ? ` · +${p.marks_correct} correct` : ''}${p.marks_wrong !== null ? ` · ${p.marks_wrong > 0 ? '-' : ''}${p.marks_wrong} incorrect` : ''}.`} All eligible MCQs from this paper are included.</p>
           <div className="mt-3 flex flex-wrap gap-2">
-            {keyTest && <Link to={`${base}/mock?paper=${paper}`} className={`${button} border-hairline bg-card text-ink`}>Official-key practice · {count(p.scorable)}</Link>}
-            {reviewedTest && <Link to={`${base}/mock?paper=${paper}&mode=derived`} className={`${button} border-hairline bg-card text-ink`}>Reviewed estimate · {count(p.practice_count)}</Link>}
+            {keyTest && <Link to={`${base}/mock?paper=${paper}`} className={`${button} border-ink bg-ink text-paper`}>Start Full-Paper Mock ({count(p.scorable)} Qs) →</Link>}
+            {reviewedTest && <Link to={`${base}/mock?paper=${paper}&mode=derived`} className={`${button} border-ink bg-ink text-paper`}>Start Full-Paper Mock ({count(p.practice_count)} Qs) →</Link>}
           </div>
         </div>}
         {p.rule_source !== 'platform-default' && !(keyTest || reviewedTest) && (p.duration_minutes !== null || p.marks_correct !== null) && <p>Configured paper rules{p.duration_minutes !== null ? ` · ${p.duration_minutes} minutes` : ''}{p.marks_correct !== null ? ` · +${p.marks_correct} correct` : ''}{p.marks_wrong !== null ? ` · ${p.marks_wrong > 0 ? '-' : ''}${p.marks_wrong} incorrect` : ''}.</p>}

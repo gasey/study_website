@@ -12,6 +12,7 @@ import {
 } from "react-router-dom";
 import DeskScene, { type SceneMember } from "../components/DeskScene";
 import DeskFocus from "../components/DeskFocus";
+import { DeskBrassClock } from "../components/DeskCampfireClock";
 import FlashBanner from "../components/FlashBanner";
 import { DeskEmpty as Empty, DeskModal as Modal } from "../components/DeskParts";
 import { DeskQuestion } from "../components/DeskPractice";
@@ -151,7 +152,24 @@ export default function StudyDesk() {
     run: () => Promise<void>;
   } | null>(null);
   const [notice, setNotice] = useState("");
-  const [showDiagram, setShowDiagram] = useState(true);
+  const [showDiagram, setShowDiagram] = useState(() => {
+    try {
+      return typeof localStorage !== "undefined" && localStorage.getItem("finna:desk-diagram:v1") === "1";
+    } catch {
+      return false;
+    }
+  });
+  function toggleDiagram() {
+    setShowDiagram((prev) => {
+      const next = !prev;
+      try {
+        localStorage.setItem("finna:desk-diagram:v1", next ? "1" : "0");
+      } catch {
+        /* ignore */
+      }
+      return next;
+    });
+  }
   const createKey = useRef(uid());
   const shareKey = useRef({ payload: "", key: uid() });
   const chatKey = useRef({ payload: "", key: uid() });
@@ -590,12 +608,7 @@ export default function StudyDesk() {
       <section className="desk-hero">
         <div className="desk-hero-top">
           <div className="desk-hero-id">
-            <span className="desk-hero-emblem" aria-hidden="true">
-              <svg viewBox="0 0 22 22" fill="none">
-                <rect x="2.5" y="10" width="17" height="3.2" rx="1.2" fill="currentColor" />
-                <path d="M5 13.2V18.5M17 13.2V18.5M6.5 10V6.5a1.5 1.5 0 0 1 1.5-1.5h6a1.5 1.5 0 0 1 1.5 1.5V10" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-              </svg>
-            </span>
+            <DeskBrassClock size={60} />
             <div className="desk-hero-copy">
               <div className="desk-hero-kicker-row">
                 <span className="desk-hero-eyebrow">
@@ -766,14 +779,21 @@ export default function StudyDesk() {
             </button>
           </div>
 
-          <button
-            type="button"
-            aria-pressed={showDiagram}
-            onClick={() => setShowDiagram((v) => !v)}
-            className="desk-diagram-toggle"
-          >
-            {showDiagram ? "Hide diagram" : "Show desk diagram"}
-          </button>
+          <div className="desk-hero-right-stats">
+            <div className="desk-kpi-strip" aria-label="Desk quick summary">
+              <span><b>{desk.saved.length}</b> saved</span>
+              <span><b>{desk.notes.length}</b> notes</span>
+              <span><b>{overview.stats.week_answers}</b> this week</span>
+            </div>
+            <button
+              type="button"
+              aria-pressed={showDiagram}
+              onClick={toggleDiagram}
+              className="desk-diagram-toggle"
+            >
+              {showDiagram ? "Hide room view" : "Show room view"}
+            </button>
+          </div>
         </div>
       </section>
 
@@ -983,6 +1003,7 @@ export default function StudyDesk() {
               </button>
             ))}
           </div>
+          <div className="desk-main-surface">
           {roomId && params.get('note') && <Suspense fallback={<Empty>Opening shared note…</Empty>}>
             <DeskLinkedNote key={sync.userId+":"+roomId+":"+params.get('note')} deskId={roomId} noteId={params.get('note')!} />
           </Suspense>}
@@ -1111,7 +1132,8 @@ export default function StudyDesk() {
                         : "Mistakes wall"}
                 </h2>
                 <button
-                  className="min-h-11 text-sm font-semibold"
+                  type="button"
+                  className="desk-sub-cta"
                   onClick={() =>
                     tab === "notes" ? open("note") : open("share")
                   }
@@ -1467,11 +1489,12 @@ export default function StudyDesk() {
               )}
             </>
           )}
+          </div>
         </section>
         <aside className="desk-v3-rail">
           <DeskCalendar key={sync.userId+':'+(roomId||'personal')} deskId={roomId || undefined}/>
           {room && <>
-          <article className="border border-ink bg-card p-[18px] shadow-[inset_0_4px_0_#B23A9A]">
+          <article className="desk-rail-card desk-rail-profile">
             <div className="flex items-center gap-3">
               <UserAvatar look={focused?.avatar} initials={focused?.is_you?'You':focused?.handle||'S'} size={52}/>
               <div className="min-w-0">
@@ -1539,11 +1562,11 @@ export default function StudyDesk() {
             )}
           </article>
           </>}
-          <section className="rounded-[8px] bg-community-soft p-[18px]">
-            <div className="desk-v3-label !text-community-dark">
+          <section className="desk-rail-card desk-rail-toolbox">
+            <div className="desk-rail-eyebrow">
               {room ? "Private desk" : "Your toolbox"}
             </div>
-            <h3 className="mt-2 font-display text-lg">
+            <h3 className="mt-1.5 font-display text-lg">
               {room
                 ? "Study together, keep your own history"
                 : "Keep your study things together"}
@@ -1561,8 +1584,8 @@ export default function StudyDesk() {
             )}
           </section>
           {room && (
-            <section>
-              <h3 className="desk-v3-label border-b border-hairline pb-2">
+            <section className="desk-rail-card">
+              <h3 className="desk-rail-eyebrow border-b border-hairline pb-2">
                 What you share
               </h3>
               {(
@@ -1592,13 +1615,13 @@ export default function StudyDesk() {
                   <span>{label}</span>
                   <span
                     className={
-                      "relative h-5 w-[34px] shrink-0 rounded-full " +
-                      (room.sharing[field] ? "bg-[#B23A9A]" : "bg-[#CFC5B2]")
+                      "relative h-5 w-[34px] shrink-0 rounded-full transition-colors " +
+                      (room.sharing[field] ? "bg-[#0A7D8C]" : "bg-[#CBD5E1]")
                     }
                   >
                     <span
                       className={
-                        "absolute top-0.5 h-4 w-4 rounded-full bg-card " +
+                        "absolute top-0.5 h-4 w-4 rounded-full bg-card transition-all " +
                         (room.sharing[field] ? "left-4" : "left-0.5")
                       }
                     />
@@ -1611,8 +1634,8 @@ export default function StudyDesk() {
               </p>
             </section>
           )}
-          <section>
-            <div className="desk-v3-label border-b border-hairline pb-2">
+          <section className="desk-rail-card">
+            <div className="desk-rail-eyebrow border-b border-hairline pb-2">
               Desk chat
             </div>
             {room ? (
@@ -1626,15 +1649,13 @@ export default function StudyDesk() {
                         (m.author_id === myId ? "self-end" : "self-start")
                       }
                     >
-                      <div className="mb-1 text-xs font-semibold text-[#86226F]">
+                      <div className="mb-1 text-xs font-semibold text-secondary">
                         {m.author_id === myId ? "You" : m.author}
                       </div>
                       <p
                         className={
-                          "whitespace-pre-wrap rounded-[10px] px-3 py-2 text-sm leading-relaxed " +
-                          (m.author_id === myId
-                            ? "bg-[#B23A9A] text-white"
-                            : "bg-[#EEDDEC]")
+                          "desk-chat-bubble " +
+                          (m.author_id === myId ? "is-me" : "is-them")
                         }
                       >
                         {m.body}

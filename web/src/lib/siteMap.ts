@@ -13,10 +13,8 @@ export type DestinationSection =
 export type DestinationSurface = 'nav' | 'tabs' | 'quick' | 'index' | 'quickfind'
 
 /** Which desktop nav item opens a dropdown containing this destination.
- *  A destination with no `menu` never appears in a dropdown. The nav item
- *  itself stays a real link — the chevron is a separate control, so
- *  "click Exams" still goes to /exams (§VII.3.3, revised 22 Nov 2026). */
-export type NavMenu = 'exams' | 'practice' | 'guides' | 'community'
+ *  A destination with no `menu` never appears in a dropdown. */
+export type NavMenu = 'exams' | 'subjects' | 'practice' | 'guides' | 'community'
 
 export type NavIconName = 'home' | 'exam' | 'library' | 'desk' | 'profile' | 'search' | 'create' | 'more'
 
@@ -34,57 +32,60 @@ export interface Destination {
 }
 
 export const SITE_MAP: readonly Destination[] = [
-  // Core desktop nav (6 plain links: Exams · Papers · Practice · Guides · Community · Index)
+  // Core Student Study-Loop desktop nav (6 items: Home · Exams · Subjects · Practice · Tools & Guides · Community)
   {
     id: 'home',
     path: '/home',
     label: 'Home',
     section: 'study',
-    blurb: 'Today’s study plan, resume where you left off, weekly recap and one weak spot.',
-    surfaces: ['tabs', 'index', 'quickfind'],
+    blurb: 'Today’s study plan, tracked exams, focus subjects and live community pulse.',
+    surfaces: ['nav', 'tabs', 'index', 'quickfind'],
     icon: 'home',
-    keywords: 'today study dashboard feed',
+    keywords: 'today study dashboard feed overview',
   },
   {
     id: 'exams',
     path: '/exams',
     label: 'Exams',
     section: 'study',
-    blurb: 'MPSC UDC, LDC, Combined Prelims, Group B, MES and LDE syllabi and papers.',
+    blurb: 'MPSC UDC, LDC, Combined Prelims, Group B, MES and departmental exam booklets.',
     surfaces: ['nav', 'tabs', 'index', 'quickfind'],
     menu: 'exams',
     icon: 'exam',
     keywords: 'udc ldc mcs prelims group-b mes lde syllabus',
   },
   {
-    id: 'papers',
-    path: '/past-papers',
-    label: 'Papers',
+    id: 'library',
+    path: '/library',
+    label: 'Subjects',
     section: 'study',
-    blurb: 'Original past papers, question booklets and written/LDE papers by year.',
-    surfaces: ['nav', 'index', 'quickfind'],
-    keywords: 'pdf original past paper booklets archive lde',
+    blurb: 'Subject-wise exam books and concept shelves across English, GK/GS, Math, Reasoning and Mizo.',
+    surfaces: ['nav', 'tabs', 'index', 'quickfind'],
+    menu: 'subjects',
+    icon: 'library',
+    keywords: 'english arithmetic reasoning mizo gk subjects taxonomy books',
   },
   {
     id: 'practice',
     path: '/practice',
-    label: 'Practice',
+    label: 'Practice & Mock',
     section: 'practice',
-    blurb: 'Pick what, pick how many, and toggle the timer on or off in one flow.',
-    surfaces: ['nav', 'index', 'quickfind'],
+    blurb: 'Untimed Practice drills with instant explanations and Full-Paper Mocks in one place.',
+    surfaces: ['nav', 'tabs', 'index', 'quickfind'],
     menu: 'practice',
+    icon: 'desk',
     keywords: 'mock test timed untimed quiz questions',
   },
   {
     id: 'guides',
     path: '/guides',
-    label: 'Guides',
+    label: 'Tools & Guides',
     section: 'guides',
-    blurb: 'First-party study guides, how to use Finna, and subject reference reading.',
-    surfaces: ['nav', 'tabs', 'index', 'quickfind'],
+    blurb: 'Edited concept guides, interactive Atlas, Chronicle timeline, India Stats and Study Desk.',
+    surfaces: ['nav', 'index', 'quickfind'],
     menu: 'guides',
     icon: 'library',
-    keywords: 'reading codex polity quick revision english notes handbook',
+    keywords: 'reading codex polity quick revision english notes handbook tools',
   },
   {
     id: 'community',
@@ -94,67 +95,19 @@ export const SITE_MAP: readonly Destination[] = [
     blurb: 'Study notes, question doubts, creators and community-written materials.',
     surfaces: ['nav', 'index', 'quickfind'],
     menu: 'community',
-    keywords: 'discussions doubts posts creators contributors',
-  },
-  {
-    id: 'index',
-    path: '/index',
-    label: 'All pages',
-    section: 'study',
-    blurb: 'Compact directory of every study surface, tool and account page on Finna.',
-    surfaces: ['index', 'quickfind'],
-    keywords: 'sitemap directory all pages tools more index',
+    keywords: 'discussions doubts posts creators contributors feed',
   },
 
-  // Study surfaces
+  // Exams dropdown items
   {
-    id: 'bank',
-    path: '/bank',
-    label: 'Advanced bank chooser',
+    id: 'papers',
+    path: '/past-papers',
+    label: 'Past papers',
     section: 'study',
-    blurb: 'Power-user chooser across the full corpus — pick an exam, subject, paper or year first.',
-    surfaces: ['index'],
-    keywords: 'browse search filter mcq written essay descriptive',
-  },
-  {
-    id: 'library',
-    path: '/library',
-    label: 'Subjects',
-    section: 'study',
-    blurb: 'Browse questions by subject shelf, English, Arithmetic, Mizo and topics.',
-    surfaces: ['tabs', 'index', 'quickfind', 'quick'],
-    menu: 'guides',
-    keywords: 'english arithmetic reasoning mizo subjects taxonomy',
-  },
-  {
-    id: 'atlas',
-    path: '/atlas',
-    label: 'Atlas',
-    section: 'study',
-    blurb: 'Interactive geography chapters, Mizoram and India map layers and drills.',
+    blurb: 'Original past papers, question booklets and written papers organised by year.',
     surfaces: ['index', 'quickfind'],
-    menu: 'guides',
-    keywords: 'maps geography mizoram india districts',
-  },
-  {
-    id: 'chronicle',
-    path: '/chronicle',
-    label: 'Chronicle',
-    section: 'study',
-    blurb: 'Historical dates, timelines and linked past-paper questions.',
-    surfaces: ['index', 'quickfind'],
-    menu: 'guides',
-    keywords: 'history timeline important days dates events',
-  },
-  {
-    id: 'stats',
-    path: '/stats',
-    label: 'Stats',
-    section: 'study',
-    blurb: 'India and Mizoram official statistics, global rankings and the Economic Survey.',
-    surfaces: ['index', 'quickfind'],
-    menu: 'guides',
-    keywords: 'hdi economic survey rankings data india mizoram indicators',
+    menu: 'exams',
+    keywords: 'pdf original past paper booklets archive lde',
   },
   {
     id: 'calendar',
@@ -166,8 +119,80 @@ export const SITE_MAP: readonly Destination[] = [
     menu: 'exams',
     keywords: 'dates notices news schedule notifications ics',
   },
+  {
+    id: 'subject-books',
+    path: '/exams?exam_filter=subjects',
+    label: 'Subject-wise exam books',
+    section: 'study',
+    blurb: 'Hardcover all-exam volumes for GK/GS, English, Mathematics, Reasoning and Mizo.',
+    surfaces: ['index', 'quickfind'],
+    menu: 'exams',
+    keywords: 'subject wise exam books cross exam volumes',
+  },
 
-  // Practice surfaces
+  // Subjects dropdown items (direct hardcover subject-wise exam volumes)
+  {
+    id: 'subject-gk-gs',
+    path: '/subjects/gk-gs',
+    label: 'General Knowledge & Studies',
+    section: 'study',
+    blurb: 'Polity, history, economy, geography and Mizoram GK across every exam.',
+    surfaces: ['index', 'quickfind'],
+    menu: 'subjects',
+    keywords: 'gk gs polity history geography economy mizoram',
+  },
+  {
+    id: 'subject-english',
+    path: '/subjects/english',
+    label: 'English',
+    section: 'study',
+    blurb: 'Grammar, comprehension, idioms, vocabulary and writing from real papers.',
+    surfaces: ['index', 'quickfind'],
+    menu: 'subjects',
+    keywords: 'english grammar comprehension vocabulary idioms',
+  },
+  {
+    id: 'subject-mathematics',
+    path: '/subjects/mathematics',
+    label: 'Mathematics & Arithmetic',
+    section: 'study',
+    blurb: 'Quantitative aptitude, percentages, ratios, algebra and worked methods.',
+    surfaces: ['index', 'quickfind'],
+    menu: 'subjects',
+    keywords: 'math mathematics arithmetic quantitative aptitude',
+  },
+  {
+    id: 'subject-reasoning',
+    path: '/subjects/reasoning',
+    label: 'Reasoning & Aptitude',
+    section: 'study',
+    blurb: 'Logical sequences, syllogisms, coding and analytical puzzles across exams.',
+    surfaces: ['index', 'quickfind'],
+    menu: 'subjects',
+    keywords: 'reasoning logic csat aptitude puzzles',
+  },
+  {
+    id: 'subject-mizo',
+    path: '/subjects/mizo',
+    label: 'Mizo',
+    section: 'study',
+    blurb: 'Mizo language, literature, proverbs, grammar and heritage questions.',
+    surfaces: ['index', 'quickfind'],
+    menu: 'subjects',
+    keywords: 'mizo language literature proverbs culture',
+  },
+
+  // Practice dropdown items
+  {
+    id: 'revise',
+    path: '/revise',
+    label: 'Revise',
+    section: 'practice',
+    blurb: 'Scheduled spaced reviews, past mistakes and vocabulary drills.',
+    surfaces: ['index', 'quickfind', 'quick'],
+    menu: 'practice',
+    keywords: 'spaced repetition leitner mistakes vocabulary due review',
+  },
   {
     id: 'practice-build',
     path: '/practice/build',
@@ -189,27 +214,90 @@ export const SITE_MAP: readonly Destination[] = [
     keywords: 'shared mock test links catalog',
   },
   {
-    id: 'revise',
-    path: '/revise',
-    label: 'Revise',
-    section: 'practice',
-    blurb: 'Scheduled spaced reviews, past mistakes and vocabulary drills.',
-    surfaces: ['index', 'quickfind', 'quick'],
-    menu: 'practice',
-    keywords: 'spaced repetition leitner mistakes vocabulary due review',
-  },
-  {
     id: 'games',
     path: '/games',
-    label: 'Play',
+    label: 'Play & Daily Five',
     section: 'practice',
     blurb: 'Daily Five, Topic Trail, duels and party games over verified questions.',
     surfaces: ['index', 'quickfind'],
     menu: 'practice',
     keywords: 'daily five topic trail duel cup party games',
   },
+  {
+    id: 'bank',
+    path: '/bank',
+    label: 'Question bank chooser',
+    section: 'study',
+    blurb: 'Power-user chooser across the full corpus — filter by exam, subject, paper or year.',
+    surfaces: ['index', 'quickfind'],
+    menu: 'practice',
+    keywords: 'browse search filter mcq written essay descriptive',
+  },
 
-  // Community & content surfaces
+  // Tools & Guides dropdown items
+  {
+    id: 'atlas',
+    path: '/atlas',
+    label: 'Interactive Atlas',
+    section: 'guides',
+    blurb: 'Interactive geography chapters, Mizoram and India map layers and drills.',
+    surfaces: ['index', 'quickfind'],
+    menu: 'guides',
+    keywords: 'maps geography mizoram india districts',
+  },
+  {
+    id: 'chronicle',
+    path: '/chronicle',
+    label: 'History Chronicle',
+    section: 'guides',
+    blurb: 'Historical dates, constitutional timelines and linked past-paper questions.',
+    surfaces: ['index', 'quickfind'],
+    menu: 'guides',
+    keywords: 'history timeline important days dates events',
+  },
+  {
+    id: 'stats',
+    path: '/stats',
+    label: 'India & Global Stats',
+    section: 'guides',
+    blurb: 'India and Mizoram official statistics, global rankings and the Economic Survey.',
+    surfaces: ['index', 'quickfind'],
+    menu: 'guides',
+    keywords: 'hdi economic survey rankings data india mizoram indicators',
+  },
+  {
+    id: 'desk',
+    path: '/desk',
+    label: 'Study Desk',
+    section: 'you',
+    blurb: 'Your personal notes, bookmarks, focus timer and private 6-seat study rooms.',
+    surfaces: ['index', 'quickfind', 'quick'],
+    menu: 'guides',
+    icon: 'desk',
+    keywords: 'study desk rooms notes bookmarks pomodoro focus review circle',
+  },
+  {
+    id: 'index',
+    path: '/index',
+    label: 'All pages',
+    section: 'study',
+    blurb: 'Compact directory of every study surface, tool and account page on Finna.',
+    surfaces: ['index', 'quickfind'],
+    menu: 'guides',
+    keywords: 'sitemap directory all pages tools more index',
+  },
+
+  // Community dropdown items
+  {
+    id: 'community-doubts',
+    path: '/community?tab=questions',
+    label: 'Questions & Doubts',
+    section: 'community',
+    blurb: 'Discuss tricky past-paper questions and help peers clear doubts.',
+    surfaces: ['index', 'quickfind'],
+    menu: 'community',
+    keywords: 'doubts questions discussions help',
+  },
   {
     id: 'materials',
     path: '/materials',
@@ -221,16 +309,6 @@ export const SITE_MAP: readonly Destination[] = [
     keywords: 'community materials user notes reading',
   },
   {
-    id: 'create',
-    path: '/create',
-    label: 'Create & contribute',
-    section: 'community',
-    blurb: 'Suggest a question or correction, draft community notes or build a test.',
-    surfaces: ['index', 'quickfind'],
-    menu: 'community',
-    keywords: 'contribute submit question edit studio draft',
-  },
-  {
     id: 'creators',
     path: '/creators',
     label: 'Creators',
@@ -240,6 +318,16 @@ export const SITE_MAP: readonly Destination[] = [
     menu: 'community',
     keywords: 'profiles authors contributors',
   },
+  {
+    id: 'create',
+    path: '/create',
+    label: 'Create & contribute',
+    section: 'community',
+    blurb: 'Suggest a question or correction, draft community notes or build a test.',
+    surfaces: ['index', 'quickfind'],
+    menu: 'community',
+    keywords: 'contribute submit question edit studio draft',
+  },
 
   // Personal / You surfaces
   {
@@ -248,20 +336,9 @@ export const SITE_MAP: readonly Destination[] = [
     label: 'My Vault',
     section: 'you',
     blurb: 'Your animated personal question safe: save bank items, Pro favorites, custom image questions, drills and shareable packs.',
-    surfaces: ['index', 'quickfind', 'quick'],
-    menu: 'practice',
+    surfaces: ['index', 'quickfind'],
     icon: 'library',
     keywords: 'vault safe personal question bank save favorite craft custom flashcard share',
-  },
-  {
-    id: 'desk',
-    path: '/desk',
-    label: 'Desk',
-    section: 'you',
-    blurb: 'Your personal notes, bookmarks, focus timer and private 6-seat study rooms.',
-    surfaces: ['index', 'quickfind', 'quick'],
-    icon: 'desk',
-    keywords: 'study desk rooms notes bookmarks pomodoro focus review circle',
   },
   {
     id: 'profile',
@@ -327,8 +404,7 @@ export function destinationPath(id: string): string {
   return SITE_MAP.find((d) => d.id === id)?.path ?? '/index'
 }
 
-/** Dropdown contents for a desktop nav item, in manifest order. The nav item's
- *  own destination is excluded — clicking the label already goes there. */
+/** Dropdown contents for a desktop nav item, in manifest order (excludes the parent trigger itself). */
 export function menuFor(menu: NavMenu): Destination[] {
-  return SITE_MAP.filter((d) => d.menu === menu && d.id !== menu)
+  return SITE_MAP.filter((d) => d.menu === menu && !d.surfaces.includes('nav'))
 }

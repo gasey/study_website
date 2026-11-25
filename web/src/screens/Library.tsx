@@ -1,7 +1,12 @@
 import { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import {
+  getExamProgress,
+  isSubjectModule,
+  listCollections,
   listLibraryShelves,
+  type Collection,
+  type ExamProgressSummary,
   type LibraryShelf,
   listTaxonomy,
   type TaxonomyFacet,
@@ -9,6 +14,7 @@ import {
 import { SITE_MAP, destinationPath } from "../lib/siteMap";
 import MaterialDiscovery from "../components/MaterialDiscovery";
 import ConceptBook, { bookToneFor } from "../components/ConceptBook";
+import SubjectBookshelf from "../components/SubjectBookshelf";
 
 const Materials = lazy(() => import("./Materials"));
 
@@ -18,67 +24,50 @@ const VIEWS = [
   ["saved", "Saved"],
 ] as const;
 
-/** Published cross-exam Subject modules (FINNAPLAN v2 P3 / V.28a).
- *  Each subject module is a live cross-exam taxonomy query over the bank with
- *  deduplicated series printings and free module filters. */
-const SUBJECT_FILTERS = [
+const FEATURED_STUDY_TOOLS = [
   {
-    title: "English",
-    href: "/subjects/english",
-    label: "Grammar, comprehension and writing across all exams",
-    tag: "Subject module",
+    title: "Study Guides",
+    href: "/guides",
+    tag: "Reading room",
+    label: "Edited Polity Codex, grammar guides and exam walkthroughs linked to bank questions.",
+    cta: "Open Guides →",
+    image: "/images/discover/guides.jpg",
   },
   {
-    title: "Mathematics & Arithmetic",
-    href: "/subjects/mathematics",
-    label: "Concepts, worked methods and quantitative aptitude",
-    tag: "Subject module",
-  },
-  {
-    title: "Reasoning & Aptitude",
-    href: "/subjects/reasoning",
-    label: "Patterns, logic and analytical aptitude across exams",
-    tag: "Subject module",
-  },
-  {
-    title: "General Knowledge & Studies",
-    href: "/subjects/gk-gs",
-    label: "Polity, history, economy, geography and Mizoram GK/GS",
-    tag: "Subject module",
-  },
-  {
-    title: "Mizo",
-    href: "/subjects/mizo",
-    label: "Language, literature and culture across all exams",
-    tag: "Subject module",
-  },
-  {
-    title: "Atlas",
+    title: "Interactive Atlas",
     href: "/atlas",
-    label: "Interactive chapters and map layers",
-    tag: "Geography",
+    tag: "Geography maps",
+    label: "Explore Mizoram districts, Indian rivers, sanctuaries, passes and historical map layers.",
+    cta: "Open Atlas →",
+    image: "/images/discover/atlas.jpg",
   },
   {
-    title: "Chronicle",
+    title: "History Chronicle",
     href: "/chronicle",
-    label: "Dates, events and linked questions",
-    tag: "Timeline",
+    tag: "Timeline & dates",
+    label: "Step through constitutional milestones, freedom-struggle eras and linked past-paper years.",
+    cta: "Open Chronicle →",
+    image: "/images/discover/chronicle.jpg",
   },
   {
-    title: "Stats",
+    title: "India & Global Stats",
     href: "/stats",
-    label: "India, global rankings and the Economic Survey",
-    tag: "Data",
+    tag: "Verified data",
+    label: "Official Economic Survey indicators, Mizoram tables and global rankings for quick GK recall.",
+    cta: "Open Stats →",
+    image: "/images/discover/stats.jpg",
   },
 ] as const;
 
 const SUBJECT_TOOLS = SITE_MAP.filter((d) =>
-  ["guides", "practice", "revise", "exams"].includes(d.id),
+  ["practice", "revise", "exams", "desk"].includes(d.id),
 );
 
 export default function Library() {
   const [params, setParams] = useSearchParams();
   const [shelves, setShelves] = useState<LibraryShelf[]>([]);
+  const [subjectModules, setSubjectModules] = useState<Collection[]>([]);
+  const [examProgress, setExamProgress] = useState<Record<string, ExamProgressSummary>>({});
   const [facets, setFacets] = useState<TaxonomyFacet[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -117,6 +106,14 @@ export default function Library() {
       listLibraryShelves().then((rows) => {
         if (live) setShelves(rows);
       }),
+      listCollections().then((rows) => {
+        if (live) setSubjectModules(rows.filter((c) => isSubjectModule(c)));
+      }),
+      getExamProgress()
+        .then((rows) => {
+          if (live) setExamProgress(Object.fromEntries(rows.map((r) => [r.collection_id, r])));
+        })
+        .catch(() => {}),
       listTaxonomy("all", true).then((rows) => {
         if (live) setFacets(rows);
       }),
@@ -218,6 +215,22 @@ export default function Library() {
             </p>
           )}
 
+          {/* Subject-Wise Exam Bookshelf (Cross-Exam Volumes) */}
+          {subjectModules.length > 0 && (
+            <SubjectBookshelf
+              subjects={subjectModules}
+              progress={examProgress}
+              eyebrow="All-exam subject books"
+              heading="Subject-wise exam bookshelf"
+              subtitle="Five combined books pulling past questions from UDC, LDC, MCS, Group B and every MPSC exam into one subject volume."
+              action={
+                <Link to="/exams?exam_filter=subjects" className="finna-inline-pill-btn">
+                  Open in Exams →
+                </Link>
+              }
+            />
+          )}
+
           {/* Main Concept Bookshelf (vYaeadj + xrRPRL + oNxEBXj) */}
           {shelves.length > 0 && (
             <section aria-label="Subject library" className="bk-shelf-wrap">
@@ -260,28 +273,32 @@ export default function Library() {
             </section>
           )}
 
-          {/* Pocket Reference Books (Quick Subject Scopes) */}
-          <section className="bk-pocket-section" aria-labelledby="subject-filters">
+          {/* Tall Hover-Reveal Photographic Study Tools Gallery (XWbWKwL inspiration) */}
+          <section className="bk-pocket-section" aria-labelledby="study-tools-gallery">
             <div className="bk-shelf-head">
               <div>
-                <span className="cr-eyebrow">Quick reference</span>
-                <h2 id="subject-filters">Browse by subject</h2>
+                <span className="cr-eyebrow">Interactive reference rooms</span>
+                <h2 id="study-tools-gallery">Guides, maps, timelines &amp; data</h2>
               </div>
             </div>
-            <div className="bk-mini-grid">
-              {SUBJECT_FILTERS.map((s, idx) => (
-                <Link
-                  key={s.href}
-                  to={s.href}
-                  className={`bk-mini-book bk-tone-${bookToneFor(s.title, idx)}`}
-                >
-                  <span className="bk-mini-spine" aria-hidden="true" />
-                  <span className="bk-mini-body">
-                    <span className="bk-mini-tag">{s.tag}</span>
-                    <strong>{s.title}</strong>
-                    <span>{s.label}</span>
+            <div className="xwb-grid">
+              {FEATURED_STUDY_TOOLS.map((tool) => (
+                <Link key={tool.href} to={tool.href} className="xwb-card">
+                  <img
+                    src={tool.image}
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    decoding="async"
+                    className="xwb-bg"
+                  />
+                  <span className="xwb-scrim" aria-hidden="true" />
+                  <span className="xwb-content">
+                    <span className="xwb-tag">{tool.tag}</span>
+                    <strong className="xwb-title">{tool.title}</strong>
+                    <span className="xwb-copy">{tool.label}</span>
+                    <span className="xwb-cta">{tool.cta}</span>
                   </span>
-                  <span className="bk-mini-edge" aria-hidden="true" />
                 </Link>
               ))}
             </div>
