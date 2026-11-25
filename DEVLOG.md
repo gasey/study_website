@@ -1,5 +1,13 @@
 # Devlog
 
+25 November IST — **Upgraded `/stats` with animated SVG Radial Ring Gauges, interactive Year-Scrub Area/Line Charts, Proportional Comparison & Ranking Bars, and color-coded Metric Cards (`Stats.tsx`, `stats.css`). Web deployed to `https://study.hawayu.in`.**
+
+- **Data Visualization & Visual Hierarchy (`Stats.tsx`, `stats.css`):**
+  - **Animated Radial Ring Gauges (`RadialGauge`):** Added a 128px gradient SVG ring in the `/stats` Hero for India's Human Development Index (`#130` + score), headline KPI strip (`GDP`, `GDP Growth`, `Population`), and compact percentage rings on bounded index cards (`HDI`, `State Health Index`).
+  - **Interactive Multi-Series Area & Line Chart (`Trend`):** Added vertical gradient area fill, vertical scrub crosshair, glowing active points, and a live Year Inspector bar showing exact values and YoY `%` delta on hover/click for every compared country or state.
+  - **Proportional Horizontal Bars (`MetricDetail` & `Rankings`):** Added visual scale bars to both the `Compare the same year` cards and every row in the Global/State Rankings table (highlighting India's pinned row in warm gold/amber).
+  - **Color-Coded Metric Cards & Freshness Pulse:** Added category accent stripes/badges (`cobalt`/`teal`/`violet`/`amber`), rank chips, and live green/amber freshness status dots while preserving 100% of official data provenance & `check-stats.cjs` contracts.
+
 25 November IST — **Restored `/srv/api/refresh-stats.py` and `/srv/api/youtube-current-affairs.py` on Oracle host & patched `scripts/deploy.sh` so future API deploys never delete scheduled worker scripts.**
 
 - **Root cause:** `deploy.sh api`'s `rsync --delete` wiped `/srv/api/refresh-stats.py` and `/srv/api/youtube-current-affairs.py` on 23 November (same class as the earlier `ops-collector.py` deletion), causing `ism-stats-refresh.service` to fail on Nov 23 & Nov 24 with `Errno 2: No such file or directory`.
