@@ -375,12 +375,12 @@ export const SITE_MAP: readonly Destination[] = [
   {
     id: 'creators',
     path: '/creators',
-    label: 'Creators',
+    label: 'Find learners & profiles',
     section: 'community',
-    blurb: 'Discover learners who publish notes, tests and reviewed contributions.',
+    blurb: 'Search public learner profiles, pixel heroes, target exams, scores & published notes.',
     surfaces: ['index', 'quickfind'],
     menu: 'community',
-    keywords: 'profiles authors contributors',
+    keywords: 'find learners profiles search users people leaderboard creators handles authors contributors',
   },
   {
     id: 'create',

@@ -8,7 +8,7 @@ import StudyAnalyticsDeck from '../components/StudyAnalyticsDeck'
 import VaultShowcaseCard from '../components/VaultShowcaseCard'
 import { UserAvatar } from '../components/AvatarArt'
 import { useEffect, useMemo, useState, type FormEvent } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import {
   getProfile,
   getScoreSummary,
@@ -19,7 +19,7 @@ import {
 } from '../lib/api'
 import { reviewRequest } from '../lib/review'
 
-type ProfileTab = 'overview' | 'account' | 'community' | 'studio'
+type ProfileTab = 'overview' | 'mastery' | 'account' | 'community' | 'studio'
 
 function initials(name: string) {
   return (
@@ -34,8 +34,10 @@ function initials(name: string) {
 
 export default function Profile() {
   const location = useLocation()
+  const navigate = useNavigate()
   const [profile, setProfile] = useState<PrivateProfile | null>(null)
   const [name, setName] = useState('')
+  const [learnerQuery, setLearnerQuery] = useState('')
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState('')
@@ -45,11 +47,16 @@ export default function Profile() {
   const [credit, setCredit] = useState<number | null>(null)
   const [creditError, setCreditError] = useState('')
   const [tab, setTab] = useState<ProfileTab>(() =>
-    location.hash === '#account-tools-title' ? 'account' : 'overview',
+    location.hash === '#account-tools-title'
+      ? 'account'
+      : location.hash === '#mastery'
+        ? 'mastery'
+        : 'overview',
   )
 
   useEffect(() => {
     if (location.hash === '#account-tools-title') setTab('account')
+    else if (location.hash === '#mastery') setTab('mastery')
   }, [location.hash])
 
   useEffect(() => {
@@ -148,8 +155,9 @@ export default function Profile() {
 
   const tabs: { id: ProfileTab; label: string }[] = [
     { id: 'overview', label: 'Overview' },
-    { id: 'account', label: 'Account & setup' },
+    { id: 'mastery', label: 'Mastery & log' },
     { id: 'community', label: 'Rewards & community' },
+    { id: 'account', label: 'Account & setup' },
     { id: 'studio', label: 'Materials & studio' },
   ]
 
@@ -222,8 +230,11 @@ export default function Profile() {
               <Link to="/account/security" className="finna-st-btn">
                 Settings
               </Link>
+              <Link to="/creators" className="finna-st-btn">
+                🔎 Find learners
+              </Link>
               <Link to="/creators/settings" className="finna-st-btn">
-                Creator visibility
+                Public visibility
               </Link>
               {isAccount ? (
                 <>
@@ -320,30 +331,59 @@ export default function Profile() {
 
               <div className="finna-prof-two">
                 <div className="finna-prof-main">
-                  {isAccount && (
-                    <div id="mastery" className="scroll-mt-32">
-                      <MasteryMap />
-                    </div>
+                  {scoreSummary && (
+                    <section className="finna-card">
+                      <div className="finna-section-top">
+                        <h2 className="text-lg">Mock &amp; score summary</h2>
+                        <Link
+                          to="/exams"
+                          className="text-xs font-bold text-link hover:underline"
+                        >
+                          Saved mock results →
+                        </Link>
+                      </div>
+                      <div className="finna-prof-score-strip mt-3">
+                        <div>
+                          <strong>
+                            {scoreSummary.mocks_original.completed}
+                          </strong>
+                          <span>Completed mocks</span>
+                        </div>
+                        <div>
+                          <strong>
+                            {scoreSummary.mocks_original.original_marks}
+                          </strong>
+                          <span>Original marks</span>
+                        </div>
+                        <div>
+                          <strong>
+                            {scoreSummary.practice_adjusted.correct}
+                          </strong>
+                          <span>Assessed correct</span>
+                        </div>
+                      </div>
+                    </section>
                   )}
 
                   <section className="finna-card">
                     <div className="finna-section-top">
                       <div>
-                        <h2 className="text-lg">Recent practice log</h2>
+                        <h2 className="text-lg">Recent activity</h2>
                         <p className="mt-0.5 text-xs text-secondary">
-                          {todayAnswered} answers recorded today · last 30 days
+                          {todayAnswered} answers today · {activity.length} active days in last 30d
                         </p>
                       </div>
-                      <Link
-                        to="/bank"
+                      <button
+                        type="button"
+                        onClick={() => setTab('mastery')}
                         className="text-xs font-bold text-link hover:underline"
                       >
-                        Question bank →
-                      </Link>
+                        Full Mastery &amp; Log →
+                      </button>
                     </div>
                     {activity.length ? (
                       <div className="finna-prof-log">
-                        {activity.slice(0, 12).map((d) => (
+                        {activity.slice(0, 5).map((d) => (
                           <div key={d.day} className="finna-prof-log-row">
                             <span className="finna-prof-log-day">
                               {d.day === todayKey
@@ -371,61 +411,46 @@ export default function Profile() {
                       </p>
                     )}
                   </section>
-
-                  {scoreSummary && (
-                    <section className="finna-card">
-                      <div className="finna-section-top">
-                        <h2 className="text-lg">Mock &amp; score summary</h2>
-                        <Link
-                          to="/exams"
-                          className="text-xs font-bold text-link hover:underline"
-                        >
-                          Saved mock results →
-                        </Link>
-                      </div>
-                      <p className="mt-2 text-xs text-secondary">
-                        {scoreSummary.profile_basis}
-                      </p>
-                      <div className="finna-prof-score-strip">
-                        <div>
-                          <strong>
-                            {scoreSummary.mocks_original.completed}
-                          </strong>
-                          <span>Completed mocks</span>
-                        </div>
-                        <div>
-                          <strong>
-                            {scoreSummary.mocks_original.original_marks}
-                          </strong>
-                          <span>Original marks</span>
-                        </div>
-                        <div>
-                          <strong>
-                            {scoreSummary.practice_adjusted.correct}
-                          </strong>
-                          <span>Assessed correct</span>
-                        </div>
-                      </div>
-                    </section>
-                  )}
                 </div>
 
                 <aside className="finna-prof-side">
-                  <section className="finna-card finna-prof-desk">
-                    <div className="finna-st-h1row">
-                      <span className="finna-st-badge">Private until joined</span>
+                  {/* Direct Profile Finder Card */}
+                  <section className="finna-card pf-finder" aria-labelledby="pf-finder-title">
+                    <div className="finna-section-top">
+                      <h2 id="pf-finder-title" className="text-base">Find learner profiles</h2>
+                      <Link to="/creators" className="text-xs font-bold text-link hover:underline">
+                        Browse all →
+                      </Link>
                     </div>
-                    <h2 className="mt-2 text-lg">Study desk</h2>
-                    <p className="mt-1.5 text-sm leading-relaxed text-secondary">
-                      Invite friends to a private study desk and share only the
-                      focus stats you choose.
+                    <p className="mt-1 text-xs text-secondary">
+                      Search by @handle to see another learner’s pixel hero, target exams, scores &amp; notes.
                     </p>
-                    <Link
-                      to="/desk"
-                      className="finna-st-btn finna-st-btn--primary mt-3"
+                    <form
+                      className="pf-finder-form"
+                      onSubmit={(e) => {
+                        e.preventDefault()
+                        const q = learnerQuery.trim()
+                        navigate(q ? `/creators?q=${encodeURIComponent(q)}` : '/creators')
+                      }}
                     >
-                      Open study desk →
-                    </Link>
+                      <input
+                        type="search"
+                        value={learnerQuery}
+                        onChange={(e) => setLearnerQuery(e.target.value)}
+                        placeholder="Search @handle…"
+                        aria-label="Search learner handle"
+                        maxLength={80}
+                      />
+                      <button type="submit">Find</button>
+                    </form>
+                    <div className="pf-finder-links">
+                      <Link to="/profile/rewards" className="text-xs font-semibold text-link hover:underline">
+                        🏆 Weekly standings
+                      </Link>
+                      <Link to="/creators/settings" className="text-xs font-semibold text-secondary hover:text-ink">
+                        My public visibility
+                      </Link>
+                    </div>
                   </section>
 
                   <VaultShowcaseCard compact />
@@ -434,12 +459,11 @@ export default function Profile() {
                     <h2 className="text-base">Quick shortcuts</h2>
                     <div className="finna-prof-links">
                       {[
+                        ['Study desk & rooms', '/desk'],
                         ['My Question Vault', '/vault'],
                         ['Revise & mistakes', '/revise?tab=queue'],
                         ['XP & reward wallet', '/profile/rewards'],
-                        ['Inbox & updates', '/inbox'],
-                        ['My contributions', '/create/submissions'],
-                        ['Account settings', '/account/security'],
+                        ['Account & security', '/account/security'],
                         ['Appearance & theme', '/account/appearance'],
                       ].map(([label, href]) => (
                         <Link key={href} to={href} className="finna-prof-link">
@@ -451,6 +475,71 @@ export default function Profile() {
                   </section>
                 </aside>
               </div>
+            </div>
+          )}
+
+          {tab === 'mastery' && (
+            <div className="finna-prof-stack">
+              {isAccount ? (
+                <div id="mastery" className="scroll-mt-32">
+                  <MasteryMap />
+                </div>
+              ) : (
+                <section className="finna-card">
+                  <h2 className="text-lg">Topic mastery</h2>
+                  <p className="mt-1.5 text-sm text-secondary">
+                    Sign in to track verified topic mastery and rusty-topic alerts across your target exams.
+                  </p>
+                  <Link to="/join" className="finna-st-btn finna-st-btn--primary mt-3">
+                    Join free →
+                  </Link>
+                </section>
+              )}
+
+              <section className="finna-card">
+                <div className="finna-section-top">
+                  <div>
+                    <h2 className="text-lg">30-day practice log</h2>
+                    <p className="mt-0.5 text-xs text-secondary">
+                      {todayAnswered} answers recorded today · {activity.length} active days
+                    </p>
+                  </div>
+                  <Link
+                    to="/bank"
+                    className="text-xs font-bold text-link hover:underline"
+                  >
+                    Question bank →
+                  </Link>
+                </div>
+                {activity.length ? (
+                  <div className="finna-prof-log">
+                    {activity.map((d) => (
+                      <div key={d.day} className="finna-prof-log-row">
+                        <span className="finna-prof-log-day">
+                          {d.day === todayKey
+                            ? 'Today'
+                            : new Date(`${d.day}T12:00:00`).toLocaleDateString(
+                                'en-IN',
+                                { day: 'numeric', month: 'short' },
+                              )}
+                        </span>
+                        <span className="finna-prof-log-desc">
+                          {d.answered} answered · {d.correct} correct
+                        </span>
+                        <span className="finna-prof-log-num">
+                          {d.answered > 0
+                            ? `${Math.round((d.correct / d.answered) * 100)}%`
+                            : '0%'}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="mt-3 text-sm text-secondary">
+                    No practice activity yet. Answer a question to start building your study history.
+                  </p>
+                )}
+              </section>
             </div>
           )}
 

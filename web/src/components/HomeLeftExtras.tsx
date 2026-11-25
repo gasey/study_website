@@ -228,6 +228,15 @@ export default function HomeLeftExtras({ progress }: { progress: Progress | null
             </span>
           </div>
         )}
+
+        <div className="hl-pulse-foot">
+          <Link to="/creators" className="text-xs font-bold text-link hover:underline">
+            🔎 Find learner profiles →
+          </Link>
+          <Link to="/games?mode=daily" className="text-xs font-semibold text-secondary hover:text-ink">
+            Play Daily Five ↗
+          </Link>
+        </div>
       </section>
 
       {/* 2. Popular Games (Option B — Left Rail Play Hub) */}

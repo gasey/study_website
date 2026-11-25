@@ -657,6 +657,10 @@ export default function Header() {
                       <span className="finna-acc-ico" aria-hidden="true">👤</span>
                       <span>My Profile &amp; Progress</span>
                     </Link>
+                    <Link to="/creators" role="menuitem" className="finna-acc-item" onClick={closeMenu}>
+                      <span className="finna-acc-ico" aria-hidden="true">🔎</span>
+                      <span>Find Learners &amp; Profiles</span>
+                    </Link>
                     <Link to="/profile/avatar" role="menuitem" className="finna-acc-item" onClick={closeMenu}>
                       <span className="finna-acc-ico" aria-hidden="true">👾</span>
                       <span>Edit Pixel RPG Sprite</span>

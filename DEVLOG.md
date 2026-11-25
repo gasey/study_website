@@ -1,5 +1,12 @@
 # Devlog
 
+25 November IST — **Compacted `/profile` & `MasteryMap` to eliminate endless scrolling and surfaced the Learner Profile Finder (`/creators`) across Profile, Avatar Dropdown, Community Nav, and Home Leaderboard (`Profile.tsx`, `MasteryMap.tsx`, `Header.tsx`, `HomeLeftExtras.tsx`, `siteMap.ts`, `finna.css`). Web deployed to `https://study.hawayu.in`.**
+
+- **Compact Topic Mastery Matrix (`MasteryMap.tsx`, `finna.css`):** Replaced the full expanded wall of 50+ multi-line topic cards with summary pills (`N topics · X strong · Y rusty`), a collapsible `Focus subjects` drawer, 1-click subject filter tabs (defaulting to the top/focus subject), and a dense 3-column accuracy-bar grid capped at 9 topics with a `Show all` expander.
+- **Compacted `/profile` (`Profile.tsx`):** Moved full Topic Mastery + 30-day practice log into a dedicated **`Mastery & log`** tab (preserving `/profile#mastery` deep links), trimmed Overview’s recent activity to 5 rows, and added an inline **Find learner profiles** search box right in the Profile sidebar + hero bar.
+- **Profile Finder surfaced everywhere (`Header.tsx`, `siteMap.ts`, `HomeLeftExtras.tsx`):** Added **`Find Learners & Profiles`** to the top-right avatar dropdown, renamed `Community ▾ → Find learners & profiles` (`/creators`), and added **`Find learner profiles →`** to the `/home` Live Leaderboard card.
+- **Verified live:** `study.hawayu.in/profile` `200`, `study.hawayu.in/creators` `200`, `family.hawayu.in` `307`.
+
 25 November IST — **Shipped dedicated `Games ▾` top nav, Home left-rail Live Leaderboard + Popular Games (Option B) + 7-Day Pulse, enriched Public Learner Profiles with animated 16-bit Pixel RPG Sprite + Target Exams + opted-in Score Tiles, and clickable Pixel-Avatar Standings across Web, API & Mobile.**
 
 - **Backend API (`api/app/services/weekly_boards.py`, `api/app/routers/games.py`, `api/app/routers/creators.py`, `tests/test_weekly_boards.py`):**
