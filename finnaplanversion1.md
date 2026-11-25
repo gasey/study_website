@@ -103,3 +103,5 @@
 5. **Store Distribution & Growth:** Google Play Store production rollout, iOS TestFlight build, and automated weekly digest notifications.
 6. **Saved UI / Visual Design References (Post-V1.0):**
    - **Tommy Ho CodePen 2.0 reference:** `https://codepen.io/editor/tommyho/pen/01a1e585-a665-7376-9cb9-a0bde54e162e` — saved for future UI polish (paste code or open in browser when ready to adapt into Finna Quest, Study Desk, Rewards, or landing hero).
+   - **Jamie Coulter (`jcoulterdesign`) Study Desk reference:** `https://codepen.io/jcoulterdesign/pen/YvgpZW` — saved as visual/interaction reference for future **Study Desk** (`/desk` & mobile Desk) upgrades.
+   - **Drew Conley (`punkydrewster713`) Pixel RPG Sprite reference:** `https://codepen.io/punkydrewster713/pen/YooJJj` — **shipped** in `AvatarArt.tsx`, `AvatarEditor.tsx`, `QuestGame.tsx`, and mobile equivalents (`8ae08d526` / `082baeb`).
