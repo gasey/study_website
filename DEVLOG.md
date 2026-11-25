@@ -1,5 +1,17 @@
 # Devlog
 
+25 November IST — **Shipped dedicated `Games ▾` top nav, Home left-rail Live Leaderboard + Popular Games (Option B) + 7-Day Pulse, enriched Public Learner Profiles with animated 16-bit Pixel RPG Sprite + Target Exams + opted-in Score Tiles, and clickable Pixel-Avatar Standings across Web, API & Mobile.**
+
+- **Backend API (`api/app/services/weekly_boards.py`, `api/app/routers/games.py`, `api/app/routers/creators.py`, `tests/test_weekly_boards.py`):**
+  - Enriched weekly leaderboard rows (`xp`, `daily`, `duel`, `speed`, `gauntlet`, `cup`) with `avatar`, `level`, `profile_public`, and privacy-guarded `user_id` (only populated when `creator_profiles.public=true` or self).
+  - Enriched `GET /api/creators/{uid}` (and `/api/creators` directory) with `level`, `scholar_title`, `target_exams`, `board_public`, `district`, and opted-in `scores` (`weekly_xp`, `league`, `lifetime_xp`, `streak_days`, `daily_five_plays/best`, `cup_plays/best`, `duel_wins`), hidden cleanly (`null`) whenever `board_public=false` for another viewer. `7/7` pytest passed.
+- **Web (`siteMap.ts`, `Header.tsx`, `HomeLeftExtras.tsx`, `StudyHome.tsx`, `WeeklyStandings.tsx`, `Creators.tsx`, `finna.css`):**
+  - Added top-level **`Games ▾`** desktop navigation item with dropdown links to **Finna Quest RPG**, **Daily Five**, **Weekly Cup**, **1v1 Duel & Party**, **Speed & Gauntlet**, and **Leaderboards & Quests**.
+  - Filled the open `/home` left column (Option B) with **Live Leaderboard** (`Weekly XP` / `Daily Five` / `Weekly Cup` tabs + pixel avatars + clickable public profiles), **Popular Games** showcase card, and **7-Day Pulse** mini bar-chart & stats card.
+  - Upgraded `/creators/:id` into a Midnight Indigo + Gold **Learner Profile Card** with animated 16-bit Pixel RPG Sprite, level/title/district badges, clickable target exam pills, and opted-in score tiles; upgraded `WeeklyStandings.tsx` rows with rank medals, pixel avatars, level, and clickable profile links.
+- **Mobile (`india-study-map-mobile`: `content-types.ts`, `creator/[id].tsx`, `rewards.tsx`):** Mirrored the animated 16-bit Pixel RPG Learner Profile Card + score tiles + target exam chips and added clickable pixel-avatar Weekly Standings on `rewards.tsx` (`npx tsc --noEmit` clean).
+- **Verified live:** `./scripts/deploy.sh` shipped API (`82383` questions) + Web cleanly (`study.hawayu.in/home` `200`, `/games` `200`, `/api/rewards/leaderboard` `200`, `/api/creators` `200`, `family.hawayu.in` `307`).
+
 25 November IST — **Fixed `/practice` `All exams` snap-back bug, cleaned up Exam dropdown, and made `All exams` + Subject/Topic Guided Practice free (`Practice.tsx`, `browse_allowance.py`, `test_browse_allowance.py`). Deployed API + Web cleanly to `https://study.hawayu.in`.**
 
 - **Fixed `All exams` selection (`Practice.tsx`):** Guarded the initial preferred-exam `useEffect` with `examInitializedRef` so clicking **`All exams`** (or choosing any exam) never snaps back to the user's default exam, and filtered the Mode 1 Exam dropdown to real exam collections only (`c.kind === 'exam'`) instead of mixing subject modules into it.

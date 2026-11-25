@@ -39,7 +39,8 @@ def test_xp_top_neighborhood_private_rank_and_league(client,learner,database):
     assert len(board['top'])==10 and len(board['items'])<=35
     assert board['placement']=={'rank':25,'xp':173,'public':False}
     assert all(row['handle'] not in (user,other_league) for row in board['items'])
-    assert all(set(row)=={'handle','xp','rank'} for row in board['items'])
+    assert all(set(row)=={'handle','xp','rank','avatar','level','profile_public','user_id'} for row in board['items'])
+    assert all(row['profile_public'] is False and row['user_id'] is None and row['level']>=1 for row in board['items'])
     assert any(row['rank']>=23 for row in board['nearby'])
     assert conn.execute('SELECT count(*) FROM reward_ledger').fetchone()[0]==before
     # Another person's view never inserts this private learner or shifts ranks.
@@ -77,7 +78,8 @@ def test_ist_week_half_open_and_future_rows(client,database):
     async def check(cur):return await weekly_boards.xp(cur,user,as_of=at)
     b=run(client,check)
     assert b['period_start']==boundary and b['period_end']==boundary+timedelta(days=7)
-    assert b['items']==[{'handle':user,'xp':10,'rank':1}]
+    assert len(b['items'])==1 and b['items'][0]['handle']==user and b['items'][0]['xp']==10 and b['items'][0]['rank']==1
+    assert b['items'][0]['user_id']==user  # self row always linkable
 
 
 def test_modes_disclosure_no_individual_result_consent_override(client,learner,database):
@@ -90,7 +92,8 @@ def test_modes_disclosure_no_individual_result_consent_override(client,learner,d
     game(conn,shown,9001,at=datetime.now(timezone.utc)+timedelta(days=8))
     conn.execute('INSERT INTO creator_blocks(user_id,blocked_id) VALUES(%s,%s)',(blocked,user))
     b=client.get('/api/games/leaderboard?track=speed').json()
-    assert b['items']==[{'handle':shown,'score':111,'rank':1}],b
+    assert len(b['items'])==1 and b['items'][0]['handle']==shown and b['items'][0]['score']==111 and b['items'][0]['rank']==1,b
+    assert b['items'][0]['profile_public'] is False and b['items'][0]['user_id'] is None
     assert run(client,weekly_boards.games,user,'speed')['items']==b['items']
     assert client.get('/api/games/leaderboard?track=gk_gs&contract=2').status_code==422
     assert client.get('/api/games/leaderboard?track=speed&period=month&contract=2').status_code==422
@@ -119,3 +122,24 @@ def test_daily_best_consecutive_completed_days_within_week(client,learner,databa
         conn.execute('INSERT INTO game_daily_entries(daily_id,user_id,room_id) VALUES(%s,%s,%s)',(did,user,rid))
     async def check(cur):return await weekly_boards.games(cur,user,'daily',as_of=at)
     assert run(client,check)['placement']['score']==3
+
+
+def test_public_learner_profile_enrichment_and_board_link(client,learner,database):
+    conn=database[1];viewer,_=learner
+    champ=profile(conn,xp=240,public=True)
+    conn.execute("INSERT INTO creator_profiles(user_id,public,bio) VALUES(%s,true,'Preparing for MPSC')",(champ,))
+    conn.execute("UPDATE reward_profiles SET district='Aizawl' WHERE user_id=%s",(champ,))
+    board=run(client,weekly_boards.xp,viewer)
+    row=next(r for r in board['items'] if r['handle']==champ)
+    assert row['profile_public'] is True and row['user_id']==champ and row['level']>=2
+    res=client.get(f'/api/creators/{champ}')
+    assert res.status_code==200,res.text
+    body=res.json()
+    assert body['level']>=2 and body['scholar_title']
+    assert body['district']=='Aizawl' and body['board_public'] is True
+    assert isinstance(body['target_exams'],list)
+    assert body['scores']['weekly_xp']==240 and body['scores']['lifetime_xp']==240
+    # When board_public is turned off, another viewer cannot see district or scores
+    conn.execute('UPDATE reward_profiles SET board_public=false WHERE user_id=%s',(champ,))
+    priv=client.get(f'/api/creators/{champ}').json()
+    assert priv['board_public'] is False and priv['district'] is None and priv['scores'] is None

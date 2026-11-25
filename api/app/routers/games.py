@@ -606,6 +606,7 @@ async def competitive_leaderboard(
                 """WITH ranked AS (
                     SELECT m.user_id, u.handle, u.avatar, m.score, m.correct, m.elapsed_ms,
                            m.pace_bonus, m.best_streak, m.public_result,
+                           COALESCE(cp.public, false) AS profile_public,
                            COALESCE(p.stream_cohort, 'balanced-core') AS stream_cohort,
                            COALESCE(p.current_streak_days, 0) AS streak,
                            (SELECT COALESCE(sum(x.xp),0)::int FROM reward_ledger x WHERE x.user_id=m.user_id) AS lifetime_xp,
@@ -615,6 +616,7 @@ async def competitive_leaderboard(
                     JOIN game_members m ON m.room_id=r.id AND m.user_id=e.user_id AND m.left_at IS NULL
                     JOIN users u ON u.id=m.user_id
                     LEFT JOIN reward_profiles p ON p.user_id=m.user_id
+                    LEFT JOIN creator_profiles cp ON cp.user_id=m.user_id
                     WHERE e.cup_id=%s AND """+audience.subject_sql('m.user_id')+"""
                       AND (m.public_result OR COALESCE(p.board_public, false) OR m.user_id=%s)
                       AND (%s='all' OR COALESCE(p.stream_cohort, 'balanced-core')=%s)
@@ -624,7 +626,7 @@ async def competitive_leaderboard(
                              OR (cb.user_id=m.user_id AND cb.blocked_id=%s)
                       )
                 )
-                SELECT user_id, handle, avatar, score, correct, elapsed_ms, pace_bonus, best_streak, stream_cohort, streak, lifetime_xp, rank, (user_id=%s) AS is_you
+                SELECT user_id, handle, avatar, profile_public, score, correct, elapsed_ms, pace_bonus, best_streak, stream_cohort, streak, lifetime_xp, rank, (user_id=%s) AS is_you
                 FROM ranked
                 ORDER BY rank, handle
                 LIMIT 21 OFFSET %s""",
@@ -637,6 +639,8 @@ async def competitive_leaderboard(
                 items.append({
                     "handle": r["handle"],
                     "avatar": r["avatar"],
+                    "profile_public": bool(r["profile_public"]),
+                    "user_id": r["user_id"] if (r["profile_public"] or r["is_you"]) else None,
                     "rank": r["rank"],
                     "score": r["score"],
                     "correct": r["correct"],

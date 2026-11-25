@@ -71,15 +71,73 @@ async def directory(user:User,q:str=Query('',max_length=100),offset:int=Query(0,
         where='cp.public AND u.email IS NOT NULL AND NOT '+BLOCKED+' AND (%s=\'\' OR u.handle ILIKE %s) AND '+audience.subject_sql('u.id')
         args=(user,user,q,'%'+q+'%')
         await cur.execute('SELECT count(*)::int AS n FROM creator_profiles cp JOIN users u ON u.id=cp.user_id WHERE '+where,args);total=(await cur.fetchone())['n']
-        await cur.execute("SELECT u.id,u.handle,u.avatar,"+PUBLIC_BIO+" AS bio,(SELECT count(*)::int FROM materials m WHERE m.author_id=u.id AND m.status='published' AND m.published_revision IS NOT NULL) AS materials FROM creator_profiles cp JOIN users u ON u.id=cp.user_id WHERE "+where+' ORDER BY u.handle,u.id LIMIT %s OFFSET %s',(*args,limit,offset));rows=await cur.fetchall()
+        await cur.execute("""SELECT u.id,u.handle,u.avatar,"""+PUBLIC_BIO+""" AS bio,
+            (SELECT count(*)::int FROM materials m WHERE m.author_id=u.id AND m.status='published' AND m.published_revision IS NOT NULL) AS materials,
+            GREATEST(1, floor(sqrt(GREATEST(0, COALESCE((SELECT sum(rl.xp) FROM reward_ledger rl WHERE rl.user_id=u.id), 0)) / 40.0)))::int AS level,
+            COALESCE((SELECT jsonb_agg(jsonb_build_object('id',c.id,'title',c.title,'is_primary',b.is_primary) ORDER BY b.is_primary DESC,b.created_at DESC)
+              FROM (SELECT collection_id,is_primary,created_at FROM user_exam_bookmarks WHERE user_id=u.id ORDER BY is_primary DESC,created_at DESC LIMIT 3) b
+              JOIN collections c ON c.id=b.collection_id AND c.kind='exam' AND c.visibility='public'),'[]'::jsonb) AS target_exams
+            FROM creator_profiles cp JOIN users u ON u.id=cp.user_id WHERE """+where+' ORDER BY u.handle,u.id LIMIT %s OFFSET %s',(*args,limit,offset));rows=await cur.fetchall()
     return {'items':rows,'total':total}
 @router.get('/creators/{uid}')
 async def profile(uid:str,user:User,offset:int=Query(0,ge=0,le=100000)):
+    from ..services.learning_rewards import level_bounds,league_division
+    from ..services import weekly_boards
     async with cursor() as cur:
         row=await target(cur,uid,user)
         await cur.execute('SELECT EXISTS(SELECT 1 FROM creator_follows WHERE follower_id=%s AND creator_id=%s) AS following,(SELECT count(*)::int FROM creator_follows f WHERE f.creator_id=%s AND '+audience.subject_sql('f.follower_id')+') AS followers',(user,uid,uid));row.update(await cur.fetchone())
         await cur.execute("SELECT count(*)::int AS n FROM materials WHERE author_id=%s AND status='published' AND published_revision IS NOT NULL",(uid,));row['materials']=(await cur.fetchone())['n']
         row['community']=await profile_standing(cur,uid,user)
+        # Level, scholar title, target exams, and opted-in competitive stats
+        await cur.execute('SELECT COALESCE(sum(xp),0)::int AS lifetime_xp FROM reward_ledger WHERE user_id=%s',(uid,))
+        lifetime_xp=(await cur.fetchone())['lifetime_xp']
+        lvl=level_bounds(lifetime_xp)
+        row['level']=lvl['level']
+        row['scholar_title']=lvl['title']
+        await cur.execute("""SELECT c.id,c.title,b.is_primary
+            FROM user_exam_bookmarks b JOIN collections c ON c.id=b.collection_id
+            WHERE b.user_id=%s AND c.kind='exam' AND c.visibility='public'
+            ORDER BY b.is_primary DESC,b.created_at DESC LIMIT 6""",(uid,))
+        row['target_exams']=await cur.fetchall()
+        await cur.execute('SELECT COALESCE(board_public,false) AS board_public,district,COALESCE(current_streak_days,0)::int AS streak_days FROM reward_profiles WHERE user_id=%s',(uid,))
+        rp=await cur.fetchone()
+        board_public=bool(rp['board_public']) if rp else False
+        row['board_public']=board_public
+        show_scores=board_public or uid==user
+        row['district']=(rp['district'] if rp and show_scores else None)
+        if show_scores:
+            clock=await weekly_boards.window(cur)
+            await cur.execute("""SELECT COALESCE(sum(xp),0)::int AS weekly_xp FROM reward_ledger
+                WHERE user_id=%s AND created_at>=%s AND created_at<%s AND created_at<=%s""",(uid,clock['start_at'],clock['end_at'],clock['as_of']))
+            weekly_xp=(await cur.fetchone())['weekly_xp']
+            await cur.execute("""SELECT count(*)::int AS plays, COALESCE(max(m.score),0)::int AS best
+                FROM game_daily_entries e JOIN game_rooms r ON r.id=e.room_id AND r.state='finished'
+                JOIN game_members m ON m.room_id=r.id AND m.user_id=e.user_id AND m.left_at IS NULL
+                WHERE e.user_id=%s AND m.correct+m.wrong>0""",(uid,))
+            daily_row=await cur.fetchone()
+            await cur.execute("""SELECT count(*)::int AS plays, COALESCE(max(m.score),0)::int AS best
+                FROM game_cup_entries e JOIN game_rooms r ON r.id=e.room_id AND r.state='finished'
+                JOIN game_members m ON m.room_id=r.id AND m.user_id=e.user_id AND m.left_at IS NULL
+                WHERE e.user_id=%s AND m.correct+m.wrong>0""",(uid,))
+            cup_row=await cur.fetchone()
+            await cur.execute("""SELECT count(*)::int AS wins FROM game_members m JOIN game_rooms r ON r.id=m.room_id
+                WHERE m.user_id=%s AND r.mode='duel' AND r.state='finished' AND m.left_at IS NULL AND m.correct+m.wrong>0
+                AND EXISTS(SELECT 1 FROM game_members o WHERE o.room_id=r.id AND o.user_id<>m.user_id AND o.left_at IS NULL AND o.correct+o.wrong>0)
+                AND NOT EXISTS(SELECT 1 FROM game_members o WHERE o.room_id=r.id AND o.user_id<>m.user_id AND o.left_at IS NULL AND o.score>=m.score)""",(uid,))
+            duel_wins=(await cur.fetchone())['wins']
+            row['scores']={
+                'weekly_xp':weekly_xp,
+                'league':league_division(weekly_xp)['name'],
+                'lifetime_xp':lifetime_xp,
+                'streak_days':rp['streak_days'] if rp else 0,
+                'daily_five_plays':daily_row['plays'] if daily_row else 0,
+                'daily_five_best':daily_row['best'] if daily_row else 0,
+                'cup_plays':cup_row['plays'] if cup_row else 0,
+                'cup_best':cup_row['best'] if cup_row else 0,
+                'duel_wins':duel_wins,
+            }
+        else:
+            row['scores']=None
         # Honor the existing contribution attribution consent independently.
         await cur.execute("SELECT c.id,c.title,c.kind,c.canonical_id,c.updated_at FROM bank_contributions c JOIN users u ON u.id=c.author_id WHERE c.author_id=%s AND c.state='published' AND u.contribution_public AND NOT EXISTS(SELECT 1 FROM mock_sessions ms WHERE ms.user_id=%s AND ms.submitted_at IS NULL AND c.canonical_id=ANY(ms.question_ids)) ORDER BY c.updated_at DESC,c.id LIMIT 13 OFFSET %s",(uid,user,offset));contributions=await cur.fetchall()
     return {**row,'is_self':uid==user,'contributions':contributions[:12],'has_more_contributions':len(contributions)>12}

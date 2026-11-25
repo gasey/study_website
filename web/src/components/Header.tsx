@@ -60,7 +60,12 @@ const MENU_CARD_META: Record<string, { tone: MenuTone; tag: string; icon: string
   'practice-build': { tone: 'cobalt', tag: 'Custom', icon: 'M12 5v14M5 12h14' },
   tests: { tone: 'amber', tag: 'Timed', icon: 'M12 7v5l3 2M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z' },
   quest: { tone: 'rose', tag: '16-Bit RPG', icon: 'M14.5 17.5 3 6V3h3l11.5 11.5M13 19l6-6m-3 3 4 4m-1 1 2-2' },
-  games: { tone: 'violet', tag: 'Daily 5', icon: 'M6 12h4M8 10v4m7-2h.01M18 10h.01M5 7h14a3 3 0 0 1 3 3v4a4 4 0 0 1-4 4h-2l-2-2h-4l-2 2H6a4 4 0 0 1-4-4v-4a3 3 0 0 1 3-3Z' },
+  games: { tone: 'violet', tag: 'Arcade', icon: 'M6 12h4M8 10v4m7-2h.01M18 10h.01M5 7h14a3 3 0 0 1 3 3v4a4 4 0 0 1-4 4h-2l-2-2h-4l-2 2H6a4 4 0 0 1-4-4v-4a3 3 0 0 1 3-3Z' },
+  'games-daily': { tone: 'amber', tag: 'Daily 5', icon: 'M12 3v3m0 12v3M4.9 4.9l2.1 2.1m10 10 2.1 2.1M3 12h3m12 0h3M4.9 19.1 7 17m10-10 2.1-2.1M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z' },
+  'games-cup': { tone: 'cobalt', tag: 'Weekend', icon: 'M6 4h12v4a6 6 0 0 1-12 0V4ZM6 6H3v2a3 3 0 0 0 3 3m12-5h3v2a3 3 0 0 1-3 3M12 14v5m-4 0h8' },
+  'games-duel': { tone: 'teal', tag: '1v1 Live', icon: 'M8 12h8M12 8v8M5 6h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z' },
+  'games-speed': { tone: 'violet', tag: '60s Blitz', icon: 'M13 2 4 14h7l-1 8 9-12h-7l1-8Z' },
+  'games-standings': { tone: 'emerald', tag: 'Ranks', icon: 'M5 19V11m7 8V5m7 14v-7' },
   bank: { tone: 'emerald', tag: 'Full Bank', icon: 'M4 6h16M4 12h16M4 18h16' },
   atlas: { tone: 'emerald', tag: 'Maps', icon: 'M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2V6Zm6-2v14m6-12v14' },
   chronicle: { tone: 'rose', tag: 'Timeline', icon: 'M12 4v16M8 8h8M6 14h12M9 19h6' },
@@ -362,10 +367,12 @@ export default function Header() {
         : id === 'library'
           ? /^\/(library|subjects|english|arithmetic|mizo)(\/|$)/.test(pathname)
           : id === 'practice'
-            ? /^\/(practice|bank|tests|revise|games|vault|results)(\/|$)/.test(pathname)
-            : id === 'guides'
-              ? /^\/(guides|atlas|chronicle|stats|desk|index)(\/|$)/.test(pathname)
-              : /^\/(community|creators|materials|create)(\/|$)/.test(pathname)
+            ? /^\/(practice|bank|tests|revise|vault|results)(\/|$)/.test(pathname)
+            : id === 'games'
+              ? /^\/(games|profile\/rewards)(\/|$)/.test(pathname)
+              : id === 'guides'
+                ? /^\/(guides|atlas|chronicle|stats|desk|index)(\/|$)/.test(pathname)
+                : /^\/(community|creators|materials|create)(\/|$)/.test(pathname)
 
   const staff = reviewDestinations(access)
   const activeNavParent = menu ? NAV_ITEMS.find((i) => i.id === menu) || null : null

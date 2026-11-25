@@ -14,7 +14,7 @@ export type DestinationSurface = 'nav' | 'tabs' | 'quick' | 'index' | 'quickfind
 
 /** Which desktop nav item opens a dropdown containing this destination.
  *  A destination with no `menu` never appears in a dropdown. */
-export type NavMenu = 'exams' | 'subjects' | 'practice' | 'guides' | 'community'
+export type NavMenu = 'exams' | 'subjects' | 'practice' | 'games' | 'guides' | 'community'
 
 export type NavIconName = 'home' | 'exam' | 'library' | 'desk' | 'profile' | 'search' | 'create' | 'more'
 
@@ -72,11 +72,22 @@ export const SITE_MAP: readonly Destination[] = [
     label: 'Practice & Mock',
     shortLabel: 'Practice',
     section: 'practice',
-    blurb: 'Untimed Practice drills with instant explanations and Full-Paper Mocks in one place.',
+    blurb: 'Guided 50-by-50 & Step-by-Step Practice with instant explanations and Full-Paper Mocks.',
     surfaces: ['nav', 'tabs', 'index', 'quickfind'],
     menu: 'practice',
     icon: 'desk',
     keywords: 'mock test timed untimed quiz questions',
+  },
+  {
+    id: 'games',
+    path: '/games',
+    label: 'Games',
+    section: 'practice',
+    blurb: 'Finna Quest 16-bit RPG, Daily Five, Weekly Cup, 1v1 Duels, Speed Sprint and Leaderboards.',
+    surfaces: ['nav', 'index', 'quickfind'],
+    menu: 'games',
+    icon: 'desk',
+    keywords: 'games play finna quest rpg daily five weekly cup duel speed gauntlet leaderboard',
   },
   {
     id: 'guides',
@@ -215,6 +226,7 @@ export const SITE_MAP: readonly Destination[] = [
     menu: 'practice',
     keywords: 'shared mock test links catalog',
   },
+  // Games dropdown items
   {
     id: 'quest',
     path: '/games/quest',
@@ -222,18 +234,58 @@ export const SITE_MAP: readonly Destination[] = [
     section: 'practice',
     blurb: 'Battle pixel-art Realm Guardians across 12 floors, Boss fights & Daily 10-Q Gauntlet.',
     surfaces: ['index', 'quickfind'],
-    menu: 'practice',
+    menu: 'games',
     keywords: 'finna quest rpg boss expedition endless tower daily gauntlet pixel game',
   },
   {
-    id: 'games',
-    path: '/games',
-    label: 'Play & Daily Five',
+    id: 'games-daily',
+    path: '/games?mode=daily',
+    label: 'Daily Five',
     section: 'practice',
-    blurb: 'Daily Five, Finna Quest, Topic Trail, duels and party games over verified questions.',
+    blurb: 'Today’s 5-question ranked sprint — keep your daily streak alive on the board.',
     surfaces: ['index', 'quickfind'],
-    menu: 'practice',
-    keywords: 'daily five topic trail duel cup party games',
+    menu: 'games',
+    keywords: 'daily five sprint streak ranked game',
+  },
+  {
+    id: 'games-cup',
+    path: '/games?mode=cup',
+    label: 'Weekly Cup',
+    section: 'practice',
+    blurb: 'Weekend 15-question competitive tournament across MPSC & Mizoram recruitment.',
+    surfaces: ['index', 'quickfind'],
+    menu: 'games',
+    keywords: 'weekly cup tournament weekend ranked leaderboard',
+  },
+  {
+    id: 'games-duel',
+    path: '/games?mode=duel',
+    label: '1v1 Duel & Party',
+    section: 'practice',
+    blurb: 'Challenge a friend or live opponent in fast-paced 20-second quiz rounds.',
+    surfaces: ['index', 'quickfind'],
+    menu: 'games',
+    keywords: 'duel party room multiplayer friends quiz',
+  },
+  {
+    id: 'games-speed',
+    path: '/games?mode=speed',
+    label: 'Speed & Gauntlet',
+    section: 'practice',
+    blurb: '60-second Speed Sprint and 20-gate 3-life Gauntlet survival runs.',
+    surfaces: ['index', 'quickfind'],
+    menu: 'games',
+    keywords: 'speed sprint gauntlet survival blitz',
+  },
+  {
+    id: 'games-standings',
+    path: '/profile/rewards',
+    label: 'Leaderboards & Quests',
+    section: 'you',
+    blurb: 'Weekly XP divisions, Daily Five standings, daily quests and reward redemptions.',
+    surfaces: ['index', 'quickfind'],
+    menu: 'games',
+    keywords: 'leaderboard standings weekly xp league quests rewards',
   },
   {
     id: 'bank',

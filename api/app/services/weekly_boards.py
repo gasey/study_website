@@ -21,11 +21,21 @@ async def project(cur,scores,params,user,clock):
     ), top AS (SELECT * FROM ranked ORDER BY rank,handle,user_id LIMIT 10),
     neighbors AS (SELECT * FROM ranked WHERE rank BETWEEN (SELECT rank-2 FROM viewer) AND (SELECT rank+2 FROM viewer)),
     nearby AS (SELECT * FROM neighbors ORDER BY (user_id=%(viewer)s) DESC,rank,handle,user_id LIMIT 25),
-    shown AS (SELECT * FROM top UNION SELECT * FROM nearby)
+    shown AS (SELECT * FROM top UNION SELECT * FROM nearby),
+    enriched AS (
+      SELECT s.user_id, s.handle, s.score, s.rank,
+        u.avatar,
+        COALESCE(cp.public, false) AS profile_public,
+        CASE WHEN COALESCE(cp.public, false) OR s.user_id=%(viewer)s THEN s.user_id ELSE NULL END AS public_user_id,
+        GREATEST(1, floor(sqrt(GREATEST(0, COALESCE((SELECT sum(rl.xp) FROM reward_ledger rl WHERE rl.user_id=s.user_id), 0)) / 40.0)))::int AS level
+      FROM shown s
+      JOIN users u ON u.id=s.user_id
+      LEFT JOIN creator_profiles cp ON cp.user_id=s.user_id
+    )
     SELECT (SELECT count(*)::int FROM ranked) AS total,
-      COALESCE((SELECT jsonb_agg(jsonb_build_object('handle',handle,'score',score,'rank',rank) ORDER BY rank,handle,user_id) FROM top),'[]') AS top,
-      COALESCE((SELECT jsonb_agg(jsonb_build_object('handle',handle,'score',score,'rank',rank) ORDER BY rank,handle,user_id) FROM nearby),'[]') AS nearby,
-      COALESCE((SELECT jsonb_agg(jsonb_build_object('handle',handle,'score',score,'rank',rank) ORDER BY rank,handle,user_id) FROM shown),'[]') AS items,
+      COALESCE((SELECT jsonb_agg(jsonb_build_object('handle',e.handle,'score',e.score,'rank',e.rank,'avatar',e.avatar,'level',e.level,'profile_public',e.profile_public,'user_id',e.public_user_id) ORDER BY e.rank,e.handle,e.user_id) FROM top t JOIN enriched e ON e.user_id=t.user_id),'[]') AS top,
+      COALESCE((SELECT jsonb_agg(jsonb_build_object('handle',e.handle,'score',e.score,'rank',e.rank,'avatar',e.avatar,'level',e.level,'profile_public',e.profile_public,'user_id',e.public_user_id) ORDER BY e.rank,e.handle,e.user_id) FROM nearby n JOIN enriched e ON e.user_id=n.user_id),'[]') AS nearby,
+      COALESCE((SELECT jsonb_agg(jsonb_build_object('handle',e.handle,'score',e.score,'rank',e.rank,'avatar',e.avatar,'level',e.level,'profile_public',e.profile_public,'user_id',e.public_user_id) ORDER BY e.rank,e.handle,e.user_id) FROM enriched e),'[]') AS items,
       (SELECT jsonb_build_object('score',score,'rank',rank,'public',public) FROM viewer) AS placement,
       (SELECT count(*)>25 FROM neighbors) AS neighborhood_truncated''',params|{'viewer':user})
     return dict(await cur.fetchone())|{'period':'week','timezone':'Asia/Kolkata',

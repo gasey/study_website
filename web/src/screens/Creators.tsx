@@ -1,6 +1,6 @@
 import {ReputationSummary,useCommunityEpoch,type CommunityReputation} from '../components/ContributorStanding'
 import BioModeration from '../components/BioModeration'
-import {UserAvatar} from '../components/AvatarArt'
+import AvatarArt, {DEFAULT_HERO_LOOK, UserAvatar} from '../components/AvatarArt'
 import type {AvatarLook} from '../lib/avatar'
 import {useEffect,useState,type FormEvent} from 'react'
 import {Link,useLocation,useNavigate,useParams,useSearchParams} from 'react-router-dom'
@@ -9,13 +9,15 @@ import {MaterialCard} from '../components/MaterialDiscovery'
 const BUTTON='inline-flex min-h-11 items-center justify-center rounded-pill border border-hairline bg-card px-4 py-2 text-sm font-semibold disabled:opacity-40'
 const INPUT='min-h-11 w-full min-w-0 rounded-[8px] border border-hairline bg-card px-3 py-2 text-sm'
 const SHELL='mx-auto max-w-[1180px] px-5 pb-24 pt-8 sm:px-6'
-interface Creator{avatar?:AvatarLook|null;id:string;handle:string;bio:string;materials:number}
-interface PublicCreator extends Creator{community:CommunityReputation;public:boolean;following:boolean;followers:number;is_self:boolean;contributions:{id:string;title:string;kind:string;canonical_id:string|null;updated_at:string}[];has_more_contributions:boolean}
+interface TargetExam{id:string;title:string;is_primary?:boolean}
+interface LearnerScores{weekly_xp:number;league:string;lifetime_xp:number;streak_days:number;daily_five_plays:number;daily_five_best:number;cup_plays:number;cup_best:number;duel_wins:number}
+interface Creator{avatar?:AvatarLook|null;id:string;handle:string;bio:string;materials:number;level?:number;target_exams?:TargetExam[]}
+interface PublicCreator extends Creator{scholar_title?:string;district?:string|null;board_public?:boolean;scores?:LearnerScores|null;community:CommunityReputation;public:boolean;following:boolean;followers:number;is_self:boolean;contributions:{id:string;title:string;kind:string;canonical_id:string|null;updated_at:string}[];has_more_contributions:boolean}
 function ErrorNotice({error}:{error:string}){return error?<p role="alert" className="mt-4 rounded-[10px] border border-hairline bg-card p-4 text-sm text-mypick">{error} <Link to="/login" className="text-link underline">Sign in</Link></p>:null}
 function PageButtons({offset,more,onPage}:{offset:number;more:boolean;onPage:(n:number)=>void}){return <nav aria-label="Creator pages" className="mt-5 flex justify-between gap-3"><button disabled={!offset} className={BUTTON} onClick={()=>onPage(Math.max(0,offset-12))}>← Previous</button><button disabled={!more} className={BUTTON} onClick={()=>onPage(offset+12)}>Next →</button></nav>}
 export function CreatorDirectory(){const [params,setParams]=useSearchParams();const q=params.get('q')||'',offset=Math.max(0,Number(params.get('offset'))||0);const [data,setData]=useState<{items:Creator[];total:number}|null>(null),[error,setError]=useState(''),[retry,setRetry]=useState(0)
  useEffect(()=>{let live=true;setData(null);setError('');const timer=setTimeout(()=>contentRequest<{items:Creator[];total:number}>('/creators?'+new URLSearchParams({q,offset:String(offset)})).then(r=>{if(live)setData(r)}).catch(e=>{if(live)setError(e.message)}),250);return()=>{live=false;clearTimeout(timer)}},[q,offset,retry])
- return <main className={SHELL}><div className="font-mono text-xs uppercase tracking-widest text-[#5E2F98]">Community creators</div><h1 className="mt-2 font-display text-3xl">People to learn from</h1><p className="mt-3 max-w-[700px] text-base leading-relaxed text-secondary">Discover creators who chose to share a public profile. Follow their published study materials in your Following feed.</p><div className="mt-5 flex flex-wrap gap-3"><Link to="/creators/settings" className={BUTTON}>My visibility & follows</Link><Link to="/community?tab=following" className={BUTTON}>Following feed →</Link></div><input aria-label="Search creator handles" maxLength={100} value={q} onChange={e=>{setParams({q:e.target.value})}} type="search" placeholder="Search public handles" className={INPUT+' mt-5'}/><ErrorNotice error={error}/>{error&&<button className={BUTTON+' mt-3'} onClick={()=>setRetry(n=>n+1)}>Retry</button>}{!data&&!error&&<p role="status" className="mt-5 text-muted">Loading creators…</p>}{data&&<><div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{data.items.map(c=><Link key={c.id} to={'/creators/'+encodeURIComponent(c.id)} className="min-w-0 rounded-[14px] border border-hairline bg-card p-5 hover:border-ink"><UserAvatar look={c.avatar} initials={c.handle} size={48}/><h2 className="mt-3 break-words font-display text-xl">{c.handle}</h2><p className="mt-2 line-clamp-3 break-words text-sm text-secondary">{c.bio||'Study materials and reviewed contributions.'}</p><p className="mt-4 font-mono text-xs text-muted">{c.materials} published materials</p></Link>)}</div>{!data.items.length&&<p className="mt-5 rounded-[14px] border border-hairline bg-card p-6 text-secondary">No public creators match yet. You can choose to publish your own profile in visibility settings.</p>}<PageButtons offset={offset} more={offset+12<data.total} onPage={n=>{const next=new URLSearchParams(params);next.set('offset',String(n));setParams(next)}}/></>}</main>
+ return <main className={SHELL}><div className="font-mono text-xs uppercase tracking-widest text-[#5E2F98]">Community learners &amp; creators</div><h1 className="mt-2 font-display text-3xl">People to learn from</h1><p className="mt-3 max-w-[700px] text-base leading-relaxed text-secondary">Discover learners and creators who share a public profile. Inspect their target exams, pixel hero, scores, and published study materials.</p><div className="mt-5 flex flex-wrap gap-3"><Link to="/creators/settings" className={BUTTON}>My visibility &amp; follows</Link><Link to="/community?tab=following" className={BUTTON}>Following feed →</Link></div><input aria-label="Search learner handles" maxLength={100} value={q} onChange={e=>{setParams({q:e.target.value})}} type="search" placeholder="Search public handles" className={INPUT+' mt-5'}/><ErrorNotice error={error}/>{error&&<button className={BUTTON+' mt-3'} onClick={()=>setRetry(n=>n+1)}>Retry</button>}{!data&&!error&&<p role="status" className="mt-5 text-muted">Loading learners…</p>}{data&&<><div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{data.items.map(c=><Link key={c.id} to={'/creators/'+encodeURIComponent(c.id)} className="flex min-w-0 flex-col justify-between rounded-[16px] border border-hairline bg-card p-5 transition hover:border-ink"><div><div className="flex items-center gap-3"><UserAvatar look={c.avatar} initials={c.handle} size={50}/><div className="min-w-0"><h2 className="truncate font-display text-xl">{c.handle}</h2>{c.level!=null&&<span className="inline-flex rounded-full bg-canvas px-2 py-0.5 font-mono text-[11px] font-bold text-secondary">Lv {c.level}</span>}</div></div><p className="mt-3 line-clamp-3 break-words text-sm text-secondary">{c.bio||'Learning and sharing study materials on Finna.'}</p>{!!c.target_exams?.length&&<div className="mt-3 flex flex-wrap gap-1.5">{c.target_exams.map(ex=><span key={ex.id} className="rounded-full border border-hairline bg-canvas px-2.5 py-0.5 text-[11px] font-semibold text-ink">{ex.title}</span>)}</div>}</div><p className="mt-4 font-mono text-xs text-muted">{c.materials} published materials</p></Link>)}</div>{!data.items.length&&<p className="mt-5 rounded-[14px] border border-hairline bg-card p-6 text-secondary">No public profiles match yet. You can choose to publish your own profile in visibility settings.</p>}<PageButtons offset={offset} more={offset+12<data.total} onPage={n=>{const next=new URLSearchParams(params);next.set('offset',String(n));setParams(next)}}/></>}</main>
 }
 export function FollowingMaterials({embedded=false}:{embedded?:boolean}={}){const Heading=embedded?'h2':'h1';return <div className={embedded?'mt-4 min-w-0':SHELL}><Heading className={embedded?'font-display text-xl':'font-display text-3xl'}>From creators you follow</Heading><p className="mt-3 text-sm text-secondary">New approved materials, most recent first. Private profiles and blocked creators do not appear.</p><Link to="/creators" className={BUTTON+' mt-4'}>Find creators →</Link><CreatorMaterials following embedded={embedded}/></div>}
 function CreatorMaterials({uid,following=false,embedded=false}:{uid?:string;following?:boolean;embedded?:boolean}){const [offset,setOffset]=useState(0),[data,setData]=useState<{items:MaterialItem[];total:number}|null>(null),[error,setError]=useState(''),[retry,setRetry]=useState(0)
@@ -27,7 +29,101 @@ export default function CreatorProfile(){const {generation,version}=useCommunity
  useEffect(()=>{setOffset(0);setTab('materials');setReportOpen(false);setBlockConfirm(false);setNotice('');setReport({reason:'spam',note:''})},[id,version])
  useEffect(()=>{let live=true;const run=++generation.current;setData(null);setError('');contentRequest<PublicCreator>('/creators/'+encodeURIComponent(id)+'?offset='+offset).then(r=>{if(live&&run===generation.current)setData(r)}).catch(e=>{if(live&&run===generation.current)setError(e.message)});return()=>{live=false;++generation.current}},[id,offset,refresh,version])
  async function act(kind:string,body:unknown){setBusy(true);setError('');try{await contentRequest('/creators/'+encodeURIComponent(id)+'/'+kind,body);if(kind==='block'){nav('/creators/settings');return}if(kind==='report'){setNotice('Report sent to the owner for review.');setReportOpen(false)}else setRefresh(n=>n+1)}catch(e){setError((e as Error).message)}finally{setBusy(false)}}
- return <main className={SHELL}><Link to="/creators" className="text-sm text-link">← Find creators</Link><ErrorNotice error={error}/>{!data&&!error&&<p role="status" className="mt-5 text-muted">Loading creator…</p>}{notice&&<p role="status" className="mt-4 text-sm text-practice-dark">{notice}</p>}{data&&<><header className="mt-5 flex flex-wrap items-center gap-5 rounded-[14px] border border-hairline bg-card p-6"><UserAvatar look={data.avatar} initials={data.handle} size={90}/><div className="min-w-0 flex-1"><div className="font-mono text-xs uppercase text-[#5E2F98]">{data.public?'Public creator':'Your private creator preview'}</div><h1 className="mt-2 break-words font-display text-3xl leading-tight">{data.handle}</h1><p className="mt-3 whitespace-pre-wrap break-words text-base leading-relaxed text-secondary">{data.bio||'Learning and sharing study materials.'}</p></div><div className="flex flex-wrap gap-2">{data.is_self?<Link to="/creators/settings" className={BUTTON}>Edit visibility</Link>:<><button disabled={busy} aria-pressed={data.following} onClick={()=>void act('follow',{enabled:!data.following})} className={BUTTON+(data.following?' !bg-[#EEE6F7]':' !bg-ink !text-paper')}>{data.following?'✓ Following':'Follow creator'}</button><button disabled={busy} onClick={()=>setBlockConfirm(v=>!v)} className={BUTTON}>Block</button><button disabled={busy} onClick={()=>setReportOpen(v=>!v)} className={BUTTON}>Report</button></>}</div></header>{data.community&&<ReputationSummary value={data.community}/>}{blockConfirm&&<section aria-label="Confirm creator block" className="mt-4 rounded-[12px] border border-hairline bg-card p-5"><h2 className="font-display text-xl">Block this creator?</h2><p className="mt-2 text-sm text-secondary">Follows in both directions will be removed. Their materials, profile, discussions and desk messages will be hidden while signed in, and pending desk invitations will be cancelled. Blocking does not remove either of you from a shared desk; you can leave it in desk settings. You can unblock them in visibility settings.</p><div className="mt-3 flex gap-3"><button disabled={busy} className={BUTTON+' text-mypick'} onClick={()=>void act('block',{enabled:true})}>Confirm block</button><button disabled={busy} className={BUTTON} onClick={()=>setBlockConfirm(false)}>Cancel</button></div></section>}<div className="mt-3 grid gap-3 sm:grid-cols-2"><div className="rounded-[14px] border border-hairline bg-card p-4"><strong className="font-display text-2xl">{data.materials}</strong><p className="text-sm text-secondary">published materials</p></div><div className="rounded-[14px] border border-hairline bg-card p-4"><strong className="font-display text-2xl">{data.followers}</strong><p className="text-sm text-secondary">followers</p></div></div>{reportOpen&&<form onSubmit={(e:FormEvent)=>{e.preventDefault();void act('report',report)}} className="mt-4 rounded-[14px] border border-hairline bg-card p-5"><label className="block text-sm">Reason<select className={INPUT+' mt-2'} value={report.reason} onChange={e=>setReport({...report,reason:e.target.value})}>{['spam','harassment','impersonation','other'].map(r=><option key={r}>{r}</option>)}</select></label><label className="mt-3 block text-sm">What should be reviewed?<textarea required minLength={10} maxLength={2000} value={report.note} onChange={e=>setReport({...report,note:e.target.value})} className={INPUT+' mt-2'}/></label><button disabled={busy} className={BUTTON+' mt-3'}>Send report</button></form>}<div className="mt-5 flex gap-2" role="group" aria-label="Creator content"><button aria-pressed={tab==='materials'} onClick={()=>setTab('materials')} className={BUTTON}>Materials</button><button aria-pressed={tab==='contributions'} onClick={()=>setTab('contributions')} className={BUTTON}>Reviewed contributions</button></div>{tab==='materials'?<CreatorMaterials uid={id}/>:<section className="mt-5 space-y-3">{data.contributions.map(c=><Link key={c.id} to={c.canonical_id?'/bank/'+encodeURIComponent(c.canonical_id):'/community/questions'} className="block rounded-[12px] border border-hairline bg-card p-5"><div className="font-mono text-xs uppercase text-muted">Published · {c.kind.replace(/_/g,' ')}</div><h2 className="mt-2 break-words font-display text-xl">{c.title}</h2><p className="mt-2 text-xs text-muted">{new Date(c.updated_at).toLocaleDateString('en-IN')}</p></Link>)}{!data.contributions.length&&<p className="rounded-[12px] border border-hairline bg-card p-5 text-secondary">No publicly attributed published bank contributions yet.</p>}<PageButtons offset={offset} more={data.has_more_contributions} onPage={setOffset}/><p className="text-xs text-muted">Contribution attribution follows the creator’s separate contribution-visibility setting.</p></section>}</>}</main>
+ return <main className={SHELL}>
+  <div className="flex flex-wrap items-center justify-between gap-3">
+   <Link to="/creators" className="text-sm font-semibold text-link">← All learners &amp; creators</Link>
+   <Link to="/profile/rewards" className="text-sm font-semibold text-link">Weekly standings →</Link>
+  </div>
+  <ErrorNotice error={error}/>
+  {!data&&!error&&<p role="status" className="mt-5 text-muted">Loading learner profile…</p>}
+  {notice&&<p role="status" className="mt-4 text-sm text-practice-dark">{notice}</p>}
+  {data&&<>
+   {/* Sleek Learner Hero Card with animated 16-bit Pixel RPG Sprite */}
+   <header className="lp-hero mt-5">
+    <div className="lp-sprite-stage" aria-hidden="true">
+     <AvatarArt look={data.avatar || DEFAULT_HERO_LOOK} variant="sprite" size={114} animate label={`${data.handle} pixel hero`}/>
+     <span className="lp-level-tag">Lv {data.level ?? 1}</span>
+    </div>
+    <div className="lp-hero-body">
+     <div className="lp-eyebrow-row">
+      <span className="lp-eyebrow">{data.public ? 'Public learner profile' : 'Your private profile preview'}</span>
+      {data.scholar_title && <span className="lp-chip">{data.scholar_title}</span>}
+      {data.district && <span className="lp-chip">📍 {data.district}</span>}
+     </div>
+     <h1 className="lp-handle">@{data.handle}</h1>
+     <p className="lp-bio">{data.bio || 'Preparing for Mizoram & MPSC exams on Finna.'}</p>
+     {!!data.target_exams?.length && (
+      <div className="lp-exams" aria-label="Target exams">
+       <span className="lp-exams-label">Preparing for</span>
+       {data.target_exams.map(ex => (
+        <Link key={ex.id} to={`/exams/${encodeURIComponent(ex.id)}`} className={`lp-exam-pill${ex.is_primary ? ' is-primary' : ''}`}>
+         {ex.is_primary ? '★ ' : ''}{ex.title}
+        </Link>
+       ))}
+      </div>
+     )}
+    </div>
+    <div className="lp-actions">
+     {data.is_self ? (
+      <>
+       <Link to="/profile/avatar" className="lp-btn lp-btn--gold">Edit Pixel Hero</Link>
+       <Link to="/creators/settings" className="lp-btn">Visibility &amp; Bio</Link>
+      </>
+     ) : (
+      <>
+       <button disabled={busy} aria-pressed={data.following} onClick={()=>void act('follow',{enabled:!data.following})} className={`lp-btn ${data.following ? 'lp-btn--following' : 'lp-btn--gold'}`}>
+        {data.following ? '✓ Following' : '+ Follow'}
+       </button>
+       <button disabled={busy} onClick={()=>setBlockConfirm(v=>!v)} className="lp-btn">Block</button>
+       <button disabled={busy} onClick={()=>setReportOpen(v=>!v)} className="lp-btn">Report</button>
+      </>
+     )}
+    </div>
+   </header>
+
+   {/* Opted-in Weekly XP, Daily Five, Cup & Streak Score Tiles */}
+   {data.scores ? (
+    <section aria-label="Learner scores and activity" className="lp-score-grid mt-4">
+     <article className="lp-score-tile is-gold">
+      <span>Weekly XP · {data.scores.league}</span>
+      <strong>{data.scores.weekly_xp.toLocaleString('en-IN')} <small>XP</small></strong>
+      <p>{data.scores.lifetime_xp.toLocaleString('en-IN')} lifetime XP</p>
+     </article>
+     <article className="lp-score-tile is-teal">
+      <span>Daily Five</span>
+      <strong>{data.scores.daily_five_best.toLocaleString('en-IN')} <small>best</small></strong>
+      <p>{data.scores.daily_five_plays} completed runs</p>
+     </article>
+     <article className="lp-score-tile is-cobalt">
+      <span>Weekly Cup</span>
+      <strong>{data.scores.cup_best.toLocaleString('en-IN')} <small>best</small></strong>
+      <p>{data.scores.cup_plays} cup entries</p>
+     </article>
+     <article className="lp-score-tile is-violet">
+      <span>Streak &amp; Duels</span>
+      <strong>{data.scores.streak_days}d <small>streak</small></strong>
+      <p>{data.scores.duel_wins} duel {data.scores.duel_wins === 1 ? 'win' : 'wins'}</p>
+     </article>
+    </section>
+   ) : (
+    <p className="mt-4 rounded-[12px] border border-hairline bg-card px-4 py-3 text-xs text-secondary">
+     {data.is_self
+      ? 'Your scores are currently hidden from others. Opt into leaderboard visibility in Profile → Rewards to display your Weekly XP, Daily Five & Cup tiles here.'
+      : 'This learner keeps their competitive scores private.'}
+    </p>
+   )}
+
+   {data.community&&<ReputationSummary value={data.community}/>}
+   {blockConfirm&&<section aria-label="Confirm creator block" className="mt-4 rounded-[12px] border border-hairline bg-card p-5"><h2 className="font-display text-xl">Block this learner?</h2><p className="mt-2 text-sm text-secondary">Follows in both directions will be removed. Their materials, profile, discussions and desk messages will be hidden while signed in, and pending desk invitations will be cancelled. You can unblock them anytime in visibility settings.</p><div className="mt-3 flex gap-3"><button disabled={busy} className={BUTTON+' text-mypick'} onClick={()=>void act('block',{enabled:true})}>Confirm block</button><button disabled={busy} className={BUTTON} onClick={()=>setBlockConfirm(false)}>Cancel</button></div></section>}
+   <div className="mt-3 grid gap-3 sm:grid-cols-2">
+    <div className="rounded-[14px] border border-hairline bg-card p-4"><strong className="font-display text-2xl">{data.materials}</strong><p className="text-sm text-secondary">published materials</p></div>
+    <div className="rounded-[14px] border border-hairline bg-card p-4"><strong className="font-display text-2xl">{data.followers}</strong><p className="text-sm text-secondary">followers</p></div>
+   </div>
+   {reportOpen&&<form onSubmit={(e:FormEvent)=>{e.preventDefault();void act('report',report)}} className="mt-4 rounded-[14px] border border-hairline bg-card p-5"><label className="block text-sm">Reason<select className={INPUT+' mt-2'} value={report.reason} onChange={e=>setReport({...report,reason:e.target.value})}>{['spam','harassment','impersonation','other'].map(r=><option key={r}>{r}</option>)}</select></label><label className="mt-3 block text-sm">What should be reviewed?<textarea required minLength={10} maxLength={2000} value={report.note} onChange={e=>setReport({...report,note:e.target.value})} className={INPUT+' mt-2'}/></label><button disabled={busy} className={BUTTON+' mt-3'}>Send report</button></form>}
+   <div className="mt-5 flex gap-2" role="group" aria-label="Creator content"><button aria-pressed={tab==='materials'} onClick={()=>setTab('materials')} className={BUTTON}>Materials</button><button aria-pressed={tab==='contributions'} onClick={()=>setTab('contributions')} className={BUTTON}>Reviewed contributions</button></div>
+   {tab==='materials'?<CreatorMaterials uid={id}/>:<section className="mt-5 space-y-3">{data.contributions.map(c=><Link key={c.id} to={c.canonical_id?'/bank/'+encodeURIComponent(c.canonical_id):'/community/questions'} className="block rounded-[12px] border border-hairline bg-card p-5"><div className="font-mono text-xs uppercase text-muted">Published · {c.kind.replace(/_/g,' ')}</div><h2 className="mt-2 break-words font-display text-xl">{c.title}</h2><p className="mt-2 text-xs text-muted">{new Date(c.updated_at).toLocaleDateString('en-IN')}</p></Link>)}{!data.contributions.length&&<p className="rounded-[12px] border border-hairline bg-card p-5 text-secondary">No publicly attributed published bank contributions yet.</p>}<PageButtons offset={offset} more={data.has_more_contributions} onPage={setOffset}/><p className="text-xs text-muted">Contribution attribution follows the creator’s separate contribution-visibility setting.</p></section>}
+  </>}
+ </main>
 }
 interface CreatorSettingsData{bio_version:number;bio_needs_approval:boolean;bio_hidden:boolean;id:string;handle:string;public:boolean;bio:string;following:{id:string;handle:string;public:boolean}[];blocked:{id:string;handle:string}[]}
 type CreatorTab='visibility'|'following'|'blocked'

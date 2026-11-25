@@ -41,6 +41,7 @@ import { calendarRead, indiaToday, type CalendarEvent } from '../lib/calendar'
 import { subjectChipClass, subjectInitials } from '../lib/subjectChips'
 import QuickStudy from '../components/QuickStudy'
 import TodayCard from '../components/TodayCard'
+import HomeLeftExtras from '../components/HomeLeftExtras'
 import OfflineBanner from '../components/OfflineBanner'
 import WelcomeBackBar from '../components/WelcomeBackBar'
 import ExploreDeckRail from '../components/ExploreDeckRail'
@@ -790,6 +791,7 @@ export default function StudyHome() {
               </p>
             )}
             <TodayCard exams={data.exams} hideExamSelect />
+            <HomeLeftExtras progress={data.progress} />
           </aside>
 
           {/* Center Main Stream: View Switcher + Multi-Exam + Focus Subjects + Live Community Feed */}
