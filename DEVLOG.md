@@ -1,5 +1,16 @@
 # Devlog
 
+25 November IST — **Shipped scheduled Daily & Weekly Leaderboard Question-Picker Microservice (`finna-leaderboard-picker.timer`), fixed Weekly Cup specialist-subject leak, and added Owner Preview/Theme/Swap Admin Workbench (`/admin/bank?tab=leaderboard-picker`). Deployed API + Web cleanly to `https://study.hawayu.in`.**
+
+- **Leaderboard Question-Picker Engine (`api/app/services/leaderboard_picker.py`, `game_selection.py`, `games.py`):**
+  - Pre-generates Daily Five (`game_dailies`) and Weekly 25-Q Cup (`game_cups`) sets 24h+ ahead using strict Non-Technical allowlists (`balanced`, `gk`, `english`, `maths`, `computer`) — fixing Weekly Cup so specialist technical/medical subjects (*Radiology, Nursing, Dental, Engineering, Accounts*) can never leak into open leaderboards.
+  - Enforces a **30-day Daily / 8-week Cup no-repeat window** across recently used question IDs, plus strict fairness locking (`409`) once any learner enters a set.
+- **Zero-Idle-RAM Systemd Microservice (`scripts/pick-leaderboard-questions.py`, `scripts/systemd/finna-leaderboard-picker.service`, `finna-leaderboard-picker.timer`, `scripts/deploy.sh`):**
+  - Runs twice daily (`00:05` & `18:00 IST`) via systemd timer, keeping today + next 2 days of Daily Five and the upcoming Weekly Cup pre-populated in Postgres. Wired into `scripts/deploy.sh` so future API deploys always reinstall `/srv/api/pick-leaderboard-questions.py` and keep the timer active.
+- **Owner Admin API & UI (`api/app/routers/leaderboard_picker.py`, `web/src/components/LeaderboardPickerAdmin.tsx`, `adminNavigation.ts`, `BankAdmin.tsx`):**
+  - Added `/api/admin/leaderboard-picker/{upcoming,ensure,regenerate,swap}` (owner-only, `401` unauthenticated) and the **Leaderboard picker** admin tab (`40` admin sections verified) to preview questions, re-roll with a chosen subject theme (`Balanced Core`, `Only GK`, `Only English`, `Only Maths`, `Only Computer`), or swap individual slots before players enter.
+- **Verified:** `47/47` pytest passed (`test_leaderboard_picker.py`, `test_games_search.py`, `test_game_eligibility.py`, `test_weekly_boards.py`); live `finna-leaderboard-picker.service` run verified on Oracle host; `study.hawayu.in` `200`, `/api/admin/leaderboard-picker/upcoming` `401`, `family.hawayu.in` `307`.
+
 25 November IST — **Frontend polish & bug-fix pass across Header, Mobile Navigation, Study Home, Discovery Cards & 404. Web deployed to `https://study.hawayu.in`.**
 
 - **Eliminated header flicker & focus API storms (`Header.tsx`, `finna.css`):** Stopped wiping `account`, `streak`, `unread`, and `access` on window `focus` (only resets on `ism-auth-change`, throttled `focus` refresh to 45s); added crisp circular `.finna-account--avatar` framing for signed-in 16-bit pixel avatars.

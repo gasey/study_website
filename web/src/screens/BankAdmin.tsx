@@ -40,6 +40,7 @@ const EditorialReview=lazy(()=>import('./EditorialReview'))
 const LearningCatalogAdmin=lazy(()=>import('./LearningCatalogAdmin'))
 const DiscoveryAdmin=lazy(()=>import('./DiscoveryAdmin'))
 const TopicTrailAdmin=lazy(()=>import('./TopicTrailAdmin'))
+const LeaderboardPickerAdmin=lazy(()=>import('../components/LeaderboardPickerAdmin'))
 const McqSolverReview=lazy(()=>import('./McqSolverReview'))
 const CurrentAffairsAutomation=lazy(()=>import('./CurrentAffairsAutomation'))
 const AuthoringConsole=lazy(()=>import('../components/AuthoringConsole'))
@@ -78,7 +79,7 @@ export default function BankAdmin(){
  useEffect(()=>{const timer=window.setTimeout(()=>{setSearch(query.trim());setOffset(0)},250);return()=>window.clearTimeout(timer)},[query])
  useEffect(()=>{if(!session)return;if(!canOpenAdminTab(tab,session.grants)){setLoading(false);setError('');return}let live=true;setLoading(true);setError('');setRows([])
   async function load(){try{
-   if(tab==='users'||tab==='ops'||tab==='edit'||tab==='conflicts'||tab==='guides-studio'||tab==='organization'||tab==='intake'||tab==='quality'||tab==='retag'||tab==='current-affairs'||tab==='privacy'||tab==='moderation'||tab==='atlas'||tab==='atlas-bindings'||tab==='workbench'||tab==='editorial'||tab==='learning'||tab==='discovery'||tab==='topic-trail'||tab==='mcq-solver'||tab==='ca-automation'){/* Dedicated workflow owns loading. */}
+   if(tab==='users'||tab==='ops'||tab==='edit'||tab==='conflicts'||tab==='guides-studio'||tab==='organization'||tab==='intake'||tab==='quality'||tab==='retag'||tab==='current-affairs'||tab==='privacy'||tab==='moderation'||tab==='atlas'||tab==='atlas-bindings'||tab==='workbench'||tab==='editorial'||tab==='learning'||tab==='discovery'||tab==='topic-trail'||tab==='leaderboard-picker'||tab==='mcq-solver'||tab==='ca-automation'){/* Dedicated workflow owns loading. */}
    else if(tab==='overview'){const result=await reviewRequest<Health>('/admin/bank/summary');if(live)setHealth(result)}
    else if(tab==='exams'||tab==='pdf-library'){/* Inventory owns its requests. */}
    else if(tab==='questions'){/* The repair workspace owns its URL filters and pagination. */}
@@ -143,6 +144,7 @@ export default function BankAdmin(){
  {owner&&tab==='learning'&&<Suspense fallback={<p>Loading learning catalog…</p>}><LearningCatalogAdmin/></Suspense>}
  {owner&&tab==='discovery'&&<Suspense fallback={<p>Loading discovery…</p>}><DiscoveryAdmin/></Suspense>}
  {owner&&tab==='topic-trail'&&<Suspense fallback={<p>Loading Topic Trail admin…</p>}><TopicTrailAdmin/></Suspense>}
+ {owner&&tab==='leaderboard-picker'&&<Suspense fallback={<p>Loading leaderboard picker…</p>}><LeaderboardPickerAdmin/></Suspense>}
  {owner&&tab==='mcq-solver'&&<Suspense fallback={<p>Loading MCQ solver review…</p>}><McqSolverReview/></Suspense>}
  {owner&&tab==='ca-automation'&&<Suspense fallback={<p>Loading current affairs automation…</p>}><CurrentAffairsAutomation/></Suspense>}
  {inventoryAccess&&taxonomyReady&&tab==='retag'&&<Suspense fallback={<p>Loading learning tag review…</p>}><AdminRetagging nodes={taxonomy} canWrite={!!inventoryWrite} needsMfa={!!session?.mfa_required}/></Suspense>}

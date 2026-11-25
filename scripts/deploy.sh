@@ -54,9 +54,14 @@ deploy_api() {
   '
   if ssh "$HOST" 'sudo test -d /srv/study/workshop/india-study-map-app/scripts'; then
     rsync -az --delete --exclude __pycache__ --exclude bank-authority-policy.json -e ssh "$ROOT/scripts/" "$HOST:/tmp/ism-workshop-scripts/"
-    ssh "$HOST" 'sudo rsync -a --delete --exclude bank-authority-policy.json /tmp/ism-workshop-scripts/ /srv/study/workshop/india-study-map-app/scripts/ && sudo install -m 644 /srv/study/workshop/india-study-map-app/scripts/promote-publication-queue.py /srv/api/promote-publication-queue.py && sudo install -m 644 /srv/study/workshop/india-study-map-app/scripts/publication-wakeup.py /srv/api/publication-wakeup.py && sudo install -m 644 /srv/study/workshop/india-study-map-app/scripts/ops-collector.py /srv/api/ops-collector.py'
+    ssh "$HOST" 'sudo rsync -a --delete --exclude bank-authority-policy.json /tmp/ism-workshop-scripts/ /srv/study/workshop/india-study-map-app/scripts/ && sudo install -m 644 /srv/study/workshop/india-study-map-app/scripts/promote-publication-queue.py /srv/api/promote-publication-queue.py && sudo install -m 644 /srv/study/workshop/india-study-map-app/scripts/publication-wakeup.py /srv/api/publication-wakeup.py && sudo install -m 644 /srv/study/workshop/india-study-map-app/scripts/ops-collector.py /srv/api/ops-collector.py && sudo install -m 755 /srv/study/workshop/india-study-map-app/scripts/pick-leaderboard-questions.py /srv/api/pick-leaderboard-questions.py'
   fi
   ssh "$HOST" '
+    if sudo test -f /srv/study/workshop/india-study-map-app/scripts/systemd/finna-leaderboard-picker.service; then
+      sudo cp /srv/study/workshop/india-study-map-app/scripts/systemd/finna-leaderboard-picker.service /srv/study/workshop/india-study-map-app/scripts/systemd/finna-leaderboard-picker.timer /etc/systemd/system/
+      sudo systemctl daemon-reload
+      sudo systemctl enable --now finna-leaderboard-picker.timer
+    fi
     if sudo test -f /etc/systemd/system/ism-paper-documents.service; then
       sudo cp /srv/study/workshop/india-study-map-app/scripts/systemd/ism-paper-documents.service /srv/study/workshop/india-study-map-app/scripts/systemd/ism-paper-publisher.service /etc/systemd/system/
       sudo systemctl daemon-reload

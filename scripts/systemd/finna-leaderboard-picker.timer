@@ -1,0 +1,11 @@
+[Unit]
+Description=Schedule Finna Daily & Weekly Leaderboard Question Picker (24h+ ahead)
+
+[Timer]
+OnCalendar=*-*-* 00:05:00 Asia/Kolkata
+OnCalendar=*-*-* 18:00:00 Asia/Kolkata
+RandomizedDelaySec=5min
+Persistent=true
+
+[Install]
+WantedBy=timers.target

@@ -139,39 +139,17 @@ def daily_window(now):
 
 
 async def daily(cur, now):
-    did, opens, closes = daily_window(now)
-    await cur.execute(
-        "SELECT pg_advisory_xact_lock(hashtext(%s))", ("game-daily:" + did,)
-    )
-    await cur.execute("SELECT * FROM game_dailies WHERE id=%s", (did,))
-    row = await cur.fetchone()
-    if row:
-        return row
-    from . import game_selection as setup
-    context = await setup.resolve(cur, setup.Selection(kind='mixed'), 'daily')
-    questions = await setup.draw(cur, context)
-    await cur.execute(
-        "INSERT INTO game_dailies(id,opens_at,closes_at,questions) VALUES(%s,%s,%s,%s) RETURNING *",
-        (did, opens, closes, Jsonb(questions)),
-    )
-    return await cur.fetchone()
+    from . import leaderboard_picker as picker
+
+    return await picker.pick_daily_set(cur, now, day_offset=0, theme="balanced")
 
 
 async def cup(cur, now):
-    cid, opens, closes = cup_window(now)
-    await cur.execute(
-        "SELECT pg_advisory_xact_lock(hashtext(%s))", ("game-cup:" + cid,)
+    from . import leaderboard_picker as picker
+
+    return await picker.pick_weekly_cup(
+        cur, now, week_offset=0, theme="balanced", allow_fallback=True
     )
-    await cur.execute("SELECT * FROM game_cups WHERE id=%s", (cid,))
-    row = await cur.fetchone()
-    if row:
-        return row
-    questions = await draw(cur, 25)
-    await cur.execute(
-        "INSERT INTO game_cups(id,opens_at,closes_at,questions) VALUES(%s,%s,%s,%s) RETURNING *",
-        (cid, opens, closes, Jsonb(questions)),
-    )
-    return await cur.fetchone()
 
 
 async def room(cur, rid, lock=True):

@@ -58,6 +58,7 @@ export const ADMIN_SECTIONS=[
  ['atlas-bindings','Atlas topic bindings','authored','owner','Link published maps to approved taxonomy topics.'],
  ['learning','Learning collections','authored','owner','Manage curated practice sets and learning catalog items.'],
  ['topic-trail','Topic Trail admin','authored','owner','Manage Topic Trail routes and nodes.'],
+ ['leaderboard-picker','Leaderboard picker','authored','owner','Preview, theme, and swap pre-picked Daily Five & Weekly Cup leaderboard sets before go-live.'],
  ['discovery','Practice discovery','authored','owner','Tune discovery pools and practice visibility.'],
 
  // 4. What already happened, and the machinery.

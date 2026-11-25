@@ -120,6 +120,8 @@ from .routers import authoring_console
 app.include_router(authoring_console.router)
 from .routers import vault
 app.include_router(vault.router)
+from .routers import leaderboard_picker
+app.include_router(leaderboard_picker.router)
 
 
 @app.get("/api/health")

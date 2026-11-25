@@ -18,6 +18,7 @@ PILLAR_MATCH_IDS={
     'gk_gs':(
         'general-studies',
         'general-knowledge',
+        'computer-science',
         'science/biology',
         'science/physics',
         'science/chemistry',
