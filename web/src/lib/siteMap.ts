@@ -22,6 +22,7 @@ export interface Destination {
   id: string
   path: string
   label: string
+  shortLabel?: string
   section: DestinationSection
   blurb: string
   surfaces: DestinationSurface[]
@@ -69,6 +70,7 @@ export const SITE_MAP: readonly Destination[] = [
     id: 'practice',
     path: '/practice',
     label: 'Practice & Mock',
+    shortLabel: 'Practice',
     section: 'practice',
     blurb: 'Untimed Practice drills with instant explanations and Full-Paper Mocks in one place.',
     surfaces: ['nav', 'tabs', 'index', 'quickfind'],
@@ -214,11 +216,21 @@ export const SITE_MAP: readonly Destination[] = [
     keywords: 'shared mock test links catalog',
   },
   {
+    id: 'quest',
+    path: '/games/quest',
+    label: 'Finna Quest RPG',
+    section: 'practice',
+    blurb: 'Battle pixel-art Realm Guardians across 12 floors, Boss fights & Daily 10-Q Gauntlet.',
+    surfaces: ['index', 'quickfind'],
+    menu: 'practice',
+    keywords: 'finna quest rpg boss expedition endless tower daily gauntlet pixel game',
+  },
+  {
     id: 'games',
     path: '/games',
     label: 'Play & Daily Five',
     section: 'practice',
-    blurb: 'Daily Five, Topic Trail, duels and party games over verified questions.',
+    blurb: 'Daily Five, Finna Quest, Topic Trail, duels and party games over verified questions.',
     surfaces: ['index', 'quickfind'],
     menu: 'practice',
     keywords: 'daily five topic trail duel cup party games',

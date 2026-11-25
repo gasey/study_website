@@ -8,7 +8,7 @@ export const PRIMARY_NAV = destinationsForSurface('tabs')
   .sort((a, b) => TAB_ORDER.indexOf(a.id) - TAB_ORDER.indexOf(b.id))
   .map((d) => ({
     to: d.path,
-    label: d.label,
+    label: d.shortLabel || d.label,
     icon: d.icon || 'home',
   }))
 
@@ -23,7 +23,7 @@ export function primarySection(path: string) {
 export function focusedSession(path: string, search = '') {
   return (
     ((path === '/revise' || path === '/onboarding') && new URLSearchParams(search).has('session')) ||
-    /^\/(games|trail)\/[^/]+$/.test(path) ||
+    (path !== '/games/quest' && /^\/(games|trail)\/[^/]+$/.test(path)) ||
     /^\/exams\/[^/]+\/mock$/.test(path) ||
     /^\/tests\/[^/]+\/take$/.test(path)
   )
@@ -47,6 +47,7 @@ export function mobileScreen(path: string) {
   if (path.startsWith('/desk')) return 'desk'
   if (path === '/inbox') return 'inbox'
   if (path.startsWith('/creators/')) return 'creator'
+  if (path === '/games/quest') return 'quest'
   if (path.startsWith('/games/')) return 'game-player'
   if (path === '/games') return 'games'
   if (path === '/profile') return 'me'
@@ -76,6 +77,7 @@ export function mobileTitle(path: string) {
         inbox: 'Inbox',
         creator: 'Creator',
         games: 'Play',
+        quest: 'Finna Quest',
         'game-player': 'Game',
         me: 'Me',
         settings: 'Account',

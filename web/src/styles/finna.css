@@ -239,7 +239,9 @@ html[data-theme="night"] .finna-brand-row::before { background-image:linear-grad
 .finna-create { height:40px; display:flex; align-items:center; border:1.5px solid var(--line); border-radius:12px; padding:0 14px; font-size:14px; font-weight:700; white-space:nowrap; transition:border-color .15s ease, background-color .15s ease; }
 .finna-create:hover { border-color:var(--finna-primary); background:var(--bg-app); }
 .finna-account { min-width:40px; height:40px; display:grid; place-items:center; border-radius:13px; background:var(--finna-primary); color:var(--finna-on-primary); font-size:14px; font-weight:700; padding:0 13px; white-space:nowrap; }
-.finna-account > span { border:0; border-radius:11px; }
+.finna-account--avatar { padding:2px; width:42px; height:42px; border-radius:999px; background:var(--bg-app); border:1.5px solid var(--line); transition:border-color .15s ease, transform .12s ease; }
+.finna-account--avatar:hover { border-color:var(--finna-primary); transform:translateY(-1px); }
+.finna-account > span { border:0; border-radius:999px; }
 /* Signature Midnight Indigo Primary Nav Bar (ShikshaCom-inspired anchor contrast, 100% Finna palette) */
 .finna-nav { background:#0E1330; border-bottom:1px solid rgba(255,255,255,.10); position:relative; box-shadow:0 6px 20px -10px rgba(14,19,48,.42); }
 html[data-theme="night"] .finna-nav { background:#070B1E; border-bottom-color:rgba(108,141,255,.20); }

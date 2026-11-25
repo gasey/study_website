@@ -139,6 +139,12 @@ function buildTrail(pathname: string, search: string): { crumbs: Crumb[]; fallba
   }
 
   if (root === 'games') {
+    if (parts[1] === 'quest') {
+      return {
+        crumbs: [home, { label: 'Play & Games', to: '/games' }, { label: 'Finna Quest RPG' }],
+        fallbackTo: '/games',
+      }
+    }
     return { crumbs: [home, { label: 'Practice', to: '/practice' }, { label: 'Play & Games' }], fallbackTo: '/practice' }
   }
 

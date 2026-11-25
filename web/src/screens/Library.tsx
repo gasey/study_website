@@ -26,10 +26,10 @@ const VIEWS = [
 
 const FEATURED_STUDY_TOOLS = [
   {
-    title: "Study Guides",
+    title: "Concept Guides (11)",
     href: "/guides",
     tag: "Reading room",
-    label: "Edited Polity Codex, grammar guides and exam walkthroughs linked to bank questions.",
+    label: "Edited Polity, Computer, Science, Economy, Maths, Reasoning & English guides linked to bank questions.",
     cta: "Open Guides →",
     image: "/images/discover/guides.jpg",
   },

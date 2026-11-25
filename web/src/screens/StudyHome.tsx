@@ -692,11 +692,11 @@ export default function StudyHome() {
                 <Link
                   to={
                     exam
-                      ? '/practice?exam=' + encodeURIComponent(exam.id) + '&timer=on'
-                      : '/practice?timer=on'
+                      ? '/practice?exam=' + encodeURIComponent(exam.id) + '&mode=mock'
+                      : '/practice?mode=mock'
                   }
                 >
-                  Timed run
+                  Full-Paper Mock
                 </Link>
               </div>
               {exam && (
@@ -1210,10 +1210,10 @@ export default function StudyHome() {
                               Practice
                             </Link>
                             <Link
-                              to={'/practice?exam=' + encodeURIComponent(item.id) + '&timer=on'}
+                              to={'/practice?exam=' + encodeURIComponent(item.id) + '&mode=mock'}
                               className="finna-mini-act"
                             >
-                              Timed
+                              Mock
                             </Link>
                             <Link to={'/exams/' + item.id} className="finna-mini-act">
                               Papers
@@ -1359,8 +1359,12 @@ export default function StudyHome() {
                   <small>Full MPSC question papers by year</small>
                 </Link>
                 <Link to="/guides" className="finna-shortcut-link">
-                  <strong>Concept guides</strong>
-                  <small>Polity, grammar &amp; exam primers</small>
+                  <strong>Concept guides (11)</strong>
+                  <small>Polity, Computer, Science, Maths &amp; more</small>
+                </Link>
+                <Link to="/games/quest" className="finna-shortcut-link">
+                  <strong>⚔️ Finna Quest RPG</strong>
+                  <small>Battle Realm Guardians &amp; Daily 10-Q</small>
                 </Link>
               </div>
             </section>

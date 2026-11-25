@@ -1,7 +1,7 @@
 import { mobileScreen } from './lib/navigation'
 import { adminTabHref } from './lib/adminNavigation'
 import { lazy, Suspense, useEffect, useState } from 'react'
-import { Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom'
+import { Link, Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom'
 import SessionNotice from './components/SessionNotice'
 import SiteNotice from './components/SiteNotice'
 import { AudienceNotice } from './components/AgeCategoryCheck'
@@ -81,8 +81,16 @@ function NotFound() {
         <div className="font-mono text-xs uppercase tracking-[0.1em] text-muted">404 · Not found</div>
         <h1 className="mt-2 text-xl font-bold text-ink">Page not found</h1>
         <p className="mt-2 text-base leading-relaxed text-secondary">
-          That route does not exist. Open the Finna Index to see every active page.
+          That route does not exist or may have moved. Jump back to your study home or browse every active page.
         </p>
+        <div className="mt-5 flex flex-wrap gap-3">
+          <Link to="/home" className="finna-btn">
+            Go to Study Home →
+          </Link>
+          <Link to="/index" className="finna-btn finna-btn-quiet">
+            Browse all pages
+          </Link>
+        </div>
       </Card>
     </div>
   )

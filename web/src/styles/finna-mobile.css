@@ -2,20 +2,21 @@
 .finna-phone-header,.finna-me-shortcuts,.finna-inbox-mobile-tabs,.finna-chat-back,.finna-home-phone-links { display:none; }
 @media(max-width:639px) {
  .finna-shell:not(.finna-focused) .finna-brand-row { display:none; }
- .finna-phone-header { display:flex; align-items:center; justify-content:space-between; gap:8px; min-height:64px; padding:10px 16px; background:rgb(var(--ism-paper-rgb)); }
- .finna-phone-heading { display:flex; align-items:center; gap:8px; min-width:0; }
- .finna-phone-heading h1 { font-size:30px; font-weight:900; letter-spacing:-.02em; line-height:1.1; }
+ .finna-backbar { display:none; }
+ .finna-phone-header { display:flex; align-items:center; justify-content:space-between; gap:8px; min-height:60px; padding:8px 16px; background:rgb(var(--ism-paper-rgb)); border-bottom:1px solid var(--line); }
+ .finna-phone-heading { display:flex; align-items:center; gap:6px; min-width:0; }
+ .finna-phone-heading h1 { font-size:26px; font-weight:900; letter-spacing:-.02em; line-height:1.1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
  [data-mobile-screen="home"] .finna-phone-heading h1 { font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:var(--text-secondary); font-weight:800; white-space:nowrap; }
- .finna-phone-header > nav { display:flex; align-items:center; gap:2px; }
+ .finna-phone-header > nav { display:flex; align-items:center; gap:2px; flex-shrink:0; }
  .finna-phone-header > nav > a,.finna-phone-header > nav > button { position:relative; display:grid; place-items:center; min-width:36px; height:44px; border-radius:12px; font-weight:800; }
  .finna-phone-header .finna-phone-streak { display:flex; font-size:11px; padding:0 8px; height:30px; min-width:0; white-space:nowrap; background:var(--finna-yellow); color:#0E1330; border-radius:999px; }
- .finna-phone-back { font-size:30px; line-height:1; min-width:28px; min-height:44px; display:flex; align-items:center; color:rgb(var(--ism-practice-dark-rgb)); }
+ .finna-phone-back { font-size:30px; line-height:1; min-width:32px; min-height:44px; display:flex; align-items:center; justify-content:center; color:rgb(var(--ism-practice-dark-rgb)); background:transparent; border:0; cursor:pointer; }
  .finna-phone-unread { position:absolute; top:2px; right:0; background:rgb(var(--ism-wrong-rgb)); color:#fff; border-radius:999px; padding:1px 4px; font-size:9px; }
- .finna-bottom { padding:8px 8px calc(12px + env(safe-area-inset-bottom)); }
+ .finna-bottom { padding:6px 8px calc(10px + env(safe-area-inset-bottom)); }
  .finna-bottom-inner { min-height:48px; max-width:500px; }
- .finna-bottom a { font-size:13px; font-weight:600; gap:0; min-height:48px; color:var(--text-secondary); }
+ .finna-bottom a { font-size:12.5px; font-weight:600; gap:0; min-height:46px; color:var(--text-secondary); white-space:nowrap; }
  .finna-bottom a > span:first-child { display:none; }
- .finna-bottom a > span:last-child { padding:7px 12px; border-radius:999px; }
+ .finna-bottom a > span:last-child { padding:7px 11px; border-radius:999px; }
  .finna-bottom a[aria-current="page"] { color:#0E1330; font-weight:800; }
  .finna-bottom a[aria-current="page"] > span:last-child { background:var(--finna-yellow); }
  body:has(.finna-bottom) { padding-bottom:calc(76px + env(safe-area-inset-bottom)); }

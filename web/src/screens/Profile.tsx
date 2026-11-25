@@ -185,7 +185,7 @@ export default function Profile() {
                   size={74}
                 />
                 <Link to="/profile/avatar" className="finna-prof-avlink">
-                  Edit avatar
+                  Edit pixel sprite
                 </Link>
               </div>
               <div className="finna-prof-meta">

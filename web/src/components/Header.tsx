@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import {
   getAccountSession,
   getProgressSummary,
@@ -57,6 +57,7 @@ const MENU_CARD_META: Record<string, { tone: MenuTone; tag: string; icon: string
   revise: { tone: 'teal', tag: 'Memory', icon: 'M4 12a8 8 0 0 1 13.7-5.6L20 8.5M20 4v4.5h-4.5M20 12a8 8 0 0 1-13.7 5.6L4 15.5M4 20v-4.5h4.5' },
   'practice-build': { tone: 'cobalt', tag: 'Custom', icon: 'M12 5v14M5 12h14' },
   tests: { tone: 'amber', tag: 'Timed', icon: 'M12 7v5l3 2M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z' },
+  quest: { tone: 'rose', tag: '16-Bit RPG', icon: 'M14.5 17.5 3 6V3h3l11.5 11.5M13 19l6-6m-3 3 4 4m-1 1 2-2' },
   games: { tone: 'violet', tag: 'Daily 5', icon: 'M6 12h4M8 10v4m7-2h.01M18 10h.01M5 7h14a3 3 0 0 1 3 3v4a4 4 0 0 1-4 4h-2l-2-2h-4l-2 2H6a4 4 0 0 1-4-4v-4a3 3 0 0 1 3-3Z' },
   bank: { tone: 'emerald', tag: 'Full Bank', icon: 'M4 6h16M4 12h16M4 18h16' },
   atlas: { tone: 'emerald', tag: 'Maps', icon: 'M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2V6Zm6-2v14m6-12v14' },
@@ -70,6 +71,7 @@ const MENU_CARD_META: Record<string, { tone: MenuTone; tag: string; icon: string
  *  Row 2: Home · Exams ▾ · Subjects ▾ · Practice ▾ · Tools & Guides ▾ · Community ▾  |  Revise · Desk · My exams */
 export default function Header() {
   const { pathname, search } = useLocation()
+  const navigate = useNavigate()
   const scope = useExamScope()
   const [theme, setTheme] = useStudyTheme()
   const [access, setAccess] = useState<ReviewAccess>({ grants: [], assigned: false })
@@ -154,12 +156,15 @@ export default function Header() {
   useEffect(() => {
     let live = true
     let version = 0
-    const load = () => {
+    let lastFocusRefresh = 0
+    const load = (reset = false) => {
       const run = ++version
-      setUnread(null)
-      setStreak(null)
-      setAccess({ grants: [], assigned: false })
-      setAccount({ authenticated: false })
+      if (reset) {
+        setUnread(null)
+        setStreak(null)
+        setAccess({ grants: [], assigned: false })
+        setAccount({ authenticated: false })
+      }
       getProgressSummary()
         .then((p) => {
           if (live && run === version) setStreak(p.current_streak)
@@ -169,7 +174,11 @@ export default function Header() {
         .then(async (a) => {
           if (!live || run !== version) return
           setAccount(a)
-          if (!a.authenticated) return
+          if (!a.authenticated) {
+            setUnread(null)
+            setAccess({ grants: [], assigned: false })
+            return
+          }
           const s = await reviewSession()
           if (!live || run !== version) return
           setAccess({
@@ -188,12 +197,25 @@ export default function Header() {
         })
         .catch(() => {})
     }
-    load()
-    const events = ['ism-auth-change', 'ism-avatar-change', 'ism-notifications-change', 'focus']
-    events.forEach((e) => window.addEventListener(e, load))
+    const onAuthChange = () => load(true)
+    const onSoftRefresh = () => load(false)
+    const onFocus = () => {
+      const now = Date.now()
+      if (now - lastFocusRefresh < 45_000) return
+      lastFocusRefresh = now
+      load(false)
+    }
+    load(false)
+    window.addEventListener('ism-auth-change', onAuthChange)
+    window.addEventListener('ism-avatar-change', onSoftRefresh)
+    window.addEventListener('ism-notifications-change', onSoftRefresh)
+    window.addEventListener('focus', onFocus)
     return () => {
       live = false
-      events.forEach((e) => window.removeEventListener(e, load))
+      window.removeEventListener('ism-auth-change', onAuthChange)
+      window.removeEventListener('ism-avatar-change', onSoftRefresh)
+      window.removeEventListener('ism-notifications-change', onSoftRefresh)
+      window.removeEventListener('focus', onFocus)
     }
   }, [])
 
@@ -320,19 +342,33 @@ export default function Header() {
         <div className="finna-phone-header">
           <div className="finna-phone-heading">
             {pathname !== HOME_PATH && (
-              <Link
-                to={
-                  /^\/(bank|exams)\//.test(pathname)
-                    ? EXAMS_PATH
-                    : pathname.startsWith('/library/') || pathname.startsWith('/subjects/')
-                      ? LIBRARY_PATH
-                      : HOME_PATH
-                }
-                aria-label="Back to home"
+              <button
+                type="button"
+                onClick={() => {
+                  const canStepBack =
+                    typeof window !== 'undefined' &&
+                    window.history.state &&
+                    typeof window.history.state.idx === 'number' &&
+                    window.history.state.idx > 0
+                  if (canStepBack) {
+                    navigate(-1)
+                    return
+                  }
+                  navigate(
+                    /^\/(bank|exams)\//.test(pathname)
+                      ? EXAMS_PATH
+                      : pathname.startsWith('/library/') || pathname.startsWith('/subjects/')
+                        ? LIBRARY_PATH
+                        : pathname.startsWith('/games/')
+                          ? '/games'
+                          : HOME_PATH,
+                  )
+                }}
+                aria-label="Go back"
                 className="finna-phone-back"
               >
                 ‹
-              </Link>
+              </button>
             )}
             <h1>{mobileTitle(pathname)}</h1>
           </div>
@@ -345,9 +381,13 @@ export default function Header() {
             <button type="button" onClick={openFind} aria-label="Quick find" aria-haspopup="dialog">
               <NavIcon name="search" />
             </button>
-            <Link to={CREATE_PATH} aria-label="Create">
-              <NavIcon name="create" />
-            </Link>
+            <button
+              type="button"
+              onClick={() => setTheme(theme === 'night' ? 'paper' : 'night')}
+              aria-label={`Switch to ${theme === 'night' ? 'light' : 'dark'} theme`}
+            >
+              {theme === 'night' ? '☀' : '☾'}
+            </button>
             <Link to={INBOX_PATH} aria-label={unread ? 'Inbox, ' + unread + ' unread' : 'Inbox'}>
               <span aria-hidden="true">✉</span>
               {unread !== null && unread > 0 && (
@@ -495,7 +535,7 @@ export default function Header() {
           {account.authenticated ? (
             <Link
               to={PROFILE_PATH}
-              className="finna-account"
+              className="finna-account finna-account--avatar"
               aria-label="Your profile"
               onClick={closeMenu}
             >
