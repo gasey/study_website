@@ -586,3 +586,14 @@ this continuation. Usage was available (11%primary/7%weeklyused); ordinary staff
 publication remains uncapped, learner30/day unchanged. Historical source/option/
 key-mapping tasks remain. Keep2012/2013deferred and simulationgated.
 Receipt:`docs/sources/mcs-checkpoint-20261124.json`; private audit:`reports/mcs-checkpoint-20261124/`.
+
+
+## 25 November — current queue exhausted; evidence work remains
+
+The current explanation pass has no pending or active items: **506 published, 518 not-needed, 42 unresolved** at 2026-11-25T04:53:46.031993+00:00. These supersede the 24 November active-packet checkpoint. The other review chat now owns a departmental taxonomy packet; this continuation changed no claims or content.
+
+Grouped the 42 stored unresolved reasons into **14 evidence issues** for the next source/answer review. These include family constraints, argument rubrics, number/figure patterns, historical NFSM/poverty responsibilities, ambiguous elementary-particle wording, coding and situational judgement. Grouping is a triage aid, not proof of booklet equivalence or a new answer decision. Exact IDs/reasons remain private in `reports/mcs-checkpoint-20261125/`; the receipt retains grouped IDs. Do not repeatedly rerun explanation drafting without new evidence.
+
+Oracle export queue is empty; protected bank/taxonomy sync matches, publisher timer active, wakeup inactive, API healthy and Study HTTP 200. Recorded MCS statuses are **91 held / 2910 live**; this continuation did not create those holds and the counts do not certify all keys/sources. Unlimited owner access remains active; staff maintenance uncapped and learner allowance unchanged at 30/day. All **45 focused tests pass**.
+
+The 2023 I A Q11 appointment still has the incorrect Financial Rules/Public Works Accounts path. A separately reserved intentional taxonomy re-review remains necessary; do not bypass the coordinator. Historical source/option/key mapping remains; keep 2012/2013 deferred and original simulation gated. No application/schema deployment was needed for this read-only handoff. Receipt: `docs/sources/mcs-checkpoint-20261125.json`.

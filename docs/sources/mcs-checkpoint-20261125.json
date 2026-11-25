@@ -1,0 +1,222 @@
+{
+  "observed_at": "2026-11-25T04:53:46.031993+00:00",
+  "kind": "read-only MCS completion reconciliation and blocker handoff",
+  "queue": {
+    "at": "2026-11-25T04:53:46.031993+00:00",
+    "counts": {
+      "not-needed": 518,
+      "published": 506,
+      "unresolved": 42
+    },
+    "active": []
+  },
+  "queue_scope": "Explanation-only current pass; counts are not source/key certification. No queue refresh, reservation or publication in this continuation.",
+  "bank": {
+    "sha256": "d533796800df8edd78c7db24ff16264c2417a8671eff0646bbbd9f77300f9720",
+    "pending_exports": 0,
+    "protected_sync": "IN SYNC; 82383 questions and approved taxonomy rows; 78 papers / 6931 protected source questions",
+    "staff_maintenance_capped": false,
+    "learner_daily_limit": 30,
+    "publisher_timer": "active",
+    "wakeup_service": "inactive"
+  },
+  "health": {
+    "api": {
+      "status": "ok",
+      "questions": 82383,
+      "scorable": 13376
+    },
+    "study": 200
+  },
+  "owner_unlimited": true,
+  "account_history_or_service_changes": false,
+  "structural_mcs_inventory": [
+    {
+      "status": "held",
+      "source_defect": "duplicate-options",
+      "key_disputed": false,
+      "unique_questions": 1
+    },
+    {
+      "status": "held",
+      "source_defect": "unresolved-source",
+      "key_disputed": false,
+      "unique_questions": 3
+    },
+    {
+      "status": "held",
+      "source_defect": null,
+      "key_disputed": false,
+      "unique_questions": 87
+    },
+    {
+      "status": "live",
+      "source_defect": null,
+      "key_disputed": false,
+      "unique_questions": 2910
+    }
+  ],
+  "inventory_caveat": "91 held and 2910 live are recorded statuses only. Existing holds are preserved; this continuation did not create them.",
+  "unresolved_triage": {
+    "basis": "Grouping existing private unresolved reasons only; no new PDF inspection, answer adjudication, equivalence proof or canonical merge.",
+    "groups": [
+      {
+        "issue": "Number-grid rule not established",
+        "count": 3,
+        "canonical_ids": [
+          "cq_03281775c7e34f15",
+          "cq_074f9dbb041891eb",
+          "cq_7236c5f6e046b11d"
+        ]
+      },
+      {
+        "issue": "P/Q/R/S/T/X family constraints",
+        "count": 4,
+        "canonical_ids": [
+          "cq_068bef5061686f96",
+          "cq_29ec45cc65f61874",
+          "cq_3db48722dcdc8e86",
+          "cq_66dcd3de48304736"
+        ]
+      },
+      {
+        "issue": "Passage inference: false versus insufficient data",
+        "count": 3,
+        "canonical_ids": [
+          "cq_2b4150450dfc6802",
+          "cq_5ea3a0bfc8f26a85",
+          "cq_aa66610e4050b50f"
+        ]
+      },
+      {
+        "issue": "Historical poverty-estimator mandate",
+        "count": 3,
+        "canonical_ids": [
+          "cq_37a6e6c19f4053e7",
+          "cq_e677c58e5c650ddb",
+          "cq_fe375d6ce03bdb40"
+        ]
+      },
+      {
+        "issue": "Sharma/Mahajan family missing identity links",
+        "count": 8,
+        "canonical_ids": [
+          "cq_3d2fb2fed42a59f3",
+          "cq_49934e814c9b35c9",
+          "cq_6001a8979dc6096c",
+          "cq_6fe92abb5099e80d",
+          "cq_c8e6472a37856355",
+          "cq_ca75eb86dd087e2c",
+          "cq_d205c1aa45f7c7d9",
+          "cq_ecc79c3e128f6514"
+        ]
+      },
+      {
+        "issue": "Strong-argument rubric: animal trapping",
+        "count": 2,
+        "canonical_ids": [
+          "cq_49646a8e33359f2f",
+          "cq_e3af2de06af0f1e1"
+        ]
+      },
+      {
+        "issue": "Strong-argument rubric: national-leader holidays",
+        "count": 3,
+        "canonical_ids": [
+          "cq_5de3eed73473d037",
+          "cq_e81c868813d1124b",
+          "cq_edf4b4c00c11dffd"
+        ]
+      },
+      {
+        "issue": "Historical NFSM scope versus official key",
+        "count": 3,
+        "canonical_ids": [
+          "cq_83bb1ca6f37015c5",
+          "cq_97ea3f60e81e29c6",
+          "cq_d86c49e0c8978e5d"
+        ]
+      },
+      {
+        "issue": "Figure sequence versus key",
+        "count": 1,
+        "canonical_ids": [
+          "cq_9db1424a94df05c7"
+        ]
+      },
+      {
+        "issue": "Elementary-particle wording ambiguity",
+        "count": 4,
+        "canonical_ids": [
+          "cq_c217d51a34b4fd0b",
+          "cq_dcc4ecdbec42c0b1",
+          "cq_dcd5202274e537ce",
+          "cq_fc944acc1b073917"
+        ]
+      },
+      {
+        "issue": "Biology grouping lacks unique criterion",
+        "count": 3,
+        "canonical_ids": [
+          "cq_045457b70c1613c9",
+          "cq_1229e8b1c13f1b2e",
+          "cq_22721693555cb9c6"
+        ]
+      },
+      {
+        "issue": "Printed coding example has inconsistent length",
+        "count": 2,
+        "canonical_ids": [
+          "cq_0c0ea29eeefc83c3",
+          "cq_40352046c7fcef7f"
+        ]
+      },
+      {
+        "issue": "Situational judgement lacks unique best choice",
+        "count": 2,
+        "canonical_ids": [
+          "cq_1406d46a26d5ade7",
+          "cq_32622d128585bb44"
+        ]
+      },
+      {
+        "issue": "Cause-and-effect direction unsupported",
+        "count": 1,
+        "canonical_ids": [
+          "cq_221b462338a6d190"
+        ]
+      }
+    ]
+  },
+  "known_tag_followup": {
+    "canonical_id": "cq_357a2ba193431db8",
+    "appearance_id": "1db3eca689d87d649e13",
+    "fingerprint": "1fd21eba0b59fde75351665512a5e4239386130dbec2b57034b2d82a30f6e7b8",
+    "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+    "qnum": "11",
+    "classification": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "action": "read-only follow-up; no reserved taxonomy correction or publication"
+  },
+  "other_worker": "Review remaining Finna questions has moved into a centrally claimed departmental taxonomy packet tq_ec7eaafac3c6eed96bac4d21; no cross-thread message or claim change.",
+  "tests": {
+    "passed": 45,
+    "scope": "AI question review, historical numbering, owner source warnings, source formatting",
+    "production_test_writes": false
+  },
+  "usage": {
+    "ordinary_usage_allowed": true,
+    "primary_used_percent": 0,
+    "weekly_used_percent": 26,
+    "reset_used": false,
+    "external_provider_calls": 0
+  },
+  "next_work": [
+    "Review the 14 grouped evidence issues through separate source/answer workflows; inspect every exact booklet/key before changing any answer, locator, scoring hold or explanation. Similar stems are triage leads, not equivalence proof.",
+    "Reserve an intentional taxonomy re-review for 2023 I A Q11, naming the prior candidate and current Financial Rules/Public Works Accounts path. Existing coordinator only exposes new/followup selection; do not bypass reservations with direct SQL.",
+    "Historical source/option/numbering and exact-key mapping remain; keep 2012/2013 recovery deferred and original-paper simulation gated."
+  ]
+}
