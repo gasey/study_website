@@ -101,3 +101,5 @@
 3. **Additional Concept Guides:** Native-speaker-reviewed Mizo Grammar & Literature guide, Service Rules & Accounts handbook, and optional technical stream primers.
 4. **Paperless Question Spine (V.21):** Deferred until owner needs original questions without printed source papers.
 5. **Store Distribution & Growth:** Google Play Store production rollout, iOS TestFlight build, and automated weekly digest notifications.
+6. **Saved UI / Visual Design References (Post-V1.0):**
+   - **Tommy Ho CodePen 2.0 reference:** `https://codepen.io/editor/tommyho/pen/01a1e585-a665-7376-9cb9-a0bde54e162e` — saved for future UI polish (paste code or open in browser when ready to adapt into Finna Quest, Study Desk, Rewards, or landing hero).
