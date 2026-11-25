@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import AtlasQuestionLinks from './AtlasQuestionLinks'
 import PracticeAnswerPanel from './PracticeAnswerPanel'
@@ -23,8 +24,14 @@ export default function StudyQuestionCard({q,collectionId,paperId='',positionNum
   const combined=collectionId==='combined-prelims'
   const isWritten = q.type !== 'mcq'
   const blocked=q.held||q.key_disputed||['duplicate-options','unresolved-source'].includes(q.source_defect||'')
-  const sourceInfo = formatQuestionSource(q)
-  const guideMatch = resolveQuestionGuide(q)
+  const sourceInfo = useMemo(
+    () => formatQuestionSource(q),
+    [q.source_appearance, q.first_year, q.last_year],
+  )
+  const guideMatch = useMemo(
+    () => resolveQuestionGuide(q),
+    [q.taxonomy_subject_id, q.taxonomy_topic_id, q.taxonomy_subtopic_id, q.subject, q.topic, q.question],
+  )
   const actions = <QuestionActions questionType={q.type} qid={q.id} context={{paper_id:q.source_appearance?.paper_id,collection_id:q.source_appearance?.paper_id?(contextCollectionId!==undefined?contextCollectionId:sourceCollections?.[q.source_appearance.paper_id]||(collectionId==='group-b'?null:collectionId)):null}} answeredSignal={result}/>
   return <article id={'question-'+q.id} key={q.id} data-question-type={isWritten ? 'written' : 'mcq'} className={`${combined?'cp-question':'udc-question-card'} compact-question sq-card${isWritten ? ' sq-card--written' : ' sq-card--mcq'}`}>
           <div className="sq-meta">{positionNumber!=null&&<span className="sq-meta-pos">#{positionNumber.toLocaleString('en-IN')}</span>}<span className={isWritten ? 'sq-kind-badge is-written' : 'sq-kind-badge is-mcq'}>{isWritten ? '✎ Written' : '◉ MCQ'}</span>{paperId&&q.source_appearance?.paper_id===paperId&&q.source_appearance.qnum&&<span className="sq-meta-qnum">Q{q.source_appearance.qnum}</span>}<span className="sq-meta-year">{q.source_appearance?.year ?? q.first_year ?? q.last_year ?? 'Year unknown'}</span><span className="sq-meta-topic">{questionTopicLabel(q,collectionId)}</span>{!isWritten && <AnswerProvenance source={q.answer_source} reviewed={q.reviewed_derived} disputed={q.key_disputed} defect={q.source_defect} questionType={q.type} statusOverride={q.answer_status} questionId={q.id}/>}</div>

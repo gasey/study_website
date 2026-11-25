@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import QuestionCard from '../components/QuestionCard'
 import { AnswerLayoutControl } from '../components/AnswerLayout'
@@ -96,7 +96,8 @@ export default function Practice() {
     params.get('mode') === 'written' ? 'written' : 'mcq',
   )
 
-  // Full-Paper Mock exam details (loads real past papers for the selected exam)
+  // Full-Paper Mock exam details (cached in memory per exam so switching pills is instant)
+  const detailCacheRef = useRef<Map<string, CollectionDetail>>(new Map())
   const [examDetail, setExamDetail] = useState<CollectionDetail | null>(null)
   const [loadingPapers, setLoadingPapers] = useState(false)
   const [paperFilter, setPaperFilter] = useState('')
@@ -140,10 +141,17 @@ export default function Practice() {
   const mockExamId = examId || preferredExam?.id || examCollections[0]?.id || ''
   useEffect(() => {
     if (studioMode !== 'mock' || !mockExamId) return
+    const cached = detailCacheRef.current.get(mockExamId)
+    if (cached) {
+      setExamDetail(cached)
+      setLoadingPapers(false)
+      return
+    }
     let live = true
     setLoadingPapers(true)
     getCollection(mockExamId)
       .then((detail) => {
+        detailCacheRef.current.set(mockExamId, detail)
         if (live) setExamDetail(detail)
       })
       .catch(() => {

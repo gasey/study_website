@@ -1,5 +1,12 @@
 # Devlog
 
+25 November IST — **Zero-regression optimization & simplification pass across Web and Mobile. Web deployed to `https://study.hawayu.in`.**
+
+- **97.7% payload reduction on Exam & Subject Topics (`scripts/enrich-guides-seed.py`, `web/src/data/guides-catalog.json`, `ExamStudyTopics.tsx`):** Replaced eager 226 KB full-markdown `guides-seed.json` import in `ExamStudyTopics.tsx` with generated 5 KB `guides-catalog.json` metadata.
+- **0ms instant replays & exam switching (`QuestGame.tsx`, mobile `quest.tsx`, `Practice.tsx`):** Added 10-minute in-memory per-subject question pool caching in Finna Quest (Web + Mobile) so `Play Again →` and mode switches start instantaneously without re-fetching 8 endpoints; added in-memory `collectionDetailCache` in `Practice.tsx` so switching Full-Paper Mock exam pills never flashes/refetches.
+- **Render hot-path tuning (`StudyQuestionCard.tsx`, `QuestionCard.tsx`, mobile `QuestionCard.tsx`, mobile `guide/[slug].tsx`, mobile `index.tsx`):** Memoized `resolveQuestionGuide` & `formatQuestionSource` across card lists, hoisted compiled callout RegExps out of `MarkdownBlockView` render loops, and removed unused `practice.busy` lock on Mobile Home's instant `Browse questions` CTA.
+- **Verified:** Web deployed cleanly (`check-dead-links`, `check-admin-nav`, `check-guides-and-quest`, `vite build` 8.15s, `study.hawayu.in` `200`, `family.hawayu.in` `307`); Mobile `tsc --noEmit` (0 errors), 44/44 unit tests, 44/44 across 5 component suites.
+
 25 November IST — **Completed V1.0 Production Readiness & Hardening Audit (`finnaplanversion1.md`), fixed `publication_verification.py` invariant regression + Finna Quest 429/offline error recovery, and deployed Web + API cleanly.**
 
 - **API audit & fix (`api/app/services/publication_verification.py`, `guides.py`, `collections.py`):** Caught 2 failing invariant tests in `test_publication_verification.py` where uncommitted local code permitted `explanation` patches on unanswered MCQs; restored strict guard (`51/51` pytest passed). Verified `0142_consolidate_exam_modules.sql` is already deployed on prod. Deployed via `./scripts/deploy.sh` (`{"status":"ok","questions":82383,"scorable":13376}`, `ism-api.service` active, `/srv/api/ops-collector.py` intact, `/api/guides/admin*` returns `401` unauthenticated, `study.hawayu.in` `200`, `family.hawayu.in` `307`).

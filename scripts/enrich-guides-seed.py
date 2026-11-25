@@ -1356,7 +1356,23 @@ def main() -> None:
     ])
 
     GUIDES_SEED.write_text(json.dumps(upgraded, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
-    print(f'Enriched {GUIDES_SEED}: {len(upgraded)} guides')
+    catalog = [
+        {
+            'slug': g['slug'],
+            'title': g['title'],
+            'subject_id': g.get('subject_id'),
+            'subject_label': g.get('subject_label'),
+            'topic_id': g.get('topic_id'),
+            'summary': g.get('summary', ''),
+            'reading_minutes': g.get('reading_minutes', 10),
+            'chapter_count': len(g.get('chapters', [])),
+            'status': g.get('status', 'published'),
+        }
+        for g in upgraded
+    ]
+    catalog_path = ROOT / 'web/src/data/guides-catalog.json'
+    catalog_path.write_text(json.dumps(catalog, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+    print(f'Enriched {GUIDES_SEED}: {len(upgraded)} guides (catalog: {catalog_path.stat().st_size} bytes)')
     for g in upgraded:
         tables = sum(1 for c in g['chapters'] if '| --- |' in c['body_markdown'])
         examples = sum(1 for c in g['chapters'] if '**Worked Example:**' in c['body_markdown'])

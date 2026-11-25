@@ -1,7 +1,7 @@
 import { learningSubjectTitle } from '../lib/groupBStudy'
 import { useEffect, useMemo, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
-import guidesSeed from '../data/guides-seed.json'
+import guidesCatalog from '../data/guides-catalog.json'
 import MaterialDiscovery from './MaterialDiscovery'
 import {
   getExamStudyTopics,
@@ -27,7 +27,7 @@ interface LiveGuideSummary {
   chapters?: unknown[]
 }
 
-const SEED_GUIDES = guidesSeed as LiveGuideSummary[]
+const SEED_GUIDES = guidesCatalog as LiveGuideSummary[]
 
 const SUBJECT_GUIDE_ALIASES: Record<string, string[]> = {
   'gk-gs': ['gk-gs', 'general-knowledge', 'general-studies', 'polity', 'history', 'geography', 'economy', 'science', 'environment', 'mizoram'],

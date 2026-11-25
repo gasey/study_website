@@ -90,6 +90,7 @@ export default function QuestGame() {
   const [copiedShare, setCopiedShare] = useState(false)
 
   const autoNextTimer = useRef<number | null>(null)
+  const poolCacheRef = useRef<Map<string, { at: number; items: Question[] }>>(new Map())
   const todayKey = useMemo(() => todayIstKey(), [])
   const rank = useMemo(() => rankForXp(profile.xp), [profile.xp])
   const currentCard = deck[deckCursor] || null
@@ -141,22 +142,33 @@ export default function QuestGame() {
           nextMode === 'daily'
             ? `finna-daily-${todayKey}`
             : `finna-quest-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`
-        const perSubjectLimit = subjects.length <= 2 ? 60 : subjects.length <= 4 ? 40 : 28
+        const perSubjectLimit = subjects.length <= 2 ? 60 : subjects.length <= 4 ? 44 : 32
+        const now = Date.now()
+        const cacheTtlMs = 10 * 60 * 1000
 
         const pages = await Promise.all(
-          subjects.map((subject_id) =>
-            listQuestions({
+          subjects.map(async (subject_id) => {
+            const cacheKey = nextMode === 'daily' ? `daily:${todayKey}:${subject_id}` : `open:${subject_id}`
+            const hit = poolCacheRef.current.get(cacheKey)
+            if (hit && now - hit.at < cacheTtlMs && hit.items.length >= 10) {
+              return hit.items
+            }
+            const res = await listQuestions({
               pool: 'practice',
               subject_id,
               order: 'mixed',
-              seed: seedStr,
+              seed: nextMode === 'daily' ? seedStr : `pool-${todayKey}-${subject_id}`,
               limit: perSubjectLimit,
               offset: 0,
-            }).catch(() => ({ items: [] as Question[], total: 0 })),
-          ),
+            }).catch(() => ({ items: [] as Question[], total: 0 }))
+            if (res.items.length) {
+              poolCacheRef.current.set(cacheKey, { at: now, items: res.items })
+            }
+            return res.items
+          }),
         )
 
-        const raw = pages.flatMap((p) => p.items)
+        const raw = pages.flat()
         const built = buildQuestDeck(raw, activeRealms, seedStr)
         if (built.length < 10) {
           throw new Error(

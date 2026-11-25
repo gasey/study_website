@@ -8,7 +8,7 @@ import AnswerProvenance from './AnswerProvenance'
 import {scopeLink} from '../lib/examScope'
 import {QuestionActions} from './QuestionDiscussion'
 import {AnswerOptions} from './AnswerLayout'
-import { useRef, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { submitAnswer, type AnswerResult, type Question } from '../lib/api'
 import { SourceQuestionContext, SourceQuestionText } from './SourceQuestionText'
@@ -57,8 +57,14 @@ export default function QuestionCard({ q, onAnswered, onNext }: { q: Question; o
       ? 'Diagram note · the figure artwork is in the original PDF, not embedded here. Open the source PDF below before answering.'
       : null
 
-  const sourceInfo = formatQuestionSource(q)
-  const guideMatch = resolveQuestionGuide(q)
+  const sourceInfo = useMemo(
+    () => formatQuestionSource(q),
+    [q.source_appearance, q.first_year, q.last_year],
+  )
+  const guideMatch = useMemo(
+    () => resolveQuestionGuide(q),
+    [q.taxonomy_subject_id, q.taxonomy_topic_id, q.taxonomy_subtopic_id, q.subject, q.topic, q.question],
+  )
   const actions = <QuestionActions questionType={q.type} qid={q.id} context={{paper_id:q.source_appearance?.paper_id}} answeredSignal={result}/>
 
   const isWritten = q.type !== 'mcq'
