@@ -919,6 +919,76 @@ html[data-design="finna"] .finna-qd .answer-options .answer-option { min-height:
 .finna-welcomeback-actions { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
 
 .finna-kpi-strip { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin-bottom:18px; }
+/* Adaptive First-Visit Welcome Hero (shown only to first-time guests with 0 answers) */
+.finna-welcome-hero {
+  position:relative; display:flex; align-items:center; justify-content:space-between; gap:20px;
+  margin-bottom:18px; padding:22px 26px; border-radius:22px;
+  border:1px solid rgba(255,200,61,.26);
+  background:
+    radial-gradient(280px 180px at 95% 0%, rgba(255,200,61,.20), transparent 65%),
+    radial-gradient(260px 180px at 0% 100%, rgba(10,125,140,.28), transparent 65%),
+    linear-gradient(135deg, #0E1538 0%, #172554 58%, #16304F 100%);
+  color:#FFFFFF;
+  box-shadow:0 16px 34px -20px rgba(10,15,44,.55);
+}
+.finna-welcome-close {
+  position:absolute; top:12px; right:12px;
+  width:32px; height:32px; display:grid; place-items:center;
+  border-radius:999px; border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.08); color:rgba(241,245,255,.85);
+  font-size:18px; line-height:1; cursor:pointer;
+  transition:background-color .15s ease, color .15s ease;
+}
+.finna-welcome-close:hover { background:rgba(255,255,255,.18); color:#FFFFFF; }
+.finna-welcome-copy { min-width:0; flex:1; padding-right:20px; }
+.finna-welcome-kicker {
+  display:inline-block; font-family:var(--font-mono); font-size:10.5px; font-weight:800;
+  letter-spacing:.12em; color:#FFC83D;
+}
+.finna-welcome-copy h2 {
+  margin-top:6px; font-family:var(--font-reading); font-size:clamp(22px, 2.6vw, 29px);
+  font-weight:700; line-height:1.15; letter-spacing:-.02em; color:#FFFFFF;
+}
+.finna-welcome-copy p {
+  margin-top:7px; max-width:620px; font-size:14px; line-height:1.5; color:rgba(226,232,240,.9);
+}
+.finna-welcome-actions { margin-top:14px; display:flex; flex-wrap:wrap; gap:9px; }
+.finna-welcome-cta {
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height:42px; padding:0 18px; border-radius:999px;
+  background:#FFC83D; color:#0E1330; font-size:13.5px; font-weight:800;
+  box-shadow:0 6px 16px -6px rgba(255,200,61,.55);
+  transition:transform .12s ease, filter .14s ease;
+}
+.finna-welcome-cta:hover { transform:translateY(-1px); filter:brightness(1.04); }
+.finna-welcome-ghost {
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height:42px; padding:0 15px; border-radius:999px;
+  border:1px solid rgba(255,255,255,.26); background:rgba(255,255,255,.10);
+  color:#FFFFFF; font-size:13px; font-weight:700;
+  transition:background-color .14s ease, border-color .14s ease;
+}
+.finna-welcome-ghost:hover { background:rgba(255,255,255,.18); border-color:rgba(255,255,255,.45); }
+.finna-welcome-side {
+  display:flex; flex-direction:column; align-items:center; gap:8px;
+  flex:none; padding-right:18px;
+}
+.finna-welcome-sprite {
+  width:84px; height:84px; display:grid; place-items:center;
+  border-radius:18px; background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,200,61,.35);
+}
+.finna-welcome-signin {
+  font-size:12px; font-weight:700; color:#FDE68A; white-space:nowrap;
+}
+.finna-welcome-signin:hover { text-decoration:underline; color:#FFFFFF; }
+@media(max-width:767px) {
+  .finna-welcome-hero { padding:16px 16px 18px; border-radius:18px; }
+  .finna-welcome-side { display:none; }
+  .finna-welcome-copy { padding-right:26px; }
+  .finna-welcome-copy p { font-size:13px; }
+  .finna-welcome-cta, .finna-welcome-ghost { min-height:40px; font-size:12.5px; padding:0 14px; }
+}
 .finna-kpi-tile { display:flex; align-items:center; gap:12px; padding:14px 16px; border-radius:16px; border:1px solid var(--line); background:var(--bg-panel); box-shadow:var(--ism-card-shadow); min-width:0; }
 .finna-kpi-icon { width:40px; height:40px; border-radius:12px; display:grid; place-items:center; font-size:16px; font-weight:700; flex:none; }
 .finna-kpi-body { min-width:0; }

@@ -1,5 +1,9 @@
 # Devlog
 
+25 November IST — **Added compact Adaptive First-Visit Welcome Hero on `/home` for first-time zero-activity guests (`StudyHome.tsx`, `finna.css`). Web deployed to `https://study.hawayu.in`.**
+
+- **First-Visit Conversion without Taxing Daily Students (`StudyHome.tsx`, `finna.css`):** Replaces only the empty `0 / — / 0d / 0%` KPI strip when a visitor is signed out and has `0` answered questions (`!loading && authResolved && !authenticated && answered === 0 && !dismissed`), presenting a compact Midnight Indigo + Gold welcome hero with 3 instant CTAs (`Start Free Practice →`, `Browse Exams & Papers`, `⚔️ Play Finna Quest`), animated 16-bit Pixel RPG Hero sprite, and dismiss button. Auto-disappears for signed-in users and once Q1 is answered.
+
 25 November IST — **Added top-right Profile Avatar Dropdown Menu with live 16-bit Pixel Hero card, quick study/account shortcuts, theme switcher, and Sign out (`Header.tsx`, `finna.css`). Web deployed to `https://study.hawayu.in`.**
 
 - **Interactive Account Menu (`Header.tsx`, `finna.css`):** Clicking the top-right signed-in pixel avatar now opens a clean popover card (`Escape` + outside-click + route-change close) showing the animated 16-bit Pixel RPG Sprite, email, plan badge, live streak, active exam pill, quick shortcuts (**My Profile**, **Edit Pixel RPG Sprite**, **Quests & Rewards**, **Personal Vault** with live count, **Study Desk**, **Finna Quest RPG**, **Public Profile & Visibility**, **Account & Security**, **Plan & Billing**, optional Staff Admin, **Light/Dark Mode**), and a one-click **Sign out** button.

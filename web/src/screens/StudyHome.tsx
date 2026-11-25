@@ -48,6 +48,7 @@ import VaultShowcaseCard from '../components/VaultShowcaseCard'
 import ExamPickerDialog from '../components/ExamPickerDialog'
 import HomeFeedPreview from '../components/HomeFeedPreview'
 import SubjectBookshelf from '../components/SubjectBookshelf'
+import AvatarArt, { DEFAULT_HERO_LOOK } from '../components/AvatarArt'
 import { mockResumePath } from '../lib/sharedTests'
 
 const MONTHS = [
@@ -75,6 +76,7 @@ type StudyData = {
   calendarEvents: CalendarEvent[]
   taxonomy: TaxonomyFacet[]
   authenticated: boolean
+  authResolved: boolean
   loading: boolean
   primaryError: boolean
   lastLoadedAt: number | null
@@ -91,6 +93,7 @@ const EMPTY: StudyData = {
   calendarEvents: [],
   taxonomy: [],
   authenticated: false,
+  authResolved: false,
   loading: true,
   primaryError: false,
   lastLoadedAt: null,
@@ -107,6 +110,22 @@ export default function StudyHome() {
   const [busyExamId, setBusyExamId] = useState<string | null>(null)
   const [pickerOpen, setPickerOpen] = useState(false)
   const [monthOffset, setMonthOffset] = useState(0)
+  const [welcomeDismissed, setWelcomeDismissed] = useState(() => {
+    try {
+      return typeof localStorage !== 'undefined' && localStorage.getItem('finna_welcome_dismissed_v1') === '1'
+    } catch {
+      return false
+    }
+  })
+
+  function dismissWelcome() {
+    setWelcomeDismissed(true)
+    try {
+      localStorage.setItem('finna_welcome_dismissed_v1', '1')
+    } catch {
+      /* ignore */
+    }
+  }
 
   // Multi-subject focus UI state
   const localFocusIds = useLocalFocusSubjectIds()
@@ -232,7 +251,7 @@ export default function StudyHome() {
 
     void accountContext()
       .then(async (a) => {
-        patch({ authenticated: a.authenticated })
+        patch({ authenticated: a.authenticated, authResolved: true })
         if (!a.authenticated) return
         void getFocusSubjects()
           .then((f) => {
@@ -250,7 +269,9 @@ export default function StudyHome() {
             .slice(0, 3),
         })
       })
-      .catch(() => {})
+      .catch(() => {
+        patch({ authResolved: true })
+      })
 
     Promise.allSettled(primaryRequests).then((results) => {
       const anySucceeded = results.some((r) => r.status === 'fulfilled')
@@ -541,59 +562,117 @@ export default function StudyHome() {
 
         <WelcomeBackBar resumeUrl={returnRows[0]?.url ?? null} />
 
-        {/* 4-Tile KPI Strip (§VII.19.8, Dashboards v2) */}
-        <section className="finna-kpi-strip" aria-label="Study snapshot">
-          <div className="finna-kpi-tile">
-            <div className="finna-kpi-icon bg-practice-soft text-practice-dark" aria-hidden="true">
-              ✎
-            </div>
-            <div className="finna-kpi-body">
-              <div className="finna-kpi-value">{p ? weekAnswers.toLocaleString('en-IN') : '—'}</div>
-              <div className="finna-kpi-label">Answered this week</div>
-            </div>
-          </div>
-          <div className="finna-kpi-tile">
-            <div className="finna-kpi-icon bg-correct-soft text-correct-dark" aria-hidden="true">
-              ✓
-            </div>
-            <div className="finna-kpi-body">
-              <div className={`finna-kpi-value${weekAccuracy === null ? ' finna-kpi-value--na' : ''}`}>
-                {weekAccuracy ?? '—'}
-              </div>
-              <div className="finna-kpi-label">7-day accuracy</div>
-            </div>
-          </div>
-          <div className="finna-kpi-tile">
-            <div className="finna-kpi-icon bg-exams-soft text-exams-dark" aria-hidden="true">
-              ★
-            </div>
-            <div className="finna-kpi-body">
-              <div className={`finna-kpi-value${!p ? ' finna-kpi-value--na' : ''}`}>
-                {p ? `${p.current_streak}d` : '—'}
-              </div>
-              <div className="finna-kpi-label">
-                {p?.streak_basis === 'device activity' ? 'Device streak' : 'Current streak'}
-              </div>
-            </div>
-          </div>
-          <div className="finna-kpi-tile">
-            <div className="finna-kpi-icon bg-learn-soft text-learn-dark" aria-hidden="true">
-              ◎
-            </div>
-            <div className="finna-kpi-body">
-              <div className={`finna-kpi-value${coverage === null ? ' finna-kpi-value--na' : ''}`}>
-                {coverage !== null ? `${coverage}%` : '—'}
-              </div>
-              <div className="finna-kpi-label">
-                {exam
-                  ? trackedExams.length > 1
-                    ? `${examTitle} · ${trackedExams.length} exams`
-                    : `${examTitle} coverage`
-                  : 'Exam coverage'}
+        {/* Adaptive First-Visit Hero (only for first-time guests with 0 answers; replaces empty KPI zeros) */}
+        {!data.loading &&
+        data.authResolved &&
+        !data.authenticated &&
+        (p?.answered ?? 0) === 0 &&
+        !welcomeDismissed ? (
+          <section className="finna-welcome-hero" aria-label="Welcome to Finna">
+            <button
+              type="button"
+              onClick={dismissWelcome}
+              aria-label="Dismiss welcome banner"
+              className="finna-welcome-close"
+              title="Hide welcome banner"
+            >
+              ×
+            </button>
+            <div className="finna-welcome-copy">
+              <span className="finna-welcome-kicker">
+                FINNA · MPSC &amp; MIZORAM EXAM STUDY
+              </span>
+              <h2>Master MPSC &amp; Mizoram exams with real past papers</h2>
+              <p>
+                82,000+ past-paper questions · 11 free Concept Guides · Full-Paper Mocks &amp;
+                16-bit RPG drills — free to start, no sign-in needed.
+              </p>
+              <div className="finna-welcome-actions">
+                <Link
+                  to={exam ? '/practice?exam=' + encodeURIComponent(exam.id) : '/practice'}
+                  className="finna-welcome-cta"
+                >
+                  Start Free Practice →
+                </Link>
+                <Link to="/exams" className="finna-welcome-ghost">
+                  Browse Exams &amp; Papers
+                </Link>
+                <Link to="/games/quest" className="finna-welcome-ghost">
+                  ⚔️ Play Finna Quest
+                </Link>
               </div>
             </div>
-          </div>
-        </section>
+            <div className="finna-welcome-side">
+              <div className="finna-welcome-sprite" aria-hidden="true">
+                <AvatarArt
+                  look={DEFAULT_HERO_LOOK}
+                  size={68}
+                  variant="sprite"
+                  pose="walk"
+                  facing="down"
+                  animate
+                />
+              </div>
+              <Link to="/login" className="finna-welcome-signin">
+                Sign in to save progress →
+              </Link>
+            </div>
+          </section>
+        ) : (
+          /* 4-Tile KPI Strip (§VII.19.8, Dashboards v2) */
+          <section className="finna-kpi-strip" aria-label="Study snapshot">
+            <div className="finna-kpi-tile">
+              <div className="finna-kpi-icon bg-practice-soft text-practice-dark" aria-hidden="true">
+                ✎
+              </div>
+              <div className="finna-kpi-body">
+                <div className="finna-kpi-value">{p ? weekAnswers.toLocaleString('en-IN') : '—'}</div>
+                <div className="finna-kpi-label">Answered this week</div>
+              </div>
+            </div>
+            <div className="finna-kpi-tile">
+              <div className="finna-kpi-icon bg-correct-soft text-correct-dark" aria-hidden="true">
+                ✓
+              </div>
+              <div className="finna-kpi-body">
+                <div className={`finna-kpi-value${weekAccuracy === null ? ' finna-kpi-value--na' : ''}`}>
+                  {weekAccuracy ?? '—'}
+                </div>
+                <div className="finna-kpi-label">7-day accuracy</div>
+              </div>
+            </div>
+            <div className="finna-kpi-tile">
+              <div className="finna-kpi-icon bg-exams-soft text-exams-dark" aria-hidden="true">
+                ★
+              </div>
+              <div className="finna-kpi-body">
+                <div className={`finna-kpi-value${!p ? ' finna-kpi-value--na' : ''}`}>
+                  {p ? `${p.current_streak}d` : '—'}
+                </div>
+                <div className="finna-kpi-label">
+                  {p?.streak_basis === 'device activity' ? 'Device streak' : 'Current streak'}
+                </div>
+              </div>
+            </div>
+            <div className="finna-kpi-tile">
+              <div className="finna-kpi-icon bg-learn-soft text-learn-dark" aria-hidden="true">
+                ◎
+              </div>
+              <div className="finna-kpi-body">
+                <div className={`finna-kpi-value${coverage === null ? ' finna-kpi-value--na' : ''}`}>
+                  {coverage !== null ? `${coverage}%` : '—'}
+                </div>
+                <div className="finna-kpi-label">
+                  {exam
+                    ? trackedExams.length > 1
+                      ? `${examTitle} · ${trackedExams.length} exams`
+                      : `${examTitle} coverage`
+                    : 'Exam coverage'}
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
 
         {data.primaryError && (
           <section className="finna-card mb-4 border-wrong bg-wrong-soft" role="alert">
