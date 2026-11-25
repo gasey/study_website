@@ -1,6 +1,11 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { listQuestions, submitAnswer, type Question } from '../lib/api'
+import { loadAvatar, type AvatarLook } from '../lib/avatar'
+import AvatarArt, {
+  DEFAULT_HERO_LOOK,
+  PixelGuardianSprite,
+} from '../components/AvatarArt'
 import { resolveQuestionGuide } from '../lib/questionGuideLink'
 import { SourceQuestionContext, SourceQuestionText } from '../components/SourceQuestionText'
 import {
@@ -42,7 +47,22 @@ interface Inventory {
 export default function QuestGame() {
   const [params] = useSearchParams()
   const [profile, setProfile] = useState<QuestProfile>(() => loadQuestProfile())
+  const [heroLook, setHeroLook] = useState<AvatarLook>(DEFAULT_HERO_LOOK)
   const [selectedRealms, setSelectedRealms] = useState<QuestRealmId[]>(DEFAULT_ENABLED_REALMS)
+
+  useEffect(() => {
+    let live = true
+    loadAvatar()
+      .then((acc) => {
+        if (live && (acc.avatar || acc.default)) {
+          setHeroLook(acc.avatar || acc.default)
+        }
+      })
+      .catch(() => {})
+    return () => {
+      live = false
+    }
+  }, [])
 
   // Active run state
   const [phase, setPhase] = useState<Phase>('lobby')
@@ -653,11 +673,33 @@ export default function QuestGame() {
                 </Link>
               </div>
             </div>
-            <h1>Ascend the Blue Mountain</h1>
-            <p>
-              Battle Realm Guardians across curated general-knowledge subjects — English, Geography, Computer,
-              History, Polity, Science, Economy &amp; Maths. Earn gold, visit the Campfire Shop, and conquer 3 Bosses!
-            </p>
+            <div className="mt-2 flex flex-wrap items-center gap-4">
+              <Link
+                to="/profile/avatar"
+                title="Customize your RPG pixel sprite"
+                className="group flex flex-col items-center rounded-2xl border border-white/20 bg-white/10 px-3 py-2 text-center transition hover:border-amber-300/70 hover:bg-white/15"
+              >
+                <AvatarArt
+                  look={heroLook}
+                  size={68}
+                  variant="sprite"
+                  pose="walk"
+                  facing="down"
+                  animate
+                  label="Your Quest RPG Hero"
+                />
+                <span className="mt-1 font-mono text-[10px] font-bold uppercase tracking-wider text-amber-200 group-hover:text-white">
+                  ✎ Edit Hero
+                </span>
+              </Link>
+              <div className="min-w-0 flex-1">
+                <h1>Ascend the Blue Mountain</h1>
+                <p>
+                  Battle Realm Guardians across curated general-knowledge subjects — English, Geography, Computer,
+                  History, Polity, Science, Economy &amp; Maths. Earn gold, visit the Campfire Shop, and conquer 3 Bosses!
+                </p>
+              </div>
+            </div>
             <div className="fq-rank-strip">
               <div className="fq-stat-tile">
                 <span>Level {rank.level} Rank</span>
@@ -896,8 +938,40 @@ export default function QuestGame() {
           >
             <div className="fq-stage-row">
               <div className="fq-guardian">
+                <div
+                  className="fq-guardian-avatar"
+                  style={{
+                    borderColor: shieldActive ? '#38BDF8' : '#34D399',
+                    background: shieldActive
+                      ? 'rgba(56, 189, 248, 0.22)'
+                      : 'rgba(255, 255, 255, 0.1)',
+                  }}
+                >
+                  <AvatarArt
+                    look={heroLook}
+                    size={58}
+                    variant="sprite"
+                    facing="right"
+                    pose={
+                      resolved?.correct
+                        ? 'attack'
+                        : stageAnim === 'hit'
+                          ? 'attack'
+                          : 'idle'
+                    }
+                    animate
+                    label="Your RPG Hero"
+                  />
+                </div>
+                <span className="font-mono text-xs font-extrabold text-amber-300">VS</span>
                 <div className="fq-guardian-avatar" aria-hidden="true">
-                  {encounter.isFinalBoss ? '👑' : encounter.isBoss ? '🐉' : realm.icon}
+                  <PixelGuardianSprite
+                    realmId={encounter.realmId}
+                    isBoss={encounter.isBoss}
+                    isFinalBoss={encounter.isFinalBoss}
+                    accent={realm.accent}
+                    size={58}
+                  />
                 </div>
                 <div>
                   <div className="fq-guardian-name">{encounter.name}</div>
@@ -1144,21 +1218,36 @@ export default function QuestGame() {
       {phase === 'summary' && (
         <div className="space-y-6">
           <header className="fq-hero">
-            <span className="fq-eyebrow">
-              {victory ? '👑 Expedition Victory' : '⚔️ Expedition Complete'}
-            </span>
-            <h1>
-              {victory
-                ? mode === 'daily'
-                  ? `Daily Gauntlet Cleared!`
-                  : 'You Conquered the Summit!'
-                : `Fallen at Floor ${floor}`}
-            </h1>
-            <p>
-              {battleLog.filter((e) => e.correct).length} / {battleLog.length} right · Score{' '}
-              <strong>{score.toLocaleString('en-IN')}</strong> · Best Streak{' '}
-              <strong>🔥 {bestStreak}</strong> · Earned <strong>+{earnedXp} XP</strong>
-            </p>
+            <div className="flex flex-wrap items-center gap-4">
+              <div className="rounded-2xl border border-white/20 bg-white/10 p-2.5">
+                <AvatarArt
+                  look={heroLook}
+                  size={74}
+                  variant="sprite"
+                  pose={victory ? 'cheer' : 'idle'}
+                  facing="down"
+                  animate
+                  label="Your RPG Hero"
+                />
+              </div>
+              <div className="min-w-0 flex-1">
+                <span className="fq-eyebrow">
+                  {victory ? '👑 Expedition Victory' : '⚔️ Expedition Complete'}
+                </span>
+                <h1>
+                  {victory
+                    ? mode === 'daily'
+                      ? `Daily Gauntlet Cleared!`
+                      : 'You Conquered the Summit!'
+                    : `Fallen at Floor ${floor}`}
+                </h1>
+                <p>
+                  {battleLog.filter((e) => e.correct).length} / {battleLog.length} right · Score{' '}
+                  <strong>{score.toLocaleString('en-IN')}</strong> · Best Streak{' '}
+                  <strong>🔥 {bestStreak}</strong> · Earned <strong>+{earnedXp} XP</strong>
+                </p>
+              </div>
+            </div>
             {mode === 'daily' && (
               <p className="mt-3 font-mono text-lg tracking-widest">
                 {battleLog

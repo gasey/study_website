@@ -1,7 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import CosmeticShop from "../components/CosmeticShop";
-import AvatarArt, { UserAvatar } from "../components/AvatarArt";
+import AvatarArt, {
+  UserAvatar,
+  type SpriteFacing,
+  type SpritePose,
+} from "../components/AvatarArt";
 import FlashBanner from "../components/FlashBanner";
 import {
   AVATAR_COLORS,
@@ -33,6 +37,8 @@ export default function AvatarEditor() {
     [loading, setLoading] = useState(true);
   const generation = useRef(0);
   const [initialsPreview, setInitialsPreview] = useState(false);
+  const [spritePose, setSpritePose] = useState<SpritePose>("walk");
+  const [spriteFacing, setSpriteFacing] = useState<SpriteFacing>("down");
 
   async function load() {
     const run = ++generation.current;
@@ -196,9 +202,77 @@ export default function AvatarEditor() {
                       look={look}
                       size={156}
                       label="Your avatar preview"
+                      pose={spritePose}
+                      facing={spriteFacing}
+                      animate
                     />
                   )}
                 </div>
+                {!initialsPreview && (
+                  <div className="mt-3 w-full rounded-2xl border border-hairline bg-[#162235] p-3 text-center text-white">
+                    <div className="flex items-center justify-center rounded-xl bg-gradient-to-b from-[#1e324a] to-[#1b4332] py-3">
+                      <AvatarArt
+                        look={look}
+                        size={96}
+                        variant="sprite"
+                        pose={spritePose}
+                        facing={spriteFacing}
+                        animate
+                        label="Animated RPG sprite preview"
+                      />
+                    </div>
+                    <p className="mt-2 font-mono text-[10px] uppercase tracking-wider text-amber-200">
+                      16-Bit Game Sprite · Finna Quest &amp; Games
+                    </p>
+                    <div className="mt-2 flex flex-wrap justify-center gap-1" role="group" aria-label="Sprite animation pose">
+                      {(
+                        [
+                          ["walk", "🚶 Walk"],
+                          ["idle", "🧍 Idle"],
+                          ["attack", "⚔️ Attack"],
+                          ["cheer", "🎉 Cheer"],
+                        ] as const
+                      ).map(([p, lbl]) => (
+                        <button
+                          key={p}
+                          type="button"
+                          onClick={() => setSpritePose(p)}
+                          className={
+                            "rounded-full px-2.5 py-1 text-[11px] font-bold " +
+                            (spritePose === p
+                              ? "bg-amber-400 text-slate-950"
+                              : "bg-white/10 text-slate-200 hover:bg-white/20")
+                          }
+                        >
+                          {lbl}
+                        </button>
+                      ))}
+                    </div>
+                    <div className="mt-1.5 flex justify-center gap-1" role="group" aria-label="Sprite direction">
+                      {(
+                        [
+                          ["left", "◀ Left"],
+                          ["down", "▼ Front"],
+                          ["right", "▶ Right"],
+                        ] as const
+                      ).map(([dir, lbl]) => (
+                        <button
+                          key={dir}
+                          type="button"
+                          onClick={() => setSpriteFacing(dir)}
+                          className={
+                            "rounded-full px-2.5 py-0.5 text-[10px] font-semibold " +
+                            (spriteFacing === dir
+                              ? "bg-white text-slate-900"
+                              : "bg-white/10 text-slate-300 hover:bg-white/20")
+                          }
+                        >
+                          {lbl}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
                 <h2 className="av-stage-name">
                   {account.name || account.handle}
                 </h2>
