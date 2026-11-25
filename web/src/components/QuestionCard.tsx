@@ -20,7 +20,7 @@ const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F']
 /** Bank question card, ported from `India Study Map v3.dc.html` line 407.
  *  Exact values and the README-vs-markup disagreements are recorded in
  *  docs/DESIGN-FIDELITY.md — read that before changing anything here. */
-export default function QuestionCard({ q, onAnswered, onNext }: { q: Question; onAnswered?: () => void; onNext?:()=>void }) {
+export default function QuestionCard({ q, onAnswered, onNext }: { q: Question; onAnswered?: (result?: AnswerResult) => void; onNext?:()=>void }) {
   const [picked, setPicked] = useState<number | null>(null)
   const [result, setResult] = useState<AnswerResult | null>(null)
   const [busy, setBusy] = useState(false)
@@ -35,9 +35,10 @@ export default function QuestionCard({ q, onAnswered, onNext }: { q: Question; o
     setPicked(i)
     setBusy(true)
     try {
-      setResult(await submitAnswer(q.id, i))
+      const res = await submitAnswer(q.id, i)
+      setResult(res)
       void savePracticePosition(q.id).catch(()=>{})
-      onAnswered?.()
+      onAnswered?.(res)
     } catch (error) {
       setAnswerError(error instanceof Error ? error.message : 'Answer could not be checked. Please try again.')
       setPicked(null) // let them try again rather than stranding a selection

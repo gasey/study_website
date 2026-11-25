@@ -1,7 +1,6 @@
 import '../styles/exam-experience.css'
 import ExamOverview from '../components/ExamOverview'
 import MasteryMap from '../components/MasteryMap'
-import {udcPracticeMode,udcPracticeLink} from '../lib/studySetLinks'
 import {readQuestionOrder} from '../lib/questionBrowse'
 import ReviewModuleLink from '../components/ReviewModuleLink'
 import QuestionDiscovery from '../components/QuestionDiscovery'
@@ -70,11 +69,11 @@ export default function ExamPage({ isSubjectRoute = false }: { isSubjectRoute?: 
     // The browser reuses this in-flight result when the question panel mounts.
     const params=new URLSearchParams(window.location.search)
     const initialView=params.get('view') || 'browse'
-    const initialStatus=params.get('status')||'all'
-    if((initialView==='browse'||initialView==='practice'&&id!=='udc')&&initialStatus==='all'&&(readQuestionOrder(params.get('order'))==='repeated'||params.has('seed'))&&(params.get('q')||'').length!==1){
+    const initialStatus=params.get('status')||(initialView==='practice'?'unseen':'all')
+    if(initialView==='browse'&&initialStatus==='all'&&(readQuestionOrder(params.get('order'))==='repeated'||params.has('seed'))&&(params.get('q')||'').length!==1){
       const pool=params.get('pool')
       const answerStatus=params.get('answer_status')
-      const request:ListParams={order:readQuestionOrder(params.get('order')),seed:params.get('seed')||undefined,collection_id:id,section_path:params.get('section')||undefined,paper_id:params.get('paper')||undefined,subject_id:params.get('subject_id')||undefined,topic_id:params.get('topic_id')||undefined,subtopic_id:params.get('subtopic_id')||undefined,q:params.get('q')||undefined,pool:pool==='all'||pool==='scorable'||pool==='practice'?pool:initialView==='practice'?'practice':'all',limit:initialView==='practice'?1:25,offset:Math.floor(Math.max(0,Math.min(100000,Number(params.get('offset'))||0)))}
+      const request:ListParams={order:readQuestionOrder(params.get('order')),seed:params.get('seed')||undefined,collection_id:id,section_path:params.get('section')||undefined,paper_id:params.get('paper')||undefined,subject_id:params.get('subject_id')||undefined,topic_id:params.get('topic_id')||undefined,subtopic_id:params.get('subtopic_id')||undefined,q:params.get('q')||undefined,pool:pool==='all'||pool==='scorable'||pool==='practice'?pool:'all',limit:25,offset:Math.floor(Math.max(0,Math.min(100000,Number(params.get('offset'))||0)))}
       if(answerStatus==='official'||answerStatus==='verified'||answerStatus==='needs-review'||answerStatus==='unsolved'||answerStatus==='written')request.answer_status=answerStatus
       prefetchQuestionPage(request)
     }
@@ -134,7 +133,7 @@ export default function ExamPage({ isSubjectRoute = false }: { isSubjectRoute?: 
   const mcsSection=c.id==='combined-prelims'?searchParams.get('section'):null
   const filteredPapers=sortArchivePapers(c.paper_list.filter(p=>(!mcsSection||!['gs','aptitude'].includes(mcsSection)||p.section_path===mcsSection)&&(!paperYear||String(p.year)===paperYear)&&tokens.every(token=>`${p.paper_label||''} ${p.title} ${p.exam||''} ${p.subject||''} ${p.paper_number||''} ${p.year||''} ${p.id.split('/').pop()}`.toLowerCase().includes(token))),archiveOrder)
   const focusedUdc = c.id === 'udc'
-  const savedPractice = focusedUdc && udcPracticeMode(searchParams)==='sets'
+  const legacySavedSession = focusedUdc && searchParams.has('session')
   const groupedPapers = !archiveList
   const udcPreview = focusedUdc && view === 'overview' && !paperQuery && !paperYear && !searchParams.has('paper_page') && !searchParams.has('paper_sort') && !searchParams.has('paper_layout')
   const pageSize=udcPreview?3:archiveList?25:9
@@ -212,22 +211,15 @@ export default function ExamPage({ isSubjectRoute = false }: { isSubjectRoute?: 
       {view==='topics'&&<Suspense fallback={<p className="mt-5 text-sm text-muted">Loading subjects and topics…</p>}><ExamStudyTopics examId={c.id} basePath={isSubject ? `/subjects/${encodeURIComponent(rawId)}` : undefined} isSubjectView={isSubject}/></Suspense>}
       {view==='practice'&&!isSubject&&(c.scorable>=20||c.practice_count>=20)&&<div className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-[14px] border border-hairline bg-card px-4 py-3">
         <div>
-          <strong className="text-sm text-ink">Untimed Practice · instant answers &amp; guide links</strong>
-          <p className="text-xs text-secondary">Want exam-day pressure? Switch to a timed Full-Paper Mock (real past paper or 100-Q full exam).</p>
+          <strong className="text-sm text-ink">Guided Practice · 50 by 50, Step 1-by-1, or Unattempted</strong>
+          <p className="text-xs text-secondary">Filter by subject or topic and work systematically through the bank. Want real exam pressure?</p>
         </div>
         <Link to={`/practice?mode=mock&exam=${encodeURIComponent(c.id)}`} className="inline-flex min-h-11 items-center rounded-pill border border-ink bg-ink px-4 text-xs font-semibold text-paper">
           Switch to Full-Paper Mock →
         </Link>
       </div>}
-      {focusedUdc&&view==='practice'&&<div className="mt-5">
-        <nav aria-label="UDC practice mode" className="flex flex-wrap gap-4 text-sm">
-          <Link to={udcPracticeLink(searchParams,'continuous')} aria-current={!savedPractice?'page':undefined} className="inline-flex min-h-11 items-center font-semibold text-link underline">Continuous practice</Link>
-          <Link to={udcPracticeLink(searchParams,'sets')} aria-current={savedPractice?'page':undefined} className="inline-flex min-h-11 items-center text-link underline">Saved short sets</Link>
-        </nav>
-        {!savedPractice&&<p className="mt-1 text-sm text-secondary">Keep going through all matching questions, with no 20-question set limit.</p>}
-      </div>}
-      {savedPractice&&view==='practice'&&<Suspense fallback={<p className="mt-5 text-sm text-muted">Loading UDC practice…</p>}><UdcStudySessions key={searchParams.get('session')||'setup'} papers={c.paper_list}/></Suspense>}
-      {(view === 'browse' || view === 'practice'&&!savedPractice) && <ModuleQuestionBrowser key={`${c.id}:${view}`} metadataLoading={!ready} collectionTitle={c.title} collectionId={c.id} papers={c.paper_list} sections={c.section_list} initialSectionPath={searchParams.get('section') || ''} initialPool={view==='practice'?'practice':'all'} />}
+      {legacySavedSession&&view==='practice'&&<Suspense fallback={<p className="mt-5 text-sm text-muted">Loading saved session…</p>}><UdcStudySessions key={searchParams.get('session')||'setup'} papers={c.paper_list}/></Suspense>}
+      {(view === 'browse' || (view === 'practice' && !legacySavedSession)) && <ModuleQuestionBrowser key={`${c.id}:${view}`} metadataLoading={!ready} collectionTitle={c.title} collectionId={c.id} papers={c.paper_list} sections={c.section_list} initialSectionPath={searchParams.get('section') || ''} initialPool={view==='practice'?'practice':'all'} />}
       {ready&&view === 'progress' && <><ModuleProgressPanel collectionId={c.id} collectionTitle={c.title} totalScorable={c.scorable} totalQuestions={c.questions} /><MasteryMap/></>}
 
       {ready&&view === 'overview'&&!focusedUdc && <><div className="mt-6 flex flex-wrap items-start gap-7">

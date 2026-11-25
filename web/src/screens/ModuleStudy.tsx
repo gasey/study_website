@@ -17,17 +17,44 @@ import {reviewRequest} from '../lib/review'
 import { getAccountSession,getMistakes, getProgress, getQuestionFacets, listQuestions, prefetchQuestionPage, submitAnswer, type GroupBStudyArea, type AnswerResult, type CollectionPaper, type CollectionSection, type Mistake, type Progress, type Question, type QuestionFacets } from '../lib/api'
 
 
+type PracticeBatch = 50 | 25 | 1
+
 export function ModuleQuestionBrowser({ collectionId, papers, sections, initialSectionPath = '', initialPool = 'all', studyArea, sourceCollections, metadataLoading=false, collectionTitle }: { metadataLoading?:boolean;collectionTitle?:string;studyArea?: GroupBStudyArea; sourceCollections?:Record<string,string>; collectionId: string; papers: CollectionPaper[]; sections: CollectionSection[]; initialSectionPath?: string; initialPool?: 'all'|'scorable'|'practice' }) {
   const [urlParams,setURLParams]=useSearchParams()
   const combined = collectionId === 'combined-prelims'
-  const practice=urlParams.get('view')==='practice',PAGE_SIZE=practice?1:25
+  const practice=urlParams.get('view')==='practice'
+  const [storedBatch, setStoredBatch] = useState<PracticeBatch>(() => {
+    try {
+      const saved = Number(localStorage.getItem('finna:practice-batch:v1'))
+      if (saved === 1 || saved === 25 || saved === 50) return saved
+    } catch { /* ignore */ }
+    return 50
+  })
+  const rawBatchParam = Number(urlParams.get('batch'))
+  const practiceBatch: PracticeBatch = rawBatchParam === 1 || rawBatchParam === 25 || rawBatchParam === 50 ? rawBatchParam : storedBatch
+  const PAGE_SIZE = practice ? practiceBatch : 25
+  const [sessionStats, setSessionStats] = useState<{ answered: number; correct: number }>({ answered: 0, correct: 0 })
   const [reload,setReload]=useState(0),[loading,setLoading]=useState(true)
   const search=urlParams.get('q')||'',paperId=urlParams.get('paper')||'',sectionPath=urlParams.get('section')||initialSectionPath
   const subjectId=urlParams.get('subject_id')||'',topicId=urlParams.get('topic_id')||'',subtopicId=urlParams.get('subtopic_id')||''
   const yearParam=urlParams.get('year')||''
   const selectedYear=/^\d{4}$/.test(yearParam)?Number(yearParam):undefined
   const pool:'all'|'scorable'|'practice'=['all','scorable','practice'].includes(urlParams.get('pool')||'')?urlParams.get('pool') as 'all'|'scorable'|'practice':initialPool
-  const studyStatus=readStudyStatus(urlParams.get('status')),order=paperId&&!practice?'paper':readQuestionOrder(urlParams.get('order')),seed=urlParams.get('seed')||''
+  const rawStatusParam = urlParams.get('status')
+  const studyStatus = rawStatusParam ? readStudyStatus(rawStatusParam) : (practice ? 'unseen' : 'all')
+  const order=paperId&&!practice?'paper':readQuestionOrder(urlParams.get('order')),seed=urlParams.get('seed')||''
+  function choosePracticeBatch(next: PracticeBatch) {
+    setStoredBatch(next)
+    try { localStorage.setItem('finna:practice-batch:v1', String(next)) } catch { /* ignore */ }
+    setURLParams(previous => {
+      const updated = new URLSearchParams(previous)
+      updated.set('batch', String(next))
+      updated.delete('offset')
+      return updated
+    }, { replace: true })
+    setResults({})
+    setPicks({})
+  }
   function shuffle(){setURLParams(previous=>{const next=new URLSearchParams(previous);next.set('order','mixed');next.set('seed',newQuestionSeed());next.delete('offset');return next},{replace:true});setResults({});setPicks({})}
   const answerStatus=(['official','verified','needs-review','unsolved','written'].includes(urlParams.get('answer_status')||'')?urlParams.get('answer_status'):undefined) as 'official'|'verified'|'needs-review'|'unsolved'|'written'|undefined
   const offset=Math.floor(Math.max(0,Math.min(100000,Number(urlParams.get('offset'))||0)))
@@ -241,8 +268,12 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
     // advancing cannot skip the next unseen question after the current one leaves.
     if(value===currentPage+1){
       const next=nextBrowseOffset(offset,PAGE_SIZE,studyStatus,page?.items.map(q=>results[q.id])||[])
+      setResults({});setPicks({})
       if(next===offset)setReload(n=>n+1);else setOffset(next)
-    } else setOffset(Math.max(0,offset+(value-currentPage)*PAGE_SIZE))
+    } else {
+      setResults({});setPicks({})
+      setOffset(Math.max(0,offset+(value-currentPage)*PAGE_SIZE))
+    }
     requestAnimationFrame(()=>scrollToResults('exam-question-browser'))
   }
 
@@ -314,6 +345,7 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
       const actualCollection=sourceCollections?.[actualPaper||'']||collectionId
       const result = await submitAnswer(q.id,index,'practice',actualCollection==='group-b'?undefined:actualCollection,actualPaper,sectionPath || undefined)
       setResults((old) => ({...old,[q.id]:result}))
+      setSessionStats((old) => ({ answered: old.answered + 1, correct: old.correct + (result.correct ? 1 : 0) }))
     } catch (e) {
       setPicks((old) => { const next={...old}; delete next[q.id]; return next })
       setError((e as Error).message)
@@ -324,7 +356,7 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
   const paperGroups=useMemo(()=>collectionBooklets(collectionId,sortArchivePapers(papers,'newest')),[collectionId,papers])
   const paperPosition=paperGroups.findIndex(group=>group.papers.some(p=>p.id===paperId))
   function chooseSection(value:string){setURLParams(previous=>{const next=new URLSearchParams(previous);if(value)next.set('section',value);else next.delete('section');next.delete('paper');next.delete('offset');next.delete('fresh');return next},{replace:true})}
-  function chooseStatus(value:string){setURLParams(previous=>{const next=new URLSearchParams(previous);next.delete('status');next.delete('answer_status');next.delete('offset');if(value.startsWith('study:'))next.set('status',value.slice(6));if(value.startsWith('answer:')){next.set('answer_status',value.slice(7));next.set('pool','all')}return next},{replace:true});setResults({});setPicks({})}
+  function chooseStatus(value:string){setURLParams(previous=>{const next=new URLSearchParams(previous);next.delete('status');next.delete('answer_status');next.delete('offset');if(value.startsWith('study:'))next.set('status',value.slice(6));else if(practice&&value==='')next.set('status','all');if(value.startsWith('answer:')){next.set('answer_status',value.slice(7));next.set('pool','all')}return next},{replace:true});setResults({});setPicks({})}
   function choosePaper(value:string){setURLParams(previous=>{const next=new URLSearchParams(previous);if(value)next.set('paper',value);else next.delete('paper');if(combined&&value){const source=papers.find(p=>p.id===value);if(source?.section_path)next.set('section',source.section_path);else next.delete('section')}next.delete('offset');next.delete('seed');next.delete('fresh');return next},{replace:false});setResults({});setPicks({})}
   const questionFormat: 'all' | 'mcq' | 'written' =
     answerStatus === 'written' ? 'written' : pool === 'practice' ? 'mcq' : 'all'
@@ -413,7 +445,7 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
       clear: () => choosePaper(''),
     })
   }
-  if (studyStatus !== 'all') {
+  if (studyStatus !== 'all' && !(practice && studyStatus === 'unseen')) {
     const statusMap: Record<string, string> = { ever_wrong: 'Previously wrong', unseen: 'Never attempted', answered: 'Attempted', wrong: 'Previously wrong' }
     activeChips.push({
       key: 'status',
@@ -437,6 +469,19 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
   }
   const activeFilterCount = activeChips.length
 
+  const batchAnsweredItems = renderedItems.filter(q => results[q.id])
+  const batchAnsweredCount = batchAnsweredItems.length
+  const batchCorrectCount = batchAnsweredItems.filter(q => results[q.id]?.correct).length
+  const batchAccuracy = batchAnsweredCount > 0 ? Math.round((batchCorrectCount / batchAnsweredCount) * 100) : null
+  const batchProgressPct = renderedItems.length > 0 ? Math.round((batchAnsweredCount / renderedItems.length) * 100) : 0
+  const sessionAccuracy = sessionStats.answered > 0 ? Math.round((sessionStats.correct / sessionStats.answered) * 100) : null
+  const hasNextPracticeBatch = !!page && (
+    currentPage < pages ||
+    (studyStatus === 'unseen' && batchAnsweredCount > 0 && page.total > batchAnsweredCount)
+  )
+  const practiceQueueWord =
+    studyStatus === 'unseen' ? 'unattempted' : studyStatus === 'ever_wrong' || studyStatus === 'wrong' ? 'missed' : 'matching'
+
   const rangeText = !pending && page
     ? page.total > 0
       ? `${(renderedStart + 1).toLocaleString('en-IN')}–${Math.min(renderedStart + renderedItems.length, page.total).toLocaleString('en-IN')} of ${page.total.toLocaleString('en-IN')}`
@@ -445,7 +490,7 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
 
   return <section id="exam-question-browser" tabIndex={-1} aria-busy={pending} className="mb-shell scroll-mt-28 focus:outline-none">
     <div className="mb-layout">
-      {/* Main reading column: slim top strip + Checkpoint Dock + Question #1 immediately above the fold */}
+      {/* Main reading column: slim top strip + Practice Command Bar / Checkpoint Dock + Question #1 immediately above the fold */}
       <div className="mb-main">
         <div className="mb-reading-bar">
           <div className="mb-reading-left">
@@ -460,7 +505,11 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
                 ))}
               </div>
             ) : (
-              <span className="mb-scope-hint">{practice ? 'Study practice' : (collectionTitle || 'All questions')}</span>
+              <span className="mb-scope-hint">
+                {practice
+                  ? `${practiceBatch === 1 ? 'Step 1-by-1' : `${practiceBatch} by ${practiceBatch}`} · ${practiceQueueWord}`
+                  : (collectionTitle || 'All questions')}
+              </span>
             )}
           </div>
           <div className="mb-reading-right">
@@ -634,7 +683,162 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
         {error && <p role="alert" className="mb-3 rounded-[12px] border border-mypick bg-mypick-soft p-3 text-sm text-mypick">{error} <button type="button" onClick={() => setReload(n => n + 1)} className="underline">Retry</button></p>}
         {metadataLoading && <p role="status" className="mb-2 text-xs text-muted">Paper details are loading. You can start with the available questions.</p>}
         {checkpointError && <p role="status" className="mb-2 text-xs text-mypick">Could not save your place: {checkpointError}</p>}
-        {practice && <p className="mb-2 text-xs text-secondary">Tap an option to submit your answer. Show answer opens reading mode.</p>}
+
+        {/* Guided Practice Command Bar: Queue (Unattempted / Missed / All) + Pace (50 by 50 / 25 by 25 / Step 1-by-1) + Subject & Topic Pills + Live Batch Meter */}
+        {practice && (
+          <section className="mb-practice-bar" aria-label="Guided practice controls">
+            <div className="mb-pr-row">
+              <div className="mb-pr-group">
+                <span className="mb-pr-label">Queue</span>
+                <div className="mb-pr-seg" role="group" aria-label="Practice question queue">
+                  <button
+                    type="button"
+                    aria-pressed={studyStatus === 'unseen'}
+                    className={studyStatus === 'unseen' ? 'is-on' : ''}
+                    onClick={() => chooseStatus('study:unseen')}
+                    title="Only questions you have not attempted yet"
+                  >
+                    Unattempted
+                  </button>
+                  <button
+                    type="button"
+                    aria-pressed={studyStatus === 'ever_wrong' || studyStatus === 'wrong'}
+                    className={studyStatus === 'ever_wrong' || studyStatus === 'wrong' ? 'is-on is-warn' : ''}
+                    onClick={() => chooseStatus('study:ever_wrong')}
+                    title="Questions you previously answered wrong"
+                  >
+                    Missed
+                  </button>
+                  <button
+                    type="button"
+                    aria-pressed={studyStatus === 'all'}
+                    className={studyStatus === 'all' ? 'is-on' : ''}
+                    onClick={() => chooseStatus('')}
+                    title="Practice every eligible MCQ regardless of history"
+                  >
+                    All MCQs
+                  </button>
+                </div>
+              </div>
+
+              <div className="mb-pr-group">
+                <span className="mb-pr-label">Pace</span>
+                <div className="mb-pr-seg" role="group" aria-label="Practice pace and batch size">
+                  <button
+                    type="button"
+                    aria-pressed={practiceBatch === 50}
+                    className={practiceBatch === 50 ? 'is-on' : ''}
+                    onClick={() => choosePracticeBatch(50)}
+                    title="Answer 50 questions per batch, then move to the next 50"
+                  >
+                    50 by 50
+                  </button>
+                  <button
+                    type="button"
+                    aria-pressed={practiceBatch === 25}
+                    className={practiceBatch === 25 ? 'is-on' : ''}
+                    onClick={() => choosePracticeBatch(25)}
+                    title="Answer 25 questions per batch"
+                  >
+                    25 by 25
+                  </button>
+                  <button
+                    type="button"
+                    aria-pressed={practiceBatch === 1}
+                    className={practiceBatch === 1 ? 'is-on' : ''}
+                    onClick={() => choosePracticeBatch(1)}
+                    title="Focus on one question at a time, step by step"
+                  >
+                    Step 1-by-1
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {hasMultipleSubjects && facets && (
+              <div className="mb-pr-pills" role="group" aria-label="Quick subject filter">
+                <span className="mb-pr-label">Subject</span>
+                <button
+                  type="button"
+                  aria-pressed={!subjectId}
+                  className={`mb-pr-pill${!subjectId ? ' is-on' : ''}`}
+                  onClick={() => taxonomyFilter('subject_id', '')}
+                >
+                  All
+                </button>
+                {facets.subjects.map(s => (
+                  <button
+                    key={s.id}
+                    type="button"
+                    aria-pressed={subjectId === s.id}
+                    className={`mb-pr-pill${subjectId === s.id ? ' is-on' : ''}`}
+                    onClick={() => taxonomyFilter('subject_id', subjectId === s.id ? '' : s.id)}
+                  >
+                    <span>{learningSubjectTitle(s.id, s.title, collectionId)}</span>
+                    <span className="mb-pr-pill-n">{s.questions.toLocaleString('en-IN')}</span>
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {activeTopicSource && activeTopicSource.topics.length > 0 && (
+              <div className="mb-pr-pills mb-pr-pills--topics" role="group" aria-label="Quick topic filter">
+                <span className="mb-pr-label">Topic</span>
+                <button
+                  type="button"
+                  aria-pressed={!topicId}
+                  className={`mb-pr-pill${!topicId ? ' is-on' : ''}`}
+                  onClick={() => taxonomyFilter('topic_id', '')}
+                >
+                  All {learningSubjectTitle(activeTopicSource.id, activeTopicSource.title, collectionId)}
+                </button>
+                {activeTopicSource.topics.slice(0, 14).map(t => (
+                  <button
+                    key={t.id}
+                    type="button"
+                    aria-pressed={topicId === t.id}
+                    className={`mb-pr-pill${topicId === t.id ? ' is-on' : ''}`}
+                    onClick={() => taxonomyFilter('topic_id', topicId === t.id ? '' : t.id)}
+                  >
+                    <span>{t.title}</span>
+                    <span className="mb-pr-pill-n">{t.questions.toLocaleString('en-IN')}</span>
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {page && page.total > 0 && (
+              <div className="mb-pr-meter-wrap">
+                <div className="mb-pr-meter-head">
+                  <span className="mb-pr-batch-title">
+                    {practiceBatch === 1
+                      ? `Step ${(renderedStart + 1).toLocaleString('en-IN')} of ${page.total.toLocaleString('en-IN')} ${practiceQueueWord}`
+                      : `Batch ${currentPage} of ${pages} · Q${(renderedStart + 1).toLocaleString('en-IN')}–Q${Math.min(renderedStart + renderedItems.length, page.total).toLocaleString('en-IN')} (${page.total.toLocaleString('en-IN')} ${practiceQueueWord})`}
+                  </span>
+                  <span className="mb-pr-batch-stats">
+                    {practiceBatch === 1 ? (
+                      sessionStats.answered > 0
+                        ? `Session: ${sessionStats.answered} answered · ${sessionStats.correct} right (${sessionAccuracy}%)`
+                        : 'Tap an option to check & step forward'
+                    ) : (
+                      <>
+                        <strong>{batchAnsweredCount}</strong> / {renderedItems.length} answered
+                        {batchAnsweredCount > 0 && (
+                          <> · <span className="is-good">{batchCorrectCount} right ({batchAccuracy}%)</span></>
+                        )}
+                      </>
+                    )}
+                  </span>
+                </div>
+                {practiceBatch > 1 && (
+                  <div className="mb-pr-meter" role="progressbar" aria-label="Current batch progress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={batchProgressPct}>
+                    <span style={{ width: `${batchProgressPct}%` }} />
+                  </div>
+                )}
+              </div>
+            )}
+          </section>
+        )}
 
         {hasPrevStream && (
           <div className="mb-stream-top">
@@ -656,15 +860,113 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
           {renderedItems.map((q, index) => {
             const result = results[q.id]
             const posNum = renderedStart + index + 1
-            return <StudyQuestionCard showPanelNext={false} key={q.id} q={q} positionNumber={posNum} collectionId={collectionId} paperId={paperId} sourceCollections={sourceCollections}
+            return <StudyQuestionCard showPanelNext={practice && practiceBatch === 1} key={q.id} q={q} positionNumber={posNum} collectionId={collectionId} paperId={paperId} sourceCollections={sourceCollections}
               result={result} pick={picks[q.id]} viewed={viewed[q.id]} busy={answerBusy[q.id]} checking={checkingAnswers[q.id]} disabled={pending}
               onPick={i => void answer(q, i)}
               onViewed={value => setViewed(old => ({ ...old, [q.id]: value }))} onBusy={v => setAnswerBusy(old => ({ ...old, [q.id]: v }))}
               onRetry={() => { setPicks(old => { const next = { ...old }; delete next[q.id]; return next }); setResults(old => { const next = { ...old }; delete next[q.id]; return next }) }}
-              onNext={() => { const next = renderedItems[index + 1]; if (next) document.getElementById('question-' + next.id)?.scrollIntoView({ block: 'start', behavior: 'smooth' }); else if (!isScrollMode && currentPage < pages) goPage(currentPage + 1); else if (isScrollMode && hasMoreStream) void loadNextChunk(); else setError('You reached the end of these results. Change filters to continue.') }} />
+              onNext={() => { const next = renderedItems[index + 1]; if (next) document.getElementById('question-' + next.id)?.scrollIntoView({ block: 'start', behavior: 'smooth' }); else if (!isScrollMode && hasNextPracticeBatch) goPage(currentPage + 1); else if (!isScrollMode && currentPage < pages) goPage(currentPage + 1); else if (isScrollMode && hasMoreStream) void loadNextChunk(); else setError('You reached the end of these results. Change filters to continue.') }} />
           })}
-          {!pending && page && !renderedItems.length && <div className="rounded-2xl border border-hairline bg-card py-10 text-center text-sm text-secondary">No questions match these filters. <button type="button" onClick={resetFilters} className="min-h-11 font-semibold underline">Reset filters</button></div>}
+          {!pending && page && !renderedItems.length && (
+            practice && studyStatus === 'unseen' ? (
+              <div className="mb-pr-empty">
+                <h3>All caught up in this filter!</h3>
+                <p>You have already attempted every matching MCQ here. Revise your mistakes or practice the full pool again.</p>
+                <div className="mb-pr-empty-actions">
+                  <button type="button" className="mb-pr-btn-primary" onClick={() => chooseStatus('study:ever_wrong')}>
+                    Revise missed questions
+                  </button>
+                  <button type="button" className="mb-pr-btn-ghost" onClick={() => chooseStatus('')}>
+                    Practice all MCQs
+                  </button>
+                  {activeFilterCount > 0 && (
+                    <button type="button" className="mb-pr-btn-ghost" onClick={resetFilters}>
+                      Clear filters
+                    </button>
+                  )}
+                </div>
+              </div>
+            ) : (
+              <div className="rounded-2xl border border-hairline bg-card py-10 text-center text-sm text-secondary">
+                No questions match these filters.{' '}
+                <button type="button" onClick={resetFilters} className="min-h-11 font-semibold underline">Reset filters</button>
+              </div>
+            )
+          )}
         </div>
+
+        {/* Practice Step-by-Step or Batch-by-Batch Advance Footer */}
+        {practice && page && renderedItems.length > 0 && (
+          practiceBatch === 1 ? (
+            <nav className="mb-pr-stepper" aria-label="Step-by-step practice navigation">
+              <button
+                type="button"
+                className="mb-pr-btn-ghost"
+                disabled={pending || currentPage <= 1}
+                onClick={() => goPage(currentPage - 1)}
+              >
+                ← Previous
+              </button>
+              <span className="mb-pr-step-meta">
+                Step {(renderedStart + 1).toLocaleString('en-IN')} of {page.total.toLocaleString('en-IN')}
+                {sessionStats.answered > 0 ? ` · ${sessionStats.correct}/${sessionStats.answered} right` : ''}
+              </span>
+              <button
+                type="button"
+                className="mb-pr-btn-primary"
+                disabled={pending || !hasNextPracticeBatch}
+                onClick={() => goPage(currentPage + 1)}
+              >
+                {batchAnsweredCount > 0 ? 'Next question →' : 'Skip to next →'}
+              </button>
+            </nav>
+          ) : (
+            <div className="mb-practice-foot">
+              <div className="mb-pr-foot-info">
+                <strong>
+                  Batch {currentPage} summary: {batchAnsweredCount} of {renderedItems.length} answered
+                  {batchAnsweredCount > 0 && ` · ${batchCorrectCount} right (${batchAccuracy}%)`}
+                </strong>
+                <span>
+                  {studyStatus === 'unseen'
+                    ? 'Answered questions automatically leave your Unattempted queue when you move forward.'
+                    : `Showing Q${(renderedStart + 1).toLocaleString('en-IN')}–Q${Math.min(renderedStart + renderedItems.length, page.total).toLocaleString('en-IN')} of ${page.total.toLocaleString('en-IN')}.`}
+                </span>
+              </div>
+              <div className="mb-pr-foot-actions">
+                {currentPage > 1 && (
+                  <button
+                    type="button"
+                    className="mb-pr-btn-ghost"
+                    disabled={pending}
+                    onClick={() => goPage(currentPage - 1)}
+                  >
+                    ← Previous {practiceBatch}
+                  </button>
+                )}
+                {hasNextPracticeBatch ? (
+                  <button
+                    type="button"
+                    className="mb-pr-btn-primary"
+                    disabled={pending}
+                    onClick={() => goPage(currentPage + 1)}
+                  >
+                    Next {practiceBatch} questions →
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    className="mb-pr-btn-ghost"
+                    onClick={() => chooseStatus(studyStatus === 'unseen' ? 'study:ever_wrong' : '')}
+                  >
+                    {studyStatus === 'unseen' ? 'Review missed questions →' : 'Back to start'}
+                  </button>
+                )}
+              </div>
+            </div>
+          )
+        )}
+
         {isScrollMode ? (
           <div ref={streamSentinelRef} className="mb-stream-foot">
             {hasMoreStream ? (
@@ -686,7 +988,7 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
             ) : null}
           </div>
         ) : (
-          page && <Pagination page={currentPage} pages={pages} disabled={pending} onPageChange={goPage} label={practice ? 'Practice question navigator' : 'Exam question pages'} />
+          page && !(practice && practiceBatch === 1) && <Pagination page={currentPage} pages={pages} disabled={pending} onPageChange={goPage} label={practice ? 'Practice batch navigator' : 'Exam question pages'} />
         )}
       </div>
 
@@ -694,12 +996,18 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
       <aside className={`mb-rail${mobileFiltersOpen ? ' is-open' : ''}`} aria-label="Question filters and study controls">
         <div className="mb-rail-card">
           <div className="mb-rail-actions">
-            {!pending && page && page.total > 0 && (
-              <Link to={testViewHref} className="mb-cta-primary">Test this view →</Link>
+            {practice ? (
+              <Link to={`/practice?mode=mock${collectionId ? `&exam=${encodeURIComponent(collectionId)}` : ''}`} className="mb-cta-primary">
+                Full-Paper Mock →
+              </Link>
+            ) : (
+              !pending && page && page.total > 0 && (
+                <Link to={testViewHref} className="mb-cta-primary">Test this view →</Link>
+              )
             )}
             <button
               type="button"
-              onClick={() => chooseStatus(studyStatus === 'ever_wrong' ? '' : 'study:ever_wrong')}
+              onClick={() => chooseStatus(studyStatus === 'ever_wrong' ? (practice ? 'study:unseen' : '') : 'study:ever_wrong')}
               aria-pressed={studyStatus === 'ever_wrong'}
               className={`mb-cta-mistake${studyStatus === 'ever_wrong' ? ' is-on' : ''}`}
             >

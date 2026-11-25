@@ -1,5 +1,15 @@
 # Devlog
 
+25 November IST — **Redesigned Module Practice & `/practice` into Guided Practice (50-by-50, 25-by-25, Step 1-by-1, Unattempted-first queue, and 1-click Subject/Topic pills) while keeping Full-Paper Mock intact (`ModuleStudy.tsx`, `ExamPage.tsx`, `Practice.tsx`, `QuestionCard.tsx`, `exam-overview.css`). Web deployed to `https://study.hawayu.in`.**
+
+- **Unified Module Practice (`ExamPage.tsx`, `ModuleStudy.tsx`, `exam-overview.css`):** Removed the redundant UDC `Continuous practice / Saved short sets` 20-Q toggle and replaced the bare 1-question module practice view with a **Guided Practice Command Bar**:
+  - **Queue selector (defaults to `Unattempted`):** `Unattempted` (`study_status=unseen`), `Missed` (`ever_wrong`), `All MCQs`.
+  - **Pace selector (persisted in `localStorage`):** `50 by 50` (default), `25 by 25`, or `Step 1-by-1` (focused single-question stepper with live session accuracy & instant `Next question →`).
+  - **1-click Subject & Topic Filter Pills** right on the practice bar (e.g. `English`, `General Knowledge` → `Polity`, `History`, `Geography`, `Economy`, `Science`, `Mizoram`).
+  - **Live Batch Progress Bar & Smart `Next 50 questions →` Footer:** Uses `nextBrowseOffset` so answered unseen questions cleanly leave the queue without skipping or repeating, plus a celebratory empty state when all unseen MCQs in a filter are cleared.
+- **Upgraded `/practice` Studio (`Practice.tsx`, `QuestionCard.tsx`):** Replaced the redundant one-shot `10 / 25 / 50` drill slice with **Queue (`Unattempted` / `Missed only` / `All MCQs`) + Pace (`50 by 50` / `25 by 25` / `Step 1-by-1`) + Subject & Topic filter pills + full multi-batch `Next 50 questions →` progression** and live List ↔ Step 1-by-1 toggle inside the active run. Mode 2 (**Full-Paper Mock**) remains completely intact.
+- **Verified:** `tsc -b && vite build`, `check-dead-links`, `check-admin-nav`, `check-guides-and-quest`, live `study.hawayu.in` `200`, `api_unseen_50: 50/3738`, `family.hawayu.in` `307`.
+
 25 November IST — **Hardened Stats World Bank connector with jittered exponential backoff + second-pass self-healing retry (`stats_connectors.py`) AND fixed Exam Module `Overview` tab click bugs (`ExamPage.tsx`, `groupBStudy.ts`, `useBrowsePosition.ts`). Deployed API + Web cleanly to `https://study.hawayu.in`.**
 
 - **Self-healing World Bank refresh (`api/app/services/stats_connectors.py`, `tests/test_stats.py`):** Upgraded `fetch()` to 4 attempts with jittered exponential backoff + transient `429/5xx` retry, extended `wb_pages()` fallback ladder (`5000 → 1000 → 500`), and added an automatic second-pass retry for transiently failed World Bank metrics (`25/25` pytest passed).

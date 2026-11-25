@@ -23,9 +23,11 @@ import { FLAGSHIP_EXAM_IDS } from '../lib/examPresentation'
 import { useSelectionTray } from '../lib/selectionTray'
 import { mockResumePath } from '../lib/sharedTests'
 import { paperIdentity } from '../lib/paperIdentity'
+import { nextBrowseOffset, type StudyStatus } from '../lib/questionBrowse'
 
 type StudioMode = 'practice' | 'mock'
-type DrillCount = '10' | '25' | '50'
+type PracticePace = '50' | '25' | 'step'
+type PracticeQueue = 'unseen' | 'ever_wrong' | 'all'
 type PracticeFormat = 'mcq' | 'written'
 
 function estimateFullPaperMinutes(qCount: number, configured?: number | null): number {
@@ -40,8 +42,9 @@ function paperMockCount(p: CollectionPaper): { count: number; useOfficial: boole
   return { count: p.practice_count || p.answerable_count || p.scorable || 0, useOfficial: false }
 }
 
-/** Unified `/practice` studio — ONE place for both untimed Practice and real Full-Paper Mocks.
- *  - Practice: untimed drills (10 / 25 / 50 Qs) or written prompts, instant explanations & guide links.
+/** Unified `/practice` studio — ONE place for both Guided Practice and real Full-Paper Mocks.
+ *  - Guided Practice: 50-by-50, 25-by-25, or Step 1-by-1 through Unattempted / Missed / All MCQs
+ *    filtered by exam, subject, and topic (English, GK, Polity, etc.), with instant explanations.
  *  - Full-Paper Mock: always a full exam paper (real original past paper OR full-length 100-Q exam mock),
  *    server-timed countdown, answers locked until submit. */
 export default function Practice() {
@@ -86,12 +89,20 @@ export default function Practice() {
   const [studioMode, setStudioMode] = useState<StudioMode>(initialStudio)
   const [examId, setExamId] = useState(params.get('exam') || '')
   const [subjectId, setSubjectId] = useState(params.get('subject') || '')
+  const [topicId, setTopicId] = useState(params.get('topic') || '')
   const [query, setQuery] = useState(params.get('q') || '')
-  const [drillCount, setDrillCount] = useState<DrillCount>(
-    (['10', '25', '50'].includes(params.get('count') || '')
-      ? (params.get('count') as DrillCount)
-      : '25'),
-  )
+  const [queue, setQueue] = useState<PracticeQueue>(() => {
+    const raw = params.get('status')
+    if (raw === 'ever_wrong' || raw === 'wrong') return 'ever_wrong'
+    if (raw === 'all') return 'all'
+    return 'unseen'
+  })
+  const [pace, setPace] = useState<PracticePace>(() => {
+    const raw = params.get('pace') || params.get('count')
+    if (raw === 'step' || raw === '1') return 'step'
+    if (raw === '25') return '25'
+    return '50'
+  })
   const [format, setFormat] = useState<PracticeFormat>(
     params.get('mode') === 'written' ? 'written' : 'mcq',
   )
@@ -102,13 +113,27 @@ export default function Practice() {
   const [loadingPapers, setLoadingPapers] = useState(false)
   const [paperFilter, setPaperFilter] = useState('')
 
-  // Active untimed run state
+  // Active guided practice run state (supports 50-by-50, 25-by-25, and Step 1-by-1 progression)
   const [running, setRunning] = useState(params.get('autostart') === '1')
   const [items, setItems] = useState<Question[]>([])
   const [totalAvailable, setTotalAvailable] = useState<number | null>(null)
   const [loadingRun, setLoadingRun] = useState(false)
   const [runError, setRunError] = useState('')
-  const [answeredCount, setAnsweredCount] = useState(0)
+  const [batchOffset, setBatchOffset] = useState(0)
+  const [batchNumber, setBatchNumber] = useState(1)
+  const [stepIndex, setStepIndex] = useState(0)
+  const [runSeed, setRunSeed] = useState('')
+  const [batchOutcomes, setBatchOutcomes] = useState<Record<string, boolean>>({})
+  const [runConfig, setRunConfig] = useState<{
+    exam: string
+    subject: string
+    topic: string
+    format: PracticeFormat
+    queue: PracticeQueue
+    batchSize: number
+    q: string
+  } | null>(null)
+  const runSectionRef = useRef<HTMLElement | null>(null)
 
   useEffect(() => {
     let live = true
@@ -173,6 +198,18 @@ export default function Practice() {
     return [...map.entries()].sort((a, b) => a[1].localeCompare(b[1]))
   }, [taxonomy])
 
+  const topicsForSubject = useMemo(() => {
+    if (!subjectId) return []
+    const map = new Map<string, { id: string; label: string; count: number }>()
+    for (const f of taxonomy) {
+      if (f.subject_id !== subjectId || !f.topic_id || !f.topic) continue
+      const prev = map.get(f.topic_id)
+      if (prev) prev.count += f.questions
+      else map.set(f.topic_id, { id: f.topic_id, label: f.topic, count: f.questions })
+    }
+    return [...map.values()].sort((a, b) => b.count - a.count)
+  }, [taxonomy, subjectId])
+
   const eligiblePapers = useMemo(() => {
     const raw = examDetail?.paper_list ?? []
     const needle = paperFilter.trim().toLowerCase()
@@ -202,38 +239,63 @@ export default function Practice() {
     }
   }, [examDetail])
 
-  async function launchUntimedRun(targetExam = examId, targetSubject = subjectId, targetFormat = format) {
+  async function loadPracticeBatch(opts: {
+    exam: string
+    subject: string
+    topic: string
+    format: PracticeFormat
+    queue: PracticeQueue
+    batchSize: number
+    q: string
+    offset: number
+    batchNo: number
+    seed: string
+    scrollIntoView?: boolean
+  }) {
     setLoadingRun(true)
     setRunError('')
-    setAnsweredCount(0)
+    setBatchOutcomes({})
+    setStepIndex(0)
     try {
-      const limit = Number(drillCount)
       const rawYear = params.get('year') || ''
       const yearNum = /^\d{4}$/.test(rawYear) ? Number(rawYear) : undefined
-      const rawStatus = params.get('status') || ''
-      const studyStatus = (['unseen', 'answered', 'wrong', 'ever_wrong'].includes(rawStatus)
-        ? rawStatus
-        : undefined) as 'unseen' | 'answered' | 'wrong' | 'ever_wrong' | undefined
       const res = await listQuestions({
-        pool: targetFormat === 'written' ? 'all' : 'practice',
-        collection_id: targetExam || undefined,
-        subject_id: targetSubject || undefined,
+        pool: opts.format === 'written' ? 'all' : 'practice',
+        answer_status: opts.format === 'written' ? 'written' : undefined,
+        collection_id: opts.exam || undefined,
+        subject_id: opts.subject || undefined,
+        topic_id: opts.topic || undefined,
         year_from: yearNum,
         year_to: yearNum,
-        study_status: studyStatus,
-        q: query.trim().length >= 2 ? query.trim() : undefined,
-        order: targetFormat === 'written' ? 'repeated' : 'mixed',
-        seed: targetFormat === 'written' ? undefined : 'practice-' + Date.now().toString(36),
-        limit: targetFormat === 'written' ? 100 : limit,
-        offset: 0,
+        study_status: opts.format === 'written' ? undefined : opts.queue,
+        q: opts.q.trim().length >= 2 ? opts.q.trim() : undefined,
+        order: opts.format === 'written' ? 'repeated' : 'mixed',
+        seed: opts.format === 'written' ? undefined : opts.seed,
+        limit: opts.batchSize,
+        offset: opts.offset,
       })
       const filtered =
-        targetFormat === 'written'
-          ? res.items.filter((q) => q.type === 'descriptive').slice(0, limit)
+        opts.format === 'written'
+          ? res.items.filter((q) => q.type === 'descriptive')
           : res.items.filter((q) => q.type === 'mcq')
       setItems(filtered)
-      setTotalAvailable(targetFormat === 'written' ? filtered.length : res.total)
+      setTotalAvailable(res.total)
+      setBatchOffset(opts.offset)
+      setBatchNumber(opts.batchNo)
+      setRunSeed(opts.seed)
+      setRunConfig({
+        exam: opts.exam,
+        subject: opts.subject,
+        topic: opts.topic,
+        format: opts.format,
+        queue: opts.queue,
+        batchSize: opts.batchSize,
+        q: opts.q,
+      })
       setRunning(true)
+      if (opts.scrollIntoView) {
+        requestAnimationFrame(() => runSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }))
+      }
     } catch (e) {
       setRunError(e instanceof Error ? e.message : 'Could not load questions for practice.')
     } finally {
@@ -241,12 +303,81 @@ export default function Practice() {
     }
   }
 
+  async function launchUntimedRun(
+    targetExam = examId,
+    targetSubject = subjectId,
+    targetTopic = topicId,
+    targetFormat = format,
+    targetQueue = queue,
+    targetPace = pace,
+  ) {
+    const batchSize = targetPace === '25' ? 25 : 50
+    const seed = 'practice-' + Date.now().toString(36)
+    await loadPracticeBatch({
+      exam: targetExam,
+      subject: targetSubject,
+      topic: targetTopic,
+      format: targetFormat,
+      queue: targetQueue,
+      batchSize,
+      q: query,
+      offset: 0,
+      batchNo: 1,
+      seed,
+    })
+  }
+
+  function handleNextBatch() {
+    if (!runConfig) return
+    const resultsArr = items.map((q) =>
+      q.id in batchOutcomes ? { correct: batchOutcomes[q.id] } : undefined,
+    )
+    const nextOffset = nextBrowseOffset(
+      batchOffset,
+      runConfig.batchSize,
+      runConfig.queue as StudyStatus,
+      resultsArr,
+    )
+    void loadPracticeBatch({
+      ...runConfig,
+      offset: nextOffset,
+      batchNo: batchNumber + 1,
+      seed: runSeed || 'practice-' + Date.now().toString(36),
+      scrollIntoView: true,
+    })
+  }
+
+  function handlePrevBatch() {
+    if (!runConfig || batchOffset <= 0) return
+    const prevOffset = Math.max(0, batchOffset - runConfig.batchSize)
+    void loadPracticeBatch({
+      ...runConfig,
+      offset: prevOffset,
+      batchNo: Math.max(1, batchNumber - 1),
+      seed: runSeed || 'practice-' + Date.now().toString(36),
+      scrollIntoView: true,
+    })
+  }
+
   useEffect(() => {
     if (params.get('autostart') === '1' && initialStudio === 'practice') {
+      const rawStatus = params.get('status')
+      const startQueue: PracticeQueue =
+        rawStatus === 'ever_wrong' || rawStatus === 'wrong'
+          ? 'ever_wrong'
+          : rawStatus === 'all'
+            ? 'all'
+            : 'unseen'
+      const rawPace = params.get('pace') || params.get('count')
+      const startPace: PracticePace =
+        rawPace === 'step' || rawPace === '1' ? 'step' : rawPace === '25' ? '25' : '50'
       void launchUntimedRun(
         params.get('exam') || '',
         params.get('subject') || '',
+        params.get('topic') || '',
         params.get('mode') === 'written' ? 'written' : 'mcq',
+        startQueue,
+        startPace,
       )
     }
     // Run once on initial autostart navigation.
@@ -270,8 +401,10 @@ export default function Practice() {
     const next = new URLSearchParams()
     if (examId) next.set('exam', examId)
     if (subjectId) next.set('subject', subjectId)
+    if (topicId) next.set('topic', topicId)
     if (query.trim()) next.set('q', query.trim())
-    next.set('count', drillCount)
+    next.set('status', queue)
+    next.set('pace', pace)
     if (format === 'written') next.set('mode', 'written')
     setParams(next, { replace: true })
     void launchUntimedRun()
@@ -300,8 +433,9 @@ export default function Practice() {
           <span className="cr-eyebrow">One workspace · two clear modes</span>
           <h1>Practice &amp; Full-Paper Mock</h1>
           <p>
-            Use <strong>Practice</strong> for untimed topic drills with instant explanations and Concept Guide links.
-            Switch to <strong>Full-Paper Mock</strong> whenever you want a real full-length timed exam paper.
+            Use <strong>Guided Practice</strong> to clear questions <strong>50 by 50</strong>, <strong>Step 1-by-1</strong>, or{' '}
+            <strong>Unattempted only</strong> by exam, subject, or topic (English, GK, Polity…).
+            Switch to <strong>Full-Paper Mock</strong> for a real full-length timed exam paper.
           </p>
         </div>
         <div className="av-hero-actions">
@@ -356,11 +490,11 @@ export default function Practice() {
           }`}
         >
           <span className="font-mono text-[11px] font-bold uppercase tracking-[0.08em] text-practice-dark">
-            Mode 1 · Untimed study
+            Mode 1 · Guided untimed study
           </span>
-          <strong className="font-display text-xl text-ink">Practice</strong>
+          <strong className="font-display text-xl text-ink">Practice (50 by 50 · Step-by-Step)</strong>
           <span className="text-xs leading-relaxed text-secondary">
-            Pick an exam or subject · instant answers, explanations &amp; Concept Guide chapter links.
+            Filter by exam, subject, or topic · clear Unattempted or Missed MCQs systematically with instant answers.
           </span>
         </button>
 
@@ -460,7 +594,10 @@ export default function Practice() {
                 <select
                   aria-label="Subject"
                   value={subjectId}
-                  onChange={(e) => setSubjectId(e.target.value)}
+                  onChange={(e) => {
+                    setSubjectId(e.target.value)
+                    setTopicId('')
+                  }}
                   className="min-h-11 rounded-lg border border-hairline2 bg-paper px-3 text-sm font-normal normal-case tracking-normal text-ink"
                 >
                   <option value="">All subjects</option>
@@ -473,50 +610,128 @@ export default function Practice() {
               </label>
 
               <label className="flex flex-col gap-1 text-xs font-semibold uppercase tracking-[0.06em] text-muted">
-                Search
-                <input
-                  type="search"
-                  aria-label="Search topic or text"
-                  placeholder="Optional keyword…"
-                  value={query}
-                  maxLength={120}
-                  onChange={(e) => setQuery(e.target.value)}
-                  className="min-h-11 rounded-lg border border-hairline2 bg-paper px-3 text-sm font-normal normal-case tracking-normal text-ink"
-                />
+                {topicsForSubject.length > 0 ? 'Topic' : 'Search'}
+                {topicsForSubject.length > 0 ? (
+                  <select
+                    aria-label="Topic"
+                    value={topicId}
+                    onChange={(e) => setTopicId(e.target.value)}
+                    className="min-h-11 rounded-lg border border-hairline2 bg-paper px-3 text-sm font-normal normal-case tracking-normal text-ink"
+                  >
+                    <option value="">All topics in subject</option>
+                    {topicsForSubject.map((t) => (
+                      <option key={t.id} value={t.id}>
+                        {t.label} ({t.count.toLocaleString('en-IN')})
+                      </option>
+                    ))}
+                  </select>
+                ) : (
+                  <input
+                    type="search"
+                    aria-label="Search topic or text"
+                    placeholder="Optional keyword…"
+                    value={query}
+                    maxLength={120}
+                    onChange={(e) => setQuery(e.target.value)}
+                    className="min-h-11 rounded-lg border border-hairline2 bg-paper px-3 text-sm font-normal normal-case tracking-normal text-ink"
+                  />
+                )}
               </label>
             </div>
+
+            {topicsForSubject.length > 0 && (
+              <div className="mt-3 flex flex-wrap gap-1.5" role="group" aria-label="Quick topic filter">
+                <button
+                  type="button"
+                  aria-pressed={!topicId}
+                  onClick={() => setTopicId('')}
+                  className={`min-h-9 rounded-full border px-3 text-xs font-semibold ${!topicId ? 'border-ink bg-ink text-paper' : 'border-hairline bg-paper text-ink'}`}
+                >
+                  All topics
+                </button>
+                {topicsForSubject.slice(0, 10).map((t) => (
+                  <button
+                    key={t.id}
+                    type="button"
+                    aria-pressed={topicId === t.id}
+                    onClick={() => setTopicId(topicId === t.id ? '' : t.id)}
+                    className={`min-h-9 rounded-full border px-3 text-xs font-semibold ${topicId === t.id ? 'border-ink bg-ink text-paper' : 'border-hairline bg-paper text-ink'}`}
+                  >
+                    {t.label}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
-          <div>
-            <p className="finna-eyebrow">02 · Drill size</p>
-            <div className="mt-2 flex flex-wrap gap-2" role="group" aria-label="Question count">
-              {(['10', '25', '50'] as const).map((val) => (
-                <button
-                  key={val}
-                  type="button"
-                  aria-pressed={drillCount === val}
-                  onClick={() => setDrillCount(val)}
-                  className={
-                    'min-h-11 rounded-lg border px-4 py-2 text-sm font-semibold ' +
-                    (drillCount === val ? 'border-ink bg-ink text-paper' : 'border-hairline bg-paper text-ink')
-                  }
-                >
-                  {val} questions
-                </button>
-              ))}
+          <div className="grid gap-4 sm:grid-cols-2">
+            {format === 'mcq' && (
+              <div>
+                <p className="finna-eyebrow">02 · Question queue</p>
+                <div className="mt-2 flex flex-wrap gap-2" role="group" aria-label="Question queue">
+                  {([
+                    ['unseen', 'Unattempted'],
+                    ['ever_wrong', 'Missed only'],
+                    ['all', 'All MCQs'],
+                  ] as const).map(([val, label]) => (
+                    <button
+                      key={val}
+                      type="button"
+                      aria-pressed={queue === val}
+                      onClick={() => setQueue(val)}
+                      className={
+                        'min-h-11 rounded-lg border px-4 py-2 text-sm font-semibold ' +
+                        (queue === val ? 'border-ink bg-ink text-paper' : 'border-hairline bg-paper text-ink')
+                      }
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div>
+              <p className="finna-eyebrow">{format === 'mcq' ? '03 · Pace' : '02 · Batch size'}</p>
+              <div className="mt-2 flex flex-wrap gap-2" role="group" aria-label="Practice pace">
+                {([
+                  ['50', '50 by 50'],
+                  ['25', '25 by 25'],
+                  ['step', 'Step 1-by-1'],
+                ] as const).map(([val, label]) => (
+                  <button
+                    key={val}
+                    type="button"
+                    aria-pressed={pace === val}
+                    onClick={() => setPace(val)}
+                    className={
+                      'min-h-11 rounded-lg border px-4 py-2 text-sm font-semibold ' +
+                      (pace === val ? 'border-ink bg-ink text-paper' : 'border-hairline bg-paper text-ink')
+                    }
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
 
           <div className="flex flex-wrap items-center justify-between gap-3 border-t border-hairline pt-5">
             <p className="text-xs font-medium text-secondary">
-              Untimed · instant explanations · 50 free checked answers/day · browsing is always free.
+              Work through the entire filtered pool systematically — move batch by batch with instant answers &amp; guide links.
             </p>
             <button
               type="submit"
               disabled={loadingRun}
               className="finna-btn min-h-12 px-7 text-[15px] disabled:opacity-50"
             >
-              {loadingRun ? 'Loading…' : format === 'written' ? 'Browse written prompts →' : 'Start practice →'}
+              {loadingRun
+                ? 'Loading…'
+                : format === 'written'
+                  ? 'Browse written prompts →'
+                  : pace === 'step'
+                    ? 'Start Step-by-Step →'
+                    : `Start ${pace} by ${pace} Practice →`}
             </button>
           </div>
         </form>
@@ -667,52 +882,238 @@ export default function Practice() {
         </div>
       )}
 
-      {studioMode === 'practice' && running && !loadingRun && (
-        <section className="mt-8" aria-label="Practice questions">
-          <div className="mb-4 flex flex-wrap items-center justify-between gap-3 border-b border-hairline pb-3">
-            <div>
-              <h2 className="text-lg font-bold text-ink">
-                {format === 'written' ? 'Written prompts' : 'Untimed practice'}
-              </h2>
-              <p className="text-sm text-secondary">
-                {items.length} shown
-                {totalAvailable !== null ? ` · ${totalAvailable.toLocaleString('en-IN')} matching` : ''}
-                {format === 'mcq' ? ` · ${answeredCount} checked` : ''}
-              </p>
-            </div>
-            {format === 'mcq' && <AnswerLayoutControl />}
-          </div>
+      {studioMode === 'practice' && running && !loadingRun && (() => {
+        const answeredInBatch = Object.keys(batchOutcomes).length
+        const rightInBatch = Object.values(batchOutcomes).filter(Boolean).length
+        const accPct = answeredInBatch > 0 ? Math.round((rightInBatch / answeredInBatch) * 100) : null
+        const progressPct = items.length > 0 ? Math.round((answeredInBatch / items.length) * 100) : 0
+        const activeBatchSize = runConfig?.batchSize || 50
+        const activeQueue = runConfig?.queue || queue
+        const hasMoreBatches =
+          totalAvailable !== null &&
+          (batchOffset + items.length < totalAvailable ||
+            (activeQueue === 'unseen' && answeredInBatch > 0 && totalAvailable > answeredInBatch))
+        const queueLabel =
+          activeQueue === 'unseen' ? 'unattempted' : activeQueue === 'ever_wrong' ? 'missed' : 'matching'
+        const currentStepQ = items[Math.min(stepIndex, Math.max(0, items.length - 1))]
 
-          {!items.length ? (
-            <div className="rounded-xl border border-hairline bg-card p-6 text-center">
-              <h3 className="text-lg font-bold text-ink">No matching questions</h3>
-              <p className="mt-2 text-sm text-secondary">
-                Try clearing a subject or keyword filter, or switch to all exams.
-              </p>
+        return (
+          <section ref={runSectionRef} className="mt-8 scroll-mt-24" aria-label="Practice questions">
+            <div className="mb-4 rounded-[18px] border border-hairline bg-card p-4 shadow-[var(--ism-card-shadow)]">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <div>
+                  <h2 className="text-base font-bold text-ink">
+                    {format === 'written'
+                      ? `Written prompts · Batch ${batchNumber}`
+                      : `Batch ${batchNumber} · ${items.length} questions`}
+                    {totalAvailable !== null ? ` (${totalAvailable.toLocaleString('en-IN')} ${queueLabel})` : ''}
+                  </h2>
+                  {format === 'mcq' && (
+                    <p className="mt-0.5 text-xs font-medium text-secondary">
+                      {answeredInBatch} / {items.length} answered
+                      {answeredInBatch > 0 ? ` · ${rightInBatch} right (${accPct}%)` : ' · tap any option for instant feedback'}
+                    </p>
+                  )}
+                </div>
+                <div className="flex flex-wrap items-center gap-2">
+                  {format === 'mcq' && items.length > 1 && (
+                    <div className="finna-segments" role="group" aria-label="Practice view mode">
+                      <button
+                        type="button"
+                        aria-pressed={pace !== 'step'}
+                        onClick={() => setPace(activeBatchSize === 25 ? '25' : '50')}
+                      >
+                        List ({activeBatchSize})
+                      </button>
+                      <button
+                        type="button"
+                        aria-pressed={pace === 'step'}
+                        onClick={() => setPace('step')}
+                      >
+                        Step 1-by-1
+                      </button>
+                    </div>
+                  )}
+                  {format === 'mcq' && <AnswerLayoutControl compact />}
+                </div>
+              </div>
+              {format === 'mcq' && items.length > 0 && (
+                <div
+                  className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-paper"
+                  role="progressbar"
+                  aria-label="Current batch progress"
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                  aria-valuenow={progressPct}
+                >
+                  <div
+                    className="h-full rounded-full bg-ink transition-[width] duration-200"
+                    style={{ width: `${progressPct}%` }}
+                  />
+                </div>
+              )}
             </div>
-          ) : (
-            <div className="space-y-3">
-              {items.map((q) => (
-                <div key={q.id} className="finna-bank-row">
+
+            {!items.length ? (
+              <div className="rounded-xl border border-hairline bg-card p-6 text-center">
+                <h3 className="text-lg font-bold text-ink">
+                  {activeQueue === 'unseen' ? 'All caught up in this filter!' : 'No matching questions'}
+                </h3>
+                <p className="mt-2 text-sm text-secondary">
+                  {activeQueue === 'unseen'
+                    ? 'You have already attempted every matching MCQ here. Revise your missed questions or practice the full pool.'
+                    : 'Try clearing a subject, topic, or keyword filter, or switch to all exams.'}
+                </p>
+                {activeQueue === 'unseen' && format === 'mcq' && (
+                  <div className="mt-4 flex flex-wrap justify-center gap-2">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setQueue('ever_wrong')
+                        void launchUntimedRun(examId, subjectId, topicId, format, 'ever_wrong', pace)
+                      }}
+                      className="finna-btn min-h-11 px-5 text-sm"
+                    >
+                      Revise missed only
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setQueue('all')
+                        void launchUntimedRun(examId, subjectId, topicId, format, 'all', pace)
+                      }}
+                      className="inline-flex min-h-11 items-center rounded-pill border border-hairline bg-paper px-5 text-sm font-semibold text-ink"
+                    >
+                      Practice all MCQs
+                    </button>
+                  </div>
+                )}
+              </div>
+            ) : pace === 'step' && currentStepQ ? (
+              <div className="space-y-4">
+                <div key={currentStepQ.id} className="finna-bank-row">
                   <button
                     type="button"
                     className="finna-bank-check"
-                    aria-pressed={tray.has(q.id)}
-                    aria-label={tray.has(q.id) ? 'Remove from test tray' : 'Add to test tray'}
-                    onClick={() => tray.toggle(q.id)}
+                    aria-pressed={tray.has(currentStepQ.id)}
+                    aria-label={tray.has(currentStepQ.id) ? 'Remove from test tray' : 'Add to test tray'}
+                    onClick={() => tray.toggle(currentStepQ.id)}
                   >
-                    {tray.has(q.id) ? '✓' : ''}
+                    {tray.has(currentStepQ.id) ? '✓' : ''}
                   </button>
                   <QuestionCard
-                    q={q}
-                    onAnswered={() => setAnsweredCount((n) => n + 1)}
+                    key={currentStepQ.id}
+                    q={currentStepQ}
+                    onAnswered={(res) => {
+                      setBatchOutcomes((old) => ({ ...old, [currentStepQ.id]: Boolean(res?.correct) }))
+                    }}
+                    onNext={() => {
+                      if (stepIndex + 1 < items.length) setStepIndex((i) => i + 1)
+                      else if (hasMoreBatches) handleNextBatch()
+                    }}
                   />
                 </div>
-              ))}
-            </div>
-          )}
-        </section>
-      )}
+                <nav
+                  aria-label="Step-by-step practice navigation"
+                  className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-hairline bg-card px-4 py-3 shadow-[var(--ism-card-shadow)]"
+                >
+                  <button
+                    type="button"
+                    disabled={stepIndex <= 0 && batchOffset <= 0}
+                    onClick={() => {
+                      if (stepIndex > 0) setStepIndex((i) => i - 1)
+                      else handlePrevBatch()
+                    }}
+                    className="inline-flex min-h-11 items-center rounded-pill border border-hairline bg-paper px-4 text-sm font-semibold text-ink disabled:opacity-40"
+                  >
+                    ← Previous
+                  </button>
+                  <span className="font-mono text-xs font-bold text-secondary">
+                    Q{stepIndex + 1} of {items.length} · Batch {batchNumber}
+                  </span>
+                  {stepIndex + 1 < items.length ? (
+                    <button
+                      type="button"
+                      onClick={() => setStepIndex((i) => i + 1)}
+                      className="finna-btn min-h-11 px-5 text-sm"
+                    >
+                      {currentStepQ.id in batchOutcomes ? 'Next question →' : 'Skip →'}
+                    </button>
+                  ) : hasMoreBatches ? (
+                    <button
+                      type="button"
+                      onClick={handleNextBatch}
+                      className="finna-btn min-h-11 px-5 text-sm"
+                    >
+                      Load Next {activeBatchSize} →
+                    </button>
+                  ) : (
+                    <span className="text-xs font-semibold text-secondary">End of pool</span>
+                  )}
+                </nav>
+              </div>
+            ) : (
+              <>
+                <div className="space-y-3">
+                  {items.map((q) => (
+                    <div key={q.id} className="finna-bank-row">
+                      <button
+                        type="button"
+                        className="finna-bank-check"
+                        aria-pressed={tray.has(q.id)}
+                        aria-label={tray.has(q.id) ? 'Remove from test tray' : 'Add to test tray'}
+                        onClick={() => tray.toggle(q.id)}
+                      >
+                        {tray.has(q.id) ? '✓' : ''}
+                      </button>
+                      <QuestionCard
+                        q={q}
+                        onAnswered={(res) => {
+                          setBatchOutcomes((old) => ({ ...old, [q.id]: Boolean(res?.correct) }))
+                        }}
+                      />
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-hairline bg-card p-4 shadow-[var(--ism-card-shadow)]">
+                  <div>
+                    <strong className="block text-sm text-ink">
+                      Batch {batchNumber} · {answeredInBatch} / {items.length} answered
+                      {answeredInBatch > 0 ? ` · ${rightInBatch} right (${accPct}%)` : ''}
+                    </strong>
+                    <span className="text-xs text-secondary">
+                      {activeQueue === 'unseen'
+                        ? 'Answered questions leave your Unattempted queue automatically when you load the next batch.'
+                        : 'Move to the next batch to keep working through the filtered pool.'}
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    {batchOffset > 0 && (
+                      <button
+                        type="button"
+                        onClick={handlePrevBatch}
+                        className="inline-flex min-h-11 items-center rounded-pill border border-hairline bg-paper px-4 text-sm font-semibold text-ink"
+                      >
+                        ← Previous {activeBatchSize}
+                      </button>
+                    )}
+                    {hasMoreBatches && (
+                      <button
+                        type="button"
+                        onClick={handleNextBatch}
+                        className="finna-btn min-h-11 px-5 text-sm"
+                      >
+                        Next {activeBatchSize} questions →
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </>
+            )}
+          </section>
+        )
+      })()}
     </div>
   )
 }
