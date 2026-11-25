@@ -1,5 +1,10 @@
 # Devlog
 
+25 November IST — **Hardened Stats World Bank connector with jittered exponential backoff + second-pass self-healing retry (`stats_connectors.py`) AND fixed Exam Module `Overview` tab click bugs (`ExamPage.tsx`, `groupBStudy.ts`, `useBrowsePosition.ts`). Deployed API + Web cleanly to `https://study.hawayu.in`.**
+
+- **Self-healing World Bank refresh (`api/app/services/stats_connectors.py`, `tests/test_stats.py`):** Upgraded `fetch()` to 4 attempts with jittered exponential backoff + transient `429/5xx` retry, extended `wb_pages()` fallback ladder (`5000 → 1000 → 500`), and added an automatic second-pass retry for transiently failed World Bank metrics (`25/25` pytest passed).
+- **Fixed Exam Module `Overview` click bugs (`ExamPage.tsx`, `groupBStudy.ts`, `useBrowsePosition.ts`):** Removed the stale `groupBOverviewDestination` redirect loop that bounced Group B `Overview` clicks back to `?view=home` → `Browse`, mapped legacy `view=home` cleanly to `overview`, stripped stale Browse query filters when switching to `Overview`, and guarded `useBrowsePosition`'s async `setParams` so it never clobbers a user's click to `Overview` or other tabs.
+
 25 November IST — **Upgraded `/stats` with animated SVG Radial Ring Gauges, interactive Year-Scrub Area/Line Charts, Proportional Comparison & Ranking Bars, and color-coded Metric Cards (`Stats.tsx`, `stats.css`). Web deployed to `https://study.hawayu.in`.**
 
 - **Data Visualization & Visual Hierarchy (`Stats.tsx`, `stats.css`):**

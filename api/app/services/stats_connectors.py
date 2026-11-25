@@ -2,6 +2,7 @@
 import asyncio
 import csv
 import io
+import random
 import time
 import hashlib
 from datetime import date
@@ -13,25 +14,36 @@ from .stats import ReleaseInput, stage
 class SourceError(ValueError):pass
 class SourceUnavailable(SourceError):pass
 
+RETRY_ATTEMPTS = 4
+RETRY_BASE_SECONDS = 1.5
+SECOND_PASS_DELAY_SECONDS = 8.0
+
 def fetch(url,params=None):
  last=None
- for attempt in range(3):
-  if attempt:time.sleep(2**(attempt-1))
+ for attempt in range(RETRY_ATTEMPTS):
+  if attempt:
+   delay = RETRY_BASE_SECONDS * (2 ** (attempt - 1)) + random.uniform(0, 1.2)
+   time.sleep(delay)
   try:
    r=requests.get(url,params=params,timeout=(10,45),allow_redirects=False)
+   if r.status_code in (429,500,502,503,504):
+    raise requests.HTTPError(f'Transient provider HTTP {r.status_code}',response=r)
    r.raise_for_status()
    if r.status_code!=200:raise SourceError('Unexpected provider redirect/status')
    if len(r.content)>25_000_000:raise SourceError('Source response exceeds size limit')
    return r
   except requests.RequestException as e:last=e
- raise SourceUnavailable('Official source unavailable after three attempts') from last
+ raise SourceUnavailable(f'Official source unavailable after {RETRY_ATTEMPTS} attempts') from last
 
 def wb_pages(path,extra=None):
- try:return _wb_pages_size(path,extra,5000)
- except SourceUnavailable:
-  # Some provider/CDN responses fail for one page size. Restart the complete
-  # request with smaller pages; never combine a partial failed fetch.
-  return _wb_pages_size(path,extra,1000)
+ last=None
+ for size in (5000,1000,500):
+  try:return _wb_pages_size(path,extra,size)
+  except SourceUnavailable as e:
+   # Some provider/CDN responses fail for one page size. Restart the complete
+   # request with smaller pages; never combine a partial failed fetch.
+   last=e
+ raise last
 
 def _wb_pages_size(path,extra,size):
  rows=[];expected=None;edition=None
@@ -113,8 +125,22 @@ async def refresh(include_hdi=False):
   def unavailable():raise SourceError('Country coverage lookup failed; no series were replaced')
   return [await run_import(m['id'],unavailable) for m in METRICS.values() if m['source_id']=='world-bank']
  results=[]
- for m in METRICS.values():
-  if m['source_id']=='world-bank':results.append(await run_import(m['id'],lambda i=m['id']:world_bank(i,countries),True))
+ wb_metrics=[m['id'] for m in METRICS.values() if m['source_id']=='world-bank']
+ for mid in wb_metrics:
+  results.append(await run_import(mid,lambda i=mid:world_bank(i,countries),True))
+ # Second-pass self-healing retry for transient World Bank CDN blips.
+ transient_indices=[
+  idx for idx,r in enumerate(results)
+  if r.get('status')=='failed' and 'SourceUnavailable' in (r.get('error') or '')
+ ]
+ if transient_indices:
+  if SECOND_PASS_DELAY_SECONDS > 0:
+   await asyncio.sleep(SECOND_PASS_DELAY_SECONDS)
+  for idx in transient_indices:
+   mid=results[idx]['metric']
+   retry_res=await run_import(mid,lambda i=mid:world_bank(i,countries),True)
+   retry_res['retried']=True
+   results[idx]=retry_res
  if include_hdi:results.append(await run_import('hdi',hdi,False))
  return results
 

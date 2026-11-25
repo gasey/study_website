@@ -41,7 +41,7 @@ export function groupBLink(collection:string,view:string='home',extra:Record<str
  return '/exams/group-b-gazetted?'+new URLSearchParams({...extra,collection,view})
 }
 
-/** Only landing pages move; existing paper/question/practice deep links keep their scope. */
-export function groupBOverviewDestination(id:string,params:URLSearchParams){
- return GROUP_B_COLLECTIONS.some(value=>value===id)&&(!params.get('view')||params.get('view')==='overview')?groupBLink(id):null
+/** Group B modules now run directly inside ExamPage with Browse-first tabs and Overview intact. */
+export function groupBOverviewDestination(_id:string,_params:URLSearchParams){
+ return null
 }

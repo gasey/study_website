@@ -90,7 +90,11 @@ export function useBrowsePosition(
                 : 'Resumed your saved reading position.',
             )
             if (browseQuery(current) !== saved.query) {
-              setParams((previous) => restoreBrowseQuery(previous, saved), {
+              setParams((previous) => {
+                const activeView = previous.get('view')
+                if (activeView && activeView !== 'browse') return previous
+                return restoreBrowseQuery(previous, saved)
+              }, {
                 replace: true,
               })
               // Router search updates are navigation, not queued React state.

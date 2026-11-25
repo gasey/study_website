@@ -52,7 +52,12 @@ export default function ExamPage({ isSubjectRoute = false }: { isSubjectRoute?: 
   const [searchParams, setSearchParams] = useSearchParams()
   const rawView = searchParams.get('view')
   const defaultView = 'browse'
-  const view: 'overview' | 'topics' | 'papers' | 'browse' | 'practice' | 'progress' = rawView === 'overview' || rawView === 'topics' || rawView === 'papers' || rawView === 'browse' || rawView === 'practice' || rawView === 'progress' ? rawView : defaultView
+  const view: 'overview' | 'topics' | 'papers' | 'browse' | 'practice' | 'progress' =
+    rawView === 'overview' || rawView === 'home'
+      ? 'overview'
+      : rawView === 'topics' || rawView === 'papers' || rawView === 'browse' || rawView === 'practice' || rawView === 'progress'
+        ? rawView
+        : defaultView
 
 
 
@@ -149,7 +154,7 @@ export default function ExamPage({ isSubjectRoute = false }: { isSubjectRoute?: 
   const viewNavigation = <>
       <nav aria-label={`${c.title} module views`} className="module-view-nav">
         {navTabs.map(([key,label]) =>
-          <Link key={key} to={{search:(()=>{const next=new URLSearchParams(searchParams);next.set('view',key);if(key!==view)next.delete('offset');next.delete('session');next.delete('practice_mode');return '?'+next.toString()})(),hash:''}} aria-current={view===key?'page':undefined}
+          <Link key={key} to={{search:(()=>{const next=new URLSearchParams(searchParams);next.set('view',key);if(key!==view){next.delete('offset');if(key==='overview'){for(const k of ['paper','section','subject_id','topic_id','subtopic_id','q','pool','order','seed','status','answer_status','year','fresh'])next.delete(k)}}next.delete('session');next.delete('practice_mode');return '?'+next.toString()})(),hash:''}} aria-current={view===key?'page':undefined}
             className={`${combined ? (view===key ? 'is-active' : '') : `udc-tab ${view===key ? 'is-active' : ''}`} inline-flex min-h-11 items-center whitespace-nowrap px-4 py-3 text-sm font-semibold`}>{label}</Link>)
         }
 

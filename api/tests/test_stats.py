@@ -196,3 +196,22 @@ def test_provider_outage_restarts_with_smaller_complete_pages(monkeypatch):
  monkeypatch.setattr(connectors,'fetch',fake)
  rows,_=connectors.wb_pages('country')
  assert calls==[5000,1000] and rows==[{'id':'IND'}]
+
+
+def test_refresh_second_pass_recovers_transient_world_bank_blip(client,monkeypatch):
+ monkeypatch.setattr(connectors,'SECOND_PASS_DELAY_SECONDS',0)
+ monkeypatch.setattr(connectors,'wb_pages',lambda path,extra=None:([{'id':'IND','name':'India','region':{'id':'SAS'}}],{}))
+ attempts={'gdp-per-capita':0}
+ def fake_wb(metric_id,countries):
+  if metric_id=='gdp-per-capita':
+   attempts['gdp-per-capita']+=1
+   if attempts['gdp-per-capita']==1:
+    raise connectors.SourceUnavailable('Synthetic transient CDN blip')
+  return store.ReleaseInput.model_validate(payload(metric_id))
+ monkeypatch.setattr(connectors,'world_bank',fake_wb)
+ results=client.portal.call(connectors.refresh,False)
+ by_metric={r['metric']:r for r in results}
+ assert attempts['gdp-per-capita']==2
+ assert by_metric['gdp-per-capita']['status']!='failed'
+ assert by_metric['gdp-per-capita'].get('retried') is True
+ assert all(r['status']!='failed' for r in results)
