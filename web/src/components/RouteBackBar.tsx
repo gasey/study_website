@@ -64,7 +64,7 @@ function buildTrail(pathname: string, search: string): { crumbs: Crumb[]; fallba
         fallbackTo: `/exams/${examId}`,
       }
     }
-    if (view && VIEW_LABELS[view]) {
+    if (view && VIEW_LABELS[view] && view !== 'browse') {
       return {
         crumbs: [home, { label: 'Exams', to: '/exams' }, { label: examLabel, to: `/exams/${examId}` }, { label: VIEW_LABELS[view] }],
         fallbackTo: '/exams',

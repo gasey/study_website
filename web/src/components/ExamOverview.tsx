@@ -36,8 +36,8 @@ export default function ExamOverview({ title, collections, loading = false, erro
     [collections.reduce((n, c) => n + c.answerable_count, 0), 'answers for study'],
     [collections.reduce((n, c) => n + c.scorable, 0), 'official keys'],
   ] as const
-  const compactHeader = viewKey !== 'overview' && viewKey !== 'home'
-  return <div className="exam-experience exam-overview" data-compact-header={compactHeader ? 'true' : undefined} data-exam-tone={examPresentation(presentationId || collections[0]?.id || '').tone}>
+  const compactHeader = Boolean(navigation)
+  return <div className="exam-experience exam-overview" data-view={viewKey} data-compact-header={compactHeader ? 'true' : undefined} data-exam-tone={examPresentation(presentationId || collections[0]?.id || '').tone}>
     {compactHeader ? (
       <div className="exam-compact-masthead">
         <div className="exam-compact-title-wrap">
@@ -58,7 +58,7 @@ export default function ExamOverview({ title, collections, loading = false, erro
         <div id="exam-module-tabs">{navigation}</div>
       </>
     )}
-    <div key={viewKey} className="exam-module-panel">
+    <div className="exam-module-panel">
     {children ?? <>
     {!loading && !error && <>
       <dl className="exam-overview-stats">{stats.map(([n, label]) => <div key={label}><dd>{count(n)}</dd><dt>{label}</dt></div>)}</dl>

@@ -51,7 +51,7 @@ export default function ExamPage({ isSubjectRoute = false }: { isSubjectRoute?: 
   const [bookmarkError,setBookmarkError]=useState('')
   const [searchParams, setSearchParams] = useSearchParams()
   const rawView = searchParams.get('view')
-  const defaultView = isSubjectRoute || (c ? isSubjectModule(c) : false) ? 'browse' : 'overview'
+  const defaultView = 'browse'
   const view: 'overview' | 'topics' | 'papers' | 'browse' | 'practice' | 'progress' = rawView === 'overview' || rawView === 'topics' || rawView === 'papers' || rawView === 'browse' || rawView === 'practice' || rawView === 'progress' ? rawView : defaultView
 
 
@@ -64,7 +64,7 @@ export default function ExamPage({ isSubjectRoute = false }: { isSubjectRoute?: 
     // Begin the first question request alongside the collection metadata.
     // The browser reuses this in-flight result when the question panel mounts.
     const params=new URLSearchParams(window.location.search)
-    const initialView=params.get('view')
+    const initialView=params.get('view') || 'browse'
     const initialStatus=params.get('status')||'all'
     if((initialView==='browse'||initialView==='practice'&&id!=='udc')&&initialStatus==='all'&&(readQuestionOrder(params.get('order'))==='repeated'||params.has('seed'))&&(params.get('q')||'').length!==1){
       const pool=params.get('pool')
@@ -145,7 +145,7 @@ export default function ExamPage({ isSubjectRoute = false }: { isSubjectRoute?: 
   const combined = c.id === 'combined-prelims'
   const navTabs = isSubject
     ? ([['browse','Browse'],['topics','Topics'],['practice','Practice'],['progress','Progress']] as const)
-    : ([['overview','Overview'],['browse','Browse'],['topics','Subjects'],['papers','Papers'],['practice','Practice'],['progress','Progress']] as const)
+    : ([['browse','Browse'],['topics','Subjects'],['papers','Papers'],['practice','Practice'],['progress','Progress'],['overview','Overview']] as const)
   const viewNavigation = <>
       <nav aria-label={`${c.title} module views`} className="module-view-nav">
         {navTabs.map(([key,label]) =>

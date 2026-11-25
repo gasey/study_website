@@ -31,10 +31,10 @@
 .overview-booklets { position:relative; margin-left:auto; }
 .overview-booklets summary { display:flex; align-items:center; min-height:40px; cursor:pointer; font-size:12px; font-weight:700; color:rgb(var(--ism-secondary-rgb)); }
 .overview-booklets ul { position:absolute; top:100%; right:0; z-index:10; min-width:190px; max-width:280px; padding:8px 14px; border:1px solid rgb(var(--ism-hairline-rgb)); border-radius:12px; background:rgb(var(--ism-card-rgb)); box-shadow: var(--ism-card-shadow); }
-/* Keep the reference module's heading, width and navigation stable between tabs. */
-.exam-module-panel { min-height:55vh; animation:exam-panel-enter 140ms ease-out; }
-@keyframes exam-panel-enter { from { opacity:.65; transform:translateY(3px); } to { opacity:1; transform:none; } }
-@media (prefers-reduced-motion:reduce) { .exam-module-panel { animation:none; } .overview-paper-card:hover { transform:none; } }
+/* Keep the module's heading, width and navigation rock-solid between tabs (no jump or bounce). */
+.exam-module-panel { min-height:55vh; }
+.exam-overview[data-compact-header="true"] .exam-overview-stats { margin-top:16px; }
+@media (prefers-reduced-motion:reduce) { .overview-paper-card:hover { transform:none; } }
 .exam-module-content { --cp-green:var(--exam-deep); --cp-line:rgb(var(--ism-hairline-rgb)); --cp-gold:var(--exam-line); }
 /* Match the original Prelims' aligned, labelled filter bar. */
 .browse-filter-row { display:grid; grid-template-columns:minmax(95px,.65fr) minmax(170px,1.5fr) minmax(120px,1fr) minmax(115px,.9fr) minmax(130px,1fr) minmax(150px,1.1fr); gap:10px; padding:14px; margin:14px 0; border:1px solid rgb(var(--ism-hairline-rgb)); border-radius:14px; background:rgb(var(--ism-card-rgb)); align-items:end; }

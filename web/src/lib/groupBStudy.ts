@@ -7,7 +7,7 @@ export function groupBState(params:URLSearchParams){
  const collection=requested==='group-b'||GROUP_B_COLLECTIONS.some(id=>id===requested)?requested!:'group-b-non-gazetted'
  const area=GROUP_B_AREAS.includes(params.get('study_area') as GroupBStudyArea)?params.get('study_area') as GroupBStudyArea:'common'
  const requestedView=params.get('view')
- const view=requestedView==='home'||requestedView==='practice'||requestedView==='browse'||requestedView==='topics'||requestedView==='papers'||requestedView==='progress'?requestedView:area==='common'?'home':'topics'
+ const view=requestedView==='home'||requestedView==='practice'||requestedView==='browse'||requestedView==='topics'||requestedView==='papers'||requestedView==='progress'?requestedView:area==='common'?'browse':'topics'
  return {collection,area,view,nonGazetted:collection==='group-b-non-gazetted'}
 }
 export function groupBAreaLabel(area:GroupBStudyArea,collection:string){

@@ -1,5 +1,10 @@
 # Devlog
 
+25 November IST — **Fixed jarring Overview ↔ Browse header jump in Exam Modules and made `Browse` the default main view (`ExamOverview.tsx`, `ExamPage.tsx`, `GroupBStudy.tsx`, `groupBStudy.ts`, `exam-overview.css`). Web deployed to `https://study.hawayu.in`.**
+
+- **Zero-jump module masthead (`ExamOverview.tsx`, `exam-overview.css`):** Locked all tabbed exam & subject modules onto one consistent `.exam-compact-masthead` across `Browse`, `Subjects`, `Papers`, `Practice`, `Progress`, and `Overview` (eliminating the DOM swap where tabs jumped vertically & horizontally between Overview and Browse), and removed the panel remount bounce animation.
+- **`Browse` as the primary default tab (`ExamPage.tsx`, `GroupBStudy.tsx`, `groupBStudy.ts`, `RouteBackBar.tsx`):** Every exam module (`/exams/udc`, `/exams/ldc`, `/exams/combined-prelims`, Group B, etc.) now opens straight into **Browse** (tab #1, with immediate parallel question prefetching), while `Overview` stays accessible cleanly at the end of the tab strip.
+
 25 November IST — **Added compact Adaptive First-Visit Welcome Hero on `/home` for first-time zero-activity guests (`StudyHome.tsx`, `finna.css`). Web deployed to `https://study.hawayu.in`.**
 
 - **First-Visit Conversion without Taxing Daily Students (`StudyHome.tsx`, `finna.css`):** Replaces only the empty `0 / — / 0d / 0%` KPI strip when a visitor is signed out and has `0` answered questions (`!loading && authResolved && !authenticated && answered === 0 && !dismissed`), presenting a compact Midnight Indigo + Gold welcome hero with 3 instant CTAs (`Start Free Practice →`, `Browse Exams & Papers`, `⚔️ Play Finna Quest`), animated 16-bit Pixel RPG Hero sprite, and dismiss button. Auto-disappears for signed-in users and once Q1 is answered.
