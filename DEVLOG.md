@@ -1,5 +1,10 @@
 # Devlog
 
+25 November IST — **Restored `/srv/api/refresh-stats.py` and `/srv/api/youtube-current-affairs.py` on Oracle host & patched `scripts/deploy.sh` so future API deploys never delete scheduled worker scripts.**
+
+- **Root cause:** `deploy.sh api`'s `rsync --delete` wiped `/srv/api/refresh-stats.py` and `/srv/api/youtube-current-affairs.py` on 23 November (same class as the earlier `ops-collector.py` deletion), causing `ism-stats-refresh.service` to fail on Nov 23 & Nov 24 with `Errno 2: No such file or directory`.
+- **Fix:** Restored both scripts to `/srv/api/`, patched `scripts/deploy.sh` to reinstall all 6 worker scripts on every API deploy (`promote-publication-queue.py`, `publication-wakeup.py`, `ops-collector.py`, `pick-leaderboard-questions.py`, `refresh-stats.py`, `youtube-current-affairs.py`), and verified live `ism-stats-refresh.service` run end-to-end.
+
 25 November IST — **Fixed jarring Overview ↔ Browse header jump in Exam Modules and made `Browse` the default main view (`ExamOverview.tsx`, `ExamPage.tsx`, `GroupBStudy.tsx`, `groupBStudy.ts`, `exam-overview.css`). Web deployed to `https://study.hawayu.in`.**
 
 - **Zero-jump module masthead (`ExamOverview.tsx`, `exam-overview.css`):** Locked all tabbed exam & subject modules onto one consistent `.exam-compact-masthead` across `Browse`, `Subjects`, `Papers`, `Practice`, `Progress`, and `Overview` (eliminating the DOM swap where tabs jumped vertically & horizontally between Overview and Browse), and removed the panel remount bounce animation.
