@@ -112,6 +112,8 @@ html[data-design="finna"] {
   --finna-hero-ink: #FFFFFF;
   --finna-hero-muted: #E0E7FF;
   --finna-side: #0E1330;
+  --finna-grid-line: rgba(31,75,224,.045);
+  --finna-grid-line-2: rgba(31,75,224,.035);
   /* Deterministic 6-slot subject chip palette (§VII.19.8, Dashboards v2) */
   --subj-0-bg: #E0F2FE;  --subj-0-ink: #0369A1;
   --subj-1-bg: #DCE5FF;  --subj-1-ink: #1A3FBF;
@@ -121,7 +123,55 @@ html[data-design="finna"] {
   --subj-5-bg: #F1EAFF;  --subj-5-ink: #5B21B6;
   color-scheme: light;
 }
+/* 3d "Library" Study Theme — Warm Cream Paper + Deep Navy Exam Hero */
+html[data-design="finna"][data-theme="library"] {
+  --ism-paper-rgb: 245 240 230;
+  --ism-canvas-rgb: 235 227 211;
+  --ism-card-rgb: 255 253 249;
+  --ism-ink-rgb: 28 25 21;
+  --ism-secondary-rgb: 74 68 58;
+  --ism-muted-rgb: 74 68 58;
+  --ism-placeholder-rgb: 122 114 101;
+  --ism-hairline-rgb: 226 217 197;
+  --ism-hairline2-rgb: 214 204 182;
+  --ism-practice-rgb: 37 87 214;
+  --ism-practice-soft-rgb: 228 236 255;
+  --ism-practice-dark-rgb: 26 63 163;
+  --ism-exams-rgb: 184 107 0;
+  --ism-exams-soft-rgb: 249 235 208;
+  --ism-exams-dark-rgb: 126 72 0;
+  --ism-correct-rgb: 24 90 48;
+  --ism-correct-soft-rgb: 222 243 229;
+  --ism-correct-dark-rgb: 24 90 48;
+  --ism-rewards-dark-rgb: 79 86 6;
+  --ism-opt-bg-rgb: 255 253 249;
+  --ism-opt-border-rgb: 226 217 197;
+  --ism-opt-muted-rgb: 74 68 58;
+  --ism-link-rgb: 26 63 163;
+  --bg-app: #F5F0E6;
+  --bg-panel: #FFFDF9;
+  --bg-panel-elev: #F1EADB;
+  --text-primary: #1C1915;
+  --text-secondary: #4A443A;
+  --border: #E2D9C5;
+  --line: #E2D9C5;
+  --ism-header-bg: #FFFDF9;
+  --ism-subbar-bg: #F5F0E6;
+  --ism-nav-active-bg: #E4ECFF;
+  --ism-card-shadow: 0 2px 6px rgba(28,25,21,.04), 0 1px 2px rgba(28,25,21,.03);
+  --ism-card-hover-shadow: 0 8px 20px -8px rgba(28,25,21,.10), 0 2px 6px rgba(28,25,21,.04);
+  --finna-primary: #2557D6;
+  --finna-on-primary: #FFFFFF;
+  --finna-hero: #1E3A8A;
+  --finna-hero-ink: #FFFDF9;
+  --finna-hero-muted: #E6DFD2;
+  --finna-grid-line: rgba(126,72,0,.05);
+  --finna-grid-line-2: rgba(126,72,0,.035);
+  color-scheme: light;
+}
 html[data-design="finna"][data-theme="night"] {
+  --finna-grid-line: rgba(108,141,255,.06);
+  --finna-grid-line-2: rgba(108,141,255,.04);
   --ism-paper-rgb: 11 15 36;
   --ism-canvas-rgb: 30 38 80;
   --ism-card-rgb: 21 27 58;
@@ -8874,3 +8924,568 @@ html[data-theme="night"] .mm-tile-pct.is-rusty  { color:#FBBF24; }
   white-space:nowrap;
 }
 .finna-home-xp-link:hover { text-decoration:underline; }
+
+/* ==========================================================================
+   3d Design — Library Theme, Photo/Lamp/Grid Backdrops, Calm 3-Col Home,
+   Weekly Leaderboard Podium, Unified Play/People/Tools Card & Chip Index
+   ========================================================================== */
+.finna-st-theme-swatch--library {
+  background:linear-gradient(135deg, #F5F0E6 0%, #FFFDF9 52%, #1E3A8A 52%, #1E3A8A 100%);
+  border:1px solid #E2D9C5;
+}
+
+.finna-home-shell {
+  position:relative;
+  overflow-x:clip;
+}
+.finna-home-shell > .finna-page.finna-home {
+  position:relative;
+  z-index:2;
+}
+
+/* Backdrop Option 1: Library Reading-Room Photo Band (3d default) */
+.finna-home-photo-band {
+  position:absolute;
+  left:0; right:0; top:0;
+  height:560px;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:0;
+}
+.finna-home-photo-img {
+  width:100%; height:100%;
+  object-fit:cover;
+  object-position:center 40%;
+  display:block;
+}
+.finna-home-photo-scrim {
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    180deg,
+    rgba(14,19,48,.82) 0%,
+    rgba(14,19,48,.62) 45%,
+    rgba(14,19,48,.20) 78%,
+    var(--bg-app) 100%
+  );
+}
+html[data-theme="night"] .finna-home-photo-scrim {
+  background:linear-gradient(
+    180deg,
+    rgba(7,10,26,.88) 0%,
+    rgba(11,15,36,.72) 48%,
+    rgba(11,15,36,.35) 78%,
+    var(--bg-app) 100%
+  );
+}
+
+/* Backdrop Option 2: Full-Page Graph Paper Grid */
+.finna-home-bg-grid {
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+  background-image:
+    linear-gradient(var(--finna-grid-line, rgba(126,72,0,.05)) 1px, transparent 1px),
+    linear-gradient(90deg, var(--finna-grid-line-2, rgba(126,72,0,.035)) 1px, transparent 1px);
+  background-size:44px 44px;
+}
+
+/* Backdrop Option 3: Warm Desk-Lamp Glow */
+.finna-home-bg-lamp {
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+  background:
+    radial-gradient(900px 520px at 92% 8%, rgba(255,200,61,.26), transparent 70%),
+    radial-gradient(760px 560px at 0% 70%, rgba(10,125,140,.12), transparent 70%),
+    radial-gradient(700px 500px at 55% 100%, rgba(31,75,224,.08), transparent 70%);
+}
+html[data-theme="night"] .finna-home-bg-lamp {
+  opacity:.6;
+}
+
+/* 3d Editorial Newsreader Greeting Row on Library Photo */
+.finna-lib-greeting {
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:20px;
+  padding:8px 0 24px;
+  color:#FFFFFF;
+}
+.finna-lib-kicker {
+  font-family:var(--font-mono, 'IBM Plex Mono', monospace);
+  font-size:11.5px;
+  font-weight:500;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#FFC83D;
+}
+.finna-lib-headline {
+  margin:6px 0 0;
+  font-family:var(--font-reading, 'Newsreader', Georgia, serif);
+  font-size:clamp(26px, 3vw, 40px);
+  font-weight:500;
+  line-height:1.1;
+  letter-spacing:-.02em;
+  color:#FFFFFF;
+}
+.finna-lib-tagline {
+  font-size:13px;
+  font-weight:600;
+  color:rgba(241,245,255,.82);
+  white-space:nowrap;
+}
+
+/* 3d Slim Merged Navy XP + KPI Strip */
+.finna-calm-xp-bar {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:16px 20px;
+  margin-bottom:22px;
+  padding:12px 18px;
+  border-radius:18px;
+  border:1px solid rgba(255,200,61,.32);
+  background:
+    radial-gradient(240px 140px at 96% 0%, rgba(255,200,61,.18), transparent 70%),
+    linear-gradient(135deg, #10173A 0%, #1A2756 62%, #183252 100%);
+  color:#FFFFFF;
+  box-shadow:0 10px 24px -16px rgba(10,15,44,.55);
+}
+.finna-calm-xp-track {
+  flex:1 1 220px;
+  max-width:340px;
+  min-width:170px;
+}
+.finna-calm-xp-bar .cat-xp-label { color:#FFFFFF; font-size:11.5px; }
+.finna-calm-xp-bar .cat-xp-meta { color:rgba(226,232,240,.86); font-size:11px; }
+.finna-calm-xp-bar .cat-xp-track {
+  height:12px;
+  background:rgba(255,255,255,.15);
+  border-color:rgba(255,255,255,.22);
+}
+.finna-calm-xp-metrics {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  gap:8px 20px;
+  font-size:13px;
+  color:rgba(241,245,255,.88);
+}
+.finna-calm-xp-metrics b {
+  font-size:16px;
+  font-weight:700;
+  color:#FFFFFF;
+  font-variant-numeric:tabular-nums;
+  margin-right:3px;
+}
+.finna-calm-xp-right {
+  margin-left:auto;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+}
+
+/* 3d Calmer 3-Column Home Grid */
+.finna-home-grid.is-calm-three {
+  display:grid;
+  grid-template-columns:minmax(260px, 320px) minmax(0, 1fr) minmax(300px, 340px);
+  gap:28px;
+  align-items:start;
+}
+
+/* Centre 3-Across Editorial Photo Showcase (Also on Finna) */
+.ed-rail.is-row3 {
+  padding:18px;
+  border-radius:22px;
+}
+.ed-row3-hint {
+  font-size:12px;
+  font-weight:700;
+  color:var(--text-secondary);
+  margin-right:4px;
+}
+.ed-rail.is-row3 .ed-unified-grid {
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:12px;
+}
+.ed-rail.is-row3 .ed-tile.is-primary {
+  display:flex;
+  flex-direction:column;
+  min-height:0;
+}
+.ed-rail.is-row3 .ed-tile.is-primary .ed-tile-media {
+  height:150px;
+  flex:none;
+}
+.ed-rail.is-row3 .ed-tile.is-primary .ed-tile-body {
+  padding:13px 15px 15px;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.ed-rail.is-row3 .ed-tile.is-primary h3 {
+  font-family:var(--font-reading, 'Newsreader', Georgia, serif);
+  font-size:18.5px;
+  line-height:1.22;
+  font-weight:600;
+}
+.ed-rail.is-row3 .ed-tile.is-primary .ed-tile-cta {
+  margin-top:auto;
+}
+
+/* 3d Weekly Leaderboard Podium Card */
+.finna-podium-card {
+  background:var(--bg-panel);
+  border:1px solid var(--line);
+  border-radius:20px;
+  box-shadow:var(--ism-card-shadow);
+  overflow:hidden;
+}
+.finna-podium-head {
+  position:relative;
+  overflow:hidden;
+  padding:14px 18px 12px;
+  background:
+    radial-gradient(240px 140px at 96% 0%, rgba(255,200,61,.22), transparent 70%),
+    linear-gradient(135deg, #10173A 0%, #1A2756 62%, #183252 100%);
+  color:#FFFFFF;
+}
+.finna-podium-top {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:8px;
+}
+.finna-podium-kicker {
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:#FFC83D;
+}
+.finna-podium-title {
+  margin:2px 0 0;
+  font-size:19px;
+  font-weight:800;
+  color:#FFFFFF;
+  line-height:1.2;
+}
+.finna-podium-head-actions {
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  flex-shrink:0;
+}
+.finna-podium-link {
+  font-size:12.5px;
+  font-weight:800;
+  color:#FFC83D;
+  text-decoration:none;
+  white-space:nowrap;
+}
+.finna-podium-link:hover { text-decoration:underline; }
+.finna-podium-hide {
+  width:24px; height:24px;
+  border-radius:999px; border:0;
+  background:rgba(255,255,255,.10);
+  color:rgba(255,255,255,.8);
+  font-size:15px; line-height:1;
+  cursor:pointer; display:grid; place-items:center;
+}
+.finna-podium-hide:hover { background:rgba(255,255,255,.22); color:#FFFFFF; }
+
+.finna-podium-stage {
+  display:grid;
+  grid-template-columns:1fr 1.15fr 1fr;
+  align-items:end;
+  gap:8px;
+  margin-top:14px;
+}
+.finna-podium-col {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:5px;
+  min-width:0;
+  text-decoration:none;
+  color:#FFFFFF;
+}
+.finna-podium-av {
+  border-radius:12px;
+  background:#132238;
+  border:2px solid #FFC83D;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  flex-shrink:0;
+}
+.finna-podium-handle {
+  max-width:100%;
+  font-size:11.5px;
+  font-weight:700;
+  color:#FFFFFF;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.finna-podium-block {
+  width:100%;
+  border-radius:10px 10px 0 0;
+  color:#0E1330;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  padding-top:6px;
+}
+.finna-podium-block strong {
+  font-size:15px;
+  font-weight:900;
+  line-height:1.1;
+}
+.finna-podium-block span {
+  font-family:var(--font-mono, 'IBM Plex Mono', monospace);
+  font-size:10.5px;
+  font-weight:600;
+  margin-top:1px;
+}
+
+.finna-podium-body {
+  padding:6px 16px 14px;
+}
+.finna-podium-row {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:8px 0;
+  border-bottom:1px solid var(--line);
+  text-decoration:none;
+  color:var(--text-primary);
+}
+.finna-podium-row.is-link:hover .finna-podium-name { text-decoration:underline; }
+.finna-podium-rank {
+  width:26px;
+  font-family:var(--font-mono, 'IBM Plex Mono', monospace);
+  font-size:12px;
+  color:var(--text-secondary);
+}
+.finna-podium-name {
+  flex:1;
+  min-width:0;
+  font-weight:700;
+  font-size:13.5px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.finna-podium-xp {
+  font-family:var(--font-mono, 'IBM Plex Mono', monospace);
+  font-size:12px;
+  font-weight:600;
+  color:var(--text-secondary);
+}
+.finna-podium-you {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:10px;
+  padding:8px 11px;
+  border-radius:12px;
+  background:rgb(var(--ism-practice-soft-rgb));
+  color:rgb(var(--ism-practice-dark-rgb));
+  text-decoration:none;
+  font-size:13px;
+}
+.finna-podium-you-rank {
+  font-family:var(--font-mono, 'IBM Plex Mono', monospace);
+  font-size:12px;
+  font-weight:700;
+}
+.finna-podium-you-main {
+  flex:1;
+  font-weight:800;
+}
+.finna-podium-you-cta {
+  font-size:12px;
+  font-weight:700;
+}
+
+/* 3d Unified Tabbed Card (Play / People / Tools) */
+.finna-calm-tabs-card {
+  background:var(--bg-panel);
+  border:1px solid var(--line);
+  border-radius:20px;
+  box-shadow:var(--ism-card-shadow);
+  overflow:hidden;
+}
+.finna-calm-tabbar {
+  display:flex;
+  gap:4px;
+  padding:12px 12px 0;
+}
+.finna-calm-tab {
+  flex:1;
+  min-height:38px;
+  border-radius:999px;
+  border:0;
+  background:var(--bg-app);
+  color:var(--text-primary);
+  font-size:13px;
+  font-weight:700;
+  cursor:pointer;
+  transition:all .15s ease;
+}
+.finna-calm-tab.is-active {
+  background:rgb(var(--ism-ink-rgb));
+  color:rgb(var(--ism-paper-rgb));
+}
+.finna-calm-tabpanel {
+  padding:10px 16px 16px;
+}
+.finna-calm-quests {
+  display:flex;
+  flex-direction:column;
+}
+.finna-calm-quest-row {
+  padding:9px 0;
+  border-bottom:1px solid var(--line);
+}
+.finna-calm-games-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-top:12px;
+}
+.finna-calm-game-tile {
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+  padding:10px 11px;
+  border-radius:14px;
+  border:1px solid var(--line);
+  background:var(--bg-app);
+  text-decoration:none;
+  color:var(--text-primary);
+  transition:border-color .14s ease, transform .14s ease;
+}
+.finna-calm-game-tile:hover {
+  border-color:rgb(var(--ism-ink-rgb));
+  transform:translateY(-1px);
+}
+.finna-calm-game-tag {
+  font-family:var(--font-mono, 'IBM Plex Mono', monospace);
+  font-size:10px;
+  font-weight:700;
+  text-transform:uppercase;
+  color:var(--text-secondary);
+}
+.finna-calm-game-tile strong {
+  font-size:13.5px;
+  font-weight:800;
+  line-height:1.25;
+}
+.finna-calm-game-tile small {
+  font-size:11.5px;
+  color:var(--text-secondary);
+}
+.finna-calm-person {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:8px 0;
+  text-decoration:none;
+}
+.finna-calm-person:hover { opacity:.85; }
+.finna-calm-note-box {
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background:var(--bg-app);
+  text-decoration:none;
+}
+.finna-calm-note-box:hover { border-color:rgb(var(--ism-ink-rgb)); }
+.finna-calm-tool-row {
+  display:flex;
+  flex-direction:column;
+  padding:10px 0;
+  text-decoration:none;
+  color:var(--text-primary);
+}
+.finna-calm-tool-row strong { font-size:13.5px; font-weight:700; }
+.finna-calm-tool-row small { font-size:12px; color:var(--text-secondary); }
+.finna-calm-tool-row:hover strong { text-decoration:underline; }
+
+/* 3d Everything on Finna Chip Index Card */
+.finna-everything-card {
+  background:var(--bg-panel);
+  border:1px solid var(--line);
+  border-radius:20px;
+  box-shadow:var(--ism-card-shadow);
+  padding:16px 18px;
+}
+.finna-everything-chips {
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+.finna-everything-chip {
+  display:inline-flex;
+  align-items:center;
+  padding:5px 10px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:var(--bg-app);
+  color:var(--text-primary);
+  font-size:12px;
+  font-weight:700;
+  text-decoration:none;
+  transition:border-color .14s ease, background-color .14s ease;
+}
+.finna-everything-chip:hover {
+  border-color:rgb(var(--ism-ink-rgb));
+  background:var(--bg-panel-elev);
+}
+
+/* Responsive Breakpoints for 3d Calm 3-Col Home */
+@media (max-width: 1180px) {
+  .finna-home-grid.is-calm-three {
+    grid-template-columns:minmax(250px, 300px) minmax(0, 1fr);
+    gap:22px;
+  }
+  .finna-home-grid.is-calm-three > .finna-calm-right {
+    grid-column:1 / -1;
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:18px;
+  }
+  .finna-home-grid.is-calm-three > .finna-calm-right > .finna-everything-card {
+    grid-column:1 / -1;
+  }
+}
+@media (max-width: 860px) {
+  .ed-rail.is-row3 .ed-unified-grid {
+    grid-template-columns:1fr;
+  }
+  .ed-row3-hint { display:none; }
+  .finna-home-grid.is-calm-three {
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+  .finna-home-grid.is-calm-three > .finna-calm-right {
+    display:flex;
+    flex-direction:column;
+  }
+  .finna-lib-greeting {
+    flex-direction:column;
+    align-items:flex-start;
+    gap:6px;
+    padding:4px 0 18px;
+  }
+  .finna-home-photo-band { height:380px; }
+}

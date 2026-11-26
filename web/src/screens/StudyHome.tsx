@@ -10,6 +10,7 @@ import {
   getExamBookmarks,
   getFocusSubjects,
   getProgress,
+  getAccountSession,
   removeExamBookmark,
   saveExamBookmark,
   saveFocusSubjects,
@@ -23,6 +24,7 @@ import {
 import { reviewRequest, reviewSession } from '../lib/review'
 import { learningRequest, type ResumePage, type ResumeItem } from '../lib/learning'
 import { accountContext } from '../lib/accountContext'
+import { useStudyBackground } from '../lib/theme'
 import { useExamScope } from '../lib/examScope'
 import { choosePreferredExam, usePreferredExam } from '../lib/preferredExam'
 import {
@@ -41,7 +43,7 @@ import { calendarRead, indiaToday, type CalendarEvent } from '../lib/calendar'
 import { subjectChipClass, subjectInitials } from '../lib/subjectChips'
 import QuickStudy from '../components/QuickStudy'
 import TodayCard from '../components/TodayCard'
-import HomeLeftExtras from '../components/HomeLeftExtras'
+import HomeCalmRightRail from '../components/HomeCalmRightRail'
 import OfflineBanner from '../components/OfflineBanner'
 import WelcomeBackBar from '../components/WelcomeBackBar'
 import ExploreDeckRail from '../components/ExploreDeckRail'
@@ -66,7 +68,6 @@ const MONTHS = [
   'January', 'February', 'March', 'April', 'May', 'June',
   'July', 'August', 'September', 'October', 'November', 'December',
 ]
-const WEEKDAYS = ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU']
 
 type HomeView = 'overview' | 'exams' | 'feed'
 
@@ -137,12 +138,14 @@ const SAFE_RESUME_RE = /^\/(bank|exams|group-b|english|mizo|arithmetic|essay|lib
 export default function StudyHome() {
   const [params, setParams] = useSearchParams()
   const scope = useExamScope()
+  const [studyBg] = useStudyBackground()
+  const [learnerName, setLearnerName] = useState<string>('')
   const [retry, setRetry] = useState(0)
   const [data, setData] = useState<StudyData>(EMPTY)
   const [examError, setExamError] = useState('')
   const [busyExamId, setBusyExamId] = useState<string | null>(null)
   const [pickerOpen, setPickerOpen] = useState(false)
-  const [monthOffset, setMonthOffset] = useState(0)
+  const [monthOffset] = useState(0)
   const [wizardOpen, setWizardOpen] = useState(false)
   const [wizardStep, setWizardStep] = useState<WizardStep>(1)
   const [wizardFirstTime, setWizardFirstTime] = useState(false)
@@ -424,7 +427,17 @@ export default function StudyHome() {
     void accountContext()
       .then(async (a) => {
         patch({ authenticated: a.authenticated, authResolved: true })
-        if (!a.authenticated) return
+        if (!a.authenticated) {
+          setLearnerName('')
+          return
+        }
+        void getAccountSession()
+          .then((acc) => {
+            if (!live) return
+            const raw = (acc.name || acc.handle || '').trim()
+            setLearnerName(raw.split(/\s+/)[0] || '')
+          })
+          .catch(() => {})
         void getFocusSubjects()
           .then((f) => {
             if (!live) return
@@ -661,26 +674,6 @@ export default function StudyHome() {
   // Strict null vs "0%" honesty (§VII.19.8): 0 denominator displays "—", never "0%"
   const weekAccuracy = weekAnswers > 0 ? `${Math.round((weekCorrect / weekAnswers) * 100)}%` : null
 
-  const practisedDays = useMemo(() => {
-    const set = new Set<number>()
-    for (const d of p?.daily_activity || []) {
-      if (d.answered > 0 && d.day.startsWith(calBase.ym + '-')) {
-        set.add(Number(d.day.slice(8, 10)))
-      }
-    }
-    return set
-  }, [p?.daily_activity, calBase.ym])
-
-  const examEventDays = useMemo(() => {
-    const set = new Set<number>()
-    for (const ev of data.calendarEvents) {
-      if (ev.starts_on && ev.starts_on.startsWith(calBase.ym + '-')) {
-        set.add(Number(ev.starts_on.slice(8, 10)))
-      }
-    }
-    return set
-  }, [data.calendarEvents, calBase.ym])
-
   const returnRows = useMemo(() => {
     const rows: {
       key: string
@@ -721,24 +714,74 @@ export default function StudyHome() {
     return <Navigate replace to={'/community?' + nextParams} />
   }
 
-  const hasCommunityColumn = !isHidden('discover') || !isHidden('leaderboard')
-  const hasRightColumn =
+  // Compute calm 3d editorial greeting metadata (IST time + next upcoming exam date)
+  const greetingMeta = useMemo(() => {
+    const nowIst = new Date(Date.now() + 5.5 * 3600_000)
+    const hr = nowIst.getUTCHours()
+    const salutation = hr < 12 ? 'Good morning' : hr < 17 ? 'Good afternoon' : 'Good evening'
+    const dayName = nowIst.toLocaleDateString('en-IN', { weekday: 'long', timeZone: 'UTC' }).toUpperCase()
+    const dayNum = nowIst.getUTCDate()
+    const monthName = MONTHS[nowIst.getUTCMonth()].toUpperCase()
+    const dateLine = `${dayName} · ${dayNum} ${monthName}`
+
+    const upcoming = data.calendarEvents
+      .filter((ev) => ev.starts_on && ev.starts_on >= today)
+      .sort((a, b) => (a.starts_on || '').localeCompare(b.starts_on || ''))[0]
+    let daysUntil: number | null = null
+    if (upcoming?.starts_on) {
+      const diff = Math.round(
+        (Date.parse(upcoming.starts_on + 'T00:00:00Z') - Date.parse(today + 'T00:00:00Z')) /
+          86400000,
+      )
+      if (diff >= 0 && diff <= 365) daysUntil = diff
+    }
+    return { salutation, dateLine, daysUntil }
+  }, [data.calendarEvents, today])
+
+  const hasRightRail =
+    !isHidden('leaderboard') ||
     !isHidden('quests') ||
+    !isHidden('games') ||
+    !isHidden('discover') ||
     !isHidden('shortcuts') ||
-    !isHidden('calendar') ||
-    !isHidden('desk') ||
-    !isHidden('explore')
-  const gridColClass =
-    hasCommunityColumn && hasRightColumn
-      ? 'is-four-col'
-      : hasCommunityColumn || hasRightColumn
-        ? 'is-three-col'
-        : 'is-two-col'
+    !isHidden('calendar')
+  const gridColClass = hasRightRail ? 'is-calm-three' : 'is-two-col'
 
   return (
-    <div className="finna-home-shell" data-screen="home">
+    <div className={`finna-home-shell finna-bg--${studyBg}`} data-screen="home">
+      {studyBg === 'library' && (
+        <div className="finna-home-photo-band" aria-hidden="true">
+          <img
+            src="/images/discover/guides.jpg"
+            alt=""
+            className="finna-home-photo-img"
+            loading="eager"
+          />
+          <div className="finna-home-photo-scrim" />
+        </div>
+      )}
+      {studyBg === 'grid' && <div className="finna-home-bg-grid" aria-hidden="true" />}
+      {studyBg === 'lamp' && <div className="finna-home-bg-lamp" aria-hidden="true" />}
+
       <div className="finna-page finna-home">
         <h1 className="sr-only">Your study home</h1>
+
+        {/* 3d Editorial Greeting Row on top of the Library Reading-Room Photo Band */}
+        {studyBg === 'library' && (
+          <div className="finna-lib-greeting">
+            <div>
+              <div className="finna-lib-kicker">{greetingMeta.dateLine}</div>
+              <p className="finna-lib-headline">
+                {greetingMeta.salutation}
+                {learnerName ? `, ${learnerName}` : ''}.
+                {greetingMeta.daysUntil !== null && exam
+                  ? ` ${greetingMeta.daysUntil} ${greetingMeta.daysUntil === 1 ? 'day' : 'days'} to ${shortExamLabel(exam)}.`
+                  : ''}
+              </p>
+            </div>
+            <span className="finna-lib-tagline">A little more, every day.</span>
+          </div>
+        )}
 
         <OfflineBanner
           lastLoadedAt={data.lastLoadedAt}
@@ -783,8 +826,8 @@ export default function StudyHome() {
                 <Link to="/exams" className="finna-welcome-ghost">
                   Browse Exams &amp; Papers
                 </Link>
-                <Link to="/games/quest" className="finna-welcome-ghost">
-                  ⚔️ Play Finna Quest
+                <Link to="/games/blocks" className="finna-welcome-ghost">
+                  🧱 Play Finna Blocks
                 </Link>
               </div>
             </div>
@@ -805,100 +848,55 @@ export default function StudyHome() {
             </div>
           </section>
         ) : !isHidden('kpi') ? (
-          /* 3-Tile KPI Strip matching the 3-column frontpage rhythm */
-          <section className="finna-kpi-strip" aria-label="Study snapshot">
-            <div className="finna-kpi-tile">
-              <div className="finna-kpi-icon bg-practice-soft text-practice-dark" aria-hidden="true">
-                ✎
-              </div>
-              <div className="finna-kpi-body">
-                <div className="finna-kpi-value">{p ? weekAnswers.toLocaleString('en-IN') : '—'}</div>
-                <div className="finna-kpi-label">Answered this week</div>
-              </div>
+          /* 3d Slim Merged Navy XP + KPI Banner */
+          <section className="finna-calm-xp-bar" aria-label="Level, XP and weekly study stats">
+            <span className="finna-home-xp-lvl">LV {homeRewards?.level ?? 1}</span>
+            <div className="finna-calm-xp-track">
+              {homeRewards ? (
+                <CatXpBar
+                  value={Math.max(0, homeRewards.lifetime_xp - homeRewards.level_floor_xp)}
+                  max={Math.max(40, homeRewards.next_level_xp - homeRewards.level_floor_xp)}
+                  tone="xp"
+                  label={`Level ${homeRewards.level} → ${homeRewards.level + 1}`}
+                  meta={`${homeRewards.lifetime_xp.toLocaleString('en-IN')} / ${homeRewards.next_level_xp.toLocaleString('en-IN')} XP`}
+                />
+              ) : (
+                <CatXpBar
+                  value={Math.min(100, weekAnswers * 10)}
+                  max={100}
+                  tone="xp"
+                  label="Study XP"
+                  meta={data.authenticated ? 'Answer to earn XP' : 'Sign in to save XP'}
+                />
+              )}
             </div>
-            <div className="finna-kpi-tile">
-              <div className="finna-kpi-icon bg-correct-soft text-correct-dark" aria-hidden="true">
-                ✓
-              </div>
-              <div className="finna-kpi-body">
-                <div className={`finna-kpi-value${weekAccuracy === null ? ' finna-kpi-value--na' : ''}`}>
-                  {weekAccuracy ?? '—'}
-                </div>
-                <div className="finna-kpi-label">7-day accuracy</div>
-              </div>
+            <div className="finna-calm-xp-metrics">
+              <span>
+                <b>{p ? weekAnswers.toLocaleString('en-IN') : '—'}</b> answered this week
+              </span>
+              <span>
+                <b>{weekAccuracy ?? '—'}</b> accuracy
+              </span>
+              <span>
+                <b>{p ? `${p.current_streak}d` : '—'}</b> streak
+              </span>
             </div>
-            <div className="finna-kpi-tile">
-              <div className="finna-kpi-icon bg-exams-soft text-exams-dark" aria-hidden="true">
-                ★
-              </div>
-              <div className="finna-kpi-body">
-                <div className={`finna-kpi-value${!p ? ' finna-kpi-value--na' : ''}`}>
-                  {p ? `${p.current_streak}d` : '—'}
-                </div>
-                <div className="finna-kpi-label">
-                  {p?.streak_basis === 'device activity' ? 'Device streak' : 'Current streak'}
-                </div>
-              </div>
+            <div className="finna-calm-xp-right">
+              <Link
+                to={data.authenticated ? '/profile/rewards' : '/login'}
+                className="finna-home-xp-link"
+              >
+                {data.authenticated ? 'Rewards & XP →' : 'Sign in →'}
+              </Link>
               <button
                 type="button"
-                className="finna-card-hide-btn finna-kpi-hide-btn"
-                aria-label="Hide study snapshot strip"
-                title="Hide snapshot strip"
+                className="finna-podium-hide"
+                aria-label="Hide study stats banner"
+                title="Hide stats banner"
                 onClick={() => handleHideCard('kpi')}
               >
                 ×
               </button>
-            </div>
-            {/* Integrated Cat-Runner Level & XP Bar */}
-            <div className="finna-home-xp-banner" aria-label="Level and XP progress">
-              <div className="finna-home-xp-badge">
-                <span className="finna-home-xp-lvl">
-                  LV {homeRewards?.level ?? 1}
-                </span>
-                <span className="finna-home-xp-div">
-                  {homeRewards?.league?.name
-                    ? `🏅 ${homeRewards.league.name}`
-                    : data.authenticated
-                      ? 'Study XP'
-                      : 'Guest'}
-                </span>
-              </div>
-              <div className="finna-home-xp-bar-wrap">
-                {homeRewards ? (
-                  <CatXpBar
-                    value={Math.max(0, homeRewards.lifetime_xp - homeRewards.level_floor_xp)}
-                    max={Math.max(40, homeRewards.next_level_xp - homeRewards.level_floor_xp)}
-                    tone="xp"
-                    label={`Level ${homeRewards.level} → Level ${homeRewards.level + 1}`}
-                    meta={`${homeRewards.lifetime_xp.toLocaleString('en-IN')} / ${homeRewards.next_level_xp.toLocaleString('en-IN')} XP`}
-                  />
-                ) : (
-                  <CatXpBar
-                    value={Math.min(100, weekAnswers * 10)}
-                    max={100}
-                    tone="xp"
-                    label="Study XP progress"
-                    meta={
-                      data.authenticated
-                        ? 'Answer questions to earn XP'
-                        : 'Sign in to save XP & levels'
-                    }
-                  />
-                )}
-              </div>
-              <div className="finna-home-xp-side">
-                {homeRewards ? (
-                  <span className="finna-home-xp-today">
-                    +{homeRewards.daily_xp} / {homeRewards.daily_cap} today
-                  </span>
-                ) : null}
-                <Link
-                  to={data.authenticated ? '/profile/rewards' : '/login'}
-                  className="finna-home-xp-link"
-                >
-                  {data.authenticated ? 'Rewards & XP →' : 'Sign in →'}
-                </Link>
-              </div>
             </div>
           </section>
         ) : null}
@@ -1019,12 +1017,6 @@ export default function StudyHome() {
               </p>
             )}
             {!isHidden('today') && <TodayCard exams={data.exams} hideExamSelect />}
-            <HomeLeftExtras
-              progress={data.progress}
-              hidden={hiddenSet}
-              onHide={handleHideCard}
-              section="left"
-            />
           </aside>
 
           {/* Center Main Stream: View Switcher + Multi-Exam + Focus Subjects + Live Community Feed */}
@@ -1478,6 +1470,22 @@ export default function StudyHome() {
                   </section>
                 ))}
 
+                {/* 3d Centre 3-Across Editorial Photo Showcase ("Also on Finna") */}
+                {!isHidden('explore') && (
+                  <div className="finna-hideable-wrap">
+                    <button
+                      type="button"
+                      className="finna-card-hide-btn finna-card-hide-float"
+                      aria-label="Hide Also on Finna showcase"
+                      title="Hide Also on Finna"
+                      onClick={() => handleHideCard('explore')}
+                    >
+                      ×
+                    </button>
+                    <ExploreDeckRail heading="Also on Finna" variant="row3" />
+                  </div>
+                )}
+
                 {/* Live Study-First Community Feed Preview right on Home */}
                 {!isHidden('feed') && (
                   <div className="finna-hideable-wrap">
@@ -1657,242 +1665,13 @@ export default function StudyHome() {
             {view === 'feed' && <HomeFeedPreview mode="full" />}
           </section>
 
-          {/* Column 3: Discover & Live Leaderboard */}
-          {hasCommunityColumn && (
-            <aside
-              className="finna-home-side finna-home-community"
-              aria-label="Discover learners, notes and live standings"
-            >
-              <HomeLeftExtras
-                progress={data.progress}
-                hidden={hiddenSet}
-                onHide={handleHideCard}
-                section="community"
-              />
-            </aside>
-          )}
-
-          {/* Column 4: Explore Spotlight Deck + Quests + Shortcuts + Optional Calendar & Study Desk */}
-          {hasRightColumn && (
-          <aside
-            className="finna-home-side finna-home-right"
-            aria-label="Explore Finna, quests, study shortcuts and optional tools"
-          >
-            {!isHidden('explore') && (
-              <div className="finna-hideable-wrap">
-                <button
-                  type="button"
-                  className="finna-card-hide-btn finna-card-hide-float"
-                  aria-label="Hide Explore noticeboard"
-                  title="Hide Explore noticeboard"
-                  onClick={() => handleHideCard('explore')}
-                >
-                  ×
-                </button>
-                <ExploreDeckRail heading="Also on Finna" compact />
-              </div>
-            )}
-
-            {!isHidden('quests') && (
-              <section className="finna-card" aria-labelledby="home-quests-title">
-                <div className="finna-section-top">
-                  <h2 id="home-quests-title">Today’s quests</h2>
-                  <button
-                    type="button"
-                    className="finna-card-hide-btn"
-                    aria-label="Hide Today's quests card"
-                    title="Hide this card"
-                    onClick={() => handleHideCard('quests')}
-                  >
-                    ×
-                  </button>
-                </div>
-                {homeRewards?.daily_quests?.quests?.length ? (
-                  <div className="mt-2 flex flex-col gap-3">
-                    {homeRewards.daily_quests.quests.slice(0, 3).map((q) => (
-                      <CatXpBar
-                        key={q.key}
-                        value={q.progress}
-                        max={Math.max(1, q.target)}
-                        tone={q.completed ? 'gold' : 'quest'}
-                        showCat={q.progress > 0}
-                        label={q.title}
-                        meta={q.claimed ? '✓ Claimed' : `${q.progress}/${q.target}`}
-                      />
-                    ))}
-                  </div>
-                ) : (
-                  <p className="mt-1 text-sm leading-relaxed text-secondary">
-                    See your daily learning goals and earned rewards.
-                  </p>
-                )}
-                <Link
-                  to="/profile/rewards"
-                  className="mt-3 inline-flex min-h-11 items-center text-sm font-bold text-rewards-dark"
-                >
-                  View your quests →
-                </Link>
-              </section>
-            )}
-
-            {!isHidden('shortcuts') && (
-              <section className="finna-card" aria-labelledby="quick-shortcuts-title">
-                <div className="finna-section-top">
-                  <h2 id="quick-shortcuts-title">Study shortcuts</h2>
-                  <div className="finna-card-head-right">
-                    <Link to="/library">Library</Link>
-                    <button
-                      type="button"
-                      className="finna-card-hide-btn"
-                      aria-label="Hide Study shortcuts card"
-                      title="Hide this card"
-                      onClick={() => handleHideCard('shortcuts')}
-                    >
-                      ×
-                    </button>
-                  </div>
-                </div>
-                <div className="finna-shortcut-list">
-                  <Link to="/revise" className="finna-shortcut-link">
-                    <strong>Revision queue</strong>
-                    <small>Spaced reviews &amp; mistakes</small>
-                  </Link>
-                  <Link to="/vocabulary" className="finna-shortcut-link">
-                    <strong>Vocabulary builder</strong>
-                    <small>Idioms, synonyms &amp; word decks</small>
-                  </Link>
-                  <Link to="/past-papers" className="finna-shortcut-link">
-                    <strong>Original past papers</strong>
-                    <small>Full MPSC question papers by year</small>
-                  </Link>
-                  <Link to="/guides" className="finna-shortcut-link">
-                    <strong>Concept guides (11)</strong>
-                    <small>Polity, Computer, Science, Maths &amp; more</small>
-                  </Link>
-                  <Link to="/games/quest" className="finna-shortcut-link">
-                    <strong>⚔️ Finna Quest RPG</strong>
-                    <small>Battle Realm Guardians &amp; Daily 10-Q</small>
-                  </Link>
-                </div>
-              </section>
-            )}
-
-            {/* Compact Month Calendar (optional; toggleable in Customise Home) */}
-            {!isHidden('calendar') && (
-            <section className="finna-card" aria-labelledby="mini-cal-title">
-              <div className="finna-section-top">
-                <h2 id="mini-cal-title">Study &amp; exam calendar</h2>
-                <div className="finna-card-head-right">
-                  <Link to="/calendar">Full view</Link>
-                  <button
-                    type="button"
-                    className="finna-card-hide-btn"
-                    aria-label="Hide Study calendar card"
-                    title="Hide this card"
-                    onClick={() => handleHideCard('calendar')}
-                  >
-                    ×
-                  </button>
-                </div>
-              </div>
-              <div className="finna-mini-cal-head">
-                <button
-                  type="button"
-                  className="finna-mini-cal-nav"
-                  onClick={() => setMonthOffset((m) => m - 1)}
-                  aria-label="Previous month"
-                >
-                  ‹
-                </button>
-                <strong>
-                  {MONTHS[calBase.month]} {calBase.year}
-                </strong>
-                <button
-                  type="button"
-                  className="finna-mini-cal-nav"
-                  onClick={() => setMonthOffset((m) => m + 1)}
-                  aria-label="Next month"
-                >
-                  ›
-                </button>
-              </div>
-              <div
-                className="finna-mini-cal-grid"
-                role="grid"
-                aria-label={`${MONTHS[calBase.month]} ${calBase.year}`}
-              >
-                {WEEKDAYS.map((w) => (
-                  <span key={w} className="finna-mini-cal-dow">
-                    {w}
-                  </span>
-                ))}
-                {Array.from({ length: calBase.firstDow }).map((_, i) => (
-                  <span key={`pad-${i}`} />
-                ))}
-                {Array.from({ length: calBase.daysInMonth }).map((_, i) => {
-                  const day = i + 1
-                  const dayStr = `${calBase.ym}-${String(day).padStart(2, '0')}`
-                  const isToday = dayStr === today
-                  const hasPractice = practisedDays.has(day)
-                  const hasExam = examEventDays.has(day)
-                  return (
-                    <span
-                      key={day}
-                      className={`finna-mini-cal-day${isToday ? ' is-today' : ''}`}
-                      title={
-                        [
-                          hasPractice ? 'Practised' : '',
-                          hasExam ? 'Exam calendar event' : '',
-                        ]
-                          .filter(Boolean)
-                          .join(' · ') || undefined
-                      }
-                    >
-                      {day}
-                      {(hasPractice || hasExam) && (
-                        <span className="finna-mini-cal-dots" aria-hidden="true">
-                          {hasPractice && <i className="finna-dot-practice" />}
-                          {hasExam && <i className="finna-dot-exam" />}
-                        </span>
-                      )}
-                    </span>
-                  )
-                })}
-              </div>
-              <div className="finna-mini-cal-legend">
-                <span>
-                  <i className="finna-dot-practice" /> Practised
-                </span>
-                <span>
-                  <i className="finna-dot-exam" /> Exam date
-                </span>
-              </div>
-            </section>
-            )}
-
-            {!isHidden('desk') && (
-              <section className="finna-card" aria-labelledby="home-desk-title">
-                <div className="finna-section-top">
-                  <h2 id="home-desk-title">Make room for learning</h2>
-                  <button
-                    type="button"
-                    className="finna-card-hide-btn"
-                    aria-label="Hide Study desk card"
-                    title="Hide this card"
-                    onClick={() => handleHideCard('desk')}
-                  >
-                    ×
-                  </button>
-                </div>
-                <p className="mt-1 text-sm leading-relaxed text-secondary">
-                  One focused session. Your questions, notes and study companions in one place.
-                </p>
-                <Link to="/desk" className="finna-btn finna-btn-quiet mt-4 w-full">
-                  Open study desk →
-                </Link>
-              </section>
-            )}
-          </aside>
+          {/* 3d Calm Right Column: Weekly Leaderboard Podium + Play/People/Tools Tabs + Everything on Finna */}
+          {hasRightRail && (
+            <HomeCalmRightRail
+              quests={homeRewards?.daily_quests?.quests}
+              hidden={hiddenSet}
+              onHide={handleHideCard}
+            />
           )}
         </div>
       </div>

@@ -14,12 +14,16 @@
     <script>
       try {
         document.documentElement.setAttribute('data-design', 'finna');
-        var t = localStorage.getItem('ism-study-theme');
-        if (t === 'focus') t = 'paper';
-        if (t === 'paper' || t === 'focus' || t === 'night') {
-          document.documentElement.setAttribute('data-theme', t);
-          if (t === 'night') document.documentElement.classList.add('dark');
+        var t = localStorage.getItem('ism-study-theme-v2');
+        if (!t) {
+          var legacy = localStorage.getItem('ism-study-theme');
+          t = legacy === 'night' ? 'night' : 'library';
         }
+        if (t !== 'library' && t !== 'paper' && t !== 'night') t = 'library';
+        document.documentElement.setAttribute('data-theme', t);
+        if (t === 'night') document.documentElement.classList.add('dark');
+        var bg = localStorage.getItem('ism-study-bg') || 'library';
+        document.documentElement.setAttribute('data-bg', bg);
       } catch (e) {}
     </script>
   </head>

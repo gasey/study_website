@@ -105,11 +105,13 @@ export default function ExploreDeckRail({
   interval = 7500,
   heading = "Also on Finna",
   compact = false,
+  variant = "rail",
 }: {
   exclude?: string[];
   interval?: number;
   heading?: string;
   compact?: boolean;
+  variant?: "rail" | "row3";
 }) {
   const items = DEFAULT_SPOTLIGHTS.filter((item) => !exclude.includes(item.id));
   const count = items.length;
@@ -228,7 +230,7 @@ export default function ExploreDeckRail({
 
   return (
     <aside
-      className={`ed-rail${compact ? " is-compact" : ""}${paused ? " is-held" : ""}`}
+      className={`ed-rail${compact ? " is-compact" : ""}${variant === "row3" ? " is-row3" : ""}${paused ? " is-held" : ""}`}
       aria-label="Explore more study features"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
@@ -242,6 +244,9 @@ export default function ExploreDeckRail({
           <h2>{heading}</h2>
         </div>
         <div className="ed-head-right">
+          {variant === "row3" && (
+            <span className="ed-row3-hint">Everything else lives in the menu ↑</span>
+          )}
           {count > 1 && (
             <div className="ed-stepper" role="group" aria-label="Cycle features">
               <button
@@ -288,7 +293,7 @@ export default function ExploreDeckRail({
         onTouchEnd={onTouchEnd}
       >
         {visibleItems.map((item, idx) => {
-          const isPrimary = idx === 0;
+          const isPrimary = variant === "row3" || idx === 0;
           return (
             <Link
               key={item.id}

@@ -82,7 +82,7 @@ export default function Header() {
   const { pathname, search } = useLocation()
   const navigate = useNavigate()
   const scope = useExamScope()
-  const [theme, setTheme] = useStudyTheme()
+  const [theme, , cycleTheme] = useStudyTheme()
   const [access, setAccess] = useState<ReviewAccess>({ grants: [], assigned: false })
   const [account, setAccount] = useState<AccountSession>({ authenticated: false })
   const [unread, setUnread] = useState<number | null>(null)
@@ -435,10 +435,11 @@ export default function Header() {
             </button>
             <button
               type="button"
-              onClick={() => setTheme(theme === 'night' ? 'paper' : 'night')}
-              aria-label={`Switch to ${theme === 'night' ? 'light' : 'dark'} theme`}
+              onClick={cycleTheme}
+              aria-label={`Switch theme (current: ${theme === 'library' ? 'Library' : theme === 'night' ? 'Dark' : 'Light'})`}
+              title={`Theme: ${theme === 'library' ? 'Library' : theme === 'night' ? 'Dark' : 'Light'} — click to switch`}
             >
-              {theme === 'night' ? '☀' : '☾'}
+              {theme === 'library' ? '❦' : theme === 'night' ? '☾' : '☀'}
             </button>
             <Link to={INBOX_PATH} aria-label={unread ? 'Inbox, ' + unread + ' unread' : 'Inbox'}>
               <span aria-hidden="true">✉</span>
@@ -488,10 +489,10 @@ export default function Header() {
                 </button>
                 <button
                   type="button"
-                  aria-label={`Switch to ${theme === 'night' ? 'light' : 'dark'} theme`}
-                  onClick={() => setTheme(theme === 'night' ? 'paper' : 'night')}
+                  aria-label={`Switch theme (current: ${theme === 'library' ? 'Library' : theme === 'night' ? 'Dark' : 'Light'})`}
+                  onClick={cycleTheme}
                 >
-                  {theme === 'night' ? '☀' : '☾'}
+                  {theme === 'library' ? '❦' : theme === 'night' ? '☾' : '☀'}
                 </button>
               </>
             )}
@@ -549,11 +550,11 @@ export default function Header() {
                 <button
                   type="button"
                   className="finna-util-btn"
-                  onClick={() => setTheme(theme === 'night' ? 'paper' : 'night')}
-                  aria-label={`Switch to ${theme === 'night' ? 'light' : 'dark'} theme`}
-                  title={theme === 'night' ? 'Switch to light theme' : 'Switch to dark theme'}
+                  onClick={cycleTheme}
+                  aria-label={`Switch theme (current: ${theme === 'library' ? 'Library' : theme === 'night' ? 'Dark' : 'Light'})`}
+                  title={`Theme: ${theme === 'library' ? 'Library' : theme === 'night' ? 'Dark' : 'Light'} — click to cycle`}
                 >
-                  {theme === 'night' ? '☀' : '☾'}
+                  {theme === 'library' ? '❦' : theme === 'night' ? '☾' : '☀'}
                 </button>
                 <button
                   type="button"
@@ -709,10 +710,10 @@ export default function Header() {
                       type="button"
                       role="menuitem"
                       className="finna-acc-item"
-                      onClick={() => setTheme(theme === 'night' ? 'paper' : 'night')}
+                      onClick={cycleTheme}
                     >
-                      <span className="finna-acc-ico" aria-hidden="true">{theme === 'night' ? '☀' : '☾'}</span>
-                      <span>{theme === 'night' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}</span>
+                      <span className="finna-acc-ico" aria-hidden="true">{theme === 'library' ? '❦' : theme === 'night' ? '☾' : '☀'}</span>
+                      <span>Theme: {theme === 'library' ? 'Library' : theme === 'night' ? 'Dark' : 'Light'} (Cycle)</span>
                     </button>
                   </div>
 

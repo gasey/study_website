@@ -1,5 +1,15 @@
 # Devlog
 
+26 November IST — **Shipped 3d "Library" Study Theme, Calm 3-Column Study Home, Weekly Leaderboard Podium, Unified Play/People/Tools Hub & Everything on Finna Chip Index across Web & Mobile (`theme.ts`, `index.html`, `finna.css`, `Header.tsx`, `AccountHub.tsx`, `ExploreDeckRail.tsx`, `HomeCalmRightRail.tsx`, `StudyHome.tsx`, plus mobile `preferences.tsx`, `theme/index.tsx`, `more.tsx`, `MobileHomeHub.tsx`). Web deployed to `https://study.hawayu.in`.**
+
+- **New "Library" Study Theme (`data-theme="library"`, default) + Page Backdrop Selector (`data-bg="library|grid|lamp|none"`):**
+  - Warm cream paper (`#F5F0E6`), `#FFFDF9` cards, `#1C1915` ink, `#E2D9C5` hairlines, `#2557D6` actions, and `#1E3A8A` deep-navy exam hero; selectable alongside Light & Dark in the header theme cycler (`❦` / `☀` / `☾`) and `/account/appearance`, plus 4 Study Home backdrops (`Library photo`, `Graph paper`, `Desk lamp`, `Plain`).
+- **3d Calm 3-Column Study Home (`StudyHome.tsx`, `HomeCalmRightRail.tsx`, `ExploreDeckRail.tsx`):**
+  - Top `560px` library reading-room photo band (`/images/discover/guides.jpg`) with warm navy fade and Newsreader editorial greeting (`Good morning/afternoon/evening, {name}` + days to next exam date).
+  - Slim merged navy XP + weekly KPI strip (`LV N`, `CatXpBar`, weekly answered/accuracy/streak inline, `Rewards & XP →`).
+  - Calmer 3-column grid (`Left`: Deep-Navy Exam Hero + Today's Plan · `Centre`: View Tabs, Pick Up Where You Left Off, Subjects & Focus, 3-across `Also on Finna` photo row · `Right`: Navy **Weekly Leaderboard Podium** [`#2 · #1 · #3` + `#4–#5` + `You` row], Tabbed **Play / People / Tools** hub, and **Everything on Finna** 17-chip quick index).
+- **Mobile 1d Parity (`india-study-map-mobile`):** Added default `"library"` theme (`#F5F0E6` / `#FFFDF9` / `#1E3A8A`), Navy Weekly Leaderboard Podium, Play / Top 10 / People tabbed hub, and colored-dot Everything on Finna chip bar (`44/44` tests + `typecheck` + contract checks clean).
+
 26 November IST — **Fixed Data Quality Bugs & Fully Upgraded Finna Chronicle (`/chronicle`) across API, Web & Mobile (`bank_dates.py`, `learning_catalog.py`, `test_bank_dates.py`, `bankDates.ts`, `Chronicle.tsx`, `finna.css`, plus mobile `chronicle.tsx`). Deployed API + Web to `https://study.hawayu.in`.**
 
 - **Fixed Bank-Date Extraction & Title Bugs (`api/app/services/bank_dates.py`, `api/app/routers/learning_catalog.py`):**

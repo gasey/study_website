@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect, useMemo, useState, type ReactNode } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import { STUDY_THEMES, useStudyTheme } from '../lib/theme'
+import { STUDY_BACKGROUNDS, STUDY_THEMES, useStudyBackground, useStudyTheme } from '../lib/theme'
 import { getAccountSession } from '../lib/api'
 import {
   HOME_WIDGET_CATALOG,
@@ -115,6 +115,7 @@ const FUN_KEY = 'finna.study-fun-mode'
 
 function AppearancePanel() {
   const [theme, setTheme] = useStudyTheme()
+  const [studyBg, setStudyBg] = useStudyBackground()
   const [fun, setFun] = useState(() => {
     try {
       return typeof localStorage !== 'undefined' && localStorage.getItem(FUN_KEY) === 'on'
@@ -180,6 +181,27 @@ function AppearancePanel() {
                 <strong>{item.label}</strong>
                 <small>{item.description}</small>
               </span>
+            </button>
+          )
+        })}
+      </div>
+
+      <div className="finna-st-grouplabel">Study home backdrop</div>
+      <div className="hsw-preset-grid" role="group" aria-label="Study home backdrop">
+        {STUDY_BACKGROUNDS.map((item) => {
+          const active = studyBg === item.id
+          return (
+            <button
+              key={item.id}
+              type="button"
+              aria-pressed={active}
+              onClick={() => setStudyBg(item.id)}
+              className={`hsw-preset-card${active ? ' is-active' : ''}`}
+            >
+              <div className="hsw-preset-top">
+                <strong>{item.label}</strong>
+              </div>
+              <small>{item.description}</small>
             </button>
           )
         })}
