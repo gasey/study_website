@@ -4,6 +4,7 @@ import { reviewRequest } from '../lib/review'
 import { contentRequest } from '../lib/materials'
 import type { Progress } from '../lib/api'
 import type { AvatarLook } from '../lib/avatar'
+import type { HomeWidgetId } from '../lib/homePrefs'
 import AvatarArt, { DEFAULT_HERO_LOOK, UserAvatar } from './AvatarArt'
 
 type BoardTab = 'xp' | 'daily' | 'cup'
@@ -83,7 +84,20 @@ const POPULAR_GAMES = [
   },
 ] as const
 
-export default function HomeLeftExtras({ progress }: { progress: Progress | null }) {
+export default function HomeLeftExtras({
+  progress,
+  hidden,
+  onHide,
+}: {
+  progress: Progress | null
+  hidden?: Set<HomeWidgetId>
+  onHide?: (id: HomeWidgetId) => void
+}) {
+  const showLeaderboard = !hidden?.has('leaderboard')
+  const showGames = !hidden?.has('games')
+  const showDiscover = !hidden?.has('discover')
+  const showPulse = !hidden?.has('pulse')
+
   const [boardTab, setBoardTab] = useState<BoardTab>('xp')
   const [board, setBoard] = useState<StandingsPayload | null>(null)
   const [boardLoading, setBoardLoading] = useState(true)
@@ -93,6 +107,7 @@ export default function HomeLeftExtras({ progress }: { progress: Progress | null
   const [discoverBusy, setDiscoverBusy] = useState(false)
 
   useEffect(() => {
+    if (!showDiscover) return
     let live = true
     setDiscoverBusy(true)
     const qs = discoverSeed ? `?seed=${encodeURIComponent(discoverSeed)}&limit=4` : '?limit=4'
@@ -107,9 +122,10 @@ export default function HomeLeftExtras({ progress }: { progress: Progress | null
     return () => {
       live = false
     }
-  }, [discoverSeed])
+  }, [discoverSeed, showDiscover])
 
   useEffect(() => {
+    if (!showLeaderboard) return
     let live = true
     setBoardLoading(true)
     setBoardError('')
@@ -135,7 +151,7 @@ export default function HomeLeftExtras({ progress }: { progress: Progress | null
     return () => {
       live = false
     }
-  }, [boardTab])
+  }, [boardTab, showLeaderboard])
 
   const topRows = useMemo(() => {
     const raw = board?.top?.length ? board.top : board?.items || []
@@ -165,15 +181,29 @@ export default function HomeLeftExtras({ progress }: { progress: Progress | null
   return (
     <>
       {/* 1. Live Leaderboard Snapshot */}
+      {showLeaderboard && (
       <section className="finna-card hl-card" aria-labelledby="home-board-title">
         <div className="finna-section-top">
           <div className="min-w-0">
             <div className="finna-eyebrow">Live standings</div>
             <h2 id="home-board-title">Leaderboard</h2>
           </div>
-          <Link to="/profile/rewards" className="text-xs font-bold text-link hover:underline">
-            Full board →
-          </Link>
+          <div className="finna-card-head-right">
+            <Link to="/profile/rewards" className="text-xs font-bold text-link hover:underline">
+              Full board →
+            </Link>
+            {onHide && (
+              <button
+                type="button"
+                className="finna-card-hide-btn"
+                aria-label="Hide Leaderboard card"
+                title="Hide this card"
+                onClick={() => onHide('leaderboard')}
+              >
+                ×
+              </button>
+            )}
+          </div>
         </div>
 
         <div className="hl-tabs" role="tablist" aria-label="Leaderboard track">
@@ -281,17 +311,32 @@ export default function HomeLeftExtras({ progress }: { progress: Progress | null
           </Link>
         </div>
       </section>
+      )}
 
       {/* 2. Popular Games (Option B — Left Rail Play Hub) */}
+      {showGames && (
       <section className="finna-card hl-card" aria-labelledby="home-games-title">
         <div className="finna-section-top">
           <div className="min-w-0">
             <div className="finna-eyebrow">Play &amp; compete</div>
             <h2 id="home-games-title">Popular games</h2>
           </div>
-          <Link to="/games" className="text-xs font-bold text-link hover:underline">
-            All games →
-          </Link>
+          <div className="finna-card-head-right">
+            <Link to="/games" className="text-xs font-bold text-link hover:underline">
+              All games →
+            </Link>
+            {onHide && (
+              <button
+                type="button"
+                className="finna-card-hide-btn"
+                aria-label="Hide Popular games card"
+                title="Hide this card"
+                onClick={() => onHide('games')}
+              >
+                ×
+              </button>
+            )}
+          </div>
         </div>
 
         <div className="hl-games-list">
@@ -317,24 +362,38 @@ export default function HomeLeftExtras({ progress }: { progress: Progress | null
           ))}
         </div>
       </section>
+      )}
 
       {/* 3. Algorithmic Discover: Rotating Learners & Study Notes */}
-      {discover && (discover.learners.length > 0 || discover.materials.length > 0) && (
+      {showDiscover && discover && (discover.learners.length > 0 || discover.materials.length > 0) && (
         <section className="finna-card hl-card" aria-labelledby="home-discover-title">
           <div className="finna-section-top">
             <div className="min-w-0">
               <div className="finna-eyebrow">For you · rotating</div>
               <h2 id="home-discover-title">Discover</h2>
             </div>
-            <button
-              type="button"
-              disabled={discoverBusy}
-              onClick={() => setDiscoverSeed(Date.now().toString(36))}
-              className="hl-shuffle-btn"
-              title="Shuffle fresh profiles & study notes"
-            >
-              ↻ {discoverBusy ? '…' : 'Shuffle'}
-            </button>
+            <div className="finna-card-head-right">
+              <button
+                type="button"
+                disabled={discoverBusy}
+                onClick={() => setDiscoverSeed(Date.now().toString(36))}
+                className="hl-shuffle-btn"
+                title="Shuffle fresh profiles & study notes"
+              >
+                ↻ {discoverBusy ? '…' : 'Shuffle'}
+              </button>
+              {onHide && (
+                <button
+                  type="button"
+                  className="finna-card-hide-btn"
+                  aria-label="Hide Discover card"
+                  title="Hide this card"
+                  onClick={() => onHide('discover')}
+                >
+                  ×
+                </button>
+              )}
+            </div>
           </div>
 
           {discover.learners.length > 0 && (
@@ -384,15 +443,29 @@ export default function HomeLeftExtras({ progress }: { progress: Progress | null
       )}
 
       {/* 4. Compact 7-Day Study Pulse & Stats */}
+      {showPulse && (
       <section className="finna-card hl-card" aria-labelledby="home-pulse-title">
         <div className="finna-section-top">
           <div className="min-w-0">
             <div className="finna-eyebrow">Your momentum</div>
             <h2 id="home-pulse-title">7-day pulse</h2>
           </div>
-          <Link to="/stats" className="text-xs font-bold text-link hover:underline">
-            India Stats →
-          </Link>
+          <div className="finna-card-head-right">
+            <Link to="/stats" className="text-xs font-bold text-link hover:underline">
+              India Stats →
+            </Link>
+            {onHide && (
+              <button
+                type="button"
+                className="finna-card-hide-btn"
+                aria-label="Hide 7-day pulse card"
+                title="Hide this card"
+                onClick={() => onHide('pulse')}
+              >
+                ×
+              </button>
+            )}
+          </div>
         </div>
 
         <div className="hl-pulse-bars" aria-label="Answers recorded over the last 7 days">
@@ -436,6 +509,7 @@ export default function HomeLeftExtras({ progress }: { progress: Progress | null
           </Link>
         </div>
       </section>
+      )}
     </>
   )
 }

@@ -51,6 +51,15 @@ import HomeFeedPreview from '../components/HomeFeedPreview'
 import SubjectBookshelf from '../components/SubjectBookshelf'
 import AvatarArt, { DEFAULT_HERO_LOOK } from '../components/AvatarArt'
 import { mockResumePath } from '../lib/sharedTests'
+import HomeSetupWizard, { type WizardStep } from '../components/HomeSetupWizard'
+import {
+  PRESET_HIDDEN,
+  syncHomePrefsWithServer,
+  useHomePrefs,
+  widgetLabel,
+  type HomePreferences,
+  type HomeWidgetId,
+} from '../lib/homePrefs'
 
 const MONTHS = [
   'January', 'February', 'March', 'April', 'May', 'June',
@@ -111,6 +120,11 @@ export default function StudyHome() {
   const [busyExamId, setBusyExamId] = useState<string | null>(null)
   const [pickerOpen, setPickerOpen] = useState(false)
   const [monthOffset, setMonthOffset] = useState(0)
+  const [wizardOpen, setWizardOpen] = useState(false)
+  const [wizardStep, setWizardStep] = useState<WizardStep>(1)
+  const [wizardFirstTime, setWizardFirstTime] = useState(false)
+  const [prefsSynced, setPrefsSynced] = useState(false)
+  const [hiddenToast, setHiddenToast] = useState<HomeWidgetId | null>(null)
   const [welcomeDismissed, setWelcomeDismissed] = useState(() => {
     try {
       return typeof localStorage !== 'undefined' && localStorage.getItem('finna_welcome_dismissed_v1') === '1'
@@ -118,6 +132,117 @@ export default function StudyHome() {
       return false
     }
   })
+
+  const { prefs, hiddenSet, isHidden, save: saveHomePrefs, hideWidget, showWidget } = useHomePrefs(
+    data.authenticated,
+  )
+
+  useEffect(() => {
+    if (!data.authResolved) return
+    let live = true
+    void syncHomePrefsWithServer(data.authenticated).then(() => {
+      if (live) setPrefsSynced(true)
+    })
+    return () => {
+      live = false
+    }
+  }, [data.authResolved, data.authenticated])
+
+  useEffect(() => {
+    if (params.get('setup') === '1') {
+      setWizardStep(1)
+      setWizardFirstTime(false)
+      setWizardOpen(true)
+      setParams(
+        (prev) => {
+          const next = new URLSearchParams(prev)
+          next.delete('setup')
+          return next
+        },
+        { replace: true },
+      )
+    }
+  }, [params, setParams])
+
+  useEffect(() => {
+    if (!data.loading && data.authResolved && prefsSynced && !prefs.onboarded && !wizardOpen) {
+      setWizardStep(1)
+      setWizardFirstTime(true)
+      setWizardOpen(true)
+    }
+  }, [data.loading, data.authResolved, prefsSynced, prefs.onboarded, wizardOpen])
+
+  useEffect(() => {
+    if (!hiddenToast) return
+    const t = window.setTimeout(() => setHiddenToast(null), 6500)
+    return () => window.clearTimeout(t)
+  }, [hiddenToast])
+
+  function handleHideCard(id: HomeWidgetId) {
+    hideWidget(id)
+    setHiddenToast(id)
+  }
+
+  function openCustomise(step: WizardStep = 3) {
+    setWizardStep(step)
+    setWizardFirstTime(false)
+    setWizardOpen(true)
+  }
+
+  function handleSkipWizard() {
+    saveHomePrefs({
+      preset: prefs.preset || 'balanced',
+      hidden: prefs.hidden.length ? prefs.hidden : [...PRESET_HIDDEN.balanced],
+      onboarded: true,
+    })
+    setWizardOpen(false)
+    setWizardFirstTime(false)
+  }
+
+  async function handleApplyWizard(payload: {
+    examIds: string[]
+    primaryExamId: string | null
+    subjectIds: string[]
+    prefs: HomePreferences
+  }) {
+    const prevExamSet = new Set(trackedIds)
+    const nextExamSet = new Set(payload.examIds)
+    for (const id of payload.examIds) {
+      if (!prevExamSet.has(id)) {
+        addLocalTrackedExam(id)
+        if (data.authenticated) {
+          try {
+            await saveExamBookmark(id)
+          } catch {
+            /* keep local */
+          }
+        }
+      }
+    }
+    for (const id of trackedIds) {
+      if (!nextExamSet.has(id) && payload.examIds.length > 0) {
+        removeLocalTrackedExam(id)
+        if (data.authenticated) {
+          try {
+            await removeExamBookmark(id)
+          } catch {
+            /* keep local */
+          }
+        }
+      }
+    }
+    if (payload.primaryExamId) {
+      await choosePrimaryExam(payload.primaryExamId)
+    }
+    const prevSubjKey = [...localFocusIds].sort().join(',')
+    const nextSubjKey = [...payload.subjectIds].sort().join(',')
+    if (prevSubjKey !== nextSubjKey) {
+      await commitFocusSubjects(payload.subjectIds)
+    }
+    saveHomePrefs({ ...payload.prefs, onboarded: true })
+    setWizardOpen(false)
+    setWizardFirstTime(false)
+  }
 
   function dismissWelcome() {
     setWelcomeDismissed(true)
@@ -550,8 +675,15 @@ export default function StudyHome() {
     return <Navigate replace to={'/community?' + nextParams} />
   }
 
+  const hasRightColumn =
+    !isHidden('quests') ||
+    !isHidden('shortcuts') ||
+    !isHidden('calendar') ||
+    !isHidden('desk') ||
+    !isHidden('explore')
+
   return (
-    <div className="ed-gutter-shell" data-screen="home">
+    <div className="finna-home-shell" data-screen="home">
       <div className="finna-page finna-home">
         <h1 className="sr-only">Your study home</h1>
 
@@ -619,8 +751,8 @@ export default function StudyHome() {
               </Link>
             </div>
           </section>
-        ) : (
-          /* 4-Tile KPI Strip (§VII.19.8, Dashboards v2) */
+        ) : !isHidden('kpi') ? (
+          /* 3-Tile KPI Strip matching the 3-column frontpage rhythm */
           <section className="finna-kpi-strip" aria-label="Study snapshot">
             <div className="finna-kpi-tile">
               <div className="finna-kpi-icon bg-practice-soft text-practice-dark" aria-hidden="true">
@@ -654,26 +786,18 @@ export default function StudyHome() {
                   {p?.streak_basis === 'device activity' ? 'Device streak' : 'Current streak'}
                 </div>
               </div>
-            </div>
-            <div className="finna-kpi-tile">
-              <div className="finna-kpi-icon bg-learn-soft text-learn-dark" aria-hidden="true">
-                ◎
-              </div>
-              <div className="finna-kpi-body">
-                <div className={`finna-kpi-value${coverage === null ? ' finna-kpi-value--na' : ''}`}>
-                  {coverage !== null ? `${coverage}%` : '—'}
-                </div>
-                <div className="finna-kpi-label">
-                  {exam
-                    ? trackedExams.length > 1
-                      ? `${examTitle} · ${trackedExams.length} exams`
-                      : `${examTitle} coverage`
-                    : 'Exam coverage'}
-                </div>
-              </div>
+              <button
+                type="button"
+                className="finna-card-hide-btn finna-kpi-hide-btn"
+                aria-label="Hide study snapshot strip"
+                title="Hide snapshot strip"
+                onClick={() => handleHideCard('kpi')}
+              >
+                ×
+              </button>
             </div>
           </section>
-        )}
+        ) : null}
 
         {data.primaryError && (
           <section className="finna-card mb-4 border-wrong bg-wrong-soft" role="alert">
@@ -688,7 +812,7 @@ export default function StudyHome() {
           </section>
         )}
 
-        <div className="finna-home-grid">
+        <div className={`finna-home-grid${hasRightColumn ? '' : ' is-two-col'}`}>
           {/* Left Column: Multi-Exam Hero + Today Plan */}
           <aside className="finna-home-side" aria-label="Your exams and study plan">
             <section className="finna-exam-hero" aria-labelledby="my-exam-title">
@@ -790,13 +914,13 @@ export default function StudyHome() {
                 {examError}
               </p>
             )}
-            <TodayCard exams={data.exams} hideExamSelect />
-            <HomeLeftExtras progress={data.progress} />
+            {!isHidden('today') && <TodayCard exams={data.exams} hideExamSelect />}
+            <HomeLeftExtras progress={data.progress} hidden={hiddenSet} onHide={handleHideCard} />
           </aside>
 
           {/* Center Main Stream: View Switcher + Multi-Exam + Focus Subjects + Live Community Feed */}
           <section className="finna-home-stream" aria-label="Study workspace and community">
-            {/* Workspace View Switcher */}
+            {/* Workspace View Switcher + Personalise Home button */}
             <div className="finna-home-viewbar">
               <div className="finna-segments" role="tablist" aria-label="Home workspace views">
                 <button
@@ -827,15 +951,35 @@ export default function StudyHome() {
                   Community feed
                 </button>
               </div>
+              <button
+                type="button"
+                className="finna-customise-btn"
+                onClick={() => openCustomise(3)}
+                title="Choose which cards appear on your front page"
+              >
+                <span aria-hidden="true">⚙</span>
+                <span>Customise Home</span>
+              </button>
             </div>
 
             {view === 'overview' && (
               <>
-                {returnRows.length > 0 && (
+                {!isHidden('return') && returnRows.length > 0 && (
                   <section className="finna-card" aria-labelledby="return-block-title">
                     <div className="finna-section-top">
                       <h2 id="return-block-title">Pick up where you left off</h2>
-                      <Link to="/revise">Revision queue →</Link>
+                      <div className="finna-card-head-right">
+                        <Link to="/revise">Revision queue →</Link>
+                        <button
+                          type="button"
+                          className="finna-card-hide-btn"
+                          aria-label="Hide Pick up where you left off card"
+                          title="Hide this card"
+                          onClick={() => handleHideCard('return')}
+                        >
+                          ×
+                        </button>
+                      </div>
                     </div>
                     <div className="finna-return-list">
                       {returnRows.map((row) => (
@@ -855,7 +999,7 @@ export default function StudyHome() {
                 )}
 
                 {/* Multi-Exam Workspace Card */}
-                {trackedExams.length > 1 ? (
+                {!isHidden('tracked_exams') && (trackedExams.length > 1 ? (
                   <section className="finna-card" aria-labelledby="tracked-exams-title">
                     <div className="finna-section-top">
                       <div>
@@ -864,13 +1008,24 @@ export default function StudyHome() {
                           Your exams side by side
                         </h2>
                       </div>
-                      <button
-                        type="button"
-                        onClick={() => setPickerOpen(true)}
-                        className="text-xs font-bold text-link hover:underline"
-                      >
-                        + Add / manage →
-                      </button>
+                      <div className="finna-card-head-right">
+                        <button
+                          type="button"
+                          onClick={() => setPickerOpen(true)}
+                          className="text-xs font-bold text-link hover:underline"
+                        >
+                          + Add / manage →
+                        </button>
+                        <button
+                          type="button"
+                          className="finna-card-hide-btn"
+                          aria-label="Hide Tracked exams card"
+                          title="Hide this card"
+                          onClick={() => handleHideCard('tracked_exams')}
+                        >
+                          ×
+                        </button>
+                      </div>
                     </div>
                     <div className="finna-multi-exam-grid">
                       {trackedExams.map((item) => {
@@ -958,13 +1113,24 @@ export default function StudyHome() {
                             Preparing for more than one exam?
                           </h2>
                         </div>
-                        <button
-                          type="button"
-                          onClick={() => setPickerOpen(true)}
-                          className="text-xs font-bold text-link hover:underline"
-                        >
-                          All exams →
-                        </button>
+                        <div className="finna-card-head-right">
+                          <button
+                            type="button"
+                            onClick={() => setPickerOpen(true)}
+                            className="text-xs font-bold text-link hover:underline"
+                          >
+                            All exams →
+                          </button>
+                          <button
+                            type="button"
+                            className="finna-card-hide-btn"
+                            aria-label="Hide multi-exam prompt"
+                            title="Hide this card"
+                            onClick={() => handleHideCard('tracked_exams')}
+                          >
+                            ×
+                          </button>
+                        </div>
                       </div>
                       <p className="text-sm text-secondary">
                         Pin other exams to track progress side by side and switch in one tap without losing your plan.
@@ -984,10 +1150,10 @@ export default function StudyHome() {
                       </div>
                     </section>
                   )
-                )}
+                ))}
 
                 {/* Unified All-Exam Subject Bookshelf + Focus Subjects & Live Progress */}
-                {data.subjectModules.length > 0 ? (
+                {!isHidden('subjects') && (data.subjectModules.length > 0 ? (
                   <SubjectBookshelf
                     subjects={data.subjectModules}
                     progress={progressRecord}
@@ -1201,16 +1367,62 @@ export default function StudyHome() {
                       {data.loading ? 'Loading subject books…' : 'Open the Study Library to practise by subject.'}
                     </p>
                   </section>
-                )}
+                ))}
 
                 {/* Live Study-First Community Feed Preview right on Home */}
-                <HomeFeedPreview
-                  mode="compact"
-                  onExpandToFeedTab={() => setView('feed')}
-                />
+                {!isHidden('feed') && (
+                  <div className="finna-hideable-wrap">
+                    <button
+                      type="button"
+                      className="finna-card-hide-btn finna-card-hide-float"
+                      aria-label="Hide Community feed preview"
+                      title="Hide Community feed preview"
+                      onClick={() => handleHideCard('feed')}
+                    >
+                      ×
+                    </button>
+                    <HomeFeedPreview
+                      mode="compact"
+                      onExpandToFeedTab={() => setView('feed')}
+                    />
+                  </div>
+                )}
 
                 {/* Personal Question Vault showcase card */}
-                <VaultShowcaseCard />
+                {!isHidden('vault') && (
+                  <div className="finna-hideable-wrap">
+                    <button
+                      type="button"
+                      className="finna-card-hide-btn finna-card-hide-float"
+                      aria-label="Hide Personal Question Vault card"
+                      title="Hide Vault card"
+                      onClick={() => handleHideCard('vault')}
+                    >
+                      ×
+                    </button>
+                    <VaultShowcaseCard />
+                  </div>
+                )}
+
+                {isHidden('return') &&
+                  isHidden('tracked_exams') &&
+                  isHidden('subjects') &&
+                  isHidden('feed') &&
+                  isHidden('vault') && (
+                    <section className="finna-card">
+                      <h2>Your centre workspace is clear</h2>
+                      <p className="mt-2 text-sm text-secondary">
+                        All centre overview cards are currently hidden. Turn any card back on whenever you want.
+                      </p>
+                      <button
+                        type="button"
+                        onClick={() => openCustomise(3)}
+                        className="finna-btn mt-4"
+                      >
+                        ⚙ Customise Home
+                      </button>
+                    </section>
+                  )}
               </>
             )}
 
@@ -1336,16 +1548,97 @@ export default function StudyHome() {
             {view === 'feed' && <HomeFeedPreview mode="full" />}
           </section>
 
-          {/* Right Rail: Compact Month Calendar + Study Tools + Desk + Quests */}
+          {/* Right Rail: Quests + Shortcuts + Optional Calendar, Study Desk & Explore */}
+          {hasRightColumn && (
           <aside
             className="finna-home-side finna-home-right"
-            aria-label="Calendar, study tools and study desk"
+            aria-label="Quests, study shortcuts and optional tools"
           >
-            {/* Compact Month Calendar (§VII.19.8, Dashboards v2) */}
+            {!isHidden('quests') && (
+              <section className="finna-card" aria-labelledby="home-quests-title">
+                <div className="finna-section-top">
+                  <h2 id="home-quests-title">Today’s quests</h2>
+                  <button
+                    type="button"
+                    className="finna-card-hide-btn"
+                    aria-label="Hide Today's quests card"
+                    title="Hide this card"
+                    onClick={() => handleHideCard('quests')}
+                  >
+                    ×
+                  </button>
+                </div>
+                <p className="mt-1 text-sm leading-relaxed text-secondary">
+                  See your daily learning goals and earned rewards.
+                </p>
+                <Link
+                  to="/profile/rewards"
+                  className="mt-3 inline-flex min-h-11 items-center text-sm font-bold text-rewards-dark"
+                >
+                  View your quests →
+                </Link>
+              </section>
+            )}
+
+            {!isHidden('shortcuts') && (
+              <section className="finna-card" aria-labelledby="quick-shortcuts-title">
+                <div className="finna-section-top">
+                  <h2 id="quick-shortcuts-title">Study shortcuts</h2>
+                  <div className="finna-card-head-right">
+                    <Link to="/library">Library</Link>
+                    <button
+                      type="button"
+                      className="finna-card-hide-btn"
+                      aria-label="Hide Study shortcuts card"
+                      title="Hide this card"
+                      onClick={() => handleHideCard('shortcuts')}
+                    >
+                      ×
+                    </button>
+                  </div>
+                </div>
+                <div className="finna-shortcut-list">
+                  <Link to="/revise" className="finna-shortcut-link">
+                    <strong>Revision queue</strong>
+                    <small>Spaced reviews &amp; mistakes</small>
+                  </Link>
+                  <Link to="/vocabulary" className="finna-shortcut-link">
+                    <strong>Vocabulary builder</strong>
+                    <small>Idioms, synonyms &amp; word decks</small>
+                  </Link>
+                  <Link to="/past-papers" className="finna-shortcut-link">
+                    <strong>Original past papers</strong>
+                    <small>Full MPSC question papers by year</small>
+                  </Link>
+                  <Link to="/guides" className="finna-shortcut-link">
+                    <strong>Concept guides (11)</strong>
+                    <small>Polity, Computer, Science, Maths &amp; more</small>
+                  </Link>
+                  <Link to="/games/quest" className="finna-shortcut-link">
+                    <strong>⚔️ Finna Quest RPG</strong>
+                    <small>Battle Realm Guardians &amp; Daily 10-Q</small>
+                  </Link>
+                </div>
+              </section>
+            )}
+
+            {/* Compact Month Calendar (optional; toggleable in Customise Home) */}
+            {!isHidden('calendar') && (
             <section className="finna-card" aria-labelledby="mini-cal-title">
               <div className="finna-section-top">
                 <h2 id="mini-cal-title">Study &amp; exam calendar</h2>
-                <Link to="/calendar">Full view</Link>
+                <div className="finna-card-head-right">
+                  <Link to="/calendar">Full view</Link>
+                  <button
+                    type="button"
+                    className="finna-card-hide-btn"
+                    aria-label="Hide Study calendar card"
+                    title="Hide this card"
+                    onClick={() => handleHideCard('calendar')}
+                  >
+                    ×
+                  </button>
+                </div>
               </div>
               <div className="finna-mini-cal-head">
                 <button
@@ -1420,59 +1713,47 @@ export default function StudyHome() {
                 </span>
               </div>
             </section>
+            )}
 
-            <section className="finna-card" aria-labelledby="quick-shortcuts-title">
-              <div className="finna-section-top">
-                <h2 id="quick-shortcuts-title">Study shortcuts</h2>
-                <Link to="/library">Library</Link>
+            {!isHidden('desk') && (
+              <section className="finna-card" aria-labelledby="home-desk-title">
+                <div className="finna-section-top">
+                  <h2 id="home-desk-title">Make room for learning</h2>
+                  <button
+                    type="button"
+                    className="finna-card-hide-btn"
+                    aria-label="Hide Study desk card"
+                    title="Hide this card"
+                    onClick={() => handleHideCard('desk')}
+                  >
+                    ×
+                  </button>
+                </div>
+                <p className="mt-1 text-sm leading-relaxed text-secondary">
+                  One focused session. Your questions, notes and study companions in one place.
+                </p>
+                <Link to="/desk" className="finna-btn finna-btn-quiet mt-4 w-full">
+                  Open study desk →
+                </Link>
+              </section>
+            )}
+
+            {!isHidden('explore') && (
+              <div className="finna-hideable-wrap">
+                <button
+                  type="button"
+                  className="finna-card-hide-btn finna-card-hide-float"
+                  aria-label="Hide Explore noticeboard"
+                  title="Hide Explore noticeboard"
+                  onClick={() => handleHideCard('explore')}
+                >
+                  ×
+                </button>
+                <ExploreDeckRail heading="Also on Finna" compact />
               </div>
-              <div className="finna-shortcut-list">
-                <Link to="/revise" className="finna-shortcut-link">
-                  <strong>Revision queue</strong>
-                  <small>Spaced reviews &amp; mistakes</small>
-                </Link>
-                <Link to="/bank?study_status=ever_wrong" className="finna-shortcut-link">
-                  <strong>Missed questions</strong>
-                  <small>Re-test questions you got wrong</small>
-                </Link>
-                <Link to="/past-papers" className="finna-shortcut-link">
-                  <strong>Original past papers</strong>
-                  <small>Full MPSC question papers by year</small>
-                </Link>
-                <Link to="/guides" className="finna-shortcut-link">
-                  <strong>Concept guides (11)</strong>
-                  <small>Polity, Computer, Science, Maths &amp; more</small>
-                </Link>
-                <Link to="/games/quest" className="finna-shortcut-link">
-                  <strong>⚔️ Finna Quest RPG</strong>
-                  <small>Battle Realm Guardians &amp; Daily 10-Q</small>
-                </Link>
-              </div>
-            </section>
-
-            <section className="finna-card">
-              <h2>Make room for learning</h2>
-              <p className="mt-2 text-sm leading-relaxed text-secondary">
-                One focused session. Your questions, notes and study companions in one place.
-              </p>
-              <Link to="/desk" className="finna-btn finna-btn-quiet mt-4 w-full">
-                Open study desk →
-              </Link>
-            </section>
-
-            <section className="finna-card">
-              <h2>Today’s quests</h2>
-              <p className="mt-2 text-sm leading-relaxed text-secondary">
-                See your daily learning goals and earned rewards.
-              </p>
-              <Link
-                to="/profile/rewards"
-                className="mt-3 inline-flex min-h-11 items-center text-sm font-bold text-rewards-dark"
-              >
-                View your quests →
-              </Link>
-            </section>
+            )}
           </aside>
+          )}
         </div>
       </div>
 
@@ -1489,10 +1770,48 @@ export default function StudyHome() {
         onSetPrimary={(id) => void choosePrimaryExam(id)}
       />
 
-      {/* Outer Margin Feature Spotlight Deck (sits outside the 3-col page margin to preserve Calendar space) */}
-      <div className="ed-gutter-dock">
-        <ExploreDeckRail heading="Also on Finna" compact />
-      </div>
+      {/* First-Time Setup & Personalise Home Wizard */}
+      <HomeSetupWizard
+        open={wizardOpen}
+        initialStep={wizardStep}
+        isFirstTime={wizardFirstTime}
+        exams={data.exams}
+        trackedExamIds={trackedIds}
+        primaryExamId={exam?.id ?? null}
+        subjectChoices={subjectCatalog}
+        focusSubjectIds={localFocusIds}
+        prefs={prefs}
+        onClose={() => setWizardOpen(false)}
+        onSkip={handleSkipWizard}
+        onApply={handleApplyWizard}
+      />
+
+      {/* Quick Undo Toast when hiding a card */}
+      {hiddenToast && (
+        <div role="status" className="finna-hide-toast">
+          <span>
+            Hidden <strong>{widgetLabel(hiddenToast)}</strong>
+          </span>
+          <button
+            type="button"
+            onClick={() => {
+              showWidget(hiddenToast)
+              setHiddenToast(null)
+            }}
+          >
+            Undo
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              setHiddenToast(null)
+              openCustomise(3)
+            }}
+          >
+            Customise
+          </button>
+        </div>
+      )}
     </div>
   )
 }

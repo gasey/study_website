@@ -1,5 +1,17 @@
 # Devlog
 
+26 November IST — **Shipped Calm 3-Column Front Page (`/home`) with Wider Margins, First-Time 3-Step Setup Wizard, and Per-Card Home Personalisation (`0143_home_preferences.sql`, `me.py`, `mobile_identity.py`, `homePrefs.ts`, `HomeSetupWizard.tsx`, `StudyHome.tsx`, `HomeLeftExtras.tsx`, `AccountHub.tsx`, `finna.css`).**
+
+- **3-Column Layout & Wider Margins (`StudyHome.tsx`, `finna.css`):**
+  - Removed the 4th outer gutter column (`ed-gutter-dock`) from `/home`; turned `ExploreDeckRail` into an optional right-rail card (`explore`, hidden by default in Balanced & Minimal).
+  - Updated `.finna-page.finna-home` to `max-width: 1240px` with `40px` desktop horizontal margins (`28px` laptop), 3-column grid `minmax(240px,1fr) minmax(420px,2.1fr) minmax(240px,1fr)` with `28px` gap (collapsing cleanly to 2 columns if all right-rail cards are hidden), and a 3-tile KPI snapshot strip.
+- **First-Time "Set up your Home" 3-Step Wizard (`HomeSetupWizard.tsx`, `StudyHome.tsx`):**
+  - Opens once automatically for users who haven't configured Home (`!prefs.onboarded`), with 1-click `Skip for now`, and is reopenable anytime via **⚙ Customise Home** on `/home` or `/account/appearance`.
+  - Step 1 picks tracked exams & primary exam (`saveExamBookmark`/`setPrimaryExam`); Step 2 picks focus subjects (`saveFocusSubjects`); Step 3 chooses a preset (**Minimal** / **Balanced** *(default)* / **Everything**) and individual card switches (hide Calendar, Leaderboard, Popular games, Discover, 7-day pulse, Study desk, Community feed, Vault, Explore, Shortcuts, Quests, KPI strip, Today's plan).
+  - Added subtle 1-click Hide (`×`) buttons on every toggleable Home card with an instant Undo toast, plus a **Front page layout (/home)** control panel in `/account/appearance` (`AccountHub.tsx`).
+- **Persistence & Mobile Contract (`0143_home_preferences.sql`, `api/app/routers/me.py`, `mobile_identity.py`, `test_home_preferences.py`):**
+  - Added `user_home_preferences` table (applied on Oracle DB) and `GET`/`PUT /api/me/home-preferences` + localStorage cache (`finna-home-prefs-v1`) with one-time guest-to-account sync on sign-in. Allowlisted `GET`/`PUT /api/me/home-preferences` in `mobile_identity.py` (`9/9` pytest passed).
+
 26 November IST — **Restored the Vocabulary Builder section (`/vocabulary`) across Web & Mobile and fixed every broken / 404 / misrouted navigation discovered in a full route audit (`App.tsx`, `Atlas.tsx`, `Games.tsx`, `Guides.tsx`, `Library.tsx`, `Vocabulary.tsx`, `English.tsx`, `Home.tsx`, `CreateHub.tsx`, `LearningCatalogAdmin.tsx`, `ExamStudyTopics.tsx`, `siteMap.ts`, `Header.tsx`, `navigation.ts`). Web deployed to `https://study.hawayu.in`.**
 
 - **Restored Vocabulary Builder (Web + Mobile):**

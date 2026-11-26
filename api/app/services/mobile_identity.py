@@ -16,7 +16,7 @@ READ = (
     r'/api/mobile/(?:session|bookmarks(?:/[^/]+)?)',
     r'/api/questions(?:/[^/]+(?:/(?:practice-state|answer-comparison))?)?',
     r'/api/collections(?:/[^/]+(?:/(?:header|study-topics|paper-questions|paper-readiness))?)?',
-    r'/api/me/(?:profile|progress|exam-progress|exam-bookmarks|mistakes|score-summary)',
+    r'/api/me/(?:profile|progress|exam-progress|exam-bookmarks|mistakes|score-summary|home-preferences)',
     # Native filter UI can inspect its account's allowance before issuing a query.
     # The read is private; no new mobile mutation route is granted.
     r'/api/me/browse-allowance',
@@ -83,7 +83,7 @@ WRITE = {
              # purchases remain outside this learner surface.
              r'/api/community/questions/[^/]+/discussion(?:/open)?',
              r'/api/community/posts/[^/]+/(?:helpful|accept|report|withdraw)'),
-    'PUT': (r'/api/mobile/bookmarks/[^/]+',r'/api/me/exam-bookmarks/[^/]+',r'/api/mocks/[^/]+/answers'),
+    'PUT': (r'/api/mobile/bookmarks/[^/]+',r'/api/me/exam-bookmarks/[^/]+',r'/api/me/home-preferences',r'/api/mocks/[^/]+/answers'),
     'DELETE': (r'/api/mobile/bookmarks/[^/]+',r'/api/me/exam-bookmarks/[^/]+'),
 }
 

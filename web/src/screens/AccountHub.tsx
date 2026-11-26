@@ -1,6 +1,13 @@
-import { lazy, Suspense, useMemo, useState, type ReactNode } from 'react'
+import { lazy, Suspense, useEffect, useMemo, useState, type ReactNode } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { STUDY_THEMES, useStudyTheme } from '../lib/theme'
+import { getAccountSession } from '../lib/api'
+import {
+  HOME_WIDGET_CATALOG,
+  PRESET_DETAILS,
+  syncHomePrefsWithServer,
+  useHomePrefs,
+} from '../lib/homePrefs'
 
 const AccountSecurity = lazy(() => import('./AccountSecurity'))
 const AccountPrivacy = lazy(() => import('./AccountPrivacy'))
@@ -128,6 +135,24 @@ function AppearancePanel() {
     })
   }
 
+  const [authenticated, setAuthenticated] = useState(false)
+  const { prefs, applyPreset, toggleWidget } = useHomePrefs(authenticated)
+
+  useEffect(() => {
+    let live = true
+    getAccountSession()
+      .then((s) => {
+        if (!live) return
+        const isAuth = Boolean(s.authenticated)
+        setAuthenticated(isAuth)
+        if (isAuth) void syncHomePrefsWithServer(true)
+      })
+      .catch(() => {})
+    return () => {
+      live = false
+    }
+  }, [])
+
   return (
     <div className="finna-st-panel">
       <div className="finna-st-h1row">
@@ -178,6 +203,67 @@ function AppearancePanel() {
         >
           <span className="finna-st-toggle-dot" />
         </button>
+      </div>
+
+      <div className="finna-st-grouplabel">Front page layout (/home)</div>
+      <p className="finna-st-caption" style={{ marginTop: 0 }}>
+        Choose a preset or hide individual cards so your front page stays calm and focused.
+      </p>
+      <div className="hsw-preset-grid" role="group" aria-label="Home layout presets">
+        {PRESET_DETAILS.map((p) => {
+          const active = prefs.preset === p.id
+          return (
+            <button
+              key={p.id}
+              type="button"
+              aria-pressed={active}
+              onClick={() => applyPreset(p.id, true)}
+              className={`hsw-preset-card${active ? ' is-active' : ''}`}
+            >
+              <div className="hsw-preset-top">
+                <strong>{p.title}</strong>
+                {p.badge && <span className="hsw-preset-badge">{p.badge}</span>}
+              </div>
+              <small>{p.summary}</small>
+            </button>
+          )
+        })}
+      </div>
+      <div className="hsw-toggle-list mt-3">
+        {HOME_WIDGET_CATALOG.map((w) => {
+          const shown = !prefs.hidden.includes(w.id)
+          return (
+            <div key={w.id} className="finna-st-togglerow">
+              <div className="finna-st-togglerow-txt">
+                <div className="finna-st-togglerow-title">{w.label}</div>
+                <div className="finna-st-togglerow-sub">{w.description}</div>
+              </div>
+              <button
+                type="button"
+                role="switch"
+                aria-checked={shown}
+                aria-label={`${shown ? 'Hide' : 'Show'} ${w.label}`}
+                onClick={() => toggleWidget(w.id)}
+                className={'finna-st-toggle' + (shown ? ' is-on' : '')}
+              >
+                <span className="finna-st-toggle-dot" />
+              </button>
+            </div>
+          )
+        })}
+      </div>
+      <div className="finna-st-cardrow">
+        <div>
+          <div className="finna-st-cardrow-title">First-time setup wizard</div>
+          <div className="finna-st-cardrow-sub">
+            Re-pick your target exams, focus subjects and front page cards together
+          </div>
+        </div>
+        <div className="finna-st-cardrow-act">
+          <Link to="/home?setup=1" className="finna-st-btn">
+            Run Home setup →
+          </Link>
+        </div>
       </div>
 
       <div className="finna-st-cardrow">

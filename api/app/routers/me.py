@@ -1,8 +1,9 @@
 from datetime import date, timedelta
 import re
-from typing import Annotated
+from typing import Annotated, Literal
 
 from fastapi import APIRouter, Depends, HTTPException, Query
+from psycopg.types.json import Jsonb
 from pydantic import BaseModel, Field
 
 from ..db import cursor
@@ -396,6 +397,134 @@ async def score_summary(user_id:Annotated[str,Depends(current_user)]):
         await cur.execute('SELECT count(*)::int AS completed,COALESCE(sum(score),0)::float AS original_marks FROM mock_sessions WHERE user_id=%s AND submitted_at IS NOT NULL',(user_id,))
         mocks=await cur.fetchone()
     return {'practice_adjusted':practice,'mocks_original':mocks,'profile_basis':'Recorded original attempts and original mock scores. Adjusted assessments are shown separately; excluded questions are not marked wrong.'}
+
+
+HOME_WIDGET_IDS = (
+    "kpi",
+    "today",
+    "leaderboard",
+    "games",
+    "discover",
+    "pulse",
+    "return",
+    "tracked_exams",
+    "subjects",
+    "feed",
+    "vault",
+    "calendar",
+    "shortcuts",
+    "desk",
+    "quests",
+    "explore",
+)
+HOME_WIDGET_SET = set(HOME_WIDGET_IDS)
+HOME_PRESET_HIDDEN: dict[str, list[str]] = {
+    "minimal": [
+        "kpi",
+        "leaderboard",
+        "games",
+        "discover",
+        "pulse",
+        "tracked_exams",
+        "feed",
+        "vault",
+        "calendar",
+        "shortcuts",
+        "desk",
+        "explore",
+    ],
+    "balanced": [
+        "discover",
+        "pulse",
+        "feed",
+        "vault",
+        "calendar",
+        "desk",
+        "explore",
+    ],
+    "everything": [],
+}
+
+
+class HomePreferencesUpdate(BaseModel):
+    preset: Literal["minimal", "balanced", "everything"] = "balanced"
+    hidden: list[str] = Field(default_factory=list, max_length=40)
+    onboarded: bool = True
+
+
+def _normalize_hidden(items: list[str] | None) -> list[str]:
+    if not items:
+        return []
+    seen: set[str] = set()
+    out: list[str] = []
+    for item in items:
+        if isinstance(item, str) and item in HOME_WIDGET_SET and item not in seen:
+            seen.add(item)
+            out.append(item)
+    return out
+
+
+@router.get("/home-preferences")
+async def get_home_preferences(user_id: Annotated[str, Depends(current_user)]) -> dict:
+    async with cursor() as cur:
+        await cur.execute(
+            "SELECT prefs, onboarded_at, updated_at FROM user_home_preferences WHERE user_id=%s",
+            (user_id,),
+        )
+        row = await cur.fetchone()
+    if not row:
+        return {
+            "exists": False,
+            "preset": "balanced",
+            "hidden": list(HOME_PRESET_HIDDEN["balanced"]),
+            "onboarded": False,
+            "onboarded_at": None,
+            "updated_at": None,
+        }
+    raw = row["prefs"] if isinstance(row["prefs"], dict) else {}
+    preset = raw.get("preset") if raw.get("preset") in HOME_PRESET_HIDDEN else "balanced"
+    hidden = _normalize_hidden(raw.get("hidden")) if "hidden" in raw else list(HOME_PRESET_HIDDEN[preset])
+    onboarded = bool(raw.get("onboarded", row["onboarded_at"] is not None))
+    return {
+        "exists": True,
+        "preset": preset,
+        "hidden": hidden,
+        "onboarded": onboarded,
+        "onboarded_at": row["onboarded_at"],
+        "updated_at": row["updated_at"],
+    }
+
+
+@router.put("/home-preferences")
+async def save_home_preferences(
+    body: HomePreferencesUpdate,
+    user_id: Annotated[str, Depends(current_user)],
+) -> dict:
+    hidden = _normalize_hidden(body.hidden)
+    payload = {
+        "preset": body.preset,
+        "hidden": hidden,
+        "onboarded": bool(body.onboarded),
+    }
+    async with cursor() as cur:
+        await cur.execute(
+            """INSERT INTO user_home_preferences (user_id, prefs, onboarded_at, updated_at)
+               VALUES (%s, %s, CASE WHEN %s THEN now() ELSE NULL END, now())
+               ON CONFLICT (user_id) DO UPDATE SET
+                 prefs = EXCLUDED.prefs,
+                 onboarded_at = COALESCE(user_home_preferences.onboarded_at, EXCLUDED.onboarded_at),
+                 updated_at = now()
+               RETURNING onboarded_at, updated_at""",
+            (user_id, Jsonb(payload), bool(body.onboarded)),
+        )
+        row = await cur.fetchone()
+    return {
+        "exists": True,
+        **payload,
+        "onboarded_at": row["onboarded_at"] if row else None,
+        "updated_at": row["updated_at"] if row else None,
+    }
+
 
 from . import profile_identity
 router.include_router(profile_identity.router)
