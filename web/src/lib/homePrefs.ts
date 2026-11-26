@@ -158,7 +158,6 @@ export const PRESET_HIDDEN: Record<HomePreset, HomeWidgetId[]> = {
     'vault',
     'calendar',
     'desk',
-    'explore',
   ],
   everything: [],
 }
@@ -178,17 +177,17 @@ export const PRESET_DETAILS: readonly {
     id: 'balanced',
     title: 'Balanced',
     badge: 'Recommended',
-    summary: 'Clean 3-column home with Leaderboard, Popular games, Discover & Study shortcuts.',
+    summary: 'Clean 4-column home with Explore deck (Stats, Atlas, Guides), Discover, Leaderboard & Games.',
   },
   {
     id: 'everything',
     title: 'Everything',
-    summary: 'Show all widgets, including Calendar, 7-day pulse, Vault & Explore.',
+    summary: 'Show all widgets, including Calendar, 7-day pulse, Study desk, Community feed & Vault.',
   },
 ] as const
 
-const STORAGE_KEY = 'finna-home-prefs-v2'
-const LEGACY_STORAGE_KEY = 'finna-home-prefs-v1'
+const STORAGE_KEY = 'finna-home-prefs-v3'
+const LEGACY_STORAGE_KEYS = ['finna-home-prefs-v2', 'finna-home-prefs-v1'] as const
 const CHANGE_EVENT = 'finna-home-prefs-change'
 
 export function widgetLabel(id: HomeWidgetId): string {
@@ -233,20 +232,22 @@ export function readLocalHomePrefs(): HomePreferences {
         onboarded: Boolean(parsed.onboarded),
       }
     }
-    const legacyRaw = localStorage.getItem(LEGACY_STORAGE_KEY)
-    if (legacyRaw) {
-      const parsed = JSON.parse(legacyRaw) as Partial<HomePreferences>
-      const preset: HomePreset =
-        parsed.preset === 'minimal' || parsed.preset === 'balanced' || parsed.preset === 'everything'
-          ? parsed.preset
-          : 'balanced'
-      const hidden = (
-        Array.isArray(parsed.hidden) ? normalizeHidden(parsed.hidden) : [...PRESET_HIDDEN[preset]]
-      ).filter((id) => id !== 'discover')
-      return {
-        preset,
-        hidden,
-        onboarded: Boolean(parsed.onboarded),
+    for (const legacyKey of LEGACY_STORAGE_KEYS) {
+      const legacyRaw = localStorage.getItem(legacyKey)
+      if (legacyRaw) {
+        const parsed = JSON.parse(legacyRaw) as Partial<HomePreferences>
+        const preset: HomePreset =
+          parsed.preset === 'minimal' || parsed.preset === 'balanced' || parsed.preset === 'everything'
+            ? parsed.preset
+            : 'balanced'
+        const hidden = (
+          Array.isArray(parsed.hidden) ? normalizeHidden(parsed.hidden) : [...PRESET_HIDDEN[preset]]
+        ).filter((id) => id !== 'discover' && id !== 'explore')
+        return {
+          preset,
+          hidden,
+          onboarded: Boolean(parsed.onboarded),
+        }
       }
     }
     return defaultHomePrefs()

@@ -1575,12 +1575,27 @@ export default function StudyHome() {
             </aside>
           )}
 
-          {/* Column 4: Quests + Shortcuts + Optional Calendar, Study Desk & Explore */}
+          {/* Column 4: Explore Spotlight Deck + Quests + Shortcuts + Optional Calendar & Study Desk */}
           {hasRightColumn && (
           <aside
             className="finna-home-side finna-home-right"
-            aria-label="Quests, study shortcuts and optional tools"
+            aria-label="Explore Finna, quests, study shortcuts and optional tools"
           >
+            {!isHidden('explore') && (
+              <div className="finna-hideable-wrap">
+                <button
+                  type="button"
+                  className="finna-card-hide-btn finna-card-hide-float"
+                  aria-label="Hide Explore noticeboard"
+                  title="Hide Explore noticeboard"
+                  onClick={() => handleHideCard('explore')}
+                >
+                  ×
+                </button>
+                <ExploreDeckRail heading="Also on Finna" compact />
+              </div>
+            )}
+
             {!isHidden('quests') && (
               <section className="finna-card" aria-labelledby="home-quests-title">
                 <div className="finna-section-top">
@@ -1763,21 +1778,6 @@ export default function StudyHome() {
                   Open study desk →
                 </Link>
               </section>
-            )}
-
-            {!isHidden('explore') && (
-              <div className="finna-hideable-wrap">
-                <button
-                  type="button"
-                  className="finna-card-hide-btn finna-card-hide-float"
-                  aria-label="Hide Explore noticeboard"
-                  title="Hide Explore noticeboard"
-                  onClick={() => handleHideCard('explore')}
-                >
-                  ×
-                </button>
-                <ExploreDeckRail heading="Also on Finna" compact />
-              </div>
             )}
           </aside>
           )}

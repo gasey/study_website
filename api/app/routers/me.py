@@ -438,7 +438,6 @@ HOME_PRESET_HIDDEN: dict[str, list[str]] = {
         "vault",
         "calendar",
         "desk",
-        "explore",
     ],
     "everything": [],
 }
