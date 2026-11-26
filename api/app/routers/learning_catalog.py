@@ -126,6 +126,7 @@ async def catalog(user:User,response:Response,kind:Literal['day','practice']='da
 @router.get('/bank-dates')
 async def bank_dates(user:User,response:Response,month:int|None=Query(None,ge=1,le=12),day:int|None=Query(None,ge=1,le=31),
     category:Literal['observance','history','event']|None=None,
+    era:Literal['all','ancient','company','crown','republic','observances']='all',
     origin:Literal['all','paper','community']='all',subject_id:str|None=Query(None,max_length=100),
     q:str=Query('',max_length=120),evidence:Literal['all','dated','unresolved']='all',
     order:Literal['calendar','title','year']='calendar',offset:int=Query(0,ge=0,le=100000),limit:int=Query(24,ge=1,le=60),
@@ -136,12 +137,20 @@ async def bank_dates(user:User,response:Response,month:int|None=Query(None,ge=1,
     async with cursor() as cur:await no_assessment(cur,user)
     if day and not month:raise HTTPException(422,'Choose a month before selecting a day')
     entries=await dates.index()
-    rows=dates.filtered(entries,month=month,category=category,origin=origin,subject_id=subject_id,q=q,evidence=evidence)
+    base_rows=dates.filtered(entries,month=month,category=category,origin=origin,subject_id=subject_id,q=q,evidence=evidence,era='all')
+    era_counts={'all':len(base_rows),'ancient':0,'company':0,'crown':0,'republic':0,'observances':0}
+    for entry in base_rows:
+        ek=dates.era_for(entry)
+        if ek in era_counts:era_counts[ek]+=1
+    rows=base_rows if era=='all' else [entry for entry in base_rows if dates.era_for(entry)==era]
     # Calendar counts cover every filtered event, independent of list pagination or selected day.
     calendar_days=[{'day':number,'events':sum(any(d.get('month')==month and d.get('day')==number for d in entry['dates']) for entry in rows)} for number in range(1,32)] if month else []
     month_only_count=sum(any(d.get('month')==month and not d.get('day') for d in entry['dates']) for entry in rows) if month else 0
     if day:rows=[entry for entry in rows if any(d.get('month')==month and d.get('day')==day for d in entry['dates'])]
     today=datetime.now(ZoneInfo('Asia/Kolkata')).date()
+    on_this_day=[dates.summary(entry) for entry in entries if any(d.get('month')==today.month and d.get('day')==today.day for d in entry['dates'])][:6]
+    if not on_this_day:
+        on_this_day=[dates.summary(entry) for entry in entries if any(d.get('month')==today.month and d.get('day') for d in entry['dates'])][:6]
     subjects=sorted({(question['subject_id'],question['subject']) for entry in entries for question in entry['questions'] if question['subject_id'] and question['subject']},key=lambda item:item[1])
     if event_id:
         entry=next((entry for entry in rows if entry['id']==event_id),None)
@@ -157,7 +166,8 @@ async def bank_dates(user:User,response:Response,month:int|None=Query(None,ge=1,
         'question_count':len({question['id'] for entry in rows for question in entry['questions']}),
         'dated_count':sum(bool(entry['dates']) for entry in rows),'offset':offset,'limit':limit,'today':today,
         'subjects':[{'id':sid,'title':title} for sid,title in subjects],
-        'calendar_days':calendar_days,'month_only_count':month_only_count}
+        'calendar_days':calendar_days,'month_only_count':month_only_count,
+        'era_counts':era_counts,'on_this_day':on_this_day}
 
 @router.get('/manage')
 async def manage(actor:Account,response:Response,timed:bool=False):

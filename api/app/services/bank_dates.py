@@ -20,12 +20,14 @@ MONTH_DAY = re.compile(rf'\b({MONTH_PATTERN})\s+(\d{{1,2}})(?!\d)(?:st|nd|rd|th)
 MONTH_YEAR = re.compile(rf'\b({MONTH_PATTERN})\s*,?\s*((?:1[0-9]{{3}}|20[0-9]{{2}}))(?!\d)', re.I)
 YEAR_ERA = re.compile(r'(?<!\w)([1-9][0-9]{0,3})\s*(BC|BCE|AD|CE)\b', re.I)
 YEAR = re.compile(r'(?<![\w.,/])((?:1[0-9]{3}|20[0-9]{2}))(?:\s*(BC|BCE|AD|CE))?(?!\w|[.,/]\d)', re.I)
+YEAR_PREFIX_REJECT = re.compile(r'(?:\b(?:per|exceeds?|above|below|under|over|rs\.?|inr|usd|section|sec\.?|article|art\.?|clause|rule|item|page|no\.?|code|model|serial|pin|iso|is)\s*|[₹$€£]\s*)$', re.I)
+YEAR_SUFFIX_REJECT = re.compile(r'^\s*(?:live\s+births?|still[- ]?births?|births?|women|men|persons?|people|employees?|workers?|students?|voters?|seats?|km|mm|cm|kg|mg|kw|mw|kwh|hz|rpm|rev|rupees?|crores?|lakhs?|millions?|billions?|tonnes?|tons?|litres?|liters?|meters?|metres?|feet|ft|hours?|hrs?|minutes?|mins?|seconds?|bytes?|kb|mb|gb|bits?|calories?|kcal|volts?|watts?|amps?|ohms?|mpa|kpa|psi|ppm)\b', re.I)
 OBSERVANCE = re.compile(r"\b((?:(?:World|International|National|Universal|United Nations|Indian|Global|Earth|Environment|Teachers?|Children|Women|Human Rights|Republic|Independence|Constitution|Labour|Labor|Army|Navy|Air Force|AIDS|Health|Water|Food|Literacy|Population|Press|Science|Youth|Tourism|Forests?|Ozone|Biodiversity|Mizoram|Statehood|Yoga|Mother|Father)[\w’' -]{0,70}?)\s+Day)\b", re.I)
 BATTLE = re.compile(r'\b(Battle of [A-Za-z][A-Za-z -]{1,48}?)(?=\s*[,(:?]|\s+(?:was|is|in|marked|considered|for|on|fought|took|after)|$)', re.I)
 DATE_FOCUS = re.compile(r'\b(?:when|which (?:year|date|day|month)|what (?:year|date)|in the year|observed on|celebrated on|falls on|held on|established in|founded in|born on|born in|took place in|fought in|attained statehood|became.*state|first observed)\b', re.I)
-EVENT = re.compile(r'\b(?:battle|war|movement|treaty|pact|revolution|revolt|rebellion|act|amendment|constitution|independence|founded|established|formed|created|launched|statehood|anniversary|centenary|birth|born|died|death|conference|summit|mission|election|inaugurat|observed|celebrat|commemorat|abolish|partition|discovered|introduced|began|started|ended)\w*\b', re.I)
-AMBIGUOUS = re.compile(r'\b(?:not|incorrect|false|except|following statements|statements given|consider the following|match the following|match list|chronological|ascending|descending)\b', re.I)
-NON_EVENT = re.compile(r'\b(?:simple interest|compound interest|per annum|rate of interest|profit|depreciation|speed|distance|age of|how old|calendar year|leap year|day of the week|what day|weekday|train|rupees|\d+\s*%|code language)\b', re.I)
+EVENT = re.compile(r'\b(?:battle|war|movement|treaty|pact|revolution|revolt|rebellion|act|amendment|constitution|independence|founded|established|formed|created|launched|statehood|anniversary|centenary|birth|born|died|death|conference|summit|mission|election|inaugurat|observed|celebrat|commemorat|abolish|partition|discovered|introduced|began|started|ended|invaded|passed|signed|adopted|enacted)\w*\b', re.I)
+AMBIGUOUS = re.compile(r'\b(?:not|incorrect|false|except|following statements|statements given|consider the following|match the following|match list|chronological|ascending|descending|assertion\s*\(a\)|reason\s*\(r\))\b', re.I)
+NON_EVENT = re.compile(r'\b(?:simple interest|compound interest|per annum|rate of interest|profit|depreciation|speed|distance|age of|how old|calendar year|leap year|day of the week|what day|weekday|train|rupees|\d+\s*%|code language|per\s+1000|live\s+births?|still[- ]?births?|energy\s+meter|trivector|single[- ]phase|3[- ]phase|\d+\s*(?:V|Hz|kW|MW|rpm|kWh|MPa)\b|number\s+of\s+(?:persons|people|employees|workers)|exceeds\s+_+|\bhow\s+(?:many|much)\b|\bcalculate\b|\bfind\s+the\s+value\b)\b', re.I)
 # Database prefilter only. Python below decides what belongs in this date projection.
 CANDIDATE_PATTERN = r'\m(day|date|year|when|anniversary|centenary|january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|aug|sept|oct|nov|dec|battle|war|movement|treaty|pact|revolt|rebellion|born|died|founded|established|statehood)\M|\m(1[0-9]{3}|20[0-9]{2})\M'
 
@@ -63,10 +65,18 @@ def dates_in(text, years=True):
             result.append(value)
         spans.append(match.span())
     if years:
-        for match in YEAR.finditer(text or ''):
+        src = text or ''
+        for match in YEAR.finditer(src):
             if any(a <= match.start() < b for a, b in spans):
                 continue
-            value = {'year': int(match[1]), 'month': None, 'day': None, 'precision': 'year'}
+            yr = int(match[1])
+            if not match[2] and yr > 2050:
+                continue
+            before = src[max(0, match.start() - 24):match.start()]
+            after = src[match.end():match.end() + 24]
+            if not match[2] and (YEAR_PREFIX_REJECT.search(before) or YEAR_SUFFIX_REJECT.search(after)):
+                continue
+            value = {'year': yr, 'month': None, 'day': None, 'precision': 'year'}
             if match[2] and match[2].upper() in ('BC', 'BCE'):
                 value['era'] = 'BCE'
             if value not in result:
@@ -92,7 +102,12 @@ def title_for(stem, observance=None, battle=None):
     text = re.sub(r'^\s*(?:\([ivx]+\)|\d+[.)])\s*', '', stem, flags=re.I)
     text = re.sub(r'^(?:In which (?:year|date|month)\s+(?:was|did|is|were)?|On which date\s+(?:was|is)?|When\s+(?:was|did|is|were|do we|do|does)?)\s*', '', text, flags=re.I)
     text = re.sub(r'\s+(?:was|is)?\s*(?:observed|celebrated|held|founded|established|fought)?\s*(?:on|in)(?:\s+(?:which|what|the|every)\s*(?:year|date|day|month))?\s*[?:.\-]*$', '', text, flags=re.I)
-    return text.strip(' ?:.-') or stem
+    text = re.sub(r'\s+(?:occur|take place|happen)\s*[?:.\-]*$', '', text, flags=re.I)
+    text = re.sub(r'\b(the|a|an)\s+\1\b', r'\1', text, flags=re.I)
+    text = text.strip(' ?:.,;–—-')
+    if text and text[0].islower():
+        text = text[0].upper() + text[1:]
+    return text or stem
 
 
 def project(row):
@@ -175,10 +190,26 @@ async def load_index():
 
 async def index():
     # Same short-lived, invalidated public-data cache used by other bank catalogs.
-    return await public_catalog(('bank-date-index', 1), load_index)
+    return await public_catalog(('bank-date-index', 2), load_index)
 
 
-def filtered(entries, *, month=None, category=None, origin='all', subject_id=None, q='', evidence='all'):
+def era_for(entry):
+    if entry.get('category') == 'observance':
+        return 'observances'
+    first = next((d for d in entry.get('dates') or [] if d.get('year') is not None), None)
+    if not first:
+        return 'other'
+    year = first['year']
+    if first.get('era') == 'BCE' or year <= 1756:
+        return 'ancient'
+    if year <= 1856:
+        return 'company'
+    if year <= 1947:
+        return 'crown'
+    return 'republic'
+
+
+def filtered(entries, *, month=None, category=None, origin='all', subject_id=None, q='', evidence='all', era='all'):
     words = q.casefold().split()
     result = []
     for entry in entries:
@@ -186,6 +217,8 @@ def filtered(entries, *, month=None, category=None, origin='all', subject_id=Non
         if not questions:
             continue
         if category and entry['category'] != category:
+            continue
+        if era and era != 'all' and era_for(entry) != era:
             continue
         if month and not any(d['month'] == month for d in entry['dates']):
             continue
@@ -202,6 +235,7 @@ def filtered(entries, *, month=None, category=None, origin='all', subject_id=Non
 def summary(entry):
     questions = entry['questions']
     return {k: v for k, v in entry.items() if k != 'questions'} | {
+        'era': era_for(entry),
         'question_count': len(questions), 'evidence': sorted({q['evidence'] for q in questions}),
         'subjects': sorted({q['subject'] for q in questions if q['subject']}),
         'preview': questions[0]['question'], 'first_question_id': questions[0]['id'],

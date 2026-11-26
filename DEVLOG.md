@@ -1,5 +1,16 @@
 # Devlog
 
+26 November IST — **Fixed Data Quality Bugs & Fully Upgraded Finna Chronicle (`/chronicle`) across API, Web & Mobile (`bank_dates.py`, `learning_catalog.py`, `test_bank_dates.py`, `bankDates.ts`, `Chronicle.tsx`, `finna.css`, plus mobile `chronicle.tsx`). Deployed API + Web to `https://study.hawayu.in`.**
+
+- **Fixed Bank-Date Extraction & Title Bugs (`api/app/services/bank_dates.py`, `api/app/routers/learning_catalog.py`):**
+  - Eliminated false-positive numeric years (`per 1000 live births`, `230 V, 50 Hz`, `exceeds 1500 persons`, `Assertion (A)` statements, and out-of-range numeric codes) via strict prefix/suffix unit & non-event guards.
+  - Cleaned extracted titles (removed accidental repeated articles like `the the`, trailing punctuation, and dangling verbs; capitalized leading letters).
+  - Added server-side Era filtering (`era=all|ancient|company|crown|republic|observances`), live `era_counts`, and **"On This Day in the Bank"** (`on_this_day` IST spotlight) to `GET /api/learning-catalog/bank-dates` (`10/10` pytest passed; cache version bumped to v2).
+- **Upgraded Web Chronicle Studio (`Chronicle.tsx`, `bankDates.ts`, `finna.css`):**
+  - Added warm archival Hero banner with live stats, **📅 On This Day** spotlight rail, 6-card **Interactive Era Ribbon** with exact counts, Subject + Category + Search filters, and balanced dual-track timeline (`🏛 History & Movements` on top, `⚖️ Polity, Acts, Institutions & Observances` on bottom) with drag-to-pan, milestone scrubber, and `←`/`→`/`H` shortcuts.
+  - Added **🎯 Quiz This Era** interactive MCQ drill modal (submits real answers via `submitAnswer` with `CatXpBar` progress, streak tracking, and official explanations), **🃏 Recall Mode (Hide Dates)** memory drill toggle, and an upgraded **Live Inline Event Inspector** displaying Atlas map links and every linked bank question directly without leaving the timeline.
+- **Upgraded Mobile Chronicle (`india-study-map-mobile/src/app/chronicle.tsx`):** Added live event search, **🃏 Drill / Hide Dates** recall toggle, and era count badges (`44/44` unit tests + `4/4` `Chronicle.test.tsx` component tests passed).
+
 26 November IST — **Expanded Public Learner Profiles (`/creators/:id` & Mobile `/creator/:id`) to Showcase Study Activity, Posts, Doubts & Q&A, Saved Questions / Vault Packs / Shared Tests, and Practiced Questions (`creators.py`, `mobile_identity.py`, `test_creator_profiles.py`, `Creators.tsx`, `finna.css`, plus mobile `content-types.ts`, `creator/[id].tsx`). Deployed API + Web to `https://study.hawayu.in`.**
 
 - **Public Profile Activity Summary & Tabs (`api/app/routers/creators.py`, `mobile_identity.py`):**

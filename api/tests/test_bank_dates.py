@@ -135,3 +135,25 @@ def test_chronology_orders_bce_and_ce_before_dates_without_year(client,actor,dat
     dates=[entry['dates'][0] for entry in body['items']]
     assert [value['year'] for value in dates]==[326,1757,None]
     assert dates[0]['era']=='BCE'
+
+
+def test_numeric_false_positives_rejected_titles_cleaned_and_era_filters_work():
+    assert dates_in('Number of deaths of infants under 1 week per 1000 total births') == []
+    assert dates_in('When number of persons exceeds 1500 workers') == []
+    assert project(row('The number of live birth per 1000 women in a year is called:')) is None
+    assert project(row('A single-phase energy meter is operating on 230 V, 50 Hz, 1380 rpm')) is None
+    cleaned = project(row('When did the the Great Bengal Famine occur?', '1770', True))
+    assert cleaned['title'] == 'The Great Bengal Famine'
+    assert cleaned['dates'][0]['year'] == 1770
+    entries = build_index([
+        row('When did Alexander invade India?', '326 BC', True),
+        {**row('When was the Battle of Plassey fought?', '1757', True), 'id': 'q2'},
+        {**row('When did the Quit India Movement begin?', '1942', True), 'id': 'q3'},
+        {**row('When did Mizoram attain statehood?', '20 February 1987', True), 'id': 'q4'},
+        {**row('World Environment Day is observed on', '5 June', True), 'id': 'q5'},
+    ])
+    assert len(filtered(entries, era='ancient')) == 1
+    assert len(filtered(entries, era='company')) == 1
+    assert len(filtered(entries, era='crown')) == 1
+    assert len(filtered(entries, era='republic')) == 1
+    assert len(filtered(entries, era='observances')) == 1
