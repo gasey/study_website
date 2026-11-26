@@ -1,5 +1,10 @@
 # Devlog
 
+26 November IST — **Upgraded `/home` to a Responsive 4-Column Wide-Desktop Layout (with Discover ON by default in Balanced) (`StudyHome.tsx`, `HomeLeftExtras.tsx`, `HomeSetupWizard.tsx`, `homePrefs.ts`, `me.py`, `finna.css`).**
+
+- **4-Column Wide Desktop + 3-Column Laptop:** On wide desktops (`>= 1520px`), `/home` renders 4 balanced columns inside `max-width: 1580px` with `48px` outer margins (`Exam/Plan/Games` · `Main Stream` · `Discover & Leaderboard` · `Quests/Shortcuts/Optional Tools`); steps down cleanly to 3 columns on `1200px–1519px` laptops (`36px` margins), 2 columns on iPad Landscape, and 1 column on phones.
+- **Discover ON by Default:** Removed `discover` from `Balanced` preset's default hidden list across API, Web, and Mobile so rotating learners & study notes stay visible at the top of the Discover & Standings column while remaining 1-click hideable.
+
 26 November IST — **Shipped Calm 3-Column Front Page (`/home`) with Wider Margins, First-Time 3-Step Setup Wizard, and Per-Card Home Personalisation (`0143_home_preferences.sql`, `me.py`, `mobile_identity.py`, `homePrefs.ts`, `HomeSetupWizard.tsx`, `StudyHome.tsx`, `HomeLeftExtras.tsx`, `AccountHub.tsx`, `finna.css`).**
 
 - **3-Column Layout & Wider Margins (`StudyHome.tsx`, `finna.css`):**

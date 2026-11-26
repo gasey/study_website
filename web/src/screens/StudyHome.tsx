@@ -675,12 +675,19 @@ export default function StudyHome() {
     return <Navigate replace to={'/community?' + nextParams} />
   }
 
+  const hasCommunityColumn = !isHidden('discover') || !isHidden('leaderboard')
   const hasRightColumn =
     !isHidden('quests') ||
     !isHidden('shortcuts') ||
     !isHidden('calendar') ||
     !isHidden('desk') ||
     !isHidden('explore')
+  const gridColClass =
+    hasCommunityColumn && hasRightColumn
+      ? 'is-four-col'
+      : hasCommunityColumn || hasRightColumn
+        ? 'is-three-col'
+        : 'is-two-col'
 
   return (
     <div className="finna-home-shell" data-screen="home">
@@ -812,7 +819,7 @@ export default function StudyHome() {
           </section>
         )}
 
-        <div className={`finna-home-grid${hasRightColumn ? '' : ' is-two-col'}`}>
+        <div className={`finna-home-grid ${gridColClass}`}>
           {/* Left Column: Multi-Exam Hero + Today Plan */}
           <aside className="finna-home-side" aria-label="Your exams and study plan">
             <section className="finna-exam-hero" aria-labelledby="my-exam-title">
@@ -915,7 +922,12 @@ export default function StudyHome() {
               </p>
             )}
             {!isHidden('today') && <TodayCard exams={data.exams} hideExamSelect />}
-            <HomeLeftExtras progress={data.progress} hidden={hiddenSet} onHide={handleHideCard} />
+            <HomeLeftExtras
+              progress={data.progress}
+              hidden={hiddenSet}
+              onHide={handleHideCard}
+              section="left"
+            />
           </aside>
 
           {/* Center Main Stream: View Switcher + Multi-Exam + Focus Subjects + Live Community Feed */}
@@ -1548,7 +1560,22 @@ export default function StudyHome() {
             {view === 'feed' && <HomeFeedPreview mode="full" />}
           </section>
 
-          {/* Right Rail: Quests + Shortcuts + Optional Calendar, Study Desk & Explore */}
+          {/* Column 3: Discover & Live Leaderboard */}
+          {hasCommunityColumn && (
+            <aside
+              className="finna-home-side finna-home-community"
+              aria-label="Discover learners, notes and live standings"
+            >
+              <HomeLeftExtras
+                progress={data.progress}
+                hidden={hiddenSet}
+                onHide={handleHideCard}
+                section="community"
+              />
+            </aside>
+          )}
+
+          {/* Column 4: Quests + Shortcuts + Optional Calendar, Study Desk & Explore */}
           {hasRightColumn && (
           <aside
             className="finna-home-side finna-home-right"

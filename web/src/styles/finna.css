@@ -528,9 +528,10 @@ html[data-theme="night"] .finna-menu-star { color:#FBBF24; }
 .finna-segments button, .finna-segments a { min-height:38px; padding:0 16px; border-radius:999px; white-space:nowrap; font-weight:700; font-size:13.5px; display:flex; align-items:center; }
 .finna-segments [aria-pressed="true"], .finna-segments [aria-selected="true"], .finna-segments [aria-current="page"] { background:rgb(var(--ism-ink-rgb)); color:rgb(var(--ism-paper-rgb)); }
 .finna-home-shell { width:100%; }
-.finna-page.finna-home { max-width:1240px; margin:0 auto; padding:28px 40px 80px; }
-.finna-home-grid { display:grid; grid-template-columns:minmax(240px,1fr) minmax(420px,2.1fr) minmax(240px,1fr); gap:28px; align-items:start; }
-.finna-home-grid.is-two-col { grid-template-columns:minmax(250px,310px) minmax(0,1fr); }
+.finna-page.finna-home { max-width:1580px; margin:0 auto; padding:28px 48px 80px; }
+.finna-home-grid { display:grid; grid-template-columns:minmax(240px,1fr) minmax(420px,2.05fr) minmax(240px,1fr) minmax(235px,0.95fr); gap:24px; align-items:start; }
+.finna-home-grid.is-three-col { grid-template-columns:minmax(245px,1fr) minmax(440px,2.1fr) minmax(250px,1fr); gap:28px; }
+.finna-home-grid.is-two-col { grid-template-columns:minmax(260px,310px) minmax(0,1fr); gap:28px; }
 .finna-home-side, .finna-home-stream { display:flex; flex-direction:column; gap:18px; min-width:0; }
 .finna-exam-hero { background:var(--finna-hero); color:var(--finna-hero-ink); border-radius:22px; padding:20px; display:flex; flex-direction:column; gap:14px; }
 .finna-exam-hero h1 { font-size:38px; line-height:1.05; font-weight:700; letter-spacing:-.03em; }
@@ -7557,11 +7558,51 @@ html[data-theme="night"] .mm-tile-pct.is-rusty  { color:#FBBF24; }
    Calm 3-Column Home, Per-Card Hide Controls & First-Time Setup Wizard
    ========================================================================== */
 
-@media (max-width:1279px) and (min-width:1024px) {
+/* Laptop (1200px – 1519px): step down cleanly from 4 columns to 3 columns with generous margins */
+@media (max-width:1519px) and (min-width:1200px) {
+  .finna-page.finna-home { max-width:1360px; padding:26px 36px 76px; }
+  .finna-home-grid.is-four-col {
+    grid-template-columns:minmax(240px, 1fr) minmax(420px, 2fr) minmax(255px, 1.05fr);
+    gap:24px;
+  }
+  .finna-home-grid.is-four-col > .finna-home-community {
+    grid-column:3;
+    grid-row:1;
+  }
+  .finna-home-grid.is-four-col > .finna-home-right {
+    grid-column:3;
+    grid-row:2;
+  }
+  .finna-home-grid.is-four-col > .finna-home-side:first-child,
+  .finna-home-grid.is-four-col > .finna-home-stream {
+    grid-row:1 / span 2;
+  }
+}
+
+@media (max-width:1199px) and (min-width:1024px) {
   .finna-page.finna-home { padding:24px 28px 72px; }
+  .finna-home-grid.is-four-col,
+  .finna-home-grid.is-three-col {
+    grid-template-columns:minmax(250px, 280px) minmax(0, 1fr);
+    gap:18px;
+  }
+  .finna-home-community,
+  .finna-home-right {
+    grid-column:1 / -1;
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:14px;
+  }
 }
 @media (max-width:1023px) {
   .finna-page.finna-home { padding:18px 18px 72px; }
+  .finna-home-grid,
+  .finna-home-grid.is-four-col,
+  .finna-home-grid.is-three-col,
+  .finna-home-grid.is-two-col {
+    grid-template-columns:1fr;
+    gap:16px;
+  }
 }
 @media (max-width:639px) {
   .finna-page.finna-home {

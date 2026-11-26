@@ -14,6 +14,7 @@ def test_home_preferences_defaults_save_and_normalize(client, actor, database):
     assert data["onboarded"] is False
     assert "calendar" in data["hidden"]
     assert "explore" in data["hidden"]
+    assert "discover" not in data["hidden"]
 
     save = client.put(
         "/api/me/home-preferences",

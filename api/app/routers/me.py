@@ -434,7 +434,6 @@ HOME_PRESET_HIDDEN: dict[str, list[str]] = {
         "explore",
     ],
     "balanced": [
-        "discover",
         "pulse",
         "feed",
         "vault",

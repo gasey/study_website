@@ -39,10 +39,11 @@ interface HomeSetupWizardProps {
   }) => Promise<void> | void
 }
 
-const GROUP_LABELS: Record<'top' | 'left' | 'right', string> = {
+const GROUP_LABELS: Record<'top' | 'left' | 'community' | 'right', string> = {
   top: 'Top & Centre workspace',
-  left: 'Left column',
-  right: 'Right column',
+  left: 'Left column (Exam, Plan & Games)',
+  community: 'Discover & Live Standings column',
+  right: 'Right column (Quests, Shortcuts & Tools)',
 }
 
 export default function HomeSetupWizard({
@@ -388,7 +389,7 @@ export default function HomeSetupWizard({
               </div>
 
               <div className="hsw-toggle-groups">
-                {(['top', 'left', 'right'] as const).map((group) => (
+                {(['top', 'left', 'community', 'right'] as const).map((group) => (
                   <div key={group} className="hsw-toggle-group">
                     <h3>{GROUP_LABELS[group]}</h3>
                     <div className="hsw-toggle-list">

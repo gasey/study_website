@@ -88,15 +88,17 @@ export default function HomeLeftExtras({
   progress,
   hidden,
   onHide,
+  section = 'all',
 }: {
   progress: Progress | null
   hidden?: Set<HomeWidgetId>
   onHide?: (id: HomeWidgetId) => void
+  section?: 'all' | 'left' | 'community'
 }) {
-  const showLeaderboard = !hidden?.has('leaderboard')
-  const showGames = !hidden?.has('games')
-  const showDiscover = !hidden?.has('discover')
-  const showPulse = !hidden?.has('pulse')
+  const showLeaderboard = (section === 'all' || section === 'community') && !hidden?.has('leaderboard')
+  const showGames = (section === 'all' || section === 'left') && !hidden?.has('games')
+  const showDiscover = (section === 'all' || section === 'community') && !hidden?.has('discover')
+  const showPulse = (section === 'all' || section === 'left') && !hidden?.has('pulse')
 
   const [boardTab, setBoardTab] = useState<BoardTab>('xp')
   const [board, setBoard] = useState<StandingsPayload | null>(null)
@@ -178,8 +180,87 @@ export default function HomeLeftExtras({
   const maxDayCount = Math.max(1, ...last7Days.map((d) => d.count))
   const weekTotal = last7Days.reduce((acc, d) => acc + d.count, 0)
 
+  const discoverCard =
+    showDiscover && discover && (discover.learners.length > 0 || discover.materials.length > 0) ? (
+      <section className="finna-card hl-card" aria-labelledby="home-discover-title">
+        <div className="finna-section-top">
+          <div className="min-w-0">
+            <div className="finna-eyebrow">For you · rotating</div>
+            <h2 id="home-discover-title">Discover</h2>
+          </div>
+          <div className="finna-card-head-right">
+            <button
+              type="button"
+              disabled={discoverBusy}
+              onClick={() => setDiscoverSeed(Date.now().toString(36))}
+              className="hl-shuffle-btn"
+              title="Shuffle fresh profiles & study notes"
+            >
+              ↻ {discoverBusy ? '…' : 'Shuffle'}
+            </button>
+            {onHide && (
+              <button
+                type="button"
+                className="finna-card-hide-btn"
+                aria-label="Hide Discover card"
+                title="Hide this card"
+                onClick={() => onHide('discover')}
+              >
+                ×
+              </button>
+            )}
+          </div>
+        </div>
+
+        {discover.learners.length > 0 && (
+          <div className="hl-disc-list" aria-label="Suggested learners">
+            {discover.learners.slice(0, 3).map((l) => (
+              <Link
+                key={l.id}
+                to={`/creators/${encodeURIComponent(l.id)}`}
+                className="hl-board-row is-link"
+              >
+                <UserAvatar look={l.avatar} initials={l.handle} size={32} />
+                <span className="hl-player">
+                  <strong>@{l.handle}</strong>
+                  <small>Lv {l.level} · {l.match_reason}</small>
+                </span>
+                <span aria-hidden="true" className="text-xs text-secondary">↗</span>
+              </Link>
+            ))}
+          </div>
+        )}
+
+        {discover.materials.length > 0 && (
+          <div className="hl-disc-notes" aria-label="Spotlight study notes">
+            {discover.materials.slice(0, 2).map((m) => (
+              <Link
+                key={m.id}
+                to={`/materials/${encodeURIComponent(m.id)}`}
+                className="hl-disc-note"
+              >
+                <span className="hl-disc-kind">{m.kind}</span>
+                <strong>{m.title}</strong>
+                <small>by {m.author}{m.helpful > 0 ? ` · ${m.helpful} helpful` : ''}</small>
+              </Link>
+            ))}
+          </div>
+        )}
+
+        <div className="hl-pulse-foot">
+          <Link to="/creators" className="text-xs font-bold text-link hover:underline">
+            Explore all learners →
+          </Link>
+          <Link to="/materials" className="text-xs font-semibold text-secondary hover:text-ink">
+            Study notes ↗
+          </Link>
+        </div>
+      </section>
+    ) : null
+
   return (
     <>
+      {section === 'community' && discoverCard}
       {/* 1. Live Leaderboard Snapshot */}
       {showLeaderboard && (
       <section className="finna-card hl-card" aria-labelledby="home-board-title">
@@ -365,82 +446,7 @@ export default function HomeLeftExtras({
       )}
 
       {/* 3. Algorithmic Discover: Rotating Learners & Study Notes */}
-      {showDiscover && discover && (discover.learners.length > 0 || discover.materials.length > 0) && (
-        <section className="finna-card hl-card" aria-labelledby="home-discover-title">
-          <div className="finna-section-top">
-            <div className="min-w-0">
-              <div className="finna-eyebrow">For you · rotating</div>
-              <h2 id="home-discover-title">Discover</h2>
-            </div>
-            <div className="finna-card-head-right">
-              <button
-                type="button"
-                disabled={discoverBusy}
-                onClick={() => setDiscoverSeed(Date.now().toString(36))}
-                className="hl-shuffle-btn"
-                title="Shuffle fresh profiles & study notes"
-              >
-                ↻ {discoverBusy ? '…' : 'Shuffle'}
-              </button>
-              {onHide && (
-                <button
-                  type="button"
-                  className="finna-card-hide-btn"
-                  aria-label="Hide Discover card"
-                  title="Hide this card"
-                  onClick={() => onHide('discover')}
-                >
-                  ×
-                </button>
-              )}
-            </div>
-          </div>
-
-          {discover.learners.length > 0 && (
-            <div className="hl-disc-list" aria-label="Suggested learners">
-              {discover.learners.slice(0, 3).map((l) => (
-                <Link
-                  key={l.id}
-                  to={`/creators/${encodeURIComponent(l.id)}`}
-                  className="hl-board-row is-link"
-                >
-                  <UserAvatar look={l.avatar} initials={l.handle} size={32} />
-                  <span className="hl-player">
-                    <strong>@{l.handle}</strong>
-                    <small>Lv {l.level} · {l.match_reason}</small>
-                  </span>
-                  <span aria-hidden="true" className="text-xs text-secondary">↗</span>
-                </Link>
-              ))}
-            </div>
-          )}
-
-          {discover.materials.length > 0 && (
-            <div className="hl-disc-notes" aria-label="Spotlight study notes">
-              {discover.materials.slice(0, 2).map((m) => (
-                <Link
-                  key={m.id}
-                  to={`/materials/${encodeURIComponent(m.id)}`}
-                  className="hl-disc-note"
-                >
-                  <span className="hl-disc-kind">{m.kind}</span>
-                  <strong>{m.title}</strong>
-                  <small>by {m.author}{m.helpful > 0 ? ` · ${m.helpful} helpful` : ''}</small>
-                </Link>
-              ))}
-            </div>
-          )}
-
-          <div className="hl-pulse-foot">
-            <Link to="/creators" className="text-xs font-bold text-link hover:underline">
-              Explore all learners →
-            </Link>
-            <Link to="/materials" className="text-xs font-semibold text-secondary hover:text-ink">
-              Study notes ↗
-            </Link>
-          </div>
-        </section>
-      )}
+      {section !== 'community' && discoverCard}
 
       {/* 4. Compact 7-Day Study Pulse & Stats */}
       {showPulse && (

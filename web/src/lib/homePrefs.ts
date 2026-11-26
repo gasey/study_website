@@ -30,7 +30,7 @@ export interface HomeWidgetMeta {
   id: HomeWidgetId
   label: string
   description: string
-  group: 'top' | 'left' | 'right'
+  group: 'top' | 'left' | 'community' | 'right'
 }
 
 export const HOME_WIDGET_CATALOG: readonly HomeWidgetMeta[] = [
@@ -82,7 +82,7 @@ export const HOME_WIDGET_CATALOG: readonly HomeWidgetMeta[] = [
     id: 'leaderboard',
     label: 'Live leaderboard',
     description: 'Weekly XP, Daily Five and Weekly Cup standings.',
-    group: 'left',
+    group: 'community',
   },
   {
     id: 'games',
@@ -94,7 +94,7 @@ export const HOME_WIDGET_CATALOG: readonly HomeWidgetMeta[] = [
     id: 'discover',
     label: 'Discover learners & notes',
     description: 'Rotating suggestions of learners and study notes for you.',
-    group: 'left',
+    group: 'community',
   },
   {
     id: 'pulse',
@@ -154,7 +154,6 @@ export const PRESET_HIDDEN: Record<HomePreset, HomeWidgetId[]> = {
     'explore',
   ],
   balanced: [
-    'discover',
     'pulse',
     'feed',
     'vault',
@@ -180,12 +179,12 @@ export const PRESET_DETAILS: readonly {
     id: 'balanced',
     title: 'Balanced',
     badge: 'Recommended',
-    summary: 'Clean 3-column home with Leaderboard, Popular games & Study shortcuts.',
+    summary: 'Clean 3-column home with Leaderboard, Popular games, Discover & Study shortcuts.',
   },
   {
     id: 'everything',
     title: 'Everything',
-    summary: 'Show all widgets, including Calendar, Discover, 7-day pulse & Explore.',
+    summary: 'Show all widgets, including Calendar, 7-day pulse, Vault & Explore.',
   },
 ] as const
 
