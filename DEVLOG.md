@@ -1,5 +1,10 @@
 # Devlog
 
+26 November IST — **Shipped Rplus `[CSS] Cat loader` (`PWZYRM`) Inspired Curled Cat Loaders & Animated Cat-Runner XP/Progress Bars across Web & Mobile (`CatLoader.tsx`, `RouteWorkspace.tsx`, `Profile.tsx`, `Rewards.tsx`, `finna.css`, `quest-game.css`, plus mobile `CatLoader.tsx`, `ui.tsx`, `study.tsx`, `rewards.tsx`).**
+
+- **Curled Cat Loader (`CatLoader.tsx`, `finna.css`):** Pure-CSS ginger tabby cat chasing its tail in a staggered circular ring (animated body arc, ears/head, and cream-tipped tail, respecting `prefers-reduced-motion`) wired into `WorkspaceLoading`, `Profile`, and `Rewards`, with a matching native SVG `Animated.loop` version in mobile `Busy`.
+- **Animated Cat-Runner XP & Progress Bars (`CatXpBar`, `.finna-progress`, `.fq-xp-bar`):** Warm amber-gold & emerald tabby-striped animated bars with a bobbing mini cat-head pip riding at the progress edge across Profile Level XP (`Level N → N+1`), Rewards Level & Daily XP + Daily Quest Rings, Finna Quest RPG XP bar, global `.finna-progress` bars, and mobile `ProgressBar`.
+
 26 November IST — **Upgraded `/home` to a Responsive 4-Column Wide-Desktop Layout (with Discover ON by default in Balanced) (`StudyHome.tsx`, `HomeLeftExtras.tsx`, `HomeSetupWizard.tsx`, `homePrefs.ts`, `me.py`, `finna.css`).**
 
 - **4-Column Wide Desktop + 3-Column Laptop:** On wide desktops (`>= 1520px`), `/home` renders 4 balanced columns inside `max-width: 1580px` with `48px` outer margins (`Exam/Plan/Games` · `Main Stream` · `Discover & Leaderboard` · `Quests/Shortcuts/Optional Tools`); steps down cleanly to 3 columns on `1200px–1519px` laptops (`36px` margins), 2 columns on iPad Landscape, and 1 column on phones.

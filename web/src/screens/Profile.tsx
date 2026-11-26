@@ -6,6 +6,7 @@ import IdentityEditor from '../components/IdentityEditor'
 import MasteryMap from '../components/MasteryMap'
 import StudyAnalyticsDeck from '../components/StudyAnalyticsDeck'
 import VaultShowcaseCard from '../components/VaultShowcaseCard'
+import { CatLoader, CatXpBar } from '../components/CatLoader'
 import { UserAvatar } from '../components/AvatarArt'
 import { useEffect, useMemo, useState, type FormEvent } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
@@ -46,6 +47,7 @@ export default function Profile() {
   const [scoreSummary, setScoreSummary] = useState<ScoreSummary | null>(null)
   const [credit, setCredit] = useState<number | null>(null)
   const [creditError, setCreditError] = useState('')
+  const [walletXp, setWalletXp] = useState<{ xp: number; floor?: number; next?: number; league?: string } | null>(null)
   const [tab, setTab] = useState<ProfileTab>(() =>
     location.hash === '#account-tools-title'
       ? 'account'
@@ -76,6 +78,20 @@ export default function Profile() {
           if (run === generation) setScoreSummary(data)
         })
         .catch(() => {})
+      reviewRequest<{ lifetime_xp?: number; level_floor_xp?: number; next_level_xp?: number; league?: { name?: string } }>('/rewards/me')
+        .then((r) => {
+          if (run === generation && typeof r.lifetime_xp === 'number') {
+            setWalletXp({
+              xp: r.lifetime_xp,
+              floor: r.level_floor_xp,
+              next: r.next_level_xp,
+              league: r.league?.name,
+            })
+          }
+        })
+        .catch(() => {
+          if (run === generation) setWalletXp(null)
+        })
       getProfile()
         .then((data) => {
           if (run === generation) {
@@ -172,8 +188,8 @@ export default function Profile() {
         </div>
       )}
       {loading && (
-        <div className="finna-card text-sm text-secondary">
-          Loading your profile…
+        <div className="finna-card flex justify-center py-10">
+          <CatLoader size="md" label="Loading your profile…" />
         </div>
       )}
       {!loading && !profile && (
@@ -214,6 +230,23 @@ export default function Profile() {
                   Study progress stays private unless you opt in to community
                   boards or a public creator page.
                 </p>
+                {walletXp && (() => {
+                  const lvl = Math.max(1, profile.level)
+                  const floorXp = walletXp.floor ?? (lvl <= 1 ? 0 : lvl * lvl * 40)
+                  const nextXp = walletXp.next ?? (lvl + 1) * (lvl + 1) * 40
+                  const inLevel = Math.max(0, walletXp.xp - floorXp)
+                  const span = Math.max(40, nextXp - floorXp)
+                  return (
+                    <CatXpBar
+                      value={inLevel}
+                      max={span}
+                      tone="xp"
+                      label={`Level ${lvl} → Level ${lvl + 1}${walletXp.league ? ` · ${walletXp.league}` : ''}`}
+                      meta={`${walletXp.xp.toLocaleString('en-IN')} / ${nextXp.toLocaleString('en-IN')} XP`}
+                      className="mt-3 max-w-md"
+                    />
+                  )
+                })()}
               </div>
             </div>
 

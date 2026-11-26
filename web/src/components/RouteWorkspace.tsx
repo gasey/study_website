@@ -1,6 +1,7 @@
 import {Component,useLayoutEffect,type ReactNode} from 'react'
 import {useLocation,useNavigationType} from 'react-router-dom'
 import {scrollToResults} from '../lib/pagination'
+import {CatLoader} from './CatLoader'
 const positions=new Map<string,number>()
 let previousPath:string|null=null
 export function RouteNavigation(){
@@ -32,7 +33,7 @@ export function RouteNavigation(){
   return null
 }
 
-export function WorkspaceLoading(){return <div role="status" aria-live="polite" className="mx-auto min-h-[60vh] max-w-shell px-6 py-10"><p className="text-sm text-secondary">Opening workspace…</p><div aria-hidden="true" className="mt-5 space-y-4 motion-safe:animate-pulse"><div className="h-8 max-w-sm rounded bg-paper"/><div className="h-4 max-w-xl rounded bg-paper"/><div className="h-44 rounded-[14px] border border-hairline bg-card"/></div></div>}
+export function WorkspaceLoading(){return <div role="status" aria-live="polite" className="mx-auto flex min-h-[55vh] max-w-shell flex-col items-center justify-center gap-4 px-6 py-12"><CatLoader size="lg" label="Opening workspace…"/><div aria-hidden="true" className="cat-indeterminate-bar"><span/></div></div>}
 export class RouteErrorBoundary extends Component<{children:ReactNode},{failed:boolean}>{
   state={failed:false}
   static getDerivedStateFromError(){return {failed:true}}

@@ -3,6 +3,7 @@ import BillingAccessAdmin from '../components/BillingAccessAdmin'
 import RewardDiagnostics from '../components/RewardDiagnostics'
 import RewardFeatureGates,{type RewardLaunchGates} from '../components/RewardFeatureGates'
 import FlashBanner from '../components/FlashBanner'
+import {CatLoader,CatXpBar} from '../components/CatLoader'
 import {useEffect,useRef,useState} from 'react'
 import {Link} from 'react-router-dom'
 import {reviewRequest} from '../lib/review'
@@ -51,7 +52,12 @@ export default function Rewards(){
   </header>
   {error&&<div className="mt-4"><FlashBanner kind="error" title="Could not load rewards" message={error} onDismiss={()=>setError('')} actionLabel="Retry" onAction={()=>{setError('');void load().catch(e=>setError(e.message))}} extra={<Link to="/login" className="finna-st-btn">Sign in</Link>}/></div>}
   {notice&&<div className="mt-4"><FlashBanner kind="success" title="Reward update" message={notice} onDismiss={()=>setNotice('')}/></div>}
-  {wallet&&<><div className="at-kpi-grid">{[['This month',wallet.monthly_xp.toLocaleString('en-IN')+' XP','is-teal'],['Lifetime',wallet.lifetime_xp.toLocaleString('en-IN')+' XP','is-indigo'],['Reward wallet',wallet.points.toLocaleString('en-IN')+' pts','is-amber'],['Your level','Lvl '+wallet.level+(wallet.title?' · '+wallet.title:''),'is-emerald']].map(([label,value,tone])=><div key={label} className={`at-kpi-tile ${tone}`}><span>{label}</span><strong>{value}</strong></div>)}</div><p className="mt-3 text-xs text-secondary">Today’s study/game XP: <b>{wallet.daily_xp} / {wallet.daily_cap}</b> · resets at midnight IST · Next level at <b>{wallet.next_level_xp.toLocaleString('en-IN')}</b> lifetime XP.</p>
+  {!wallet&&!error&&<div className="mt-8 flex justify-center py-10"><CatLoader size="lg" label="Loading your XP, quests & standings…"/></div>}
+  {wallet&&<><div className="at-kpi-grid">{[['This month',wallet.monthly_xp.toLocaleString('en-IN')+' XP','is-teal'],['Lifetime',wallet.lifetime_xp.toLocaleString('en-IN')+' XP','is-indigo'],['Reward wallet',wallet.points.toLocaleString('en-IN')+' pts','is-amber'],['Your level','Lvl '+wallet.level+(wallet.title?' · '+wallet.title:''),'is-emerald']].map(([label,value,tone])=><div key={label} className={`at-kpi-tile ${tone}`}><span>{label}</span><strong>{value}</strong></div>)}</div>
+  <div className="mt-4 grid gap-4 rounded-[16px] border border-hairline bg-card p-4 sm:grid-cols-2">
+   <CatXpBar value={Math.max(0,wallet.lifetime_xp-wallet.level_floor_xp)} max={Math.max(40,wallet.next_level_xp-wallet.level_floor_xp)} tone="xp" label={`Level ${wallet.level} → Level ${wallet.level+1}`} meta={`${wallet.lifetime_xp.toLocaleString('en-IN')} / ${wallet.next_level_xp.toLocaleString('en-IN')} XP`}/>
+   <CatXpBar value={wallet.daily_xp} max={Math.max(1,wallet.daily_cap)} tone="teal" label="Today’s study & game XP" meta={`${wallet.daily_xp} / ${wallet.daily_cap} XP · resets midnight IST`}/>
+  </div>
  <div className="mt-6 grid gap-4 lg:grid-cols-2">
   <section aria-label="Consistency streak and league" className="ism-card-surface rounded-[14px] border border-hairline bg-card p-5">
    <div className="flex flex-wrap items-start justify-between gap-3">
@@ -93,9 +99,7 @@ export default function Rewards(){
         <div className="text-muted">{q.progress} / {q.target}</div>
        </div>
       </div>
-      <div className="mt-2.5 h-2.5 w-full overflow-hidden rounded-pill bg-ink/10">
-       <div className="h-full rounded-pill bg-correct transition-all duration-500 ease-out" style={{width:`${pct}%`}}/>
-      </div>
+      <CatXpBar value={q.progress} max={Math.max(1,q.target)} tone={q.completed?'gold':'quest'} showCat={pct>0} className="mt-2.5"/>
       <div className="mt-2.5 flex items-center justify-between">
        <span className="font-mono text-xs text-secondary">{q.claimed?'✓ Chest claimed today':q.activity_only?'Warm-up complete · activity only':q.completed?'Ready to claim!':'In progress'}</span>
        {!q.claimed&&<button type="button" disabled={busy||!q.completed||q.reward_eligible===false} onClick={()=>void claimQuest(q.key)} className={BUTTON+(q.completed?' !bg-ink !text-paper':'')}>Claim chest</button>}
