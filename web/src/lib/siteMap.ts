@@ -238,6 +238,16 @@ export const SITE_MAP: readonly Destination[] = [
   },
   // Games dropdown items
   {
+    id: 'blocks',
+    path: '/games/blocks',
+    label: 'Finna Blocks',
+    section: 'practice',
+    blurb: '8×8 block puzzle powered by MPSC bank MCQs — build ×4 combos, fire Laser Clears & compete for high scores.',
+    surfaces: ['index', 'quickfind'],
+    menu: 'games',
+    keywords: 'blocks puzzle tetris block blast endless highscore game daily seed',
+  },
+  {
     id: 'quest',
     path: '/games/quest',
     label: 'Finna Quest RPG',

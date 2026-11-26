@@ -251,27 +251,62 @@ export default function Games() {
           </Link>
         </div>
       )}
-      <section
-        aria-label="Finna Quest RPG"
-        className="mt-5 overflow-hidden rounded-[22px] p-5 text-white shadow-lg sm:p-6"
-        style={{
-          background:
-            "linear-gradient(135deg, #121d2f 0%, #1b324b 55%, #0f4c5c 100%)",
-        }}
-      >
-        <div className="flex flex-wrap items-center justify-between gap-4">
-          <div className="min-w-0 flex-1">
+      <div className="mt-5 grid gap-4 lg:grid-cols-2">
+        <section
+          aria-label="Finna Blocks"
+          className="flex flex-col justify-between overflow-hidden rounded-[22px] p-5 text-white shadow-lg sm:p-6"
+          style={{
+            background:
+              "linear-gradient(135deg, #271547 0%, #432371 52%, #7c3aed 100%)",
+          }}
+        >
+          <div>
             <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.08em] text-amber-200">
-              ⚔️ New Flagship RPG · Curated General Realms
+              🧱 New Endless Puzzle · High-Score Leaderboard
             </span>
-            <h2 className="mt-2.5 font-display text-2xl font-bold text-white sm:text-3xl">
-              Finna Quest — Ascend the Blue Mountain
+            <h2 className="mt-2.5 font-display text-2xl font-bold text-white">
+              Finna Blocks — Bank-Powered 8×8 Blast
             </h2>
-            <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-slate-200">
-              Battle Realm Guardians across <strong>English, Geography, Computer, History, Polity, Science, Economy &amp; Maths</strong> (plus optional Mizo) — zero radiology or specialist technical leaks. 12-Floor Expedition, 3 Bosses, Campfire Power-up Shop, Endless Tower &amp; Daily 10-Q Gauntlet!
+            <p className="mt-1.5 text-sm leading-relaxed text-violet-100">
+              Fit polyomino pieces, clear full rows &amp; columns, and answer real MPSC bank MCQs to stack a <strong>×4 Knowledge Multiplier</strong>, charge <strong>⚡ Laser Clears</strong>, and pull off <strong>🛡 Clutch 3×3 Saves</strong>.
             </p>
           </div>
-          <div className="flex flex-wrap gap-2">
+          <div className="mt-4 flex flex-wrap gap-2">
+            <Link
+              to="/games/blocks"
+              className="inline-flex min-h-11 items-center rounded-pill bg-amber-400 px-5 text-sm font-extrabold text-slate-950 shadow hover:bg-amber-300"
+            >
+              🧱 Play Endless Blocks →
+            </Link>
+            <Link
+              to="/games/blocks?mode=daily"
+              className="inline-flex min-h-11 items-center rounded-pill border border-white/30 bg-white/10 px-4 text-sm font-bold text-white hover:bg-white/20"
+            >
+              📅 Today’s Daily Seed
+            </Link>
+          </div>
+        </section>
+
+        <section
+          aria-label="Finna Quest RPG"
+          className="flex flex-col justify-between overflow-hidden rounded-[22px] p-5 text-white shadow-lg sm:p-6"
+          style={{
+            background:
+              "linear-gradient(135deg, #121d2f 0%, #1b324b 55%, #0f4c5c 100%)",
+          }}
+        >
+          <div>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.08em] text-amber-200">
+              ⚔️ Flagship RPG · Curated General Realms
+            </span>
+            <h2 className="mt-2.5 font-display text-2xl font-bold text-white">
+              Finna Quest — Ascend the Blue Mountain
+            </h2>
+            <p className="mt-1.5 text-sm leading-relaxed text-slate-200">
+              Battle Realm Guardians across <strong>English, Geography, Computer, History, Polity, Science, Economy &amp; Maths</strong>. 12-Floor Expedition, 3 Bosses, Endless Tower &amp; Daily 10-Q Gauntlet!
+            </p>
+          </div>
+          <div className="mt-4 flex flex-wrap gap-2">
             <Link
               to="/games/quest"
               className="inline-flex min-h-11 items-center rounded-pill bg-amber-400 px-5 text-sm font-extrabold text-slate-950 shadow hover:bg-amber-300"
@@ -291,8 +326,8 @@ export default function Games() {
               🏔️ Endless Tower
             </Link>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       <div className="mt-5 flex flex-wrap items-start gap-8">
         <section aria-label="Play modes" className="grid min-w-0 flex-[999_1_620px] gap-3 sm:grid-cols-2">

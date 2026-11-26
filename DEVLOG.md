@@ -1,5 +1,16 @@
 # Devlog
 
+26 November IST — **Shipped Finna Blocks (`/games/blocks`), an 8×8 Polyomino Block-Blast Puzzle Game Powered by Finna's 82,383-Question Bank with Endless & Daily Seed High-Score Leaderboards across API, Web & Mobile (`0144_block_puzzle_runs.sql`, `blocks.py`, `mobile_identity.py`, `test_blocks.py`, `blockPuzzle.ts`, `BlockBlastGame.tsx`, `block-puzzle.css`, `App.tsx`, `siteMap.ts`, `Header.tsx`, `navigation.ts`, `Games.tsx`, `HomeLeftExtras.tsx`, plus mobile `src/lib/blockPuzzle.ts`, `src/app/blocks.tsx`). Deployed API + Web to `https://study.hawayu.in`.**
+
+- **Bank-Synergy Endless Puzzle Loop (`blockPuzzle.ts`, `BlockBlastGame.tsx`, `blocks.tsx`):**
+  - Classic 8×8 polyomino placement with 20 shapes across 3 tiers (Blessed / Standard / Heavy), live clear-line preview, chain clear streaks, Web Audio SFX (Web) & Haptics (Mobile), and both **♾️ Endless High-Score** and **📅 Deterministic Daily Seed** modes.
+  - **Study Forge & Knowledge Multiplier (`×1 → ×4`):** Every 2 trays cleared (or on-demand via 📚 Study Boost / 🔄 Study Reroll) pulls verified MPSC bank MCQs (filtered by optional subject scope, excluding specialist technical/diagram questions). Correct answers stack a `×1 → ×4` combo multiplier on all row/col blasts, deal clean blessed trays, and charge **⚡ Laser Clear** (3 correct MCQs → wipe any 1 full row + 1 full column). Wrong answers reveal the official answer & explanation and drop 1 clearable stone block.
+  - **🛡 3 Clutch Saves:** When no tray piece fits, learners get up to 3 Clutch Save bank MCQs per run — answering right blasts open the densest 3×3 crater and deals fresh blessed pieces to keep the run alive.
+- **Server-Validated Persistence, XP & Competitive Leaderboard (`0144_block_puzzle_runs.sql`, `api/app/routers/blocks.py`):**
+  - Applied migration `0144_block_puzzle_runs.sql` (`block_puzzle_runs` table + weekly/daily/user indexes + `mpsc` role grants) on Oracle Postgres.
+  - Added `POST /api/blocks/runs`, `/checkpoint`, `/finish` (with anti-cheat score upper bound and daily-capped `'game'` XP via `reward_ledger`), `GET /api/blocks/me`, and `GET /api/blocks/leaderboard?period=week|daily|all` with pixel avatars and leaderboard privacy controls (`2/2` pytest passed; allowlisted in `mobile_identity.py`).
+- **Discovery & Native Mobile Parity:** Surfaced across Web (`Games ▾` header menu, `/games` flagship hero, `/home` Popular Games, `⌘K`) and Mobile (`src/app/blocks.tsx`, `games.tsx`, `more.tsx`, `MobileHomeHub.tsx`, `navigation.ts`; `44/44` tests + `tsc --noEmit` + contract checks clean).
+
 26 November IST — **Shipped Rplus `[CSS] Cat loader` (`PWZYRM`) Inspired Curled Cat Loaders & Animated Cat-Runner XP/Progress Bars across Web & Mobile (`CatLoader.tsx`, `RouteWorkspace.tsx`, `Profile.tsx`, `Rewards.tsx`, `finna.css`, `quest-game.css`, plus mobile `CatLoader.tsx`, `ui.tsx`, `study.tsx`, `rewards.tsx`).**
 
 - **Curled Cat Loader (`CatLoader.tsx`, `finna.css`):** Pure-CSS ginger tabby cat chasing its tail in a staggered circular ring (animated body arc, ears/head, and cream-tipped tail, respecting `prefers-reduced-motion`) wired into `WorkspaceLoading`, `Profile`, and `Rewards`, with a matching native SVG `Animated.loop` version in mobile `Busy`.

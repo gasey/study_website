@@ -222,3 +222,6 @@ app.add_middleware(youtube_current_affairs.YouTubeBodyLimit)
 
 from .routers import atlas
 app.include_router(atlas.router)
+
+from .routers import blocks
+app.include_router(blocks.router)

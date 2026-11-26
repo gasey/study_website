@@ -51,6 +51,14 @@ interface StandingsPayload {
 
 const POPULAR_GAMES = [
   {
+    id: 'blocks',
+    to: '/games/blocks',
+    title: 'Finna Blocks',
+    subtitle: '8×8 Bank-MCQ Puzzle · Endless & Daily Seed',
+    tag: 'Puzzle',
+    tone: 'amber',
+  },
+  {
     id: 'quest',
     to: '/games/quest',
     title: 'Finna Quest',
@@ -64,7 +72,7 @@ const POPULAR_GAMES = [
     title: 'Daily Five',
     subtitle: '5-question daily ranked sprint',
     tag: 'Daily',
-    tone: 'amber',
+    tone: 'cobalt',
   },
   {
     id: 'cup',
@@ -72,14 +80,6 @@ const POPULAR_GAMES = [
     title: 'Weekly Cup',
     subtitle: 'Weekend 15-Q MPSC tournament',
     tag: 'Cup',
-    tone: 'cobalt',
-  },
-  {
-    id: 'duel',
-    to: '/games?mode=duel',
-    title: '1v1 Duel & Speed',
-    subtitle: 'Live battles & 60-second blitz',
-    tag: 'Live',
     tone: 'teal',
   },
 ] as const

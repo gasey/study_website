@@ -43,6 +43,7 @@ READ = (
     r'/api/study-sessions(?:/[^/]+)?',
     r'/api/mocks(?:/[^/]+)?',
     r'/api/games(?:/(?:exam-sections|join-preview|leaderboard|rooms/[^/]+))?',
+    r'/api/blocks/(?:leaderboard|me)',
     # Private desks retain their existing membership and disclosure guards.
     # /api/desk/admin/* is never matched here.
     r'/api/desk/(?:personal|overview|questions|rooms)',
@@ -76,6 +77,7 @@ WRITE = {
              r'/api/study-sessions(?:/[^/]+/(?:answer|position|viewed|finish))?',
              r'/api/mocks(?:/[^/]+/submit)?',
              r'/api/games/(?:preview|rooms|join|rooms/[^/]+/(?:ready|start|answer|leave))',
+             r'/api/blocks/runs(?:/[^/]+/(?:checkpoint|finish))?',
              # Community writes. Posting is rate-limited to 30/day and the first
              # three posts from a new author queue for moderation (discussions.py),
              # so the learner-only boundary still holds. /api/community/admin/* is

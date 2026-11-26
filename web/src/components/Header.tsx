@@ -61,6 +61,7 @@ const MENU_CARD_META: Record<string, { tone: MenuTone; tag: string; icon: string
   'practice-build': { tone: 'cobalt', tag: 'Custom', icon: 'M12 5v14M5 12h14' },
   tests: { tone: 'amber', tag: 'Timed', icon: 'M12 7v5l3 2M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z' },
   quest: { tone: 'rose', tag: '16-Bit RPG', icon: 'M14.5 17.5 3 6V3h3l11.5 11.5M13 19l6-6m-3 3 4 4m-1 1 2-2' },
+  blocks: { tone: 'amber', tag: 'Puzzle', icon: 'M4 4h7v7H4V4Zm9 0h7v7h-7V4ZM4 13h7v7H4v-7Zm9 3h7v4h-7v-4Z' },
   games: { tone: 'violet', tag: 'Arcade', icon: 'M6 12h4M8 10v4m7-2h.01M18 10h.01M5 7h14a3 3 0 0 1 3 3v4a4 4 0 0 1-4 4h-2l-2-2h-4l-2 2H6a4 4 0 0 1-4-4v-4a3 3 0 0 1 3-3Z' },
   'games-daily': { tone: 'amber', tag: 'Daily 5', icon: 'M12 3v3m0 12v3M4.9 4.9l2.1 2.1m10 10 2.1 2.1M3 12h3m12 0h3M4.9 19.1 7 17m10-10 2.1-2.1M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z' },
   'games-cup': { tone: 'cobalt', tag: 'Weekend', icon: 'M6 4h12v4a6 6 0 0 1-12 0V4ZM6 6H3v2a3 3 0 0 0 3 3m12-5h3v2a3 3 0 0 1-3 3M12 14v5m-4 0h8' },

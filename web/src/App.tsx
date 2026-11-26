@@ -56,6 +56,7 @@ const Profile = lazy(routeModules.Profile)
 const Games = lazy(() => import('./screens/Games'))
 const GamePlayer = lazy(() => import('./screens/Games').then((m) => ({ default: m.GamePlayer })))
 const QuestGame = lazy(() => import('./screens/QuestGame'))
+const BlockBlastGame = lazy(() => import('./screens/BlockBlastGame'))
 const TopicTrail = lazy(() => import('./screens/TopicTrail'))
 const Stats = lazy(() => import('./screens/Stats'))
 const GlobalSearch = lazy(() => import('./screens/GlobalSearch'))
@@ -350,6 +351,7 @@ export default function App() {
                 <Route path="/vault" element={<PersonalVault />} />
                 <Route path="/vault/share/:token" element={<PersonalVault />} />
                 <Route path="/games/quest" element={<QuestGame />} />
+                <Route path="/games/blocks" element={<BlockBlastGame />} />
                 <Route path="/games/:id?" element={<GamesRoute />} />
                 <Route path="/search" element={<GlobalSearch />} />
                 <Route path="/community/:sub?" element={<CommunityRoute />} />
