@@ -28,7 +28,7 @@ READ = (
     # Learner content and account-owned Inbox. No editorial/admin routes.
     r'/api/materials(?:/[^/]+)?',
     r'/api/studio/materials(?:/[^/]+)?',
-    r'/api/creators(?:/[^/]+)?',
+    r'/api/creators(?:/[^/]+(?:/activity)?)?',
     r'/api/inbox/(?:notifications|preferences|threads|unread)',
     r'/api/inbox/threads/[^/]+/messages',
     r'/api/rewards/(?:me|history|leaderboard)', r'/api/scoring-facts',

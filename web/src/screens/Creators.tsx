@@ -10,9 +10,176 @@ const BUTTON='inline-flex min-h-11 items-center justify-center rounded-pill bord
 const INPUT='min-h-11 w-full min-w-0 rounded-[8px] border border-hairline bg-card px-3 py-2 text-sm'
 const SHELL='mx-auto max-w-[1180px] px-5 pb-24 pt-8 sm:px-6'
 interface TargetExam{id:string;title:string;is_primary?:boolean}
-interface LearnerScores{weekly_xp:number;league:string;lifetime_xp:number;streak_days:number;daily_five_plays:number;daily_five_best:number;cup_plays:number;cup_best:number;duel_wins:number}
+interface LearnerScores{weekly_xp:number;league:string;lifetime_xp:number;streak_days:number;daily_five_plays:number;daily_five_best:number;cup_plays:number;cup_best:number;duel_wins:number;blocks_best?:number;blocks_runs?:number}
+interface LearnerActivitySummary{questions_answered:number;questions_correct:number|null;saved_questions:number;posts_count:number;doubts_count:number;answers_count:number;shared_packs_count:number;shared_tests_count:number}
 interface Creator{avatar?:AvatarLook|null;id:string;handle:string;bio:string;materials:number;level?:number;target_exams?:TargetExam[]}
-interface PublicCreator extends Creator{scholar_title?:string;district?:string|null;board_public?:boolean;scores?:LearnerScores|null;community:CommunityReputation;public:boolean;following:boolean;followers:number;is_self:boolean;contributions:{id:string;title:string;kind:string;canonical_id:string|null;updated_at:string}[];has_more_contributions:boolean}
+interface PublicCreator extends Creator{scholar_title?:string;district?:string|null;board_public?:boolean;scores?:LearnerScores|null;activity?:LearnerActivitySummary;community:CommunityReputation;public:boolean;following:boolean;followers:number;is_self:boolean;contributions:{id:string;title:string;kind:string;canonical_id:string|null;updated_at:string}[];has_more_contributions:boolean}
+type ProfileTab='posts'|'doubts'|'saved'|'answered'|'materials'|'contributions'
+interface ActivityPostItem{id:number;kind:string;body:string;topic_tag?:string|null;topic_label?:string|null;reference?:{kind:string;id:string}|null;helpful:number;reply_count:number;created_at:string}
+interface ActivityDoubtItem{id:number;kind:'doubt'|'explanation'|'reply';canonical_id:string;question:string;subject?:string|null;topic?:string|null;accepted:boolean;pinned:boolean;helpful:number;created_at:string;body:string|null;spoiler_locked:boolean}
+interface ActivitySavedQuestion{canonical_id:string;question:string;subject?:string|null;topic?:string|null;saved_at:string}
+interface ActivitySharedPack{token:string;title:string;description:string;mode:string;duration_minutes:number;item_count:number;clones_count:number;created_at:string}
+interface ActivitySharedTest{entry_id:string;title:string;description:string;question_count:number;duration_minutes:number;published_at:string}
+interface ActivityAnsweredItem{canonical_id:string;question:string;subject?:string|null;topic?:string|null;answered_at:string;outcome:'correct'|'wrong'|null}
+interface ActivityPayload{tab:'posts'|'doubts'|'saved'|'answered';items:unknown[];has_more:boolean;shared_packs?:ActivitySharedPack[];shared_tests?:ActivitySharedTest[]}
+function refHref(ref?:{kind:string;id:string}|null){
+ if(!ref||!ref.id)return null
+ if(ref.kind==='question')return '/bank/'+encodeURIComponent(ref.id)
+ if(ref.kind==='material')return '/materials/'+encodeURIComponent(ref.id)
+ if(ref.kind==='exam')return '/exams/'+encodeURIComponent(ref.id)
+ return null
+}
+function CreatorActivityFeed({uid,tab}:{uid:string;tab:'posts'|'doubts'|'saved'|'answered'}){
+ const [offset,setOffset]=useState(0)
+ const [data,setData]=useState<ActivityPayload|null>(null)
+ const [error,setError]=useState('')
+ const [retry,setRetry]=useState(0)
+ useEffect(()=>{setOffset(0)},[uid,tab])
+ useEffect(()=>{
+  let live=true;setData(null);setError('')
+  contentRequest<ActivityPayload>(`/creators/${encodeURIComponent(uid)}/activity?tab=${tab}&offset=${offset}`)
+   .then(r=>{if(live)setData(r)})
+   .catch(e=>{if(live)setError(e.message)})
+  return()=>{live=false}
+ },[uid,tab,offset,retry])
+
+ if(error)return <div className="mt-5"><ErrorNotice error={error}/><button onClick={()=>setRetry(n=>n+1)} className={BUTTON+' mt-3'}>Retry</button></div>
+ if(!data)return <p role="status" className="mt-5 text-sm text-muted">Loading activity…</p>
+
+ if(tab==='posts'){
+  const items=data.items as ActivityPostItem[]
+  return <section aria-label="Study posts and notes" className="mt-5 space-y-3">
+   {items.map(p=>{
+    const href=refHref(p.reference)
+    return <article key={p.id} className="lp-feed-card">
+     <div className="lp-feed-head">
+      <span className={`lp-kind-pill ${p.kind==='material-share'?'is-teal':'is-cobalt'}`}>{p.kind==='material-share'?'Material share':'Study post'}</span>
+      {p.topic_label&&<span className="lp-topic-pill">{p.topic_label}</span>}
+      <span className="lp-feed-date">{new Date(p.created_at).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})}</span>
+     </div>
+     <p className="lp-feed-body">{p.body}</p>
+     <div className="lp-feed-foot">
+      <span>👍 {p.helpful} helpful · 💬 {p.reply_count} {p.reply_count===1?'reply':'replies'}</span>
+      <div className="flex flex-wrap gap-3">
+       {href&&<Link to={href} className="font-semibold text-link hover:underline">Open linked item →</Link>}
+       <Link to={`/community?post=${p.id}`} className="font-semibold text-link hover:underline">View in Community →</Link>
+      </div>
+     </div>
+    </article>
+   })}
+   {!items.length&&<p className="rounded-[14px] border border-hairline bg-card p-6 text-sm text-secondary">No public study posts or notes yet.</p>}
+   <PageButtons offset={offset} more={data.has_more} onPage={setOffset}/>
+  </section>
+ }
+
+ if(tab==='doubts'){
+  const items=data.items as ActivityDoubtItem[]
+  return <section aria-label="Doubts and discussion answers" className="mt-5 space-y-3">
+   {items.map(d=><article key={d.id} className="lp-feed-card">
+    <div className="lp-feed-head">
+     <span className={`lp-kind-pill ${d.kind==='doubt'?'is-amber':d.kind==='explanation'?'is-emerald':'is-violet'}`}>
+      {d.kind==='doubt'?'Doubt asked':d.kind==='explanation'?'Explanation':'Discussion reply'}
+     </span>
+     {d.accepted&&<span className="lp-kind-pill is-emerald">✓ Accepted</span>}
+     {d.pinned&&<span className="lp-kind-pill is-cobalt">📌 Pinned</span>}
+     {d.subject&&<span className="lp-topic-pill">{d.subject}</span>}
+     <span className="lp-feed-date">{new Date(d.created_at).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})}</span>
+    </div>
+    <Link to={'/bank/'+encodeURIComponent(d.canonical_id)} className="lp-feed-q">{d.question}</Link>
+    {d.spoiler_locked?(
+     <p className="lp-spoiler-note">🔒 Answer or reveal this question first to read their discussion without spoilers.</p>
+    ):(
+     d.body&&<p className="lp-feed-body">{d.body}</p>
+    )}
+    <div className="lp-feed-foot">
+     <span>👍 {d.helpful} helpful</span>
+     <Link to={'/bank/'+encodeURIComponent(d.canonical_id)} className="font-semibold text-link hover:underline">
+      {d.spoiler_locked?'Attempt question to unlock →':'Open question thread →'}
+     </Link>
+    </div>
+   </article>)}
+   {!items.length&&<p className="rounded-[14px] border border-hairline bg-card p-6 text-sm text-secondary">No public doubts or question answers yet.</p>}
+   <PageButtons offset={offset} more={data.has_more} onPage={setOffset}/>
+  </section>
+ }
+
+ if(tab==='saved'){
+  const items=data.items as ActivitySavedQuestion[]
+  const packs=data.shared_packs||[]
+  const tests=data.shared_tests||[]
+  return <section aria-label="Saved questions, shared packs and tests" className="mt-5 space-y-5">
+   {!!packs.length&&(
+    <div>
+     <h2 className="mb-2.5 font-mono text-xs font-bold uppercase tracking-wider text-secondary">Shared Vault Study Packs ({packs.length})</h2>
+     <div className="grid gap-3 md:grid-cols-2">
+      {packs.map(pk=><Link key={pk.token} to={'/vault/share/'+encodeURIComponent(pk.token)} className="lp-feed-card transition hover:border-ink">
+       <div className="lp-feed-head">
+        <span className="lp-kind-pill is-violet">📦 Vault Pack · {pk.mode}</span>
+        <span className="lp-feed-date">{pk.item_count} Qs · {pk.clones_count} clones</span>
+       </div>
+       <strong className="mt-1 block font-display text-lg text-ink">{pk.title}</strong>
+       {pk.description&&<p className="mt-1 line-clamp-2 text-xs text-secondary">{pk.description}</p>}
+      </Link>)}
+     </div>
+    </div>
+   )}
+   {!!tests.length&&(
+    <div>
+     <h2 className="mb-2.5 font-mono text-xs font-bold uppercase tracking-wider text-secondary">Published Shared Mock Tests ({tests.length})</h2>
+     <div className="grid gap-3 md:grid-cols-2">
+      {tests.map(t=><Link key={t.entry_id} to={'/tests/'+encodeURIComponent(t.entry_id)} className="lp-feed-card transition hover:border-ink">
+       <div className="lp-feed-head">
+        <span className="lp-kind-pill is-teal">⏱ Shared Test</span>
+        <span className="lp-feed-date">{t.question_count} Qs{t.duration_minutes?` · ${t.duration_minutes}m`:''}</span>
+       </div>
+       <strong className="mt-1 block font-display text-lg text-ink">{t.title}</strong>
+       {t.description&&<p className="mt-1 line-clamp-2 text-xs text-secondary">{t.description}</p>}
+      </Link>)}
+     </div>
+    </div>
+   )}
+   <div>
+    <h2 className="mb-2.5 font-mono text-xs font-bold uppercase tracking-wider text-secondary">Saved Bank Questions</h2>
+    <div className="space-y-2.5">
+     {items.map(sq=><Link key={sq.canonical_id} to={'/bank/'+encodeURIComponent(sq.canonical_id)} className="lp-feed-card block transition hover:border-ink">
+      <div className="lp-feed-head">
+       <span className="lp-kind-pill is-amber">★ Saved</span>
+       {sq.subject&&<span className="lp-topic-pill">{sq.subject}</span>}
+       {sq.topic&&<span className="lp-topic-pill">{sq.topic}</span>}
+       <span className="lp-feed-date">{new Date(sq.saved_at).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})}</span>
+      </div>
+      <p className="lp-feed-q">{sq.question}</p>
+      <div className="lp-feed-foot">
+       <span className="text-muted">From Finna Question Bank</span>
+       <span className="font-semibold text-link">Practice question →</span>
+      </div>
+     </Link>)}
+     {!items.length&&!packs.length&&!tests.length&&<p className="rounded-[14px] border border-hairline bg-card p-6 text-sm text-secondary">No saved bank questions, vault packs, or shared tests yet.</p>}
+    </div>
+    <PageButtons offset={offset} more={data.has_more} onPage={setOffset}/>
+   </div>
+  </section>
+ }
+
+ const items=data.items as ActivityAnsweredItem[]
+ return <section aria-label="Recently practiced questions" className="mt-5 space-y-2.5">
+  {items.map(aq=><Link key={aq.canonical_id} to={'/bank/'+encodeURIComponent(aq.canonical_id)} className="lp-feed-card block transition hover:border-ink">
+   <div className="lp-feed-head">
+    {aq.outcome==='correct'?<span className="lp-kind-pill is-emerald">✓ Solved</span>:aq.outcome==='wrong'?<span className="lp-kind-pill is-amber">Reviewed</span>:<span className="lp-kind-pill is-cobalt">Practiced</span>}
+    {aq.subject&&<span className="lp-topic-pill">{aq.subject}</span>}
+    {aq.topic&&<span className="lp-topic-pill">{aq.topic}</span>}
+    <span className="lp-feed-date">{new Date(aq.answered_at).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})}</span>
+   </div>
+   <p className="lp-feed-q">{aq.question}</p>
+   <div className="lp-feed-foot">
+    <span className="text-muted">Official MPSC Bank Question</span>
+    <span className="font-semibold text-link">Try this question →</span>
+   </div>
+  </Link>)}
+  {!items.length&&<p className="rounded-[14px] border border-hairline bg-card p-6 text-sm text-secondary">No practiced bank questions recorded yet.</p>}
+  <PageButtons offset={offset} more={data.has_more} onPage={setOffset}/>
+ </section>
+}
 function ErrorNotice({error}:{error:string}){return error?<p role="alert" className="mt-4 rounded-[10px] border border-hairline bg-card p-4 text-sm text-mypick">{error} <Link to="/login" className="text-link underline">Sign in</Link></p>:null}
 function PageButtons({offset,more,onPage}:{offset:number;more:boolean;onPage:(n:number)=>void}){return <nav aria-label="Creator pages" className="mt-5 flex justify-between gap-3"><button disabled={!offset} className={BUTTON} onClick={()=>onPage(Math.max(0,offset-12))}>← Previous</button><button disabled={!more} className={BUTTON} onClick={()=>onPage(offset+12)}>Next →</button></nav>}
 export function CreatorDirectory(){const [params,setParams]=useSearchParams();const q=params.get('q')||'',offset=Math.max(0,Number(params.get('offset'))||0);const sort=params.get('sort')==='alpha'?'alpha':'discover';const [seed,setSeed]=useState('');const [data,setData]=useState<{items:Creator[];total:number}|null>(null),[error,setError]=useState(''),[retry,setRetry]=useState(0)
@@ -25,9 +192,10 @@ function CreatorMaterials({uid,following=false,embedded=false}:{uid?:string;foll
  useEffect(()=>{let live=true;setData(null);setError('');contentRequest<{items:MaterialItem[];total:number}>('/materials?'+new URLSearchParams({...(uid?{creator_id:uid}:{}),following:String(following),sort:'recent',limit:'12',offset:String(offset)})).then(r=>{if(live)setData(r)}).catch(e=>{if(live)setError(e.message)});return()=>{live=false}},[uid,following,offset,retry])
  return <section aria-label="Published materials" className="mt-6"><ErrorNotice error={error}/>{error&&<button onClick={()=>setRetry(n=>n+1)} className={BUTTON+' mt-3'}>Retry</button>}{!data&&!error&&<p role="status" className="text-muted">Loading publications…</p>}{data&&<><div className={embedded?"grid gap-4":"grid gap-4 md:grid-cols-2 lg:grid-cols-3"}>{data.items.map(m=><MaterialCard key={m.id} item={m}/>)}</div>{!data.items.length&&<p className="rounded-[14px] border border-hairline bg-card p-6 text-secondary">{following?'No publications to show yet. Follow a public creator, then their approved materials will appear here.':'No published materials yet.'}</p>}<PageButtons offset={offset} more={offset+12<data.total} onPage={setOffset}/></>}</section>
 }
-export default function CreatorProfile(){const {generation,version}=useCommunityEpoch();const {id=''}=useParams();const nav=useNavigate();const [data,setData]=useState<PublicCreator|null>(null),[error,setError]=useState(''),[busy,setBusy]=useState(false),[refresh,setRefresh]=useState(0),[offset,setOffset]=useState(0),[tab,setTab]=useState<'materials'|'contributions'>('materials'),[notice,setNotice]=useState(''),[reportOpen,setReportOpen]=useState(false),[blockConfirm,setBlockConfirm]=useState(false),[report,setReport]=useState({reason:'spam',note:''})
- useEffect(()=>{setOffset(0);setTab('materials');setReportOpen(false);setBlockConfirm(false);setNotice('');setReport({reason:'spam',note:''})},[id,version])
- useEffect(()=>{let live=true;const run=++generation.current;setData(null);setError('');contentRequest<PublicCreator>('/creators/'+encodeURIComponent(id)+'?offset='+offset).then(r=>{if(live&&run===generation.current)setData(r)}).catch(e=>{if(live&&run===generation.current)setError(e.message)});return()=>{live=false;++generation.current}},[id,offset,refresh,version])
+export default function CreatorProfile(){const {generation,version}=useCommunityEpoch();const {id=''}=useParams();const nav=useNavigate();const [data,setData]=useState<PublicCreator|null>(null),[error,setError]=useState(''),[busy,setBusy]=useState(false),[refresh,setRefresh]=useState(0),[offset,setOffset]=useState(0),[tab,setTab]=useState<ProfileTab>('posts'),[tabChosen,setTabChosen]=useState(false),[notice,setNotice]=useState(''),[reportOpen,setReportOpen]=useState(false),[blockConfirm,setBlockConfirm]=useState(false),[report,setReport]=useState({reason:'spam',note:''})
+ useEffect(()=>{setOffset(0);setTab('posts');setTabChosen(false);setReportOpen(false);setBlockConfirm(false);setNotice('');setReport({reason:'spam',note:''})},[id,version])
+ useEffect(()=>{let live=true;const run=++generation.current;setData(null);setError('');contentRequest<PublicCreator>('/creators/'+encodeURIComponent(id)+'?offset='+offset).then(r=>{if(live&&run===generation.current){setData(r);if(!tabChosen){const act=r.activity;if(act?.posts_count)setTab('posts');else if((act?.doubts_count||0)+(act?.answers_count||0)>0)setTab('doubts');else if(r.materials>0)setTab('materials');else if((act?.saved_questions||0)+(act?.shared_packs_count||0)+(act?.shared_tests_count||0)>0)setTab('saved');else if(act?.questions_answered)setTab('answered');else if(r.contributions.length)setTab('contributions')}}}).catch(e=>{if(live&&run===generation.current)setError(e.message)});return()=>{live=false;++generation.current}},[id,offset,refresh,version,tabChosen])
+ const pickTab=(next:ProfileTab)=>{setTabChosen(true);setTab(next)}
  async function act(kind:string,body:unknown){setBusy(true);setError('');try{await contentRequest('/creators/'+encodeURIComponent(id)+'/'+kind,body);if(kind==='block'){nav('/creators/settings');return}if(kind==='report'){setNotice('Report sent to the owner for review.');setReportOpen(false)}else setRefresh(n=>n+1)}catch(e){setError((e as Error).message)}finally{setBusy(false)}}
  return <main className={SHELL}>
   <div className="flex flex-wrap items-center justify-between gap-3">
@@ -100,28 +268,97 @@ export default function CreatorProfile(){const {generation,version}=useCommunity
       <p>{data.scores.cup_plays} cup entries</p>
      </article>
      <article className="lp-score-tile is-violet">
-      <span>Streak &amp; Duels</span>
+      <span>Streak &amp; Arcade</span>
       <strong>{data.scores.streak_days}d <small>streak</small></strong>
-      <p>{data.scores.duel_wins} duel {data.scores.duel_wins === 1 ? 'win' : 'wins'}</p>
+      <p>
+       {data.scores.duel_wins} duel {data.scores.duel_wins === 1 ? 'win' : 'wins'}
+       {data.scores.blocks_best ? ` · 🧱 ${data.scores.blocks_best.toLocaleString('en-IN')} Blocks` : ''}
+      </p>
      </article>
     </section>
    ) : (
     <p className="mt-4 rounded-[12px] border border-hairline bg-card px-4 py-3 text-xs text-secondary">
      {data.is_self
-      ? 'Your scores are currently hidden from others. Opt into leaderboard visibility in Profile → Rewards to display your Weekly XP, Daily Five & Cup tiles here.'
+      ? 'Your scores are currently hidden from others. Opt into leaderboard visibility in Profile → Rewards to display your Weekly XP, Daily Five, Cup & Blocks tiles here.'
       : 'This learner keeps their competitive scores private.'}
     </p>
    )}
 
    {data.community&&<ReputationSummary value={data.community}/>}
    {blockConfirm&&<section aria-label="Confirm creator block" className="mt-4 rounded-[12px] border border-hairline bg-card p-5"><h2 className="font-display text-xl">Block this learner?</h2><p className="mt-2 text-sm text-secondary">Follows in both directions will be removed. Their materials, profile, discussions and desk messages will be hidden while signed in, and pending desk invitations will be cancelled. You can unblock them anytime in visibility settings.</p><div className="mt-3 flex gap-3"><button disabled={busy} className={BUTTON+' text-mypick'} onClick={()=>void act('block',{enabled:true})}>Confirm block</button><button disabled={busy} className={BUTTON} onClick={()=>setBlockConfirm(false)}>Cancel</button></div></section>}
-   <div className="mt-3 grid gap-3 sm:grid-cols-2">
-    <div className="rounded-[14px] border border-hairline bg-card p-4"><strong className="font-display text-2xl">{data.materials}</strong><p className="text-sm text-secondary">published materials</p></div>
-    <div className="rounded-[14px] border border-hairline bg-card p-4"><strong className="font-display text-2xl">{data.followers}</strong><p className="text-sm text-secondary">followers</p></div>
-   </div>
+
+   {/* Public Study & Community Activity Strip */}
+   <section aria-label="Learner study and community summary" className="lp-activity-grid mt-4">
+    <button type="button" onClick={()=>pickTab('answered')} className={`lp-act-tile${tab==='answered'?' is-active':''}`}>
+     <span className="lp-act-lbl">Questions Answered</span>
+     <strong>{(data.activity?.questions_answered??0).toLocaleString('en-IN')}</strong>
+     <small>
+      {data.activity?.questions_correct!=null&&data.activity.questions_answered>0
+       ? `${Math.round((data.activity.questions_correct/data.activity.questions_answered)*100)}% accuracy`
+       : 'Bank practice'}
+     </small>
+    </button>
+    <button type="button" onClick={()=>pickTab('saved')} className={`lp-act-tile${tab==='saved'?' is-active':''}`}>
+     <span className="lp-act-lbl">Saved &amp; Packs</span>
+     <strong>{(data.activity?.saved_questions??0).toLocaleString('en-IN')}</strong>
+     <small>
+      {(data.activity?.shared_packs_count??0)+(data.activity?.shared_tests_count??0)} shared packs &amp; tests
+     </small>
+    </button>
+    <button type="button" onClick={()=>pickTab('doubts')} className={`lp-act-tile${tab==='doubts'?' is-active':''}`}>
+     <span className="lp-act-lbl">Doubts &amp; Q&amp;A</span>
+     <strong>{((data.activity?.doubts_count??0)+(data.activity?.answers_count??0)).toLocaleString('en-IN')}</strong>
+     <small>{data.activity?.doubts_count??0} doubts · {data.activity?.answers_count??0} answers</small>
+    </button>
+    <button type="button" onClick={()=>pickTab('posts')} className={`lp-act-tile${tab==='posts'?' is-active':''}`}>
+     <span className="lp-act-lbl">Community Posts</span>
+     <strong>{(data.activity?.posts_count??0).toLocaleString('en-IN')}</strong>
+     <small>Study notes &amp; shares</small>
+    </button>
+    <button type="button" onClick={()=>pickTab('materials')} className={`lp-act-tile${tab==='materials'?' is-active':''}`}>
+     <span className="lp-act-lbl">Materials · Followers</span>
+     <strong>{data.materials}</strong>
+     <small>{data.followers} {data.followers===1?'follower':'followers'}</small>
+    </button>
+   </section>
+
    {reportOpen&&<form onSubmit={(e:FormEvent)=>{e.preventDefault();void act('report',report)}} className="mt-4 rounded-[14px] border border-hairline bg-card p-5"><label className="block text-sm">Reason<select className={INPUT+' mt-2'} value={report.reason} onChange={e=>setReport({...report,reason:e.target.value})}>{['spam','harassment','impersonation','other'].map(r=><option key={r}>{r}</option>)}</select></label><label className="mt-3 block text-sm">What should be reviewed?<textarea required minLength={10} maxLength={2000} value={report.note} onChange={e=>setReport({...report,note:e.target.value})} className={INPUT+' mt-2'}/></label><button disabled={busy} className={BUTTON+' mt-3'}>Send report</button></form>}
-   <div className="mt-5 flex gap-2" role="group" aria-label="Creator content"><button aria-pressed={tab==='materials'} onClick={()=>setTab('materials')} className={BUTTON}>Materials</button><button aria-pressed={tab==='contributions'} onClick={()=>setTab('contributions')} className={BUTTON}>Reviewed contributions</button></div>
-   {tab==='materials'?<CreatorMaterials uid={id}/>:<section className="mt-5 space-y-3">{data.contributions.map(c=><Link key={c.id} to={c.canonical_id?'/bank/'+encodeURIComponent(c.canonical_id):'/community/questions'} className="block rounded-[12px] border border-hairline bg-card p-5"><div className="font-mono text-xs uppercase text-muted">Published · {c.kind.replace(/_/g,' ')}</div><h2 className="mt-2 break-words font-display text-xl">{c.title}</h2><p className="mt-2 text-xs text-muted">{new Date(c.updated_at).toLocaleDateString('en-IN')}</p></Link>)}{!data.contributions.length&&<p className="rounded-[12px] border border-hairline bg-card p-5 text-secondary">No publicly attributed published bank contributions yet.</p>}<PageButtons offset={offset} more={data.has_more_contributions} onPage={setOffset}/><p className="text-xs text-muted">Contribution attribution follows the creator’s separate contribution-visibility setting.</p></section>}
+
+   <div className="lp-tab-bar mt-5" role="tablist" aria-label="Learner profile sections">
+    {([
+     {id:'posts',label:'Posts',count:data.activity?.posts_count??0},
+     {id:'doubts',label:'Doubts & Q&A',count:(data.activity?.doubts_count??0)+(data.activity?.answers_count??0)},
+     {id:'saved',label:'Saved & Packs',count:(data.activity?.saved_questions??0)+(data.activity?.shared_packs_count??0)+(data.activity?.shared_tests_count??0)},
+     {id:'answered',label:'Answered',count:data.activity?.questions_answered??0},
+     {id:'materials',label:'Materials',count:data.materials},
+     {id:'contributions',label:'Contributions',count:data.contributions.length},
+    ] as const).map(item=>(
+     <button
+      key={item.id}
+      type="button"
+      role="tab"
+      aria-selected={tab===item.id}
+      onClick={()=>pickTab(item.id)}
+      className={`lp-tab-pill${tab===item.id?' is-active':''}`}
+     >
+      <span>{item.label}</span>
+      <span className="lp-tab-count">{item.count}</span>
+     </button>
+    ))}
+   </div>
+
+   {tab==='materials' ? (
+    <CreatorMaterials uid={id}/>
+   ) : tab==='contributions' ? (
+    <section className="mt-5 space-y-3">
+     {data.contributions.map(c=><Link key={c.id} to={c.canonical_id?'/bank/'+encodeURIComponent(c.canonical_id):'/community/questions'} className="block rounded-[12px] border border-hairline bg-card p-5 transition hover:border-ink"><div className="font-mono text-xs uppercase text-muted">Published · {c.kind.replace(/_/g,' ')}</div><h2 className="mt-2 break-words font-display text-xl">{c.title}</h2><p className="mt-2 text-xs text-muted">{new Date(c.updated_at).toLocaleDateString('en-IN')}</p></Link>)}
+     {!data.contributions.length&&<p className="rounded-[12px] border border-hairline bg-card p-5 text-secondary">No publicly attributed published bank contributions yet.</p>}
+     <PageButtons offset={offset} more={data.has_more_contributions} onPage={setOffset}/>
+     <p className="text-xs text-muted">Contribution attribution follows the creator’s separate contribution-visibility setting.</p>
+    </section>
+   ) : (
+    <CreatorActivityFeed uid={id} tab={tab}/>
+   )}
   </>}
  </main>
 }

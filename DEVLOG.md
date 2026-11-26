@@ -1,5 +1,13 @@
 # Devlog
 
+26 November IST — **Expanded Public Learner Profiles (`/creators/:id` & Mobile `/creator/:id`) to Showcase Study Activity, Posts, Doubts & Q&A, Saved Questions / Vault Packs / Shared Tests, and Practiced Questions (`creators.py`, `mobile_identity.py`, `test_creator_profiles.py`, `Creators.tsx`, `finna.css`, plus mobile `content-types.ts`, `creator/[id].tsx`). Deployed API + Web to `https://study.hawayu.in`.**
+
+- **Public Profile Activity Summary & Tabs (`api/app/routers/creators.py`, `mobile_identity.py`):**
+  - Enriched `GET /api/creators/{uid}` with `activity` counts (`questions_answered`, `questions_correct` [when `board_public` or self], `saved_questions`, `posts_count`, `doubts_count`, `answers_count`, `shared_packs_count`, `shared_tests_count`) and `blocks_best` / `blocks_runs` inside opted-in `scores`.
+  - Added paginated `GET /api/creators/{uid}/activity?tab=posts|doubts|saved|answered` (allowlisted in `mobile_identity.py`) with full block, audience, active-mock/game exclusion, and spoiler-protection gates (doubts/explanations/replies mask `body` with `spoiler_locked: true` until the viewer attempts or reveals that question, linking straight to `/bank/{canonical_id}`).
+- **Web & Mobile Profile UI (`Creators.tsx`, `finna.css`, `creator/[id].tsx`):**
+  - Added clickable 5-tile Study & Community Activity summary strip and 6 tabbed sections (**Posts**, **Doubts & Q&A**, **Saved & Packs**, **Answered**, **Materials**, **Contributions**) with auto-selection of the first non-empty tab and direct links to bank questions, shared Vault packs, shared mock tests, and community threads (`31/31` community/board/creator tests + new `test_creator_activity_tabs_and_spoiler_protection` passed; `44/44` mobile tests clean).
+
 26 November IST — **Shipped Finna Blocks (`/games/blocks`), an 8×8 Polyomino Block-Blast Puzzle Game Powered by Finna's 82,383-Question Bank with Endless & Daily Seed High-Score Leaderboards across API, Web & Mobile (`0144_block_puzzle_runs.sql`, `blocks.py`, `mobile_identity.py`, `test_blocks.py`, `blockPuzzle.ts`, `BlockBlastGame.tsx`, `block-puzzle.css`, `App.tsx`, `siteMap.ts`, `Header.tsx`, `navigation.ts`, `Games.tsx`, `HomeLeftExtras.tsx`, plus mobile `src/lib/blockPuzzle.ts`, `src/app/blocks.tsx`). Deployed API + Web to `https://study.hawayu.in`.**
 
 - **Bank-Synergy Endless Puzzle Loop (`blockPuzzle.ts`, `BlockBlastGame.tsx`, `blocks.tsx`):**

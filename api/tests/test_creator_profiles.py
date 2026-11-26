@@ -97,3 +97,52 @@ def test_graph_role_privileges_and_audit(database,client,actor):
         conn.execute("SELECT * FROM creator_blocks");conn.execute("SELECT * FROM creator_reports")
     with pytest.raises(Exception,match='append-only'):
         with conn.transaction():conn.execute("UPDATE creator_events SET action='tampered'")
+
+
+def test_creator_activity_tabs_and_spoiler_protection(client,actor,database):
+    _,conn=database
+    opt_in(client,actor,'author')
+    qid=conn.execute("SELECT id FROM canonical_questions WHERE status='live' AND type='mcq' LIMIT 1").fetchone()[0]
+    conn.execute("DELETE FROM posts WHERE author_id='author'")
+    conn.execute("DELETE FROM user_question_bookmarks WHERE user_id='author'")
+    conn.execute("DELETE FROM personal_vault_shares WHERE owner_id='author'")
+    conn.execute("DELETE FROM attempts WHERE user_id IN ('author','outsider') AND canonical_id=%s",(qid,))
+    conn.execute("INSERT INTO posts(canonical_id,kind,author_id,body) VALUES(NULL,'study','author','Focused MPSC Polity notes on Article 371G.')")
+    conn.execute("INSERT INTO posts(canonical_id,kind,author_id,body) VALUES(%s,'doubt','author','Why is option B preferred over option C here?')",(qid,))
+    conn.execute("INSERT INTO user_question_bookmarks(user_id,question_id) VALUES('author',%s) ON CONFLICT DO NOTHING",(qid,))
+    conn.execute("INSERT INTO personal_vault_shares(token,owner_id,title,description,mode,duration_minutes,items) VALUES('testpack123','author','Polity Revision Pack','Quick drill','practice',10,'[{\"question\":\"Sample\"}]'::jsonb) ON CONFLICT DO NOTHING")
+    conn.execute("INSERT INTO attempts(user_id,canonical_id,correct,context) VALUES('author',%s,true,'practice')",(qid,))
+
+    actor('outsider')
+    prof=client.get('/api/creators/author')
+    assert prof.status_code==200,prof.text
+    act=prof.json()['activity']
+    assert act['posts_count']>=1 and act['doubts_count']>=1
+    assert act['saved_questions']>=1 and act['shared_packs_count']>=1
+    assert act['questions_answered']>=1
+
+    posts_res=client.get('/api/creators/author/activity?tab=posts')
+    assert posts_res.status_code==200 and any('Article 371G' in p['body'] for p in posts_res.json()['items'])
+
+    # Outsider has not answered/revealed qid yet -> doubt body must be spoiler-locked
+    doubts_locked=client.get('/api/creators/author/activity?tab=doubts')
+    assert doubts_locked.status_code==200
+    drow=next(d for d in doubts_locked.json()['items'] if d['canonical_id']==qid)
+    assert drow['spoiler_locked'] is True and drow['body'] is None
+
+    # Once outsider attempts qid, doubt body unlocks
+    conn.execute("INSERT INTO attempts(user_id,canonical_id,correct,context) VALUES('outsider',%s,true,'practice')",(qid,))
+    doubts_open=client.get('/api/creators/author/activity?tab=doubts')
+    drow2=next(d for d in doubts_open.json()['items'] if d['canonical_id']==qid)
+    assert drow2['spoiler_locked'] is False and 'option B' in drow2['body']
+
+    saved_res=client.get('/api/creators/author/activity?tab=saved')
+    assert saved_res.status_code==200
+    assert any(s['canonical_id']==qid for s in saved_res.json()['items'])
+    assert any(p['token']=='testpack123' for p in saved_res.json()['shared_packs'])
+
+    ans_res=client.get('/api/creators/author/activity?tab=answered')
+    assert ans_res.status_code==200
+    assert any(a['canonical_id']==qid for a in ans_res.json()['items'])
+
+    conn.execute("DELETE FROM personal_vault_shares WHERE token='testpack123'")

@@ -7373,6 +7373,130 @@ html[data-theme="night"] .gd-ex-row.is-ask .gd-ex-badge { color:#60A5FA; }
   .lp-score-grid { grid-template-columns:1fr; }
 }
 
+.lp-activity-grid {
+  display:grid;
+  grid-template-columns:repeat(5, minmax(0, 1fr));
+  gap:10px;
+}
+.lp-act-tile {
+  display:flex; flex-direction:column; align-items:flex-start; gap:2px;
+  padding:13px 14px; border-radius:14px; text-align:left; cursor:pointer;
+  border:1px solid rgb(var(--ism-hairline-rgb));
+  background:rgb(var(--ism-card-rgb));
+  transition:border-color 140ms ease, transform 140ms ease, box-shadow 140ms ease;
+}
+.lp-act-tile:hover { border-color:rgb(var(--ism-ink-rgb)); transform:translateY(-1px); }
+.lp-act-tile.is-active {
+  border-color:#4F46E5;
+  box-shadow:0 0 0 2px rgba(79, 70, 229, 0.14);
+}
+.lp-act-lbl {
+  font-family:var(--font-mono, ui-monospace, monospace);
+  font-size:10px; font-weight:800; letter-spacing:.06em; text-transform:uppercase;
+  color:rgb(var(--ism-secondary-rgb));
+}
+.lp-act-tile > strong {
+  font-size:22px; font-weight:800; line-height:1.15;
+  color:rgb(var(--ism-ink-rgb)); font-variant-numeric:tabular-nums;
+}
+.lp-act-tile > small {
+  font-size:11.5px; color:rgb(var(--ism-secondary-rgb));
+}
+
+.lp-tab-bar {
+  display:flex; flex-wrap:wrap; gap:8px;
+}
+.lp-tab-pill {
+  display:inline-flex; align-items:center; gap:7px;
+  min-height:40px; padding:7px 14px; border-radius:999px; cursor:pointer;
+  border:1px solid rgb(var(--ism-hairline-rgb));
+  background:rgb(var(--ism-card-rgb));
+  color:rgb(var(--ism-ink-rgb));
+  font-size:13px; font-weight:700;
+  transition:all 140ms ease;
+}
+.lp-tab-pill:hover { border-color:rgb(var(--ism-ink-rgb)); }
+.lp-tab-pill.is-active {
+  background:rgb(var(--ism-ink-rgb));
+  border-color:rgb(var(--ism-ink-rgb));
+  color:rgb(var(--ism-paper-rgb));
+}
+.lp-tab-count {
+  display:inline-flex; align-items:center; justify-content:center;
+  min-width:20px; height:20px; padding:0 6px; border-radius:999px;
+  font-family:var(--font-mono, ui-monospace, monospace);
+  font-size:11px; font-weight:800;
+  background:rgba(128,128,128,.16);
+}
+.lp-tab-pill.is-active .lp-tab-count {
+  background:rgba(255,255,255,.22);
+}
+
+.lp-feed-card {
+  padding:16px 18px; border-radius:16px;
+  border:1px solid rgb(var(--ism-hairline-rgb));
+  background:rgb(var(--ism-card-rgb));
+  box-shadow:var(--ism-card-shadow);
+}
+.lp-feed-head {
+  display:flex; flex-wrap:wrap; align-items:center; gap:7px;
+}
+.lp-kind-pill {
+  display:inline-flex; align-items:center; gap:4px;
+  padding:3px 9px; border-radius:999px;
+  font-family:var(--font-mono, ui-monospace, monospace);
+  font-size:10.5px; font-weight:800; letter-spacing:.04em; text-transform:uppercase;
+}
+.lp-kind-pill.is-cobalt { background:rgba(37,99,235,.12); color:#1D4ED8; }
+.lp-kind-pill.is-teal   { background:rgba(13,148,136,.12); color:#0F766E; }
+.lp-kind-pill.is-amber  { background:rgba(217,119,6,.14); color:#B45309; }
+.lp-kind-pill.is-emerald{ background:rgba(5,150,105,.14); color:#047857; }
+.lp-kind-pill.is-violet { background:rgba(124,58,237,.13); color:#6D28D9; }
+html[data-theme="dark"] .lp-kind-pill.is-cobalt { color:#93C5FD; }
+html[data-theme="dark"] .lp-kind-pill.is-teal   { color:#5EEAD4; }
+html[data-theme="dark"] .lp-kind-pill.is-amber  { color:#FCD34D; }
+html[data-theme="dark"] .lp-kind-pill.is-emerald{ color:#6EE7B7; }
+html[data-theme="dark"] .lp-kind-pill.is-violet { color:#C4B5FD; }
+
+.lp-topic-pill {
+  padding:3px 9px; border-radius:999px;
+  border:1px solid rgb(var(--ism-hairline-rgb));
+  background:rgb(var(--ism-canvas-rgb));
+  font-size:11px; font-weight:600; color:rgb(var(--ism-secondary-rgb));
+}
+.lp-feed-date {
+  margin-left:auto; font-family:var(--font-mono, ui-monospace, monospace);
+  font-size:11px; color:rgb(var(--ism-muted-rgb));
+}
+.lp-feed-q {
+  display:block; margin-top:10px; font-size:15px; font-weight:700; line-height:1.45;
+  color:rgb(var(--ism-ink-rgb));
+}
+.lp-feed-q:hover { text-decoration:underline; }
+.lp-feed-body {
+  margin:10px 0 0; font-size:14px; line-height:1.6;
+  color:rgb(var(--ism-ink-rgb)); white-space:pre-line; word-break:break-word;
+}
+.lp-spoiler-note {
+  margin:10px 0 0; padding:10px 12px; border-radius:10px;
+  background:rgb(var(--ism-canvas-rgb));
+  border:1px dashed rgb(var(--ism-hairline-rgb));
+  font-size:12.5px; color:rgb(var(--ism-secondary-rgb));
+}
+.lp-feed-foot {
+  margin-top:12px; padding-top:10px;
+  border-top:1px solid rgb(var(--ism-hairline-rgb));
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px;
+  font-size:12px; color:rgb(var(--ism-secondary-rgb));
+}
+
+@media (max-width:960px) {
+  .lp-activity-grid { grid-template-columns:repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width:560px) {
+  .lp-activity-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); }
+}
+
 /* ==========================================================================
    Compact Topic Mastery Matrix (MasteryMap.tsx) + Profile Finder (Profile.tsx)
    ========================================================================== */

@@ -243,6 +243,9 @@ async def profile(uid:str,user:User,offset:int=Query(0,ge=0,le=100000)):
                 AND EXISTS(SELECT 1 FROM game_members o WHERE o.room_id=r.id AND o.user_id<>m.user_id AND o.left_at IS NULL AND o.correct+o.wrong>0)
                 AND NOT EXISTS(SELECT 1 FROM game_members o WHERE o.room_id=r.id AND o.user_id<>m.user_id AND o.left_at IS NULL AND o.score>=m.score)""",(uid,))
             duel_wins=(await cur.fetchone())['wins']
+            await cur.execute("""SELECT COALESCE(max(score),0)::int AS best, count(*)::int AS runs
+                FROM block_puzzle_runs WHERE user_id=%s AND score>0""",(uid,))
+            blocks_row=await cur.fetchone()
             row['scores']={
                 'weekly_xp':weekly_xp,
                 'league':league_division(weekly_xp)['name'],
@@ -253,12 +256,190 @@ async def profile(uid:str,user:User,offset:int=Query(0,ge=0,le=100000)):
                 'cup_plays':cup_row['plays'] if cup_row else 0,
                 'cup_best':cup_row['best'] if cup_row else 0,
                 'duel_wins':duel_wins,
+                'blocks_best':blocks_row['best'] if blocks_row else 0,
+                'blocks_runs':blocks_row['runs'] if blocks_row else 0,
             }
         else:
             row['scores']=None
+        # Public study & community activity summary counts (no private spoilers/answers).
+        await cur.execute("""SELECT
+            (SELECT count(DISTINCT canonical_id)::int FROM attempts WHERE user_id=%s AND canonical_id IS NOT NULL) AS questions_answered,
+            (SELECT count(DISTINCT canonical_id)::int FROM attempts WHERE user_id=%s AND canonical_id IS NOT NULL AND correct) AS questions_correct,
+            (SELECT count(*)::int FROM (
+                SELECT question_id AS qid FROM user_question_bookmarks WHERE user_id=%s
+                UNION
+                SELECT canonical_question_id AS qid FROM personal_vault_items WHERE user_id=%s AND canonical_question_id IS NOT NULL
+            ) sq) AS saved_questions,
+            (SELECT count(*)::int FROM posts WHERE author_id=%s AND kind IN ('study','material-share') AND parent_id IS NULL AND NOT hidden AND NOT before_fix AND NOT needs_approval) AS posts_count,
+            (SELECT count(*)::int FROM posts WHERE author_id=%s AND kind='doubt' AND canonical_id IS NOT NULL AND NOT hidden AND NOT before_fix AND NOT needs_approval) AS doubts_count,
+            (SELECT count(*)::int FROM posts WHERE author_id=%s AND kind IN ('explanation','reply') AND canonical_id IS NOT NULL AND NOT hidden AND NOT before_fix AND NOT needs_approval) AS answers_count,
+            (SELECT count(*)::int FROM personal_vault_shares WHERE owner_id=%s) AS shared_packs_count,
+            (SELECT count(*)::int FROM learning_catalog WHERE author_id=%s AND live_payload IS NOT NULL AND live_test_version IS NOT NULL) AS shared_tests_count""",
+            (uid,uid,uid,uid,uid,uid,uid,uid,uid))
+        act=dict(await cur.fetchone())
+        if not show_scores:
+            act['questions_correct']=None
+        row['activity']=act
         # Honor the existing contribution attribution consent independently.
         await cur.execute("SELECT c.id,c.title,c.kind,c.canonical_id,c.updated_at FROM bank_contributions c JOIN users u ON u.id=c.author_id WHERE c.author_id=%s AND c.state='published' AND u.contribution_public AND NOT EXISTS(SELECT 1 FROM mock_sessions ms WHERE ms.user_id=%s AND ms.submitted_at IS NULL AND c.canonical_id=ANY(ms.question_ids)) ORDER BY c.updated_at DESC,c.id LIMIT 13 OFFSET %s",(uid,user,offset));contributions=await cur.fetchall()
     return {**row,'is_self':uid==user,'contributions':contributions[:12],'has_more_contributions':len(contributions)>12}
+
+
+ACTIVE_EXAM_GUARD = """
+  NOT EXISTS(SELECT 1 FROM mock_sessions ms WHERE ms.user_id=%(viewer)s AND ms.submitted_at IS NULL AND q.id=ANY(ms.question_ids))
+  AND NOT EXISTS(SELECT 1 FROM game_members gm JOIN game_rooms gr ON gr.id=gm.room_id LEFT JOIN game_cups cup ON cup.id=gr.cup_id
+    WHERE gm.user_id=%(viewer)s AND ((gm.released_at IS NULL AND gr.state IN ('waiting','running')) OR cup.closes_at>now())
+    AND gr.questions @> jsonb_build_array(jsonb_build_object('id',q.id)))
+"""
+
+VIEWER_UNLOCKED_Q = """(
+  %(viewer)s = %(uid)s
+  OR EXISTS(SELECT 1 FROM attempts a WHERE a.user_id=%(viewer)s AND a.canonical_id=q.id)
+  OR EXISTS(SELECT 1 FROM answer_reveals ar WHERE ar.user_id=%(viewer)s AND ar.canonical_id=q.id)
+  OR EXISTS(SELECT 1 FROM discussion_disclosures d WHERE d.user_id=%(viewer)s AND d.canonical_id=q.id)
+)"""
+
+
+@router.get('/creators/{uid}/activity')
+async def creator_activity(
+    uid: str,
+    user: User,
+    tab: Literal['posts', 'doubts', 'saved', 'answered'] = Query('posts'),
+    offset: int = Query(0, ge=0, le=100000),
+    limit: int = Query(12, ge=1, le=30),
+):
+    from ..services.community_policy import helpful_count
+    from ..services.study_posts import reference_visible
+    async with cursor() as cur:
+        await target(cur, uid, user)
+        await cur.execute('SELECT COALESCE(board_public,false) AS board_public FROM reward_profiles WHERE user_id=%s', (uid,))
+        rp = await cur.fetchone()
+        show_scores = bool(rp and rp['board_public']) or uid == user
+        params = {'uid': uid, 'viewer': user, 'user': user, 'limit': limit + 1, 'offset': offset, 'scope': 'all'}
+
+        if tab == 'posts':
+            sql = f"""SELECT p.id, p.kind, p.body, p.topic_tag, t.label AS topic_label,
+                    p.source_context->'study_reference' AS reference,
+                    {helpful_count()} AS helpful,
+                    (SELECT count(*)::int FROM posts r WHERE r.parent_id=p.id AND NOT r.hidden AND NOT r.before_fix AND NOT r.needs_approval) AS reply_count,
+                    p.created_at
+                FROM posts p
+                LEFT JOIN review_taxonomy t ON t.id=p.topic_tag
+                LEFT JOIN canonical_questions q ON q.id=CASE WHEN p.source_context->'study_reference'->>'kind'='question' THEN p.source_context->'study_reference'->>'id' END
+                WHERE p.author_id=%(uid)s
+                  AND p.kind IN ('study','material-share')
+                  AND p.parent_id IS NULL
+                  AND NOT p.hidden AND NOT p.before_fix
+                  AND (NOT p.needs_approval OR p.author_id=%(viewer)s)
+                  AND {reference_visible()}
+                  AND (q.id IS NULL OR (q.status IN ('live','held') AND {ACTIVE_EXAM_GUARD}))
+                ORDER BY p.created_at DESC, p.id DESC
+                LIMIT %(limit)s OFFSET %(offset)s"""
+            await cur.execute(sql, params)
+            rows = await cur.fetchall()
+            return {'tab': tab, 'items': rows[:limit], 'has_more': len(rows) > limit}
+
+        if tab == 'doubts':
+            sql = f"""SELECT p.id, p.kind, p.canonical_id, p.accepted, p.pinned, p.created_at,
+                    q.question, q.subject, q.topic,
+                    {helpful_count()} AS helpful,
+                    {VIEWER_UNLOCKED_Q} AS unlocked,
+                    CASE WHEN {VIEWER_UNLOCKED_Q} THEN p.body ELSE NULL END AS body
+                FROM posts p
+                JOIN canonical_questions q ON q.id=p.canonical_id
+                WHERE p.author_id=%(uid)s
+                  AND p.kind IN ('doubt','explanation','reply')
+                  AND p.canonical_id IS NOT NULL
+                  AND NOT p.hidden AND NOT p.before_fix
+                  AND (NOT p.needs_approval OR p.author_id=%(viewer)s)
+                  AND q.status IN ('live','held')
+                  AND {ACTIVE_EXAM_GUARD}
+                ORDER BY p.created_at DESC, p.id DESC
+                LIMIT %(limit)s OFFSET %(offset)s"""
+            await cur.execute(sql, params)
+            rows = [dict(r) for r in await cur.fetchall()]
+            for r in rows:
+                r['spoiler_locked'] = not bool(r.pop('unlocked'))
+            return {'tab': tab, 'items': rows[:limit], 'has_more': len(rows) > limit}
+
+        if tab == 'saved':
+            shared_packs = []
+            shared_tests = []
+            if offset == 0:
+                await cur.execute(
+                    """SELECT token, title, description, mode, duration_minutes,
+                              jsonb_array_length(COALESCE(items,'[]'::jsonb))::int AS item_count,
+                              clones_count, created_at
+                         FROM personal_vault_shares
+                        WHERE owner_id=%s
+                        ORDER BY created_at DESC LIMIT 8""",
+                    (uid,),
+                )
+                shared_packs = await cur.fetchall()
+                await cur.execute(
+                    """SELECT p.entry_id,
+                              COALESCE(p.payload->>'title', c.id) AS title,
+                              COALESCE(p.payload->>'description', '') AS description,
+                              jsonb_array_length(COALESCE(p.payload->'question_ids','[]'::jsonb))::int AS question_count,
+                              COALESCE((p.payload->'config'->>'duration_minutes')::int, 0) AS duration_minutes,
+                              p.published_at
+                         FROM learning_catalog c
+                         JOIN learning_test_publications p ON p.entry_id=c.id AND p.revision=c.live_test_version
+                        WHERE c.author_id=%s AND c.live_payload IS NOT NULL
+                        ORDER BY p.published_at DESC LIMIT 8""",
+                    (uid,),
+                )
+                shared_tests = await cur.fetchall()
+
+            sql = f"""WITH saved_union AS (
+                    SELECT question_id AS canonical_id, created_at AS saved_at
+                      FROM user_question_bookmarks WHERE user_id=%(uid)s
+                    UNION ALL
+                    SELECT canonical_question_id AS canonical_id, updated_at AS saved_at
+                      FROM personal_vault_items WHERE user_id=%(uid)s AND canonical_question_id IS NOT NULL
+                ), dedup AS (
+                    SELECT canonical_id, max(saved_at) AS saved_at
+                      FROM saved_union
+                     GROUP BY canonical_id
+                )
+                SELECT d.canonical_id, d.saved_at, q.question, q.subject, q.topic
+                  FROM dedup d
+                  JOIN canonical_questions q ON q.id=d.canonical_id
+                 WHERE q.status IN ('live','held')
+                   AND {ACTIVE_EXAM_GUARD}
+                 ORDER BY d.saved_at DESC, d.canonical_id
+                 LIMIT %(limit)s OFFSET %(offset)s"""
+            await cur.execute(sql, params)
+            rows = await cur.fetchall()
+            return {
+                'tab': tab,
+                'items': rows[:limit],
+                'has_more': len(rows) > limit,
+                'shared_packs': shared_packs,
+                'shared_tests': shared_tests,
+            }
+
+        # tab == 'answered'
+        sql = f"""WITH latest AS (
+                SELECT DISTINCT ON (a.canonical_id)
+                       a.canonical_id, a.correct, a.at AS answered_at
+                  FROM attempts a
+                 WHERE a.user_id=%(uid)s AND a.canonical_id IS NOT NULL
+                 ORDER BY a.canonical_id, a.at DESC, a.id DESC
+            )
+            SELECT l.canonical_id, l.answered_at, q.question, q.subject, q.topic,
+                   CASE WHEN %(show_scores)s AND {VIEWER_UNLOCKED_Q}
+                        THEN (CASE WHEN l.correct THEN 'correct' ELSE 'wrong' END)
+                        ELSE NULL END AS outcome
+              FROM latest l
+              JOIN canonical_questions q ON q.id=l.canonical_id
+             WHERE q.status IN ('live','held')
+               AND {ACTIVE_EXAM_GUARD}
+             ORDER BY l.answered_at DESC, l.canonical_id
+             LIMIT %(limit)s OFFSET %(offset)s"""
+        await cur.execute(sql, {**params, 'show_scores': show_scores})
+        rows = await cur.fetchall()
+        return {'tab': tab, 'items': rows[:limit], 'has_more': len(rows) > limit}
 @router.post('/creators/{uid}/follow')
 async def follow(uid:str,body:Toggle,request:Request,user:Account):
     if uid==user:raise HTTPException(422,'You cannot follow yourself')
