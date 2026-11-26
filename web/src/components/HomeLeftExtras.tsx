@@ -183,10 +183,10 @@ export default function HomeLeftExtras({
   const discoverCard =
     showDiscover && discover && (discover.learners.length > 0 || discover.materials.length > 0) ? (
       <section className="finna-card hl-card" aria-labelledby="home-discover-title">
-        <div className="finna-section-top">
+        <div className="hl-card-head">
           <div className="min-w-0">
-            <div className="finna-eyebrow">For you · rotating</div>
-            <h2 id="home-discover-title">Discover</h2>
+            <span className="hl-eyebrow">For you · rotating</span>
+            <h2 id="home-discover-title" className="hl-title">Discover</h2>
           </div>
           <div className="finna-card-head-right">
             <button
@@ -247,11 +247,11 @@ export default function HomeLeftExtras({
           </div>
         )}
 
-        <div className="hl-pulse-foot">
-          <Link to="/creators" className="text-xs font-bold text-link hover:underline">
-            Explore all learners →
+        <div className="hl-card-foot">
+          <Link to="/creators" className="hl-foot-link is-primary">
+            All learners →
           </Link>
-          <Link to="/materials" className="text-xs font-semibold text-secondary hover:text-ink">
+          <Link to="/materials" className="hl-foot-link">
             Study notes ↗
           </Link>
         </div>
@@ -263,16 +263,13 @@ export default function HomeLeftExtras({
       {section === 'community' && discoverCard}
       {/* 1. Live Leaderboard Snapshot */}
       {showLeaderboard && (
-      <section className="finna-card hl-card" aria-labelledby="home-board-title">
-        <div className="finna-section-top">
+      <section className="finna-card hl-card hl-board-card" aria-labelledby="home-board-title">
+        <div className="hl-card-head">
           <div className="min-w-0">
-            <div className="finna-eyebrow">Live standings</div>
-            <h2 id="home-board-title">Leaderboard</h2>
+            <span className="hl-eyebrow">Live standings</span>
+            <h2 id="home-board-title" className="hl-title">Leaderboard</h2>
           </div>
           <div className="finna-card-head-right">
-            <Link to="/profile/rewards" className="text-xs font-bold text-link hover:underline">
-              Full board →
-            </Link>
             {onHide && (
               <button
                 type="button"
@@ -290,50 +287,63 @@ export default function HomeLeftExtras({
         <div className="hl-tabs" role="tablist" aria-label="Leaderboard track">
           {(
             [
-              ['xp', 'Weekly XP'],
-              ['daily', 'Daily Five'],
-              ['cup', 'Weekly Cup'],
+              ['xp', 'Weekly XP', 'XP'],
+              ['daily', 'Daily Five', 'Daily 5'],
+              ['cup', 'Weekly Cup', 'Cup'],
             ] as const
-          ).map(([key, label]) => (
+          ).map(([key, fullLabel, shortLabel]) => (
             <button
               key={key}
               type="button"
               role="tab"
+              aria-label={fullLabel}
               aria-selected={boardTab === key}
               onClick={() => setBoardTab(key)}
               className={`hl-tab${boardTab === key ? ' is-on' : ''}`}
             >
-              {label}
+              {shortLabel}
             </button>
           ))}
         </div>
 
         {board?.league?.name && boardTab === 'xp' && (
-          <p className="hl-league-note">{board.league.name}</p>
+          <div className="hl-league-row">
+            <span className="hl-league-pill">
+              <span aria-hidden="true">🏅</span>
+              <span>{board.league.name}</span>
+            </span>
+          </div>
         )}
 
         {boardLoading ? (
-          <p className="hl-muted">Loading standings…</p>
+          <div className="hl-empty-box">
+            <p className="hl-empty-copy">Loading standings…</p>
+          </div>
         ) : boardError ? (
-          <p className="hl-muted">
-            {boardTab !== 'xp' ? (
-              <>
-                Sign in to view live {boardTab === 'daily' ? 'Daily Five' : 'Weekly Cup'} ranks.{' '}
-                <Link to="/login" className="font-semibold text-link underline">
-                  Sign in
-                </Link>
-              </>
-            ) : (
-              'Standings temporarily unavailable.'
+          <div className="hl-empty-box">
+            <p className="hl-empty-copy">
+              {boardTab !== 'xp'
+                ? `Sign in to view live ${boardTab === 'daily' ? 'Daily Five' : 'Weekly Cup'} ranks.`
+                : 'Standings temporarily unavailable.'}
+            </p>
+            {boardTab !== 'xp' && (
+              <Link to="/login" className="hl-empty-cta">
+                Sign in →
+              </Link>
             )}
-          </p>
+          </div>
         ) : topRows.length === 0 ? (
-          <p className="hl-muted">
-            No public scores yet this week.{' '}
-            <Link to="/games?mode=daily" className="font-semibold text-link underline">
-              Claim #1 in Daily Five →
+          <div className="hl-empty-box">
+            <p className="hl-empty-copy">
+              No public scores yet this week. Be the first on the board!
+            </p>
+            <Link
+              to={boardTab === 'cup' ? '/games?mode=cup' : '/games?mode=daily'}
+              className="hl-empty-cta"
+            >
+              {boardTab === 'cup' ? 'Play Weekly Cup →' : 'Claim #1 in Daily Five →'}
             </Link>
-          </p>
+          </div>
         ) : (
           <ol className="hl-board-list">
             {topRows.map((row, idx) => {
@@ -343,7 +353,7 @@ export default function HomeLeftExtras({
                   <span className={`hl-rank${row.rank <= 3 ? ` is-top-${row.rank}` : ''}`}>
                     #{row.rank}
                   </span>
-                  <UserAvatar look={row.avatar} initials={row.handle} size={30} />
+                  <UserAvatar look={row.avatar} initials={row.handle} size={28} />
                   <span className="hl-player">
                     <strong>{row.handle}</strong>
                     {row.level != null && <small>Lv {row.level}</small>}
@@ -372,23 +382,26 @@ export default function HomeLeftExtras({
         )}
 
         {board?.placement && (
-          <div className="hl-placement">
-            <span>
-              {board.placement.public ? 'Your rank' : 'Private rank'} ·{' '}
-              <strong>#{board.placement.rank}</strong>
+          <Link to="/profile/rewards" className="hl-placement">
+            <span className="hl-placement-left">
+              <span className="hl-placement-rank">#{board.placement.rank}</span>
+              <span className="hl-placement-meta">
+                <strong>Your rank</strong>
+                <small>{board.placement.public ? 'Public board' : 'Private · opt in anytime'}</small>
+              </span>
             </span>
-            <span className="font-mono text-xs font-bold">
+            <span className="hl-placement-val">
               {(board.placement.xp ?? board.placement.score ?? 0).toLocaleString('en-IN')} {unit}
             </span>
-          </div>
+          </Link>
         )}
 
-        <div className="hl-pulse-foot">
-          <Link to="/creators" className="text-xs font-bold text-link hover:underline">
-            🔎 Find learner profiles →
+        <div className="hl-card-foot">
+          <Link to="/creators" className="hl-foot-link is-primary">
+            Find learners →
           </Link>
-          <Link to="/games?mode=daily" className="text-xs font-semibold text-secondary hover:text-ink">
-            Play Daily Five ↗
+          <Link to="/profile/rewards" className="hl-foot-link">
+            Full board ↗
           </Link>
         </div>
       </section>

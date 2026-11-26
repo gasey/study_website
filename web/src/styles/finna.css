@@ -6999,28 +6999,69 @@ html[data-theme="night"] .gd-ex-row.is-ask .gd-ex-badge { color:#60A5FA; }
    Home Left Rail Extras: Live Leaderboard, Popular Games (Option B), 7-Day Pulse
    ========================================================================== */
 .hl-card {
-  display:flex; flex-direction:column; gap:11px;
+  display:flex; flex-direction:column; gap:12px;
+  padding:18px 18px 16px;
+}
+.hl-card-head {
+  display:flex; align-items:flex-start; justify-content:space-between; gap:8px;
+}
+.hl-eyebrow {
+  display:block;
+  font-size:10.5px; font-weight:800; text-transform:uppercase;
+  letter-spacing:.08em; line-height:1.2;
+  color:rgb(var(--ism-practice-dark-rgb));
+}
+.hl-title {
+  margin:3px 0 0;
+  font-size:18px; font-weight:800; line-height:1.15;
+  letter-spacing:-.02em; color:var(--text-primary);
 }
 .hl-tabs {
-  display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:4px;
+  display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:3px;
   padding:3px; border-radius:11px;
   background:rgb(var(--ism-canvas-rgb));
   border:1px solid rgb(var(--ism-hairline-rgb));
 }
 .hl-tab {
-  min-height:30px; padding:0 6px; border:0; border-radius:8px;
+  min-height:30px; padding:0 4px; border:0; border-radius:8px;
   background:transparent; color:rgb(var(--ism-secondary-rgb));
-  font-size:11.5px; font-weight:700; cursor:pointer; white-space:nowrap;
-  transition:background-color .14s ease, color .14s ease;
+  font-size:12px; font-weight:700; letter-spacing:-.01em;
+  cursor:pointer; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  transition:background-color .14s ease, color .14s ease, box-shadow .14s ease;
 }
 .hl-tab:hover { color:rgb(var(--ism-ink-rgb)); }
 .hl-tab.is-on {
   background:rgb(var(--ism-ink-rgb)); color:rgb(var(--ism-paper-rgb));
+  box-shadow:0 2px 6px rgba(14,19,48,.16);
 }
-.hl-league-note {
-  margin:-4px 0 0; font-family:var(--font-mono, ui-monospace, monospace);
-  font-size:11px; font-weight:700; color:rgb(var(--ism-secondary-rgb));
+.hl-league-row {
+  display:flex; align-items:center; justify-content:space-between; gap:8px;
 }
+.hl-league-pill {
+  display:inline-flex; align-items:center; gap:5px;
+  padding:4px 10px; border-radius:999px;
+  background:rgb(var(--ism-exams-soft-rgb));
+  border:1px solid rgba(180,115,15,.22);
+  color:rgb(var(--ism-exams-dark-rgb));
+  font-size:11.5px; font-weight:700; letter-spacing:-.005em;
+}
+.hl-empty-box {
+  display:flex; flex-direction:column; align-items:flex-start; gap:10px;
+  padding:13px 14px; border-radius:13px;
+  background:rgb(var(--ism-canvas-rgb));
+  border:1px solid rgb(var(--ism-hairline-rgb));
+}
+.hl-empty-copy {
+  margin:0; font-size:12.5px; line-height:1.45; color:rgb(var(--ism-secondary-rgb));
+}
+.hl-empty-cta {
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height:34px; padding:0 12px; border-radius:999px;
+  background:rgb(var(--ism-ink-rgb)); color:rgb(var(--ism-paper-rgb));
+  font-size:12px; font-weight:700; text-decoration:none;
+  transition:opacity .14s ease, transform .14s ease;
+}
+.hl-empty-cta:hover { opacity:.9; transform:translateY(-1px); }
 .hl-muted {
   margin:2px 0; font-size:12.5px; line-height:1.45; color:rgb(var(--ism-secondary-rgb));
 }
@@ -7028,7 +7069,7 @@ html[data-theme="night"] .gd-ex-row.is-ask .gd-ex-badge { color:#60A5FA; }
   list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:4px;
 }
 .hl-board-row {
-  display:flex; align-items:center; gap:9px;
+  display:flex; align-items:center; gap:8px;
   padding:6px 8px; border-radius:11px;
   text-decoration:none; color:inherit;
   transition:background-color .14s ease;
@@ -7038,39 +7079,79 @@ html[data-theme="night"] .gd-ex-row.is-ask .gd-ex-badge { color:#60A5FA; }
 }
 .hl-rank {
   display:inline-flex; align-items:center; justify-content:center;
-  min-width:28px; height:24px; padding:0 5px; border-radius:999px;
+  min-width:26px; height:23px; padding:0 5px; border-radius:999px;
   border:1px solid rgb(var(--ism-hairline-rgb));
   background:rgb(var(--ism-canvas-rgb)); color:rgb(var(--ism-secondary-rgb));
-  font-family:var(--font-mono, ui-monospace, monospace);
+  font-variant-numeric:tabular-nums;
   font-size:11px; font-weight:800; flex-shrink:0;
 }
 .hl-rank.is-top-1 { background:#FEF3C7; color:#92400E; border-color:rgba(245,158,11,.45); }
 .hl-rank.is-top-2 { background:#E2E8F0; color:#334155; border-color:rgba(148,163,184,.45); }
 .hl-rank.is-top-3 { background:#FFEDD5; color:#9A3412; border-color:rgba(234,88,12,.38); }
 .hl-player {
-  min-width:0; flex:1; display:flex; flex-direction:column; line-height:1.2;
+  min-width:0; flex:1; display:flex; flex-direction:column; line-height:1.25;
 }
 .hl-player strong {
   font-size:13px; font-weight:700; color:rgb(var(--ism-ink-rgb));
   white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
 }
 .hl-player small {
-  font-family:var(--font-mono, ui-monospace, monospace);
-  font-size:10.5px; font-weight:700; color:rgb(var(--ism-secondary-rgb));
+  font-size:11px; font-weight:600; color:rgb(var(--ism-secondary-rgb));
 }
 .hl-score {
-  font-family:var(--font-mono, ui-monospace, monospace);
-  font-size:11.5px; font-weight:800; color:rgb(var(--ism-ink-rgb));
+  font-variant-numeric:tabular-nums;
+  font-size:12px; font-weight:800; color:rgb(var(--ism-ink-rgb));
   white-space:nowrap; flex-shrink:0;
 }
 .hl-placement {
-  display:flex; align-items:center; justify-content:space-between; gap:8px;
-  padding:8px 10px; border-radius:10px;
-  background:rgb(var(--ism-canvas-rgb));
-  border:1px dashed rgb(var(--ism-hairline-rgb));
-  font-size:12px; color:rgb(var(--ism-secondary-rgb));
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  padding:10px 12px; border-radius:12px;
+  background:rgb(var(--ism-practice-soft-rgb));
+  border:1px solid rgba(37,87,214,.18);
+  text-decoration:none; color:inherit;
+  transition:border-color .14s ease, transform .14s ease;
 }
-.hl-placement strong { color:rgb(var(--ism-ink-rgb)); }
+.hl-placement:hover {
+  border-color:rgb(var(--ism-practice-rgb));
+  transform:translateY(-1px);
+}
+.hl-placement-left {
+  display:flex; align-items:center; gap:9px; min-width:0;
+}
+.hl-placement-rank {
+  display:inline-flex; align-items:center; justify-content:center;
+  min-width:30px; height:26px; padding:0 7px; border-radius:999px;
+  background:rgb(var(--ism-ink-rgb)); color:rgb(var(--ism-paper-rgb));
+  font-size:11.5px; font-weight:800; font-variant-numeric:tabular-nums;
+  flex-shrink:0;
+}
+.hl-placement-meta {
+  display:flex; flex-direction:column; min-width:0; line-height:1.2;
+}
+.hl-placement-meta strong {
+  font-size:12.5px; font-weight:800; color:var(--text-primary);
+}
+.hl-placement-meta small {
+  font-size:11px; color:var(--text-secondary);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.hl-placement-val {
+  font-size:12.5px; font-weight:800; font-variant-numeric:tabular-nums;
+  color:rgb(var(--ism-practice-dark-rgb));
+  white-space:nowrap; flex-shrink:0;
+}
+.hl-card-foot {
+  display:flex; align-items:center; justify-content:space-between; gap:8px;
+  padding-top:10px; margin-top:2px;
+  border-top:1px solid rgb(var(--ism-hairline-rgb));
+}
+.hl-foot-link {
+  font-size:12px; font-weight:700; color:var(--text-secondary);
+  text-decoration:none; white-space:nowrap;
+  transition:color .14s ease;
+}
+.hl-foot-link:hover { color:var(--text-primary); text-decoration:underline; }
+.hl-foot-link.is-primary { color:rgb(var(--ism-practice-dark-rgb)); }
 
 /* Popular Games Left-Rail List */
 .hl-games-list {
