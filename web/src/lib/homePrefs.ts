@@ -143,7 +143,6 @@ export const PRESET_HIDDEN: Record<HomePreset, HomeWidgetId[]> = {
     'kpi',
     'leaderboard',
     'games',
-    'discover',
     'pulse',
     'tracked_exams',
     'feed',
@@ -173,7 +172,7 @@ export const PRESET_DETAILS: readonly {
   {
     id: 'minimal',
     title: 'Minimal',
-    summary: 'Calmest view: Exam hero, Continue, Focus subjects & Today’s quests.',
+    summary: 'Calmest view: Exam hero, Continue, Focus subjects, Discover & Today’s quests.',
   },
   {
     id: 'balanced',
@@ -188,7 +187,8 @@ export const PRESET_DETAILS: readonly {
   },
 ] as const
 
-const STORAGE_KEY = 'finna-home-prefs-v1'
+const STORAGE_KEY = 'finna-home-prefs-v2'
+const LEGACY_STORAGE_KEY = 'finna-home-prefs-v1'
 const CHANGE_EVENT = 'finna-home-prefs-change'
 
 export function widgetLabel(id: HomeWidgetId): string {
@@ -219,19 +219,37 @@ export function defaultHomePrefs(): HomePreferences {
 export function readLocalHomePrefs(): HomePreferences {
   try {
     const raw = localStorage.getItem(STORAGE_KEY)
-    if (!raw) return defaultHomePrefs()
-    const parsed = JSON.parse(raw) as Partial<HomePreferences>
-    const preset: HomePreset =
-      parsed.preset === 'minimal' || parsed.preset === 'balanced' || parsed.preset === 'everything'
-        ? parsed.preset
-        : 'balanced'
-    const hidden =
-      Array.isArray(parsed.hidden) ? normalizeHidden(parsed.hidden) : [...PRESET_HIDDEN[preset]]
-    return {
-      preset,
-      hidden,
-      onboarded: Boolean(parsed.onboarded),
+    if (raw) {
+      const parsed = JSON.parse(raw) as Partial<HomePreferences>
+      const preset: HomePreset =
+        parsed.preset === 'minimal' || parsed.preset === 'balanced' || parsed.preset === 'everything'
+          ? parsed.preset
+          : 'balanced'
+      const hidden =
+        Array.isArray(parsed.hidden) ? normalizeHidden(parsed.hidden) : [...PRESET_HIDDEN[preset]]
+      return {
+        preset,
+        hidden,
+        onboarded: Boolean(parsed.onboarded),
+      }
     }
+    const legacyRaw = localStorage.getItem(LEGACY_STORAGE_KEY)
+    if (legacyRaw) {
+      const parsed = JSON.parse(legacyRaw) as Partial<HomePreferences>
+      const preset: HomePreset =
+        parsed.preset === 'minimal' || parsed.preset === 'balanced' || parsed.preset === 'everything'
+          ? parsed.preset
+          : 'balanced'
+      const hidden = (
+        Array.isArray(parsed.hidden) ? normalizeHidden(parsed.hidden) : [...PRESET_HIDDEN[preset]]
+      ).filter((id) => id !== 'discover')
+      return {
+        preset,
+        hidden,
+        onboarded: Boolean(parsed.onboarded),
+      }
+    }
+    return defaultHomePrefs()
   } catch {
     return defaultHomePrefs()
   }

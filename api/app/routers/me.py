@@ -423,7 +423,6 @@ HOME_PRESET_HIDDEN: dict[str, list[str]] = {
         "kpi",
         "leaderboard",
         "games",
-        "discover",
         "pulse",
         "tracked_exams",
         "feed",
