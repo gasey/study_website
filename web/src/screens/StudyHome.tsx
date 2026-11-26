@@ -20,7 +20,7 @@ import {
   type Progress,
   type TaxonomyFacet,
 } from '../lib/api'
-import { reviewSession } from '../lib/review'
+import { reviewRequest, reviewSession } from '../lib/review'
 import { learningRequest, type ResumePage, type ResumeItem } from '../lib/learning'
 import { accountContext } from '../lib/accountContext'
 import { useExamScope } from '../lib/examScope'
@@ -50,6 +50,7 @@ import ExamPickerDialog from '../components/ExamPickerDialog'
 import HomeFeedPreview from '../components/HomeFeedPreview'
 import SubjectBookshelf from '../components/SubjectBookshelf'
 import AvatarArt, { DEFAULT_HERO_LOOK } from '../components/AvatarArt'
+import { CatXpBar } from '../components/CatLoader'
 import { mockResumePath } from '../lib/sharedTests'
 import HomeSetupWizard, { type WizardStep } from '../components/HomeSetupWizard'
 import {
@@ -92,6 +93,28 @@ type StudyData = {
   lastLoadedAt: number | null
 }
 
+interface HomeRewards {
+  level: number
+  title?: string
+  lifetime_xp: number
+  level_floor_xp: number
+  next_level_xp: number
+  daily_xp: number
+  daily_cap: number
+  points: number
+  league?: { name: string }
+  daily_quests?: {
+    quests: {
+      key: string
+      title: string
+      progress: number
+      target: number
+      completed: boolean
+      claimed: boolean
+    }[]
+  }
+}
+
 const EMPTY: StudyData = {
   exams: [],
   subjectModules: [],
@@ -125,6 +148,7 @@ export default function StudyHome() {
   const [wizardFirstTime, setWizardFirstTime] = useState(false)
   const [prefsSynced, setPrefsSynced] = useState(false)
   const [hiddenToast, setHiddenToast] = useState<HomeWidgetId | null>(null)
+  const [homeRewards, setHomeRewards] = useState<HomeRewards | null>(null)
   const [welcomeDismissed, setWelcomeDismissed] = useState(() => {
     try {
       return typeof localStorage !== 'undefined' && localStorage.getItem('finna_welcome_dismissed_v1') === '1'
@@ -145,6 +169,28 @@ export default function StudyHome() {
     })
     return () => {
       live = false
+    }
+  }, [data.authResolved, data.authenticated])
+
+  useEffect(() => {
+    if (!data.authResolved) return
+    if (!data.authenticated) {
+      setHomeRewards(null)
+      return
+    }
+    let live = true
+    const fetchRewards = () => {
+      reviewRequest<HomeRewards>('/rewards/me')
+        .then((r) => {
+          if (live) setHomeRewards(r)
+        })
+        .catch(() => {})
+    }
+    fetchRewards()
+    window.addEventListener('ism-progress-change', fetchRewards)
+    return () => {
+      live = false
+      window.removeEventListener('ism-progress-change', fetchRewards)
     }
   }, [data.authResolved, data.authenticated])
 
@@ -802,6 +848,57 @@ export default function StudyHome() {
               >
                 ×
               </button>
+            </div>
+            {/* Integrated Cat-Runner Level & XP Bar */}
+            <div className="finna-home-xp-banner" aria-label="Level and XP progress">
+              <div className="finna-home-xp-badge">
+                <span className="finna-home-xp-lvl">
+                  LV {homeRewards?.level ?? 1}
+                </span>
+                <span className="finna-home-xp-div">
+                  {homeRewards?.league?.name
+                    ? `🏅 ${homeRewards.league.name}`
+                    : data.authenticated
+                      ? 'Study XP'
+                      : 'Guest'}
+                </span>
+              </div>
+              <div className="finna-home-xp-bar-wrap">
+                {homeRewards ? (
+                  <CatXpBar
+                    value={Math.max(0, homeRewards.lifetime_xp - homeRewards.level_floor_xp)}
+                    max={Math.max(40, homeRewards.next_level_xp - homeRewards.level_floor_xp)}
+                    tone="xp"
+                    label={`Level ${homeRewards.level} → Level ${homeRewards.level + 1}`}
+                    meta={`${homeRewards.lifetime_xp.toLocaleString('en-IN')} / ${homeRewards.next_level_xp.toLocaleString('en-IN')} XP`}
+                  />
+                ) : (
+                  <CatXpBar
+                    value={Math.min(100, weekAnswers * 10)}
+                    max={100}
+                    tone="xp"
+                    label="Study XP progress"
+                    meta={
+                      data.authenticated
+                        ? 'Answer questions to earn XP'
+                        : 'Sign in to save XP & levels'
+                    }
+                  />
+                )}
+              </div>
+              <div className="finna-home-xp-side">
+                {homeRewards ? (
+                  <span className="finna-home-xp-today">
+                    +{homeRewards.daily_xp} / {homeRewards.daily_cap} today
+                  </span>
+                ) : null}
+                <Link
+                  to={data.authenticated ? '/profile/rewards' : '/login'}
+                  className="finna-home-xp-link"
+                >
+                  {data.authenticated ? 'Rewards & XP →' : 'Sign in →'}
+                </Link>
+              </div>
             </div>
           </section>
         ) : null}
@@ -1610,9 +1707,25 @@ export default function StudyHome() {
                     ×
                   </button>
                 </div>
-                <p className="mt-1 text-sm leading-relaxed text-secondary">
-                  See your daily learning goals and earned rewards.
-                </p>
+                {homeRewards?.daily_quests?.quests?.length ? (
+                  <div className="mt-2 flex flex-col gap-3">
+                    {homeRewards.daily_quests.quests.slice(0, 3).map((q) => (
+                      <CatXpBar
+                        key={q.key}
+                        value={q.progress}
+                        max={Math.max(1, q.target)}
+                        tone={q.completed ? 'gold' : 'quest'}
+                        showCat={q.progress > 0}
+                        label={q.title}
+                        meta={q.claimed ? '✓ Claimed' : `${q.progress}/${q.target}`}
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  <p className="mt-1 text-sm leading-relaxed text-secondary">
+                    See your daily learning goals and earned rewards.
+                  </p>
+                )}
                 <Link
                   to="/profile/rewards"
                   className="mt-3 inline-flex min-h-11 items-center text-sm font-bold text-rewards-dark"
