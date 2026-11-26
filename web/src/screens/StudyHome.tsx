@@ -10,7 +10,7 @@ import {
   getExamBookmarks,
   getFocusSubjects,
   getProgress,
-  getAccountSession,
+  getProfile,
   removeExamBookmark,
   saveExamBookmark,
   saveFocusSubjects,
@@ -431,10 +431,10 @@ export default function StudyHome() {
           setLearnerName('')
           return
         }
-        void getAccountSession()
-          .then((acc) => {
+        void getProfile()
+          .then((prof) => {
             if (!live) return
-            const raw = (acc.name || acc.handle || '').trim()
+            const raw = (prof.name || prof.handle || '').trim()
             setLearnerName(raw.split(/\s+/)[0] || '')
           })
           .catch(() => {})
