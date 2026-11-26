@@ -100,6 +100,14 @@ export default function Games() {
   const [data, setData] = useState<GamesData | null>(null);
   const [selection,setSelection]=useState<GameSelection|null>(null);
   const [chosenMode,setChosenMode]=useState<GameMode|null>((["gauntlet","speed","duel","party","cup","daily"].includes(params.get("mode")||"")?params.get("mode") as GameMode:null));
+  useEffect(() => {
+    const mode = params.get("mode");
+    setChosenMode(
+      ["gauntlet", "speed", "duel", "party", "cup", "daily"].includes(mode || "")
+        ? (mode as GameMode)
+        : null,
+    );
+  }, [params]);
   const [matchmaking,setMatchmaking]=useState(false);
   const [joinPreview,setJoinPreview]=useState<JoinPreview|null>(null);
   const joinEpoch=useRef(0);

@@ -58,7 +58,7 @@ function guideTone(slug: string, idx: number): 'teal' | 'cobalt' | 'amber' | 'em
 
 const TOPIC_COMPANIONS: Record<string, { label: string; to: string }> = {
   'english/grammar': { label: 'Read Tenses & Voice guide →', to: '/guides/tenses-and-voice' },
-  'english/vocabulary': { label: 'Spaced vocab review →', to: '/revise' },
+  'english/vocabulary': { label: 'Open Vocabulary Builder →', to: '/vocabulary' },
   'mathematics/arithmetic': { label: 'Maths & Arithmetic Handbook →', to: '/guides/maths-and-arithmetic' },
   'mathematics/algebra': { label: 'Algebra & Indices chapter →', to: '/guides/maths-and-arithmetic#algebra-probability-pnc' },
   'mathematics/mensuration': { label: '2D & 3D Mensuration formulas →', to: '/guides/maths-and-arithmetic#mensuration-2d-3d' },

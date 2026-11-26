@@ -56,6 +56,7 @@ const MENU_CARD_META: Record<string, { tone: MenuTone; tag: string; icon: string
   'subject-mathematics': { tone: 'amber', tag: 'Volume III', icon: 'M4 6h16M4 12h16M4 18h10M16 15l4 4m0-4-4 4' },
   'subject-reasoning': { tone: 'violet', tag: 'Volume IV', icon: 'M9 3H5v4h4V3Zm10 0h-4v4h4V3ZM9 17H5v4h4v-4Zm6-7h4v4h-4v-4ZM9 5h6M7 7v10m8-7-6 7' },
   'subject-mizo': { tone: 'emerald', tag: 'Volume V', icon: 'M4 19h16M6 15l6-11 6 11M8.5 11h7' },
+  vocabulary: { tone: 'violet', tag: 'Spaced', icon: 'M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2ZM9 8h6M9 12h4' },
   revise: { tone: 'teal', tag: 'Memory', icon: 'M4 12a8 8 0 0 1 13.7-5.6L20 8.5M20 4v4.5h-4.5M20 12a8 8 0 0 1-13.7 5.6L4 15.5M4 20v-4.5h4.5' },
   'practice-build': { tone: 'cobalt', tag: 'Custom', icon: 'M12 5v14M5 12h14' },
   tests: { tone: 'amber', tag: 'Timed', icon: 'M12 7v5l3 2M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z' },
@@ -365,7 +366,7 @@ export default function Header() {
       : id === 'exams'
         ? /^\/(exams|group-b|past-papers|calendar)(\/|$)/.test(pathname)
         : id === 'library'
-          ? /^\/(library|subjects|english|arithmetic|mizo)(\/|$)/.test(pathname)
+          ? /^\/(library|subjects|english|arithmetic|mizo|vocabulary|essay)(\/|$)/.test(pathname)
           : id === 'practice'
             ? /^\/(practice|bank|tests|revise|vault|results)(\/|$)/.test(pathname)
             : id === 'games'

@@ -518,10 +518,10 @@ export default function Guides() {
         return { to: "/subjects/reasoning?view=topics", label: "Reasoning Topics →" };
       }
       if (raw === "computer-science" || doc.slug === "computer-fundamentals") {
-        return { to: "/subjects/computer-science?view=topics", label: "Computer & IT Topics →" };
+        return { to: "/library/subjects/computer-science", label: "Computer & IT Questions →" };
       }
       if (raw === "science" || doc.slug === "general-science") {
-        return { to: "/subjects/science?view=topics", label: "General Science Topics →" };
+        return { to: "/library/subjects/science", label: "General Science Questions →" };
       }
       if (raw === "mizo") {
         return { to: "/subjects/mizo?view=topics", label: "Mizo Topics →" };
@@ -772,14 +772,38 @@ export default function Guides() {
           </p>
         </div>
         <div className="av-hero-actions">
+          <Link to="/vocabulary" className="cr-glass-btn cr-glass-btn--accent">
+            Vocabulary Builder →
+          </Link>
           <Link to="/library" className="cr-glass-btn">
             ← Subject library
           </Link>
-          <Link to="/materials" className="cr-glass-btn cr-glass-btn--accent">
+          <Link to="/materials" className="cr-glass-btn">
             Community notes
           </Link>
         </div>
       </header>
+
+      {/* Featured Interactive Vocabulary Section */}
+      <section aria-label="Vocabulary builder" className="at-card" style={{ marginBottom: 18 }}>
+        <div className="at-card-head" style={{ alignItems: "center", gap: 14 }}>
+          <div>
+            <span className="finna-st-pill finna-st-pill--teal">Spaced review · Word decks</span>
+            <h2 style={{ marginTop: 6 }}>Vocabulary Builder &amp; Exam Word Decks</h2>
+            <p>
+              Practise idioms, synonyms, antonyms, one-word substitutions and reviewed Mizo–English word decks with automatic Leitner scheduling.
+            </p>
+          </div>
+          <div className="at-btn-row" style={{ flexShrink: 0 }}>
+            <Link to="/vocabulary" className="finna-st-btn finna-st-btn--primary">
+              Open Vocabulary →
+            </Link>
+            <Link to="/revise?item_type=vocab" className="finna-st-btn">
+              Due vocab queue
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* Search & Subject Shelf Filter Bar */}
       <div className="gd-toolbar">

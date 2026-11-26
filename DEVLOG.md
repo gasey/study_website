@@ -1,5 +1,21 @@
 # Devlog
 
+26 November IST — **Restored the Vocabulary Builder section (`/vocabulary`) across Web & Mobile and fixed every broken / 404 / misrouted navigation discovered in a full route audit (`App.tsx`, `Atlas.tsx`, `Games.tsx`, `Guides.tsx`, `Library.tsx`, `Vocabulary.tsx`, `English.tsx`, `Home.tsx`, `CreateHub.tsx`, `LearningCatalogAdmin.tsx`, `ExamStudyTopics.tsx`, `siteMap.ts`, `Header.tsx`, `navigation.ts`). Web deployed to `https://study.hawayu.in`.**
+
+- **Restored Vocabulary Builder (Web + Mobile):**
+  - Web: Restored first-class `<Route path="/vocabulary" element={<Vocabulary />} />` (Bank Vocabulary spaced trainer + Reviewed Word Decks), made deck cards directly clickable, surfaced **Vocabulary Builder** in `Subjects ▾` (`siteMap.ts`, `Header.tsx`, `⌘K`), `Library.tsx` (`FEATURED_STUDY_TOOLS`), `Guides.tsx` (spotlight card above the 11 Concept Guides), `English.tsx`, and `ExamStudyTopics.tsx`.
+  - Mobile (`india-study-map-mobile`): Built native `src/app/vocabulary.tsx` (3,052 verified MCQs across Idioms & Phrases, Synonyms, One-Word Substitution, and Antonyms with live subtopic decks, instant checking via `QuestionCard`, Smart Review link, and web word-decks launch) and surfaced it in `guides.tsx`, `library.tsx`, `more.tsx`, and `navigation.ts`.
+- **Fixed all broken / 404 navigations (Web):**
+  - `/community/contributors` → wired `<ContributorBoard />` inside `CommunityRoute()` (was hitting `NotFound` from `Profile`, `Rewards`, `Contribute`, `PublishedImprovements`).
+  - `/games?mode=trail` → wired `<TopicTrail />` in `GamesRoute()` before the `!id` branch AND synced `Games.tsx` `chosenMode` with URL `?mode=` changes so `Games ▾` dropdown items switch modes even while already on `/games`.
+  - `/atlas/:chapter?` → updated route + `Atlas.tsx` `useParams().chapter` so all 26 `/atlas/<slug>` companion links across Polity, Geography, and History guides open their exact chapter instead of 404ing.
+  - `/subjects/computer-science` & `/subjects/science` → added seamless redirect in `ExamSubRoute()` to `/library/subjects/:id` (plus updated `Guides.tsx` rail links) so Computer & Science guide practice buttons load their 6,724 & 1,622 questions instead of 404ing.
+  - `/tests/make` → redirected to `/practice/build` in `TestsRoute()` and updated `CreateHub.tsx` & `LearningCatalogAdmin.tsx`.
+  - Restored `/essay`, `/arithmetic`, `/english`, `/mizo`, `/group-b` routes and clean parameter-preserving redirects for legacy bookmarks (`/mistakes`, `/revision`, `/important-days`, `/duel`, `/trail/:id?`, `/rewards`, `/board`, `/notifications`, `/contribute`, `/contribute/new`, `/website-bank`), and fixed `Home.tsx` links.
+- **Fixed all broken / external-404 navigations (Mobile):**
+  - Updated `src/lib/navigation.ts` (`openAppDestination`), `src/app/more.tsx`, and `src/app/(tabs)/library.tsx` so `/vocabulary`, `/revision`, `/mistakes`, `/trail`, `/important-days`, `/chronicle`, `/community/contributors`, `/vault`, `/bank`, `/practice`, `/games`, `/games/quest`, `/board`, `/saved`, `/profile`, `/atlas/*`, and `Essay writing` all route natively inside the app (`44/44` mobile tests + `tsc --noEmit` + all contract checks clean).
+- **Verified live:** `study.hawayu.in` returned `200` on `/vocabulary`, `/essay`, `/community/contributors`, `/games?mode=trail`, `/atlas/polity-making-of-constitution`, `/arithmetic`, `/english`, `/mizo`, `/group-b`, `/tests/make`, `/mistakes`, `/important-days`; `family.hawayu.in` `307`.
+
 25 November IST — **Shipped Algorithmic Learner & Study-Note Discovery (`GET /api/creators/discover` + `For you` sort) across API, Web & Mobile, plus full Phone Portrait, Phone Side-View (Landscape), and iPad Portrait/Landscape responsive optimization.**
 
 - **Algorithmic Discovery API (`api/app/routers/creators.py`, `tests/test_weekly_boards.py`):**

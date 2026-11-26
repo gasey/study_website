@@ -1,5 +1,5 @@
 import {useEffect,useState} from 'react'
-import {Link,useSearchParams} from 'react-router-dom'
+import {Link,useNavigate,useParams,useSearchParams} from 'react-router-dom'
 import {atlasAccount,atlasRead} from '../lib/atlas'
 import type {Chapter} from '../atlas/types'
 import AtlasChapter from '../atlas/AtlasChapter'
@@ -7,16 +7,18 @@ import AtlasChapter from '../atlas/AtlasChapter'
 const subjects=[{id:'geography',title:'Geography'},{id:'history',title:'History'},{id:'polity',title:'Polity'}]
 const control='min-h-11 w-full rounded-lg border border-hairline bg-card px-3 text-sm'
 export default function Atlas() {
+  const {chapter:chapterParam}=useParams()
+  const navigate=useNavigate()
   const [params,setParams]=useSearchParams()
   const [exam,setExam]=useState<{id:string;title:string}|null>(null),[ordering,setOrdering]=useState('exam')
   const [explored,setExplored]=useState<string[]>([])
   useEffect(()=>{let live=true,serial=0;const load=()=>{const run=++serial;return atlasAccount<{items:{chapter_id:string;explored:boolean}[]}>('/atlas/me/progress').then(r=>{if(live&&run===serial)setExplored(r.items.filter(i=>i.explored).map(i=>i.chapter_id))}).catch(()=>{if(live&&run===serial)setExplored([])})};void load();window.addEventListener('ism-progress-change',load);const reset=()=>{setExplored([]);void load()};window.addEventListener('ism-auth-change',reset);window.addEventListener('ism-auth-expired',reset);return()=>{live=false;window.removeEventListener('ism-progress-change',load);window.removeEventListener('ism-auth-change',reset);window.removeEventListener('ism-auth-expired',reset)}},[])
   const [chapters,setChapters]=useState<{id:string;title:string;subject:string;unit?:string;source_sha256:string;exam_relevant?:boolean}[]>([]),[chapter,setChapter]=useState<Chapter|null>(null),[error,setError]=useState(''),[catalogError,setCatalogError]=useState(''),[loaded,setLoaded]=useState(false),[retry,setRetry]=useState(0)
-  const selected=params.get('chapter')||chapters.find(c=>c.id.includes('mizoram'))?.id||chapters[0]?.id
+  const selected=chapterParam||params.get('chapter')||chapters.find(c=>c.id.includes('mizoram'))?.id||chapters[0]?.id
   useEffect(()=>{let live=true,serial=0;const load=()=>{const run=++serial;return atlasAccount<{items:typeof chapters;exam:{id:string;title:string}|null}>('/atlas/me/index').catch(()=>atlasRead<{items:typeof chapters}>('/atlas/chapters').then(r=>({...r,exam:null}))).then(r=>{if(live&&run===serial){setChapters(r.items);setExam(r.exam);setCatalogError('');setLoaded(true)}}).catch(e=>{if(live&&run===serial){setChapters([]);setChapter(null);setCatalogError(e.message);setLoaded(true)}})};void load();const timer=window.setInterval(()=>{if(document.visibilityState==='visible')void load()},30000);window.addEventListener('focus',load);const reset=()=>{setExam(null);setChapters([]);void load()};window.addEventListener('ism-auth-change',reset);window.addEventListener('ism-content-change',load);return()=>{live=false;clearInterval(timer);window.removeEventListener('focus',load);window.removeEventListener('ism-auth-change',reset);window.removeEventListener('ism-content-change',load)}},[retry])
   const hash=chapters.find(c=>c.id===selected)?.source_sha256
   useEffect(()=>{let live=true;setChapter(null);if(!selected)return;if(!hash)return;setError('');atlasRead<{body:Chapter}>('/atlas/chapters/'+encodeURIComponent(selected)).then(r=>{if(live){setChapter(r.body);setError('')}}).catch(e=>{if(live)setError(e.message)});return()=>{live=false}},[selected,hash,retry,chapters.length])
-  function select(id:string){const next=new URLSearchParams(params);next.set('chapter',id);next.delete('layer');next.delete('event');setParams(next)}
+  function select(id:string){const next=new URLSearchParams(params);next.set('chapter',id);next.delete('layer');next.delete('event');if(chapterParam){navigate('/atlas?'+next.toString())}else{setParams(next)}}
   const relevant=ordering==='exam'&&!!exam
   const subjectChapters=chapters.filter(c=>c.subject===(chapter?.subject||chapters.find(c=>c.id===selected)?.subject))
   const group=(c:typeof chapters[number])=>relevant&&c.exam_relevant?'For your exam':c.unit||'Chapters'

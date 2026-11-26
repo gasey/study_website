@@ -236,7 +236,7 @@ function BankVocabulary({embedded = false}: {embedded?: boolean}) {
               Create free account
             </Link>
             <Link
-              to="/library?view=practice"
+              to="/subjects/english?view=practice"
               className="px-3 py-3 text-sm text-link underline"
             >
               Browse English practice
@@ -252,11 +252,14 @@ function BankVocabulary({embedded = false}: {embedded?: boolean}) {
           ++generation.current; setCard(null);setResult(null);setSelected(null);setOverview(null);setError('');setCompleted(0);setFinished(false);
           const value=event.target.value;setParams(old=>{const p=new URLSearchParams(old);for(const key of ['review','question_id','return_to'])p.delete(key);if(value.startsWith('curated:')){p.set('curated_deck',value.slice(8));p.delete('deck');p.delete('word_review');p.delete('word_card')}else if(value)p.set('deck',value);else p.delete('deck');return p},{replace:true,preventScrollReset:true});
         }}><option value="">All vocabulary</option>{decks.items.map(item=><option key={item.id} value={item.id}>{item.label} · {item.eligible} {item.eligible===1?'question':'questions'}</option>)}{!!decks.curated_items?.length&&<optgroup label="Reviewed word decks">{decks.curated_items.map(item=><option key={item.id} value={'curated:'+item.id}>{item.label} · {item.eligible_words} words</option>)}</optgroup>}</select>
-        <div className="mt-4 grid gap-3 sm:grid-cols-2">{decks.items.filter(item=>!deck || item.id===deck).map(item=><article key={item.id} className="min-w-0 rounded-panel border border-hairline bg-paper p-4">
+        <div className="mt-4 grid gap-3 sm:grid-cols-2">{decks.items.filter(item=>!deck || item.id===deck).map(item=><button key={item.id} type="button" disabled={busy || loading} onClick={()=>{
+          ++generation.current; setCard(null);setResult(null);setSelected(null);setOverview(null);setError('');setCompleted(0);setFinished(false);
+          setParams(old=>{const p=new URLSearchParams(old);for(const key of ['review','question_id','return_to'])p.delete(key);if(deck===item.id)p.delete('deck');else p.set('deck',item.id);return p},{replace:true,preventScrollReset:true});
+        }} className={'min-w-0 rounded-panel border p-4 text-left transition-colors '+(deck===item.id?'border-[#72509A] bg-[#F1EBF7]/50':'border-hairline bg-paper hover:border-ink')}>
           <h3 className="break-words text-sm font-bold">{item.label}</h3>
           <p className="mt-2 text-sm text-secondary">{item.attempted} of {item.eligible} answered · {item.correct_latest} latest correct · {item.due} due</p>
           <p className="mt-2 text-xs text-secondary">{item.attempted ? item.state[0].toUpperCase()+item.state.slice(1) : 'Not started'}{item.rusty ? ' · Time to revisit' : ''}</p>
-        </article>)}</div>
+        </button>)}</div>
         <p className="mt-4 text-xs leading-relaxed text-secondary">{decks.basis}</p>
         {!!decks.curated_items?.length&&<p className="mt-2 text-xs text-secondary">{decks.curated_known_total||0} distinct English words retained in available reviewed word decks. Choose a reviewed deck above for word-card practice.</p>}
         {!decks.curated_available && <p className="mt-2 text-xs leading-relaxed text-secondary">{decks.curated_message}</p>}

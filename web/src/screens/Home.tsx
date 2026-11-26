@@ -12,8 +12,8 @@ const AREAS = [
 
 const COMMUNITY = [
   {color:'#B23A9A',softClass:'bg-community-soft',inkClass:'text-community-dark',title:'Questions & doubts',body:'Discuss the questions you are working through and learn from other explanations.',to:'/community?tab=questions'},
-  {color:'#2D5BD0',softClass:'bg-practice-soft',inkClass:'text-practice-dark',title:'Website question bank',body:'Practise reviewed learner contributions, kept separate from the MPSC paper bank.',to:'/website-bank'},
-  {color:'#B26B00',softClass:'bg-exams-soft',inkClass:'text-exams-dark',title:'Important dates & events',body:'Find observances, battles and milestones from the question bank.',to:'/important-days'},
+  {color:'#2D5BD0',softClass:'bg-practice-soft',inkClass:'text-practice-dark',title:'Website question bank',body:'Practise reviewed learner contributions, kept separate from the MPSC paper bank.',to:'/community/questions'},
+  {color:'#B26B00',softClass:'bg-exams-soft',inkClass:'text-exams-dark',title:'Important dates & events',body:'Find observances, battles and milestones from the question bank.',to:'/chronicle?view=list'},
   {color:'#7B45B8',softClass:'bg-learn-soft',inkClass:'text-learn-dark',title:'Notes & lessons',body:'Read shared study materials and save useful resources for later.',to:'/library?library_view=reading'},
 ]
 

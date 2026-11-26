@@ -194,6 +194,16 @@ export const SITE_MAP: readonly Destination[] = [
     menu: 'subjects',
     keywords: 'mizo language literature proverbs culture',
   },
+  {
+    id: 'vocabulary',
+    path: '/vocabulary',
+    label: 'Vocabulary Builder',
+    section: 'study',
+    blurb: 'Spaced-repetition vocabulary decks, idioms, synonyms, antonyms and reviewed word cards.',
+    surfaces: ['index', 'quickfind', 'quick'],
+    menu: 'subjects',
+    keywords: 'vocabulary words idioms synonyms antonyms one word substitution spaced review leitner decks',
+  },
 
   // Practice dropdown items
   {

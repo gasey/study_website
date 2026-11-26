@@ -15,7 +15,7 @@ export const PRIMARY_NAV = destinationsForSurface('tabs')
 export function primarySection(path: string) {
   if (/^\/(home|feed|community)(\/|$)/.test(path) && path !== '/community/questions') return '/home'
   if (path === '/onboarding' || /^\/(exams|group-b|past-papers|calendar)(\/|$)/.test(path)) return '/exams'
-  if (/^\/(library|subjects|guides|materials|atlas|chronicle|stats|english|mizo|arithmetic)(\/|$)/.test(path)) return '/library'
+  if (/^\/(library|subjects|guides|materials|atlas|chronicle|stats|english|mizo|arithmetic|vocabulary|essay)(\/|$)/.test(path)) return '/library'
   if (/^\/(practice|bank|tests|revise|games|vault|results)(\/|$)/.test(path) || path === '/community/questions') return '/practice'
   return '/profile'
 }
@@ -93,6 +93,8 @@ export function mobileTitle(path: string) {
         'past-papers': 'Papers',
         rewards: 'Rewards',
         tests: 'Shared tests',
+        vocabulary: 'Vocabulary',
+        essay: 'Essay',
       } as Record<string, string>
     )[mobileScreen(path)] || 'Finna'
   )

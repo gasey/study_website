@@ -73,6 +73,13 @@ const Materials = lazy(() => import('./screens/Materials'))
 const MaterialReader = lazy(() => import('./screens/Materials').then((m) => ({ default: m.MaterialReader })))
 const ContentEditor = lazy(() => import('./screens/ContentStudio'))
 const CreatorHome = lazy(() => import('./screens/ContentStudio').then((m) => ({ default: m.CreatorHome })))
+const Vocabulary = lazy(() => import('./screens/Vocabulary'))
+const Essay = lazy(() => import('./screens/Essay'))
+const ContributorBoard = lazy(() => import('./screens/ContributorBoard'))
+const Arithmetic = lazy(() => import('./screens/Arithmetic'))
+const English = lazy(() => import('./screens/English'))
+const Mizo = lazy(() => import('./screens/Mizo'))
+const GroupBStudy = lazy(() => import('./screens/GroupBStudy'))
 
 function NotFound() {
   return (
@@ -121,14 +128,14 @@ function CalendarRoute() {
   return <ExamCalendar notices={new URLSearchParams(search).get('view') === 'notices'} />
 }
 
-/** Topic Trail folded into the one Play hub (§0.12). It was routed at
- *  `/trail/:id` until Phase V.14 removed that route without retargeting the
- *  links, which broke trail creation. It reads the same `id` param. */
+/** Topic Trail folded into the one Play hub (§0.12). Both `/games?mode=trail`
+ *  (pack chooser) and `/games/:id?mode=trail` (active run) render TopicTrail. */
 function GamesRoute() {
   const { id } = useParams()
   const { search } = useLocation()
+  if (new URLSearchParams(search).get('mode') === 'trail') return <TopicTrail />
   if (!id) return <Games />
-  return new URLSearchParams(search).get('mode') === 'trail' ? <TopicTrail /> : <GamePlayer />
+  return <GamePlayer />
 }
 
 function CreatorsRoute() {
@@ -147,6 +154,7 @@ function CommunityRoute() {
   const { sub } = useParams()
   if (!sub) return <Feed />
   if (sub === 'questions') return <CommunityQuestions />
+  if (sub === 'contributors') return <ContributorBoard />
   return <NotFound />
 }
 
@@ -202,8 +210,14 @@ function LibraryScopeRoute() {
   return <NotFound />
 }
 
+const SUBJECT_MODULE_SLUGS = new Set(['english', 'mathematics', 'reasoning', 'gk-gs', 'mizo'])
+
 function ExamSubRoute({ subject = false }: { subject?: boolean }) {
-  const { sub } = useParams()
+  const { id = '', sub } = useParams()
+  const { search } = useLocation()
+  if (subject && !sub && !SUBJECT_MODULE_SLUGS.has(id.replace(/^subject-/, ''))) {
+    return <Navigate to={{ pathname: `/library/subjects/${encodeURIComponent(id)}`, search }} replace />
+  }
   if (sub === 'paper') return <PaperViewer />
   if (sub === 'mock') return <MockRunner />
   if (!sub) return <ExamPage isSubjectRoute={subject} />
@@ -212,10 +226,42 @@ function ExamSubRoute({ subject = false }: { subject?: boolean }) {
 
 function TestsRoute() {
   const { testId, action } = useParams()
-  if (testId === 'make') return <NotFound />
+  const { search } = useLocation()
+  if (testId === 'make') return <Navigate to={{ pathname: '/practice/build', search }} replace />
   if (action === 'take') return <MockRunner />
   if (!action) return <SharedTests />
   return <NotFound />
+}
+
+function TrailLegacyRedirect() {
+  const { id } = useParams()
+  return <Navigate to={id ? `/games/${encodeURIComponent(id)}?mode=trail` : '/games?mode=trail'} replace />
+}
+
+function ConsolidatedRedirect({ target }: { target: string }) {
+  const { search, hash } = useLocation()
+  const params = new URLSearchParams(search)
+  if (target === '/revise?tab=queue') {
+    params.set('tab', 'queue')
+    return <Navigate to={{ pathname: '/revise', search: '?' + params.toString(), hash }} replace />
+  }
+  if (target === '/revise') {
+    if (params.get('session')?.startsWith('rev_')) params.set('tab', 'legacy')
+    else {
+      params.delete('session')
+      params.delete('tab')
+    }
+    return <Navigate to={{ pathname: '/revise', search: params.size ? '?' + params.toString() : '', hash }} replace />
+  }
+  if (target === '/chronicle?view=list') {
+    if (!params.has('view')) params.set('view', 'list')
+    return <Navigate to={{ pathname: '/chronicle', search: '?' + params.toString(), hash }} replace />
+  }
+  if (target === '/games?mode=duel') {
+    params.set('mode', 'duel')
+    return <Navigate to={{ pathname: '/games', search: '?' + params.toString(), hash }} replace />
+  }
+  return <Navigate to={{ pathname: target, search, hash }} replace />
 }
 
 export default function App() {
@@ -235,7 +281,7 @@ export default function App() {
   const examScope = useExamScope()
   useEffect(() => syncExamScope(search), [search])
   const scopedWorkspace =
-    (pathname === '/' || /^\/(home|bank|past-papers|library|exams|practice|guides|search)(\/|$)/.test(pathname)) &&
+    (pathname === '/' || /^\/(home|bank|past-papers|library|exams|practice|guides|search|vocabulary)(\/|$)/.test(pathname)) &&
     !pathname.includes('/mock')
   const adminWorkspace =
     pathname === '/admin/ops' || pathname === '/admin/users' || pathname.startsWith('/admin/bank')
@@ -285,8 +331,14 @@ export default function App() {
                 <Route path="/results/:mockId" element={<Results />} />
                 <Route path="/library" element={<Library />} />
                 <Route path="/library/:kind/:shelfId" element={<LibraryScopeRoute />} />
+                <Route path="/vocabulary" element={<Vocabulary />} />
+                <Route path="/essay" element={<Essay />} />
+                <Route path="/english" element={<English />} />
+                <Route path="/arithmetic" element={<Arithmetic />} />
+                <Route path="/mizo" element={<Mizo />} />
+                <Route path="/group-b" element={<GroupBStudy />} />
                 <Route path="/revise" element={<Revise />} />
-                <Route path="/atlas" element={<Atlas />} />
+                <Route path="/atlas/:chapter?" element={<Atlas />} />
                 <Route path="/chronicle" element={<Chronicle />} />
                 {/* Stats routes its own sub-pages. §VII.14 proposed demoting it
                     to a Home view; V.14 removed the route without doing that,
@@ -317,6 +369,18 @@ export default function App() {
                 <Route path="/billing" element={<BillingRoute />} />
                 <Route path="/policies/:page" element={<PolicyPages />} />
                 <Route path="/admin/:section" element={<AdminRoute />} />
+                {/* Consolidated legacy bookmarks — preserve parameters instead of 404ing */}
+                <Route path="/mistakes" element={<ConsolidatedRedirect target="/revise?tab=queue" />} />
+                <Route path="/revision" element={<ConsolidatedRedirect target="/revise" />} />
+                <Route path="/important-days" element={<ConsolidatedRedirect target="/chronicle?view=list" />} />
+                <Route path="/duel" element={<ConsolidatedRedirect target="/games?mode=duel" />} />
+                <Route path="/trail/:id?" element={<TrailLegacyRedirect />} />
+                <Route path="/rewards" element={<ConsolidatedRedirect target="/profile/rewards" />} />
+                <Route path="/board" element={<ConsolidatedRedirect target="/profile/rewards" />} />
+                <Route path="/notifications" element={<ConsolidatedRedirect target="/inbox" />} />
+                <Route path="/contribute" element={<ConsolidatedRedirect target="/create/submissions" />} />
+                <Route path="/contribute/new" element={<ConsolidatedRedirect target="/create/new" />} />
+                <Route path="/website-bank" element={<ConsolidatedRedirect target="/community/questions" />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </div>

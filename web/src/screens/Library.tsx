@@ -50,6 +50,14 @@ const FEATURED_STUDY_TOOLS = [
     image: "/images/discover/chronicle.jpg",
   },
   {
+    title: "Vocabulary Builder",
+    href: "/vocabulary",
+    tag: "Spaced review",
+    label: "Practise exam vocabulary, idioms, synonyms, antonyms and reviewed word decks with automatic scheduling.",
+    cta: "Open Vocabulary →",
+    image: "/images/discover/guides.jpg",
+  },
+  {
     title: "India & Global Stats",
     href: "/stats",
     tag: "Verified data",
