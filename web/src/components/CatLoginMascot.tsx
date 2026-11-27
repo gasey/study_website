@@ -2,23 +2,34 @@ import { useEffect, useRef, useState } from 'react'
 
 export type CatMood = 'idle' | 'email' | 'password' | 'peek' | 'happy' | 'error'
 
+export const CAT_MOOD_TEXT: Record<CatMood, string> = {
+  idle: 'Tap the cat to say hi',
+  email: 'Reading along…',
+  password: 'Not peeking at your password!',
+  peek: 'Just a tiny peek!',
+  happy: 'Purrfect! Ready to study',
+  error: 'Oops — check those details',
+}
+
 export interface CatLoginMascotProps {
   mood: CatMood
   /** 0..1 reading progress along the email input so eyes follow typing. */
   emailProgress?: number
   onPet?: () => void
+  /** Hide inline pill when the parent renders the mood pill perched on the card top edge. */
+  hidePill?: boolean
 }
 
 /**
  * Interactive Ginger Tabby Cat Mascot for Finna Sign-In / Join.
- * Inspired by vineethtrv/NxqKoY (mouse-tracking eyes + shy paw cover),
- * FilipVitas/GdMbOX (perched peeking character over card), and
- * Anna_Batura/ExKBXdd (floating fish treats, twinkling stars & drifting paw prints).
+ * Eyes follow the pointer / email typing progress; paws cover eyes on password;
+ * one paw lowers on Show ("peek"); happy arc eyes on submit or tap; frown on error.
  */
 export default function CatLoginMascot({
   mood,
   emailProgress = 0,
   onPet,
+  hidePill = false,
 }: CatLoginMascotProps) {
   const stageRef = useRef<HTMLDivElement>(null)
   const [eyeOffset, setEyeOffset] = useState({ x: 0, y: 0 })
@@ -85,14 +96,14 @@ export default function CatLoginMascot({
         }
       }}
     >
-      <svg viewBox="0 0 340 192" className="cat-svg" aria-hidden="true">
+      <svg viewBox="40 14 260 190" className="cat-svg" aria-hidden="true">
         <defs>
           <radialGradient id="cat-aura" cx="50%" cy="62%" r="48%">
-            <stop offset="0%" stopColor="#FED7AA" stopOpacity="0.72" />
-            <stop offset="55%" stopColor="#F97316" stopOpacity="0.2" />
-            <stop offset="100%" stopColor="#F97316" stopOpacity="0" />
+            <stop offset="0%" stopColor="#FFE7A3" stopOpacity="0.8" />
+            <stop offset="55%" stopColor="#FFC83D" stopOpacity="0.22" />
+            <stop offset="100%" stopColor="#FFC83D" stopOpacity="0" />
           </radialGradient>
-          {/* Vibrant Ginger Tabby Fur */}
+          {/* Ginger Tabby Fur */}
           <linearGradient id="cat-ginger-fur" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor="#FDBA74" />
             <stop offset="48%" stopColor="#FB923C" />
@@ -107,87 +118,10 @@ export default function CatLoginMascot({
             <stop offset="65%" stopColor="#FB923C" />
             <stop offset="100%" stopColor="#FFF3D6" />
           </linearGradient>
-          <linearGradient id="cat-fish-teal" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#5EEAD4" />
-            <stop offset="100%" stopColor="#0A7D8C" />
-          </linearGradient>
-          <linearGradient id="cat-fish-gold" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#FDE047" />
-            <stop offset="100%" stopColor="#F43F5E" />
-          </linearGradient>
         </defs>
 
-        {/* Warm ginger-gold aura */}
+        {/* Warm Finna yellow aura */}
         <ellipse cx="170" cy="120" rx="124" ry="66" fill="url(#cat-aura)" />
-
-        {/* === FLOATING FISH #1 (Teal-Aqua Treat Fish on Left) === */}
-        <g className="cat-float-fish cat-fish-1">
-          <g transform="translate(30 78) rotate(-14)">
-            {/* Bubbles */}
-            <circle cx="38" cy="-6" r="2.4" fill="#99F6E4" opacity="0.85" />
-            <circle cx="44" cy="-13" r="1.6" fill="#99F6E4" opacity="0.7" />
-            {/* Tail fin */}
-            <path d="M0 0 L-13 -9 Q-9 0 -13 9 Z" fill="#0D9488" stroke="#134E4A" strokeWidth="1.5" strokeLinejoin="round" />
-            {/* Plump fish body */}
-            <ellipse cx="14" cy="0" rx="16" ry="10.5" fill="url(#cat-fish-teal)" stroke="#134E4A" strokeWidth="1.6" />
-            {/* Dorsal & side fin */}
-            <path d="M9 -10 Q15 -16 20 -9" fill="#2DD4BF" stroke="#134E4A" strokeWidth="1.3" />
-            <path d="M12 2 Q16 6 20 1" fill="none" stroke="#CCFBF1" strokeWidth="1.8" strokeLinecap="round" />
-            {/* Cute fish eye & smile */}
-            <circle cx="22" cy="-2.2" r="2.4" fill="#0F172A" />
-            <circle cx="22.8" cy="-3" r="0.9" fill="#FFFFFF" />
-            <path d="M25 3 Q27 4 28.5 2.5" fill="none" stroke="#134E4A" strokeWidth="1.3" strokeLinecap="round" />
-          </g>
-        </g>
-
-        {/* === FLOATING FISH #2 (Golden-Coral Koi Fish on Right!) === */}
-        <g className="cat-float-fish cat-fish-2">
-          <g transform="translate(296 66) scale(-1, 1) rotate(-12)">
-            {/* Bubbles */}
-            <circle cx="36" cy="-7" r="2.2" fill="#FEF08A" opacity="0.9" />
-            <circle cx="42" cy="-14" r="1.5" fill="#FDE68A" opacity="0.75" />
-            {/* Tail fin */}
-            <path d="M0 0 L-12 -8.5 Q-8 0 -12 8.5 Z" fill="#FB7185" stroke="#881337" strokeWidth="1.5" strokeLinejoin="round" />
-            {/* Plump fish body */}
-            <ellipse cx="13" cy="0" rx="15" ry="9.8" fill="url(#cat-fish-gold)" stroke="#881337" strokeWidth="1.6" />
-            {/* Stripes & fin */}
-            <path d="M7 -8 Q10 0 7 8" fill="none" stroke="#FFFFFF" strokeWidth="2.4" opacity="0.7" />
-            <path d="M11 2 Q15 6 19 1" fill="none" stroke="#FFF1F2" strokeWidth="1.7" strokeLinecap="round" />
-            {/* Cute fish eye */}
-            <circle cx="21" cy="-2" r="2.3" fill="#0F172A" />
-            <circle cx="21.7" cy="-2.8" r="0.85" fill="#FFFFFF" />
-          </g>
-        </g>
-
-        {/* Floating 4-point twinkling stars */}
-        <g className="cat-float-star cat-star-1">
-          <path d="M68 38 Q68 28 58 28 Q68 28 68 18 Q68 28 78 28 Q68 28 68 38Z" fill="#F59E0B" />
-        </g>
-        <g className="cat-float-star cat-star-2">
-          <path d="M262 34 Q262 24 252 24 Q262 24 262 14 Q262 24 272 24 Q262 24 262 34Z" fill="#FBBF24" />
-        </g>
-        <g className="cat-float-star cat-star-3">
-          <path d="M98 22 Q98 16 92 16 Q98 16 98 10 Q98 16 104 16 Q98 16 98 22Z" fill="#0A7D8C" />
-        </g>
-        <g className="cat-float-star cat-star-4">
-          <path d="M242 114 Q242 108 236 108 Q242 108 242 102 Q242 108 248 108 Q242 108 242 114Z" fill="#FB7185" />
-        </g>
-
-        {/* Floating cute paw prints */}
-        <g className="cat-float-paw cat-pawprint-1" transform="translate(46 132) rotate(-18)">
-          <ellipse cx="0" cy="4" rx="5.8" ry="4.6" fill="#F97316" opacity="0.48" />
-          <circle cx="-5.8" cy="-2.8" r="2.2" fill="#F97316" opacity="0.48" />
-          <circle cx="-1.3" cy="-5.8" r="2.2" fill="#F97316" opacity="0.48" />
-          <circle cx="3.5" cy="-5.2" r="2.2" fill="#F97316" opacity="0.48" />
-          <circle cx="6.8" cy="-1.2" r="2" fill="#F97316" opacity="0.48" />
-        </g>
-        <g className="cat-float-paw cat-pawprint-2" transform="translate(296 126) rotate(16)">
-          <ellipse cx="0" cy="4" rx="5.5" ry="4.4" fill="#0A7D8C" opacity="0.42" />
-          <circle cx="-5.4" cy="-2.6" r="2.1" fill="#0A7D8C" opacity="0.42" />
-          <circle cx="-1" cy="-5.4" r="2.1" fill="#0A7D8C" opacity="0.42" />
-          <circle cx="3.4" cy="-5" r="2.1" fill="#0A7D8C" opacity="0.42" />
-          <circle cx="6.4" cy="-1" r="1.9" fill="#0A7D8C" opacity="0.42" />
-        </g>
 
         {/* Swaying ginger striped tail */}
         <path
@@ -211,9 +145,9 @@ export default function CatLoginMascot({
         {/* Ginger body + warm cream chest bib */}
         <ellipse cx="170" cy="178" rx="66" ry="34" fill="#F97316" stroke="#7C2D12" strokeWidth="2.4" />
         <ellipse cx="170" cy="178" rx="34" ry="22" fill="#FFF3D6" />
-        {/* Teal collar + golden bell */}
-        <path d="M132 158 Q170 172 208 158" fill="none" stroke="#0A7D8C" strokeWidth="8" strokeLinecap="round" />
-        <circle cx="170" cy="168" r="7.5" fill="#FBBF24" stroke="#7C2D12" strokeWidth="1.8" />
+        {/* Finna blue collar + yellow bell */}
+        <path d="M132 158 Q170 172 208 158" fill="none" stroke="#1F4BE0" strokeWidth="8" strokeLinecap="round" />
+        <circle cx="170" cy="168" r="7.5" fill="#FFC83D" stroke="#7C2D12" strokeWidth="1.8" />
         <circle cx="170" cy="170" r="2" fill="#7C2D12" />
 
         {/* Animated Ginger Cat Head */}
@@ -346,17 +280,7 @@ export default function CatLoginMascot({
         </g>
       </svg>
 
-      <span className="cat-mood-pill">
-        {effectiveMood === 'password'
-          ? '🙈 Not peeking at your password!'
-          : effectiveMood === 'peek'
-            ? '🫣 Just a tiny peek!'
-            : effectiveMood === 'happy'
-              ? '✨ Purrfect! Ready to study'
-              : effectiveMood === 'error'
-                ? '😿 Oops — check those details'
-                : '🐟 Tap the ginger cat to say hi'}
-      </span>
+      {!hidePill && <span className="cat-mood-pill">{CAT_MOOD_TEXT[effectiveMood]}</span>}
     </div>
   )
 }

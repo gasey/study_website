@@ -494,7 +494,7 @@ function CompetitiveLeaderboardSection() {
   <p className="mt-2 text-sm text-secondary">Finished games, one shared visibility choice. Daily Five ranks your longest run of completed days within this India week. Duel ties don’t count as wins.</p>
   <div role="group" aria-label="Game board mode" className="mt-4 flex flex-wrap gap-2">{modes.map(([id,label])=><button key={id} type="button" aria-pressed={track===id} onClick={()=>setTrack(id)} className={BTN+(track===id?' !bg-ink !text-paper':'')}>{label}</button>)}</div>
   <WeeklyStandings key={track} endpoint={'/games/leaderboard?contract=2&track='+track} unit={modes.find(m=>m[0]===track)![2]} empty="No public results for this mode this week yet."/>
-  <Link to="/profile/rewards" className={BTN+' mt-5'}>Weekly XP league →</Link><Link to="/profile/rewards" className={BTN+' ml-2 mt-5'}>My visibility →</Link>
+  <Link to="/board" className={BTN+' mt-5'}>Full leaderboard →</Link><Link to="/profile/rewards" className={BTN+' ml-2 mt-5'}>My visibility →</Link>
  </section>
 }
 function CupBoard({ cupId }: { cupId: string }) {

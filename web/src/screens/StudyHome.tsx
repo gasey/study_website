@@ -50,9 +50,7 @@ import ExploreDeckRail from '../components/ExploreDeckRail'
 import VaultShowcaseCard from '../components/VaultShowcaseCard'
 import ExamPickerDialog from '../components/ExamPickerDialog'
 import HomeFeedPreview from '../components/HomeFeedPreview'
-import SubjectBookshelf from '../components/SubjectBookshelf'
 import AvatarArt, { DEFAULT_HERO_LOOK } from '../components/AvatarArt'
-import { CatXpBar } from '../components/CatLoader'
 import { mockResumePath } from '../lib/sharedTests'
 import HomeSetupWizard, { type WizardStep } from '../components/HomeSetupWizard'
 import {
@@ -145,7 +143,6 @@ export default function StudyHome() {
   const [examError, setExamError] = useState('')
   const [busyExamId, setBusyExamId] = useState<string | null>(null)
   const [pickerOpen, setPickerOpen] = useState(false)
-  const [monthOffset] = useState(0)
   const [wizardOpen, setWizardOpen] = useState(false)
   const [wizardStep, setWizardStep] = useState<WizardStep>(1)
   const [wizardFirstTime, setWizardFirstTime] = useState(false)
@@ -308,7 +305,6 @@ export default function StudyHome() {
   const [draftFocusIds, setDraftFocusIds] = useState<string[]>([])
   const [savingFocus, setSavingFocus] = useState(false)
   const [focusError, setFocusError] = useState('')
-  const [subjectFilter, setSubjectFilter] = useState<'focus' | 'all'>('all')
 
   const rawView = params.get('view')
   const view: HomeView = rawView === 'exams' || rawView === 'feed' ? rawView : 'overview'
@@ -443,7 +439,6 @@ export default function StudyHome() {
             if (!live) return
             const ids = f.items.map((item) => item.subject_id)
             writeLocalFocusSubjects(ids)
-            if (ids.length > 0) setSubjectFilter('focus')
           })
           .catch(() => {})
         const s = await reviewSession()
@@ -487,30 +482,16 @@ export default function StudyHome() {
     return () => window.removeEventListener('ism-focus-change', syncFocus)
   }, [])
 
-  // Load month calendar exam dates for the visible mini-calendar month
-  const calBase = useMemo(() => {
-    const [y, m] = today.split('-').map(Number)
-    const d = new Date(Date.UTC(y, m - 1 + monthOffset, 1))
-    const year = d.getUTCFullYear()
-    const month = d.getUTCMonth()
-    const daysInMonth = new Date(Date.UTC(year, month + 1, 0)).getUTCDate()
-    const firstDow = (d.getUTCDay() + 6) % 7 // Monday-first
-    const ym = `${year}-${String(month + 1).padStart(2, '0')}`
-    return {
-      year,
-      month,
-      daysInMonth,
-      firstDow,
-      start: `${ym}-01`,
-      end: `${ym}-${String(daysInMonth).padStart(2, '0')}`,
-      ym,
-    }
-  }, [today, monthOffset])
+  // Load upcoming exam dates across the next 12 months for the editorial greeting countdown
+  const calendarWindowEnd = useMemo(() => {
+    const endMs = Date.parse(today + 'T12:00:00Z') + 365 * 86400000
+    return new Date(endMs).toISOString().slice(0, 10)
+  }, [today])
 
   useEffect(() => {
     let live = true
     calendarRead<{ items: CalendarEvent[] }>(
-      `/calendar/events?start=${calBase.start}&end=${calBase.end}&limit=100`,
+      `/calendar/events?start=${today}&end=${calendarWindowEnd}&limit=100`,
     )
       .then((r) => {
         if (live) setData((prev) => ({ ...prev, calendarEvents: r.items || [] }))
@@ -521,7 +502,7 @@ export default function StudyHome() {
     return () => {
       live = false
     }
-  }, [calBase.start, calBase.end])
+  }, [today, calendarWindowEnd])
 
   useEffect(() => {
     const refresh = () => setRetry((n) => n + 1)
@@ -536,10 +517,6 @@ export default function StudyHome() {
   )
   const progressByExam = useMemo(
     () => new Map(data.examProgress.map((row) => [row.collection_id, row])),
-    [data.examProgress],
-  )
-  const progressRecord = useMemo(
-    () => Object.fromEntries(data.examProgress.map((row) => [row.collection_id, row])),
     [data.examProgress],
   )
 
@@ -602,35 +579,58 @@ export default function StudyHome() {
   }, [localFocusIds, subjectCatalog, progressBySubject])
 
   const displayedSubjects = useMemo(() => {
-    if (subjectFilter === 'focus' && activeFocusSubjects.length > 0) {
-      return activeFocusSubjects.map((s) => {
-        const stats = progressBySubject.get(s.id)
-        return {
-          subject_id: s.id,
-          subject: s.label,
-          answered: stats?.answered ?? 0,
-          correct: stats?.correct ?? 0,
-          focused: true,
-        }
-      })
-    }
     const focusSet = new Set(localFocusIds)
-    return [...(p?.subjects || [])]
-      .sort((a, b) => {
-        const aFocus = focusSet.has(a.subject_id) ? 0 : 1
-        const bFocus = focusSet.has(b.subject_id) ? 0 : 1
-        if (aFocus !== bFocus) return aFocus - bFocus
-        return b.answered - a.answered
-      })
-      .slice(0, 6)
-      .map((s) => ({
+    const catalogById = new Map(subjectCatalog.map((s) => [s.id, s]))
+
+    const merged = new Map<
+      string,
+      {
+        subject_id: string
+        subject: string
+        done: number
+        total: number
+        answered: number
+        correct: number
+        focused: boolean
+      }
+    >()
+
+    for (const s of p?.subjects || []) {
+      const cat = catalogById.get(s.subject_id)
+      merged.set(s.subject_id, {
         subject_id: s.subject_id,
         subject: s.subject,
+        done: s.unique_questions ?? s.answered,
+        total: cat?.questions ?? 0,
         answered: s.answered,
         correct: s.correct,
         focused: focusSet.has(s.subject_id),
-      }))
-  }, [subjectFilter, activeFocusSubjects, progressBySubject, p?.subjects, localFocusIds])
+      })
+    }
+    for (const cat of subjectCatalog) {
+      if (!merged.has(cat.id)) {
+        merged.set(cat.id, {
+          subject_id: cat.id,
+          subject: cat.label,
+          done: 0,
+          total: cat.questions,
+          answered: 0,
+          correct: 0,
+          focused: focusSet.has(cat.id),
+        })
+      }
+    }
+
+    return Array.from(merged.values())
+      .sort((a, b) => {
+        const aFocus = a.focused ? 0 : 1
+        const bFocus = b.focused ? 0 : 1
+        if (aFocus !== bFocus) return aFocus - bFocus
+        if (b.done !== a.done) return b.done - a.done
+        return b.total - a.total
+      })
+      .slice(0, 6)
+  }, [p?.subjects, subjectCatalog, localFocusIds])
 
   function openFocusEditor() {
     setDraftFocusIds(localFocusIds)
@@ -654,8 +654,6 @@ export default function StudyHome() {
         await saveFocusSubjects(nextIds)
       }
       writeLocalFocusSubjects(nextIds)
-      if (nextIds.length > 0) setSubjectFilter('focus')
-      else setSubjectFilter('all')
       setFocusEditorOpen(false)
       window.dispatchEvent(new Event('ism-focus-change'))
     } catch (e) {
@@ -738,13 +736,7 @@ export default function StudyHome() {
     return { salutation, dateLine, daysUntil }
   }, [data.calendarEvents, today])
 
-  const hasRightRail =
-    !isHidden('leaderboard') ||
-    !isHidden('quests') ||
-    !isHidden('games') ||
-    !isHidden('discover') ||
-    !isHidden('shortcuts') ||
-    !isHidden('calendar')
+  const hasRightRail = true
   const gridColClass = hasRightRail ? 'is-calm-three' : 'is-two-col'
 
   return (
@@ -849,56 +841,64 @@ export default function StudyHome() {
           </section>
         ) : !isHidden('kpi') ? (
           /* 3d Slim Merged Navy XP + KPI Banner */
-          <section className="finna-calm-xp-bar" aria-label="Level, XP and weekly study stats">
-            <span className="finna-home-xp-lvl">LV {homeRewards?.level ?? 1}</span>
-            <div className="finna-calm-xp-track">
-              {homeRewards ? (
-                <CatXpBar
-                  value={Math.max(0, homeRewards.lifetime_xp - homeRewards.level_floor_xp)}
-                  max={Math.max(40, homeRewards.next_level_xp - homeRewards.level_floor_xp)}
-                  tone="xp"
-                  label={`Level ${homeRewards.level} → ${homeRewards.level + 1}`}
-                  meta={`${homeRewards.lifetime_xp.toLocaleString('en-IN')} / ${homeRewards.next_level_xp.toLocaleString('en-IN')} XP`}
-                />
-              ) : (
-                <CatXpBar
-                  value={Math.min(100, weekAnswers * 10)}
-                  max={100}
-                  tone="xp"
-                  label="Study XP"
-                  meta={data.authenticated ? 'Answer to earn XP' : 'Sign in to save XP'}
-                />
-              )}
-            </div>
-            <div className="finna-calm-xp-metrics">
-              <span>
-                <b>{p ? weekAnswers.toLocaleString('en-IN') : '—'}</b> answered this week
-              </span>
-              <span>
-                <b>{weekAccuracy ?? '—'}</b> accuracy
-              </span>
-              <span>
-                <b>{p ? `${p.current_streak}d` : '—'}</b> streak
-              </span>
-            </div>
-            <div className="finna-calm-xp-right">
-              <Link
-                to={data.authenticated ? '/profile/rewards' : '/login'}
-                className="finna-home-xp-link"
-              >
-                {data.authenticated ? 'Rewards & XP →' : 'Sign in →'}
-              </Link>
-              <button
-                type="button"
-                className="finna-podium-hide"
-                aria-label="Hide study stats banner"
-                title="Hide stats banner"
-                onClick={() => handleHideCard('kpi')}
-              >
-                ×
-              </button>
-            </div>
-          </section>
+          (() => {
+            const xpVal = homeRewards
+              ? Math.max(0, homeRewards.lifetime_xp - homeRewards.level_floor_xp)
+              : Math.min(100, weekAnswers * 10)
+            const xpMax = homeRewards
+              ? Math.max(40, homeRewards.next_level_xp - homeRewards.level_floor_xp)
+              : 100
+            const xpPct = Math.max(0, Math.min(100, Math.round((xpVal / xpMax) * 100)))
+            const xpTitle = homeRewards
+              ? `Level ${homeRewards.level} → Level ${homeRewards.level + 1} · ${homeRewards.lifetime_xp.toLocaleString('en-IN')} / ${homeRewards.next_level_xp.toLocaleString('en-IN')} XP`
+              : data.authenticated
+                ? 'Answer questions to earn XP'
+                : 'Sign in to save XP'
+            return (
+              <section className="finna-calm-xp-bar" aria-label="Level, XP and weekly study stats">
+                <span className="finna-home-xp-lvl">LV {homeRewards?.level ?? 1}</span>
+                <div
+                  className="finna-calm-xp-meter"
+                  role="progressbar"
+                  aria-label={xpTitle}
+                  aria-valuemin={0}
+                  aria-valuemax={xpMax}
+                  aria-valuenow={Math.min(xpMax, Math.round(xpVal))}
+                  title={xpTitle}
+                >
+                  <div className="finna-calm-xp-fill" style={{ width: `${xpPct}%` }} />
+                </div>
+                <div className="finna-calm-xp-metrics">
+                  <span>
+                    <b>{p ? weekAnswers.toLocaleString('en-IN') : '—'}</b> answered this week
+                  </span>
+                  <span>
+                    <b>{weekAccuracy ?? '—'}</b> accuracy
+                  </span>
+                  <span>
+                    <b>{p ? `${p.current_streak}d` : '—'}</b> streak
+                  </span>
+                </div>
+                <div className="finna-calm-xp-right">
+                  <Link
+                    to={data.authenticated ? '/profile/rewards' : '/login'}
+                    className="finna-home-xp-link"
+                  >
+                    {data.authenticated ? 'Rewards & XP →' : 'Sign in →'}
+                  </Link>
+                  <button
+                    type="button"
+                    className="finna-podium-hide"
+                    aria-label="Hide study stats banner"
+                    title="Hide stats banner"
+                    onClick={() => handleHideCard('kpi')}
+                  >
+                    ×
+                  </button>
+                </div>
+              </section>
+            )
+          })()
         ) : null}
 
         {data.primaryError && (
@@ -923,7 +923,7 @@ export default function StudyHome() {
                   <div className="finna-eyebrow">
                     {trackedExams.length > 1 ? `My exams · ${trackedExams.length} tracked` : 'My exam'}
                   </div>
-                  <h2 id="my-exam-title" className="mt-1 text-3xl font-bold leading-none tracking-tight">
+                  <h2 id="my-exam-title" className="mt-1 text-[32px] font-bold leading-none tracking-[-0.02em]">
                     {data.loading && !exam ? 'Your exam' : examTitle}
                   </h2>
                   {exam && (
@@ -1253,23 +1253,27 @@ export default function StudyHome() {
                   )
                 ))}
 
-                {/* Unified All-Exam Subject Bookshelf + Focus Subjects & Live Progress */}
-                {!isHidden('subjects') && (data.subjectModules.length > 0 ? (
-                  <SubjectBookshelf
-                    subjects={data.subjectModules}
-                    progress={progressRecord}
-                    focusedSubjectIds={localFocusIds}
-                    variant="compact"
-                    eyebrow="All-exam subject books"
-                    heading="Subjects & your focus"
-                    subtitle="Questions from UDC, LDC, MCS & Group B combined into 5 subject books — pick up to 5 focus subjects to guide your daily plan."
-                    action={
-                      <>
+                {/* 3d Clean Subjects & Your Focus 2-Column Card */}
+                {!isHidden('subjects') && (
+                  <section className="finna-card finna-subjects-card" aria-labelledby="subject-progress-title">
+                    <div className="finna-subjects-head">
+                      <div className="min-w-0">
+                        <span className="finna-eyebrow">All-exam subject books</span>
+                        <h2 id="subject-progress-title" className="finna-subjects-title">
+                          Subjects &amp; your focus
+                        </h2>
+                        <p className="finna-subjects-sub">
+                          Questions from UDC, LDC, MCS &amp; Group B combined into{' '}
+                          {data.subjectModules.length || 5} subject books — pick up to{' '}
+                          {MAX_FOCUS_SUBJECTS} focus subjects to guide your daily plan.
+                        </p>
+                      </div>
+                      <div className="finna-subjects-actions">
                         {subjectCatalog.length > 0 && (
                           <button
                             type="button"
                             onClick={openFocusEditor}
-                            className="finna-inline-pill-btn"
+                            className="finna-subjects-focus-pill"
                             aria-expanded={focusEditorOpen}
                           >
                             {focusEditorOpen
@@ -1277,213 +1281,152 @@ export default function StudyHome() {
                               : `Focus subjects · ${activeFocusSubjects.length}/${MAX_FOCUS_SUBJECTS}`}
                           </button>
                         )}
-                        <Link
-                          to="/library"
-                          className="text-xs font-bold text-link hover:underline"
-                        >
+                        <Link to="/library" className="finna-subjects-lib-link">
                           Library →
                         </Link>
-                      </>
-                    }
-                    footer={
-                      <div aria-label="Focus subjects and subject accuracy">
-                        {/* Inline Multi-Subject Picker */}
-                        {focusEditorOpen && (
-                          <div className="finna-focus-drawer">
-                            <p className="text-xs leading-relaxed text-secondary">
-                              Choose <strong>2–{MAX_FOCUS_SUBJECTS} subjects</strong> to focus on across your exams
-                              (e.g., English + GK + Arithmetic). Selecting too many spreads practice thin; all due
-                              reviews still stay in your queue.
-                            </p>
-                            <div className="finna-focus-chip-grid" role="group" aria-label="Select focus subjects">
-                              {subjectCatalog.map((subj) => {
-                                const selected = draftFocusIds.includes(subj.id)
-                                const maxed = !selected && draftFocusIds.length >= MAX_FOCUS_SUBJECTS
-                                return (
-                                  <button
-                                    key={subj.id}
-                                    type="button"
-                                    aria-pressed={selected}
-                                    disabled={savingFocus || maxed}
-                                    onClick={() => toggleDraftSubject(subj.id)}
-                                    className={`finna-focus-toggle${selected ? ' is-selected' : ''}`}
-                                  >
-                                    <span
-                                      className={`${subjectChipClass(subj.label)} finna-focus-dot`}
-                                      aria-hidden="true"
-                                    >
-                                      {selected ? '✓' : subjectInitials(subj.label)}
-                                    </span>
-                                    <span className="truncate">{subj.label}</span>
-                                    {subj.questions > 0 && (
-                                      <span className="finna-focus-qcount">
-                                        {subj.questions.toLocaleString('en-IN')}
-                                      </span>
-                                    )}
-                                  </button>
-                                )
-                              })}
-                            </div>
-                            {focusError && (
-                              <p role="alert" className="mt-2 text-xs font-semibold text-wrong">
-                                {focusError}
-                              </p>
-                            )}
-                            <div className="mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-hairline pt-3">
-                              <span className="text-xs text-secondary">
-                                {draftFocusIds.length}/{MAX_FOCUS_SUBJECTS} selected
-                                {!data.authenticated ? ' · Saved on this device' : ''}
-                              </span>
-                              <div className="flex items-center gap-2">
-                                {draftFocusIds.length > 0 && (
-                                  <button
-                                    type="button"
-                                    disabled={savingFocus}
-                                    onClick={() => setDraftFocusIds([])}
-                                    className="min-h-10 px-3 text-xs font-bold text-secondary hover:text-ink"
-                                  >
-                                    Clear
-                                  </button>
-                                )}
-                                <button
-                                  type="button"
-                                  disabled={savingFocus}
-                                  onClick={() => setFocusEditorOpen(false)}
-                                  className="finna-btn finna-btn-quiet"
-                                >
-                                  Cancel
-                                </button>
-                                <button
-                                  type="button"
-                                  disabled={savingFocus}
-                                  onClick={() => void commitFocusSubjects(draftFocusIds)}
-                                  className="finna-btn"
-                                >
-                                  {savingFocus ? 'Saving…' : 'Save focus'}
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        )}
+                      </div>
+                    </div>
 
-                        {/* Active Focus Subject Strip */}
-                        {activeFocusSubjects.length > 0 && (
-                          <div className="finna-focus-bar">
-                            <div className="flex flex-wrap items-center justify-between gap-2">
-                              <div className="flex flex-wrap gap-1.5">
-                                {activeFocusSubjects.map((s) => (
-                                  <Link
-                                    key={s.id}
-                                    to={
-                                      exam
-                                        ? `/practice?exam=${encodeURIComponent(exam.id)}&subject=${encodeURIComponent(s.id)}`
-                                        : `/practice?subject=${encodeURIComponent(s.id)}`
-                                    }
-                                    className={`finna-active-focus-chip ${subjectChipClass(s.label)}`}
-                                    title={`Practise ${s.label}`}
-                                  >
-                                    {s.label} →
-                                  </Link>
-                                ))}
-                              </div>
-                              <div className="finna-mini-seg" role="group" aria-label="Filter subject rows">
-                                <button
-                                  type="button"
-                                  aria-pressed={subjectFilter === 'focus'}
-                                  onClick={() => setSubjectFilter('focus')}
+                    {/* Inline Multi-Subject Picker */}
+                    {focusEditorOpen && (
+                      <div className="finna-focus-drawer">
+                        <p className="text-xs leading-relaxed text-secondary">
+                          Choose <strong>2–{MAX_FOCUS_SUBJECTS} subjects</strong> to focus on across your exams
+                          (e.g., English + GK + Arithmetic). Selecting too many spreads practice thin; all due
+                          reviews still stay in your queue.
+                        </p>
+                        <div className="finna-focus-chip-grid" role="group" aria-label="Select focus subjects">
+                          {subjectCatalog.map((subj) => {
+                            const selected = draftFocusIds.includes(subj.id)
+                            const maxed = !selected && draftFocusIds.length >= MAX_FOCUS_SUBJECTS
+                            return (
+                              <button
+                                key={subj.id}
+                                type="button"
+                                aria-pressed={selected}
+                                disabled={savingFocus || maxed}
+                                onClick={() => toggleDraftSubject(subj.id)}
+                                className={`finna-focus-toggle${selected ? ' is-selected' : ''}`}
+                              >
+                                <span
+                                  className={`${subjectChipClass(subj.label)} finna-focus-dot`}
+                                  aria-hidden="true"
                                 >
-                                  My focus ({activeFocusSubjects.length})
-                                </button>
-                                <button
-                                  type="button"
-                                  aria-pressed={subjectFilter === 'all'}
-                                  onClick={() => setSubjectFilter('all')}
-                                >
-                                  All
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        )}
-
-                        {/* Subject Accuracy Progress Rows */}
-                        {displayedSubjects.length > 0 ? (
-                          <div className="mt-1 flex flex-col gap-1.5">
-                            {displayedSubjects.map((s) => {
-                              const pct = s.answered ? Math.round((s.correct / s.answered) * 100) : null
-                              return (
-                                <Link
-                                  key={s.subject_id}
-                                  to={'/bank?subject_id=' + encodeURIComponent(s.subject_id)}
-                                  className="flex items-center gap-3 rounded-xl p-2 transition-colors hover:bg-canvas"
-                                >
-                                  <span
-                                    className={`${subjectChipClass(s.subject)} finna-subj-chip--sq`}
-                                    aria-hidden="true"
-                                  >
-                                    {subjectInitials(s.subject)}
+                                  {selected ? '✓' : subjectInitials(subj.label)}
+                                </span>
+                                <span className="truncate">{subj.label}</span>
+                                {subj.questions > 0 && (
+                                  <span className="finna-focus-qcount">
+                                    {subj.questions.toLocaleString('en-IN')}
                                   </span>
-                                  <div className="min-w-0 flex-1">
-                                    <div className="mb-1 flex items-baseline justify-between gap-2 text-sm">
-                                      <span className="flex min-w-0 items-center gap-1.5 font-semibold text-ink">
-                                        <span className="truncate">{s.subject}</span>
-                                        {s.focused && <span className="finna-focus-tag">Focus</span>}
-                                      </span>
-                                      <span className="shrink-0 font-mono text-xs font-semibold text-secondary">
-                                        {s.answered > 0
-                                          ? `${pct}% · ${s.answered.toLocaleString('en-IN')} Q`
-                                          : 'Start →'}
-                                      </span>
-                                    </div>
-                                    <div className="finna-progress">
-                                      <span style={{ width: `${Math.min(100, pct ?? 0)}%` }} />
-                                    </div>
-                                  </div>
-                                </Link>
-                              )
-                            })}
-                          </div>
-                        ) : (
-                          <p className="text-sm leading-relaxed text-secondary">
-                            {data.loading
-                              ? 'Loading your subject progress…'
-                              : 'Pick a subject book above or choose 2–5 focus subjects to track your strongest and weakest areas.'}
+                                )}
+                              </button>
+                            )
+                          })}
+                        </div>
+                        {focusError && (
+                          <p role="alert" className="mt-2 text-xs font-semibold text-wrong">
+                            {focusError}
                           </p>
                         )}
+                        <div className="mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-hairline pt-3">
+                          <span className="text-xs text-secondary">
+                            {draftFocusIds.length}/{MAX_FOCUS_SUBJECTS} selected
+                            {!data.authenticated ? ' · Saved on this device' : ''}
+                          </span>
+                          <div className="flex items-center gap-2">
+                            {draftFocusIds.length > 0 && (
+                              <button
+                                type="button"
+                                disabled={savingFocus}
+                                onClick={() => setDraftFocusIds([])}
+                                className="min-h-10 px-3 text-xs font-bold text-secondary hover:text-ink"
+                              >
+                                Clear
+                              </button>
+                            )}
+                            <button
+                              type="button"
+                              disabled={savingFocus}
+                              onClick={() => setFocusEditorOpen(false)}
+                              className="finna-btn finna-btn-quiet"
+                            >
+                              Cancel
+                            </button>
+                            <button
+                              type="button"
+                              disabled={savingFocus}
+                              onClick={() => void commitFocusSubjects(draftFocusIds)}
+                              className="finna-btn"
+                            >
+                              {savingFocus ? 'Saving…' : 'Save focus'}
+                            </button>
+                          </div>
+                        </div>
                       </div>
-                    }
-                  />
-                ) : (
-                  <section className="finna-card" aria-labelledby="subject-progress-title">
-                    <div className="finna-section-top">
-                      <div>
-                        <span className="finna-eyebrow">All-exam subjects</span>
-                        <h2 id="subject-progress-title" className="mt-0.5">
-                          Subjects &amp; focus
-                        </h2>
+                    )}
+
+                    {/* 2-Column Subject Rows Grid (exact 3d design) */}
+                    {displayedSubjects.length > 0 ? (
+                      <div className="finna-subjects-grid">
+                        {displayedSubjects.map((s) => {
+                          const pct =
+                            s.total > 0
+                              ? Math.min(100, Math.round((s.done / s.total) * 100))
+                              : s.answered > 0
+                                ? Math.min(100, Math.round((s.correct / s.answered) * 100))
+                                : 0
+                          const countLabel =
+                            s.total > 0
+                              ? `${s.done.toLocaleString('en-IN')} / ${s.total.toLocaleString('en-IN')}`
+                              : s.answered > 0
+                                ? `${s.answered.toLocaleString('en-IN')} Q`
+                                : 'Start →'
+                          return (
+                            <Link
+                              key={s.subject_id}
+                              to={'/bank?subject_id=' + encodeURIComponent(s.subject_id)}
+                              className="finna-subjects-row"
+                            >
+                              <span
+                                className={`${subjectChipClass(s.subject)} finna-subj-chip--sq`}
+                                aria-hidden="true"
+                              >
+                                {subjectInitials(s.subject)}
+                              </span>
+                              <div className="finna-subjects-row-body">
+                                <div className="finna-subjects-row-top">
+                                  <span className="finna-subjects-row-name">
+                                    <span className="truncate">{s.subject}</span>
+                                    {s.focused && <span className="finna-focus-tag">Focus</span>}
+                                  </span>
+                                  <span className="finna-subjects-row-count">{countLabel}</span>
+                                </div>
+                                <div className="finna-subjects-bar">
+                                  <span style={{ width: `${pct}%` }} />
+                                </div>
+                              </div>
+                            </Link>
+                          )
+                        })}
                       </div>
-                      <Link to="/library">Library →</Link>
-                    </div>
-                    <p className="text-sm text-secondary">
-                      {data.loading ? 'Loading subject books…' : 'Open the Study Library to practise by subject.'}
-                    </p>
+                    ) : (
+                      <p className="text-sm leading-relaxed text-secondary">
+                        {data.loading
+                          ? 'Loading your subject progress…'
+                          : 'Open the Study Library or choose focus subjects to track your progress.'}
+                      </p>
+                    )}
                   </section>
-                ))}
+                )}
 
                 {/* 3d Centre 3-Across Editorial Photo Showcase ("Also on Finna") */}
                 {!isHidden('explore') && (
-                  <div className="finna-hideable-wrap">
-                    <button
-                      type="button"
-                      className="finna-card-hide-btn finna-card-hide-float"
-                      aria-label="Hide Also on Finna showcase"
-                      title="Hide Also on Finna"
-                      onClick={() => handleHideCard('explore')}
-                    >
-                      ×
-                    </button>
-                    <ExploreDeckRail heading="Also on Finna" variant="row3" />
-                  </div>
+                  <ExploreDeckRail
+                    heading="Also on Finna"
+                    variant="row3"
+                    onHide={() => handleHideCard('explore')}
+                  />
                 )}
 
                 {/* Live Study-First Community Feed Preview right on Home */}

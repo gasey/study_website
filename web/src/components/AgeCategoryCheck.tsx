@@ -3,11 +3,11 @@ import {Link} from 'react-router-dom'
 import {declareAge,privacyStatus,type PrivacyStatus} from '../lib/privacy'
 const ready=(value:PrivacyStatus)=>!value.age_check_enabled||value.browser_category==='adult'&&(!value.user_id||value.category==='adult')
 
-export default function AgeCategoryCheck({onReady}:{onReady?:(ready:boolean)=>void}){
- const [data,setData]=useState<PrivacyStatus|null>(null),[error,setError]=useState(''),[busy,setBusy]=useState(false),[retry,setRetry]=useState(0)
+export default function AgeCategoryCheck({onReady,compact=false}:{onReady?:(ready:boolean)=>void;compact?:boolean}){
+ const [data,setData]=useState<PrivacyStatus|null>(null),[error,setError]=useState(''),[busy,setBusy]=useState(false),[retry,setRetry]=useState(0),[editing,setEditing]=useState(false)
  const generation=useRef(0),saving=useRef(false)
  useEffect(()=>{
-  let live=true;const epoch=++generation.current;onReady?.(false);setData(null);setError('');setBusy(false);saving.current=false
+  let live=true;const epoch=++generation.current;onReady?.(false);setData(null);setError('');setBusy(false);setEditing(false);saving.current=false
   privacyStatus().then(value=>{if(live&&epoch===generation.current){setData(value);onReady?.(ready(value))}}).catch(e=>{if(live&&epoch===generation.current)setError((e as Error).message)})
   const refresh=()=>{generation.current++;onReady?.(false);setRetry(n=>n+1)}
   window.addEventListener('ism-auth-change',refresh)
@@ -15,11 +15,43 @@ export default function AgeCategoryCheck({onReady}:{onReady?:(ready:boolean)=>vo
  },[retry,onReady])
  async function save(category:'adult'|'under18'){
   if(!data||saving.current)return;saving.current=true;setBusy(true);setError('');const epoch=generation.current
-  try{await declareAge(data,category);const next=await privacyStatus();if(epoch===generation.current){setData(next);onReady?.(ready(next))}}
+  try{await declareAge(data,category);const next=await privacyStatus();if(epoch===generation.current){setData(next);setEditing(false);onReady?.(ready(next))}}
   catch(e){if(epoch===generation.current)setError((e as Error).message)}
   finally{if(epoch===generation.current){saving.current=false;setBusy(false)}}
  }
  if(data&&!data.age_check_enabled)return null
+ if(compact){
+  const isUnder=data?.category==='under18'||data?.browser_category==='under18'
+  const isAdultReady=Boolean(data&&ready(data))
+  const showChooser=!editing&&!isUnder&&!isAdultReady||editing
+  return <div aria-label="Age category" className="cat-age-row">
+   {!data?(
+    <>
+     <span className="cat-age-copy">{error||'Checking age eligibility…'}</span>
+     {error&&<button type="button" disabled={busy} onClick={()=>setRetry(n=>n+1)} className="cat-age-link">Reload</button>}
+    </>
+   ):showChooser?(
+    <>
+     <span className="cat-age-copy"><b>Finna is for ages 18+.</b> No date of birth needed.</span>
+     <span className="cat-age-btns">
+      <button type="button" disabled={busy||data.category==='under18'} onClick={()=>void save('adult')} className="cat-age-btn is-primary">{data.user_id&&!data.category?'Confirm 18+':'I am 18 or over'}</button>
+      <button type="button" disabled={busy} onClick={()=>void save('under18')} className="cat-age-btn">Under 18</button>
+     </span>
+    </>
+   ):isAdultReady?(
+    <>
+     <span className="cat-age-ok" role="status">✓ You selected age 18 or over</span>
+     <button type="button" onClick={()=>setEditing(true)} className="cat-age-link">Change</button>
+    </>
+   ):(
+    <>
+     <span className="cat-age-under" role="status">Under-18 enrollment is not supported. <Link to="/account/privacy" className="cat-age-link">Privacy &amp; account help</Link></span>
+     <button type="button" onClick={()=>setEditing(true)} className="cat-age-link">Change</button>
+    </>
+   )}
+   {error&&data&&<p role="alert" className="cat-age-err">{error}</p>}
+  </div>
+ }
  return <section aria-label="Age category" className="mt-5 rounded-panel border border-hairline bg-paper p-4">
   <h2 className="font-display text-lg">Before saving study progress</h2>
   <p className="mt-2 text-sm leading-relaxed text-secondary">Finna is for people aged 18 or over. Choose your age category. We do not ask for your date of birth here.</p>

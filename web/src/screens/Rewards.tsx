@@ -45,12 +45,12 @@ export default function Rewards(){
     <p>XP tracks your learning activity. Reward points unlock enabled benefits and streak shields while keeping your XP, level, and leaderboard score intact.</p>
    </div>
    <div className="av-hero-actions">
-    <Link to="/games" className="cr-glass-btn cr-glass-btn--accent">Play games →</Link>
-    <Link to="/exams" className="cr-glass-btn">Choose exam</Link>
+    <Link to="/board" className="cr-glass-btn cr-glass-btn--accent">Full leaderboard →</Link>
+    <Link to="/games" className="cr-glass-btn">Play games</Link>
     <Link to="/community/contributors" className="cr-glass-btn">Contributors</Link>
    </div>
   </header>
-  {error&&<div className="mt-4"><FlashBanner kind="error" title="Could not load rewards" message={error} onDismiss={()=>setError('')} actionLabel="Retry" onAction={()=>{setError('');void load().catch(e=>setError(e.message))}} extra={<Link to="/login" className="finna-st-btn">Sign in</Link>}/></div>}
+  {error&&<div className="mt-4"><FlashBanner kind="error" title="Could not load rewards" message={error} onDismiss={()=>setError('')} actionLabel="Retry" onAction={()=>{setError('');void load().catch(e=>setError(e.message))}} extra={<div className="flex flex-wrap gap-2"><Link to="/login" className="finna-st-btn">Sign in</Link><Link to="/board" className="finna-st-btn">View public leaderboard →</Link></div>}/></div>}
   {notice&&<div className="mt-4"><FlashBanner kind="success" title="Reward update" message={notice} onDismiss={()=>setNotice('')}/></div>}
   {!wallet&&!error&&<div className="mt-8 flex justify-center py-10"><CatLoader size="lg" label="Loading your XP, quests & standings…"/></div>}
   {wallet&&<><div className="at-kpi-grid">{[['This month',wallet.monthly_xp.toLocaleString('en-IN')+' XP','is-teal'],['Lifetime',wallet.lifetime_xp.toLocaleString('en-IN')+' XP','is-indigo'],['Reward wallet',wallet.points.toLocaleString('en-IN')+' pts','is-amber'],['Your level','Lvl '+wallet.level+(wallet.title?' · '+wallet.title:''),'is-emerald']].map(([label,value,tone])=><div key={label} className={`at-kpi-tile ${tone}`}><span>{label}</span><strong>{value}</strong></div>)}</div>
@@ -121,6 +121,16 @@ export default function Rewards(){
   </div>
  </section>
  <section className="ism-card-surface mt-5 rounded-[14px] border border-hairline bg-card p-5"><div className="flex flex-wrap items-center justify-between gap-3"><div><h2 className="font-display text-xl">Your leaderboard visibility</h2><p className="mt-1 text-sm text-secondary">{wallet.public?'Your handle and XP appear publicly.':'Your XP and wallet stay private. You can join the public board any time.'}</p></div><button disabled={busy} onClick={()=>void visibility()} className={BUTTON}>{wallet.public?'Keep my score private':'Join the public leaderboard'}</button></div></section>
+ <section aria-label="Weekly XP standings" className="ism-card-surface mt-5 rounded-[14px] border border-hairline bg-card p-5">
+  <div className="flex flex-wrap items-center justify-between gap-3">
+   <div>
+    <h2 className="font-display text-xl">Weekly XP leaderboard</h2>
+    <p className="mt-1 text-sm text-secondary">Live standings within your division this India week.</p>
+   </div>
+   <Link to="/board" className={BUTTON}>All leaderboards (XP, Daily Five, Cup, Blocks) →</Link>
+  </div>
+  <WeeklyStandings endpoint="/rewards/leaderboard?contract=2"/>
+ </section>
  <section aria-label="Your free month" className="ism-card-surface mt-5 rounded-[18px] border border-exams bg-exams-soft/65 p-5">
   <h2 className="font-display text-xl">Your free month</h2>
   <p className="mt-2 text-sm">{Math.max(0,wallet.points).toLocaleString('en-IN')} / {(wallet.catalog.find(o=>o.id==='pro-month')?.points||1500).toLocaleString('en-IN')} points toward 30 Pro days</p>

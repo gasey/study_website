@@ -400,7 +400,7 @@ export default function HomeLeftExtras({
           <Link to="/creators" className="hl-foot-link is-primary">
             Find learners →
           </Link>
-          <Link to="/profile/rewards" className="hl-foot-link">
+          <Link to="/board" className="hl-foot-link">
             Full board ↗
           </Link>
         </div>

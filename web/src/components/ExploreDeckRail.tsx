@@ -106,19 +106,23 @@ export default function ExploreDeckRail({
   heading = "Also on Finna",
   compact = false,
   variant = "rail",
+  onHide,
 }: {
   exclude?: string[];
   interval?: number;
   heading?: string;
   compact?: boolean;
   variant?: "rail" | "row3";
+  onHide?: () => void;
 }) {
   const items = DEFAULT_SPOTLIGHTS.filter((item) => !exclude.includes(item.id));
   const count = items.length;
+  const isRow3 = variant === "row3";
 
   const [startIndex, setStartIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const [collapsed, setCollapsed] = useState(() => {
+    if (isRow3) return false;
     try {
       return (
         typeof sessionStorage !== "undefined" &&
@@ -158,6 +162,7 @@ export default function ExploreDeckRail({
 
   useEffect(() => {
     if (
+      isRow3 ||
       paused ||
       collapsed ||
       count <= 1 ||
@@ -168,7 +173,7 @@ export default function ExploreDeckRail({
     }
     const timer = window.setTimeout(() => step(1), interval);
     return () => window.clearTimeout(timer);
-  }, [startIndex, paused, collapsed, interval, count, step]);
+  }, [isRow3, startIndex, paused, collapsed, interval, count, step]);
 
   useEffect(() => {
     const onVis = () => setPaused(document.hidden);
@@ -221,16 +226,24 @@ export default function ExploreDeckRail({
   }
 
   const visibleCount = Math.min(VISIBLE_COUNT, count);
-  const visibleItems: SpotlightItem[] = Array.from(
-    { length: visibleCount },
-    (_, offset) => items[(startIndex + offset) % count],
-  );
+  const row3PreferredIds: SpotlightItem["id"][] = ["guides", "atlas", "chronicle"];
+  const visibleItems: SpotlightItem[] = isRow3
+    ? [
+        ...row3PreferredIds
+          .map((id) => items.find((item) => item.id === id))
+          .filter((item): item is SpotlightItem => Boolean(item)),
+        ...items.filter((item) => !row3PreferredIds.includes(item.id)),
+      ].slice(0, visibleCount)
+    : Array.from(
+        { length: visibleCount },
+        (_, offset) => items[(startIndex + offset) % count],
+      );
   const visibleIds = new Set(visibleItems.map((i) => i.id));
   const activeId = visibleItems[0]?.id;
 
   return (
     <aside
-      className={`ed-rail${compact ? " is-compact" : ""}${variant === "row3" ? " is-row3" : ""}${paused ? " is-held" : ""}`}
+      className={`ed-rail${compact ? " is-compact" : ""}${isRow3 ? " is-row3" : ""}${paused ? " is-held" : ""}`}
       aria-label="Explore more study features"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
@@ -244,56 +257,72 @@ export default function ExploreDeckRail({
           <h2>{heading}</h2>
         </div>
         <div className="ed-head-right">
-          {variant === "row3" && (
-            <span className="ed-row3-hint">Everything else lives in the menu ↑</span>
-          )}
-          {count > 1 && (
-            <div className="ed-stepper" role="group" aria-label="Cycle features">
+          {isRow3 ? (
+            <>
+              <span className="ed-row3-hint">Everything else lives in the menu ↑</span>
+              {onHide && (
+                <button
+                  type="button"
+                  className="finna-card-hide-btn ed-row3-hide"
+                  aria-label="Hide Also on Finna showcase"
+                  title="Hide Also on Finna"
+                  onClick={onHide}
+                >
+                  ×
+                </button>
+              )}
+            </>
+          ) : (
+            <>
+              {count > 1 && (
+                <div className="ed-stepper" role="group" aria-label="Cycle features">
+                  <button
+                    type="button"
+                    className="ed-step-btn"
+                    aria-label="Previous feature"
+                    onClick={() => step(-1)}
+                  >
+                    ‹
+                  </button>
+                  <span className="ed-count" aria-live="polite">
+                    <b>{startIndex + 1}</b>/{count}
+                  </span>
+                  <button
+                    type="button"
+                    className="ed-step-btn"
+                    aria-label="Next feature"
+                    onClick={() => step(1)}
+                  >
+                    ›
+                  </button>
+                </div>
+              )}
               <button
                 type="button"
-                className="ed-step-btn"
-                aria-label="Previous feature"
-                onClick={() => step(-1)}
+                className="ed-collapse-btn"
+                aria-label="Minimize discovery panel"
+                title="Minimize"
+                onClick={() => toggleCollapsed(true)}
               >
-                ‹
+                −
               </button>
-              <span className="ed-count" aria-live="polite">
-                <b>{startIndex + 1}</b>/{count}
-              </span>
-              <button
-                type="button"
-                className="ed-step-btn"
-                aria-label="Next feature"
-                onClick={() => step(1)}
-              >
-                ›
-              </button>
-            </div>
+            </>
           )}
-          <button
-            type="button"
-            className="ed-collapse-btn"
-            aria-label="Minimize discovery panel"
-            title="Minimize"
-            onClick={() => toggleCollapsed(true)}
-          >
-            −
-          </button>
         </div>
       </div>
 
       {/* Unified 3-Card Showcase Stage */}
       <div
         className="ed-unified-grid"
-        tabIndex={0}
+        tabIndex={isRow3 ? undefined : 0}
         role="region"
         aria-label="Finna study features"
-        onKeyDown={onKeyDown}
-        onTouchStart={onTouchStart}
-        onTouchEnd={onTouchEnd}
+        onKeyDown={isRow3 ? undefined : onKeyDown}
+        onTouchStart={isRow3 ? undefined : onTouchStart}
+        onTouchEnd={isRow3 ? undefined : onTouchEnd}
       >
         {visibleItems.map((item, idx) => {
-          const isPrimary = variant === "row3" || idx === 0;
+          const isPrimary = isRow3 || idx === 0;
           return (
             <Link
               key={item.id}
@@ -332,26 +361,28 @@ export default function ExploreDeckRail({
         })}
       </div>
 
-      {/* Clean Single-Row Feature Index Bar */}
-      <div className="ed-index-bar" role="tablist" aria-label="Jump to Finna feature">
-        {items.map((item) => {
-          const isActive = item.id === activeId;
-          const isShown = visibleIds.has(item.id);
-          return (
-            <button
-              key={item.id}
-              type="button"
-              role="tab"
-              aria-selected={isActive}
-              onClick={() => jumpTo(item.id)}
-              className={`ed-index-tab ed-tone-${item.accent}${isActive ? " is-active" : isShown ? " is-shown" : ""}`}
-            >
-              <span className="ed-mini-dot" aria-hidden="true" />
-              <span>{item.kind}</span>
-            </button>
-          );
-        })}
-      </div>
+      {/* Clean Single-Row Feature Index Bar (rail mode only) */}
+      {!isRow3 && (
+        <div className="ed-index-bar" role="tablist" aria-label="Jump to Finna feature">
+          {items.map((item) => {
+            const isActive = item.id === activeId;
+            const isShown = visibleIds.has(item.id);
+            return (
+              <button
+                key={item.id}
+                type="button"
+                role="tab"
+                aria-selected={isActive}
+                onClick={() => jumpTo(item.id)}
+                className={`ed-index-tab ed-tone-${item.accent}${isActive ? " is-active" : isShown ? " is-shown" : ""}`}
+              >
+                <span className="ed-mini-dot" aria-hidden="true" />
+                <span>{item.kind}</span>
+              </button>
+            );
+          })}
+        </div>
+      )}
     </aside>
   );
 }

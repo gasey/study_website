@@ -67,6 +67,7 @@ const AccountForm = lazy(routeModules.AccountForm)
 const Billing = lazy(routeModules.Billing)
 const Plans = lazy(routeModules.Plans)
 const Rewards = lazy(() => import('./screens/Rewards'))
+const Leaderboard = lazy(() => import('./screens/Leaderboard'))
 const CreatorProfile = lazy(() => import('./screens/Creators'))
 const CreatorDirectory = lazy(() => import('./screens/Creators').then((m) => ({ default: m.CreatorDirectory })))
 const CreatorSettings = lazy(() => import('./screens/Creators').then((m) => ({ default: m.CreatorSettings })))
@@ -286,6 +287,8 @@ export default function App() {
     !pathname.includes('/mock')
   const adminWorkspace =
     pathname === '/admin/ops' || pathname === '/admin/users' || pathname.startsWith('/admin/bank')
+  const authWorkspace = pathname === '/login' || pathname === '/join'
+  const hideChrome = adminWorkspace || authWorkspace
 
   return (
     <div
@@ -303,10 +306,10 @@ export default function App() {
       }}
     >
       <SiteNotice />
-      {!adminWorkspace && <Header />}
-      {!adminWorkspace && <RouteBackBar />}
+      {!hideChrome && <Header />}
+      {!hideChrome && <RouteBackBar />}
       <SessionNotice />
-      <AudienceNotice />
+      {!authWorkspace && <AudienceNotice />}
       <main id="main-content" tabIndex={-1} className="flex-1 scroll-mt-32">
         <RouteErrorBoundary key={pathname + examScope}>
           <Suspense fallback={<WorkspaceLoading />}>
@@ -378,7 +381,7 @@ export default function App() {
                 <Route path="/duel" element={<ConsolidatedRedirect target="/games?mode=duel" />} />
                 <Route path="/trail/:id?" element={<TrailLegacyRedirect />} />
                 <Route path="/rewards" element={<ConsolidatedRedirect target="/profile/rewards" />} />
-                <Route path="/board" element={<ConsolidatedRedirect target="/profile/rewards" />} />
+                <Route path="/board" element={<Leaderboard />} />
                 <Route path="/notifications" element={<ConsolidatedRedirect target="/inbox" />} />
                 <Route path="/contribute" element={<ConsolidatedRedirect target="/create/submissions" />} />
                 <Route path="/contribute/new" element={<ConsolidatedRedirect target="/create/new" />} />
@@ -389,11 +392,11 @@ export default function App() {
           </Suspense>
         </RouteErrorBoundary>
       </main>
-      {!adminWorkspace && <SelectionTray />}
-      {!adminWorkspace && <MaterialReadingPanel />}
-      {!adminWorkspace && <HelpDrawer />}
-      {!adminWorkspace && <Footer />}
-      {!adminWorkspace && <BottomBar />}
+      {!hideChrome && <SelectionTray />}
+      {!hideChrome && <MaterialReadingPanel />}
+      {!hideChrome && <HelpDrawer />}
+      {!hideChrome && <Footer />}
+      {!hideChrome && <BottomBar />}
     </div>
   )
 }

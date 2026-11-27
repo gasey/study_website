@@ -200,7 +200,7 @@ export default function CreatorProfile(){const {generation,version}=useCommunity
  return <main className={SHELL}>
   <div className="flex flex-wrap items-center justify-between gap-3">
    <Link to="/creators" className="text-sm font-semibold text-link">← All learners &amp; creators</Link>
-   <Link to="/profile/rewards" className="text-sm font-semibold text-link">Weekly standings →</Link>
+   <Link to="/board" className="text-sm font-semibold text-link">Weekly standings →</Link>
   </div>
   <ErrorNotice error={error}/>
   {!data&&!error&&<p role="status" className="mt-5 text-muted">Loading learner profile…</p>}

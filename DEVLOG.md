@@ -1,5 +1,21 @@
 # Devlog
 
+27 November IST — **Verified the uncommitted finishing pass on top of the 26 November 3d ship (not yet committed).**
+
+- Confirmed `npm run typecheck` and `npm run build` (including the `prebuild` dead-link/admin-nav/guides checks) both pass clean against the working tree as-is.
+- Read the full diff (`App.tsx`, `AgeCategoryCheck.tsx`, `CatLoginMascot.tsx`, `ExploreDeckRail.tsx`, `GameSetup.tsx`, `HomeCalmRightRail.tsx`, `HomeLeftExtras.tsx`, `WeeklyStandings.tsx`, `homePrefs.ts`, `siteMap.ts`, `Account.tsx`, `Creators.tsx`, `Games.tsx`, `Rewards.tsx`, `StudyHome.tsx`, `finna.css`, `vault.css` — 2086 insertions / 1065 deletions — plus the new untracked `web/src/screens/Leaderboard.tsx`, 779 lines, already routed at `/board` in `App.tsx`). This is a finishing/polish pass on the 3d redesign, not scope creep:
+  - `StudyHome.tsx`: inlined the XP meter and subjects grid (dropped `CatXpBar`/`SubjectBookshelf`), merged subject-catalog + live progress data, removed dead `subjectFilter`/calendar-offset state, extended the calendar fetch window to 12 months.
+  - `HomeCalmRightRail.tsx` / `ExploreDeckRail.tsx`: finished the Weekly Leaderboard podium (empty-seat placeholders, "XP to next rank" strip, live refresh on auth/standing-change events) and fixed the 3-card "Also on Finna" row order, with its hide button now owned by the component (`onHide` prop).
+  - New `Leaderboard.tsx` (`/board`) is fully wired, not a stub: 7 real board tabs (XP/Daily Five/Cup/Blocks/Speed/Gauntlet/Duel) backed by live `reviewRequest` calls, podium, placement strip, visibility opt-in/out, nearby-learners panel.
+  - `Account.tsx` / `AgeCategoryCheck.tsx` / `CatLoginMascot.tsx`: matching "Library" redesign of the login/join screen (reading-room photo pane, lamp-glow canvas, compact age-check row, simplified cat SVG).
+  - `Games.tsx`, `Creators.tsx`, `GameSetup.tsx`, `HomeLeftExtras.tsx`, `Rewards.tsx` (gains an embedded `WeeklyStandings` widget), `siteMap.ts`: link updates pointing "weekly standings / full board" at the new `/board` route.
+  - `homePrefs.ts`: storage key bumped v3→v4 with a real migration chain (v4→v3→v2→v1); `balanced` preset now hides the new `tracked_exams` widget by default to match the calmer layout. The Minimal/Balanced/Everything preset switch (3b) is untouched in mechanism, only its defaults and copy were updated.
+  - `App.tsx` also adds a small, independent `authWorkspace` change (hides Header/Footer/AudienceNotice on `/login` and `/join`) — not part of the 3d home work, noted separately.
+- No correctness issues found: no broken imports, no orphaned/undefined CSS classes either direction, no leftover `console.log`/`TODO`/`debugger`, no half-threaded props.
+- Spot-checked the live anonymous `/home` page at 1440px via the local dev server (proxying production API, read-only — no sign-in, no synthetic attempts): confirmed the real 3-column layout (exam card + Today's Plan left, tabbed Overview/My exams/Community feed hub + Subjects&Focus centre, Weekly Leaderboard podium + library photo right) matches the shipped 3d design.
+- **Not committed yet** — holding for the owner. Also found an unrelated 24 MB untracked `pathlib` file (PostScript garbage) sitting at the repo root from a different workstream; left in place, flagged so it isn't committed by accident.
+
+
 26 November IST — **Shipped 3d "Library" Study Theme, Calm 3-Column Study Home, Weekly Leaderboard Podium, Unified Play/People/Tools Hub & Everything on Finna Chip Index across Web & Mobile (`theme.ts`, `index.html`, `finna.css`, `Header.tsx`, `AccountHub.tsx`, `ExploreDeckRail.tsx`, `HomeCalmRightRail.tsx`, `StudyHome.tsx`, plus mobile `preferences.tsx`, `theme/index.tsx`, `more.tsx`, `MobileHomeHub.tsx`). Web deployed to `https://study.hawayu.in`.**
 
 - **New "Library" Study Theme (`data-theme="library"`, default) + Page Backdrop Selector (`data-bg="library|grid|lamp|none"`):**

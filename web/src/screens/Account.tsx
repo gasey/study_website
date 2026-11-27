@@ -3,7 +3,7 @@ import GroupRateClaim from '../components/GroupRateClaim'
 import AgeCategoryCheck from '../components/AgeCategoryCheck'
 import {mobileReturn} from '../lib/mobileReturn'
 import GoogleSignIn from '../components/GoogleSignIn'
-import CatLoginMascot, { type CatMood } from '../components/CatLoginMascot'
+import CatLoginMascot, { CAT_MOOD_TEXT, type CatMood } from '../components/CatLoginMascot'
 import {safeReturnPath,resetAccountContext} from '../lib/accountContext'
 import {reviewRequest,reviewSession} from '../lib/review'
 import { useEffect, useState, type FormEvent } from 'react'
@@ -13,195 +13,228 @@ import { cancelBilling, createCheckout, getAccountSession, getBilling, getBillin
 export function AccountForm({ mode }: { mode: 'login' | 'join' }) {
   const [ageReady,setAgeReady]=useState(false)
   const [googleBusy,setGoogleBusy]=useState(false);const [code,setCode]=useState('');const [email,setEmail]=useState(''); const [password,setPassword]=useState(''); const [error,setError]=useState(''); const [busy,setBusy]=useState(false)
-  const [focusField,setFocusField]=useState<'none'|'email'|'password'|'code'>('none');const [showPassword,setShowPassword]=useState(false);const [showMfa,setShowMfa]=useState(false)
+  const [focusField,setFocusField]=useState<'none'|'email'|'password'|'code'>('none');const [showPassword,setShowPassword]=useState(false);const [showMfa,setShowMfa]=useState(false);const [petted,setPetted]=useState(false)
   const location=useLocation();const mobileNext=mobileReturn(new URLSearchParams(location.search).get('next'));const next=mobileNext||safeReturnPath(new URLSearchParams(location.search).get('next'));const [saveGuest,setSaveGuest]=useState(false);const [guestCount,setGuestCount]=useState(0)
   useEffect(()=>{fetch('/api/auth/guest-progress',{credentials:'include',cache:'no-store'}).then(r=>r.json()).then(r=>setGuestCount(r.attempts||0)).catch(()=>{})},[])
   const nav=useNavigate(); const joining=mode==='join'
   const rawReferral=new URLSearchParams(location.search).get('ref');const referralCode=joining&&rawReferral&&/^[A-Za-z0-9_-]{24}$/.test(rawReferral)?rawReferral:undefined
   function removeReferral(){const params=new URLSearchParams(location.search);params.delete('ref');nav({pathname:location.pathname,search:params.toString()},{replace:true})}
   async function submit(e:FormEvent){ e.preventDefault();if(googleBusy||busy||joining&&!ageReady)return; setBusy(true);setError('');try{ if(joining) await registerAccount(email,password,referralCode); else await loginAccount(email,password,code); resetAccountContext();let transferError='';if(saveGuest){try{await reviewSession(true);await reviewRequest('/auth/guest-progress/save',{})}catch(e){transferError=(e as Error).message}}window.dispatchEvent(new Event('ism-auth-change'));if(mobileNext)window.location.assign(mobileNext);else nav(next);if(transferError)window.dispatchEvent(new CustomEvent('ism-account-notice',{detail:'Signed in. Guest progress could not be saved: '+transferError})) }catch(err){setError(err instanceof Error?err.message:'Could not sign in.')}finally{setBusy(false)} }
-  const catMood: CatMood = busy ? 'happy' : error ? 'error' : focusField === 'password' ? (showPassword ? 'peek' : 'password') : focusField === 'email' || focusField === 'code' ? 'email' : 'idle'
+  const catMood: CatMood = petted || busy ? 'happy' : error ? 'error' : focusField === 'password' ? (showPassword ? 'peek' : 'password') : focusField === 'email' || focusField === 'code' ? 'email' : 'idle'
   const cardLift = focusField === 'password'
   const nextQs = '?next=' + encodeURIComponent(next)
 
   return <main className="cat-auth-scene finna-account-page">
-    {/* Ambient floating scene charms (stars, paws & soft bubbles) */}
-    <div className="cat-scene-charms" aria-hidden="true">
-      <span className="cat-charm cat-charm-1">✦</span>
-      <span className="cat-charm cat-charm-2">🐾</span>
-      <span className="cat-charm cat-charm-3">✦</span>
-      <span className="cat-charm cat-charm-4">🐟</span>
-      <span className="cat-charm cat-charm-5">🐾</span>
-      <span className="cat-charm cat-charm-6">✦</span>
-    </div>
+    {/* 1b/1c Split Library Reading-Room Editorial Panel (desktop >= 960px) */}
+    <aside className="cat-auth-hero" aria-label="About Finna">
+      <img src="/images/discover/guides.jpg" alt="" className="cat-auth-hero-img" loading="eager" />
+      <div className="cat-auth-hero-scrim" aria-hidden="true" />
+      <div className="cat-auth-hero-inner">
+        <Link to="/home" className="cat-auth-brand is-light">
+          <span className="cat-auth-brand-word">Finna<i>.</i></span>
+          <span className="cat-auth-brand-tag">MPSC Study</span>
+        </Link>
 
-    <div className="cat-auth-shell">
-      <div className="cat-auth-kicker">
-        <span>Finna</span>
-        <span aria-hidden="true">·</span>
-        <span>{joining ? '7-day Pro trial included' : 'Study safe & progress'}</span>
+        <div className="cat-auth-hero-copy">
+          <span className="cat-auth-hero-kicker">FINNA · MPSC &amp; MIZORAM EXAM STUDY</span>
+          <h2>Master MPSC &amp; Mizoram exams with real past papers</h2>
+          <p>
+            82,000+ past-paper questions · 11 free Concept Guides · Full-Paper Mocks &amp;
+            16-bit RPG drills — free to start, no sign-in needed.
+          </p>
+          <ul className="cat-auth-perks">
+            <li>Every question keeps its source paper and answer label</li>
+            <li>Your Vault, streak and progress sync across devices</li>
+            <li>Free to practise; sign in only to save</li>
+          </ul>
+        </div>
+
+        <span className="cat-auth-hero-foot">India Study Map · Aizawl</span>
+      </div>
+    </aside>
+
+    {/* Right Auth Canvas (lamp glow + 44px graph lines) */}
+    <div className="cat-auth-pane">
+      <div className="cat-auth-bg-lamp" aria-hidden="true" />
+      <div className="cat-auth-bg-grid" aria-hidden="true" />
+
+      <div className="cat-auth-topbar">
+        <Link to="/home" className="cat-auth-brand cat-auth-brand-mobile">
+          <span className="cat-auth-brand-word">Finna<i>.</i></span>
+          <span className="cat-auth-brand-tag">MPSC Study</span>
+        </Link>
+        <Link to="/home" className="cat-auth-back">← Back to study home</Link>
       </div>
 
-      <CatLoginMascot mood={catMood} emailProgress={Math.min(1, email.length / 28)} />
+      <div className="cat-auth-shell">
+        <CatLoginMascot
+          mood={catMood}
+          emailProgress={Math.min(1, email.length / 28)}
+          hidePill
+          onPet={() => {
+            setPetted(true)
+            window.setTimeout(() => setPetted(false), 1200)
+          }}
+        />
 
-      <section className={`cat-auth-card${cardLift ? ' is-up' : ''}${error ? ' is-error' : ''}`}>
-        {/* Playful Segmented Log in / Join free pill switcher */}
-        <nav className="cat-mode-tabs" aria-label="Account mode">
-          <Link to={'/login' + nextQs} className={`cat-mode-tab${!joining ? ' is-active' : ''}`}>
-            Log in
-          </Link>
-          <Link to={'/join' + nextQs} className={`cat-mode-tab${joining ? ' is-active' : ''}`}>
-            Join free ✨
-          </Link>
-        </nav>
+        <section className={`cat-auth-card${cardLift ? ' is-up' : ''}${error ? ' is-error' : ''}`}>
+          <span className="cat-mood-pill cat-mood-pill--edge" aria-live="polite">
+            {CAT_MOOD_TEXT[catMood]}
+          </span>
 
-        <header className="cat-card-head">
-          <h1>{joining ? 'Create your study safe' : 'Welcome back'}</h1>
-          <p>
-            {joining
-              ? 'Save progress across devices & unlock a 7-day Pro trial — no card required. (Ages 18+)'
-              : 'Sign in to sync your past papers, Personal Question Vault, and study streak. (Ages 18+)'}
-          </p>
-        </header>
+          {/* Segmented Log in / Join free pill switcher */}
+          <nav className="cat-mode-tabs" aria-label="Account mode">
+            <Link to={'/login' + nextQs} className={`cat-mode-tab${!joining ? ' is-active' : ''}`}>
+              Log in
+            </Link>
+            <Link to={'/join' + nextQs} className={`cat-mode-tab${joining ? ' is-active' : ''}`}>
+              Join free
+            </Link>
+          </nav>
 
-        {new URLSearchParams(location.search).has('recovered') && (
-          <p role="status" className="cat-status-pill">Your password was saved. Sign in to continue.</p>
-        )}
-        {new URLSearchParams(location.search).has('reopened') && (
-          <p role="status" className="cat-status-pill">Your account is reopened. Sign in with your new password; reconnect Google and MFA if used.</p>
-        )}
-        {new URLSearchParams(location.search).has('closed') && (
-          <p role="status" className="cat-status-pill">Your account is closed and signed out. Verified emails can request a reopening link within 30 days.</p>
-        )}
-        {error && <p role="alert" className="cat-error-banner">{error}</p>}
+          <header className="cat-card-head">
+            <h1>{joining ? 'Create your study safe' : 'Welcome back'}</h1>
+            <p>
+              {joining
+                ? 'Save progress across devices & unlock a 7-day Pro trial — no card required.'
+                : 'Sign in to sync your past papers, Personal Question Vault, and study streak.'}
+            </p>
+          </header>
 
-        <AgeCategoryCheck onReady={setAgeReady} />
-        {referralCode && <SignupReferral key={referralCode} code={referralCode} onRemove={removeReferral} disabled={busy || googleBusy} />}
-
-        <div className="cat-google-wrap">
-          <GoogleSignIn referralCode={referralCode} disabled={busy || !ageReady} onBusyChange={setGoogleBusy} />
-          {new URLSearchParams(location.search).has('google_error') && (
-            <p role="status" className="cat-status-pill">Google sign-in was cancelled. You can try again.</p>
+          {new URLSearchParams(location.search).has('recovered') && (
+            <p role="status" className="cat-status-pill">Your password was saved. Sign in to continue.</p>
           )}
-        </div>
+          {new URLSearchParams(location.search).has('reopened') && (
+            <p role="status" className="cat-status-pill">Your account is reopened. Sign in with your new password; reconnect Google and MFA if used.</p>
+          )}
+          {new URLSearchParams(location.search).has('closed') && (
+            <p role="status" className="cat-status-pill">Your account is closed and signed out. Verified emails can request a reopening link within 30 days.</p>
+          )}
+          {error && <p role="alert" className="cat-error-banner">{error}</p>}
 
-        <div className="cat-divider" aria-hidden="true">
-          <span>or with email</span>
-        </div>
+          <AgeCategoryCheck compact onReady={setAgeReady} />
+          {referralCode && <SignupReferral key={referralCode} code={referralCode} onRemove={removeReferral} disabled={busy || googleBusy} />}
 
-        <form onSubmit={submit} className="cat-form">
-          <div className={`cat-field${focusField === 'email' ? ' is-focused' : ''}${email ? ' is-filled' : ''}`}>
-            <span className="cat-field-icon" aria-hidden="true">✉</span>
-            <div className="cat-field-inner">
-              <input
-                id="finna-auth-email"
-                type="email"
-                autoComplete="email"
-                required
-                maxLength={254}
-                placeholder=" "
-                value={email}
-                onFocus={() => setFocusField('email')}
-                onBlur={() => setFocusField('none')}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <label htmlFor="finna-auth-email">Email address</label>
-            </div>
-            <span className="cat-field-bar" aria-hidden="true" />
+          <div className="cat-google-wrap">
+            <GoogleSignIn referralCode={referralCode} disabled={busy || !ageReady} onBusyChange={setGoogleBusy} />
+            {new URLSearchParams(location.search).has('google_error') && (
+              <p role="status" className="cat-status-pill">Google sign-in was cancelled. You can try again.</p>
+            )}
           </div>
 
-          <div className={`cat-field${focusField === 'password' ? ' is-focused' : ''}${password ? ' is-filled' : ''}`}>
-            <span className="cat-field-icon" aria-hidden="true">🔒</span>
-            <div className="cat-field-inner">
-              <input
-                id="finna-auth-password"
-                type={showPassword ? 'text' : 'password'}
-                autoComplete={joining ? 'new-password' : 'current-password'}
-                minLength={joining ? 12 : 1}
-                maxLength={200}
-                required
-                placeholder=" "
-                value={password}
-                onFocus={() => setFocusField('password')}
-                onBlur={() => setFocusField('none')}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <label htmlFor="finna-auth-password">Password</label>
-            </div>
-            <button
-              type="button"
-              className="cat-pw-toggle-inline"
-              aria-pressed={showPassword}
-              onMouseDown={(e) => e.preventDefault()}
-              onClick={() => {
-                setShowPassword((v) => !v)
-                setFocusField('password')
-              }}
-            >
-              {showPassword ? '🙈 Hide' : '👁 Peek'}
-            </button>
-            <span className="cat-field-bar" aria-hidden="true" />
+          <div className="cat-divider" aria-hidden="true">
+            <span>or with email</span>
           </div>
-          {joining && (
-            <p className="cat-field-hint">At least 12 characters, including a letter and a number.</p>
-          )}
 
-          {!joining && (
-            <div className="cat-mfa-row">
-              {!showMfa ? (
-                <button type="button" className="cat-mfa-trigger" onClick={() => setShowMfa(true)}>
-                  🔑 Have an authenticator or recovery code?
-                </button>
-              ) : (
-                <div className={`cat-field${focusField === 'code' ? ' is-focused' : ''}${code ? ' is-filled' : ''}`}>
-                  <span className="cat-field-icon" aria-hidden="true">🔑</span>
-                  <div className="cat-field-inner">
-                    <input
-                      id="finna-auth-mfa"
-                      value={code}
-                      onFocus={() => setFocusField('code')}
-                      onBlur={() => setFocusField('none')}
-                      onChange={(e) => setCode(e.target.value)}
-                      autoComplete="one-time-code"
-                      maxLength={64}
-                      placeholder=" "
-                    />
-                    <label htmlFor="finna-auth-mfa">Authenticator or recovery code</label>
+          <form onSubmit={submit} className="cat-form">
+            <div className={`cat-field${focusField === 'email' ? ' is-focused' : ''}${email ? ' is-filled' : ''}`}>
+              <div className="cat-field-inner">
+                <input
+                  id="finna-auth-email"
+                  type="email"
+                  autoComplete="email"
+                  required
+                  maxLength={254}
+                  placeholder=" "
+                  value={email}
+                  onFocus={() => setFocusField('email')}
+                  onBlur={() => setFocusField('none')}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <label htmlFor="finna-auth-email">Email address</label>
+              </div>
+            </div>
+
+            <div className={`cat-field${focusField === 'password' ? ' is-focused' : ''}${password ? ' is-filled' : ''}`}>
+              <div className="cat-field-inner">
+                <input
+                  id="finna-auth-password"
+                  type={showPassword ? 'text' : 'password'}
+                  autoComplete={joining ? 'new-password' : 'current-password'}
+                  minLength={joining ? 12 : 1}
+                  maxLength={200}
+                  required
+                  placeholder=" "
+                  value={password}
+                  onFocus={() => setFocusField('password')}
+                  onBlur={() => setFocusField('none')}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <label htmlFor="finna-auth-password">Password</label>
+              </div>
+              <button
+                type="button"
+                className="cat-pw-toggle-inline"
+                aria-pressed={showPassword}
+                onMouseDown={(e) => e.preventDefault()}
+                onClick={() => {
+                  setShowPassword((v) => !v)
+                  setFocusField('password')
+                }}
+              >
+                {showPassword ? 'Hide' : 'Show'}
+              </button>
+            </div>
+            {joining && (
+              <p className="cat-field-hint">At least 12 characters, including a letter and a number.</p>
+            )}
+
+            {!joining && (
+              <div className="cat-mfa-row">
+                {!showMfa ? (
+                  <button type="button" className="cat-mfa-trigger" onClick={() => setShowMfa(true)}>
+                    Have an authenticator or recovery code?
+                  </button>
+                ) : (
+                  <div className={`cat-field${focusField === 'code' ? ' is-focused' : ''}${code ? ' is-filled' : ''}`}>
+                    <div className="cat-field-inner">
+                      <input
+                        id="finna-auth-mfa"
+                        value={code}
+                        onFocus={() => setFocusField('code')}
+                        onBlur={() => setFocusField('none')}
+                        onChange={(e) => setCode(e.target.value)}
+                        autoComplete="one-time-code"
+                        maxLength={64}
+                        placeholder=" "
+                      />
+                      <label htmlFor="finna-auth-mfa">Authenticator or recovery code</label>
+                    </div>
                   </div>
-                  <span className="cat-field-bar" aria-hidden="true" />
-                </div>
-              )}
-            </div>
-          )}
+                )}
+              </div>
+            )}
 
-          {guestCount > 0 && (
-            <label className="cat-guest-check">
-              <input type="checkbox" checked={saveGuest} onChange={(e) => setSaveGuest(e.target.checked)} />
-              <span>Save this browser’s {guestCount} practice answers to my account (past guest answers earn no XP).</span>
-            </label>
-          )}
+            {guestCount > 0 && (
+              <label className="cat-guest-check">
+                <input type="checkbox" checked={saveGuest} onChange={(e) => setSaveGuest(e.target.checked)} />
+                <span>Save this browser’s {guestCount} practice answers to my account (past guest answers earn no XP).</span>
+              </label>
+            )}
 
-          <button className="cat-submit-btn" disabled={busy || googleBusy || (joining && !ageReady)}>
-            <span>{busy ? 'Unlocking…' : joining ? 'Create free account' : 'Log in'}</span>
-            <span className="cat-submit-arrow" aria-hidden="true">→</span>
-          </button>
-        </form>
+            <button className="cat-submit-btn" disabled={busy || googleBusy || (joining && !ageReady)}>
+              <span>{busy ? 'Unlocking…' : joining ? 'Create free account' : 'Log in'}</span>
+              <span className="cat-submit-arrow" aria-hidden="true">→</span>
+            </button>
+          </form>
 
-        <div className="cat-card-foot">
-          {!joining ? (
-            <Link to="/account/recovery" className="cat-foot-link">Forgot password?</Link>
-          ) : (
-            <span className="cat-foot-note">No card required</span>
-          )}
-          <Link to={(joining ? '/login' : '/join') + nextQs} className="cat-foot-link is-strong">
-            {joining ? 'Already have an account? Log in' : 'New to Finna? Join free'}
-          </Link>
-        </div>
-      </section>
+          <div className="cat-card-foot">
+            {!joining ? (
+              <Link to="/account/recovery" className="cat-foot-link">Forgot password?</Link>
+            ) : (
+              <span className="cat-foot-note">No card required</span>
+            )}
+            <Link to={(joining ? '/login' : '/join') + nextQs} className="cat-foot-link is-strong">
+              {joining ? 'Already have an account? Log in' : 'New to Finna? Join free'}
+            </Link>
+          </div>
+        </section>
 
-      <p className="cat-scene-footnote">
-        Use an email address you can access. Check <Link to="/account/recovery">Account recovery</Link> for current recovery options.
-      </p>
+        <p className="cat-scene-footnote">
+          By continuing you agree to the <Link to="/policies/terms">Terms</Link> and{' '}
+          <Link to="/policies/privacy">Privacy policy</Link>.
+        </p>
+      </div>
     </div>
   </main>
 }

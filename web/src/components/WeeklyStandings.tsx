@@ -16,7 +16,7 @@ function rankMedalClass(rank:number){
 
 export default function WeeklyStandings({endpoint,unit='XP',empty='No public scores this week yet.'}:{endpoint:string;unit?:string;empty?:string}){
  const [board,setBoard]=useState<Board|null>(null),[error,setError]=useState(''),[retry,setRetry]=useState(0)
- useEffect(()=>{const refresh=()=>{setBoard(null);setError('');setRetry(n=>n+1)};window.addEventListener('ism-auth-change',refresh);return()=>window.removeEventListener('ism-auth-change',refresh)},[])
+ useEffect(()=>{const refresh=()=>{setBoard(null);setError('');setRetry(n=>n+1)};window.addEventListener('ism-auth-change',refresh);window.addEventListener('ism-community-standing-change',refresh);return()=>{window.removeEventListener('ism-auth-change',refresh);window.removeEventListener('ism-community-standing-change',refresh)}},[])
  useEffect(()=>{let live=true;setBoard(null);setError('');reviewRequest<Board>(endpoint).then(x=>{if(live)setBoard(x)}).catch(e=>{if(live)setError(e.message)});return()=>{live=false}},[endpoint,retry])
  const score=(row:{xp?:number;score?:number})=>(row.xp??row.score??0).toLocaleString('en-IN')
  function rows(items:Row[]){

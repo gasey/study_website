@@ -154,6 +154,7 @@ export const PRESET_HIDDEN: Record<HomePreset, HomeWidgetId[]> = {
   ],
   balanced: [
     'pulse',
+    'tracked_exams',
     'feed',
     'vault',
     'calendar',
@@ -177,17 +178,17 @@ export const PRESET_DETAILS: readonly {
     id: 'balanced',
     title: 'Balanced',
     badge: 'Recommended',
-    summary: 'Clean 4-column home with Explore deck (Stats, Atlas, Guides), Discover, Leaderboard & Games.',
+    summary: 'Calm 3-column home with Subjects & focus, Also on Finna, Leaderboard podium & Play hub.',
   },
   {
     id: 'everything',
     title: 'Everything',
-    summary: 'Show all widgets, including Calendar, 7-day pulse, Study desk, Community feed & Vault.',
+    summary: 'Show all widgets, including Tracked exams overview, Community feed & Vault.',
   },
 ] as const
 
-const STORAGE_KEY = 'finna-home-prefs-v3'
-const LEGACY_STORAGE_KEYS = ['finna-home-prefs-v2', 'finna-home-prefs-v1'] as const
+const STORAGE_KEY = 'finna-home-prefs-v4'
+const LEGACY_STORAGE_KEYS = ['finna-home-prefs-v3', 'finna-home-prefs-v2', 'finna-home-prefs-v1'] as const
 const CHANGE_EVENT = 'finna-home-prefs-change'
 
 export function widgetLabel(id: HomeWidgetId): string {
@@ -240,9 +241,13 @@ export function readLocalHomePrefs(): HomePreferences {
           parsed.preset === 'minimal' || parsed.preset === 'balanced' || parsed.preset === 'everything'
             ? parsed.preset
             : 'balanced'
-        const hidden = (
+        const baseHidden = (
           Array.isArray(parsed.hidden) ? normalizeHidden(parsed.hidden) : [...PRESET_HIDDEN[preset]]
         ).filter((id) => id !== 'discover' && id !== 'explore')
+        const hidden =
+          preset === 'balanced' && !baseHidden.includes('tracked_exams')
+            ? [...baseHidden, 'tracked_exams' as HomeWidgetId]
+            : baseHidden
         return {
           preset,
           hidden,

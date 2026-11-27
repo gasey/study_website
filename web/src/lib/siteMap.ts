@@ -298,6 +298,16 @@ export const SITE_MAP: readonly Destination[] = [
     keywords: 'speed sprint gauntlet survival blitz',
   },
   {
+    id: 'board',
+    path: '/board',
+    label: 'Weekly Leaderboard',
+    section: 'practice',
+    blurb: 'Live Weekly XP podium, Daily Five, Weekly Cup, Finna Blocks, Speed, Gauntlet and Duel standings.',
+    surfaces: ['index', 'quickfind'],
+    menu: 'games',
+    keywords: 'leaderboard board standings podium weekly xp league blocks daily five cup',
+  },
+  {
     id: 'games-standings',
     path: '/profile/rewards',
     label: 'Leaderboards & Quests',
