@@ -10,7 +10,6 @@ export type HomeWidgetId =
   | 'discover'
   | 'pulse'
   | 'return'
-  | 'tracked_exams'
   | 'subjects'
   | 'feed'
   | 'vault'
@@ -45,12 +44,6 @@ export const HOME_WIDGET_CATALOG: readonly HomeWidgetMeta[] = [
     id: 'return',
     label: 'Pick up where you left off',
     description: 'Resume your latest unfinished mock or practice set.',
-    group: 'top',
-  },
-  {
-    id: 'tracked_exams',
-    label: 'Tracked exams overview',
-    description: 'Multi-exam progress summary cards in the centre stream.',
     group: 'top',
   },
   {
@@ -144,7 +137,6 @@ export const PRESET_HIDDEN: Record<HomePreset, HomeWidgetId[]> = {
     'leaderboard',
     'games',
     'pulse',
-    'tracked_exams',
     'feed',
     'vault',
     'calendar',
@@ -154,7 +146,6 @@ export const PRESET_HIDDEN: Record<HomePreset, HomeWidgetId[]> = {
   ],
   balanced: [
     'pulse',
-    'tracked_exams',
     'feed',
     'vault',
     'calendar',
@@ -183,7 +174,7 @@ export const PRESET_DETAILS: readonly {
   {
     id: 'everything',
     title: 'Everything',
-    summary: 'Show all widgets, including Tracked exams overview, Community feed & Vault.',
+    summary: 'Show all widgets, including Community feed & Vault.',
   },
 ] as const
 
@@ -241,13 +232,9 @@ export function readLocalHomePrefs(): HomePreferences {
           parsed.preset === 'minimal' || parsed.preset === 'balanced' || parsed.preset === 'everything'
             ? parsed.preset
             : 'balanced'
-        const baseHidden = (
+        const hidden = (
           Array.isArray(parsed.hidden) ? normalizeHidden(parsed.hidden) : [...PRESET_HIDDEN[preset]]
         ).filter((id) => id !== 'discover' && id !== 'explore')
-        const hidden =
-          preset === 'balanced' && !baseHidden.includes('tracked_exams')
-            ? [...baseHidden, 'tracked_exams' as HomeWidgetId]
-            : baseHidden
         return {
           preset,
           hidden,

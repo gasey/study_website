@@ -38,7 +38,7 @@ import {
   useTrackedExamIds,
   writeLocalFocusSubjects,
 } from '../lib/trackedExams'
-import { FLAGSHIP_EXAM_IDS, examPresentation } from '../lib/examPresentation'
+import { examPresentation } from '../lib/examPresentation'
 import { calendarRead, indiaToday, type CalendarEvent } from '../lib/calendar'
 import { subjectChipClass, subjectInitials } from '../lib/subjectChips'
 import QuickStudy from '../components/QuickStudy'
@@ -527,19 +527,6 @@ export default function StudyHome() {
       : null
   const p = data.progress
   const examTitle = exam ? shortExamLabel(exam) : 'Choose your exam'
-
-  // Popular sibling exams for quick 1-click multi-exam discovery
-  const suggestedSiblingExams = useMemo(() => {
-    const trackedSet = new Set(trackedExams.map((e) => e.id))
-    const flagshipRank = (id: string) => {
-      const i = FLAGSHIP_EXAM_IDS.indexOf(id as (typeof FLAGSHIP_EXAM_IDS)[number])
-      return i >= 0 ? i : 99
-    }
-    return data.exams
-      .filter((e) => !trackedSet.has(e.id))
-      .sort((a, b) => flagshipRank(a.id) - flagshipRank(b.id) || b.questions - a.questions)
-      .slice(0, 4)
-  }, [data.exams, trackedExams])
 
   // Aggregate unique subjects from taxonomy + user progress for multi-subject focus picker
   const subjectCatalog = useMemo<SubjectOption[]>(() => {
@@ -1099,160 +1086,6 @@ export default function StudyHome() {
                   </section>
                 )}
 
-                {/* Multi-Exam Workspace Card */}
-                {!isHidden('tracked_exams') && (trackedExams.length > 1 ? (
-                  <section className="finna-card" aria-labelledby="tracked-exams-title">
-                    <div className="finna-section-top">
-                      <div>
-                        <span className="finna-eyebrow">Multi-exam board</span>
-                        <h2 id="tracked-exams-title" className="mt-0.5">
-                          Your exams side by side
-                        </h2>
-                      </div>
-                      <div className="finna-card-head-right">
-                        <button
-                          type="button"
-                          onClick={() => setPickerOpen(true)}
-                          className="text-xs font-bold text-link hover:underline"
-                        >
-                          + Add / manage →
-                        </button>
-                        <button
-                          type="button"
-                          className="finna-card-hide-btn"
-                          aria-label="Hide Tracked exams card"
-                          title="Hide this card"
-                          onClick={() => handleHideCard('tracked_exams')}
-                        >
-                          ×
-                        </button>
-                      </div>
-                    </div>
-                    <div className="finna-multi-exam-grid">
-                      {trackedExams.map((item) => {
-                        const isPrimary = item.id === exam?.id
-                        const pres = examPresentation(item.id, item.title)
-                        const prog = progressByExam.get(item.id)
-                        const pct =
-                          prog && item.questions > 0
-                            ? Math.min(100, Math.round((prog.unique_questions / item.questions) * 100))
-                            : 0
-                        const acc =
-                          prog && prog.answered > 0
-                            ? `${Math.round((prog.correct / prog.answered) * 100)}%`
-                            : null
-                        return (
-                          <article
-                            key={item.id}
-                            className={`finna-mini-exam-card${isPrimary ? ' is-primary' : ''}`}
-                          >
-                            <div className="finna-mini-exam-top">
-                              <span className="finna-exam-stamp" aria-hidden="true">
-                                {pres.short}
-                              </span>
-                              <div className="min-w-0 flex-1">
-                                <h3 className="truncate text-sm font-bold text-ink">{item.title}</h3>
-                                <p className="text-xs text-secondary">
-                                  {item.questions.toLocaleString('en-IN')} Q
-                                  {prog && prog.answered > 0 ? ` · ${acc} acc.` : ''}
-                                </p>
-                              </div>
-                              {isPrimary ? (
-                                <span className="finna-primary-badge">Primary</span>
-                              ) : (
-                                <button
-                                  type="button"
-                                  disabled={busyExamId === item.id}
-                                  onClick={() => void choosePrimaryExam(item.id)}
-                                  className="finna-mini-switch-btn"
-                                >
-                                  Focus
-                                </button>
-                              )}
-                            </div>
-                            <div className="mt-2.5">
-                              <div className="mb-1 flex justify-between text-[11px] font-semibold text-secondary">
-                                <span>
-                                  {prog ? `${prog.unique_questions.toLocaleString('en-IN')} covered` : 'Not started yet'}
-                                </span>
-                                <span className="font-mono">{pct}%</span>
-                              </div>
-                              <div className="finna-progress">
-                                <span style={{ width: `${pct}%` }} />
-                              </div>
-                            </div>
-                            <div className="finna-mini-exam-actions">
-                              <Link
-                                to={'/practice?exam=' + encodeURIComponent(item.id)}
-                                className="finna-mini-act finna-mini-act--primary"
-                              >
-                                Practice
-                              </Link>
-                              <Link
-                                to={'/past-papers?exam=' + encodeURIComponent(item.id)}
-                                className="finna-mini-act"
-                              >
-                                Papers
-                              </Link>
-                              <Link to={'/exams/' + item.id} className="finna-mini-act">
-                                Open
-                              </Link>
-                            </div>
-                          </article>
-                        )
-                      })}
-                    </div>
-                  </section>
-                ) : (
-                  !data.loading &&
-                  suggestedSiblingExams.length > 0 && (
-                    <section className="finna-card finna-add-exam-banner" aria-labelledby="add-exam-title">
-                      <div className="finna-section-top mb-2">
-                        <div>
-                          <span className="finna-eyebrow">Multi-exam prep</span>
-                          <h2 id="add-exam-title" className="mt-0.5">
-                            Preparing for more than one exam?
-                          </h2>
-                        </div>
-                        <div className="finna-card-head-right">
-                          <button
-                            type="button"
-                            onClick={() => setPickerOpen(true)}
-                            className="text-xs font-bold text-link hover:underline"
-                          >
-                            All exams →
-                          </button>
-                          <button
-                            type="button"
-                            className="finna-card-hide-btn"
-                            aria-label="Hide multi-exam prompt"
-                            title="Hide this card"
-                            onClick={() => handleHideCard('tracked_exams')}
-                          >
-                            ×
-                          </button>
-                        </div>
-                      </div>
-                      <p className="text-sm text-secondary">
-                        Pin other exams to track progress side by side and switch in one tap without losing your plan.
-                      </p>
-                      <div className="mt-3 flex flex-wrap gap-2">
-                        {suggestedSiblingExams.map((item) => (
-                          <button
-                            key={item.id}
-                            type="button"
-                            disabled={busyExamId === item.id}
-                            onClick={() => void toggleTrackExam(item.id)}
-                            className="finna-quick-add-exam-pill"
-                          >
-                            <span aria-hidden="true">+</span> {shortExamLabel(item)}
-                          </button>
-                        ))}
-                      </div>
-                    </section>
-                  )
-                ))}
-
                 {/* 3d Clean Subjects & Your Focus 2-Column Card */}
                 {!isHidden('subjects') && (
                   <section className="finna-card finna-subjects-card" aria-labelledby="subject-progress-title">
@@ -1465,7 +1298,6 @@ export default function StudyHome() {
                 )}
 
                 {isHidden('return') &&
-                  isHidden('tracked_exams') &&
                   isHidden('subjects') &&
                   isHidden('feed') &&
                   isHidden('vault') && (

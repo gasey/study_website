@@ -5385,30 +5385,6 @@ html[data-theme="night"] .finna-hero-pill.is-active {
   color: rgb(var(--ism-wrong-dark-rgb));
 }
 
-/* Single-Exam Discovery Prompt */
-.finna-add-exam-banner {
-  background: linear-gradient(135deg, rgb(var(--ism-practice-soft-rgb) / 0.55), var(--bg-panel) 65%);
-}
-.finna-quick-add-exam-pill {
-  min-height: 38px;
-  padding: 0 14px;
-  border-radius: 999px;
-  border: 1.5px solid var(--line);
-  background: var(--bg-panel);
-  color: var(--text-primary);
-  font-size: 13px;
-  font-weight: 700;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  cursor: pointer;
-  transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
-}
-.finna-quick-add-exam-pill:hover {
-  border-color: var(--finna-primary);
-  background: rgb(var(--ism-practice-soft-rgb));
-  color: rgb(var(--ism-practice-dark-rgb));
-}
 
 /* Multi-Exam Modal & Inline Picker */
 .finna-exam-dialog {

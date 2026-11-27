@@ -1,5 +1,13 @@
 # Devlog
 
+27 November IST — **Removed the duplicate "Multi-exam board" card from the Home Overview tab — exact-fidelity pass against the 3d design.**
+
+- After deploying the 3d finishing pass, compared the live signed-in `/home` page against the 3d design section-by-section (using the owner's real browser session). The 3-column grid itself (exam hero + Today's Plan · tabbed hub + Subjects&Focus + Also on Finna · leaderboard podium + Play/People/Tools + Everything-on-Finna) matched exactly. One thing didn't: an "Everything"-preset-only **"MULTI-EXAM BOARD / Your exams side by side"** card rendered inline in the Overview tab's centre stream — a full duplicate of the dedicated **"My exams"** tab (same exam cards, same progress bars, same Practice/Papers actions), never mentioned in the 3d spec and sitting between "Pick up where you left off" and "Subjects & your focus."
+- Removed it entirely from `StudyHome.tsx` rather than just hiding it in `Balanced`: both JSX branches (the `>1`-tracked-exams board and the single-exam "Preparing for more than one exam?" nudge), the now-dead `suggestedSiblingExams` memo and unused `FLAGSHIP_EXAM_IDS` import, and the matching `tracked_exams` entry from `homePrefs.ts` (`HomeWidgetId` union, catalog, `Minimal`/`Balanced` hidden-by-default lists, the legacy-migration special case, and the `Everything` preset's summary copy). Dropped the now-orphaned `.finna-add-exam-banner` / `.finna-quick-add-exam-pill` rules from `finna.css`. The content isn't gone — it was already fully built out on the "My exams" tab, which is untouched.
+- Verified: `npm run typecheck` and `npm run build` pass clean (bundle `StudyHome` chunk shrank 77.80 kB → 73.89 kB). Confirmed live in a sandboxed anonymous session by tracking a second exam — the Overview tab goes straight from the exam hero to "Subjects & your focus" with no duplicate card, in both `Balanced` and `Everything` presets, and the "Tracked exams overview" toggle is gone from the Customise Home panel.
+- Also moved an unrelated 24 MB stray `pathlib` file (PostScript garbage from a different workstream) out of the repo into scratch, and committed two unrelated pre-existing bank/tagging-queue script fixes (`tagging_queue_store.py` packet-claim race, `publish-owner-taxonomy-run.py` state-query path) separately, since they were sitting uncommitted in the same tree but have nothing to do with the homepage.
+
+
 27 November IST — **Verified the uncommitted finishing pass on top of the 26 November 3d ship (not yet committed).**
 
 - Confirmed `npm run typecheck` and `npm run build` (including the `prebuild` dead-link/admin-nav/guides checks) both pass clean against the working tree as-is.
