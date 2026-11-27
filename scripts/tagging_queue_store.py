@@ -169,13 +169,17 @@ class Store:
             if self.db.execute("SELECT 1 FROM packets WHERE worker=? AND state='claimed'", (worker,)).fetchone():
                 raise ValueError('Worker already has an active packet; resume it using its saved token')
             paper = self.db.execute('''SELECT paper_id FROM targets WHERE present=1 AND
-              state='ready' AND lane=? ORDER BY
+              state='ready' AND lane=? AND NOT EXISTS (
+                SELECT 1 FROM reservations r WHERE r.canonical_id=targets.canonical_id
+              ) ORDER BY
               CASE WHEN json_extract(payload,'$.page') IS NULL THEN 1 ELSE 0 END,
               paper_id,appearance_id LIMIT 1''', (lane,)).fetchone()
             if not paper:
                 return {'empty': True, 'lane': lane}
             rows = self.db.execute('''SELECT * FROM targets WHERE present=1 AND state='ready'
-              AND lane=? AND paper_id=? ORDER BY appearance_id LIMIT ?''',
+              AND lane=? AND paper_id=? AND NOT EXISTS (
+                SELECT 1 FROM reservations r WHERE r.canonical_id=targets.canonical_id
+              ) ORDER BY appearance_id LIMIT ?''',
                                    (lane, paper[0], size)).fetchall()
             packet = fetch([dict(r) for r in rows])
             expected = {(r['canonical_id'], r['appearance_id']) for r in rows}

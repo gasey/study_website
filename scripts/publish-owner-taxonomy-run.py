@@ -301,10 +301,18 @@ def execute(directory):
         elif json.loads(file.read_text())!=ready[start:start+100]:raise ValueError('Frozen chunk membership changed')
         files.append(file)
     def states(ids):
-        import importlib.util
-        path=Path('/srv/study/workshop/india-study-map-app/scripts/bank-review-worker.py')
-        spec=importlib.util.spec_from_file_location('taxonomy_worker',path);worker=importlib.util.module_from_spec(spec);spec.loader.exec_module(worker)
-        return worker.remote('SELECT id,state FROM bank_publications WHERE id IN('+','.join(worker.literal(i)for i in ids)+')',True)
+        # Query the local Oracle database as postgres. Self-SSH through the
+        # unrelated review-worker key can fail after a host credential rotation.
+        if not ids:return []
+        code=("import json,sys,psycopg\n"
+              "ids=json.load(sys.stdin)\n"
+              "with psycopg.connect('dbname=mpsc') as c:\n"
+              "  with c.cursor() as q:\n"
+              "    q.execute('SELECT id,state FROM bank_publications WHERE id=ANY(%s)',(ids,))\n"
+              "    print(json.dumps(q.fetchall()))\n")
+        result=subprocess.run(['sudo','-u','postgres','/srv/api/.venv/bin/python','-c',code],
+                              input=json.dumps(ids),capture_output=True,text=True,check=True)
+        return [{'id':row[0],'state':row[1]} for row in json.loads(result.stdout)]
     def complete(file):
         child('--record',directory,file)
         queued=json.loads(file.with_suffix('.queued.json').read_text())
