@@ -1,5 +1,16 @@
 # Devlog
 
+27 November IST — **Fonts/UI cohesion sweep across all 18 `FINNA-REDESIGN-GAPS-20261114.md` reference screens.**
+
+- Audited Navbar, Home feed, Inbox, Creator profile, the Exams suite (detail/browse/practice/progress), Library, Question bank/detail, Create hub, Profile and rewards, Games, Atlas, Study desk and Chronicle, signed in as the real account (6 tracked exams) via the owner's browser. Checked computed `font-family` on every heading/label/button against the app's 3 allowed tokens (`--font-ui` Figtree, `--font-reading` Newsreader, `--font-mono` IBM Plex Mono) and screened each screen for stale, un-migrated UI remnants.
+- `docs/design/finna-20261114/Finna Web.dc.html` (the 18-screen master reference) predates the 26 November 3d/Library redesign — its color tokens (`--pri:#1F4BE0` etc.) are superseded, so it was used only as a structural checklist, not a literal palette source; judged every screen against the live Library theme instead to avoid reverting already-shipped improvements.
+- Found and fixed two concrete, scoped bugs, both leftover native-browser-checkbox styling that never got the Library-theme treatment:
+  - `Inbox.tsx` notification-category toggles used `accent-[#B23A9A]` — a stray magenta from a pre-redesign era (the same bad pink already replaced in the Desk Focus Timer on 24 November). Converted to the app's existing `finna-st-toggle` pill-switch component (teal `#0A7D8C`, used by Customise Home) instead of patching the color, since "Notification settings" is the same settings-row pattern.
+  - `AtlasChapter.tsx` (Map layers list) and `AtlasMap.tsx` ("Show base map") used bare `<input type="checkbox">` with no accent override at all, rendering as unstyled OS-default blue. Added `accent-[var(--finna-primary)]`, matching the existing precedent in `.finna-exam-picker-check input[type="checkbox"]`.
+- Every other screen was already font-consistent and visually cohesive with the Library theme — no further changes made. Did not attempt to close the gaps doc's known structural gaps (Inbox/Creator profile/Profile/Games "inherits theme; detailed reference layout not ported") — that's feature-completeness work, out of scope for a fonts/UI pass.
+- Verified: `npm run typecheck`, `npm run build`, `./scripts/deploy.sh web`, and live confirmation on both fixes (Inbox toggle switches now teal, Atlas checkboxes now brand-blue).
+
+
 27 November IST — **Removed the duplicate "Multi-exam board" card from the Home Overview tab — exact-fidelity pass against the 3d design.**
 
 - After deploying the 3d finishing pass, compared the live signed-in `/home` page against the 3d design section-by-section (using the owner's real browser session). The 3-column grid itself (exam hero + Today's Plan · tabbed hub + Subjects&Focus + Also on Finna · leaderboard podium + Play/People/Tools + Everything-on-Finna) matched exactly. One thing didn't: an "Everything"-preset-only **"MULTI-EXAM BOARD / Your exams side by side"** card rendered inline in the Overview tab's centre stream — a full duplicate of the dedicated **"My exams"** tab (same exam cards, same progress bars, same Practice/Papers actions), never mentioned in the 3d spec and sitting between "Pick up where you left off" and "Subjects & your focus."

@@ -599,22 +599,25 @@ export default function Inbox() {
             <span className="text-center">In app</span>
           </div>
           {categories.map((c) => (
-            <label
+            <div
               key={c}
               className="grid min-h-[44px] grid-cols-[minmax(0,1fr)_64px] items-center border-b border-[#F1EBDF] text-sm"
             >
               <span>{categoryLabels[c]}</span>
-              <input
-                type="checkbox"
+              <button
+                type="button"
+                role="switch"
+                aria-checked={prefs[c]}
                 aria-label={categoryLabels[c] + " in-app notifications"}
-                checked={prefs[c]}
                 disabled={prefsBusy}
-                onChange={(e) =>
-                  setPrefs((old) => ({ ...old, [c]: e.target.checked }))
+                onClick={() =>
+                  setPrefs((old) => ({ ...old, [c]: !old[c] }))
                 }
-                className="justify-self-center accent-[#B23A9A]"
-              />
-            </label>
+                className={`finna-st-toggle justify-self-center${prefs[c] ? " is-on" : ""}`}
+              >
+                <span className="finna-st-toggle-dot" />
+              </button>
+            </div>
           ))}
           <button
             disabled={prefsBusy}

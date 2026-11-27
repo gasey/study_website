@@ -25,7 +25,7 @@ export default function AtlasMap({chapter,layers,view,focus,reset,onFeature,edit
   const [base,setBase]=useState(true)
   const [retry,setRetry]=useState(0)
   return <div>
-    <div className="mb-2 flex flex-wrap items-center justify-between gap-2 text-xs text-secondary"><span>Drag to explore · use + / − to zoom · select a map feature</span><label className="flex min-h-11 items-center gap-2"><input type="checkbox" checked={base} onChange={e=>setBase(e.target.checked)}/>Show base map</label></div>
+    <div className="mb-2 flex flex-wrap items-center justify-between gap-2 text-xs text-secondary"><span>Drag to explore · use + / − to zoom · select a map feature</span><label className="flex min-h-11 items-center gap-2"><input className="accent-[var(--finna-primary)]" type="checkbox" checked={base} onChange={e=>setBase(e.target.checked)}/>Show base map</label></div>
     {tileError&&base&&<p role="status" className="mb-2 rounded-lg border border-hairline bg-card p-3 text-sm">Some map tiles could not load. Study layers remain available. <button className="underline" onClick={()=>{setTileError(false);setRetry(x=>x+1)}}>Retry map tiles</button></p>}
     <div className="atlas-map relative isolate overflow-hidden rounded-xl border border-hairline" role="region" aria-label={`${chapter.title} interactive map`}>
       <MapContainer center={view.center} zoom={view.zoom} minZoom={2} maxZoom={18} scrollWheelZoom={false} className="h-full w-full" attributionControl>
